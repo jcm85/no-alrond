@@ -36,6 +36,7 @@ const ts = [
   "src/lib/migrate-progress.test.ts",
   "src/lib/step-pictures.test.ts",
   "src/lib/picture-focus.test.ts",
+  "src/lib/undo-toast.test.ts",
   "src/lib/app-data/app-data.test.ts",
   "src/lib/app-data/readiness-schedule.test.ts",
   "src/lib/auth/gate-identity.test.ts",

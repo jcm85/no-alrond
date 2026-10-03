@@ -441,7 +441,7 @@ export function RouteApp() {
       </main>
 
       {toast ? (
-        <div className="fixed inset-x-0 bottom-20 z-30">
+        <div className="undo-toast">
           <div className="app-shell">
             <div role="status" className="flex items-center justify-between gap-4 rounded-card border border-gold bg-raise px-4 py-3">
               <p className="min-w-0 text-base">{toast}</p>
