@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useLayoutEffect, useRef, useState, type Ref } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { StepPicture, StepPictureFrame } from "@/data/step-pics";
 import { frameHeading, watchFromLabel } from "@/lib/step-pictures";
@@ -19,23 +19,112 @@ function framesOf(picture: StepPicture): StepPictureFrame[] {
   ];
 }
 
+function PictureLightbox({
+  frame,
+  heading,
+  onClose,
+  onPrev,
+  onNext,
+  index,
+  count,
+}: {
+  frame: StepPictureFrame;
+  heading: string;
+  onClose: () => void;
+  onPrev?: () => void;
+  onNext?: () => void;
+  index: number;
+  count: number;
+}) {
+  const closeRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    closeRef.current?.focus();
+    function onKey(event: KeyboardEvent) {
+      if (event.key !== "Escape") return;
+      event.preventDefault();
+      onClose();
+    }
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
+  return (
+    <div className="pic-lightbox" role="dialog" aria-modal="true" aria-label={heading}>
+      <div className="flex items-center justify-between gap-3">
+        <p className="font-display text-lg font-semibold text-gold">{heading}</p>
+        <button ref={closeRef} type="button" onClick={onClose} className="min-h-11 shrink-0 px-3 text-base text-gold">
+          Close
+        </button>
+      </div>
+      <img src={frame.image} alt={frame.caption} width={1280} height={720} className="pic-lightbox-img" />
+      {frame.confidence === "medium" ? (
+        <p className="text-sm leading-snug text-muted">
+          <span className="mr-2 inline-block rounded-full border border-gold px-2 py-0.5 text-xs tracking-wide text-gold uppercase">
+            approximate
+          </span>
+          {APPROXIMATE}
+        </p>
+      ) : null}
+      <p className="text-base text-fg">{frame.caption}</p>
+      {count > 1 ? (
+        <div className="flex items-center justify-between gap-2">
+          <button type="button" className="min-h-11 px-3 text-base text-gold disabled:opacity-40" onClick={onPrev} disabled={index === 0}>
+            Previous
+          </button>
+          <p className="text-base text-muted tabular-nums">
+            {index + 1} / {count}
+          </p>
+          <button type="button" className="min-h-11 px-3 text-base text-gold disabled:opacity-40" onClick={onNext} disabled={index >= count - 1}>
+            Next
+          </button>
+        </div>
+      ) : null}
+      <a
+        className="inline-flex min-h-11 items-center text-base text-gold underline underline-offset-4"
+        href={frame.youtube_link}
+        target="_blank"
+        rel="noreferrer"
+      >
+        {watchFromLabel(frame.youtube_link)}
+      </a>
+    </div>
+  );
+}
+
 export function StepPictureCard({
   picture,
   compact = false,
   eager = false,
   onHide,
+  hideRef,
 }: {
   picture: StepPicture;
   compact?: boolean;
   eager?: boolean;
   onHide?: () => void;
+  hideRef?: Ref<HTMLButtonElement>;
 }) {
   const frames = framesOf(picture);
   const [index, setIndex] = useState(0);
+  const [open, setOpen] = useState(false);
+  const [collapsedId, setCollapsedId] = useState<string | null>(null);
+  const collapsed = collapsedId === picture.stepId;
   const drag = useRef<{ x: number; y: number } | null>(null);
+  const suppressClick = useRef(false);
   useEffect(() => {
     setIndex(0);
+    setOpen(false);
   }, [picture.stepId]);
+  useLayoutEffect(() => {
+    const shortPhone = window.matchMedia("(max-width: 1279px)").matches;
+    if (!shortPhone || collapsed) return;
+    const title = document.querySelector(".step-title");
+    const done = [...document.querySelectorAll("button")].find((button) => button.textContent?.trim() === "Done");
+    if (!title || !done) return;
+    if (title.getBoundingClientRect().bottom > done.getBoundingClientRect().top + 1) {
+      setCollapsedId(picture.stepId);
+    }
+  }, [picture.stepId, collapsed, index]);
   const frame = frames[Math.min(index, frames.length - 1)] ?? frames[0];
   const heading = frameHeading(picture.kind, frame.kind);
 
@@ -43,88 +132,190 @@ export function StepPictureCard({
     setIndex((current) => Math.min(frames.length - 1, Math.max(0, current + delta)));
   }
 
+  const closeLightbox = useCallback(() => setOpen(false), []);
+
+  if (collapsed) {
+    return (
+      <>
+        <div className="step-pic-fallback">
+          <button type="button" className="step-pic-chip" onClick={() => setOpen(true)}>
+            Show picture
+          </button>
+          {frames.length > 1 ? (
+            <span className="inline-flex items-center gap-1">
+              <button type="button" className="min-h-11 px-2 text-base text-gold disabled:opacity-40" onClick={() => move(-1)} disabled={index === 0}>
+                Previous
+              </button>
+              <span className="text-base text-gold">{heading}</span>
+              <button
+                type="button"
+                className="min-h-11 px-2 text-base text-gold disabled:opacity-40"
+                onClick={() => move(1)}
+                disabled={index >= frames.length - 1}
+              >
+                Next
+              </button>
+            </span>
+          ) : null}
+          <a className="step-pic-watch" href={frame.youtube_link} target="_blank" rel="noreferrer">
+            {watchFromLabel(frame.youtube_link)}
+          </a>
+          {onHide ? (
+            <button ref={hideRef} type="button" onClick={onHide} className="step-pic-hide min-h-11 px-2 text-base text-gold">
+              Hide picture
+            </button>
+          ) : null}
+        </div>
+        {open ? (
+          <PictureLightbox
+            frame={frame}
+            heading={heading}
+            onClose={closeLightbox}
+            onPrev={() => move(-1)}
+            onNext={() => move(1)}
+            index={index}
+            count={frames.length}
+          />
+        ) : null}
+      </>
+    );
+  }
+
   return (
-    <article className={"step-pic rounded-card border border-line bg-surface p-3 " + (compact ? "step-pic-compact" : "")}>
-      <div className="flex items-center justify-between gap-3">
-        <h3 className="font-display text-lg font-semibold text-gold">{heading}</h3>
+    <>
+      <div className="step-pic-short">
+        <button type="button" className="step-pic-chip" onClick={() => setOpen(true)}>
+          Show picture
+        </button>
+        {frames.length > 1 ? (
+          <span className="inline-flex items-center gap-1">
+            <button type="button" className="min-h-11 px-2 text-base text-gold disabled:opacity-40" onClick={() => move(-1)} disabled={index === 0}>
+              Previous
+            </button>
+            <span className="text-base text-gold">{heading}</span>
+            <button
+              type="button"
+              className="min-h-11 px-2 text-base text-gold disabled:opacity-40"
+              onClick={() => move(1)}
+              disabled={index >= frames.length - 1}
+            >
+              Next
+            </button>
+          </span>
+        ) : null}
         {onHide ? (
-          <button type="button" onClick={onHide} className="min-h-11 shrink-0 px-2 text-base text-gold">
+          <button type="button" onClick={onHide} className="step-pic-hide min-h-11 px-2 text-base text-gold">
             Hide picture
           </button>
         ) : null}
       </div>
-      <div
-        className="step-pic-body mt-2"
-        onPointerDown={(event) => {
-          if ((event.target as HTMLElement).closest("button, a")) return;
-          drag.current = { x: event.clientX, y: event.clientY };
-        }}
-        onPointerUp={(event) => {
-          if (!drag.current) return;
-          const dx = event.clientX - drag.current.x;
-          const dy = event.clientY - drag.current.y;
-          drag.current = null;
-          if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) return;
-          move(dx < 0 ? 1 : -1);
-        }}
-      >
-        <img
-          key={frame.image}
-          src={frame.image}
-          alt={frame.caption}
-          width={1280}
-          height={720}
-          loading={eager ? "eager" : "lazy"}
-          decoding="async"
-          fetchPriority={eager ? "high" : "low"}
-          className="step-pic-img w-full rounded-lg bg-bg object-contain"
-        />
-        {frame.confidence === "medium" ? (
-          <p className="step-pic-note mt-2 text-sm leading-snug text-muted">
-            <span
-              className="step-pic-badge mr-2 inline-block rounded-full border border-gold px-2 py-0.5 text-xs tracking-wide text-gold uppercase"
-              title={APPROXIMATE}
-            >
-              approximate
-            </span>
-            {APPROXIMATE}
-          </p>
-        ) : null}
-        <p className="step-pic-caption mt-2 text-base text-fg">{frame.caption}</p>
-      </div>
-      {frames.length > 1 ? (
-        <div className="mt-2 flex items-center justify-between gap-2">
-          <button
-            type="button"
-            className="inline-flex min-h-11 items-center gap-1 rounded-card border border-line px-3 text-base text-fg disabled:opacity-40"
-            onClick={() => move(-1)}
-            disabled={index === 0}
-          >
-            <ChevronLeft className="size-4" />
-            Previous
-          </button>
-          <p className="text-base text-muted tabular-nums">
-            {index + 1} / {frames.length}
-          </p>
-          <button
-            type="button"
-            className="inline-flex min-h-11 items-center gap-1 rounded-card border border-line px-3 text-base text-fg disabled:opacity-40"
-            onClick={() => move(1)}
-            disabled={index >= frames.length - 1}
-          >
-            Next
-            <ChevronRight className="size-4" />
-          </button>
+      <article className={"step-pic rounded-card border border-line bg-surface p-3 " + (compact ? "step-pic-compact" : "")}>
+        <div className="flex items-center justify-between gap-3">
+          <h3 className="font-display text-lg font-semibold text-gold">{heading}</h3>
+          {onHide ? (
+            <button ref={hideRef} type="button" onClick={onHide} className="step-pic-hide min-h-11 shrink-0 px-2 text-base text-gold">
+              Hide picture
+            </button>
+          ) : null}
         </div>
+        <div
+          className="step-pic-body mt-2"
+          onPointerDown={(event) => {
+            if ((event.target as HTMLElement).closest("a")) return;
+            drag.current = { x: event.clientX, y: event.clientY };
+          }}
+          onPointerUp={(event) => {
+            if (!drag.current) return;
+            const dx = event.clientX - drag.current.x;
+            const dy = event.clientY - drag.current.y;
+            drag.current = null;
+            if (Math.abs(dx) < 48 || Math.abs(dx) < Math.abs(dy)) return;
+            suppressClick.current = true;
+            move(dx < 0 ? 1 : -1);
+          }}
+        >
+          <button
+            type="button"
+            className="step-pic-zoom"
+            aria-label={`Enlarge picture: ${heading}`}
+            onClick={() => {
+              if (suppressClick.current) {
+                suppressClick.current = false;
+                return;
+              }
+              setOpen(true);
+            }}
+          >
+            <img
+              key={frame.image}
+              src={frame.image}
+              alt=""
+              width={1280}
+              height={720}
+              loading={eager ? "eager" : "lazy"}
+              decoding="async"
+              fetchPriority={eager ? "high" : "low"}
+              className="step-pic-img"
+            />
+          </button>
+          {frame.confidence === "medium" ? (
+            <p className="step-pic-note mt-2 text-sm leading-snug text-muted">
+              <span
+                className="step-pic-badge mr-2 inline-block rounded-full border border-gold px-2 py-0.5 text-xs tracking-wide text-gold uppercase"
+                title={APPROXIMATE}
+              >
+                approximate
+              </span>
+              {APPROXIMATE}
+            </p>
+          ) : null}
+          <p className="step-pic-caption mt-2 text-base text-fg">{frame.caption}</p>
+        </div>
+        {frames.length > 1 ? (
+          <div className="step-pic-nav mt-2 flex items-center justify-between gap-2">
+            <button
+              type="button"
+              className="inline-flex min-h-11 items-center gap-1 rounded-card border border-line px-3 text-base text-fg disabled:opacity-40"
+              onClick={() => move(-1)}
+              disabled={index === 0}
+            >
+              <ChevronLeft className="size-4" />
+              Previous
+            </button>
+            <p className="text-base text-muted tabular-nums">
+              {index + 1} / {frames.length}
+            </p>
+            <button
+              type="button"
+              className="inline-flex min-h-11 items-center gap-1 rounded-card border border-line px-3 text-base text-fg disabled:opacity-40"
+              onClick={() => move(1)}
+              disabled={index >= frames.length - 1}
+            >
+              Next
+              <ChevronRight className="size-4" />
+            </button>
+          </div>
+        ) : null}
+        <a
+          className="step-pic-watch mt-2 inline-flex min-h-11 items-center text-base text-gold underline underline-offset-4"
+          href={frame.youtube_link}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {watchFromLabel(frame.youtube_link)}
+        </a>
+      </article>
+      {open ? (
+        <PictureLightbox
+          frame={frame}
+          heading={heading}
+          onClose={closeLightbox}
+          onPrev={() => move(-1)}
+          onNext={() => move(1)}
+          index={index}
+          count={frames.length}
+        />
       ) : null}
-      <a
-        className="step-pic-watch mt-2 inline-flex min-h-11 items-center text-base text-gold underline underline-offset-4"
-        href={frame.youtube_link}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {watchFromLabel(frame.youtube_link)}
-      </a>
-    </article>
+    </>
   );
 }

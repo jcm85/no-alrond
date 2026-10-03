@@ -25,8 +25,13 @@ def clock_seconds(label: str) -> int:
     raise SystemExit(f"bad video time: {label}")
 
 
-def youtube_at(label: str) -> str:
-    return f"{VIDEO}?t={clock_seconds(label)}"
+def lead_seconds(source: float) -> int:
+    """YouTube t is the frame, three seconds early, as a whole number of seconds."""
+    return max(0, int(float(source) + 0.5) - 3)
+
+
+def youtube_lead(source: float) -> str:
+    return f"{VIDEO}?t={lead_seconds(source)}"
 
 
 def frame(
@@ -93,13 +98,16 @@ def main() -> None:
             extra_name = Path(extra["imagePath"]).name
             if not (OUT_DIR / extra_name).is_file():
                 raise SystemExit(f"missing extra image {extra_name}")
+            source = extra.get("sourceFrameSeconds")
+            if source is None:
+                source = clock_seconds(extra["videoTime"])
             extras.append(
                 frame(
                     extra_name,
                     extra["caption"],
                     extra["videoTime"],
                     extra["confidence"],
-                    youtube_at(extra["videoTime"]),
+                    youtube_lead(source),
                     extra.get("kind"),
                 )
             )
@@ -110,7 +118,7 @@ def main() -> None:
                 "caption": item["caption"],
                 "kind": kind,
                 "videoTime": item["videoTime"],
-                "youtube_link": item["youtube_link"],
+                "youtube_link": youtube_lead(item["sourceFrameSeconds"]),
                 "confidence": item["confidence"],
                 "order": item["order"],
                 **({"extraImages": extras} if extras else {}),

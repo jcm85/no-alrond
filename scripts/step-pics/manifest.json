@@ -1412,6 +1412,7 @@
       {
         "imagePath": "/workspace/section-pics/final_extra/osvald-ch-3-1-a91bcd-outpost-door.jpg",
         "videoTime": "0:38:42",
+        "sourceFrameSeconds": 2322,
         "caption": "Before the fight: climb the stairs and go in through the Guard Outpost doors; the guaranteed guard encounter happens inside.",
         "kind": "travel",
         "confidence": "medium",
