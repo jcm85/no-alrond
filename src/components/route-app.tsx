@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
-import { Check, Info, List, RotateCcw, Search, Undo2 } from "lucide-react";
+import { Camera, Check, Info, List, RotateCcw, Search, Undo2 } from "lucide-react";
 import { changelog } from "@/data/changelog";
 import { route, type Block } from "@/data/route";
 import { RUN_KEY } from "@/lib/migrate-progress";
+import { pictureFor, preloadPicture, StepPictureCard, usePictureHidden } from "@/components/step-picture";
 import {
   chapterOrder,
   playhead,
@@ -510,6 +511,12 @@ function Now({
   upcoming: FlatStep[];
   onOpenRoute: () => void;
 }) {
+  const picture = pictureFor(current?.id);
+  const [pictureHidden, setPictureHidden] = usePictureHidden();
+  useEffect(() => {
+    if (!current) return;
+    preloadPicture(steps[current.n]?.id);
+  }, [current]);
   if (!current) {
     return (
       <section className="rounded-card border border-gold bg-surface px-5 py-8">
@@ -524,7 +531,15 @@ function Now({
 
   return (
     <div className="now-layout">
-      <section>
+      {picture && !pictureHidden ? (
+        <StepPictureCard picture={picture} eager onHide={() => setPictureHidden(true)} />
+      ) : null}
+      <section className="now-main">
+        {picture && pictureHidden ? (
+          <button type="button" onClick={() => setPictureHidden(false)} className="mb-3 min-h-11 text-base text-gold">
+            Show picture
+          </button>
+        ) : null}
         <p className="text-base text-muted">{placeLabel(current)}</p>
         <div className="now-card mt-3 rounded-card border border-line bg-surface p-4">
           <div className="flex items-center justify-between gap-3">
@@ -630,6 +645,7 @@ function BlockCard({
   highlightId: string | null;
   onCheck: (step: FlatStep) => void;
 }) {
+  const [openPic, setOpenPic] = useState<string | null>(null);
   const visible = steps.filter((step) => {
     if (step.blockId !== block.id) return false;
     if (filter === "left") return !done[step.id];
@@ -697,7 +713,23 @@ function BlockCard({
                 {skipped[step.id] ? <p className="mt-1 text-base text-muted">Skipped</p> : null}
                 {step.optional && !done[step.id] ? <p className="mt-1 text-base text-muted">Optional</p> : null}
               </div>
+              {pictureFor(step.id) ? (
+                <button
+                  type="button"
+                  className="mt-2 grid size-11 shrink-0 place-items-center text-gold"
+                  aria-expanded={openPic === step.id}
+                  aria-label={openPic === step.id ? `Hide picture: ${step.text}` : `Show picture: ${step.text}`}
+                  onClick={() => setOpenPic((current) => (current === step.id ? null : step.id))}
+                >
+                  <Camera className="size-5" aria-hidden="true" />
+                </button>
+              ) : null}
             </div>
+            {openPic === step.id && pictureFor(step.id) ? (
+              <div className="px-3 pb-3">
+                <StepPictureCard picture={pictureFor(step.id)!} compact />
+              </div>
+            ) : null}
           </li>
         ))}
       </ul>
@@ -788,6 +820,13 @@ function About({ onClose }: { onClose: () => void }) {
       <a className="mt-3 inline-block text-base text-gold underline underline-offset-4" href={route.meta.video} target="_blank" rel="noreferrer">
         Watch the run
       </a>
+      <p className="mt-3 text-base text-muted">
+        Pictures are snapshots from{" "}
+        <a className="text-gold underline underline-offset-4" href="https://youtu.be/d6YOJxTfIeQ" target="_blank" rel="noreferrer">
+          Chewy's All Superbosses run
+        </a>
+        .
+      </p>
       <h3 className="mt-4 font-display text-lg font-semibold">Sheet changelog</h3>
       <ul className="mt-2 flex flex-col gap-2">
         {changelog.map((entry) => (

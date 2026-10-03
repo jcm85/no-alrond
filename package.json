@@ -21,6 +21,7 @@
     "check:auth": "node scripts/check-auth-invariant.mjs",
     "test": "node scripts/run-tests.mjs",
     "route:build": "python3 scripts/build-route.py",
+    "pics:build": "python3 scripts/build-step-pics.py",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
