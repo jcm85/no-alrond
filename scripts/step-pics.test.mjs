@@ -23,7 +23,7 @@ test("every step picture exists, matches a route step, and is not bundled", () =
   const { text, pics } = loadPics();
   const ids = routeIds();
   const entries = Object.entries(pics);
-  assert.equal(entries.length, 126);
+  assert.equal(entries.length, 133);
   assert.equal(text.includes("import "), false);
   const files = new Set(readdirSync(picDir).filter((name) => name.endsWith(".jpg")));
   const used = new Set();
@@ -58,5 +58,5 @@ test("every step picture exists, matches a route step, and is not bundled", () =
   }
   assert.equal(extras, 1);
   assert.deepEqual([...files].filter((name) => !used.has(name)), []);
-  assert.equal(files.size, 127);
+  assert.equal(files.size, 134);
 });

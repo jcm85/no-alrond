@@ -31,9 +31,9 @@ test("watch label time equals the link t, and t is the frame minus 3 seconds", (
     { sourceFrameSeconds: number; extraImages?: { sourceFrameSeconds?: number }[] }
   >;
   const pictures = Object.values(stepPics);
-  assert.equal(pictures.length, 126);
+  assert.equal(pictures.length, 133);
   const frames = pictures.flatMap((picture) => [picture, ...(picture.extraImages ?? [])]);
-  assert.equal(frames.length, 127);
+  assert.equal(frames.length, 134);
   for (const frame of frames) {
     const label = watchFromLabel(frame.youtube_link);
     assert.equal(labelSeconds(label), linkSeconds(frame.youtube_link), frame.youtube_link);
@@ -58,7 +58,26 @@ test("watch label time equals the link t, and t is the frame minus 3 seconds", (
   assert.equal(linkSeconds(stepPics["galdera-1-107476"].youtube_link), 8283);
   assert.equal(watchFromLabel(stepPics["galdera-1-95ea15"].youtube_link), "Watch from 2:15:09");
   assert.equal(linkSeconds(stepPics["galdera-1-95ea15"].youtube_link), 8109);
-  assert.equal(stepPics["castti-ch-2-sai-route-1-655e3d"], undefined);
+  const corrected: Record<string, [string, number, "high" | "medium"]> = {
+    "castti-ch-2-sai-route-1-655e3d": ["Watch from 1:02:06", 3726, "high"],
+    "hikari-ch-4-1-9974b8": ["Watch from 1:12:29", 4349, "high"],
+    "agnea-ch-2-1-8f3c27": ["Watch from 1:38:03", 5883, "high"],
+    "agnea-ch-2-1-1dfd88": ["Watch from 1:43:24", 6204, "high"],
+    "ochette-ch-3-1-8de399": ["Watch from 2:05:15", 7515, "high"],
+    "masterly-mysterious-travellers-1-476306": ["Watch from 3:07:32", 11252, "medium"],
+    "true-vide-phase-1-1-0625d2": ["Watch from 3:09:41", 11381, "high"],
+    "true-vide-phase-2-1-9517f0": ["Watch from 3:11:46", 11506, "high"],
+    "castti-ch-2-sai-route-1-93d74f": ["Watch from 1:10:30", 4230, "high"],
+    "foreign-assassins-1-b8556e": ["Watch from 1:10:30", 4230, "high"],
+  };
+  for (const [stepId, [label, seconds, confidence]] of Object.entries(corrected)) {
+    const picture = stepPics[stepId];
+    assert.ok(picture, stepId);
+    assert.equal(watchFromLabel(picture.youtube_link), label, stepId);
+    assert.equal(linkSeconds(picture.youtube_link), seconds, stepId);
+    assert.equal(picture.confidence, confidence, stepId);
+    assert.equal(picture.caption.includes("Corrected from"), false, stepId);
+  }
 });
 
 test("the guard outpost door is a travel frame", () => {

@@ -3860,7 +3860,7 @@ export const route: RouteData = {
                   "note": "Changed since the video (12/03/2025): video does Sand Lion first (~1:02:00); sheet order is Thurston, then Hikari 3, then Sand Lion.",
                   "warn": false,
                   "optional": false,
-                  "watch": 3725
+                  "watch": 3726
                 }
               ]
             },
