@@ -1,10 +1,12 @@
 import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Camera, Check, Info, List, RotateCcw, Search, Undo2 } from "lucide-react";
+import { CombatGuide } from "@/components/combat-guide";
+import { FightWeakness } from "@/components/fight-weakness";
 import { changelog } from "@/data/changelog";
 import { route, type Block } from "@/data/route";
 import { RUN_KEY } from "@/lib/migrate-progress";
 import { StepPictureCard } from "@/components/step-picture";
-import { pictureFor, preloadPicture, usePictureHidden } from "@/lib/step-pictures";
+import { pictureFor, preloadPicture, usePictureHidden, watchFromLabel } from "@/lib/step-pictures";
 import {
   chapterOrder,
   playhead,
@@ -589,6 +591,8 @@ function Now({
             </ul>
           ) : null}
           <h2 className="step-title mt-3">{current.text}</h2>
+          <FightWeakness stepId={current.id} />
+          {current.watch != null ? <StepWatch seconds={current.watch} /> : null}
           {current.lines && current.lines.length > 0 ? (
             <ul className="mt-3 flex flex-col gap-1 text-lg text-fg">
               {current.lines.map((line) => (
@@ -733,6 +737,8 @@ function BlockCard({
                 <p className={"text-lg break-words " + (done[step.id] ? "text-muted line-through" : "text-fg")}>
                   {step.text}
                 </p>
+                <FightWeakness stepId={step.id} />
+                {step.watch != null ? <StepWatch seconds={step.watch} /> : null}
                 {step.lines && step.lines.length > 0 ? (
                   <p className="mt-1 text-base text-muted">{step.lines.join(" · ")}</p>
                 ) : null}
@@ -764,6 +770,20 @@ function BlockCard({
         ))}
       </ul>
     </div>
+  );
+}
+
+function StepWatch({ seconds }: { seconds: number }) {
+  const href = videoAt(seconds);
+  return (
+    <a
+      className="step-watch mt-2 inline-flex min-h-11 items-center text-base text-gold underline underline-offset-4"
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+    >
+      {watchFromLabel(href)}
+    </a>
   );
 }
 
@@ -843,6 +863,7 @@ function About({ onClose }: { onClose: () => void }) {
         </button>
       </div>
       <p className="mt-2 text-base text-muted">{route.meta.note}</p>
+      <CombatGuide />
       <p className="mt-2 text-base text-muted">
         On the Now tab, Space or Enter marks the current step done when nothing else is focused. S skips. Z or Backspace
         undoes. A skip or a done step can also be undone from the note that appears at the bottom.

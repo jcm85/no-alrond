@@ -291,9 +291,21 @@ def main():
                 for s in b["steps"]:
                     if s.get("check"):
                         n += 1
-                    for k in ("lines", "note", "warn", "optional", "lead", "ctx"):
-                        if not s.get(k):
+                    for k in ("lines", "note", "warn", "optional", "lead", "ctx", "sheet", "watch"):
+                        if not s.get(k) and s.get(k) != 0:
                             s.pop(k, None)
+
+    from apply_overlay import apply_overlay
+
+    overlay_stats = apply_overlay(acts, write_notes_file=OUT == ROOT / "src" / "data" / "route.ts")
+    rev = overlay_stats["rev"]
+    n = 0
+    for act in acts:
+        for ch in act["chapters"]:
+            for b in ch["blocks"]:
+                for s in b["steps"]:
+                    if s.get("check"):
+                        n += 1
 
     payload = {
         "meta": {
@@ -312,7 +324,7 @@ def main():
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(
-        "/** Generated from Chewy's published route sheet. Do not hand-edit. */\n"
+        "/** Generated from Chewy's published route sheet and scripts/overlays/merged-fights.json. Do not hand-edit. */\n"
         "export type Step = {\n"
         "  id: string;\n"
         "  text: string;\n"
@@ -324,6 +336,10 @@ def main():
         "  optional?: boolean;\n"
         "  lead?: string;\n"
         "  ctx?: string;\n"
+        "  /** Sheet wording kept when the visible text was clarified. */\n"
+        "  sheet?: string;\n"
+        "  /** YouTube t= seconds. Already 3 seconds before the frame. */\n"
+        "  watch?: number;\n"
         "};\n"
         "export type Block = {\n"
         "  id: string;\n"

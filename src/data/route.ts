@@ -1,4 +1,4 @@
-/** Generated from Chewy's published route sheet. Do not hand-edit. */
+/** Generated from Chewy's published route sheet and scripts/overlays/merged-fights.json. Do not hand-edit. */
 export type Step = {
   id: string;
   text: string;
@@ -10,6 +10,10 @@ export type Step = {
   optional?: boolean;
   lead?: string;
   ctx?: string;
+  /** Sheet wording kept when the visible text was clarified. */
+  sheet?: string;
+  /** YouTube t= seconds. Already 3 seconds before the frame. */
+  watch?: number;
 };
 export type Block = {
   id: string;
@@ -51,9 +55,9 @@ export const route: RouteData = {
     "runner": "chewythebigblackdog",
     "video": "https://youtu.be/d6YOJxTfIeQ",
     "sheetDate": "2026-07-04",
-    "steps": 1164,
+    "steps": 1204,
     "foes": 3,
-    "rev": "81d550477a1ad1b6",
+    "rev": "630efeef71c696a4",
     "note": "Chewy's current No Alrond (more consistent) sheet tab; video uploaded 2025-06-08; sheet revised through 7/4/2026"
   },
   "acts": [
@@ -79,10 +83,75 @@ export const route: RouteData = {
               "solo": false,
               "steps": [
                 {
+                  "id": "throne-ch-1-900-ca73a5",
+                  "text": "Win the tutorial fight: Attack until the Pursuers break, then boost and finish them. (No route turns; just win.)",
+                  "check": true,
+                  "kind": "fight",
+                  "watch": 67
+                },
+                {
+                  "id": "throne-ch-1-900-5d721c",
+                  "text": "Skip the cutscene. Close the Basic Controls popup.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 85
+                },
+                {
+                  "id": "throne-ch-1-900-88f5ed",
+                  "text": "Head for the sewer exit: go down the stairs to the ladder.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 88
+                },
+                {
+                  "id": "throne-ch-1-900-de7ac1",
+                  "text": "Climb up the ladder.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 98
+                },
+                {
+                  "id": "throne-ch-1-900-d0f2b7",
+                  "text": "Cross the walkway to the other side.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 100
+                },
+                {
+                  "id": "throne-ch-1-900-bd473a",
+                  "text": "Climb down the ladder (you land behind the guard).",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 101
+                },
+                {
+                  "id": "throne-ch-1-900-31bcfe",
+                  "text": "Ambush the Lookout guard (Throne’s path action: Ambush → Yes).",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 104
+                },
+                {
+                  "id": "throne-ch-1-900-274973",
+                  "text": "Skip the cutscene.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 107
+                },
+                {
+                  "id": "throne-ch-1-900-4aece1",
+                  "text": "Head for the sewer exit: follow the corridor and the stone bridge to the gate (fight starts).",
+                  "check": true,
+                  "kind": "fight",
+                  "watch": 110
+                },
+                {
                   "id": "throne-ch-1-1-df6557",
                   "text": "1st Person — Dagger / Axe x2 → Pursuer #1",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -90,6 +159,8 @@ export const route: RouteData = {
                   "text": "2nd Person — Dagger / Axe → Pursuer #2",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -97,6 +168,8 @@ export const route: RouteData = {
                   "text": "3rd Person — Dagger / Axe → Pursuer #2",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -104,7 +177,44 @@ export const route: RouteData = {
                   "text": "Everyone — Dagger / Axe x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
+                },
+                {
+                  "id": "throne-ch-1-900-18f4e4",
+                  "text": "Skip the cutscenes.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 143
+                },
+                {
+                  "id": "throne-ch-1-900-8af22b",
+                  "text": "Make for the thieves’ hideout: go up the stairs and follow the streets to the Game Parlor.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 149
+                },
+                {
+                  "id": "throne-ch-1-900-34e5f1",
+                  "text": "Enter the Game Parlor. Choose Yes at “Wait until Mother comes?”. Skip the cutscene.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 161
+                },
+                {
+                  "id": "throne-ch-1-900-b9ed62",
+                  "text": "Run to the edge of the roof and climb down the ladder. Walk past the guard in the alley.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 170
+                },
+                {
+                  "id": "throne-ch-1-900-ef5c10",
+                  "text": "Cross the market, go up the stairs and enter the gate. Skip the cutscene. Exit to the top of the stairs.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 177
                 }
               ]
             },
@@ -118,31 +228,41 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-acd678",
                   "text": "Steal the Brothel Girl's Clothes.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-ff15c6",
                   "text": "Steal the Shadow Soulstone from the boy at the bottom left side of the screen.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-253a85",
                   "text": "Go south to the next screen.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-daedf8",
                   "text": "Steal the Ice Soulstone, Wind Soulstone and Light Soulstone from the old man south of the armourer.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-02e1b4",
                   "text": "Go to the armourer.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -156,7 +276,37 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-3b4661",
                   "text": "Buy Unerring Earring",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "throne-ch-1-900-c03e95",
+                  "text": "Make for Diamante’s estate: climb the central staircase and cross the plaza to the gold gate. Skip the cutscene.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 199
+                },
+                {
+                  "id": "throne-ch-1-900-87e22b",
+                  "text": "Ambush the Lookout guard (Throne: Ambush → Yes).",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 234
+                },
+                {
+                  "id": "throne-ch-1-900-eaf252",
+                  "text": "Run up the grand staircase. Win the forced Guard fight (break and kill). Heal if you are under 210 HP before Pirro.",
+                  "check": true,
+                  "kind": "fight",
+                  "watch": 241
+                },
+                {
+                  "id": "throne-ch-1-900-2fb868",
+                  "text": "Follow the gallery to the balcony. Skip the cutscene.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 255
                 }
               ]
             },
@@ -170,7 +320,9 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-b4fc5d",
                   "text": "Heal to full before Pirro if you are under 210 HP.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -184,72 +336,102 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-84df79",
                   "text": "Turn 1 — Darkest Night",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "note": "Flee is not available in boss fights."
                 },
                 {
                   "id": "throne-ch-1-1-3fcd03",
                   "text": "Turn 2 — Darkest Night",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-14d1fd",
                   "text": "Turn 3 — Darkest Night x4",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-8eebe3",
                   "text": "Turn 4 — Sword",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-92eaeb",
                   "text": "Turn 5 — Sword",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-47005d",
                   "text": "Turn 6 — Shadow Soulstone",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-460fb6",
                   "text": "Turn 7 — Light Soulstone",
                   "check": true,
                   "kind": "do",
-                  "note": "Before Pirro on T8: Healing Grape"
+                  "note": "Before Pirro on T8: Healing Grape",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-acb87f",
                   "text": "Turn 8 — Sword x4",
                   "check": true,
                   "kind": "do",
-                  "note": "Before Pirro on T8: Light Soulstone"
+                  "note": "Before Pirro on T8: Light Soulstone",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-90e8dd",
                   "text": "Turn 9 — Latent Power + Wind Soulstone",
                   "check": true,
                   "kind": "do",
-                  "note": "Before Pirro on T8: Latent Power + Sword x4"
+                  "note": "Before Pirro on T8: Latent Power + Sword x4",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-7e2f52",
                   "text": "Then — Ice Soulstone",
                   "check": true,
                   "kind": "do",
-                  "note": "Before Pirro on T8: Wind Soulstone"
+                  "note": "Before Pirro on T8: Wind Soulstone",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-0ccf3c",
                   "text": "Turn 10 — Sword",
                   "check": true,
                   "kind": "do",
-                  "note": "Before Pirro on T8: Ice Soulstone · Sword"
+                  "note": "Before Pirro on T8: Ice Soulstone · Sword",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "throne-ch-1-900-e015d0",
+                  "text": "Skip the cutscene. Leave the estate. At the signpost crossroads, accept the Traveler’s Bag quest (girl with the backpack).",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 321
                 }
               ]
             },
@@ -263,31 +445,43 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-00d1fd",
                   "text": "Tag New Delsta Harbour: Anchorage.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "note": "Break it (hit its weakness), then Flee (Chewy: a broken enemy always lets you flee)"
                 },
                 {
                   "id": "throne-ch-1-1-5536ab",
                   "text": "Tag Abandoned Village.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-219361",
                   "text": "Recruit Osvald.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-76aaab",
                   "text": "Go to Cape Cold.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "note": "Flee (repeat until it works)"
                 },
                 {
                   "id": "throne-ch-1-1-57ffa0",
                   "text": "Mug the man on the left.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -299,21 +493,29 @@ export const route: RouteData = {
               "steps": [
                 {
                   "id": "throne-ch-1-1-db0eeb",
-                  "text": "Turn 1 — Icewind",
+                  "text": "Osvald: Icewind",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "Turn 1 — Icewind"
                 },
                 {
                   "id": "throne-ch-1-1-79e189",
-                  "text": "Turn 2 — Fireball x3",
+                  "text": "Osvald: Fireball x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "Turn 2 — Fireball x3"
                 },
                 {
                   "id": "throne-ch-1-1-e70eb9",
                   "text": "Turn 3 — Staff (if needed)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -327,25 +529,33 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-0890e2",
                   "text": "Get the 2,000 leaves in the house behind the inn.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-8426d9",
                   "text": "Warp to Abandoned Village.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-793e04",
                   "text": "Get the Herb of Serenity up the ladder near the Black Market.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-0ca638",
                   "text": "Reset the night market by toggling between day and night until you get clerics.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -359,49 +569,65 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-bb847a",
                   "text": "Sell Old Locket",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-bc3419",
                   "text": "Sell Heavy Coin Pouch",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-96220c",
                   "text": "Sell Gold Pocket Watch",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-08a933",
                   "text": "Sell Herb of Serenity",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-427455",
                   "text": "Buy 2 Ice Soulstone",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-69fd2a",
                   "text": "Buy 1 Thunder Soulstone",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-36b5cb",
                   "text": "Buy 1 Ice Soulstone (M)",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-bca5ca",
                   "text": "Buy 7 Light Soulstone (M)",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -415,44 +641,57 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-6f1b3c",
                   "text": "Warp to New Delsta Harbour: Anchorage.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-0f1a6d",
                   "text": "Take the ship to Toto'haha Beasting Bay: Anchorage.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-55eed8",
                   "text": "Go to Western Tropu'hopu Traverse.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-e35f5f",
                   "text": "Kill an encounter with a Light Soulstone (M).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-aa8862",
                   "text": "Optionally save (guarantees good second encounter if you die).",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
                   "optional": true
                 },
                 {
                   "id": "throne-ch-1-1-a7ba3d",
                   "text": "Get the Hunter Licence.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-9ed6aa",
                   "text": "Kill another encounter with a Light Soulstone (M). If Osvald does not have at least 130 JP, get the Light Soulstone (M) up the stairs to the right and kill another encounter with a Light Soulstone (M).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -468,6 +707,8 @@ export const route: RouteData = {
                   "text": "Throne — HP Thief",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Learn Skills"
                 },
                 {
@@ -475,6 +716,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Learn Skills"
                 },
                 {
@@ -482,6 +725,8 @@ export const route: RouteData = {
                   "text": "Osvald — First 2 Scholar skills",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Learn Skills"
                 },
                 {
@@ -489,6 +734,8 @@ export const route: RouteData = {
                   "text": "Osvald — Evasive Manoeuvres → Slot 1",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -503,32 +750,48 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-bafc51",
                   "text": "Go to Tropu'hopu.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-f06d87",
                   "text": "Warp to Beasting Bay: Anchorage.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "throne-ch-1-900-8730aa",
+                  "text": "Run along the beach and take the rowboat to the Cavern of Waves island.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 638
                 },
                 {
                   "id": "throne-ch-1-1-22b194",
                   "text": "Go to the Cavern of Waves.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-a0b2d7",
                   "text": "Optionally save and quit to title to reset step count. Walk and get the JP Augmentor from the red chest.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
                   "optional": true
                 },
                 {
                   "id": "throne-ch-1-2-6f1b3c",
                   "text": "Warp to New Delsta Harbour: Anchorage.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -544,6 +807,8 @@ export const route: RouteData = {
                   "text": "Give JP Augmentor to Throne (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 }
               ]
@@ -558,55 +823,73 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-2c77c2",
                   "text": "Take the ship to Western Continent Crackridge Harbour: Anchorage.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-a8a066",
                   "text": "Go to Cropdale.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-a792df",
                   "text": "Recruit Agnea.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-c1c127",
                   "text": "Get the Slumber Sage outside.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-752857",
                   "text": "Go to Oresrush.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-3e44a2",
                   "text": "Start Throne Ch. 2: Mother's Route.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-9a9d02",
                   "text": "Recruit Partitio.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-8b95b8",
                   "text": "Go to Ryu.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-533e07",
                   "text": "Go to the provisioner.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -620,7 +903,9 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-78b0f7",
                   "text": "Buy Blusterbloom x11",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -634,7 +919,9 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-e2ea13",
                   "text": "Recruit Hikari.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -646,15 +933,21 @@ export const route: RouteData = {
               "steps": [
                 {
                   "id": "throne-ch-1-1-2fdf48",
-                  "text": "Anyone — Ice Soulstone",
+                  "text": "Throne: Ice Soulstone",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "Anyone — Ice Soulstone"
                 },
                 {
                   "id": "throne-ch-1-1-28e4f5",
-                  "text": "Anyone — Attack",
+                  "text": "Osvald: Attack (weapon unclear)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "Anyone — Attack"
                 }
               ]
             },
@@ -668,85 +961,120 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-830589",
                   "text": "Do not add Hikari to the party.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-b2f9ba",
                   "text": "Go to Northern Conning Creek Coast.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-e70239",
                   "text": "Kill the encounter at night with a Light Soulstone (M).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-48b7f2",
                   "text": "Go to Western Conning Creek Coast.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-2-e70239",
                   "text": "Kill the encounter at night with a Light Soulstone (M).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-2fbe54",
                   "text": "Go to Conning Creek.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-feb720",
                   "text": "Start Osvald Ch. 3.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-c813e8",
                   "text": "Go north to the next screen.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-ccae97",
                   "text": "Steal the Wind Soulstone (L) from the woman outside the house.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-2fa6ec",
                   "text": "Get the Rainbow Glass Bottle on the shore.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-2-f06d87",
                   "text": "Warp to Beasting Bay: Anchorage.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-a0459f",
                   "text": "Take the ship to Western Continent Canalbrine.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-2fc023",
                   "text": "Recruit Castti, but do not add her to the party.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "throne-ch-1-900-cdb568",
+                  "text": "Recruit Castti: choose No at “Hear the beginning of Castti’s tale?”.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 1077
                 },
                 {
                   "id": "throne-ch-1-2-02e1b4",
                   "text": "Go to the armourer.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -760,7 +1088,9 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-84a466",
                   "text": "Buy Critical Earring",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -774,25 +1104,40 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-f4fcfe",
                   "text": "Warp to New Delsta.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-80d227",
                   "text": "Do not start Agnea Ch. 2.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-c5d88e",
                   "text": "Entreat the Fire Soulstone (M) from the man on the right near the entrance.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "throne-ch-1-900-263edd",
+                  "text": "Go to the covered wagon on the Eastern New Delsta Highroad (night). Take the bag back (Yes), then fight the brigand.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 1127
                 },
                 {
                   "id": "throne-ch-1-1-f37a8d",
                   "text": "Go to the brigand.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -806,7 +1151,9 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-0c70df",
                   "text": "Throne — HP Thief x2",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -820,13 +1167,24 @@ export const route: RouteData = {
                   "id": "throne-ch-1-1-1b1fc8",
                   "text": "Craft Elemental Bomb Bottle and Critical Scope.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-1-1-dc062b",
                   "text": "Sail to Clockbank.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "throne-ch-1-900-f44214",
+                  "text": "Look around town, make for the Roque Company factory, find the boiler materials, deliver the Clockite to Floyd, escort the clockmaker to Floyd.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 1233
                 }
               ]
             }
@@ -854,31 +1212,41 @@ export const route: RouteData = {
                   "id": "partitio-ch-2-1-213477",
                   "text": "After delivering the Clockite, get the Thief Licence.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-3acf7f",
                   "text": "Entreat the Dazzling Artwork and Gold Pocket Watch from the boy.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-9fbb5f",
                   "text": "Warp to Oresrush.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-4d3498",
                   "text": "After the cutscene at the saddlery, hire the Peddler near the east exit.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-02e1b4",
                   "text": "Go to the armourer.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -892,13 +1260,17 @@ export const route: RouteData = {
                   "id": "partitio-ch-2-1-ac4258",
                   "text": "Sell Dazzling Artwork",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-96220c",
                   "text": "Sell Gold Pocket Watch",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -912,13 +1284,17 @@ export const route: RouteData = {
                   "id": "partitio-ch-2-1-0cd0de",
                   "text": "Purchase the Sturdy Pickaxe and Forget-Me-Do from the man in the armourer.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-f86179",
                   "text": "After stealing the coin, speak to the tavern keeper.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -932,7 +1308,9 @@ export const route: RouteData = {
                   "id": "partitio-ch-2-1-112406",
                   "text": "Set Slot 1 to Hikari. Set Slot 3 to Agnea",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -946,7 +1324,9 @@ export const route: RouteData = {
                   "id": "partitio-ch-2-1-481bc4",
                   "text": "Warp to Crackridge Harbour: Anchorage.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -962,13 +1342,18 @@ export const route: RouteData = {
                   "text": "Throne — Equip A Step Ahead (Slot 1)",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Support Skills"
+                  "warn": false,
+                  "optional": false,
+                  "ctx": "Support Skills",
+                  "note": "Anyone: Flee (free first turn from A Step Ahead; if it fails, Flee again next turn)"
                 },
                 {
                   "id": "partitio-ch-2-1-cdb868",
                   "text": "Osvald — Equip A Step Ahead (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -976,6 +1361,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip A Step Ahead (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -983,6 +1370,8 @@ export const route: RouteData = {
                   "text": "Partitio — Equip A Step Ahead (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -997,73 +1386,104 @@ export const route: RouteData = {
                   "id": "partitio-ch-2-1-d84c2b",
                   "text": "Go to Southern Crackridge Wilds.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-2283e2",
                   "text": "Break the Armour Eater with Sword/Axe/Staff and kill the encounter with a Light Soulstone (M).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-6c0536",
                   "text": "Go to Western Crackridge Wilds.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-2-2283e2",
                   "text": "Break the Armour Eater with Sword/Axe/Staff and kill the encounter with a Light Soulstone (M).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-378e7b",
                   "text": "Get the Merchant Licence.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-2f75dd",
                   "text": "Get the Thunder Soulstone (M) beside the nearby merchant.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-1d25ed",
                   "text": "Challenge the Merchant and flee.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-04c7d7",
                   "text": "Run until the stairs outside Crackridge, then walk into Crackridge.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-c2bf5f",
                   "text": "Warp to Clockbank.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-4761fe",
                   "text": "Purchase the Wind Soulstone (M) and Fire Soulstone (M) from the old lady.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-a54b5d",
                   "text": "Hire the Clockmaker in the tavern.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-220c20",
                   "text": "Switch to day before going back to the factory.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "partitio-ch-2-900-588054",
+                  "text": "Enter the factory, climb the metal stairs and make for the back of the factory.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 1577
                 }
               ]
             },
@@ -1075,9 +1495,12 @@ export const route: RouteData = {
               "steps": [
                 {
                   "id": "partitio-ch-2-1-333eee",
-                  "text": "Anyone — Thunder Soulstone (M)",
+                  "text": "Throne: Thunder Soulstone (M)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "Anyone — Thunder Soulstone (M)"
                 }
               ]
             },
@@ -1091,13 +1514,17 @@ export const route: RouteData = {
                   "id": "partitio-ch-2-1-5d467d",
                   "text": "Get the 7 000 leaves from the red chest outside.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-20657b",
                   "text": "Kill the encounter with a Fire Soulstone (M).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1113,6 +1540,8 @@ export const route: RouteData = {
                   "text": "Osvald — Merchant: First 3 Merchant skills [^1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -1120,6 +1549,8 @@ export const route: RouteData = {
                   "text": "Osvald — Inventor [^1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -1127,6 +1558,8 @@ export const route: RouteData = {
                   "text": "Partitio — Merchant: First 2 Merchant skills, Hired Help",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -1134,6 +1567,8 @@ export const route: RouteData = {
                   "text": "Throne — Merchant: First 2 Merchant skills [^1], Hired Help",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -1141,6 +1576,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Grows on Trees (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -1148,6 +1585,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Boost-Start (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -1155,6 +1594,8 @@ export const route: RouteData = {
                   "text": "Osvald — Equip Grows on Trees (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -1162,6 +1603,8 @@ export const route: RouteData = {
                   "text": "Osvald — Equip Boost-Start (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -1169,6 +1612,8 @@ export const route: RouteData = {
                   "text": "Partitio — Equip Boost-Start (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -1183,7 +1628,9 @@ export const route: RouteData = {
                   "id": "partitio-ch-2-1-d6adbe",
                   "text": "Fight Garnet in the day.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1198,6 +1645,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -1205,6 +1654,8 @@ export const route: RouteData = {
                   "text": "Osvald — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -1212,6 +1663,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -1219,6 +1672,8 @@ export const route: RouteData = {
                   "text": "Partitio — Spear",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -1226,6 +1681,8 @@ export const route: RouteData = {
                   "text": "Osvald — Axe x4 [<]",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -1233,6 +1690,8 @@ export const route: RouteData = {
                   "text": "Hikari — Spear x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -1240,6 +1699,8 @@ export const route: RouteData = {
                   "text": "1st Merchant — Collect x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -1247,6 +1708,8 @@ export const route: RouteData = {
                   "text": "2nd Merchant — HHG x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -1263,6 +1726,8 @@ export const route: RouteData = {
                   "text": "Osvald — Thief [^2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -1270,6 +1735,8 @@ export const route: RouteData = {
                   "text": "Hikari — Merchant: 2 Merchant skills [v1], Hired Help",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -1277,6 +1744,8 @@ export const route: RouteData = {
                   "text": "Partitio — Inventor [^1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -1284,6 +1753,8 @@ export const route: RouteData = {
                   "text": "Throne — Merchant [^1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -1291,6 +1762,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Grows on Trees (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -1298,6 +1771,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Boost-Start (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -1312,31 +1787,41 @@ export const route: RouteData = {
                   "id": "partitio-ch-2-1-2cd59b",
                   "text": "Tag Flamechurch.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-3e9c1b",
                   "text": "Go to Borderfall.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-c3e350",
                   "text": "Get the Cleric Licence.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-2dd00e",
                   "text": "Get the Thunder Soulstone (M) before the next screen.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-2-1-350fb1",
                   "text": "Go to Montwise.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -1364,19 +1849,25 @@ export const route: RouteData = {
                   "id": "hikari-ch-2-1-9921ce",
                   "text": "Rest at the inn if Throne does not have Latent Power.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-2-1-c94091",
                   "text": "Purchase the Wind Soulstone (M) from the man on the bench.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-2-1-8336ac",
                   "text": "Go to Montwise: Underground Arena.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1390,13 +1881,18 @@ export const route: RouteData = {
                   "id": "hikari-ch-2-1-b939d4",
                   "text": "Turn 1 — Spear x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-2-1-506c3a",
-                  "text": "Turn 2 — Light Soulstone (M)",
+                  "text": "Hikari: Light Soulstone (M)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "Turn 2 — Light Soulstone (M)"
                 }
               ]
             },
@@ -1410,7 +1906,9 @@ export const route: RouteData = {
                   "id": "hikari-ch-2-2-8336ac",
                   "text": "Go to Montwise: Underground Arena.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1422,9 +1920,12 @@ export const route: RouteData = {
               "steps": [
                 {
                   "id": "hikari-ch-2-1-b35c33",
-                  "text": "Turn 1 — Ice Soulstone (M)",
+                  "text": "Hikari: Ice Soulstone (M)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "Turn 1 — Ice Soulstone (M)"
                 }
               ]
             },
@@ -1438,25 +1939,33 @@ export const route: RouteData = {
                   "id": "hikari-ch-2-1-461d0f",
                   "text": "Turn 1 — Sword x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-2-1-e6bf56",
                   "text": "Turn 2 — Thunder Soulstone (M)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-2-1-427c1f",
                   "text": "Turn 3 — Fire Soulstone (M)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-2-1-d1d344",
                   "text": "Learn Slowing Sweep after the fight.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Notes"
                 }
               ]
@@ -1471,7 +1980,9 @@ export const route: RouteData = {
                   "id": "hikari-ch-2-3-8336ac",
                   "text": "Go to Montwise: Underground Arena.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1483,21 +1994,29 @@ export const route: RouteData = {
               "steps": [
                 {
                   "id": "hikari-ch-2-1-0d325a",
-                  "text": "Turn 1 — Slowing Sweep/Spear (if first on turn 2)",
+                  "text": "Hikari: Slowing Sweep/Spear (if first on turn 2)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "Turn 1 — Slowing Sweep/Spear (if first on turn 2)"
                 },
                 {
                   "id": "hikari-ch-2-1-a58594",
                   "text": "Turn 2 — Spear x4",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-2-1-0a69a4",
-                  "text": "Turn 3 — Wind Soulstone (L)",
+                  "text": "Hikari: Wind Soulstone (L)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "Turn 3 — Wind Soulstone (L)"
                 }
               ]
             },
@@ -1512,6 +2031,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -1519,6 +2040,8 @@ export const route: RouteData = {
                   "text": "Osvald — Dagger x3 [<]",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -1526,6 +2049,8 @@ export const route: RouteData = {
                   "text": "Hikari — Spear x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -1533,6 +2058,8 @@ export const route: RouteData = {
                   "text": "Partitio — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -1540,6 +2067,8 @@ export const route: RouteData = {
                   "text": "Partitio — HHG x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -1554,13 +2083,17 @@ export const route: RouteData = {
                   "id": "hikari-ch-2-4-8336ac",
                   "text": "Go to Montwise: Underground Arena.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-2-1-625d41",
                   "text": "Ambush the Fainthearted Youth.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1576,27 +2109,36 @@ export const route: RouteData = {
                   "text": "Throne after Yurinas on T2",
                   "check": true,
                   "kind": "do",
-                  "note": "Throne before Yurinas on T2"
+                  "note": "Throne before Yurinas on T2",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-2-1-b5b153",
                   "text": "Turn 1 — Defend",
                   "check": true,
                   "kind": "do",
-                  "note": "Branch: T1 — Armour Corrosive"
+                  "note": "Branch: T1 — Armour Corrosive",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-2-1-09d6da",
-                  "text": "Turn 2 — Latent Power + Armour Corrosive",
+                  "text": "Throne: Latent Power + Armour Corrosive",
                   "check": true,
                   "kind": "do",
-                  "note": "Branch: T2 — HHV x4"
+                  "note": "Branch: T2 — HHV x4",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "Turn 2 — Latent Power + Armour Corrosive"
                 },
                 {
                   "id": "hikari-ch-2-1-640754",
                   "text": "Throne after Yurinas on T2 — HHV x4",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1610,7 +2152,9 @@ export const route: RouteData = {
                   "id": "hikari-ch-2-1-b8a3c0",
                   "text": "Warp to Flamechurch.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1626,6 +2170,8 @@ export const route: RouteData = {
                   "text": "Give Reinforcing Jam (if no latent) to Throne",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -1633,6 +2179,8 @@ export const route: RouteData = {
                   "text": "Then — Champion's Belt (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 }
               ]
@@ -1647,7 +2195,9 @@ export const route: RouteData = {
                   "id": "hikari-ch-2-1-9a6e6c",
                   "text": "Recruit Temenos at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1661,7 +2211,9 @@ export const route: RouteData = {
                   "id": "hikari-ch-2-1-05fde0",
                   "text": "Throne — Dagger x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -1683,7 +2235,9 @@ export const route: RouteData = {
                   "id": "recruit-temenos-1-292b73",
                   "text": "Set Slot 3 to Temenos. Set Slot 3 to Hikari",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1697,31 +2251,41 @@ export const route: RouteData = {
                   "id": "recruit-temenos-1-d2d7c6",
                   "text": "Purchase the Herb of Serenity from the woman to the north.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "recruit-temenos-1-6fad35",
                   "text": "Warp to Conning Creek.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "recruit-temenos-1-dbbae3",
                   "text": "Go to Conning Creek: Outskirts.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "recruit-temenos-1-5f60ef",
                   "text": "After the cutscene, get the Fire Soulstone (M) from the nearby chest.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "recruit-temenos-1-925b73",
                   "text": "Fight Lady Clarissa at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1735,7 +2299,9 @@ export const route: RouteData = {
                   "id": "recruit-temenos-1-d51a23",
                   "text": "Merchant — HHG x4",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1749,7 +2315,16 @@ export const route: RouteData = {
                   "id": "recruit-temenos-1-9fbb5f",
                   "text": "Warp to Oresrush.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "recruit-temenos-900-f6686a",
+                  "text": "Speak to the townsfolk; make for the foundry; deal with the pursuer in the alley; steal the mask off the boy’s face; go back to the foundry and sit at Death’s Table.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 2217
                 }
               ]
             }
@@ -1771,7 +2346,9 @@ export const route: RouteData = {
                   "id": "throne-ch-2-mother-s-route-1-9c7ff7",
                   "text": "After finishing the chapter, warp to Conning Creek.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -1794,6 +2371,8 @@ export const route: RouteData = {
                   "text": "Fight the encounter during the day.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Guard Outpost"
                 }
               ]
@@ -1809,20 +2388,27 @@ export const route: RouteData = {
                   "text": "Partitio — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
                   "id": "osvald-ch-3-1-876b4e",
-                  "text": "Anyone — Wind Soulstone (M)",
+                  "text": "Osvald: Wind Soulstone (M)",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 1"
+                  "warn": false,
+                  "optional": false,
+                  "ctx": "Turn 1",
+                  "sheet": "Anyone — Wind Soulstone (M)"
                 },
                 {
                   "id": "osvald-ch-3-1-d85c79",
                   "text": "Partitio — HHM x2",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2+"
                 },
                 {
@@ -1830,6 +2416,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Steal → Any",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2+"
                 },
                 {
@@ -1837,6 +2425,8 @@ export const route: RouteData = {
                   "text": "Throne — Steal → Different",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2+"
                 },
                 {
@@ -1844,14 +2434,19 @@ export const route: RouteData = {
                   "text": "Osvald — Steal → Different",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2+"
                 },
                 {
                   "id": "osvald-ch-3-1-b7b530",
-                  "text": "Anyone — Run",
+                  "text": "Anyone — Flee",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2+"
+                  "warn": false,
+                  "optional": false,
+                  "ctx": "Turn 2+",
+                  "sheet": "Anyone — Run"
                 }
               ]
             },
@@ -1865,7 +2460,9 @@ export const route: RouteData = {
                   "id": "osvald-ch-3-1-79f386",
                   "text": "Fight Stenvar at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1880,6 +2477,8 @@ export const route: RouteData = {
                   "text": "Merchants — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -1887,6 +2486,8 @@ export const route: RouteData = {
                   "text": "1st Merchant — Collect x4 → Stenvar",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -1894,6 +2495,8 @@ export const route: RouteData = {
                   "text": "2nd Merchant — HHB x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -1908,7 +2511,9 @@ export const route: RouteData = {
                   "id": "osvald-ch-3-1-27ebaa",
                   "text": "Warp to Montwise.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -1930,13 +2535,24 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-135b77",
                   "text": "Purchase the Herb of Serenity from the NPC up the stairs in the library. If you got zero medicinal concoct ingredients as drops, purchase the Grape Leaf from him too.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-a62bba",
                   "text": "Infinite tries when scrutinising in the library.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "osvald-ch-4-900-826ea8",
+                  "text": "Scrutinize the Scholar in the library, find the hidden room, climb down the ladder and make for Harvey’s laboratory.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 2419
                 }
               ]
             },
@@ -1950,19 +2566,25 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-bd5059",
                   "text": "If you missed the collect on Stenvar, walk and grab the 14 000 leaves in the chest to the right.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-5417c8",
                   "text": "Hear the travel banter at the third door in the long corridor (at first door if you grabbed the chest).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-2b3571",
                   "text": "Switch to night before entering the room after the save point.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -1976,13 +2598,17 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-9448f9",
                   "text": "Partitio — HHG x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-f8b87e",
                   "text": "If Partitio has Latent Power, you can kill with Throne.",
                   "check": false,
                   "kind": "note",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Notes"
                 }
               ]
@@ -1999,6 +2625,8 @@ export const route: RouteData = {
                   "text": "Temenos — Equip A Step Ahead (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -2013,7 +2641,9 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-480890",
                   "text": "Fight Grieving Golem at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2028,6 +2658,8 @@ export const route: RouteData = {
                   "text": "Throne — Spear",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -2035,6 +2667,8 @@ export const route: RouteData = {
                   "text": "Osvald — Staff x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -2042,6 +2676,8 @@ export const route: RouteData = {
                   "text": "Temenos — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -2049,6 +2685,8 @@ export const route: RouteData = {
                   "text": "Partitio — Critical Scope",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -2056,6 +2694,8 @@ export const route: RouteData = {
                   "text": "Merchant 1 — HHB x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -2063,6 +2703,8 @@ export const route: RouteData = {
                   "text": "Merchant 2 — HHG x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -2070,6 +2712,8 @@ export const route: RouteData = {
                   "text": "Osvald — Wind Soulstone (M)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -2077,6 +2721,8 @@ export const route: RouteData = {
                   "text": "Temenos — Staff x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -2093,6 +2739,8 @@ export const route: RouteData = {
                   "text": "Partitio — Cleric: 4 Cleric skills [v1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -2100,6 +2748,8 @@ export const route: RouteData = {
                   "text": "Partitio — Equip Evil Ward (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -2114,55 +2764,73 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-d186ec",
                   "text": "Go to Western Merry Hills Pass.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-bf6b54",
                   "text": "Get the Herb of Serenity outside Merry Hills.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-21b813",
                   "text": "Enter Merry Hills.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-f06d87",
                   "text": "Warp to Beasting Bay: Anchorage.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-aa683e",
                   "text": "Go to Beasting Village.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-aefd8e",
                   "text": "Recruit Ochette.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-f630c6",
                   "text": "Pick Mahina.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-02f165",
                   "text": "Recruit Ochette",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-a4bc32",
                   "text": "Set Slot 4 to Ochette. Set Slot 3 to Temenos",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2176,13 +2844,17 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-6fad35",
                   "text": "Warp to Conning Creek.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-479669",
                   "text": "Do not start Ochette ch. 2: Cateracta's Route.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2198,6 +2870,8 @@ export const route: RouteData = {
                   "text": "Ochette — Equip A Step Ahead (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -2212,13 +2886,17 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-619773",
                   "text": "Go to Eastern Wellgrove Trail.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-a91bcd",
                   "text": "Fight the encounter during the day.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2234,21 +2912,28 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "fight",
                   "note": "min roll w/o crits is 602 damage, max roll with crits is 784 damage",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
                   "id": "osvald-ch-4-1-ab0547",
-                  "text": "Anyone — Fire Soulstone / Fireball x2 (if already broken)",
+                  "text": "Partitio: Fire Soulstone / Fireball x2 (if already broken)",
                   "check": true,
                   "kind": "fight",
                   "note": "either way it drops below 25% HP when combined with a soulstone or fireball (and never dies)",
-                  "ctx": "Turn 1"
+                  "warn": false,
+                  "optional": false,
+                  "ctx": "Turn 1",
+                  "sheet": "Anyone — Fire Soulstone / Fireball x2 (if already broken)"
                 },
                 {
                   "id": "osvald-ch-4-1-cbebe9",
                   "text": "Ochette — Defend / Capture → Woodland Birdian IV",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -2256,6 +2941,8 @@ export const route: RouteData = {
                   "text": "Ochette — Capture (if not done already)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -2263,6 +2950,8 @@ export const route: RouteData = {
                   "text": "Anyone — Flee",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -2270,6 +2959,8 @@ export const route: RouteData = {
                   "text": "Need soulstone OR fireball, don't use both. If it's already in red HP, don't need fireball at all.",
                   "check": false,
                   "kind": "note",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Notes"
                 }
               ]
@@ -2284,37 +2975,49 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-355c37",
                   "text": "Start Partitio Ch. 3.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-ce2bc2",
                   "text": "Warp to Cape Cold.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-9b47b9",
                   "text": "Go to Western Winterbloom Snows.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-78ced9",
                   "text": "Use a Fire Soulstone (M) on the first encounter, then capture the Snow Yak.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-cc232c",
                   "text": "Get the Scholar Licence.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-353efb",
                   "text": "Go to Winterbloom.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2330,6 +3033,8 @@ export const route: RouteData = {
                   "text": "Partitio — Scholar: 2 Scholar skills",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -2337,6 +3042,8 @@ export const route: RouteData = {
                   "text": "Partitio — Thief Armour Corrosive",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -2344,6 +3051,8 @@ export const route: RouteData = {
                   "text": "Partitio — Equip Evasive Manoeuvres (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -2351,6 +3060,8 @@ export const route: RouteData = {
                   "text": "Osvald — Unequip A Step Ahead (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -2358,19 +3069,25 @@ export const route: RouteData = {
                   "text": "Throne Ch. 2: Father's Route",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
                   "id": "osvald-ch-4-1-49bb35",
                   "text": "If Osvald is below 765 HP, heal him with Partitio (or a grape).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-80edba",
                   "text": "Go to the tavern.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2384,13 +3101,17 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-bbf16c",
                   "text": "Set Slot 1 to Agnea. Set Slot 2 to Osvald",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-bc5cc0",
                   "text": "Set Slot 2 to Castti. Set Slot 3 to Ochette",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2404,13 +3125,24 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-131c4d",
                   "text": "Talk to the Troubled Woman to complete \"The Sword in the Stone\".",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "osvald-ch-4-900-195535",
+                  "text": "Make for the Snowhares’ Den. Ambush the Lackey guard (Throne: Ambush → Yes). Find the Snowhares’ boss.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 3015
                 },
                 {
                   "id": "osvald-ch-4-1-8b8ac4",
                   "text": "Fight Bergomi during the day.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2425,6 +3157,8 @@ export const route: RouteData = {
                   "text": "1st Merchant — Armour Corrosive → Bergomi",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -2432,6 +3166,8 @@ export const route: RouteData = {
                   "text": "2nd Merchant — HHB x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 }
               ]
@@ -2446,103 +3182,137 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-fa04b8",
                   "text": "Warp to Wellgrove.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-db2f8a",
                   "text": "Go to Northern Wellgrove Trail.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-be1f4d",
                   "text": "Go to the Altar of the Lady of Grace.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-dd36be",
                   "text": "Learn Windy Refrain.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-d1b14e",
                   "text": "Go to Timberain.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-63e9e6",
                   "text": "Steal the Wind Soulstone (L) and Light Soulstone (L) from the lady near the entrance.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-64c465",
                   "text": "Go to the next screen.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-d96f1e",
                   "text": "Purchase the Ancient Circlet from the quest NPC.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-3cd4f6",
                   "text": "Soothe the Elderly Soldier.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-5a465b",
                   "text": "Get the Rusty Polearm at the end.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-901ee6",
                   "text": "Warp to Crackridge.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-b1c3e6",
                   "text": "Go to Western Gravell Wilds.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-cbcc31",
                   "text": "Grab the Thunder Soulstone (L) from the brown chest before the stairs to the first bridge.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-eea48e",
                   "text": "Go to Gravell.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-ad140b",
                   "text": "Soothe the Debt Collector.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-d7c001",
                   "text": "Talk to the Retired Blacksmith to get Proof of the Armsmaster, Conqueror's Sword and Warlord's Spear.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-533e07",
                   "text": "Go to the provisioner.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2556,7 +3326,9 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-15eda2",
                   "text": "Sell Warlord's Spear",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2570,44 +3342,58 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-ddcaac",
                   "text": "Warp to Tropu'hopu.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-e4e920",
                   "text": "Entreat the Marksman's Bow and Light Nut (L) from the beastling.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-9723ae",
                   "text": "Purchase the boat.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-f25573",
                   "text": "Tag Roque Island.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-194d30",
                   "text": "Soothe the man guarding the house.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-1-a120d8",
                   "text": "Get the Empowering Lychee (L), 39,800 leaves, 3 Rejuvenating Jams and Magic Nut (L) inside.",
                   "check": true,
                   "kind": "do",
-                  "note": "skip lychee (rightmost chest) if Agnea has more than half latent"
+                  "note": "skip lychee (rightmost chest) if Agnea has more than half latent",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "osvald-ch-4-2-fa04b8",
                   "text": "Warp to Wellgrove.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -2635,13 +3421,17 @@ export const route: RouteData = {
                   "id": "partitio-ch-3-1-b4d6a9",
                   "text": "After telling Alrond about the ship, speak to the tavern keeper.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-3-1-9830d2",
                   "text": "Set Slot 3 to Hikari. Set Slot 2 to Agnea",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -2649,6 +3439,8 @@ export const route: RouteData = {
                   "text": "After the cutscene at the department store, warp to Crackridge Harbour: Anchorage.",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -2656,6 +3448,8 @@ export const route: RouteData = {
                   "text": "Go to Shipwreck of the Empress.",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -2663,6 +3457,8 @@ export const route: RouteData = {
                   "text": "Get the Rusty Dagger at the end.",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -2670,6 +3466,8 @@ export const route: RouteData = {
                   "text": "Warp to New Delsta Harbour: Anchorage.",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -2677,6 +3475,8 @@ export const route: RouteData = {
                   "text": "Get the EXP Augmentor.",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -2684,7 +3484,16 @@ export const route: RouteData = {
                   "text": "Warp to Wellgrove.",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
+                },
+                {
+                  "id": "partitio-ch-3-900-53627e",
+                  "text": "Hire the merchants (Partitio: Hire), purchase the required goods (coffee beans, pocket watches, silverwork…), then make for Alrond’s estate and Alrond’s room.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 3902
                 }
               ]
             },
@@ -2700,6 +3509,8 @@ export const route: RouteData = {
                   "text": "Weapons — Conqueror's Sword → Hikari",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -2707,6 +3518,8 @@ export const route: RouteData = {
                   "text": "Accessories — EXP Augmentor → Slot 1",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -2714,6 +3527,8 @@ export const route: RouteData = {
                   "text": "Accessories — Unequip Champion's Belt",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -2721,6 +3536,8 @@ export const route: RouteData = {
                   "text": "Accessories — Champion's Belt (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -2728,6 +3545,8 @@ export const route: RouteData = {
                   "text": "Throne — Inventor [^2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -2735,6 +3554,8 @@ export const route: RouteData = {
                   "text": "Hikari — Merchant [v2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 }
               ]
@@ -2750,7 +3571,9 @@ export const route: RouteData = {
                   "text": "Fight Thurston during the day.",
                   "check": true,
                   "kind": "do",
-                  "note": "Changed since the video (12/03/2025): no early Royal Guard's Helm; Thurston → Hikari 3 → Sand Lion."
+                  "note": "Changed since the video (12/03/2025): no early Royal Guard's Helm; Thurston → Hikari 3 → Sand Lion.",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2765,6 +3588,8 @@ export const route: RouteData = {
                   "text": "Throne — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -2772,6 +3597,8 @@ export const route: RouteData = {
                   "text": "1st Merchant — Defend (if before Throne) / Attack",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -2779,6 +3606,8 @@ export const route: RouteData = {
                   "text": "2nd Merchant — HHB x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -2786,6 +3615,8 @@ export const route: RouteData = {
                   "text": "Throne — Sword x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -2793,6 +3624,8 @@ export const route: RouteData = {
                   "text": "Merchant — HHV x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -2807,19 +3640,25 @@ export const route: RouteData = {
                   "id": "partitio-ch-3-1-47c095",
                   "text": "Warp to Gravell.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-3-1-3da05e",
                   "text": "Talk to Porta to get the Dancer's Blade.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-3-2-fa04b8",
                   "text": "Warp to Wellgrove.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -2847,7 +3686,9 @@ export const route: RouteData = {
                   "id": "hikari-ch-3-1-02e1b4",
                   "text": "Go to the armourer.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2861,19 +3702,25 @@ export const route: RouteData = {
                   "id": "hikari-ch-3-1-a76e19",
                   "text": "Sell Dancer's Blade",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-3-1-511b34",
                   "text": "Sell Axe of Avarice",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-3-1-31d2db",
                   "text": "Sell Marksman's Bow",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2887,19 +3734,25 @@ export const route: RouteData = {
                   "id": "hikari-ch-3-1-5966cd",
                   "text": "Purchase the Sharp Nut (L) from the man in the inn.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-3-1-7f3c7d",
                   "text": "Hear the travel banter before crossing the bridge.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-3-1-f7de09",
                   "text": "Fight the Ku Soldiers in the day.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -2911,9 +3764,12 @@ export const route: RouteData = {
               "steps": [
                 {
                   "id": "hikari-ch-3-1-0990c5",
-                  "text": "Anyone — Light Soulstone (L)",
+                  "text": "Hikari: Light Soulstone (L)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "Anyone — Light Soulstone (L)"
                 }
               ]
             },
@@ -2927,25 +3783,33 @@ export const route: RouteData = {
                   "id": "hikari-ch-3-1-b5b153",
                   "text": "Turn 1 — Defend",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-3-1-35af3c",
                   "text": "Turn 2 — HHB x4",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-3-1-324180",
                   "text": "Turn 3 — Hienka",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-3-1-ec53f5",
                   "text": "Learn Divine Dual-Edge.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Notes"
                 }
               ]
@@ -2960,7 +3824,16 @@ export const route: RouteData = {
                   "id": "hikari-ch-3-1-2bb37b",
                   "text": "Warp to Sai.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "hikari-ch-3-900-1d4537",
+                  "text": "Make for the hospital, then the camp, then the Sand Lion’s den. (Steal/Inquire items need a sheet check.)",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 3607
                 }
               ]
             }
@@ -2985,7 +3858,9 @@ export const route: RouteData = {
                   "text": "Fight the Sand Lion during the day.",
                   "check": true,
                   "kind": "do",
-                  "note": "Changed since the video (12/03/2025): video does Sand Lion first (~1:02:00); sheet order is Thurston, then Hikari 3, then Sand Lion."
+                  "note": "Changed since the video (12/03/2025): video does Sand Lion first (~1:02:00); sheet order is Thurston, then Hikari 3, then Sand Lion.",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -3000,6 +3875,8 @@ export const route: RouteData = {
                   "text": "Thief — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3007,6 +3884,8 @@ export const route: RouteData = {
                   "text": "Merchant — HHV x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 }
               ]
@@ -3021,13 +3900,17 @@ export const route: RouteData = {
                   "id": "castti-ch-2-sai-route-1-69b9a5",
                   "text": "Get the Warrior Licence.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "castti-ch-2-sai-route-1-dcc20e",
                   "text": "Warp to Merry Hills.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -3043,6 +3926,8 @@ export const route: RouteData = {
                   "text": "Throne — Thief 3 Thief skills",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Learn Skills"
                 },
                 {
@@ -3050,6 +3935,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Life in the Shadows (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -3057,6 +3944,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Peak Performance (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -3071,7 +3960,9 @@ export const route: RouteData = {
                   "id": "castti-ch-2-sai-route-1-93d74f",
                   "text": "Fight the Foreign Assassins at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -3095,6 +3986,8 @@ export const route: RouteData = {
                   "text": "Throne — Critical Scope → Back",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3102,6 +3995,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3109,6 +4004,8 @@ export const route: RouteData = {
                   "text": "Partitio — HHM",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3116,6 +4013,8 @@ export const route: RouteData = {
                   "text": "Hikari — HHB x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -3123,6 +4022,8 @@ export const route: RouteData = {
                   "text": "Partitio — HHV x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -3137,68 +4038,90 @@ export const route: RouteData = {
                   "id": "foreign-assassins-1-47c095",
                   "text": "Warp to Gravell.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "foreign-assassins-1-56ad29",
                   "text": "Go to Ivory Ravine.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "foreign-assassins-1-066df2",
                   "text": "Get the Giant's Club.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "foreign-assassins-1-27ebaa",
                   "text": "Warp to Montwise.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "foreign-assassins-1-08ea8b",
                   "text": "Start Throne Ch. 3: Father's Route.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "foreign-assassins-1-803a68",
                   "text": "Reset reputation if needed.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "foreign-assassins-1-dc65e2",
                   "text": "Leave town to the west.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "foreign-assassins-1-fc1038",
                   "text": "Go to Southern Stormhail Snows.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "foreign-assassins-1-0b1174",
                   "text": "Purchase The Curious Legend of the Great Wall.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "foreign-assassins-1-27e199",
                   "text": "Steal the Mighty Leaf, Energising Pomegranate (M), and Energising Pomegranate (L) from the woman near the ladder.",
                   "check": true,
                   "kind": "do",
-                  "note": "Changed since the video (09/17/2025): no shaggy aurochs; mighty leaf and rotten meat instead."
+                  "note": "Changed since the video (09/17/2025): no shaggy aurochs; mighty leaf and rotten meat instead.",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "foreign-assassins-1-b9e216",
                   "text": "Go to Stormhail.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -3220,7 +4143,9 @@ export const route: RouteData = {
                   "id": "hikari-ch-4-1-80edba",
                   "text": "Go to the tavern.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -3234,7 +4159,9 @@ export const route: RouteData = {
                   "id": "hikari-ch-4-1-b1d637",
                   "text": "Set Slot 4 to Temenos. Set Slot 4 to Partitio",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -3250,6 +4177,8 @@ export const route: RouteData = {
                   "text": "Throne — Cleric: 4 Cleric skills [v2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -3257,6 +4186,8 @@ export const route: RouteData = {
                   "text": "Temenos — Merchant: 3 Merchant skills [v1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -3264,6 +4195,8 @@ export const route: RouteData = {
                   "text": "Temenos — Inventor [^3]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -3271,6 +4204,8 @@ export const route: RouteData = {
                   "text": "Castti — Scholar: 4 Scholar skills [^2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -3278,6 +4213,8 @@ export const route: RouteData = {
                   "text": "Castti — Merchant 3 Merchant skills [^1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -3285,6 +4222,8 @@ export const route: RouteData = {
                   "text": "Castti — Hunter Abating Orb [v4]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -3292,6 +4231,8 @@ export const route: RouteData = {
                   "text": "Hikari — Armsmaster [^2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -3299,6 +4240,8 @@ export const route: RouteData = {
                   "text": "Throne — Merchant [v1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -3306,6 +4249,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Evil Ward over Grows on Trees (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -3313,6 +4258,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Evasive Manoeuvres (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -3320,6 +4267,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Extra Experience (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -3327,6 +4276,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Boost-Start (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -3334,6 +4285,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip A Step Ahead (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -3341,6 +4294,8 @@ export const route: RouteData = {
                   "text": "Temenos — Equip Grows on Trees (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -3348,6 +4303,8 @@ export const route: RouteData = {
                   "text": "Temenos — Equip Boost-Start (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -3355,6 +4312,8 @@ export const route: RouteData = {
                   "text": "Give Giant's Club to Hikari",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -3362,6 +4321,8 @@ export const route: RouteData = {
                   "text": "Temenos — Fortifying Nut (L)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -3369,6 +4330,8 @@ export const route: RouteData = {
                   "text": "If Hikari is not at full health, use a refreshing jam on him (right above the fortifying nut L in the menu)",
                   "check": false,
                   "kind": "note",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Notes"
                 }
               ]
@@ -3383,14 +4346,18 @@ export const route: RouteData = {
                   "id": "hikari-ch-4-1-2b0283",
                   "text": "Steal the Sharp Nut and Warding Leaf from the girl in the provisioner.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-4-1-3b6c9f",
                   "text": "Fight Kunzo at night.",
                   "check": true,
                   "kind": "do",
-                  "note": "Changed since the video (12/03/2025): no Critical Scope; the video sets Critical Scope here."
+                  "note": "Changed since the video (12/03/2025): no Critical Scope; the video sets Critical Scope here.",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -3404,19 +4371,25 @@ export const route: RouteData = {
                   "id": "hikari-ch-4-1-76173e",
                   "text": "First — Dagger / Axe x3 → Kunzo",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-4-1-53f239",
                   "text": "Second — Dagger / Axe x2 → Kunzo",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-4-1-34de72",
                   "text": "Hikari — Divine Dual-Edge x3 (when broken)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -3430,31 +4403,41 @@ export const route: RouteData = {
                   "id": "hikari-ch-4-1-30cf28",
                   "text": "Turn 1 — Sword",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-4-1-bb4fc4",
                   "text": "Turn 2 — Sword",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-4-1-b59915",
                   "text": "Turn 3 — Defend",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-4-1-bb6c10",
                   "text": "Turn 4 — Wild Cut x2",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-4-1-c62409",
                   "text": "Turn 5 — Wild Cut x4",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -3468,13 +4451,17 @@ export const route: RouteData = {
                   "id": "hikari-ch-4-1-c07ee3",
                   "text": "Get the Thunderstorm Amulet in the tower to the left before the save point (right before the boss).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-4-1-8001eb",
                   "text": "Fight Rai Mei at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -3489,6 +4476,8 @@ export const route: RouteData = {
                   "text": "Throne — HHB x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3496,6 +4485,8 @@ export const route: RouteData = {
                   "text": "Hikari — Energising Pomegranate (L) → Throne",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3503,6 +4494,8 @@ export const route: RouteData = {
                   "text": "Temenos — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3510,6 +4503,8 @@ export const route: RouteData = {
                   "text": "Throne — HHB x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -3517,6 +4512,8 @@ export const route: RouteData = {
                   "text": "Hikari — Divine Dual-Edge x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -3524,6 +4521,8 @@ export const route: RouteData = {
                   "text": "Temenos — Staff x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -3538,7 +4537,9 @@ export const route: RouteData = {
                   "id": "hikari-ch-4-1-f06d87",
                   "text": "Warp to Beasting Bay: Anchorage.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -3554,6 +4555,8 @@ export const route: RouteData = {
                   "text": "Hikari — 5 Warrior skills",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Learn Skills"
                 },
                 {
@@ -3561,6 +4564,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Deal More Damage over Grows on Trees (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -3575,14 +4580,18 @@ export const route: RouteData = {
                   "id": "hikari-ch-4-1-b11e00",
                   "text": "Go to the Nameless Isle.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-4-1-9974b8",
                   "text": "Fight Gigantes at night.",
                   "check": true,
                   "kind": "do",
-                  "note": "Changed since the video (08/13/2025): video shows Gigantes at ~1:12:35, before Hikari Ch.4; the sheet delays this fight until after Rai Mei."
+                  "note": "Changed since the video (08/13/2025): video shows Gigantes at ~1:12:35, before Hikari Ch.4; the sheet delays this fight until after Rai Mei.",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -3597,6 +4606,8 @@ export const route: RouteData = {
                   "text": "Throne — Bow x3 [>]",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3604,6 +4615,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3611,6 +4624,8 @@ export const route: RouteData = {
                   "text": "Castti — Bow x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3618,6 +4633,8 @@ export const route: RouteData = {
                   "text": "Temenos — Sword x3 [>]",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3625,6 +4642,8 @@ export const route: RouteData = {
                   "text": "Hikari — Conqueror's Sword x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -3640,25 +4659,40 @@ export const route: RouteData = {
                   "text": "Get the Finisher's Claws from the red chest.",
                   "check": true,
                   "kind": "do",
-                  "note": "Changed since the video (08/13/2025): Finisher's Claws were delayed until after Rai Mei."
+                  "note": "Changed since the video (08/13/2025): Finisher's Claws were delayed until after Rai Mei.",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-4-1-0c87b8",
                   "text": "Inquire Georges Lazuli.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-4-1-2bb37b",
                   "text": "Warp to Sai.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-4-1-19d801",
                   "text": "Go to Ku.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "hikari-ch-4-900-dbc1f4",
+                  "text": "Make for the Hall of Heroes in Ku Castle Town.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 4923
                 }
               ]
             }
@@ -3683,6 +4717,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "whichever slot the champion's belt isn't in",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Inventory"
                 }
@@ -3698,13 +4734,17 @@ export const route: RouteData = {
                   "id": "hikari-ch-5-1-14e367",
                   "text": "Rest at the inn if Hikari died since the assassins fight (you'll know he died if his LP bar isn't near full)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-5-1-2bb7f3",
                   "text": "Fight Ritsu at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -3719,6 +4759,8 @@ export const route: RouteData = {
                   "text": "Throne — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3726,6 +4768,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3733,6 +4777,8 @@ export const route: RouteData = {
                   "text": "Castti — Bow x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3740,6 +4786,8 @@ export const route: RouteData = {
                   "text": "Temenos — Critical Scope [<]",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3747,6 +4795,8 @@ export const route: RouteData = {
                   "text": "Throne — Spear / Bow x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -3754,6 +4804,8 @@ export const route: RouteData = {
                   "text": "Hikari — Conqueror's Sword x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -3761,6 +4813,8 @@ export const route: RouteData = {
                   "text": "Castti — Abating Orb",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -3776,6 +4830,8 @@ export const route: RouteData = {
                   "text": "Throne — Spear x3 [<]",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3783,6 +4839,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3790,6 +4848,8 @@ export const route: RouteData = {
                   "text": "Castti — Axe x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3797,6 +4857,8 @@ export const route: RouteData = {
                   "text": "Temenos — Critical Scope",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3804,6 +4866,8 @@ export const route: RouteData = {
                   "text": "Hikari — Conqueror's Sword x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -3811,6 +4875,8 @@ export const route: RouteData = {
                   "text": "Castti — Abating Orb",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -3825,20 +4891,26 @@ export const route: RouteData = {
                   "id": "hikari-ch-5-1-8ec5fe",
                   "text": "Turn 1 — Aggressive Slash x2",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-5-1-327e3b",
                   "text": "Turn 2 — Defend",
                   "check": true,
                   "kind": "do",
-                  "note": "using slowing sweep here raises the odds of getting a hienka crit to 93.75%"
+                  "note": "using slowing sweep here raises the odds of getting a hienka crit to 93.75%",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-5-1-e30026",
                   "text": "Turn 3 — Aggressive Slash",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-5-1-d99259",
@@ -3846,19 +4918,24 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "do",
                   "note": "75% chance to get at least 1 crit",
-                  "warn": true
+                  "warn": true,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-5-1-a9175c",
                   "text": "T4-a — Thunder Soulstone (L) / Defend (if you got a Hienka crit)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-5-1-7c1a39",
                   "text": "Turn 5 — Sword x4",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -3873,6 +4950,8 @@ export const route: RouteData = {
                   "text": "Throne — Spear / Bow x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3880,6 +4959,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3890,6 +4971,8 @@ export const route: RouteData = {
                   "lines": [
                     "Blusterbloom x4"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3897,6 +4980,8 @@ export const route: RouteData = {
                   "text": "Temenos — Staff x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -3904,6 +4989,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -3911,6 +4998,8 @@ export const route: RouteData = {
                   "text": "Hikari — Conqueror's Sword x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -3922,6 +5011,8 @@ export const route: RouteData = {
                     "Weeds",
                     "Mighty Leaf"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -3929,6 +5020,8 @@ export const route: RouteData = {
                   "text": "Temenos — Critical Scope",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -3936,6 +5029,8 @@ export const route: RouteData = {
                   "text": "In place of weeds, can use anything that isn't the warding leaf to remove it from the concoct inventory. You need to leave 1 \"junk\" item for galdy, which is usually the grape leaf. This is completely optional.",
                   "check": false,
                   "kind": "note",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Notes"
                 }
               ]
@@ -3951,31 +5046,41 @@ export const route: RouteData = {
                   "text": "Steal 2 Whimsical Leaves and a Light Soulstone (M) from the merchant to the right.",
                   "check": true,
                   "kind": "do",
-                  "note": "skip the soulstone if you didn't need to use the thunder L"
+                  "note": "skip the soulstone if you didn't need to use the thunder L",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-5-1-bbcf89",
                   "text": "Steal the Fortifying Nut and Magic Nut from the man on the right blocking the alley.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-5-1-a33c33",
                   "text": "Steal the Unerring Bracelet from the quest NPC outside the tavern.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-5-1-80edba",
                   "text": "Go to the tavern.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "hikari-ch-5-1-250c37",
                   "text": "Set Slot 4 to Partitio. Set Slot 4 to Temenos",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -3983,6 +5088,8 @@ export const route: RouteData = {
                   "text": "Warp to Crackridge Harbour: Anchorage.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -3990,6 +5097,8 @@ export const route: RouteData = {
                   "text": "Steal the Giant Shield and purchase the Battle-Tested Blade from Bandelam.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -3997,6 +5106,8 @@ export const route: RouteData = {
                   "text": "Warp to Winterbloom.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 }
               ]
@@ -4020,7 +5131,16 @@ export const route: RouteData = {
                   "text": "Inquire the man in blue in the tavern for \"Easier Inquiries\".",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Winterbloom"
+                },
+                {
+                  "id": "castti-ch-2-winterbloom-route-900-754275",
+                  "text": "Make for Rosa’s manor. Gather the herbs from the herb garden. Return to Rosa and soothe her. Make for the Thieves’ Quarter.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 5277
                 }
               ]
             },
@@ -4036,6 +5156,8 @@ export const route: RouteData = {
                   "text": "Give Battle-Tested Blade to Hikari",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -4043,6 +5165,8 @@ export const route: RouteData = {
                   "text": "Then — 2 Fortifying Nuts",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -4050,6 +5174,8 @@ export const route: RouteData = {
                   "text": "Castti — Inventor [v2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -4057,6 +5183,8 @@ export const route: RouteData = {
                   "text": "Throne — Merchant: 2 Merchant skills",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -4064,6 +5192,8 @@ export const route: RouteData = {
                   "text": "Throne — Hunter Take Aim [v3], Abating Orb",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -4071,6 +5201,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Full Power over Boost-Start (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -4085,13 +5217,17 @@ export const route: RouteData = {
                   "id": "castti-ch-2-winterbloom-route-1-8a853e",
                   "text": "Inquire the man guarding the door in the Thieves' Quarters for \"Thieving Tips and Tricks\".",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "castti-ch-2-winterbloom-route-1-a92679",
                   "text": "Fight Plukk at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4106,6 +5242,8 @@ export const route: RouteData = {
                   "text": "Hikari — Divine Dual-Edge x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 }
               ]
@@ -4120,7 +5258,16 @@ export const route: RouteData = {
                   "id": "castti-ch-2-winterbloom-route-1-d45c83",
                   "text": "After finishing the chapter, warp to Abandoned Village.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "castti-ch-2-winterbloom-route-900-187be4",
+                  "text": "Inquire around town, find Malaya, investigate the smoke, make for the summit; in Timberain follow Edmund to the castle.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 5397
                 }
               ]
             }
@@ -4142,7 +5289,9 @@ export const route: RouteData = {
                   "id": "castti-ch-3-1-45cc3c",
                   "text": "After finishing the chapter, warp to Timberain.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -4164,13 +5313,17 @@ export const route: RouteData = {
                   "id": "castti-ch-4-1-35129d",
                   "text": "Bribe the soldier with a helmet near the entrance to town on the way to the tavern.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "castti-ch-4-1-5e5df7",
                   "text": "After it starts raining, go to the provisioner.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4184,31 +5337,41 @@ export const route: RouteData = {
                   "id": "castti-ch-4-1-b404b5",
                   "text": "Sell Conqueror's Sword",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "castti-ch-4-1-14c4d2",
                   "text": "Sell Drifting Dagger",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "castti-ch-4-1-940b35",
                   "text": "Sell Bow of Carnage",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "castti-ch-4-1-5dc68b",
                   "text": "Buy 7 Strengthening Serum",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "castti-ch-4-1-c8d2e2",
                   "text": "Buy 1 Diffusing Serum",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4222,7 +5385,9 @@ export const route: RouteData = {
                   "id": "castti-ch-4-1-02e1b4",
                   "text": "Go to the armourer.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4236,19 +5401,25 @@ export const route: RouteData = {
                   "id": "castti-ch-4-1-edfea1",
                   "text": "Buy 4 Empowering Bracelet",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "castti-ch-4-1-c6a4a3",
                   "text": "Buy 2 Royal Guard's Mail",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "castti-ch-4-1-2123a3",
                   "text": "Buy Royal Guard's Helm",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4262,13 +5433,17 @@ export const route: RouteData = {
                   "id": "castti-ch-4-1-1c50a0",
                   "text": "Get the Wind Soulstone (L) from the chest to the left of the castle entrance.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "castti-ch-4-1-c79d17",
                   "text": "Fight Trousseau at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4283,6 +5458,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4290,6 +5467,8 @@ export const route: RouteData = {
                   "text": "Throne — Abating Orb",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4297,6 +5476,8 @@ export const route: RouteData = {
                   "text": "Hikari — Slowing Sweep",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4304,6 +5485,8 @@ export const route: RouteData = {
                   "text": "Castti — Axe x3 / Defend (need at least one defend)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4311,6 +5494,8 @@ export const route: RouteData = {
                   "text": "Partitio — Spear x3 / Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4318,6 +5503,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -4325,6 +5512,8 @@ export const route: RouteData = {
                   "text": "Castti / Partitio — Axe / Spear x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -4332,6 +5521,8 @@ export const route: RouteData = {
                   "text": "After finishing the chapter, warp to New Delsta.",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -4339,6 +5530,8 @@ export const route: RouteData = {
                   "text": "Go to the tavern.",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -4346,6 +5539,8 @@ export const route: RouteData = {
                   "text": "Set Slot 3 to Agnea. Set Slot 4 to Partitio",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 2"
                 }
               ]
@@ -4360,7 +5555,9 @@ export const route: RouteData = {
                   "id": "castti-ch-4-1-509d99",
                   "text": "Hear a Tale",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -4382,25 +5579,33 @@ export const route: RouteData = {
                   "id": "agnea-ch-2-1-ebc766",
                   "text": "After the cutscene outside the theatre, warp to Beasting Bay: Anchorage..",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-08cfd3",
                   "text": "Get the Fortune Wand from the chest to the north.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-baf3e6",
                   "text": "Go to Curious Nest.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-3b79ec",
                   "text": "Fight the Battle-Worn Shark at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4415,6 +5620,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4422,6 +5629,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4429,6 +5638,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -4443,7 +5654,9 @@ export const route: RouteData = {
                   "id": "agnea-ch-2-1-8f3c27",
                   "text": "Fight Tyrannodrake at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4458,6 +5671,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4465,6 +5680,8 @@ export const route: RouteData = {
                   "text": "Throne — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4472,6 +5689,8 @@ export const route: RouteData = {
                   "text": "Hikari — Sixfold Strike",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4479,6 +5698,8 @@ export const route: RouteData = {
                   "text": "Castti — Critical Scope",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4486,6 +5707,8 @@ export const route: RouteData = {
                   "text": "Throne — Precise Shot x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -4493,6 +5716,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -4507,25 +5732,33 @@ export const route: RouteData = {
                   "id": "agnea-ch-2-1-aa0e83",
                   "text": "Get the 2 Decaying Dragon's Essences, Fang of Ferocity and Tornado Glaive.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-f06d87",
                   "text": "Warp to Beasting Bay: Anchorage.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-ee9a04",
                   "text": "Get the Reinforcing Jam on the way to Scourge of the Sea.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-2041b2",
                   "text": "Fight the Scourge of the Sea at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4540,6 +5773,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4547,6 +5782,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4554,6 +5791,8 @@ export const route: RouteData = {
                   "text": "Castti — Critical Scope",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4561,6 +5800,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -4575,43 +5816,57 @@ export const route: RouteData = {
                   "id": "agnea-ch-2-1-f4fcfe",
                   "text": "Warp to New Delsta.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-1f6365",
                   "text": "Entreat the Theatre Ticket.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-2e1196",
                   "text": "Entreat the Fortifying Nut (M) and Nourishing Nut (M) from the man near the tavern entrance.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-d9ec4f",
                   "text": "After alluring both NPCs on the second screen to Gil, warp to Winterbloom.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-391752",
                   "text": "Entreat the Fortifying Nut (L) from the soldier.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-98dff4",
                   "text": "Steal the Lightning Amulet and Dazzling Artwork from Greg up the stairs.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-ac054e",
                   "text": "Steal the Thick Tome and Brooch of Joy from Melia. (brooch should be 55%, else you forgot to inquire thieving tips and tricks)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4627,6 +5882,8 @@ export const route: RouteData = {
                   "text": "Give Brooch of Joy to Castti (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -4634,6 +5891,8 @@ export const route: RouteData = {
                   "text": "Then — Fortifying Nut (L)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -4641,6 +5900,8 @@ export const route: RouteData = {
                   "text": "Castti — Unequip A Step Ahead (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -4655,25 +5916,33 @@ export const route: RouteData = {
                   "id": "agnea-ch-2-1-31d793",
                   "text": "Steal the Sprightly Ring from the topmost of the trio of 3 NPCs near the entrance.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-f1edab",
                   "text": "Allure the woman on the way back to the tavern.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-8edcaf",
                   "text": "Get the Lightning Amulet in the top floor on the first screen in the theatre.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-1dfd88",
                   "text": "Fight La'mani in the day.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4688,31 +5957,48 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x2",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
                   "id": "agnea-ch-2-1-c82f3a",
                   "text": "Talk to Al to complete \"The Traveler's Bag\".",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-ddcaac",
                   "text": "Warp to Tropu'hopu.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-30ef95",
                   "text": "Start Agnea Ch. 3.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-2-1-e0591e",
                   "text": "After the cutscene on the next screen, warp to Montwise.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "agnea-ch-2-900-ab4879",
+                  "text": "Make for the abandoned church (Canalbrine → Crestlands path). Enter, climb the stairs and confront Father.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 6241
                 }
               ]
             }
@@ -4735,6 +6021,8 @@ export const route: RouteData = {
                   "text": "Fight Father at night.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Abandoned Church"
                 }
               ]
@@ -4750,6 +6038,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Abating Orb",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4757,6 +6047,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4764,6 +6056,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4771,6 +6065,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -4785,7 +6081,16 @@ export const route: RouteData = {
                   "id": "throne-ch-3-father-s-route-1-ddcaac",
                   "text": "Warp to Tropu'hopu.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "throne-ch-3-father-s-route-900-ab4fc6",
+                  "text": "Allure Giselle, take her to the stage at the Floating Theater.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 6401
                 }
               ]
             }
@@ -4807,7 +6112,9 @@ export const route: RouteData = {
                   "id": "agnea-ch-3-1-1cf256",
                   "text": "After finishing the chapter, warp to Sai.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -4829,19 +6136,25 @@ export const route: RouteData = {
                   "id": "agnea-ch-4-1-2810c6",
                   "text": "Steal the Reinforcing Jam from the lady down the stairs if you needed to use one after Yurinas.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-4-1-6094e6",
                   "text": "Grab the Wind Whisperer from the first red chest.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-4-1-13e654",
                   "text": "Fight Veronica at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4856,6 +6169,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4863,6 +6178,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -4870,6 +6187,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -4884,19 +6203,32 @@ export const route: RouteData = {
                   "id": "agnea-ch-4-1-a6526f",
                   "text": "After finishing the chapter, warp to Ryu.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-4-1-5b187f",
                   "text": "The Dancer & Warrior, Part 1",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "agnea-ch-4-900-10cc50",
+                  "text": "Bribe Yomi. Wait until the following night. Make for the hill where the moon is visible.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 6607
                 },
                 {
                   "id": "agnea-ch-4-1-0e83e6",
                   "text": "While waiting for the next day, go to the tavern.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4910,7 +6242,9 @@ export const route: RouteData = {
                   "id": "agnea-ch-4-1-51dd5d",
                   "text": "Set Slot 3 to Partitio. Set Slot 3 to Castti",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4924,7 +6258,9 @@ export const route: RouteData = {
                   "id": "agnea-ch-4-1-533e07",
                   "text": "Go to the provisioner.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4938,25 +6274,33 @@ export const route: RouteData = {
                   "id": "agnea-ch-4-1-1ccffd",
                   "text": "Buy Blusterbloom x22",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-4-1-72ed62",
                   "text": "Sell Thick Tome",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-4-1-ac4258",
                   "text": "Sell Dazzling Artwork",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-4-1-d593f1",
                   "text": "Sell Lost Tribe's Blade",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -4970,7 +6314,9 @@ export const route: RouteData = {
                   "id": "agnea-ch-4-1-7605c9",
                   "text": "After finishing the chapter, warp to Roque Island.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -4993,6 +6339,8 @@ export const route: RouteData = {
                   "text": "After the cutscene on the next screen, steal the Energising Pomegranate (M), Energising Pomegranate (L), and Wind Soulstone (M) from the man outside the inn.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Roque Island"
                 },
                 {
@@ -5000,6 +6348,8 @@ export const route: RouteData = {
                   "text": "Rest at the inn if Partitio doesn't have latent power.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Roque Island"
                 },
                 {
@@ -5007,6 +6357,8 @@ export const route: RouteData = {
                   "text": "Bribe the man on the right northeast of the statue.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Roque Island"
                 },
                 {
@@ -5014,6 +6366,8 @@ export const route: RouteData = {
                   "text": "Talk to the tavern keeper.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Roque Island"
                 }
               ]
@@ -5028,7 +6382,9 @@ export const route: RouteData = {
                   "id": "partitio-ch-4-1-0f92a5",
                   "text": "Set Slot 3 to Castti. Set Slot 4 to Agnea",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5042,13 +6398,17 @@ export const route: RouteData = {
                   "id": "partitio-ch-4-1-6e3e82",
                   "text": "In the East Tower, hear travel banter just before going down the stairs to the floor with the books.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-4-1-dc278c",
                   "text": "Fight the Steam Tank at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5063,6 +6423,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Abating Orb → Steam Tank",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5070,6 +6432,8 @@ export const route: RouteData = {
                   "text": "Throne — Take Aim",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5077,6 +6441,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5085,6 +6451,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "fight",
                   "note": "debuffing the parts gets overkill",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5092,6 +6460,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4 → Steam Tank",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -5106,43 +6476,57 @@ export const route: RouteData = {
                   "id": "partitio-ch-4-1-8c8056",
                   "text": "After finishing the chapter, steal the Light Nut (M) from the man near the entrance.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-4-1-9fbb5f",
                   "text": "Warp to Oresrush.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-4-1-52f067",
                   "text": "Purchase the Battle-Tested Staff from Roque.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-4-1-6fad35",
                   "text": "Warp to Conning Creek.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-4-1-00e1ac",
                   "text": "Steal the Critical Nut (L) from the old man in the tavern.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-4-2-a12603",
                   "text": "Talk to the tavern keeper.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "partitio-ch-4-1-1953f2",
                   "text": "Set Slot 2 to Ochette. Set Slot 3 to Partitio",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 }
               ]
@@ -5157,7 +6541,9 @@ export const route: RouteData = {
                   "id": "partitio-ch-4-1-509d99",
                   "text": "Hear a Tale",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -5180,6 +6566,8 @@ export const route: RouteData = {
                   "text": "Steal the Sharp Nut and Light Nut from the lady to the right on the way to Alpione.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Conning Creek: Harbour"
                 }
               ]
@@ -5194,7 +6582,9 @@ export const route: RouteData = {
                   "id": "ochette-ch-2-cateracta-s-route-1-08a97c",
                   "text": "Turn 1 — Soulstone (M)",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5208,13 +6598,17 @@ export const route: RouteData = {
                   "id": "ochette-ch-2-cateracta-s-route-1-9cac78",
                   "text": "After finishing the chapter, warp to Crackridge.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "ochette-ch-2-cateracta-s-route-1-63a4dc",
                   "text": "Start Ochette Ch. 2: Tera's Route.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5230,6 +6624,8 @@ export const route: RouteData = {
                   "text": "Hikari — Scholar [^3]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -5237,6 +6633,8 @@ export const route: RouteData = {
                   "text": "Ochette — Armsmaster [v1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -5244,6 +6642,8 @@ export const route: RouteData = {
                   "text": "Castti — Unequip Evasive Manoeuvres (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -5258,7 +6658,9 @@ export const route: RouteData = {
                   "id": "ochette-ch-2-cateracta-s-route-1-010387",
                   "text": "Leave town to the west and hunt for Buttermeep at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5273,6 +6675,8 @@ export const route: RouteData = {
                   "text": "Anyone — Attack (Hikari uses spear)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5280,6 +6684,8 @@ export const route: RouteData = {
                   "text": "Ochette — Defend / Capture",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5287,6 +6693,8 @@ export const route: RouteData = {
                   "text": "Anyone — Flee",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 }
               ]
@@ -5304,6 +6712,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "Equips Wind Whisperer, Tornado Glaive, Royal Guard's Mail",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -5311,6 +6721,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Evasive Manoeuvres (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -5333,7 +6745,9 @@ export const route: RouteData = {
                   "id": "ochette-ch-2-cateracta-s-route-1-18f49b",
                   "text": "After catching the Buttermeep, warp to Crackridge (can also walk back if close enough).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -5356,6 +6770,8 @@ export const route: RouteData = {
                   "text": "Before going to the Bed of the Titan, challenge the old lady near the east exit.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Crackridge"
                 }
               ]
@@ -5370,7 +6786,9 @@ export const route: RouteData = {
                   "id": "ochette-ch-2-tera-s-route-1-97c621",
                   "text": "Hikari — Sword",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5384,25 +6802,33 @@ export const route: RouteData = {
                   "id": "ochette-ch-2-tera-s-route-1-06c94b",
                   "text": "Ambush the scholar at the bottom right of the town.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "ochette-ch-2-tera-s-route-1-a4c132",
                   "text": "Get From the Far Reaches of Hell.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "ochette-ch-2-tera-s-route-1-f2882a",
                   "text": "Go to Bed of the Titan.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "ochette-ch-2-tera-s-route-1-8fa4b7",
                   "text": "Fight Tera at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5417,6 +6843,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5424,6 +6852,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend / Shinjumonjigiri x3 (if after Throne)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5431,6 +6861,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x3 (if not done already)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -5445,7 +6877,9 @@ export const route: RouteData = {
                   "id": "ochette-ch-2-tera-s-route-1-6bc564",
                   "text": "After finishing the chapter, warp to Stormhail.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -5468,6 +6902,8 @@ export const route: RouteData = {
                   "text": "Turn 1 — Thunder Soulstone (L) (if you still have it) or Soulstone (M)",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Sanctum Knight"
                 },
                 {
@@ -5475,6 +6911,8 @@ export const route: RouteData = {
                   "text": "Turn 2 — Defend",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Sanctum Knight"
                 },
                 {
@@ -5482,6 +6920,8 @@ export const route: RouteData = {
                   "text": "Turn 3 — Tera",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Sanctum Knight"
                 }
               ]
@@ -5496,7 +6936,9 @@ export const route: RouteData = {
                   "id": "ochette-ch-2-glacis-s-route-1-3639da",
                   "text": "Fight Glacis at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5511,6 +6953,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5518,6 +6962,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend / Shinjumonjigiri x3 (if after Throne)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5525,6 +6971,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x3 (if not done already)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -5539,7 +6987,9 @@ export const route: RouteData = {
                   "id": "ochette-ch-2-glacis-s-route-1-c29678",
                   "text": "After finishing the chapter, warp to Beasting Village.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -5561,13 +7011,17 @@ export const route: RouteData = {
                   "id": "ochette-ch-3-1-876766",
                   "text": "On the way to Juvah, steal the Fortifying Nut from the beastling guarding the house.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "ochette-ch-3-1-c63de8",
                   "text": "Fight the Shadowy Monsters during the day.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5581,7 +7035,9 @@ export const route: RouteData = {
                   "id": "ochette-ch-3-1-5e716d",
                   "text": "Hikari — Divine Dual-Edge x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5595,19 +7051,25 @@ export const route: RouteData = {
                   "id": "ochette-ch-3-1-2b5959",
                   "text": "Get the Tornado Bow after crossing the bridge at Stormy Cape.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "ochette-ch-3-1-301023",
                   "text": "Kill the encounter in the day with Divine Dual-Edge x3.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "ochette-ch-3-1-6c5fe5",
                   "text": "Switch to night before fighting Lajackal.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5623,6 +7085,8 @@ export const route: RouteData = {
                   "text": "Give Tornado Bow to Ochette",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -5630,6 +7094,8 @@ export const route: RouteData = {
                   "text": "Throne — Thief Aeber's Reckoning",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Learn Skills"
                 },
                 {
@@ -5637,6 +7103,8 @@ export const route: RouteData = {
                   "text": "Ochette — Hunter Leghold Trap",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Learn Skills"
                 },
                 {
@@ -5644,6 +7112,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip A Step Ahead over Boost-Start (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -5659,6 +7129,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5666,6 +7138,8 @@ export const route: RouteData = {
                   "text": "Throne — Abating Orb",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5673,6 +7147,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5680,6 +7156,8 @@ export const route: RouteData = {
                   "text": "Castti — Critical Scope",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5687,6 +7165,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -5701,7 +7181,9 @@ export const route: RouteData = {
                   "id": "ochette-ch-3-1-c05ffc",
                   "text": "After finishing the chapter, warp to Cropdale.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -5724,7 +7206,9 @@ export const route: RouteData = {
                   "text": "Fight the Dire Duorduor during the day.",
                   "check": true,
                   "kind": "do",
-                  "note": "skip lychee if Agnea has full latent"
+                  "note": "skip lychee if Agnea has full latent",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5738,13 +7222,17 @@ export const route: RouteData = {
                   "id": "the-apothecary-hunter-part-1-1-e74ce0",
                   "text": "Hikari — Sword x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-1-1-c05ffc",
                   "text": "After finishing the chapter, warp to Cropdale.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -5767,6 +7255,8 @@ export const route: RouteData = {
                   "text": "Turn 1 — Wind Soulstone (L)",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Wriggling Shadow"
                 },
                 {
@@ -5774,6 +7264,8 @@ export const route: RouteData = {
                   "text": "Turn 2 — Wind Soulstone (L)",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Wriggling Shadow"
                 }
               ]
@@ -5789,6 +7281,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5796,6 +7290,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -5803,6 +7299,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -5817,61 +7315,81 @@ export const route: RouteData = {
                   "id": "the-apothecary-hunter-part-2-1-65dfd3",
                   "text": "After finishing the chapter, warp to Gravell.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-98899d",
                   "text": "Inquire/Bribe the hunter outside.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-47c095",
                   "text": "Warp to Gravell.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-27e9fb",
                   "text": "Steal the Empowering Lychee (L) and Sharp Nut (L) from the old man.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-a8e886",
                   "text": "Steal the Tough Nut (L) from Alpione.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-30a9d1",
                   "text": "Talk to Alpione twice to complete \"Alpione's Next Chapter\".",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-dcc20e",
                   "text": "Warp to Merry Hills.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-7ae1ac",
                   "text": "Steal the Quick Cloak from the lady in blue.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-24c832",
                   "text": "Bribe the merchant in the provisioner.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-02e1b4",
                   "text": "Go to the armourer.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5885,13 +7403,17 @@ export const route: RouteData = {
                   "id": "the-apothecary-hunter-part-2-1-0ade86",
                   "text": "Buy Breaker's Blade",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-0e58a6",
                   "text": "Buy Swift Shield",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5905,25 +7427,33 @@ export const route: RouteData = {
                   "id": "the-apothecary-hunter-part-2-1-fa04b8",
                   "text": "Warp to Wellgrove.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-b27701",
                   "text": "Start Throne ch.3: Mother's Route.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-221140",
                   "text": "Steal the Habit.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-80edba",
                   "text": "Go to the tavern.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5937,7 +7467,9 @@ export const route: RouteData = {
                   "id": "the-apothecary-hunter-part-2-1-7117af",
                   "text": "Set Slot 3 to Agnea. Set Slot 3 to Ochette",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5951,7 +7483,9 @@ export const route: RouteData = {
                   "id": "the-apothecary-hunter-part-2-1-460792",
                   "text": "Get the dancer licence.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -5967,6 +7501,8 @@ export const route: RouteData = {
                   "text": "Castti — Dancer: 5 Dancer skills, Sealticge's Seduction [v3]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -5974,6 +7510,8 @@ export const route: RouteData = {
                   "text": "Castti — Warrior 5 Warrior skills [^2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -5981,6 +7519,8 @@ export const route: RouteData = {
                   "text": "Castti — Armsmaster [^2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -5988,6 +7528,8 @@ export const route: RouteData = {
                   "text": "Agnea — Dancer: Peacock Strut",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -5995,6 +7537,8 @@ export const route: RouteData = {
                   "text": "Agnea — Inventor [^3]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -6002,6 +7546,8 @@ export const route: RouteData = {
                   "text": "Hikari — Thief: 5 Thief skills [v1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -6009,6 +7555,8 @@ export const route: RouteData = {
                   "text": "Hikari — Dancer 5 Dancer skills, Sealticge's Seduction [^3]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -6016,6 +7564,8 @@ export const route: RouteData = {
                   "text": "Throne — Warrior: 5 Warrior skills [v3]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -6023,6 +7573,8 @@ export const route: RouteData = {
                   "text": "Throne — Scholar [v4]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 }
               ]
@@ -6037,25 +7589,33 @@ export const route: RouteData = {
                   "id": "the-apothecary-hunter-part-2-1-27ebaa",
                   "text": "Warp to Montwise.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-9bff70",
                   "text": "Steal the Magic Nut (M) from the merchant.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-2-80edba",
                   "text": "Go to the tavern.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-263b64",
                   "text": "Set Slot 4 to Temenos. Set Slot 4 to Castti",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -6063,6 +7623,8 @@ export const route: RouteData = {
                   "text": "Set Slot 2 to Partitio. Set Slot 3 to Agnea",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -6070,6 +7632,8 @@ export const route: RouteData = {
                   "text": "Ochette — Unequip All",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6079,6 +7643,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "Equips tornado glaive, wind whisperer, tornado bow, battle-tested staff, giant shield, ancient circlet, and royal guard's mail",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6087,6 +7653,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Alpione's Amulet",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6095,6 +7663,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Fang of Ferocity",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6103,6 +7673,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Blessed Vestments",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6112,6 +7684,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "Equips fortune wand and royal guard's mail",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6120,6 +7694,8 @@ export const route: RouteData = {
                   "text": "Osvald — Equip Sprightly Ring",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6128,6 +7704,8 @@ export const route: RouteData = {
                   "text": "Agnea — Equip EXP Augmentor",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6136,6 +7714,8 @@ export const route: RouteData = {
                   "text": "Partitio — Equip Unerring Bracelet",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6144,6 +7724,8 @@ export const route: RouteData = {
                   "text": "Hikari — Unequip All",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6152,6 +7734,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Brooch of Joy",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6161,6 +7745,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "Equips Battle-Tested Blade, Royal Guard's Helm, and Royal Guard's Mail",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6169,6 +7755,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Finisher's Claws",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6177,6 +7765,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Champion's Belt",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6185,6 +7775,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Quick Cloak",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 },
@@ -6193,6 +7785,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Giant's Club",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern",
                   "ctx": "Equipment"
                 }
@@ -6210,6 +7804,8 @@ export const route: RouteData = {
                   "text": "Temenos — Dancer: Stimulate",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -6217,6 +7813,8 @@ export const route: RouteData = {
                   "text": "Partitio — Dancer: 1 Dancer skill, Stimulate",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -6224,6 +7822,8 @@ export const route: RouteData = {
                   "text": "Partitio — Cleric 1 Cleric skill, Aelfric's Blessing",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -6231,6 +7831,8 @@ export const route: RouteData = {
                   "text": "Partitio — Equip The Show Goes On over Evasive Manoeuvres (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -6245,7 +7847,9 @@ export const route: RouteData = {
                   "id": "the-apothecary-hunter-part-2-1-a6f159",
                   "text": "Talk to the tavern keeper again.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -6259,13 +7863,17 @@ export const route: RouteData = {
                   "id": "the-apothecary-hunter-part-2-1-c0743e",
                   "text": "Set Slot 4 to Castti. Set Slot 4 to Temenos",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-9affd7",
                   "text": "Set Slot 2 to Agnea. Set Slot 3 to Partitio",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -6279,31 +7887,41 @@ export const route: RouteData = {
                   "id": "the-apothecary-hunter-part-2-1-d0802b",
                   "text": "Enter the library.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-c2511b",
                   "text": "Talk to the Unusual Tome Specialist (quest NPC on the left) to complete \"Procuring Peculiar Tomes\".",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-d25cb2",
                   "text": "Talk to Al on the right side of the library to complete \"From the Far Reaches of Hell\". You may need to switch time to make him show up (also ensure you completed \"The Traveller's Bag\")",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-f06d87",
                   "text": "Warp to Beasting Bay: Anchorage.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-apothecary-hunter-part-2-1-4e2957",
                   "text": "Sail slowly to the Gate of Finis.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -6320,6 +7938,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "to fill latent",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -6327,6 +7947,8 @@ export const route: RouteData = {
                   "text": "Items — Nourishing Nut (L) (Throne)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -6336,6 +7958,7 @@ export const route: RouteData = {
                   "kind": "menu",
                   "note": "DO NOT USE ALL 3",
                   "warn": true,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -6343,6 +7966,8 @@ export const route: RouteData = {
                   "text": "Items — Fortifying Nut (M) + Fortifying Nut (Throne)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -6350,6 +7975,8 @@ export const route: RouteData = {
                   "text": "Items — Tough Nut (L) (Throne)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -6357,6 +7984,8 @@ export const route: RouteData = {
                   "text": "Items — All Magic Nuts (2S + 1M + 3L) (Castti)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -6364,6 +7993,8 @@ export const route: RouteData = {
                   "text": "Items — Resistant Nut (M) (Hikari)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -6371,6 +8002,8 @@ export const route: RouteData = {
                   "text": "Items — All Sharp Nuts (2L + 2S) (Throne)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -6378,6 +8011,8 @@ export const route: RouteData = {
                   "text": "Items — All Critical Nuts (2L) (Throne)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -6385,6 +8020,8 @@ export const route: RouteData = {
                   "text": "Items — All Light Nuts (2S + 1M + 1L) (Throne)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -6392,6 +8029,8 @@ export const route: RouteData = {
                   "text": "Throne — Unequip Life in the Shadows (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -6399,6 +8038,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Full Power (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -6406,6 +8047,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Peak Performance over Evil Ward (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -6413,6 +8056,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Deal More Damage (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -6420,6 +8065,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Summon Strength (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -6427,6 +8074,8 @@ export const route: RouteData = {
                   "text": "Hikari — Unequip Peak Performance (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -6434,6 +8083,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Life in the Shadows over Deal More Damage (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -6441,6 +8092,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip The Show Goes On (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -6448,6 +8101,8 @@ export const route: RouteData = {
                   "text": "Agnea — Equip A Step Ahead (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -6455,6 +8110,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Deal More Damage over Evasive Manoeuvres (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -6462,6 +8119,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Elemental Augmentation (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -6490,7 +8149,9 @@ export const route: RouteData = {
                   "id": "galdera-1-0c1141",
                   "text": "Switch to night before fighting Galdera.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -6504,55 +8165,73 @@ export const route: RouteData = {
                   "id": "galdera-1-6e6d7a",
                   "text": "Swap Throne with Osvald",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "galdera-1-888fe4",
                   "text": "Primary party: Osvald",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "galdera-1-87c5c1",
                   "text": "Secondary party: Throne",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "galdera-1-c8dc4b",
                   "text": "Primary party: Hikari",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "galdera-1-127a17",
                   "text": "Secondary party: Partitio",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "galdera-1-845970",
                   "text": "Primary party: Agnea",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "galdera-1-0be4e4",
                   "text": "Secondary party: Ochette",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "galdera-1-78beb0",
                   "text": "Primary party: Castti",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "galdera-1-14e5b0",
                   "text": "Secondary party: Temenos",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -6567,6 +8246,8 @@ export const route: RouteData = {
                   "text": "Hikari — Peacock Strut x2 → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -6574,6 +8255,8 @@ export const route: RouteData = {
                   "text": "Agnea — Latent Power + Springy Boots",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -6585,6 +8268,8 @@ export const route: RouteData = {
                     "Grape Leaf (or anything else that isn't weeds)"
                   ],
                   "note": "weeds can give a speed buff, which messes up the strat · Changed since the video (07/04/2026): omniscient eye: 8 Concoct hits.",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -6592,6 +8277,7 @@ export const route: RouteData = {
                   "text": "Whimsical Leaf (skip if Castti already acts last)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
                   "optional": true,
                   "ctx": "Turn 1"
                 },
@@ -6600,6 +8286,8 @@ export const route: RouteData = {
                   "text": "Osvald/Agnea — Snowy Stew (whoever is first) → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -6607,6 +8295,8 @@ export const route: RouteData = {
                   "text": "Osvald/Agnea — Forbidden Elixir (whoever is second) → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -6614,6 +8304,8 @@ export const route: RouteData = {
                   "text": "Hikari — Vacant Stare",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -6621,6 +8313,8 @@ export const route: RouteData = {
                   "text": "Castti — Switch to Staff",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -6633,6 +8327,8 @@ export const route: RouteData = {
                     "Diffusing Serum",
                     "Strengthening Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -6640,6 +8336,8 @@ export const route: RouteData = {
                   "text": "Turn order from this point onwards is fixed",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -6647,6 +8345,8 @@ export const route: RouteData = {
                   "text": "Osvald — Analyse x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -6654,6 +8354,8 @@ export const route: RouteData = {
                   "text": "Agnea — Elemental Bomb Bottle x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -6661,6 +8363,8 @@ export const route: RouteData = {
                   "text": "Hikari — Vacant Stare x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -6672,6 +8376,8 @@ export const route: RouteData = {
                     "Blusterbloom x4",
                     "Strengthening Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -6679,6 +8385,8 @@ export const route: RouteData = {
                   "text": "Anyone — Energising Pomegranate (L) → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4"
                 },
                 {
@@ -6691,6 +8399,8 @@ export const route: RouteData = {
                     "Strengthening Serum"
                   ],
                   "note": "Changed since the video (07/04/2026): omniscient eye: 8 Concoct hits.",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4"
                 },
                 {
@@ -6698,6 +8408,8 @@ export const route: RouteData = {
                   "text": "Anyone — Energising Pomegranate (M) → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 5"
                 },
                 {
@@ -6710,6 +8422,8 @@ export const route: RouteData = {
                     "Strengthening Serum"
                   ],
                   "note": "Changed since the video (07/04/2026): omniscient eye: 8 Concoct hits.",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 5"
                 }
               ]
@@ -6725,6 +8439,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Rejuvenating Jam → Self",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -6732,6 +8448,8 @@ export const route: RouteData = {
                   "text": "Throne — Aeber's Reckoning",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -6739,6 +8457,8 @@ export const route: RouteData = {
                   "text": "Partitio — Latent Power (if needed) + Aelfric's Blessing → Throne",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -6746,6 +8466,8 @@ export const route: RouteData = {
                   "text": "Ochette — Energising Pomegranate (L) → Partitio",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -6753,6 +8475,8 @@ export const route: RouteData = {
                   "text": "Temenos — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -6760,6 +8484,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Reinforcing Jam → Self",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1 - Aelfric's"
                 },
                 {
@@ -6767,6 +8493,8 @@ export const route: RouteData = {
                   "text": "Throne — Aeber's Reckoning",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1 - Aelfric's"
                 },
                 {
@@ -6774,6 +8502,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Energising Pomegranate (M) → Self",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -6781,6 +8511,8 @@ export const route: RouteData = {
                   "text": "Throne — Aeber's Reckoning",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -6788,6 +8520,8 @@ export const route: RouteData = {
                   "text": "Partitio — Latent Power (if needed) + Aelfric's Blessing → Ochette",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -6795,6 +8529,8 @@ export const route: RouteData = {
                   "text": "Ochette — Rejuvenating Jam → Throne",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -6802,6 +8538,8 @@ export const route: RouteData = {
                   "text": "Temenos — Stimulate x4 → Throne",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -6809,6 +8547,8 @@ export const route: RouteData = {
                   "text": "Ochette — Leghold Trap",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2 - Aelfric's"
                 },
                 {
@@ -6816,6 +8556,8 @@ export const route: RouteData = {
                   "text": "Throne — Dagger x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2 - Aelfric's"
                 },
                 {
@@ -6823,6 +8565,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -6830,6 +8574,8 @@ export const route: RouteData = {
                   "text": "Throne — Dagger x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -6837,6 +8583,8 @@ export const route: RouteData = {
                   "text": "Partitio — Spear x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -6844,6 +8592,8 @@ export const route: RouteData = {
                   "text": "Ochette — Provoke Beasts x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -6851,6 +8601,8 @@ export const route: RouteData = {
                   "text": "Ochette — Woodland Birdian IV x6",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -6858,6 +8610,8 @@ export const route: RouteData = {
                   "text": "Temenos — Lion Dance → Throne",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -6865,6 +8619,8 @@ export const route: RouteData = {
                   "text": "Ochette — Rejuvenating Jam → Throne",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3 - Aelfric's"
                 },
                 {
@@ -6872,6 +8628,8 @@ export const route: RouteData = {
                   "text": "Throne — Aeber's Reckoning",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3 - Aelfric's"
                 },
                 {
@@ -6879,6 +8637,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Energising Pomegranate (M) → Self",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4"
                 },
                 {
@@ -6886,6 +8646,8 @@ export const route: RouteData = {
                   "text": "Throne — Aeber's Reckoning",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4"
                 },
                 {
@@ -6893,6 +8655,8 @@ export const route: RouteData = {
                   "text": "Ochette — Energising Pomegranate (M) → Throne",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4 - Aelfric's"
                 },
                 {
@@ -6900,6 +8664,8 @@ export const route: RouteData = {
                   "text": "Throne — Aeber's Reckoning",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4 - Aelfric's"
                 }
               ]
@@ -6916,6 +8682,8 @@ export const route: RouteData = {
                   "text": "Hikari — Scholar [^2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -6923,6 +8691,8 @@ export const route: RouteData = {
                   "text": "Throne — Hunter [v1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -6930,6 +8700,8 @@ export const route: RouteData = {
                   "text": "Throne — Unequip All",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -6937,6 +8709,8 @@ export const route: RouteData = {
                   "text": "Hikari — Optimize",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -6944,6 +8718,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Finisher's Claws (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -6951,6 +8727,8 @@ export const route: RouteData = {
                   "text": "Agnea — Unequip EXP Augmentor (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -6958,6 +8736,8 @@ export const route: RouteData = {
                   "text": "Castti — Unequip All",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -6965,6 +8745,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip EXP Augmentor (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -6972,6 +8754,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Spurning Ribbon (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -6979,6 +8763,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Brooch of Joy (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -6986,6 +8772,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Champion's Belt (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -6993,6 +8781,8 @@ export const route: RouteData = {
                   "text": "Hikari — Unequip Royal Guard's Mail (Body)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -7000,6 +8790,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Giant's Club (Staff)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -7007,6 +8799,8 @@ export const route: RouteData = {
                   "text": "Agnea — Equip Giant Shield (Shield)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -7014,6 +8808,8 @@ export const route: RouteData = {
                   "text": "Throne — Unequip Summon Strength (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -7021,6 +8817,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Deal More Damage (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -7028,6 +8826,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Life in the Shadows over Peak Performance (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -7035,6 +8835,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Boost-Start (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -7042,6 +8844,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Full Power (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -7049,6 +8853,8 @@ export const route: RouteData = {
                   "text": "Hikari — Unequip The Show Goes On (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -7056,6 +8862,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Peak Performance over Life in the Shadows (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -7063,6 +8871,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Deal More Damage (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -7070,6 +8880,8 @@ export const route: RouteData = {
                   "text": "Agnea — Unequip A Step Ahead (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -7077,6 +8889,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Grows on Trees over A Step Ahead (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -7091,31 +8905,41 @@ export const route: RouteData = {
                   "id": "galdera-1-169668",
                   "text": "Board the ship.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "galdera-1-b5cb4a",
                   "text": "Go to the Lost Isle.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "galdera-1-7fcb33",
                   "text": "Get the Proof of the Arcanist.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "galdera-1-992803",
                   "text": "Get the 2 Ancient Cursed Talismans on the right.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "galdera-1-dcc20e",
                   "text": "Warp to Merry Hills.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -7144,6 +8968,8 @@ export const route: RouteData = {
                   "text": "Hikari — Divine Dual-Edge x2",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Hired Men"
                 }
               ]
@@ -7158,20 +8984,26 @@ export const route: RouteData = {
                   "id": "agnea-ch-5-1-dd0bd6",
                   "text": "After alluring Gil, entreat the Magic Nut (M) from the lady in blue to the south.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-5-1-e6280f",
                   "text": "Get the Empowering Necklace from the chest at the upper right corner of the screen.",
                   "check": true,
                   "kind": "do",
-                  "note": "Changed since the video (06/30/2026): still in the checklist; nothing equips it."
+                  "note": "Changed since the video (06/30/2026): still in the checklist; nothing equips it.",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "agnea-ch-5-1-e653d6",
                   "text": "Fight Dolcinaea at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -7186,6 +9018,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -7193,6 +9027,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -7208,6 +9044,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -7215,6 +9053,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -7222,6 +9062,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -7236,7 +9078,16 @@ export const route: RouteData = {
                   "id": "agnea-ch-5-1-fa04b8",
                   "text": "Warp to Wellgrove.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "agnea-ch-5-900-fe34db",
+                  "text": "Make for Mother’s Garden. Steal the key from Morozov (the priest in the orphanage hall). Walk the garden to Mother.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 8602
                 }
               ]
             }
@@ -7259,6 +9110,8 @@ export const route: RouteData = {
                   "text": "Fight Mother at night.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Mother's Garden"
                 }
               ]
@@ -7274,6 +9127,8 @@ export const route: RouteData = {
                   "text": "Throne — Abating Orb → Mother",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -7281,6 +9136,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -7288,6 +9145,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4 → Mother",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -7302,7 +9161,9 @@ export const route: RouteData = {
                   "id": "throne-ch-3-mother-s-route-1-f4fcfe",
                   "text": "Warp to New Delsta.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -7318,6 +9179,8 @@ export const route: RouteData = {
                   "text": "Agnea — Equip A Step Ahead (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -7340,38 +9203,57 @@ export const route: RouteData = {
                   "id": "throne-ch-4-1-7f75f6",
                   "text": "Talk to Veronica before entering the sewers.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "throne-ch-4-900-b455bf",
+                  "text": "Make for the cemetery. Ambush the Snake. Climb down into the sewers; go through the door, down the abandoned road; ride the ropeway to Lostseed.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 8731
                 },
                 {
                   "id": "throne-ch-4-1-2087a9",
                   "text": "Go to Lostseed.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-4-1-bcd14f",
                   "text": "Steal the Forbidden Elixir from the girl guarding the house.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-4-1-bf844d",
                   "text": "Steal a Rotten Meat from the NPC up the stairs.",
                   "check": true,
                   "kind": "do",
-                  "note": "Changed since the video (09/17/2025): no shaggy aurochs; mighty leaf and rotten meat instead."
+                  "note": "Changed since the video (09/17/2025): no shaggy aurochs; mighty leaf and rotten meat instead.",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-4-1-b210f9",
                   "text": "Steal the Almighty Olive from the man before the next screen.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "throne-ch-4-1-89d69d",
                   "text": "Fight Claude at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -7386,6 +9268,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -7393,6 +9277,8 @@ export const route: RouteData = {
                   "text": "Throne — Abating Orb",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -7400,6 +9286,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -7407,6 +9295,8 @@ export const route: RouteData = {
                   "text": "Agnea — Critical Scope",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -7414,6 +9304,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -7428,7 +9320,9 @@ export const route: RouteData = {
                   "id": "throne-ch-4-1-1fefbc",
                   "text": "Warp to Ku.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -7450,37 +9344,49 @@ export const route: RouteData = {
                   "id": "the-dancer-warrior-part-2-1-8e5f4e",
                   "text": "Entreat the Magic Nut (M) and Dancer's Mask on the next screen.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-2bb37b",
                   "text": "Warp to Sai.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-d651b9",
                   "text": "Go to the East District.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-072aa8",
                   "text": "Entreat the Elemental Augmentor from the man in the straw hat.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-5929bd",
                   "text": "Bribe Platt's Wife in the house to the north (inquire also works, but she's slightly further away).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-1fefbc",
                   "text": "Warp to Ku.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-1e1592",
@@ -7488,25 +9394,32 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "do",
                   "note": "Don't get the platinum hatchet (if you do, make sure to sell it)",
-                  "warn": true
+                  "warn": true,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-fb5ff1",
                   "text": "Entreat the Wine Offering.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-3811e3",
                   "text": "Talk to Benkei.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-5cb913",
                   "text": "Go to Tranquil Grotto.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -7520,13 +9433,17 @@ export const route: RouteData = {
                   "id": "the-dancer-warrior-part-2-1-a7f33b",
                   "text": "Hikari — Shinjumonjigiri x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-29976a",
                   "text": "Do not learn Forlorn Requiem.",
                   "check": false,
                   "kind": "note",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Notes"
                 }
               ]
@@ -7541,44 +9458,58 @@ export const route: RouteData = {
                   "id": "the-dancer-warrior-part-2-1-ac3826",
                   "text": "Entreat the Fortifying Nut (M) from the soldier in the house.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-47c095",
                   "text": "Warp to Gravell.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-b6b638",
                   "text": "Entreat the Aegis Shield from the soldier near the entrance.",
                   "check": true,
                   "kind": "do",
-                  "note": "Changed since the video (06/30/2026): Coat of Arms + Aegis Shield replace Empowering Necklace."
+                  "note": "Changed since the video (06/30/2026): Coat of Arms + Aegis Shield replace Empowering Necklace.",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-046aca",
                   "text": "Inquire the girl in the trio of children.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-0d0600",
                   "text": "Get the Magic Nut (M) you just inquired.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-a12603",
                   "text": "Talk to the tavern keeper.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-dancer-warrior-part-2-1-7c4557",
                   "text": "Set Slot 4 to Osvald. Set Slot 4 to Castti",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -7586,6 +9517,8 @@ export const route: RouteData = {
                   "text": "Set Slot 1 to Partitio. Set Slot 3 to Agnea",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 }
               ]
@@ -7600,7 +9533,9 @@ export const route: RouteData = {
                   "id": "the-dancer-warrior-part-2-1-509d99",
                   "text": "Hear a Tale",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -7625,6 +9560,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "Changed since the video (06/30/2026): Coat of Arms + Aegis Shield replace Empowering Necklace.",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Inventory"
                 },
@@ -7633,6 +9570,8 @@ export const route: RouteData = {
                   "text": "Then — Fortifying Nut (M) (Hikari)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Inventory"
                 },
@@ -7641,6 +9580,8 @@ export const route: RouteData = {
                   "text": "Osvald — Merchant: 2 Merchant skills [^1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Jobs"
                 },
@@ -7649,6 +9590,8 @@ export const route: RouteData = {
                   "text": "Osvald — Warrior 5 Warrior skills [^3]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Jobs"
                 },
@@ -7657,6 +9600,8 @@ export const route: RouteData = {
                   "text": "Osvald — Armsmaster [^2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Jobs"
                 },
@@ -7666,6 +9611,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "Equips guardian's iceblade, battle-tested staff, ancient circlet, and blessed vestments",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Equipment"
                 },
@@ -7674,6 +9621,8 @@ export const route: RouteData = {
                   "text": "Osvald — Equip Fang of Ferocity",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Equipment"
                 },
@@ -7682,6 +9631,8 @@ export const route: RouteData = {
                   "text": "Osvald — Equip Elemental Augmentor",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Equipment"
                 },
@@ -7690,6 +9641,8 @@ export const route: RouteData = {
                   "text": "Osvald — Unequip Evasive Manoeuvres (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Support Skills"
                 },
@@ -7698,6 +9651,8 @@ export const route: RouteData = {
                   "text": "Osvald — Equip Full Power over Grows on Trees (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Support Skills"
                 },
@@ -7706,6 +9661,8 @@ export const route: RouteData = {
                   "text": "Osvald — Equip Deal More Damage (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Support Skills"
                 },
@@ -7714,6 +9671,8 @@ export const route: RouteData = {
                   "text": "Osvald — Equip Peak Performance (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Support Skills"
                 },
@@ -7722,6 +9681,8 @@ export const route: RouteData = {
                   "text": "Partitio — Unequip A Step Ahead (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Support Skills"
                 }
@@ -7735,33 +9696,48 @@ export const route: RouteData = {
               "steps": [
                 {
                   "id": "osvald-ch-5-1-f405b2",
-                  "text": "#1 — Latent Power + Icewind x3",
+                  "text": "Osvald: Latent Power + Icewind x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "#1 — Latent Power + Icewind x3"
                 },
                 {
                   "id": "osvald-ch-5-1-fbbe36",
-                  "text": "#2 — Latent Power + Icewind x3",
+                  "text": "Osvald: Latent Power + Icewind x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "#2 — Latent Power + Icewind x3"
                 },
                 {
                   "id": "osvald-ch-5-1-47ae28",
-                  "text": "#3 — Latent Power + Fireball x3",
+                  "text": "Osvald: Latent Power + Fireball x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "#3 — Latent Power + Fireball x3"
                 },
                 {
                   "id": "osvald-ch-5-1-c46741",
-                  "text": "#4 — Latent Power + Fireball x2",
+                  "text": "Osvald: Latent Power + Fireball x2",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "#4 — Latent Power + Fireball x2"
                 },
                 {
                   "id": "osvald-ch-5-1-85c903",
-                  "text": "#5 — Latent Power + Icewind x3",
+                  "text": "Osvald: Latent Power + Icewind x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "#5 — Latent Power + Icewind x3"
                 }
               ]
             },
@@ -7775,7 +9751,9 @@ export const route: RouteData = {
                   "id": "osvald-ch-5-1-2111bb",
                   "text": "Fight Harvey at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -7789,7 +9767,9 @@ export const route: RouteData = {
                   "id": "osvald-ch-5-1-5e716d",
                   "text": "Hikari — Divine Dual-Edge x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -7804,6 +9784,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -7811,6 +9793,8 @@ export const route: RouteData = {
                   "text": "Throne — Abating Orb",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -7818,6 +9802,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -7825,6 +9811,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -7839,7 +9827,9 @@ export const route: RouteData = {
                   "id": "osvald-ch-5-1-f4fcfe",
                   "text": "Warp to New Delsta.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -7861,13 +9851,17 @@ export const route: RouteData = {
                   "id": "the-scholar-merchant-part-1-1-416444",
                   "text": "Before buying the first part, talk to the tavern keeper.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-scholar-merchant-part-1-1-b23b4a",
                   "text": "Set Slot 3 to Temenos. Set Slot 1 to Throne",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -7875,6 +9869,8 @@ export const route: RouteData = {
                   "text": "After buying all 3 components, talk to Veronica to finish \"Veronica's Next Chapter\".",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -7882,6 +9878,8 @@ export const route: RouteData = {
                   "text": "After finishing the chapter, warp to Montwise.",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 }
               ]
@@ -7906,6 +9904,8 @@ export const route: RouteData = {
                   "text": "Give Bodyguard's Vantage to Hikari",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Inventory"
                 },
@@ -7914,6 +9914,8 @@ export const route: RouteData = {
                   "text": "Temenos — Cleric: 5 Cleric skills, Aelfric's Blessing [^1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Jobs"
                 },
@@ -7922,6 +9924,8 @@ export const route: RouteData = {
                   "text": "Temenos — Warrior [^1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Menu",
                   "ctx": "Jobs"
                 }
@@ -7937,7 +9941,9 @@ export const route: RouteData = {
                   "id": "the-scholar-merchant-part-2-1-01f594",
                   "text": "Fight the thugs in the day.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -7949,15 +9955,20 @@ export const route: RouteData = {
               "steps": [
                 {
                   "id": "the-scholar-merchant-part-2-1-3e2c0a",
-                  "text": "#1 — Divine Dual-Edge x2",
+                  "text": "Hikari: Divine Dual-Edge x2",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "#1 — Divine Dual-Edge x2"
                 },
                 {
                   "id": "the-scholar-merchant-part-2-1-e7680a",
                   "text": "#2 — Divine Dual-Edge x2",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -7969,9 +9980,12 @@ export const route: RouteData = {
               "steps": [
                 {
                   "id": "the-scholar-merchant-part-2-1-ed7567",
-                  "text": "Turn 1 — Latent Power + Fireball x3",
+                  "text": "Osvald: Latent Power + Fireball x3",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false,
+                  "sheet": "Turn 1 — Latent Power + Fireball x3"
                 }
               ]
             },
@@ -7985,7 +9999,9 @@ export const route: RouteData = {
                   "id": "the-scholar-merchant-part-2-1-6b5522",
                   "text": "After finishing the chapter, warp to Canalbrine.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -8007,13 +10023,17 @@ export const route: RouteData = {
                   "id": "temenos-ch-2-1-ae4ef3",
                   "text": "Before going upstairs, talk to the tavern keeper.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "temenos-ch-2-1-2c44af",
                   "text": "Set Slot 3 to Throne. Set Slot 4 to Osvald",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 },
                 {
@@ -8021,6 +10041,8 @@ export const route: RouteData = {
                   "text": "Set Slot 4 to Castti. Set Slot 3 to Partitio",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Tavern"
                 }
               ]
@@ -8035,13 +10057,17 @@ export const route: RouteData = {
                   "id": "temenos-ch-2-1-2d2606",
                   "text": "Turn 1 — Staff",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "temenos-ch-2-1-98d5bb",
                   "text": "Turn 2 — Aggressive Slash x4",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8057,6 +10083,8 @@ export const route: RouteData = {
                   "text": "Temenos — Equip Evil Ward over A Step Ahead (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -8071,13 +10099,17 @@ export const route: RouteData = {
                   "id": "temenos-ch-2-1-e19d7a",
                   "text": "Steal the Magic Nut from the cleric on the right of the church.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "temenos-ch-2-1-f7f564",
                   "text": "Fight Vados the Architect in the day.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8092,6 +10124,8 @@ export const route: RouteData = {
                   "text": "Hikari — Divine Dual-Edge x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 }
               ]
@@ -8106,7 +10140,16 @@ export const route: RouteData = {
                   "id": "temenos-ch-2-1-901ee6",
                   "text": "Warp to Crackridge.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "temenos-ch-2-900-9a2cb2",
+                  "text": "Make for the inn. Bring Reiza to the outskirts, investigate the Fellsun Ruins, follow Crick, investigate the “heavens”.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 9717
                 }
               ]
             }
@@ -8128,7 +10171,9 @@ export const route: RouteData = {
                   "id": "temenos-ch-3-crackridge-route-1-6bc564",
                   "text": "After finishing the chapter, warp to Stormhail.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -8150,19 +10195,25 @@ export const route: RouteData = {
                   "id": "temenos-ch-3-stormhail-route-1-59a4a0",
                   "text": "Steal the Magic Nut from the knight on the right in the pair.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "temenos-ch-3-stormhail-route-1-1e732e",
                   "text": "Steal the Ogre's Bane and Thunderstorm Amulet from the merchant outside the headquarters.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "temenos-ch-3-stormhail-route-1-cd5a79",
                   "text": "Fight Cubaryi at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8177,6 +10228,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 }
               ]
@@ -8191,13 +10244,17 @@ export const route: RouteData = {
                   "id": "temenos-ch-3-stormhail-route-1-ddcaac",
                   "text": "Warp to Tropu'hopu.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "temenos-ch-3-stormhail-route-1-fd890f",
                   "text": "Go to Nameless Village.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -8219,13 +10276,17 @@ export const route: RouteData = {
                   "id": "temenos-ch-4-1-6923e0",
                   "text": "Guide Shirlutto.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "temenos-ch-4-1-f0a251",
                   "text": "Fight Kaldena at night.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8240,6 +10301,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -8247,6 +10310,8 @@ export const route: RouteData = {
                   "text": "Throne — Abating Orb",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -8254,13 +10319,17 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
                   "id": "temenos-ch-4-1-80edba",
                   "text": "Go to the tavern.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8274,7 +10343,9 @@ export const route: RouteData = {
                   "id": "temenos-ch-4-1-f49023",
                   "text": "Set Slot 2 to Ochette. Set Slot 3 to Castti",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8288,7 +10359,9 @@ export const route: RouteData = {
                   "id": "temenos-ch-4-1-509d99",
                   "text": "Hear a Tale",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -8311,6 +10384,8 @@ export const route: RouteData = {
                   "text": "Turn 1 — Defend",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Forgetful Old Man"
                 },
                 {
@@ -8318,7 +10393,16 @@ export const route: RouteData = {
                   "text": "Turn 2 — Aggressive Slash x4",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Forgetful Old Man"
+                },
+                {
+                  "id": "the-cleric-thief-part-1-900-0d2217",
+                  "text": "Take the former carpenter to the cathedral. Proceed through the hidden passageway.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 10217
                 }
               ]
             },
@@ -8332,19 +10416,32 @@ export const route: RouteData = {
                   "id": "the-cleric-thief-part-1-1-aecbb3",
                   "text": "Steal the Imperial Armour and Swift Shield from Ort.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-cleric-thief-part-1-1-8e7f5b",
                   "text": "Steal the Reinforcing Jam from the lady by the torch.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-cleric-thief-part-1-1-9c7ff7",
                   "text": "After finishing the chapter, warp to Conning Creek.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
+                },
+                {
+                  "id": "the-cleric-thief-part-1-900-58bc30",
+                  "text": "Make for the shore. Ambush the guard in the harbor hut. Investigate the remains.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 10309
                 }
               ]
             }
@@ -8366,13 +10463,17 @@ export const route: RouteData = {
                   "id": "the-cleric-thief-part-2-1-b8bf43",
                   "text": "Steal the Folded Paper.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-cleric-thief-part-2-1-421d51",
                   "text": "Go to Cavern of the Moon and Sun.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8388,6 +10489,8 @@ export const route: RouteData = {
                   "text": "Throne — Unequip Spurning Ribbon (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -8395,6 +10498,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Imperial Armour (Body)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 }
               ]
@@ -8409,7 +10514,9 @@ export const route: RouteData = {
                   "id": "the-cleric-thief-part-2-1-72039b",
                   "text": "Fight the encounter in the day.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8424,6 +10531,8 @@ export const route: RouteData = {
                   "text": "Hikari — Sword x2",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -8431,14 +10540,19 @@ export const route: RouteData = {
                   "text": "Ochette — Defend / Capture",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
                   "id": "the-cleric-thief-part-2-1-b7b530",
-                  "text": "Anyone — Run",
+                  "text": "Anyone — Flee",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 1"
+                  "warn": false,
+                  "optional": false,
+                  "ctx": "Turn 1",
+                  "sheet": "Anyone — Run"
                 }
               ]
             },
@@ -8454,6 +10568,8 @@ export const route: RouteData = {
                   "text": "Throne — Equip Spurning Ribbon (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 }
               ]
@@ -8468,13 +10584,17 @@ export const route: RouteData = {
                   "id": "the-cleric-thief-part-2-1-41783e",
                   "text": "After finishing the chapter, warp to Oresrush.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "the-cleric-thief-part-2-1-1db9dd",
                   "text": "Go to Southern Cropdale Trail.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -8503,6 +10623,8 @@ export const route: RouteData = {
                   "text": "Hikari — Divine Dual-Edge x3",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters"
                 },
                 {
@@ -8510,6 +10632,8 @@ export const route: RouteData = {
                   "text": "Set Slot 2 to Castti. Set Slot 3 to Ochette",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "After the fight"
                 },
                 {
@@ -8517,6 +10641,8 @@ export const route: RouteData = {
                   "text": "Castti — Apothecary: 5 Apothecary skills, Dohter's Charity",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Jobs"
                 },
@@ -8525,6 +10651,8 @@ export const route: RouteData = {
                   "text": "Castti — Arcanist 3 Arcanist skills [v2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Jobs"
                 },
@@ -8533,6 +10661,8 @@ export const route: RouteData = {
                   "text": "Castti — Armsmaster [v]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Jobs"
                 },
@@ -8541,6 +10671,8 @@ export const route: RouteData = {
                   "text": "Ochette — Merchant: 3 Merchant skills [^3]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Jobs"
                 },
@@ -8549,6 +10681,8 @@ export const route: RouteData = {
                   "text": "Ochette — Dancer Peacock Strut [^1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Jobs"
                 },
@@ -8557,6 +10691,8 @@ export const route: RouteData = {
                   "text": "Partitio — Arcanist: 3 Arcanist skills [^4]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Jobs"
                 },
@@ -8565,6 +10701,8 @@ export const route: RouteData = {
                   "text": "Partitio — Cleric [v4]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Jobs"
                 },
@@ -8573,6 +10711,8 @@ export const route: RouteData = {
                   "text": "Osvald — Arcanist: 2 Arcanist skills [v3], Seal of Immortality",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Jobs"
                 },
@@ -8581,6 +10721,8 @@ export const route: RouteData = {
                   "text": "Temenos — Equip A Step Ahead (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Support Skills"
                 },
@@ -8589,6 +10731,8 @@ export const route: RouteData = {
                   "text": "Partitio — Equip Lasting Memory over Evil Ward (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Support Skills"
                 },
@@ -8597,6 +10741,8 @@ export const route: RouteData = {
                   "text": "Partitio — Equip A Step Ahead (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Support Skills"
                 },
@@ -8605,6 +10751,8 @@ export const route: RouteData = {
                   "text": "Osvald — Unequip Peak Performance (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Support Skills"
                 },
@@ -8613,6 +10761,8 @@ export const route: RouteData = {
                   "text": "Osvald — Equip Hang Tough over Deal More Damage (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Support Skills"
                 },
@@ -8621,6 +10771,8 @@ export const route: RouteData = {
                   "text": "Osvald — Equip Lasting Memory (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Support Skills"
                 },
@@ -8629,6 +10781,8 @@ export const route: RouteData = {
                   "text": "Ochette — Equip Boost-Start (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Support Skills"
                 },
@@ -8637,6 +10791,8 @@ export const route: RouteData = {
                   "text": "Castti — Unequip Extra Experience (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Support Skills"
                 },
@@ -8645,6 +10801,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Lasting Memory over Grows on Trees (Slot 4)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Support Skills"
                 },
@@ -8653,6 +10811,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip A Step Ahead (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Support Skills"
                 },
@@ -8661,6 +10821,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Summon Strength over Boost-Start (Slot 3)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Shadowy Monsters",
                   "ctx": "Support Skills"
                 }
@@ -8676,7 +10838,9 @@ export const route: RouteData = {
                   "id": "journey-for-the-dawn-1-b8a3c0",
                   "text": "Warp to Flamechurch.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8691,6 +10855,8 @@ export const route: RouteData = {
                   "text": "Temenos — Spear x3 (can do latent power with staff if you have it) [<]",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -8698,6 +10864,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -8705,6 +10873,8 @@ export const route: RouteData = {
                   "text": "Castti — Axe x2",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -8712,6 +10882,8 @@ export const route: RouteData = {
                   "text": "Throne — Axe x3 [>]",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -8719,6 +10891,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -8733,7 +10907,9 @@ export const route: RouteData = {
                   "id": "journey-for-the-dawn-1-2389b1",
                   "text": "Go to Flamechurch: Cathedral Entrance.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8748,6 +10924,8 @@ export const route: RouteData = {
                   "text": "Items — All Magic Nuts (2S, 4M) - will be 3M if you used all nuts b4 galdy → Castti",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "At the Flamechurch flame",
                   "ctx": "Inventory"
                 },
@@ -8756,6 +10934,8 @@ export const route: RouteData = {
                   "text": "Valuables — Shiny Mirror",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "lead": "At the Flamechurch flame",
                   "ctx": "Inventory"
                 }
@@ -8771,7 +10951,9 @@ export const route: RouteData = {
                   "id": "journey-for-the-dawn-1-5311e3",
                   "text": "Go to Tombs of the Wardenbeasts.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8786,6 +10968,8 @@ export const route: RouteData = {
                   "text": "Anyone — Energising Pomegranate (M) → Hikari",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -8793,6 +10977,8 @@ export const route: RouteData = {
                   "text": "Hikari — Defend / Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -8800,6 +10986,8 @@ export const route: RouteData = {
                   "text": "Anyone — Soulstone (L)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -8807,6 +10995,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4 (if needed)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 }
               ]
@@ -8822,6 +11012,8 @@ export const route: RouteData = {
                   "text": "Set Slot 2 to Ochette. Set Slot 1 to Temenos",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "At the Toto'haha flame"
                 },
                 {
@@ -8829,6 +11021,8 @@ export const route: RouteData = {
                   "text": "After lighting the flame, warp to Ku.",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "At the Toto'haha flame"
                 }
               ]
@@ -8844,19 +11038,25 @@ export const route: RouteData = {
                   "id": "journey-for-the-dawn-1-df1b81",
                   "text": "Set Slot 3 to Osvald. Set Slot 4 to Throne",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-96997c",
                   "text": "Set Slot 1 to Agnea. Set Slot 3 to Castti",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-1bb732",
                   "text": "Set Slot 4 to Partitio. Set Slot 1 to Ochette",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8870,7 +11070,9 @@ export const route: RouteData = {
                   "id": "journey-for-the-dawn-1-589578",
                   "text": "Go to the armourer. Make sure you swapped parties first (need the extra sell value).",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -8884,49 +11086,65 @@ export const route: RouteData = {
                   "id": "journey-for-the-dawn-1-25a433",
                   "text": "Buy 3 Great Helm",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-1ea24b",
                   "text": "Sell Guardian's Iceblade",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-c3fa58",
                   "text": "Sell Ogre's Bane",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-136303",
                   "text": "Sell Eclipse Edge",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-38fd59",
                   "text": "Sell Marietta",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-8e036e",
                   "text": "Sell Breaker's Blade",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-b7f54c",
                   "text": "Sell Black Bow",
                   "check": true,
-                  "kind": "shop"
+                  "kind": "shop",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-c2e428",
                   "text": "Need to have at least 297k after selling.",
                   "check": false,
                   "kind": "note",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Notes"
                 },
                 {
@@ -8934,6 +11152,8 @@ export const route: RouteData = {
                   "text": "Osvald — Unequip all",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -8942,6 +11162,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "equips tornado glaive, wind whisperer, tornado bow, battle-tested staff, swift shield, great helm, and royal guard's mail",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -8949,6 +11171,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Fang of Ferocity (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -8956,6 +11180,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Alpione's Amulet (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -8963,6 +11189,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Blessed Vestments (Body)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -8970,6 +11198,8 @@ export const route: RouteData = {
                   "text": "Castti — Equip Ancient Circlet (Head)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -8977,6 +11207,8 @@ export const route: RouteData = {
                   "text": "Castti — Unequip Swift Shield (Shield)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -8984,6 +11216,8 @@ export const route: RouteData = {
                   "text": "Temenos — Equip Fortune Wand (Staff)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -8992,6 +11226,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "Changed since the video (06/30/2026): Coat of Arms + Aegis Shield replace Empowering Necklace.",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -9000,6 +11236,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "Changed since the video (06/30/2026): Coat of Arms + Aegis Shield replace Empowering Necklace.",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -9008,6 +11246,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "equips great helm and royal guard's mail",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -9015,6 +11255,8 @@ export const route: RouteData = {
                   "text": "Ochette — Equip EXP Augmentor (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -9022,6 +11264,8 @@ export const route: RouteData = {
                   "text": "Ochette — Equip Sprightly Ring (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -9030,6 +11274,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "equips swift shield, great helm, and royal guard's mail",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -9037,6 +11283,8 @@ export const route: RouteData = {
                   "text": "Partitio — Equip Quick Cloak",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -9044,6 +11292,8 @@ export const route: RouteData = {
                   "text": "Partitio — Equip 2 Empowering Bracelets",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -9051,6 +11301,8 @@ export const route: RouteData = {
                   "text": "Agnea — Equip Spurning Ribbon (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -9059,6 +11311,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "menu",
                   "note": "equips swift shield, great helm, and royal guard's mail",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -9066,6 +11320,8 @@ export const route: RouteData = {
                   "text": "Osvald — Equip 2 Empowering Bracelets",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 }
               ]
@@ -9080,31 +11336,41 @@ export const route: RouteData = {
                   "id": "journey-for-the-dawn-1-5cb913",
                   "text": "Go to Tranquil Grotto.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-119821",
                   "text": "After lighting the flame, warp to Crackridge.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-c1274d",
                   "text": "Go to Fellsun Ruins.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-e01958",
                   "text": "After lighting the flame, warp to New Delsta Harbour.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-607742",
                   "text": "Go to Vidania.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             },
@@ -9119,19 +11385,25 @@ export const route: RouteData = {
                   "id": "journey-for-the-dawn-1-54bca4",
                   "text": "Set Slot 3 to Throne. Set Slot 1 to Partitio",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-503369",
                   "text": "Set Slot 2 to Temenos. Set Slot 3 to Agnea",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "journey-for-the-dawn-1-764b34",
                   "text": "Throne — Abating Orb → Vide",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9139,6 +11411,8 @@ export const route: RouteData = {
                   "text": "Hikari — Latent Power + Hienka x2 → Vide",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9146,6 +11420,8 @@ export const route: RouteData = {
                   "text": "Temenos — Energising Pomegranate (L) → Hikari",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9153,6 +11429,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4 → Vide",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1 End"
                 }
               ]
@@ -9176,6 +11454,8 @@ export const route: RouteData = {
                   "text": "Castti — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9183,6 +11463,8 @@ export const route: RouteData = {
                   "text": "Partitio — Forbidden Elixir → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9190,6 +11472,8 @@ export const route: RouteData = {
                   "text": "Agnea — Latent Power + Springy Boots",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9197,6 +11481,8 @@ export const route: RouteData = {
                   "text": "Ochette — Peacock Strut → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9204,6 +11490,8 @@ export const route: RouteData = {
                   "text": "Castti — Switch to Staff",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9216,6 +11504,8 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9223,6 +11513,8 @@ export const route: RouteData = {
                   "text": "Partitio — Bow x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9230,6 +11522,8 @@ export const route: RouteData = {
                   "text": "Agnea — Dagger x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9237,6 +11531,8 @@ export const route: RouteData = {
                   "text": "Ochette — Bow x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9244,6 +11540,8 @@ export const route: RouteData = {
                   "text": "Partitio — HHT x2",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9251,6 +11549,8 @@ export const route: RouteData = {
                   "text": "Ochette — Latent Power - Beastly Howl",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9262,6 +11562,8 @@ export const route: RouteData = {
                     "Blusterbloom x3",
                     "Strengthening Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 }
               ]
@@ -9277,19 +11579,25 @@ export const route: RouteData = {
                   "id": "vide-the-wicked-1-2fb028",
                   "text": "Set Slot 1 to Castti. Set Slot 2 to Hikari",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "vide-the-wicked-1-99270e",
                   "text": "Set Slot 3 to Partitio. Set Slot 4 to Osvald",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "vide-the-wicked-1-9416f6",
                   "text": "Throne — Merchant [^3]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -9297,6 +11605,8 @@ export const route: RouteData = {
                   "text": "Temenos — Inventor [^1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 }
               ]
@@ -9311,25 +11621,33 @@ export const route: RouteData = {
                   "id": "vide-the-wicked-1-0e0d6e",
                   "text": "Hire the Cleric in the church.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "vide-the-wicked-1-6fad35",
                   "text": "Warp to Conning Creek.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "vide-the-wicked-1-9b96ed",
                   "text": "Save the game.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "vide-the-wicked-1-7e8702",
                   "text": "Exit and load the same file under Extra Battles.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
@@ -9358,6 +11676,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Reinforcing Jam → Self",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9365,6 +11685,8 @@ export const route: RouteData = {
                   "text": "Throne — HHB x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9372,6 +11694,8 @@ export const route: RouteData = {
                   "text": "Castti — Energising Pomegranate (L) → Self",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9379,6 +11703,8 @@ export const route: RouteData = {
                   "text": "Temenos — Springy Boots → Throne",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9386,6 +11712,8 @@ export const route: RouteData = {
                   "text": "Partitio — Latent Power + Aelfric's Blessing → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9393,6 +11721,8 @@ export const route: RouteData = {
                   "text": "Castti — Dohter's Charity → Throne",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1 - Aelfric's"
                 },
                 {
@@ -9400,6 +11730,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Forbidden Elixir",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9407,6 +11739,8 @@ export const route: RouteData = {
                   "text": "Throne — HHB x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9414,6 +11748,8 @@ export const route: RouteData = {
                   "text": "Castti — Switch to Staff",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9427,6 +11763,8 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9434,6 +11772,8 @@ export const route: RouteData = {
                   "text": "Temenos — Ancient Cursed Talisman",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9441,6 +11781,8 @@ export const route: RouteData = {
                   "text": "Partitio — Aelfric's Blessing → Throne",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9453,6 +11795,8 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2 - Aelfric's"
                 },
                 {
@@ -9460,6 +11804,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2 - Aelfric's"
                 },
                 {
@@ -9467,6 +11813,8 @@ export const route: RouteData = {
                   "text": "Throne — 2 Decaying Dragon's Essence",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2 - Aelfric's"
                 },
                 {
@@ -9474,6 +11822,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Reinforcing Jam",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9481,6 +11831,8 @@ export const route: RouteData = {
                   "text": "Throne — Ancient Cursed Talisman",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9493,6 +11845,8 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9505,6 +11859,8 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3 - Aelfric's"
                 }
               ]
@@ -9528,6 +11884,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Reinforcing Jam → Self",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9535,6 +11893,8 @@ export const route: RouteData = {
                   "text": "Throne — HHB x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9542,6 +11902,8 @@ export const route: RouteData = {
                   "text": "Castti — Energising Pomegranate (L) → Self",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9549,6 +11911,8 @@ export const route: RouteData = {
                   "text": "Temenos — Springy Boots → Throne",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9556,6 +11920,8 @@ export const route: RouteData = {
                   "text": "Partitio — Latent Power + Aelfric's Blessing → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9564,6 +11930,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "fight",
                   "note": "H'aanit can get a patience turn here, but as long as she doesn't kill Throne/Partitio/Castti (or hit throne with leghold) it's fine.",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1 - Aelfric's"
                 },
                 {
@@ -9571,6 +11939,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Forbidden Elixir",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9578,6 +11948,8 @@ export const route: RouteData = {
                   "text": "Throne — HHB x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9585,6 +11957,8 @@ export const route: RouteData = {
                   "text": "Castti — Switch to Staff",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9597,6 +11971,8 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9604,6 +11980,8 @@ export const route: RouteData = {
                   "text": "Partitio — Aelfric's Blessing → Throne",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9616,6 +11994,8 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2 - Aelfric's"
                 },
                 {
@@ -9623,6 +12003,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2 - Aelfric's"
                 },
                 {
@@ -9630,6 +12012,8 @@ export const route: RouteData = {
                   "text": "Throne — 2 Decaying Dragon's Essence",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2 - Aelfric's"
                 },
                 {
@@ -9637,6 +12021,8 @@ export const route: RouteData = {
                   "text": "Throne — Reinforcing Jam",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9649,6 +12035,8 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9656,6 +12044,8 @@ export const route: RouteData = {
                   "text": "Anyone — Ancient Cursed Talisman",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9668,6 +12058,8 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3 - Aelfric's"
                 }
               ]
@@ -9683,19 +12075,25 @@ export const route: RouteData = {
                   "id": "masterly-mysterious-travellers-1-6e5201",
                   "text": "Set Slot 4 to Ochette. Set Slot 2 to Castti",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "masterly-mysterious-travellers-1-935f58",
                   "text": "Set Slot 1 to Hikari. Set Slot 3 to Temenos",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "masterly-mysterious-travellers-1-8d0b0d",
                   "text": "Items — Nourishing Nut (M) → Partitio",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -9703,6 +12101,8 @@ export const route: RouteData = {
                   "text": "Items — Reinforcing Jam (Ochette)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Inventory"
                 },
                 {
@@ -9710,6 +12110,8 @@ export const route: RouteData = {
                   "text": "Throne — Cleric: All Cleric skills [^2]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -9717,6 +12119,8 @@ export const route: RouteData = {
                   "text": "Partitio — Merchant: 1 Merchant skill",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -9724,6 +12128,8 @@ export const route: RouteData = {
                   "text": "Partitio — Dancer [^1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -9731,6 +12137,8 @@ export const route: RouteData = {
                   "text": "Agnea — Merchant: Hired Help [v1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 }
               ]
@@ -9754,6 +12162,8 @@ export const route: RouteData = {
                   "text": "Throne — Energising Pomegranate (L) → Hikari",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9761,6 +12171,8 @@ export const route: RouteData = {
                   "text": "Ochette — Latent Power - Beastly Howl",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9768,6 +12180,8 @@ export const route: RouteData = {
                   "text": "Hikari — Divine Dual-Edge x4 (if last)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9775,6 +12189,8 @@ export const route: RouteData = {
                   "text": "Hikari — Otherwise, Latent Power - Hienka → Vide",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9782,6 +12198,8 @@ export const route: RouteData = {
                   "text": "Partitio — Latent Power + HHB x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9789,6 +12207,8 @@ export const route: RouteData = {
                   "text": "Hikari — Divine Dual-Edge x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1 - Aelfric's"
                 },
                 {
@@ -9796,6 +12216,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Energising Pomegranate (L) → Self",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9803,6 +12225,8 @@ export const route: RouteData = {
                   "text": "Throne — Aelfric's Blessing → Partitio",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9810,6 +12234,8 @@ export const route: RouteData = {
                   "text": "Ochette — Revitalising Jam → Hikari",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9818,6 +12244,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "fight",
                   "note": "cursor should still be on vide",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9825,6 +12253,8 @@ export const route: RouteData = {
                   "text": "Partitio — Summon",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9832,6 +12262,8 @@ export const route: RouteData = {
                   "text": "Partitio — Summon",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2 - Aelfric's"
                 },
                 {
@@ -9839,6 +12271,8 @@ export const route: RouteData = {
                   "text": "Hikari — Divine Dual-Edge x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2 - Aelfric's"
                 },
                 {
@@ -9846,6 +12280,8 @@ export const route: RouteData = {
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9853,6 +12289,8 @@ export const route: RouteData = {
                   "text": "Ochette — Provoke Beasts x2",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9860,6 +12298,8 @@ export const route: RouteData = {
                   "text": "Ochette — Vagrant Frogking I x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9867,6 +12307,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9874,6 +12316,8 @@ export const route: RouteData = {
                   "text": "Partitio — Lion Dance → Hikari",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -9881,6 +12325,8 @@ export const route: RouteData = {
                   "text": "Partitio — Reinforcing Jam → Hikari",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3 - Aelfric's"
                 },
                 {
@@ -9888,6 +12334,8 @@ export const route: RouteData = {
                   "text": "Hikari — Latent Power - Hienka x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4"
                 },
                 {
@@ -9895,6 +12343,8 @@ export const route: RouteData = {
                   "text": "Partitio — Energising Pomegranate → Hikari",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4 - Aelfric's"
                 },
                 {
@@ -9902,6 +12352,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4 - Aelfric's"
                 }
               ]
@@ -9925,6 +12377,8 @@ export const route: RouteData = {
                   "text": "Temenos — Aelfric's Blessing → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9932,6 +12386,8 @@ export const route: RouteData = {
                   "text": "Osvald — One True Magic",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9939,6 +12395,8 @@ export const route: RouteData = {
                   "text": "Agnea — HHB x4",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9951,6 +12409,8 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -9958,6 +12418,7 @@ export const route: RouteData = {
                   "text": "Whimsical Leaf (skip if Castti already acts last)",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
                   "optional": true,
                   "ctx": "Turn 1"
                 },
@@ -9966,6 +12427,8 @@ export const route: RouteData = {
                   "text": "Castti — Decaying Dragon's Essence → Bottom right [^]",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1 - Aelfric's"
                 },
                 {
@@ -9973,6 +12436,8 @@ export const route: RouteData = {
                   "text": "Temenos — Sacred Shield x3 → Osvald",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9980,6 +12445,8 @@ export const route: RouteData = {
                   "text": "Osvald — Seal of Immortality",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9987,6 +12454,8 @@ export const route: RouteData = {
                   "text": "Agnea — Refreshing Jam (if Osvald is at 1 HP, else Peacock Strut x2 Castti) → Osvald",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -9994,6 +12463,8 @@ export const route: RouteData = {
                   "text": "Castti — Forbidden Elixir → Self",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2"
                 },
                 {
@@ -10001,6 +12472,8 @@ export const route: RouteData = {
                   "text": "Castti — Switch to Staff",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2 - Aelfric's"
                 },
                 {
@@ -10013,6 +12486,8 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 2 - Aelfric's"
                 },
                 {
@@ -10020,6 +12495,8 @@ export const route: RouteData = {
                   "text": "Osvald — Almighty Olive",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -10027,6 +12504,8 @@ export const route: RouteData = {
                   "text": "Castti — Forbidden Elixir → Self",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3 - Aelfric's"
                 },
                 {
@@ -10034,6 +12513,8 @@ export const route: RouteData = {
                   "text": "Agnea — Peacock Strut (if not done already) → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4"
                 },
                 {
@@ -10041,6 +12522,8 @@ export const route: RouteData = {
                   "text": "Anyone — Ancient Cursed Talisman",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4"
                 },
                 {
@@ -10052,6 +12535,8 @@ export const route: RouteData = {
                     "Blusterbloom x2",
                     "Strengthening Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4"
                 },
                 {
@@ -10059,6 +12544,8 @@ export const route: RouteData = {
                   "text": "Anyone — Defend",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4"
                 },
                 {
@@ -10070,6 +12557,8 @@ export const route: RouteData = {
                     "Blusterbloom x4",
                     "Strengthening Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4 - Aelfric's"
                 },
                 {
@@ -10077,6 +12566,8 @@ export const route: RouteData = {
                   "text": "Anyone — Energising Pomegranate (M) → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 5"
                 },
                 {
@@ -10088,6 +12579,8 @@ export const route: RouteData = {
                     "Blusterbloom x4",
                     "Strengthening Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 5"
                 }
               ]
@@ -10103,19 +12596,25 @@ export const route: RouteData = {
                   "id": "true-vide-phase-2-1-2ee536",
                   "text": "Set Slot 2 to Agnea. Set Slot 4 to Partitio",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "true-vide-phase-2-1-d3e8b3",
                   "text": "Set Slot 1 to Temenos. Set Slot 3 to Hikari",
                   "check": true,
-                  "kind": "party"
+                  "kind": "party",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "true-vide-phase-2-1-fcc8ea",
                   "text": "Throne — Equip Thunderstorm Amulet over Brooch of Joy (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -10123,6 +12622,8 @@ export const route: RouteData = {
                   "text": "Ochette — Unequip Sprightly Ring (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -10130,6 +12631,8 @@ export const route: RouteData = {
                   "text": "Temenos — Equip Thunderstorm Amulet (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -10137,6 +12640,8 @@ export const route: RouteData = {
                   "text": "Temenos — Equip Unerring Bracelet (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -10144,6 +12649,8 @@ export const route: RouteData = {
                   "text": "Agnea — Equip 2 Lightning Amulets",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Equipment"
                 },
                 {
@@ -10151,6 +12658,8 @@ export const route: RouteData = {
                   "text": "Throne — Merchant [^1]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -10158,6 +12667,8 @@ export const route: RouteData = {
                   "text": "Osvald — Dancer: Stimulate [v5]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -10165,6 +12676,8 @@ export const route: RouteData = {
                   "text": "Hikari — Arcanist [v3]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -10172,6 +12685,8 @@ export const route: RouteData = {
                   "text": "Agnea — Inventor [^3]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -10179,6 +12694,8 @@ export const route: RouteData = {
                   "text": "Temenos — Scholar: Elemental Barrage [v3]",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Jobs"
                 },
                 {
@@ -10186,6 +12703,8 @@ export const route: RouteData = {
                   "text": "Partitio — Equip Hang Tough over The Show Goes On (Slot 1)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 },
                 {
@@ -10193,6 +12712,8 @@ export const route: RouteData = {
                   "text": "Hikari — Equip Boost-Start over A Step Ahead (Slot 2)",
                   "check": true,
                   "kind": "menu",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Support Skills"
                 }
               ]
@@ -10216,6 +12737,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + HHA x3",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -10223,6 +12746,8 @@ export const route: RouteData = {
                   "text": "Throne — Forbidden Elixir → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -10230,6 +12755,8 @@ export const route: RouteData = {
                   "text": "Ochette — Peacock Strut x3 → Castti",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -10238,6 +12765,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "fight",
                   "note": "Changed since the video (09/17/2025): no shaggy aurochs; mighty leaf and rotten meat instead.",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -10245,6 +12774,8 @@ export const route: RouteData = {
                   "text": "Agnea — Windy Refrain",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 1"
                 },
                 {
@@ -10252,6 +12783,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4 → Top",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 2"
                 },
                 {
@@ -10259,6 +12792,8 @@ export const route: RouteData = {
                   "text": "Partitio — Defend",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 2"
                 },
                 {
@@ -10266,6 +12801,8 @@ export const route: RouteData = {
                   "text": "Castti — Switch to Staff",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 2"
                 },
                 {
@@ -10277,6 +12814,8 @@ export const route: RouteData = {
                     "Blusterbloom x4",
                     "Strengthening Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 2"
                 },
                 {
@@ -10285,6 +12824,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "party",
                   "note": "Otherwise",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 2"
                 },
                 {
@@ -10293,6 +12834,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "party",
                   "note": "Lion Dance",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 2"
                 },
                 {
@@ -10301,6 +12844,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "party",
                   "note": "Can use the decaying dragon's essence with osvald (if not done already) if partitio is already moving first on turn 4",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -10308,6 +12853,8 @@ export const route: RouteData = {
                   "text": "Osvald — Stimulate x3 → Partitio",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 3"
                 },
                 {
@@ -10316,6 +12863,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "party",
                   "note": "Can use the decaying dragon's essence with osvald (if not done already) if partitio is already moving before the boss on turn 5",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4"
                 },
                 {
@@ -10323,6 +12872,8 @@ export const route: RouteData = {
                   "text": "Osvald — Stimulate x3 → Partitio",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4"
                 },
                 {
@@ -10331,6 +12882,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "party",
                   "note": "Osvald has not used Decaying Dragon's Essence (7 shields left)",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 4"
                 },
                 {
@@ -10339,6 +12892,8 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "party",
                   "note": "Branch: Partitio — HHA x3",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 5"
                 },
                 {
@@ -10347,25 +12902,33 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "party",
                   "note": "Branch: Osvald — Defend",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 5"
                 },
                 {
                   "id": "true-vide-the-wicked-1-292956",
                   "text": "Turn 5.5 — Partitio: Ancient Cursed Talisman",
                   "check": true,
-                  "kind": "fight"
+                  "kind": "fight",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "true-vide-the-wicked-1-4397da",
                   "text": "Turn 5.5 — Osvald: Decaying Dragon's Essence",
                   "check": true,
-                  "kind": "fight"
+                  "kind": "fight",
+                  "warn": false,
+                  "optional": false
                 },
                 {
                   "id": "true-vide-the-wicked-1-167fa0",
                   "text": "Hikari — Latent Power - Hienka x2 (x3 if after Partitio)",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 6"
                 },
                 {
@@ -10373,6 +12936,8 @@ export const route: RouteData = {
                   "text": "Partitio — Revitalising Jam → Hikari",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 6"
                 },
                 {
@@ -10380,6 +12945,8 @@ export const route: RouteData = {
                   "text": "Osvald — Refreshing Jam → Throne",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 6"
                 },
                 {
@@ -10391,6 +12958,8 @@ export const route: RouteData = {
                     "Blusterbloom x4",
                     "Strengthening Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 6"
                 },
                 {
@@ -10398,6 +12967,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 6 - Aelfric's"
                 },
                 {
@@ -10405,6 +12976,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Spear x4 → Bottom",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 7"
                 },
                 {
@@ -10412,6 +12985,8 @@ export const route: RouteData = {
                   "text": "Throne — Energising Pomegranate (L) → Castti",
                   "check": true,
                   "kind": "do",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 7"
                 },
                 {
@@ -10419,6 +12994,8 @@ export const route: RouteData = {
                   "text": "Ochette — Latent Power - Beastly Howl",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 7"
                 },
                 {
@@ -10426,6 +13003,8 @@ export const route: RouteData = {
                   "text": "Temenos — Staff x4 → Bottom",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 7"
                 },
                 {
@@ -10433,6 +13012,8 @@ export const route: RouteData = {
                   "text": "Agnea — Latent Power + Springy Boots x3",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 7"
                 },
                 {
@@ -10440,6 +13021,8 @@ export const route: RouteData = {
                   "text": "Dancer — Stimulate x2 (if Castti is last) → Castti",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 8"
                 },
                 {
@@ -10452,6 +13035,8 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 8"
                 },
                 {
@@ -10459,6 +13044,8 @@ export const route: RouteData = {
                   "text": "Anyone — Energising Pomegranate (L) → Throne",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 8"
                 },
                 {
@@ -10466,6 +13053,8 @@ export const route: RouteData = {
                   "text": "Anyone — Decaying Dragon's Essence (after Castti)",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 8"
                 },
                 {
@@ -10473,6 +13062,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Spear x4",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 9"
                 },
                 {
@@ -10480,6 +13071,8 @@ export const route: RouteData = {
                   "text": "Throne — Ancient Cursed Talisman",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 9"
                 },
                 {
@@ -10487,6 +13080,8 @@ export const route: RouteData = {
                   "text": "Temenos — Revive",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 9"
                 },
                 {
@@ -10494,6 +13089,8 @@ export const route: RouteData = {
                   "text": "Agnea — Energising Pomegranate (M) → Castti",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 9"
                 },
                 {
@@ -10501,6 +13098,8 @@ export const route: RouteData = {
                   "text": "Ochette — Provoke Beasts x4",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 9"
                 },
                 {
@@ -10508,6 +13107,8 @@ export const route: RouteData = {
                   "text": "Ochette — Vagrant Frogking I x6",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 9"
                 },
                 {
@@ -10515,6 +13116,8 @@ export const route: RouteData = {
                   "text": "Dancer — Stimulate x2 (if Castti is last) → Castti",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 10"
                 },
                 {
@@ -10526,6 +13129,8 @@ export const route: RouteData = {
                     "Blusterbloom x4",
                     "Strengthening Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 10"
                 },
                 {
@@ -10533,6 +13138,8 @@ export const route: RouteData = {
                   "text": "Last Person — Switch Party",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 10"
                 },
                 {
@@ -10540,6 +13147,8 @@ export const route: RouteData = {
                   "text": "Ochette — Latent Power - Beastly Howl x3",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 10"
                 },
                 {
@@ -10547,6 +13156,8 @@ export const route: RouteData = {
                   "text": "Throne — Almighty Olive",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 11"
                 },
                 {
@@ -10554,6 +13165,8 @@ export const route: RouteData = {
                   "text": "Temenos — Latent Power + Elemental Barrage x4",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 11"
                 },
                 {
@@ -10561,6 +13174,8 @@ export const route: RouteData = {
                   "text": "Agnea — Windy Refrain",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 11"
                 },
                 {
@@ -10568,6 +13183,8 @@ export const route: RouteData = {
                   "text": "Throne — Latent Power + Sword x4",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 12"
                 },
                 {
@@ -10575,6 +13192,8 @@ export const route: RouteData = {
                   "text": "Throne — Reinforcing Jam → Temenos",
                   "check": true,
                   "kind": "fight",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 12"
                 },
                 {
@@ -10582,6 +13201,8 @@ export const route: RouteData = {
                   "text": "Temenos — Latent Power + Elemental Barrage x4",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 12"
                 },
                 {
@@ -10589,6 +13210,8 @@ export const route: RouteData = {
                   "text": "Agnea — Elemental Bomb Bottle x4",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 12"
                 },
                 {
@@ -10596,6 +13219,8 @@ export const route: RouteData = {
                   "text": "Ochette — Peacock Strut x2 → Castti",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 12"
                 },
                 {
@@ -10603,6 +13228,8 @@ export const route: RouteData = {
                   "text": "Partitio — Latent Power + Stimulate x4 → Hikari",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 13"
                 },
                 {
@@ -10610,6 +13237,8 @@ export const route: RouteData = {
                   "text": "Hikari — Aggressive Slash x3",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 13"
                 },
                 {
@@ -10617,6 +13246,8 @@ export const route: RouteData = {
                   "text": "Osvald — Forbidden Elixir → Castti",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 13"
                 },
                 {
@@ -10628,6 +13259,8 @@ export const route: RouteData = {
                     "Blusterbloom x4",
                     "Strengthening Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "lead": "Turn 13"
                 },
                 {
@@ -10635,6 +13268,8 @@ export const route: RouteData = {
                   "text": "Osvald — Revitalising Jam → Hikari",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 14"
                 },
                 {
@@ -10646,6 +13281,8 @@ export const route: RouteData = {
                     "Blusterbloom x3",
                     "Strengthening Serum"
                   ],
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 14"
                 },
                 {
@@ -10653,6 +13290,8 @@ export const route: RouteData = {
                   "text": "Hikari — Latent Power - Hienka x3",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 14"
                 },
                 {
@@ -10660,6 +13299,8 @@ export const route: RouteData = {
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "party",
+                  "warn": false,
+                  "optional": false,
                   "ctx": "Turn 14 - Aelfric's"
                 }
               ]
@@ -10674,7 +13315,9 @@ export const route: RouteData = {
                   "id": "true-vide-the-wicked-1-7a333a",
                   "text": "GGs!",
                   "check": true,
-                  "kind": "fight"
+                  "kind": "fight",
+                  "warn": false,
+                  "optional": false
                 }
               ]
             }
