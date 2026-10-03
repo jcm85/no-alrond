@@ -163,6 +163,8 @@ test("weakness chips stay in game order and never guess a conflict", () => {
   assert.equal(pursuer.enemies[1]?.confidence, "unverified");
   assert.equal(pursuer.enemies[1]?.weak, undefined);
   const snake = fightNotes["throne-ch-1-1-db0eeb"];
+  assert.equal(snake?.enemies[0]?.name, "Phantom Snake (Man)");
+  assert.equal(snake?.enemies[0]?.note, 'identity of route "Man" inferred');
   assert.equal(snake?.enemies[0]?.confidence, "single-source");
   assert.deepEqual(snake?.enemies[0]?.weak, ["Sword", "Light", "Dark"]);
   const hhb = fightNotes["osvald-ch-3-1-bbc69f"];

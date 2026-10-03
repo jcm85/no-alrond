@@ -8,6 +8,7 @@ export type FightEnemy = {
   weak?: WeakName[];
   shield?: string;
   recheck?: boolean;
+  note?: string;
 };
 export type FightNote = {
   enemies: FightEnemy[];
@@ -247,8 +248,9 @@ export const fightNotes: Record<string, FightNote> = {
   "throne-ch-1-1-57ffa0": {
     "enemies": [
       {
-        "name": "Phantom Snake (Man) — identity of route \"Man\" inferred",
+        "name": "Phantom Snake (Man)",
         "confidence": "single-source",
+        "note": "identity of route \"Man\" inferred",
         "weak": [
           "Sword",
           "Light",
@@ -261,8 +263,9 @@ export const fightNotes: Record<string, FightNote> = {
   "throne-ch-1-1-db0eeb": {
     "enemies": [
       {
-        "name": "Phantom Snake (Man) — identity of route \"Man\" inferred",
+        "name": "Phantom Snake (Man)",
         "confidence": "single-source",
+        "note": "identity of route \"Man\" inferred",
         "weak": [
           "Sword",
           "Light",
@@ -275,8 +278,9 @@ export const fightNotes: Record<string, FightNote> = {
   "throne-ch-1-1-79e189": {
     "enemies": [
       {
-        "name": "Phantom Snake (Man) — identity of route \"Man\" inferred",
+        "name": "Phantom Snake (Man)",
         "confidence": "single-source",
+        "note": "identity of route \"Man\" inferred",
         "weak": [
           "Sword",
           "Light",
@@ -289,8 +293,9 @@ export const fightNotes: Record<string, FightNote> = {
   "throne-ch-1-1-e70eb9": {
     "enemies": [
       {
-        "name": "Phantom Snake (Man) — identity of route \"Man\" inferred",
+        "name": "Phantom Snake (Man)",
         "confidence": "single-source",
+        "note": "identity of route \"Man\" inferred",
         "weak": [
           "Sword",
           "Light",

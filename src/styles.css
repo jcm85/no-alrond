@@ -121,54 +121,47 @@ header {
 }
 
 .route-notice {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 6;
+  position: relative;
+  z-index: 1;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 0.35rem 0.75rem;
-  margin: 0;
-  border-right: 0;
-  border-bottom: 0;
-  border-left: 0;
-  border-radius: 0;
+  flex: 0 1 auto;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-height: 0;
+  max-height: min(11.5rem, 42dvh);
+  margin: 0 0 0.5rem;
+  overflow: auto;
+  border: 1px solid var(--color-gold);
+  border-radius: 0.75rem;
+  background: var(--color-surface);
+  padding: 0.6rem 0.75rem;
 }
 
 .route-notice p {
   margin: 0;
 }
 
-.route-notice button,
-.route-notice summary {
+.route-notice-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.route-notice button {
   min-height: 2.75rem;
 }
 
-@media (max-width: 700px), (max-height: 860px) {
+@media (max-height: 520px) {
   .route-notice {
-    flex-wrap: nowrap;
-    align-items: center;
-    max-height: none;
-    overflow: visible;
+    max-height: 7.25rem;
   }
+}
 
-  .route-notice > p {
-    min-width: 0;
-    flex: 1 1 auto;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .route-notice > div {
-    flex-wrap: nowrap;
-  }
-
-  .notice-review {
-    display: none;
-  }
+.about-panel {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  overflow: auto;
 }
 
 .now-layout > .upcoming {
@@ -286,12 +279,28 @@ header {
   object-fit: contain;
 }
 
-/* In the header, so it never covers the step title or Done. Only Undo takes taps. */
+/* Out of flow at every size. Sits just above Done, and only Undo takes taps. */
 .undo-toast {
+  position: fixed;
+  z-index: 25;
+  margin: 0;
+  pointer-events: none;
+}
+
+.undo-toast-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border: 1px solid var(--color-gold);
+  border-radius: 0.75rem;
+  background: var(--color-raise);
+  padding: 0.2rem 0.55rem 0.2rem 0.85rem;
   pointer-events: none;
 }
 
 .undo-toast button {
+  min-height: 2.75rem;
   pointer-events: auto;
 }
 
@@ -615,18 +624,6 @@ header {
   .now-layout > .upcoming,
   .now-tools {
     display: none;
-  }
-
-  header {
-    position: relative;
-  }
-
-  .undo-toast {
-    position: absolute;
-    right: 0;
-    bottom: 0.25rem;
-    left: 0;
-    z-index: 5;
   }
 }
 
