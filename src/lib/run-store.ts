@@ -12,7 +12,10 @@ import {
   type StoredProgress,
 } from "@/lib/migrate-progress";
 
+export type Aside = { text: string; warn: boolean };
+
 export type FlatStep = Step & {
+  n: number;
   actId: string;
   act: string;
   chapterId: string;
@@ -25,21 +28,31 @@ export type FlatStep = Step & {
   when?: string;
   foes?: string[];
   solo?: boolean;
+  asides: Aside[];
 };
 
+const WARN_RE = /^do not|^don't|never|reload|chance to/i;
+const LEARN_RE = /^learn\b/i;
+
+function isWarn(text: string | undefined) {
+  return Boolean(text && WARN_RE.test(text));
+}
+
+export const chapterOrder: { id: string; title: string; actId: string }[] = [];
 export const steps: FlatStep[] = [];
 
 for (const act of route.acts) {
   for (const chapter of act.chapters) {
+    chapterOrder.push({ id: chapter.id, title: chapter.title, actId: act.id });
     for (const block of chapter.blocks) {
-      const sheetNotes = block.steps.filter((s) => !s.check).map((s) => s.text);
-      let first = true;
-      for (const step of block.steps) {
-        if (!step.check) continue;
-        const extra = first ? sheetNotes.join(" ") : "";
-        first = false;
-        steps.push({
+      const pending: Aside[] = [];
+      const blockSteps: FlatStep[] = [];
+      const push = (step: Step, learn: boolean) => {
+        const asides = pending.splice(0);
+        const made: FlatStep = {
           ...step,
+          check: true,
+          n: 0,
           actId: act.id,
           act: act.title,
           chapterId: chapter.id,
@@ -52,12 +65,36 @@ for (const act of route.acts) {
           when: block.when,
           foes: block.foes,
           solo: block.solo,
-          note: [extra, step.note].filter(Boolean).join(" ") || undefined,
-        });
+          asides,
+          warn: Boolean(step.warn) || isWarn(step.note) || isWarn(step.text),
+          kind: learn ? "do" : step.kind,
+        };
+        blockSteps.push(made);
+        steps.push(made);
+      };
+      for (const step of block.steps) {
+        if (!step.check && LEARN_RE.test(step.text)) {
+          push(step, true);
+          continue;
+        }
+        if (!step.check) {
+          const aside = { text: step.text, warn: Boolean(step.warn) || isWarn(step.text) || isWarn(step.note) };
+          const previous = blockSteps[blockSteps.length - 1];
+          if (previous) previous.asides.push(aside);
+          else pending.push(aside);
+          continue;
+        }
+        push(step, false);
       }
+      const tail = blockSteps[blockSteps.length - 1];
+      if (pending.length && tail) tail.asides.push(...pending);
     }
   }
 }
+
+steps.forEach((step, index) => {
+  step.n = index + 1;
+});
 
 export function videoAt(seconds: number) {
   return `${route.meta.video}?t=${seconds}`;
@@ -88,10 +125,12 @@ type RunState = {
   done: Record<string, boolean>;
   skipped: Record<string, boolean>;
   history: string[];
+  jumps: number[];
   notice: RouteNotice | null;
   hydrated: boolean;
   complete: (id: string, how: "done" | "skip") => void;
   toggle: (id: string) => void;
+  markThrough: (id: string) => void;
   undo: () => void;
   reset: () => void;
   dismissNotice: () => void;
@@ -105,8 +144,28 @@ const fresh = {
   done: {} as Record<string, boolean>,
   skipped: {} as Record<string, boolean>,
   history: [] as string[],
+  jumps: [] as number[],
   notice: null as RouteNotice | null,
 };
+
+function dropId(history: string[], jumps: number[], id: string) {
+  const index = history.lastIndexOf(id);
+  if (index < 0) return { history, jumps };
+  const nextHistory = history.filter((_, item) => item !== index);
+  const nextJumps = jumps.length ? [...jumps] : history.map(() => 1);
+  while (nextJumps.reduce((sum, size) => sum + size, 0) < history.length) nextJumps.push(1);
+  let cursor = 0;
+  for (let i = 0; i < nextJumps.length; i += 1) {
+    const size = nextJumps[i] ?? 0;
+    if (index < cursor + size) {
+      nextJumps[i] = size - 1;
+      if (nextJumps[i] === 0) nextJumps.splice(i, 1);
+      break;
+    }
+    cursor += size;
+  }
+  return { history: nextHistory, jumps: nextJumps };
+}
 
 export const useRun = create<RunState>()(
   persist(
@@ -116,42 +175,68 @@ export const useRun = create<RunState>()(
       setHydrated: (value) => set({ hydrated: value }),
       dismissNotice: () => set({ notice: null }),
       complete: (id, how) => {
-        const { done, skipped, history } = get();
+        const { done, skipped, history, jumps } = get();
         if (done[id]) return;
         set({
           done: { ...done, [id]: true },
           skipped: how === "skip" ? { ...skipped, [id]: true } : skipped,
           history: [...history, id],
+          jumps: [...jumps, 1],
         });
       },
       toggle: (id) => {
-        const { done, skipped, history } = get();
+        const { done, skipped, history, jumps } = get();
         if (done[id]) {
           const nextDone = { ...done };
           const nextSkip = { ...skipped };
           delete nextDone[id];
           delete nextSkip[id];
-          set({
-            done: nextDone,
-            skipped: nextSkip,
-            history: history.filter((h) => h !== id),
-          });
+          const dropped = dropId(history, jumps, id);
+          set({ done: nextDone, skipped: nextSkip, ...dropped });
         } else {
           set({
             done: { ...done, [id]: true },
             history: [...history, id],
+            jumps: [...jumps, 1],
           });
         }
       },
+      markThrough: (id) => {
+        const { done, history, jumps } = get();
+        const nextDone = { ...done };
+        const added: string[] = [];
+        for (const step of steps) {
+          if (!nextDone[step.id]) {
+            nextDone[step.id] = true;
+            added.push(step.id);
+          }
+          if (step.id === id) break;
+        }
+        if (!added.length) return;
+        set({
+          done: nextDone,
+          history: [...history, ...added],
+          jumps: [...jumps, added.length],
+        });
+      },
       undo: () => {
         const { history, done, skipped } = get();
-        const id = history[history.length - 1];
-        if (!id) return;
+        const jumps = get().jumps ?? [];
+        const size = jumps[jumps.length - 1] ?? 1;
+        const ids = history.slice(-size);
+        if (!ids.length) return;
         const nextDone = { ...done };
         const nextSkip = { ...skipped };
-        delete nextDone[id];
-        delete nextSkip[id];
-        set({ done: nextDone, skipped: nextSkip, history: history.slice(0, -1) });
+        for (const id of ids) {
+          delete nextDone[id];
+          delete nextSkip[id];
+        }
+        set({
+          done: nextDone,
+          skipped: nextSkip,
+          history: history.slice(0, -size),
+          jumps: jumps.length ? jumps.slice(0, -1) : jumps,
+        });
       },
       reset: () => {
         const { done, skipped, history } = get();
@@ -206,11 +291,11 @@ export const useRun = create<RunState>()(
         const history = Array.isArray(body.history)
           ? body.history.filter((id): id is string => typeof id === "string" && Boolean(done[id]))
           : [];
-        set({ done, skipped, history, notice: null });
+        set({ done, skipped, history, jumps: history.map(() => 1), notice: null });
         return { ok: true };
       },
       markBeforeChapter: (chapterId) => {
-        const { done, history } = get();
+        const { done, history, jumps } = get();
         const nextDone = { ...done };
         const added: string[] = [];
         for (const step of steps) {
@@ -220,7 +305,12 @@ export const useRun = create<RunState>()(
             added.push(step.id);
           }
         }
-        set({ done: nextDone, history: [...history, ...added] });
+        if (!added.length) return;
+        set({
+          done: nextDone,
+          history: [...history, ...added],
+          jumps: [...jumps, added.length],
+        });
       },
     }),
     {
@@ -246,6 +336,7 @@ export const useRun = create<RunState>()(
         done: state.done,
         skipped: state.skipped,
         history: state.history,
+        jumps: state.jumps,
         version: 2 as const,
         routeRev: route.meta.rev,
         notice: state.notice,

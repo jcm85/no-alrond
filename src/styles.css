@@ -5,11 +5,12 @@
   --color-surface: #151b24;
   --color-raise: #1c2430;
   --color-fg: #efe6d4;
-  --color-muted: #a39886;
-  --color-line: #2c3544;
+  --color-muted: #c8bba6;
+  --color-line: #4c5c74;
+  --color-track: #3a3120;
   --color-gold: #c4a35a;
   --color-ink: #1a1408;
-  --color-ember: #c45c3e;
+  --color-ember: #e07a5a;
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Fraunces", ui-serif, Georgia, serif;
   --radius-card: 1rem;
@@ -31,6 +32,76 @@
   body {
     min-height: 100dvh;
   }
+
+  :focus-visible {
+    outline: 3px solid var(--color-gold);
+    outline-offset: 2px;
+  }
+}
+
+.app-shell {
+  width: min(40rem, 100%);
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.step-title {
+  font-family: var(--font-display);
+  font-size: 1.875rem;
+  line-height: 1.15;
+  font-weight: 600;
+  text-wrap: balance;
+}
+
+.now-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 900px) and (orientation: portrait) {
+  .app-shell {
+    width: min(980px, calc(100% - 1rem));
+    font-size: 1.125rem;
+  }
+
+  .step-title {
+    font-size: clamp(2.5rem, 4.5vw, 3.5rem);
+  }
+}
+
+@media (min-width: 1280px) and (orientation: landscape) {
+  .app-shell {
+    width: min(100%, calc(100% - 2rem));
+    font-size: 1.0625rem;
+  }
+
+  .now-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(16rem, 2fr);
+    gap: 1.25rem;
+    align-items: start;
+  }
+
+  .step-title {
+    font-size: clamp(2rem, 2.2vw, 3rem);
+  }
+}
+
+@media (max-width: 699px) {
+  .upcoming li:nth-child(n + 3) {
+    display: none;
+  }
+}
+
+@media (min-width: 1280px) and (orientation: landscape) {
+  .act-more {
+    display: none;
+  }
+}
+
+.act-row {
+  scrollbar-width: thin;
 }
 
 .safe-bottom {
