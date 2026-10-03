@@ -94,8 +94,8 @@
   }
 
   .step-title {
-    font-size: 1.35rem;
-    line-height: 1.12;
+    font-size: 1.5rem;
+    line-height: 1.15;
   }
 
   .now-actions {
@@ -115,14 +115,15 @@
     padding-inline: 0.75rem;
   }
 
+  .upcoming {
+    max-height: 9.5rem;
+    overflow-y: auto;
+  }
+
   .upcoming li {
     padding-block: 0.28rem;
     font-size: 0.875rem;
     line-height: 1.25;
-  }
-
-  .upcoming li:nth-child(n + 5) {
-    display: none;
   }
 }
 

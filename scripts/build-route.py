@@ -47,6 +47,8 @@ MARKS = {
     # Sheet order is Thurston → Hikari 3 → Sand Lion. 1:02:00 is the video
     # fight, which is before Hikari Ch.3, so the route-order mark sits just
     # after 1:09:47. The link still opens 1:02:00 (see VIDEO_SECONDS).
+    # 1:10:00 and 1:10:30 are route-order placeholders. The video page would
+    # not give chapter times, so these are not pinned video timestamps.
     "Castti Ch.2: Sai Route": clock(1, 10, 0),
     "Foreign Assassins": clock(1, 10, 30),
     "Hikari Ch. 4": clock(1, 18, 0),
@@ -94,6 +96,7 @@ VIDEO_SECONDS = {
 }
 ORDER_NOTES = {
     "Castti Ch.2: Sai Route": "order differs from the video (Sand Lion is at 1:02:00)",
+    "Foreign Assassins": "order differs from the video",
 }
 
 PHASE_TITLES = {start for _, _, start in ACTS} | set(MARKS) | {
@@ -134,6 +137,10 @@ CHANGELOG_RE = re.compile(r"^change ?log$", re.I)
 MARK_RE = re.compile(r"^[\^v](?: \d+)?$|^[<>]$")
 CONTEXT_RE = re.compile(r"^(After |Before |Requires |During )", re.I)
 OPTIONAL_RE = re.compile(r"\b(optionally|if you want|up to you)\b", re.I)
+NAME_ONLY_RE = re.compile(
+    r"^(?:Throne|Hikari|Castti|Partitio|Temenos|Osvald|Agnea|Ochette)"
+    r"(?: (?:Throne|Hikari|Castti|Partitio|Temenos|Osvald|Agnea|Ochette))*$"
+)
 SCAFFOLD_CELLS = {
     "formation",
     "change party",
@@ -387,6 +394,7 @@ def parse_block(start_row, body):
     side_header = None
     side_turn_col = None
     last_actor = None
+    concoct_target = None
 
     def push(step):
         nonlocal pending_lead
@@ -396,7 +404,7 @@ def parse_block(start_row, body):
         elif place_lead and not step.get("lead"):
             step["lead"] = place_lead
         if pending_notes:
-            step["note"] = join_note(step.get("note"), " ".join(pending_notes))
+            step["note"] = join_note(step.get("note"), " · ".join(pending_notes))
             pending_notes.clear()
             if step.get("note") and is_warn(step["note"]):
                 step["warn"] = True
@@ -405,6 +413,8 @@ def parse_block(start_row, body):
     for i, c in rest:
         c1 = c.get(1, "")
         c2 = c.get(2, "")
+        if c1:
+            concoct_target = None
         # Enemy script header.
         if c1 == "Enemy" and any("Turn" in v for v in c.values()):
             mode = "enemy"
@@ -459,19 +469,36 @@ def parse_block(start_row, body):
             if c2 and CONTEXT_RE.match(c2) and not c3:
                 side_header = c2
                 continue
-            if c2 and steps and "Concoct" in steps[-1]["text"] and not c3:
+            target = concoct_target if concoct_target is not None else (steps[-1] if steps else None)
+            if c2 and not c3 and target and "Concoct" in target["text"]:
+                if c2.strip() == "Whimsical Leaf":
+                    leaf = make_step(
+                        i,
+                        "Whimsical Leaf (skip if Castti already acts last)",
+                        "fight",
+                        context,
+                    )
+                    leaf["optional"] = True
+                    push(leaf)
+                    concoct_target = target
+                    continue
+                concoct_target = target
                 extra = c2
                 if c.get(6):
                     extra += f" → {c[6]}"
-                steps[-1].setdefault("lines", []).append(extra)
+                target.setdefault("lines", []).append(extra)
                 tips = [
                     v
                     for k, v in sorted(c.items())
-                    if k not in {2, 6} and not MARK_RE.fullmatch(v) and v.lower() not in SCAFFOLD_CELLS
+                    if k not in {2, 6}
+                    and not is_party_name_cell(k, v)
+                    and not MARK_RE.fullmatch(v)
+                    and v.lower() not in SCAFFOLD_CELLS
                 ]
                 if tips:
-                    steps[-1]["note"] = join_note(steps[-1].get("note"), " ".join(tips))
+                    target["note"] = join_note(target.get("note"), " · ".join(tips))
                 continue
+            concoct_target = None
             if not c2 and c3 and steps and context in {"Jobs", "Learn Skills"}:
                 if c3 not in steps[-1]["text"]:
                     steps[-1]["text"] += f", {c3}"
@@ -513,7 +540,7 @@ def parse_block(start_row, body):
                         step["warn"] = True
                 push(step)
                 continue
-            bits = [c[k] for k in sorted(c)]
+            bits = [c[k] for k in sorted(c) if not is_party_name_cell(k, c[k])]
             if bits:
                 push(make_step(i, " · ".join(bits), "note", context))
             continue
@@ -595,7 +622,7 @@ def parse_block(start_row, body):
     ):
         push(make_step(start_row, place_lead, "note", None))
     if pending_notes and steps:
-        steps[-1]["note"] = join_note(steps[-1].get("note"), " ".join(pending_notes))
+        steps[-1]["note"] = join_note(steps[-1].get("note"), " · ".join(pending_notes))
         pending_notes.clear()
 
     kind = infer_block_kind(title_row, steps, foes, context_modes(steps))
@@ -722,23 +749,26 @@ def format_action(i, c, context, mode):
                 notes.append(f"Branch: {branch}")
         else:
             notes.append(gear_or_tip)
-    elif c.get(8) and not gear_or_tip:
+    elif c.get(8) and not gear_or_tip and not is_name_only(c[8]):
         notes.append(c[8])
     if c4 and c4 not in step["text"] and not (c3 in {">", "<"}):
         # Don't repeat identical side column.
         if c4 != c2:
             notes.append(f"Other column: {c4}")
-    if c.get(9) and "Branch:" not in " ".join(notes):
+    if c.get(9) and "Branch:" not in " ".join(notes) and not is_name_only(c[9]):
         extra = c[9]
         if extra not in step["text"]:
             notes.append(extra)
-    note = " ".join(notes).strip()
+    note = " · ".join(notes).strip()
     if note:
         step["note"] = note
         if is_warn(note):
             step["warn"] = True
     if OPTIONAL_RE.search(step["text"]) or (note and OPTIONAL_RE.search(note)):
         step["optional"] = True
+    if re.match(r"(?i)^learn\b", step["text"]):
+        step["check"] = True
+        step["kind"] = "do"
     if context and context not in {"Overworld", "Party", "Parties"} and context.lower() not in text.lower():
         step["ctx"] = context
     return step
@@ -806,8 +836,17 @@ def side_note(c, ignore_action=False):
 
 def join_note(a, b):
     if a and b:
-        return f"{a} {b}"
+        return f"{a} · {b}"
     return a or b
+
+
+def is_name_only(value: str) -> bool:
+    return bool(NAME_ONLY_RE.fullmatch(value))
+
+
+def is_party_name_cell(col: int, value: str) -> bool:
+    """Idle and current party columns are name lists, not instructions."""
+    return col in {8, 9, 14, 15} and is_name_only(value)
 
 
 def is_warn(note: str) -> bool:
@@ -844,7 +883,7 @@ def cell_in_blob(value: str, blob: str) -> bool:
 
 def harvest_side(cells: dict, pending: list[str], skip: set[int]) -> None:
     for key, value in sorted(cells.items()):
-        if key in skip or cell_allowed(value) or TURN_CELL_RE.match(value):
+        if key in skip or cell_allowed(value) or TURN_CELL_RE.match(value) or is_name_only(value):
             continue
         if value not in pending:
             pending.append(value)
@@ -903,8 +942,8 @@ def attach_missing_cells(acts: list, rows) -> None:
         cells = cells_of(row)
         if CHANGELOG_RE.match(cells.get(1, "")):
             break
-        for value in cells.values():
-            if cell_allowed(value) or cell_in_blob(value, blob):
+        for key, value in cells.items():
+            if cell_allowed(value) or is_party_name_cell(key, value) or cell_in_blob(value, blob):
                 continue
             target = None
             for row_index, step in indexed:
@@ -1025,17 +1064,20 @@ def apply_revision_notes(acts: list) -> None:
         if not placed:
             raise SystemExit(f"revision note did not match a step: {date} {detail}")
 
-    lucky = "skip if turn order is lucky (only if Castti does not already act last)."
-    marked = 0
+    leaves = []
     for act in acts:
         for chapter in act["chapters"]:
             for block in chapter["blocks"]:
                 for step in block["steps"]:
-                    if "Concoct" in step.get("text", "") and "Whimsical Leaf" in step_blob(step):
-                        add_note(step, lucky, optional=True)
-                        marked += 1
-    if marked < 2:
-        raise SystemExit("Whimsical Leaf concoct steps were not marked conditional")
+                    text = step.get("text", "")
+                    if text.startswith("Whimsical Leaf"):
+                        leaves.append(step)
+                    if "Concoct" in text and step.get("optional"):
+                        raise SystemExit(f"Concoct step is optional: {text}")
+                    if "skip if turn order is lucky" in (step.get("note") or "") or "skip if turn order is lucky" in text:
+                        raise SystemExit("generic lucky wording remains")
+    if len(leaves) < 2 or any(not step.get("optional") for step in leaves):
+        raise SystemExit("Whimsical Leaf was not split into its own optional step")
 
 
 def assign_stable_ids(acts: list) -> str:
