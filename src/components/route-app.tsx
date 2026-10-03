@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Check, Info, List, RotateCcw, Search, Undo2 } from "lucide-react";
+import { changelog } from "@/data/changelog";
 import { route, type Block } from "@/data/route";
 import { RUN_KEY } from "@/lib/migrate-progress";
 import {
@@ -75,6 +76,8 @@ export function RouteApp() {
   }, [toast]);
 
   const current = playhead(done);
+  const latestCarried =
+    notice && notice.carried > 0 ? [...steps].reverse().find((step) => done[step.id]) : undefined;
   const left = remaining(done);
   const total = steps.length;
   const doneCount = total - left;
@@ -200,12 +203,21 @@ export function RouteApp() {
             <p className="text-lg text-fg">
               {notice.carried === 0
                 ? "The route was updated. Your old progress can't be carried over safely."
-                : `${notice.carried} of ${notice.total} carried over.`}
+                : `${notice.carried} of ${notice.total} carried over. Next unchecked step is ${current?.n ?? "the end"}.`}
             </p>
             <div className="mt-3 flex flex-wrap gap-3">
               <button type="button" onClick={() => reset()} className="min-h-12 rounded-card bg-gold px-4 py-3 font-semibold text-ink">
                 Start over
               </button>
+              {latestCarried ? (
+                <button
+                  type="button"
+                  onClick={() => goTo(latestCarried)}
+                  className="min-h-12 rounded-card border border-gold px-4 py-3 text-gold"
+                >
+                  Jump to latest carried step {latestCarried.n}
+                </button>
+              ) : null}
               <button
                 type="button"
                 onClick={() => {
@@ -288,13 +300,14 @@ export function RouteApp() {
                       <p className="mt-1 text-base text-muted">
                         {ahead} left
                         {chapter.mark ? ` · Chapter starts in video ≈ ${chapter.mark}` : ""}
+                        {chapter.orderNote ? ` · ${chapter.orderNote}` : ""}
                       </p>
                     </div>
                     <div className="flex shrink-0 flex-col items-end gap-2">
                       {chapter.seconds != null ? (
                         <a
                           className="text-base text-gold underline underline-offset-4"
-                          href={videoAt(chapter.seconds)}
+                          href={videoAt(chapter.videoSeconds ?? chapter.seconds)}
                           target="_blank"
                           rel="noreferrer"
                         >
@@ -403,7 +416,9 @@ export function RouteApp() {
                         <span className="text-base text-muted">
                           Go to step
                           {step.ctx ? ` · ${step.ctx}` : ""}
-                          {` · ${KIND_LABEL[step.kind] ?? step.kind}`}
+                          {step.kind !== "do" && KIND_LABEL[step.kind] && KIND_LABEL[step.kind] !== "Step"
+                            ? ` · ${KIND_LABEL[step.kind]}`
+                            : ""}
                           {skipped[step.id] ? " · Skipped" : ""}
                         </span>
                       </button>
@@ -498,7 +513,7 @@ function Now({
     <div className="now-layout">
       <section>
         <p className="text-base text-muted">{placeLabel(current)}</p>
-        <div className="mt-3 rounded-card border border-line bg-surface p-4">
+        <div className="now-card mt-3 rounded-card border border-line bg-surface p-4">
           <div className="flex items-center justify-between gap-3">
             <p className="text-sm tracking-widest text-gold uppercase">
               Step {current.n}
@@ -532,14 +547,21 @@ function Now({
           {current.mark && isFirstInChapter(current) ? (
             <a
               className="mt-3 inline-block text-base text-gold underline underline-offset-4"
-              href={current.seconds != null ? videoAt(current.seconds) : route.meta.video}
+              href={
+                current.videoSeconds != null
+                  ? videoAt(current.videoSeconds)
+                  : current.seconds != null
+                    ? videoAt(current.seconds)
+                    : route.meta.video
+              }
               target="_blank"
               rel="noreferrer"
             >
               Chapter starts in video ≈ {current.mark}
+              {current.orderNote ? ` · ${current.orderNote}` : ""}
             </a>
           ) : null}
-          <div className="mt-5 flex gap-6">
+          <div className="now-actions mt-5 flex gap-6">
             <button type="button" onClick={onDone} className="min-h-14 flex-1 rounded-card bg-gold px-4 py-3 text-lg font-semibold text-ink">
               Done
             </button>
@@ -548,7 +570,7 @@ function Now({
             </button>
           </div>
         </div>
-        <div className="mt-3 flex items-center justify-between">
+        <div className="now-tools mt-3 flex items-center justify-between">
           <button
             type="button"
             onClick={onUndo}
@@ -753,6 +775,15 @@ function About({ onClose }: { onClose: () => void }) {
       <a className="mt-3 inline-block text-base text-gold underline underline-offset-4" href={route.meta.video} target="_blank" rel="noreferrer">
         Watch the run
       </a>
+      <h3 className="mt-4 font-display text-lg font-semibold">Sheet changelog</h3>
+      <ul className="mt-2 flex flex-col gap-2">
+        {changelog.map((entry) => (
+          <li key={`${entry.date ?? "note"}-${entry.text.slice(0, 40)}`} className="text-base text-muted">
+            {entry.date ? <span className="text-fg">{entry.date}. </span> : null}
+            {entry.text}
+          </li>
+        ))}
+      </ul>
       <div className="mt-4 flex flex-wrap gap-2">
         <button
           type="button"

@@ -6,6 +6,7 @@ import {
   BACKUP_KEY,
   LEGACY_KEY,
   RUN_KEY,
+  preserveBackup,
   readMigration,
   type Kv,
   type StepRef,
@@ -136,4 +137,19 @@ test("a unique chapter and text can be carried off a v1 id", () => {
   assert.equal(result.progress?.done[oldId], undefined);
   assert.equal(result.progress?.notice?.carried, 1);
   assert.equal(result.progress?.notice?.total, 1);
+});
+
+test("start over does not overwrite a backup that still holds r614", () => {
+  const storage = memory();
+  storage.setItem(
+    BACKUP_KEY,
+    JSON.stringify({ state: { done: { r614: true }, history: ["r614"] } }),
+  );
+  const emptied = JSON.stringify({
+    state: { done: {}, skipped: {}, history: [], version: 2, routeRev: "after-reset" },
+  });
+  assert.equal(preserveBackup(storage, emptied), false);
+  const backup = storage.getItem(BACKUP_KEY) ?? "";
+  assert.equal(backup.includes("r614"), true);
+  assert.equal(backup.includes("after-reset"), false);
 });

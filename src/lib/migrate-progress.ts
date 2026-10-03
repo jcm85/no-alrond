@@ -70,10 +70,15 @@ function empty(rev: string, notice: RouteNotice | null): StoredProgress {
   return { done: {}, skipped: {}, history: [], version: 2, routeRev: rev, notice };
 }
 
-function writeBackup(storage: Kv, raw: string) {
+/** Copy a save into the backup key only when that key is still empty. */
+export function preserveBackup(storage: Kv, raw: string): boolean {
   if (storage.getItem(BACKUP_KEY)) return false;
   storage.setItem(BACKUP_KEY, raw);
   return true;
+}
+
+function writeBackup(storage: Kv, raw: string) {
+  return preserveBackup(storage, raw);
 }
 
 function persist(storage: Kv, progress: StoredProgress) {

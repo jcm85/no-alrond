@@ -41,8 +41,13 @@ MARKS = {
     "Osvald Ch. 3": clock(0, 38, 30),
     "Osvald Ch. 4": clock(0, 40, 0),
     "Partitio Ch. 3": clock(0, 58, 0),
-    "Hikari Ch. 3": clock(1, 15, 0),
-    "Castti Ch.2: Sai Route": clock(1, 2, 0),
+    # Divine Dual-Edge in the video. 1:15:00 was ~5 minutes late and put this
+    # chapter after marks the sheet now runs later.
+    "Hikari Ch. 3": clock(1, 9, 47),
+    # Sheet order is Thurston → Hikari 3 → Sand Lion. 1:02:00 is the video
+    # fight, which is before Hikari Ch.3, so the route-order mark sits just
+    # after 1:09:47. The link still opens 1:02:00 (see VIDEO_SECONDS).
+    "Castti Ch.2: Sai Route": clock(1, 10, 0),
     "Foreign Assassins": clock(1, 10, 30),
     "Hikari Ch. 4": clock(1, 18, 0),
     "Hikari Ch. 5": ("1:21:53", 4913),
@@ -83,6 +88,14 @@ MARKS = {
     "True Vide, the Wicked": clock(3, 18, 0),
 }
 
+# Real video offset when the route-order mark was moved to stay non-decreasing.
+VIDEO_SECONDS = {
+    "Castti Ch.2: Sai Route": clock(1, 2, 0)[1],
+}
+ORDER_NOTES = {
+    "Castti Ch.2: Sai Route": "order differs from the video (Sand Lion is at 1:02:00)",
+}
+
 PHASE_TITLES = {start for _, _, start in ACTS} | set(MARKS) | {
     "The Cleric & Thief, Part 2",
 }
@@ -112,11 +125,28 @@ SECTION_HEADERS = {
     "idle party members",
     "primary",
     "secondary",
+    "overworld",
 }
 
 TURN_RE = re.compile(r"^(Turn \d+.*|T\d+)$", re.I)
+TURN_CELL_RE = re.compile(r"^Turn \d+(?:\.\d+)?(?:\s*-.*)?$", re.I)
+CHANGELOG_RE = re.compile(r"^change ?log$", re.I)
+MARK_RE = re.compile(r"^[\^v](?: \d+)?$|^[<>]$")
 CONTEXT_RE = re.compile(r"^(After |Before |Requires |During )", re.I)
 OPTIONAL_RE = re.compile(r"\b(optionally|if you want|up to you)\b", re.I)
+SCAFFOLD_CELLS = {
+    "formation",
+    "change party",
+    "idle party members",
+    "current party",
+    "order obtained",
+    "primary",
+    "secondary",
+    "idle",
+    "current",
+    "enemy",
+}
+CHANGELOG_OUT = ROOT / "src" / "data" / "changelog.ts"
 
 
 def cells_of(row):
@@ -148,14 +178,16 @@ def main():
     with SRC.open(newline="") as f:
         rows = list(csv.reader(f))
 
-    # Split into blocks on blank rows. Drop the changelog.
+    # Split into blocks on blank rows. Stop at Changelog / Change Log.
     blocks_raw = []
     current = []
     start_row = 0
+    changelog_rows = []
     for i, row in enumerate(rows):
         c = cells_of(row)
         titleish = c.get(1, "")
-        if titleish == "Change Log":
+        if CHANGELOG_RE.match(titleish):
+            changelog_rows = rows[i + 1 :]
             break
         if not c:
             if current:
@@ -167,6 +199,7 @@ def main():
         current.append((i, c))
     if current:
         blocks_raw.append((start_row, current))
+    changelog = parse_changelog(changelog_rows)
 
     parsed_blocks = [parse_block(sr, body) for sr, body in blocks_raw]
 
@@ -182,6 +215,8 @@ def main():
                     "title": title if title in PHASE_TITLES else title,
                     "mark": mark[0] if mark else None,
                     "seconds": mark[1] if mark else None,
+                    "videoSeconds": VIDEO_SECONDS.get(title),
+                    "orderNote": ORDER_NOTES.get(title),
                     "blocks": [],
                 }
             )
@@ -218,6 +253,7 @@ def main():
             acts[-1]["chapters"].append(ch)
 
     apply_revision_notes(acts)
+    attach_missing_cells(acts, rows)
     rev = assign_stable_ids(acts)
 
     # Strip nulls for a tighter payload and count steps.
@@ -228,6 +264,10 @@ def main():
             if ch["mark"] is None:
                 ch.pop("mark")
                 ch.pop("seconds")
+            if ch.get("videoSeconds") is None:
+                ch.pop("videoSeconds", None)
+            if not ch.get("orderNote"):
+                ch.pop("orderNote", None)
             for b in ch["blocks"]:
                 b.pop("row", None)
                 if not b["foes"]:
@@ -287,6 +327,8 @@ def main():
         "  title: string;\n"
         "  mark?: string;\n"
         "  seconds?: number;\n"
+        "  videoSeconds?: number;\n"
+        "  orderNote?: string;\n"
         "  blocks: Block[];\n"
         "};\n"
         "export type Act = { id: string; title: string; chapters: Chapter[] };\n"
@@ -309,6 +351,8 @@ def main():
     )
     print(f"acts={len(acts)} chapters={sum(len(a['chapters']) for a in acts)} steps={n} foes={foe_n} rev={rev}")
     print("file", OUT, "bytes", OUT.stat().st_size)
+    write_changelog(changelog)
+    print("changelog", len(changelog), CHANGELOG_OUT)
 
 
 def parse_block(start_row, body):
@@ -338,7 +382,10 @@ def parse_block(start_row, body):
     mode = None
     enemy_cols = {}
     pending_lead = None
+    place_lead = None
+    pending_notes: list[str] = []
     side_header = None
+    side_turn_col = None
     last_actor = None
 
     def push(step):
@@ -346,6 +393,13 @@ def parse_block(start_row, body):
         if pending_lead:
             step["lead"] = pending_lead
             pending_lead = None
+        elif place_lead and not step.get("lead"):
+            step["lead"] = place_lead
+        if pending_notes:
+            step["note"] = join_note(step.get("note"), " ".join(pending_notes))
+            pending_notes.clear()
+            if step.get("note") and is_warn(step["note"]):
+                step["warn"] = True
         steps.append(step)
 
     for i, c in rest:
@@ -384,6 +438,24 @@ def parse_block(start_row, body):
         # Continuation: no traveler name in the first column.
         if not c1:
             c3 = c.get(3, "")
+            turn_col = next((k for k in sorted(c) if TURN_CELL_RE.match(c[k])), None)
+            if turn_col is not None and not c2:
+                label = c[turn_col]
+                context = expand_turn(label) if re.fullmatch(r"T\d+", label) else label
+                side_turn_col = turn_col
+                actor = c.get(turn_col + 1, "")
+                action = c.get(turn_col + 2, "")
+                if actor and not TURN_CELL_RE.match(actor):
+                    text = f"{context} — {actor}: {action}" if action else f"{context} — {actor}"
+                    push(make_step(i, text, "fight", context))
+                continue
+            if side_turn_col is not None and not c2:
+                actor = c.get(side_turn_col, "")
+                action = c.get(side_turn_col + 1, "")
+                if actor and not TURN_CELL_RE.match(actor) and len(actor.split()) <= 4:
+                    text = f"{context} — {actor}: {action}" if action else f"{context} — {actor}"
+                    push(make_step(i, text, "fight", context))
+                    continue
             if c2 and CONTEXT_RE.match(c2) and not c3:
                 side_header = c2
                 continue
@@ -392,6 +464,13 @@ def parse_block(start_row, body):
                 if c.get(6):
                     extra += f" → {c[6]}"
                 steps[-1].setdefault("lines", []).append(extra)
+                tips = [
+                    v
+                    for k, v in sorted(c.items())
+                    if k not in {2, 6} and not MARK_RE.fullmatch(v) and v.lower() not in SCAFFOLD_CELLS
+                ]
+                if tips:
+                    steps[-1]["note"] = join_note(steps[-1].get("note"), " ".join(tips))
                 continue
             if not c2 and c3 and steps and context in {"Jobs", "Learn Skills"}:
                 if c3 not in steps[-1]["text"]:
@@ -439,13 +518,17 @@ def parse_block(start_row, body):
                 push(make_step(i, " · ".join(bits), "note", context))
             continue
 
+        side_turn_col = None
         if is_section_header(c1) and not c2:
+            harvest_side(c, pending_notes, skip={1})
             label = expand_turn(c1)
             if label.lower() == "overworld":
                 context = None
                 mode = None
                 continue
             if label.lower() in {"change party", "idle party members", "switch party"}:
+                if context and str(context).lower().startswith("turn"):
+                    place_lead = str(context)
                 context = "Party"
                 mode = "party"
             elif label.lower() == "buy":
@@ -464,6 +547,8 @@ def parse_block(start_row, body):
                     pending_lead = label
             else:
                 context = label
+                if label.lower().startswith("turn"):
+                    place_lead = None
                 if label.lower() in {"jobs", "support skills", "equipment", "learn skills", "inventory"}:
                     mode = "menu"
             continue
@@ -474,7 +559,15 @@ def parse_block(start_row, body):
             and context not in {"Buy", "Sell", "Notes"}
             and is_bare_label(c1)
         ):
-            context = c1
+            harvest_side(c, pending_notes, skip={1})
+            if c1.lower() in SCAFFOLD_CELLS or c1.lower() == "overworld":
+                continue
+            # A run of short labels is a heading plus the list under it
+            # (Prepare / Snow Yak / Buttermeep), not three discarded contexts.
+            if place_lead and place_lead.lower() not in SCAFFOLD_CELLS:
+                push(make_step(i, c1, "note", None))
+                continue
+            place_lead = c1
             continue
 
         if not (
@@ -496,6 +589,14 @@ def parse_block(start_row, body):
         if c.get(4) and side_header and step.get("note") and "Other column:" in step["note"]:
             step["note"] = step["note"].replace("Other column:", f"{side_header}:", 1)
         push(step)
+
+    if place_lead and not any(
+        place_lead in (s.get("lead") or "") or place_lead in (s.get("text") or "") for s in steps
+    ):
+        push(make_step(start_row, place_lead, "note", None))
+    if pending_notes and steps:
+        steps[-1]["note"] = join_note(steps[-1].get("note"), " ".join(pending_notes))
+        pending_notes.clear()
 
     kind = infer_block_kind(title_row, steps, foes, context_modes(steps))
     solo = False
@@ -718,6 +819,116 @@ def step_blob(step: dict) -> str:
     return " ".join([step.get("text") or "", *(step.get("lines") or [])])
 
 
+def cell_allowed(value: str) -> bool:
+    if value.lower() in SCAFFOLD_CELLS:
+        return True
+    if MARK_RE.fullmatch(value):
+        return True
+    if re.fullmatch(r"T\d+", value):
+        return True
+    return False
+
+
+def cell_in_blob(value: str, blob: str) -> bool:
+    escaped = json.dumps(value, ensure_ascii=False)[1:-1]
+    if value in blob or escaped in blob:
+        return True
+    quoted = re.fullmatch(r'"([^"]+)"', value)
+    if quoted and quoted.group(1) in blob:
+        return True
+    lines = [part.strip() for part in value.splitlines() if part.strip()]
+    if len(lines) > 1 and all(cell_in_blob(part, blob) for part in lines):
+        return True
+    return False
+
+
+def harvest_side(cells: dict, pending: list[str], skip: set[int]) -> None:
+    for key, value in sorted(cells.items()):
+        if key in skip or cell_allowed(value) or TURN_CELL_RE.match(value):
+            continue
+        if value not in pending:
+            pending.append(value)
+
+
+def parse_changelog(rows) -> list[dict]:
+    entries = []
+    current_date = None
+    for row in rows:
+        cells = cells_of(row)
+        if not cells:
+            continue
+        date = cells.get(1) or None
+        text = cells.get(2) or ""
+        if date and re.fullmatch(r"\d{1,2}/\d{1,2}/\d{2,4}", date):
+            current_date = date
+        elif date and not text:
+            text = date
+            date = current_date
+        else:
+            date = date or current_date
+        extras = [cells[key] for key in sorted(cells) if key not in {1, 2}]
+        if extras:
+            text = " ".join(part for part in [text, *extras] if part).strip()
+        if text:
+            entries.append({"date": date, "text": text})
+    return entries
+
+
+def write_changelog(entries: list[dict]) -> None:
+    CHANGELOG_OUT.parent.mkdir(parents=True, exist_ok=True)
+    CHANGELOG_OUT.write_text(
+        "/** Generated from the sheet changelog. Not route steps, and not searchable. */\n"
+        "export type ChangelogEntry = { date: string | null; text: string };\n"
+        "export const changelog: ChangelogEntry[] = "
+        + json.dumps(entries, ensure_ascii=False, indent=2)
+        + ";\n",
+        encoding="utf-8",
+    )
+
+
+def attach_missing_cells(acts: list, rows) -> None:
+    """Keep every non-scaffolding sheet cell on a step or it never reaches the app."""
+    indexed = []
+    for act in acts:
+        for chapter in act["chapters"]:
+            for block in chapter["blocks"]:
+                for step in block["steps"]:
+                    match = re.fullmatch(r"r(\d+)", step["id"])
+                    if match:
+                        indexed.append((int(match.group(1)) % 100000, step))
+    indexed.sort(key=lambda pair: pair[0])
+    blob = json.dumps(acts, ensure_ascii=False)
+    attached = 0
+    for index, row in enumerate(rows):
+        cells = cells_of(row)
+        if CHANGELOG_RE.match(cells.get(1, "")):
+            break
+        for value in cells.values():
+            if cell_allowed(value) or cell_in_blob(value, blob):
+                continue
+            target = None
+            for row_index, step in indexed:
+                if row_index >= index:
+                    target = step
+                    break
+            if target is None and indexed:
+                target = indexed[-1][1]
+            if target is None:
+                continue
+            target["note"] = join_note(target.get("note"), value)
+            blob += "\n" + value
+            attached += 1
+    if attached:
+        print("attached missing cells", attached)
+
+
+def add_note(step: dict, tag: str, optional: bool = False) -> None:
+    if tag not in (step.get("note") or ""):
+        step["note"] = join_note(step.get("note"), tag)
+    if optional:
+        step["optional"] = True
+
+
 def apply_revision_notes(acts: list) -> None:
     """Post-video sheet changes. Notes only — never warn flags."""
     rules = [
@@ -725,29 +936,72 @@ def apply_revision_notes(acts: list) -> None:
             "08/13/2025",
             "Finisher's Claws were delayed until after Rai Mei.",
             lambda step, ctx: "Finisher's Claws" in step_blob(step),
+            False,
         ),
         (
             "09/17/2025",
             "no shaggy aurochs; mighty leaf and rotten meat instead.",
-            lambda step, ctx: "Mighty Leaf" in step_blob(step) or "Rotten Meat" in step_blob(step),
+            lambda step, ctx: "Mighty Leaf" in step_blob(step),
+            False,
+        ),
+        (
+            "09/17/2025",
+            "no shaggy aurochs; mighty leaf and rotten meat instead.",
+            lambda step, ctx: "Rotten Meat" in step_blob(step),
+            True,
         ),
         (
             "12/03/2025",
             "no early Royal Guard's Helm; Thurston → Hikari 3 → Sand Lion.",
             lambda step, ctx: "Thurston" in step_blob(step),
+            False,
+        ),
+        (
+            "12/03/2025",
+            "no Critical Scope; the video sets Critical Scope here.",
+            lambda step, ctx: step.get("text") == "Fight Kunzo at night.",
+            False,
+        ),
+        (
+            "12/03/2025",
+            "video does Sand Lion first (~1:02:00); sheet order is Thurston, then Hikari 3, then Sand Lion.",
+            lambda step, ctx: step.get("text") == "Fight the Sand Lion during the day.",
+            False,
+        ),
+        (
+            "08/13/2025",
+            "video shows Gigantes at ~1:12:35, before Hikari Ch.4; the sheet delays this fight until after Rai Mei.",
+            lambda step, ctx: step.get("text") == "Fight Gigantes at night.",
+            False,
         ),
         (
             "06/30/2026",
             "Coat of Arms + Aegis Shield replace Empowering Necklace.",
             lambda step, ctx: "Coat of Arms" in step_blob(step) or "Aegis Shield" in step_blob(step),
+            True,
+        ),
+        (
+            "06/30/2026",
+            "still in the checklist; nothing equips it.",
+            lambda step, ctx: "Empowering Necklace" in step.get("text", ""),
+            True,
         ),
         (
             "07/04/2026",
             "omniscient eye: 8 Concoct hits.",
             lambda step, ctx: ctx["block"] == "Omniscient Eye" and "Concoct" in step_blob(step),
+            False,
+        ),
+        (
+            "07/04/2026",
+            "omniscient eye: 8 Concoct hits.",
+            lambda step, ctx: ctx["block"] == "Omniscient Eye"
+            and step.get("ctx") in {"Turn 4", "Turn 5"}
+            and "Concoct" in step_blob(step),
+            True,
         ),
     ]
-    for date, detail, match in rules:
+    for date, detail, match, every in rules:
         tag = f"Changed since the video ({date}): {detail}"
         placed = False
         for act in acts:
@@ -758,17 +1012,30 @@ def apply_revision_notes(acts: list) -> None:
                         if not step.get("check"):
                             continue
                         if match(step, ctx):
-                            step["note"] = join_note(step.get("note"), tag)
+                            add_note(step, tag)
                             placed = True
-                            break
-                    if placed:
+                            if not every:
+                                break
+                    if placed and not every:
                         break
-                if placed:
+                if placed and not every:
                     break
-            if placed:
+            if placed and not every:
                 break
         if not placed:
-            raise SystemExit(f"revision note did not match a step: {date}")
+            raise SystemExit(f"revision note did not match a step: {date} {detail}")
+
+    lucky = "skip if turn order is lucky (only if Castti does not already act last)."
+    marked = 0
+    for act in acts:
+        for chapter in act["chapters"]:
+            for block in chapter["blocks"]:
+                for step in block["steps"]:
+                    if "Concoct" in step.get("text", "") and "Whimsical Leaf" in step_blob(step):
+                        add_note(step, lucky, optional=True)
+                        marked += 1
+    if marked < 2:
+        raise SystemExit("Whimsical Leaf concoct steps were not marked conditional")
 
 
 def assign_stable_ids(acts: list) -> str:
