@@ -76,10 +76,11 @@ test("No Alrond strings are present and the Alrond route is gone", () => {
     assert.equal(text.includes(phrase), false, phrase);
   }
   const alrondLines = text.split("\n").filter((line) => /alrond/i.test(line));
-  assert.equal(alrondLines.length, 3);
+  assert.equal(alrondLines.length, 4);
   const stray = steps.filter((step) => /alrond/i.test(step.text));
-  assert.equal(stray.length, 1);
-  assert.match(stray[0].text, /After telling Alrond about the ship/);
+  assert.equal(stray.length, 2);
+  assert.ok(stray.some((step) => /After telling Alrond about the ship/.test(step.text)));
+  assert.ok(stray.some((step) => /Alrond.s estate/.test(step.text)));
 });
 
 test("Hikari Ch.5 comes before Galdera, and Agnea Ch.5 comes after", () => {
@@ -229,8 +230,9 @@ test("the changelog is not a step, and chapter marks never go backwards", () => 
   assert.equal(checks.at(-1).text, "GGs!");
   assert.equal(data.meta.steps, checks.length);
   // 1,160 after the changelog cut, plus two Turn 5.5 actions, two Learn steps,
-  // and two Whimsical Leaf steps, minus two chapter-name rows that were not instructions.
-  assert.equal(checks.length, 1164);
+  // and two Whimsical Leaf steps, minus two chapter-name rows that were not instructions,
+  // plus 40 frame-confirmed steps from the overlay.
+  assert.equal(checks.length, 1204);
   const dated = steps.filter((step) => /^\d{1,2}\/\d{1,2}\/\d{2,4}/.test(step.text));
   assert.deepEqual(
     dated.map((step) => step.text),
