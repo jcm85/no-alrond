@@ -226,7 +226,8 @@ test("the changelog is not a step, and chapter marks never go backwards", () => 
   assert.equal(checks.at(-1).text, "GGs!");
   assert.equal(data.meta.steps, checks.length);
   // 1,160 after the changelog cut, plus the two Turn 5.5 actions.
-  assert.equal(checks.length, 1162);
+  // 1,160 after the changelog cut, plus two Turn 5.5 actions, two Learn steps, and two Whimsical Leaf steps.
+  assert.equal(checks.length, 1166);
   const dated = steps.filter((step) => /^\d{1,2}\/\d{1,2}\/\d{2,4}/.test(step.text));
   assert.deepEqual(
     dated.map((step) => step.text),
@@ -243,7 +244,9 @@ test("the changelog is not a step, and chapter marks never go backwards", () => 
     "At the Flamechurch flame",
     "At the Toto'haha flame",
     "Osvald Chapter 5",
-    "skip if turn order is lucky",
+    "Whimsical Leaf (skip if Castti already acts last)",
+    "Learn Slowing Sweep after the fight.",
+    "Learn Divine Dual-Edge.",
   ]) {
     assert.equal(text.includes(phrase), true, phrase);
   }
@@ -259,6 +262,31 @@ test("the changelog is not a step, and chapter marks never go backwards", () => 
   assert.ok(byTitle["Castti Ch.2: Sai Route"].seconds >= byTitle["Hikari Ch. 3"].seconds);
   assert.equal(byTitle["Castti Ch.2: Sai Route"].videoSeconds, 1 * 3600 + 2 * 60);
   assert.equal(byTitle["Foreign Assassins"].seconds >= byTitle["Castti Ch.2: Sai Route"].seconds, true);
+  assert.equal(byTitle["Foreign Assassins"].orderNote, "order differs from the video");
+  assert.equal(text.includes("skip if turn order is lucky"), false);
+  const leaves = checks.filter((step) => step.text.startsWith("Whimsical Leaf"));
+  assert.equal(leaves.length, 2);
+  assert.ok(leaves.every((step) => step.optional === true && step.check === true));
+  const concocts = checks.filter((step) => step.text.includes("Concoct"));
+  assert.ok(concocts.length >= 2);
+  assert.equal(concocts.some((step) => step.optional), false);
+  for (const phrase of ["Learn Slowing Sweep after the fight.", "Learn Divine Dual-Edge."]) {
+    const step = checks.find((item) => item.text === phrase);
+    assert.ok(step, phrase);
+    assert.equal(step.check, true);
+    assert.equal(step.kind, "do");
+  }
+});
+
+test("idle-party name lists are not notes", () => {
+  const { steps } = flat(loadRoute().data);
+  const nameOnly =
+    /^(?:Throne|Hikari|Castti|Partitio|Temenos|Osvald|Agnea|Ochette)(?:(?: · | )(?:Throne|Hikari|Castti|Partitio|Temenos|Osvald|Agnea|Ochette))*$/;
+  const named = steps.filter((step) => step.note && nameOnly.test(step.note));
+  assert.deepEqual(
+    named.map((step) => step.note),
+    [],
+  );
 });
 
 test("every non-empty sheet cell is in the route or on the scaffolding allowlist", () => {
@@ -268,9 +296,17 @@ test("every non-empty sheet cell is in the route or on the scaffolding allowlist
   for (const row of rows) {
     const title = (row[1] || "").trim();
     if (/^change ?log$/i.test(title)) break;
-    for (const cell of row) {
+    for (const [index, cell] of row.entries()) {
       const value = cell.trim();
       if (!value || cellAllowed(value)) continue;
+      if (
+        (index === 8 || index === 9 || index === 14 || index === 15) &&
+        /^(?:Throne|Hikari|Castti|Partitio|Temenos|Osvald|Agnea|Ochette)(?: (?:Throne|Hikari|Castti|Partitio|Temenos|Osvald|Agnea|Ochette))*$/.test(
+          value,
+        )
+      ) {
+        continue;
+      }
       const escaped = JSON.stringify(value).slice(1, -1);
       if (routeText.includes(value) || routeText.includes(escaped)) continue;
       const lines = value.split(/\n/).map((part) => part.trim()).filter(Boolean);

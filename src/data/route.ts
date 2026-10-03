@@ -51,9 +51,9 @@ export const route: RouteData = {
     "runner": "chewythebigblackdog",
     "video": "https://youtu.be/d6YOJxTfIeQ",
     "sheetDate": "2026-07-04",
-    "steps": 1162,
+    "steps": 1166,
     "foes": 3,
-    "rev": "908de81f44cdc471",
+    "rev": "cd3322b2a953dcf6",
     "note": "Chewy's current No Alrond (more consistent) sheet tab; video uploaded 2025-06-08; sheet revised through 7/4/2026"
   },
   "acts": [
@@ -249,7 +249,7 @@ export const route: RouteData = {
                   "text": "Turn 10 — Sword",
                   "check": true,
                   "kind": "do",
-                  "note": "Before Pirro on T8: Ice Soulstone Sword"
+                  "note": "Before Pirro on T8: Ice Soulstone · Sword"
                 }
               ]
             },
@@ -932,8 +932,7 @@ export const route: RouteData = {
                   "id": "partitio-ch-2-1-112406",
                   "text": "Set Slot 1 to Hikari. Set Slot 3 to Agnea",
                   "check": true,
-                  "kind": "party",
-                  "note": "Castti Osvald Hikari"
+                  "kind": "party"
                 }
               ]
             },
@@ -1456,8 +1455,8 @@ export const route: RouteData = {
                 {
                   "id": "hikari-ch-2-1-d1d344",
                   "text": "Learn Slowing Sweep after the fight.",
-                  "check": false,
-                  "kind": "note",
+                  "check": true,
+                  "kind": "do",
                   "ctx": "Notes"
                 }
               ]
@@ -1684,8 +1683,7 @@ export const route: RouteData = {
                   "id": "recruit-temenos-1-292b73",
                   "text": "Set Slot 3 to Temenos. Set Slot 3 to Hikari",
                   "check": true,
-                  "kind": "party",
-                  "note": "Castti Osvald Hikari Temenos"
+                  "kind": "party"
                 }
               ]
             },
@@ -2155,12 +2153,6 @@ export const route: RouteData = {
                   "kind": "do"
                 },
                 {
-                  "id": "osvald-ch-4-1-e16ec7",
-                  "text": "Hikari · Ochette",
-                  "check": false,
-                  "kind": "note"
-                },
-                {
                   "id": "osvald-ch-4-1-02f165",
                   "text": "Recruit Ochette",
                   "check": true,
@@ -2338,7 +2330,6 @@ export const route: RouteData = {
                   "text": "Partitio — Scholar: 2 Scholar skills",
                   "check": true,
                   "kind": "menu",
-                  "note": "Throne Osvald",
                   "ctx": "Jobs"
                 },
                 {
@@ -2363,13 +2354,6 @@ export const route: RouteData = {
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "osvald-ch-4-1-4d9320",
-                  "text": "Ochette · Agnea",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Support Skills"
-                },
-                {
                   "id": "osvald-ch-4-1-2e83e0",
                   "text": "Throne Ch. 2: Father's Route",
                   "check": true,
@@ -2380,8 +2364,7 @@ export const route: RouteData = {
                   "id": "osvald-ch-4-1-49bb35",
                   "text": "If Osvald is below 765 HP, heal him with Partitio (or a grape).",
                   "check": true,
-                  "kind": "do",
-                  "note": "Temenos Partitio"
+                  "kind": "do"
                 },
                 {
                   "id": "osvald-ch-4-1-80edba",
@@ -2652,28 +2635,13 @@ export const route: RouteData = {
                   "id": "partitio-ch-3-1-b4d6a9",
                   "text": "After telling Alrond about the ship, speak to the tavern keeper.",
                   "check": true,
-                  "kind": "do",
-                  "note": "Ochette Agnea"
-                },
-                {
-                  "id": "partitio-ch-3-1-1bf0b7",
-                  "text": "Temenos · Partitio",
-                  "check": false,
-                  "kind": "note"
+                  "kind": "do"
                 },
                 {
                   "id": "partitio-ch-3-1-9830d2",
                   "text": "Set Slot 3 to Hikari. Set Slot 2 to Agnea",
                   "check": true,
                   "kind": "party",
-                  "note": "Osvald Throne Ochette Hikari",
-                  "lead": "Tavern"
-                },
-                {
-                  "id": "partitio-ch-3-2-1bf0b7",
-                  "text": "Temenos · Partitio",
-                  "check": false,
-                  "kind": "note",
                   "lead": "Tavern"
                 },
                 {
@@ -2976,8 +2944,8 @@ export const route: RouteData = {
                 {
                   "id": "hikari-ch-3-1-ec53f5",
                   "text": "Learn Divine Dual-Edge.",
-                  "check": false,
-                  "kind": "note",
+                  "check": true,
+                  "kind": "do",
                   "ctx": "Notes"
                 }
               ]
@@ -3114,6 +3082,7 @@ export const route: RouteData = {
           "title": "Foreign Assassins",
           "mark": "1:10:30",
           "seconds": 4230,
+          "orderNote": "order differs from the video",
           "blocks": [
             {
               "id": "foreign-assassins-b1",
@@ -3417,17 +3386,11 @@ export const route: RouteData = {
                   "kind": "do"
                 },
                 {
-                  "id": "hikari-ch-4-1-2cba00",
-                  "text": "Agnea · Castti",
-                  "check": false,
-                  "kind": "note"
-                },
-                {
                   "id": "hikari-ch-4-1-3b6c9f",
                   "text": "Fight Kunzo at night.",
                   "check": true,
                   "kind": "do",
-                  "note": "Partitio Temenos Changed since the video (12/03/2025): no Critical Scope; the video sets Critical Scope here."
+                  "note": "Changed since the video (12/03/2025): no Critical Scope; the video sets Critical Scope here."
                 }
               ]
             },
@@ -4009,24 +3972,10 @@ export const route: RouteData = {
                   "kind": "do"
                 },
                 {
-                  "id": "hikari-ch-5-1-81c526",
-                  "text": "Partitio · Temenos",
-                  "check": false,
-                  "kind": "note"
-                },
-                {
                   "id": "hikari-ch-5-1-250c37",
                   "text": "Set Slot 4 to Partitio. Set Slot 4 to Temenos",
                   "check": true,
                   "kind": "party",
-                  "note": "Osvald Throne Ochette Hikari",
-                  "lead": "Tavern"
-                },
-                {
-                  "id": "hikari-ch-5-1-1bf0b7",
-                  "text": "Temenos · Partitio",
-                  "check": false,
-                  "kind": "note",
                   "lead": "Tavern"
                 },
                 {
@@ -4379,13 +4328,6 @@ export const route: RouteData = {
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "castti-ch-4-1-96a74d",
-                  "text": "Osvald · Throne",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Turn 2"
-                },
-                {
                   "id": "castti-ch-4-1-f2de05",
                   "text": "After finishing the chapter, warp to New Delsta.",
                   "check": true,
@@ -4400,18 +4342,10 @@ export const route: RouteData = {
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "castti-ch-4-1-1bf0b7",
-                  "text": "Temenos · Partitio",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Turn 2"
-                },
-                {
                   "id": "castti-ch-4-1-78ad47",
                   "text": "Set Slot 3 to Agnea. Set Slot 4 to Partitio",
                   "check": true,
                   "kind": "party",
-                  "note": "Osvald Throne Ochette Hikari",
                   "lead": "Turn 2"
                 },
                 {
@@ -4757,13 +4691,6 @@ export const route: RouteData = {
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "agnea-ch-2-1-dff3b7",
-                  "text": "Ochette · Hikari",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Turn 1"
-                },
-                {
                   "id": "agnea-ch-2-1-c82f3a",
                   "text": "Talk to Al to complete \"The Traveler's Bag\".",
                   "check": true,
@@ -4960,12 +4887,6 @@ export const route: RouteData = {
                   "kind": "do"
                 },
                 {
-                  "id": "agnea-ch-4-1-96a74d",
-                  "text": "Osvald · Throne",
-                  "check": false,
-                  "kind": "note"
-                },
-                {
                   "id": "agnea-ch-4-1-5b187f",
                   "text": "The Dancer & Warrior, Part 1",
                   "check": true,
@@ -4975,8 +4896,7 @@ export const route: RouteData = {
                   "id": "agnea-ch-4-1-0e83e6",
                   "text": "While waiting for the next day, go to the tavern.",
                   "check": true,
-                  "kind": "do",
-                  "note": "Partitio Castti"
+                  "kind": "do"
                 }
               ]
             },
@@ -4990,8 +4910,7 @@ export const route: RouteData = {
                   "id": "agnea-ch-4-1-51dd5d",
                   "text": "Set Slot 3 to Partitio. Set Slot 3 to Castti",
                   "check": true,
-                  "kind": "party",
-                  "note": "Ochette Hikari Castti Partitio"
+                  "kind": "party"
                 }
               ]
             },
@@ -5220,17 +5139,10 @@ export const route: RouteData = {
                   "kind": "do"
                 },
                 {
-                  "id": "partitio-ch-4-1-a11aaa",
-                  "text": "Temenos · Castti",
-                  "check": false,
-                  "kind": "note"
-                },
-                {
                   "id": "partitio-ch-4-1-1953f2",
                   "text": "Set Slot 2 to Ochette. Set Slot 3 to Partitio",
                   "check": true,
                   "kind": "party",
-                  "note": "Osvald Throne Partitio Hikari",
                   "lead": "Tavern"
                 },
                 {
@@ -5844,12 +5756,6 @@ export const route: RouteData = {
                   "kind": "do"
                 },
                 {
-                  "id": "the-apothecary-hunter-part-1-1-1222ac",
-                  "text": "Partitio · Hikari",
-                  "check": false,
-                  "kind": "note"
-                },
-                {
                   "id": "the-apothecary-hunter-part-1-1-c05ffc",
                   "text": "After finishing the chapter, warp to Cropdale.",
                   "check": true,
@@ -6161,17 +6067,10 @@ export const route: RouteData = {
                   "kind": "do"
                 },
                 {
-                  "id": "the-apothecary-hunter-part-2-1-30eb87",
-                  "text": "Castti · Temenos",
-                  "check": false,
-                  "kind": "note"
-                },
-                {
                   "id": "the-apothecary-hunter-part-2-1-263b64",
                   "text": "Set Slot 4 to Temenos. Set Slot 4 to Castti",
                   "check": true,
                   "kind": "party",
-                  "note": "Ochette Agnea Hikari Partitio",
                   "lead": "Tavern"
                 },
                 {
@@ -6698,10 +6597,16 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "fight",
                   "lines": [
-                    "Grape Leaf (or anything else that isn't weeds)",
-                    "Whimsical Leaf"
+                    "Grape Leaf (or anything else that isn't weeds)"
                   ],
-                  "note": "weeds can give a speed buff, which messes up the strat Changed since the video (07/04/2026): omniscient eye: 8 Concoct hits. skip if turn order is lucky (only if Castti does not already act last).",
+                  "note": "weeds can give a speed buff, which messes up the strat · Changed since the video (07/04/2026): omniscient eye: 8 Concoct hits.",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "galdera-1-6684e4",
+                  "text": "Whimsical Leaf (skip if Castti already acts last)",
+                  "check": true,
+                  "kind": "fight",
                   "optional": true,
                   "ctx": "Turn 1"
                 },
@@ -7685,17 +7590,10 @@ export const route: RouteData = {
                   "kind": "do"
                 },
                 {
-                  "id": "the-dancer-warrior-part-2-1-14c2d4",
-                  "text": "Temenos · Agnea",
-                  "check": false,
-                  "kind": "note"
-                },
-                {
                   "id": "the-dancer-warrior-part-2-1-7c4557",
                   "text": "Set Slot 4 to Osvald. Set Slot 4 to Castti",
                   "check": true,
                   "kind": "party",
-                  "note": "Osvald Castti Agnea Throne",
                   "lead": "Tavern"
                 },
                 {
@@ -7978,28 +7876,13 @@ export const route: RouteData = {
                   "id": "the-scholar-merchant-part-1-1-416444",
                   "text": "Before buying the first part, talk to the tavern keeper.",
                   "check": true,
-                  "kind": "do",
-                  "note": "Ochette Hikari"
-                },
-                {
-                  "id": "the-scholar-merchant-part-1-1-865908",
-                  "text": "Castti · Osvald",
-                  "check": false,
-                  "kind": "note"
+                  "kind": "do"
                 },
                 {
                   "id": "the-scholar-merchant-part-1-1-b23b4a",
                   "text": "Set Slot 3 to Temenos. Set Slot 1 to Throne",
                   "check": true,
                   "kind": "party",
-                  "note": "Agnea Temenos Ochette Hikari",
-                  "lead": "Tavern"
-                },
-                {
-                  "id": "the-scholar-merchant-part-1-2-865908",
-                  "text": "Castti · Osvald",
-                  "check": false,
-                  "kind": "note",
                   "lead": "Tavern"
                 },
                 {
@@ -8139,21 +8022,13 @@ export const route: RouteData = {
                   "id": "temenos-ch-2-1-ae4ef3",
                   "text": "Before going upstairs, talk to the tavern keeper.",
                   "check": true,
-                  "kind": "do",
-                  "note": "Ochette Hikari"
-                },
-                {
-                  "id": "temenos-ch-2-1-865908",
-                  "text": "Castti · Osvald",
-                  "check": false,
-                  "kind": "note"
+                  "kind": "do"
                 },
                 {
                   "id": "temenos-ch-2-1-2c44af",
                   "text": "Set Slot 3 to Throne. Set Slot 4 to Osvald",
                   "check": true,
                   "kind": "party",
-                  "note": "Agnea Temenos Ochette Hikari",
                   "lead": "Tavern"
                 },
                 {
@@ -8397,18 +8272,10 @@ export const route: RouteData = {
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "temenos-ch-4-1-dff3b7",
-                  "text": "Ochette · Hikari",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Turn 2"
-                },
-                {
                   "id": "temenos-ch-4-1-80edba",
                   "text": "Go to the tavern.",
                   "check": true,
-                  "kind": "do",
-                  "note": "Osvald Castti"
+                  "kind": "do"
                 }
               ]
             },
@@ -8422,8 +8289,7 @@ export const route: RouteData = {
                   "id": "temenos-ch-4-1-f49023",
                   "text": "Set Slot 2 to Ochette. Set Slot 3 to Castti",
                   "check": true,
-                  "kind": "party",
-                  "note": "Castti Hikari Osvald Ochette"
+                  "kind": "party"
                 },
                 {
                   "id": "temenos-ch-4-1-509d99",
@@ -8650,14 +8516,6 @@ export const route: RouteData = {
                   "text": "Hikari — Divine Dual-Edge x3",
                   "check": true,
                   "kind": "do",
-                  "note": "Agnea Temenos",
-                  "lead": "Shadowy Monsters"
-                },
-                {
-                  "id": "journey-for-the-dawn-1-ba2bad",
-                  "text": "Osvald · Castti",
-                  "check": false,
-                  "kind": "note",
                   "lead": "Shadowy Monsters"
                 },
                 {
@@ -8665,7 +8523,6 @@ export const route: RouteData = {
                   "text": "Menu",
                   "check": false,
                   "kind": "note",
-                  "note": "Partitio Throne",
                   "lead": "Shadowy Monsters"
                 },
                 {
@@ -8673,7 +8530,6 @@ export const route: RouteData = {
                   "text": "Set Slot 2 to Castti. Set Slot 3 to Ochette",
                   "check": true,
                   "kind": "party",
-                  "note": "Ochette Hikari Agnea Temenos",
                   "lead": "After the fight"
                 },
                 {
@@ -8681,7 +8537,6 @@ export const route: RouteData = {
                   "text": "Castti — Apothecary: 5 Apothecary skills, Dohter's Charity",
                   "check": true,
                   "kind": "menu",
-                  "note": "Partitio Throne Osvald Castti",
                   "lead": "Shadowy Monsters",
                   "ctx": "Jobs"
                 },
@@ -8987,14 +8842,6 @@ export const route: RouteData = {
                   "text": "Set Slot 2 to Ochette. Set Slot 1 to Temenos",
                   "check": true,
                   "kind": "party",
-                  "note": "Temenos Hikari Agnea Ochette",
-                  "lead": "At the Toto'haha flame"
-                },
-                {
-                  "id": "journey-for-the-dawn-2-ba2bad",
-                  "text": "Osvald · Castti",
-                  "check": false,
-                  "kind": "note",
                   "lead": "At the Toto'haha flame"
                 },
                 {
@@ -9002,7 +8849,6 @@ export const route: RouteData = {
                   "text": "After lighting the flame, warp to Ku.",
                   "check": true,
                   "kind": "do",
-                  "note": "Partitio Throne",
                   "lead": "At the Toto'haha flame"
                 }
               ]
@@ -9018,22 +8864,19 @@ export const route: RouteData = {
                   "id": "journey-for-the-dawn-1-df1b81",
                   "text": "Set Slot 3 to Osvald. Set Slot 4 to Throne",
                   "check": true,
-                  "kind": "party",
-                  "note": "Temenos Hikari Castti Partitio"
+                  "kind": "party"
                 },
                 {
                   "id": "journey-for-the-dawn-1-96997c",
                   "text": "Set Slot 1 to Agnea. Set Slot 3 to Castti",
                   "check": true,
-                  "kind": "party",
-                  "note": "Throne"
+                  "kind": "party"
                 },
                 {
                   "id": "journey-for-the-dawn-1-1bb732",
                   "text": "Set Slot 4 to Partitio. Set Slot 1 to Ochette",
                   "check": true,
-                  "kind": "party",
-                  "note": "Ochette Osvald"
+                  "kind": "party"
                 }
               ]
             },
@@ -9296,21 +9139,13 @@ export const route: RouteData = {
                   "id": "journey-for-the-dawn-1-54bca4",
                   "text": "Set Slot 3 to Throne. Set Slot 1 to Partitio",
                   "check": true,
-                  "kind": "party",
-                  "note": "Agnea Hikari Castti Throne"
+                  "kind": "party"
                 },
                 {
                   "id": "journey-for-the-dawn-1-503369",
                   "text": "Set Slot 2 to Temenos. Set Slot 3 to Agnea",
                   "check": true,
-                  "kind": "party",
-                  "note": "Partitio"
-                },
-                {
-                  "id": "journey-for-the-dawn-1-420643",
-                  "text": "Ochette · Osvald",
-                  "check": false,
-                  "kind": "note"
+                  "kind": "party"
                 },
                 {
                   "id": "journey-for-the-dawn-1-764b34",
@@ -9462,15 +9297,13 @@ export const route: RouteData = {
                   "id": "vide-the-wicked-1-2fb028",
                   "text": "Set Slot 1 to Castti. Set Slot 2 to Hikari",
                   "check": true,
-                  "kind": "party",
-                  "note": "Osvald Temenos Hikari Throne Agnea Castti"
+                  "kind": "party"
                 },
                 {
                   "id": "vide-the-wicked-1-99270e",
                   "text": "Set Slot 3 to Partitio. Set Slot 4 to Osvald",
                   "check": true,
-                  "kind": "party",
-                  "note": "Ochette"
+                  "kind": "party"
                 },
                 {
                   "id": "vide-the-wicked-1-9416f6",
@@ -9870,22 +9703,19 @@ export const route: RouteData = {
                   "id": "masterly-mysterious-travellers-1-6e5201",
                   "text": "Set Slot 4 to Ochette. Set Slot 2 to Castti",
                   "check": true,
-                  "kind": "party",
-                  "note": "Agnea Temenos Throne"
+                  "kind": "party"
                 },
                 {
                   "id": "masterly-mysterious-travellers-1-935f58",
                   "text": "Set Slot 1 to Hikari. Set Slot 3 to Temenos",
                   "check": true,
-                  "kind": "party",
-                  "note": "Osvald"
+                  "kind": "party"
                 },
                 {
                   "id": "masterly-mysterious-travellers-1-8d0b0d",
                   "text": "Items — Nourishing Nut (M) → Partitio",
                   "check": true,
                   "kind": "menu",
-                  "note": "Castti Partitio",
                   "ctx": "Inventory"
                 },
                 {
@@ -10137,12 +9967,17 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "fight",
                   "lines": [
-                    "Whimsical Leaf",
                     "Warding Leaf",
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
-                  "note": "skip if turn order is lucky (only if Castti does not already act last).",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "true-vide-phase-2-1-6684e4",
+                  "text": "Whimsical Leaf (skip if Castti already acts last)",
+                  "check": true,
+                  "kind": "fight",
                   "optional": true,
                   "ctx": "Turn 1"
                 },
@@ -10288,22 +10123,19 @@ export const route: RouteData = {
                   "id": "true-vide-phase-2-1-2ee536",
                   "text": "Set Slot 2 to Agnea. Set Slot 4 to Partitio",
                   "check": true,
-                  "kind": "party",
-                  "note": "Partitio Ochette Hikari Throne"
+                  "kind": "party"
                 },
                 {
                   "id": "true-vide-phase-2-1-d3e8b3",
                   "text": "Set Slot 1 to Temenos. Set Slot 3 to Hikari",
                   "check": true,
-                  "kind": "party",
-                  "note": "Osvald"
+                  "kind": "party"
                 },
                 {
                   "id": "true-vide-phase-2-1-fcc8ea",
                   "text": "Throne — Equip Thunderstorm Amulet over Brooch of Joy (Slot 1)",
                   "check": true,
                   "kind": "menu",
-                  "note": "Castti Agnea",
                   "ctx": "Equipment"
                 },
                 {

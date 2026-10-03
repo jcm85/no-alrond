@@ -18,6 +18,7 @@ type RouteFilter = "all" | "left" | "skipped";
 type ConfirmState =
   | { kind: "chapter"; id: string; count: number }
   | { kind: "through"; id: string; count: number }
+  | { kind: "carried"; id: string; count: number }
   | null;
 
 const KIND_LABEL: Record<string, string> = {
@@ -212,7 +213,12 @@ export function RouteApp() {
               {latestCarried ? (
                 <button
                   type="button"
-                  onClick={() => goTo(latestCarried)}
+                  onClick={() => {
+                    const holes = undoneBefore(done, latestCarried.id);
+                    goTo(latestCarried);
+                    if (holes > 0) setConfirm({ kind: "carried", id: latestCarried.id, count: holes });
+                    else dismissNotice();
+                  }}
                   className="min-h-12 rounded-card border border-gold px-4 py-3 text-gold"
                 >
                   Jump to latest carried step {latestCarried.n}
@@ -461,7 +467,13 @@ export function RouteApp() {
 
       {confirm ? (
         <Confirm
-          title={confirm.kind === "chapter" ? "Start at this chapter?" : "Mark all steps before this as done?"}
+          title={
+            confirm.kind === "chapter"
+              ? "Start at this chapter?"
+              : confirm.kind === "carried"
+                ? `Mark the ${confirm.count} steps before it as done?`
+                : "Mark all steps before this as done?"
+          }
           body={`Marks ${confirm.count} steps done.`}
           confirm={confirm.kind === "chapter" ? "Start here" : "Mark them"}
           onCancel={() => setConfirm(null)}
@@ -470,7 +482,8 @@ export function RouteApp() {
             else markThrough(confirm.id);
             setToast(`Marked ${confirm.count} steps`);
             setConfirm(null);
-            setTab("now");
+            if (confirm.kind === "carried") dismissNotice();
+            else setTab("now");
           }}
         />
       ) : null}

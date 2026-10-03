@@ -34,7 +34,6 @@ export type FlatStep = Step & {
 };
 
 const WARN_RE = /^do not|^don't|never|reload|chance to/i;
-const LEARN_RE = /^learn\b/i;
 
 function isWarn(text: string | undefined) {
   return Boolean(text && WARN_RE.test(text));
@@ -49,7 +48,7 @@ for (const act of route.acts) {
     for (const block of chapter.blocks) {
       const pending: Aside[] = [];
       const blockSteps: FlatStep[] = [];
-      const push = (step: Step, learn: boolean) => {
+      const push = (step: Step) => {
         const asides = pending.splice(0);
         const made: FlatStep = {
           ...step,
@@ -71,16 +70,12 @@ for (const act of route.acts) {
           solo: block.solo,
           asides,
           warn: Boolean(step.warn) || isWarn(step.note) || isWarn(step.text),
-          kind: learn ? "do" : step.kind,
+          kind: step.kind,
         };
         blockSteps.push(made);
         steps.push(made);
       };
       for (const step of block.steps) {
-        if (!step.check && LEARN_RE.test(step.text)) {
-          push(step, true);
-          continue;
-        }
         if (!step.check) {
           const aside = { text: step.text, warn: Boolean(step.warn) || isWarn(step.text) || isWarn(step.note) };
           const previous = blockSteps[blockSteps.length - 1];
@@ -88,7 +83,7 @@ for (const act of route.acts) {
           else pending.push(aside);
           continue;
         }
-        push(step, false);
+        push(step);
       }
       const tail = blockSteps[blockSteps.length - 1];
       if (pending.length && tail) tail.asides.push(...pending);

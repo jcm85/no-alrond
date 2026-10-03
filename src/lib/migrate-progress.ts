@@ -70,10 +70,49 @@ function empty(rev: string, notice: RouteNotice | null): StoredProgress {
   return { done: {}, skipped: {}, history: [], version: 2, routeRev: rev, notice };
 }
 
-/** Copy a save into the backup key only when that key is still empty. */
+function unwrapState(raw: string | null): Record<string, unknown> | null {
+  if (!raw) return null;
+  try {
+    const data = JSON.parse(raw) as unknown;
+    if (!data || typeof data !== "object") return null;
+    const obj = data as Record<string, unknown>;
+    if (obj.state && typeof obj.state === "object") return obj.state as Record<string, unknown>;
+    return obj;
+  } catch {
+    return null;
+  }
+}
+
+function doneCount(raw: string | null): number {
+  const state = unwrapState(raw);
+  const done = state?.done;
+  if (!done || typeof done !== "object") return 0;
+  return Object.values(done as Record<string, unknown>).filter(Boolean).length;
+}
+
+function routeRevOf(raw: string | null): string | null {
+  const state = unwrapState(raw);
+  return typeof state?.routeRev === "string" ? state.routeRev : null;
+}
+
+/**
+ * Keep one real backup per route revision.
+ * A backup with no done steps does not count, so a later save can replace it.
+ * A second revision is stored at `${BACKUP_KEY}-<rev>` and does not replace the first.
+ */
 export function preserveBackup(storage: Kv, raw: string): boolean {
-  if (storage.getItem(BACKUP_KEY)) return false;
-  storage.setItem(BACKUP_KEY, raw);
+  const existing = storage.getItem(BACKUP_KEY);
+  if (doneCount(existing) === 0) {
+    storage.setItem(BACKUP_KEY, raw);
+    return true;
+  }
+  const incomingRev = routeRevOf(raw);
+  const existingRev = routeRevOf(existing);
+  if (!incomingRev || incomingRev === existingRev || doneCount(raw) === 0) return false;
+  if (!/^[A-Za-z0-9._-]+$/.test(incomingRev)) return false;
+  const key = `${BACKUP_KEY}-${incomingRev}`;
+  if (doneCount(storage.getItem(key)) > 0) return false;
+  storage.setItem(key, raw);
   return true;
 }
 

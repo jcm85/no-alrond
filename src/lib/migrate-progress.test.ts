@@ -139,6 +139,45 @@ test("a unique chapter and text can be carried off a v1 id", () => {
   assert.equal(result.progress?.notice?.total, 1);
 });
 
+test("an empty backup does not block a later save that has progress", () => {
+  const storage = memory();
+  const empty = JSON.stringify({
+    state: { done: {}, skipped: {}, history: [], version: 2, routeRev: "empty-rev" },
+  });
+  assert.equal(preserveBackup(storage, empty), true);
+  const five = JSON.stringify({
+    state: {
+      done: { a: true, b: true, c: true, d: true, e: true },
+      history: ["a", "b", "c", "d", "e"],
+      version: 2,
+      routeRev: "five-rev",
+    },
+  });
+  assert.equal(preserveBackup(storage, five), true);
+  const saved = JSON.parse(storage.getItem(BACKUP_KEY) ?? "{}") as {
+    state: { done: Record<string, boolean>; routeRev: string };
+  };
+  assert.equal(Object.keys(saved.state.done).length, 5);
+  assert.equal(saved.state.routeRev, "five-rev");
+  assert.equal(storage.getItem(`${BACKUP_KEY}-five-rev`), null);
+});
+
+test("two stale revisions are both backed up", () => {
+  const storage = memory();
+  const first = JSON.stringify({
+    state: { done: { a1: true }, history: ["a1"], version: 2, routeRev: "oldrev1" },
+  });
+  const second = JSON.stringify({
+    state: { done: { b1: true }, history: ["b1"], version: 2, routeRev: "oldrev2" },
+  });
+  assert.equal(preserveBackup(storage, first), true);
+  assert.equal(preserveBackup(storage, second), true);
+  assert.equal(storage.getItem(BACKUP_KEY)?.includes("oldrev1"), true);
+  assert.equal(storage.getItem(BACKUP_KEY)?.includes("oldrev2"), false);
+  assert.equal(storage.getItem(`${BACKUP_KEY}-oldrev2`)?.includes("b1"), true);
+  assert.equal(preserveBackup(storage, second), false);
+});
+
 test("start over does not overwrite a backup that still holds r614", () => {
   const storage = memory();
   storage.setItem(
