@@ -26,7 +26,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Boss: Pirro. The fight starts here; in the guide it is the step \"Turn 1 — Darkest Night\" (Pirro block). Last area banner before it: \"Brightlands / New Delsta\". This frame is from the first seconds of the battle (video 0:04:34).",
     "kind": "battle",
     "videoTime": "0:04:34",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=270",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=271",
     "confidence": "medium"
   },
   "throne-ch-1-1-76aaab": {
@@ -35,7 +35,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Cape Cold: the area-name banner \"Winterlands / Cape Cold\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:07:21",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=441",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=438",
     "confidence": "medium"
   },
   "throne-ch-1-1-6f1b3c": {
@@ -44,7 +44,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map and select New Delsta Harbour: Anchorage; the selected town's name is shown in the box on the map. Confirm and the screen fades out.",
     "kind": "travel",
     "videoTime": "0:08:27",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=507",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=505",
     "confidence": "medium"
   },
   "throne-ch-1-1-55eed8": {
@@ -53,7 +53,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Western Tropu'hopu Traverse: the area-name banner \"Toto'haha / WesternTropu'hopu Travers\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:09:08",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=548",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=546",
     "confidence": "medium"
   },
   "throne-ch-1-1-f06d87": {
@@ -62,7 +62,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map and select Beasting Bay: Anchorage; the selected town's name is shown in the box on the map. Confirm and the screen fades out.",
     "kind": "travel",
     "videoTime": "0:10:41",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=641",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=639",
     "confidence": "medium"
   },
   "throne-ch-1-1-22b194": {
@@ -71,7 +71,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Cavern of Waves: the area-name banner \"Totohaha / Cavern of Waves\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:11:15",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=675",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=672",
     "confidence": "medium"
   },
   "throne-ch-1-1-a8a066": {
@@ -80,7 +80,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Cropdale: the area-name banner \"Leaflands / Cropdale\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:12:42",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=762",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=759",
     "confidence": "medium"
   },
   "throne-ch-1-1-752857": {
@@ -89,7 +89,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Oresrush: the area-name banner \"Wildlands / Oresrush\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:13:49",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=829",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=826",
     "confidence": "medium"
   },
   "throne-ch-1-1-8b95b8": {
@@ -98,7 +98,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Ryu: the area-name banner \"Hinoeuma / Ryu\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:14:53",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=893",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=891",
     "confidence": "medium"
   },
   "throne-ch-1-1-b2f9ba": {
@@ -107,7 +107,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Northern Conning Creek Coast: the area-name banner \"Harborlands / Northern Conning Creek Coa\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:16:12",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=972",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=970",
     "confidence": "medium"
   },
   "throne-ch-1-1-48b7f2": {
@@ -116,7 +116,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Western Conning Creek Coast: the area-name banner \"Harborlands / WesternConningCreekCoa\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:16:39",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=999",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=997",
     "confidence": "medium"
   },
   "throne-ch-1-1-2fbe54": {
@@ -125,7 +125,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Conning Creek: the area-name banner \"Harborlands / Conning Creek\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:17:12",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1032",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1030",
     "confidence": "medium"
   },
   "partitio-ch-2-1-9fbb5f": {
@@ -134,7 +134,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Oresrush (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "0:22:01",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1321",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1319",
     "confidence": "high"
   },
   "partitio-ch-2-1-d84c2b": {
@@ -143,7 +143,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Southern Crackridge Wilds: the area-name banner \"Wildlands / Southern Crackridge Wilds\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:23:25",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1405",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1402",
     "confidence": "medium"
   },
   "partitio-ch-2-1-6c0536": {
@@ -152,7 +152,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Western Crackridge Wilds: the area-name banner \"Wildlands / WesternCrackridge Wilds\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:24:35",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1475",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1472",
     "confidence": "medium"
   },
   "partitio-ch-2-1-04c7d7": {
@@ -161,7 +161,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Cross the wooden bridge heading right (east) to enter Crackridge; the \"Wildlands / Crackridge\" banner appears as you arrive.",
     "kind": "travel",
     "videoTime": "0:25:35",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1535",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1532",
     "confidence": "high"
   },
   "partitio-ch-2-1-d6adbe": {
@@ -179,7 +179,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Borderfall: the area-name banner \"Crestlands / Borderfall\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:30:05",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1805",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1803",
     "confidence": "medium"
   },
   "partitio-ch-2-1-350fb1": {
@@ -188,7 +188,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Montwise from Western Montwise Pass: climb the wide stone steps toward the upper right; the \"Crestlands / Montwise\" banner appears about a second later.",
     "kind": "travel",
     "videoTime": "0:31:37",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1897",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1895",
     "confidence": "medium"
   },
   "hikari-ch-2-1-8336ac": {
@@ -197,7 +197,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Montwise: Underground Arena: the area-name banner \"Crestlands / Montwise: Underground Are\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:31:53",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1913",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1910",
     "confidence": "medium"
   },
   "hikari-ch-2-1-b939d4": {
@@ -206,7 +206,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Arena challenge: Gladiator. The fight starts here; in the guide it is the step \"Turn 1 — Spear x3\" (Gladiator block). Last area banner before it: \"Crestlands / Montwise: Underground Are\". This frame is from the first seconds of the battle (video 0:32:06).",
     "kind": "battle",
     "videoTime": "0:32:06",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1924",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1923",
     "confidence": "medium"
   },
   "hikari-ch-2-1-b35c33": {
@@ -215,7 +215,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Arena challenge: Gladiators. The fight starts here; in the guide it is the step \"Turn 1 — Ice Soulstone (M)\" (Gladiators block). Last area banner before it: \"Crestlands / Montwise: Underground Arel\". This frame is from the first seconds of the battle (video 0:32:48).",
     "kind": "battle",
     "videoTime": "0:32:48",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1966",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1965",
     "confidence": "medium"
   },
   "hikari-ch-2-1-461d0f": {
@@ -224,7 +224,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Arena challenge: Zeto the Butcher. The fight starts here; in the guide it is the step \"Turn 1 — Sword x3\" (Zeto the Butcher block). Last area banner before it: \"Crestlands / Montwise: Underground Arel\". This frame is from the first seconds of the battle (video 0:33:20).",
     "kind": "battle",
     "videoTime": "0:33:20",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1998",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1997",
     "confidence": "medium"
   },
   "hikari-ch-2-1-0d325a": {
@@ -233,7 +233,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Arena challenge: Bandelam the Reaper (challenge). The fight starts here; in the guide it is the step \"Turn 1 — Slowing Sweep/Spear (if first on turn 2)\" (Bandelam the Reaper block). Last area banner before it: \"Crestlands / Montwise:UndergroundArel\". This frame is from the first seconds of the battle (video 0:34:10).",
     "kind": "battle",
     "videoTime": "0:34:10",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2048",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2047",
     "confidence": "medium"
   },
   "hikari-ch-2-1-d31835": {
@@ -242,7 +242,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Boss: Bandelam the Reaper. The fight starts here; in the guide it is the step \"Throne — Armour Corrosive\" (Bandelam the Reaper block). Last area banner before it: \"Crestlands / Montwise:UndergroundArel\". This frame is from the first seconds of the battle (video 0:34:36).",
     "kind": "battle",
     "videoTime": "0:34:36",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2072",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2073",
     "confidence": "high"
   },
   "hikari-ch-2-1-625d41": {
@@ -251,7 +251,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Required ambush: Yurinas. The fight starts here; in the guide it is the step \"Ambush the Fainthearted Youth.\" (Yurinas block). Last area banner before it: \"Crestlands / Montwise: Underground Are\". This frame is from the first seconds of the battle (video 0:35:22).",
     "kind": "battle",
     "videoTime": "0:35:22",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2120",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2119",
     "confidence": "medium"
   },
   "hikari-ch-2-1-b8a3c0": {
@@ -260,7 +260,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Flamechurch (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "0:35:49",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2149",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2146",
     "confidence": "high"
   },
   "recruit-temenos-1-6fad35": {
@@ -269,7 +269,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Conning Creek (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "0:36:26",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2186",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2183",
     "confidence": "high"
   },
   "recruit-temenos-1-dbbae3": {
@@ -278,7 +278,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Leaving Conning Creek to the east toward the Outskirts; the \"Conning Creek: Outskirts\" banner appears at this moment.",
     "kind": "travel",
     "videoTime": "0:36:34",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2194",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2191",
     "confidence": "high"
   },
   "throne-ch-2-mother-s-route-1-9c7ff7": {
@@ -287,7 +287,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Conning Creek (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "0:38:19",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2299",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2296",
     "confidence": "high"
   },
   "osvald-ch-3-1-a91bcd": {
@@ -303,7 +303,7 @@ export const stepPics: Record<string, StepPicture> = {
         "image": "/step-pics/osvald-ch-3-1-a91bcd-outpost-door.jpg",
         "caption": "Before the fight: climb the stairs and go in through the Guard Outpost doors; the guaranteed guard encounter happens inside.",
         "videoTime": "0:38:42",
-        "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2322",
+        "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2319",
         "confidence": "medium",
         "kind": "travel"
       }
@@ -324,7 +324,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "The first thing in this chapter happens in the Montwise Library: walk up the steps and in through the big front doors (the \"Make for the library\" objective and the \"Crestlands / Montwise: Library\" banner appear here).",
     "kind": "travel",
     "videoTime": "0:40:29",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2429",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2426",
     "confidence": "medium"
   },
   "osvald-ch-4-1-480890": {
@@ -342,7 +342,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Beasting Bay: Anchorage (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "0:42:49",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2569",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2566",
     "confidence": "high"
   },
   "osvald-ch-4-1-aa683e": {
@@ -351,7 +351,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Beasting Village: the area-name banner \"Toto'haha / Beasting Village\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:43:45",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2625",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2623",
     "confidence": "medium"
   },
   "osvald-ch-4-1-6fad35": {
@@ -360,7 +360,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Conning Creek (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "0:44:12",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2652",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2649",
     "confidence": "high"
   },
   "osvald-ch-4-1-619773": {
@@ -369,7 +369,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Eastern Wellgrove Trail: the area-name banner \"Leaflands / Eastern Wellgrove Trail\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:45:56",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2756",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2753",
     "confidence": "medium"
   },
   "osvald-ch-4-1-a91bcd": {
@@ -387,7 +387,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Western Winterbloom Snows: the area-name banner \"Winterlands / Western WinterbloomSnow\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:48:58",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2938",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2935",
     "confidence": "medium"
   },
   "osvald-ch-4-1-353efb": {
@@ -396,7 +396,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Winterbloom: the area-name banner \"Winterlands / Winterbloom\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:50:10",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3010",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3007",
     "confidence": "medium"
   },
   "osvald-ch-4-1-8b8ac4": {
@@ -414,7 +414,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Wellgrove (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "0:52:31",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3151",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3148",
     "confidence": "high"
   },
   "osvald-ch-4-1-db2f8a": {
@@ -423,7 +423,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Northern Wellgrove Trail: the area-name banner \"Leaflands / Northern Wellgrove Trail\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:52:57",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3177",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3175",
     "confidence": "medium"
   },
   "osvald-ch-4-1-be1f4d": {
@@ -432,7 +432,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Altar of the Lady of Grace: the area-name banner \"Leaflands / Altar of the Lady of Grace\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:53:13",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3193",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3190",
     "confidence": "medium"
   },
   "osvald-ch-4-1-d1b14e": {
@@ -441,7 +441,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Timberain: the area-name banner \"\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:54:45",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3285",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3282",
     "confidence": "medium"
   },
   "osvald-ch-4-1-b1c3e6": {
@@ -450,7 +450,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Western Gravell Wilds: the area-name banner \"Wildlands / Western Gravell Wilds\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:55:59",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3359",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3356",
     "confidence": "medium"
   },
   "osvald-ch-4-1-eea48e": {
@@ -459,7 +459,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Gravell: the area-name banner \"Wildlands / Gravell\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "0:56:27",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3387",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3384",
     "confidence": "medium"
   },
   "osvald-ch-4-2-fa04b8": {
@@ -468,7 +468,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map and select Wellgrove; the selected town's name is shown in the box on the map. Confirm and the screen fades out.",
     "kind": "travel",
     "videoTime": "1:00:10",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3610",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3608",
     "confidence": "medium"
   },
   "partitio-ch-3-1-c4c07a": {
@@ -477,7 +477,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Shipwreck of the Empress: the area-name banner \"ShipwreckoftheEmpress\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "1:03:20",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3800",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3797",
     "confidence": "medium"
   },
   "partitio-ch-3-1-6f1b3c": {
@@ -486,7 +486,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "You arrive at New Delsta Harbour: Anchorage after the warp; the banner \"Brightlands / New Delsta Harbor: Anchora\" shows on arrival.",
     "kind": "travel",
     "videoTime": "1:04:28",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3868",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3865",
     "confidence": "medium"
   },
   "partitio-ch-3-1-fa04b8": {
@@ -495,7 +495,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Wellgrove (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "1:04:55",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3895",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3893",
     "confidence": "high"
   },
   "partitio-ch-3-1-84ddac": {
@@ -513,7 +513,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Wellgrove (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "1:08:08",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4088",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4085",
     "confidence": "high"
   },
   "hikari-ch-3-1-b5b153": {
@@ -531,7 +531,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Boss: Sand Lion. The fight starts here; in the guide it is the step \"Fight the Sand Lion during the day.\" (Sand Lion block). Last area banner before it: \"Nameless Isle\". This frame is from the first seconds of the battle (video 1:12:34).",
     "kind": "battle",
     "videoTime": "1:12:34",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4344",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4351",
     "confidence": "medium"
   },
   "foreign-assassins-1-b8556e": {
@@ -549,7 +549,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Ivory Ravine: the area-name banner \"Wildlands / Ivory Ravine\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "1:13:49",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4429",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4427",
     "confidence": "medium"
   },
   "foreign-assassins-1-fc1038": {
@@ -558,7 +558,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Southern Stormhail Snows: the area-name banner \"Winterlands / SouthernStormhail Snows\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "1:15:37",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4537",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4535",
     "confidence": "medium"
   },
   "foreign-assassins-1-b9e216": {
@@ -567,7 +567,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Stormhail: the area-name banner \"Winterlands / Stormhail\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "1:16:27",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4587",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4584",
     "confidence": "medium"
   },
   "hikari-ch-4-1-30cf28": {
@@ -594,7 +594,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Boss: Gigantes. The fight starts here; in the guide it is the step \"Fight Gigantes at night.\" (Gigantes block). Last area banner before it: \"Winterlands / Castle Mei:East Tower\". This frame is from the first seconds of the battle (video 1:19:15).",
     "kind": "battle",
     "videoTime": "1:19:15",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4754",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4752",
     "confidence": "medium"
   },
   "hikari-ch-5-1-2bb7f3": {
@@ -639,7 +639,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Boss: Plukk. The fight starts here; in the guide it is the step \"Fight Plukk at night.\" (Plukk block). Last area banner before it: \"Winterlands / Winterbloom:Thieves'Quar\". This frame is from the first seconds of the battle (video 1:29:42).",
     "kind": "battle",
     "videoTime": "1:29:42",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5380",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5379",
     "confidence": "medium"
   },
   "castti-ch-2-winterbloom-route-1-d45c83": {
@@ -648,7 +648,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Abandoned Village (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "1:30:38",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5438",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5435",
     "confidence": "high"
   },
   "castti-ch-3-1-45cc3c": {
@@ -657,7 +657,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Timberain (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "1:32:58",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5578",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5576",
     "confidence": "high"
   },
   "castti-ch-4-1-c79d17": {
@@ -675,7 +675,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map and select Beasting Bay: Anchorage; the selected town's name is shown in the box on the map. Confirm and the screen fades out.",
     "kind": "travel",
     "videoTime": "1:37:07",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5827",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5825",
     "confidence": "medium"
   },
   "agnea-ch-2-1-baf3e6": {
@@ -684,7 +684,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Curious Nest: the area-name banner \"Curious Nest\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "1:37:41",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5861",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5859",
     "confidence": "medium"
   },
   "agnea-ch-2-1-3b79ec": {
@@ -693,7 +693,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Boss: Battle-Worn Shark. The fight starts here; in the guide it is the step \"Fight the Battle-Worn Shark at night.\" (Battle-Worn Shark block). Last area banner before it: \"The Sundering Sea / On the Water\". This frame is from the first seconds of the battle (video 1:37:26).",
     "kind": "battle",
     "videoTime": "1:37:26",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5844",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5843",
     "confidence": "medium"
   },
   "agnea-ch-2-1-8f3c27": {
@@ -720,7 +720,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to New Delsta (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "1:41:33",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6093",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6090",
     "confidence": "high"
   },
   "agnea-ch-2-1-ddcaac": {
@@ -729,7 +729,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Tropu'hopu (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "1:44:04",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6244",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6242",
     "confidence": "high"
   },
   "throne-ch-3-father-s-route-1-e04c85": {
@@ -747,7 +747,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Tropu'hopu (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "1:46:44",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6404",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6402",
     "confidence": "high"
   },
   "agnea-ch-3-1-1cf256": {
@@ -756,7 +756,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "You arrive at Sai after the warp; the banner \"Hinoeuma / Sai\" shows on arrival.",
     "kind": "travel",
     "videoTime": "1:48:15",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6495",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6492",
     "confidence": "medium"
   },
   "agnea-ch-4-1-13e654": {
@@ -774,7 +774,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "You arrive at Roque Island after the warp; the banner \"Harborlands / Roque Island\" shows on arrival.",
     "kind": "travel",
     "videoTime": "1:51:27",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6687",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6685",
     "confidence": "medium"
   },
   "partitio-ch-4-1-dc278c": {
@@ -792,7 +792,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Oresrush (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "1:54:32",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6872",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6870",
     "confidence": "high"
   },
   "ochette-ch-2-cateracta-s-route-1-08a97c": {
@@ -810,7 +810,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "You arrive at Crackridge after the warp; the banner \"Wildlands / Crackridge\" shows on arrival.",
     "kind": "travel",
     "videoTime": "1:57:24",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7044",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7041",
     "confidence": "medium"
   },
   "ochette-ch-2-cateracta-s-route-1-cea8bc": {
@@ -828,7 +828,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "You arrive at Crackridge after the warp; the banner \"Wildlands / Crackridge\" shows on arrival.",
     "kind": "travel",
     "videoTime": "1:57:32",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7052",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7050",
     "confidence": "medium"
   },
   "ochette-ch-2-tera-s-route-1-f2882a": {
@@ -837,7 +837,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Bed of the Titan: the area-name banner \"Wildlands / Bed of the Titan\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "1:59:01",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7141",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7139",
     "confidence": "medium"
   },
   "ochette-ch-2-tera-s-route-1-8fa4b7": {
@@ -873,7 +873,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Beasting Village (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "2:01:55",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7315",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7313",
     "confidence": "high"
   },
   "ochette-ch-3-1-c05ffc": {
@@ -882,7 +882,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Cropdale (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "2:06:37",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7597",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7594",
     "confidence": "high"
   },
   "the-apothecary-hunter-part-1-1-c05ffc": {
@@ -891,7 +891,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Cropdale (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "2:07:51",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7671",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7668",
     "confidence": "high"
   },
   "the-apothecary-hunter-part-2-1-9f4c40": {
@@ -918,7 +918,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Wellgrove (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "2:10:22",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7822",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7820",
     "confidence": "high"
   },
   "the-apothecary-hunter-part-2-1-d0802b": {
@@ -927,7 +927,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering library: the area-name banner \"Crestlands / Montwise:Library\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "2:12:56",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7976",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7973",
     "confidence": "medium"
   },
   "the-apothecary-hunter-part-2-1-f06d87": {
@@ -936,7 +936,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map and select Beasting Bay: Anchorage; the selected town's name is shown in the box on the map. Confirm and the screen fades out.",
     "kind": "travel",
     "videoTime": "2:13:24",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8004",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8002",
     "confidence": "medium"
   },
   "galdera-1-95ea15": {
@@ -945,7 +945,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Superboss: Omniscient Eye (Galdera, first part). The fight starts here; in the guide it is the step \"Hikari — Peacock Strut x2 → Castti\" (Omniscient Eye block). Last area banner before it: \"Divide your heroes into tuo parties of four\". This frame is from the first seconds of the battle (video 2:15:12).",
     "kind": "battle",
     "videoTime": "2:15:12",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8088",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8109",
     "confidence": "high"
   },
   "galdera-1-107476": {
@@ -954,7 +954,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Superboss: Galdera, the Fallen. The fight starts here; in the guide it is the step \"Throne — Latent Power + Rejuvenating Jam → Self\" (Galdera, the Fallen block). Last area banner before it: \"Divide your heroes into tuo parties of four\". This frame is from the first seconds of the battle (video 2:18:06).",
     "kind": "battle",
     "videoTime": "2:18:06",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8088",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8283",
     "confidence": "high"
   },
   "galdera-1-b5cb4a": {
@@ -963,7 +963,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Lost Isle: the area-name banner \"The Sundering Sea / The Lost Isle\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "2:20:07",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8407",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8405",
     "confidence": "medium"
   },
   "agnea-ch-5-1-e653d6": {
@@ -981,7 +981,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map and select Wellgrove; the selected town's name is shown in the box on the map. Confirm and the screen fades out.",
     "kind": "travel",
     "videoTime": "2:23:25",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8605",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8602",
     "confidence": "medium"
   },
   "throne-ch-3-mother-s-route-1-676baa": {
@@ -999,7 +999,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Lostseed: the area-name banner \"Brightlands / Lostseed\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "2:26:58",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8818",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8815",
     "confidence": "medium"
   },
   "throne-ch-4-1-89d69d": {
@@ -1017,7 +1017,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering East District: the area-name banner \"Hinoeuma / Sai:East District\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "2:29:22",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8962",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8959",
     "confidence": "medium"
   },
   "the-dancer-warrior-part-2-1-5cb913": {
@@ -1026,7 +1026,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Tranquil Grotto: the area-name banner \"Hinoeuma / Tranquil Grotto\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "2:30:39",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=9039",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=9036",
     "confidence": "medium"
   },
   "the-scholar-merchant-part-2-1-ed7567": {
@@ -1044,7 +1044,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Canalbrine (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "2:39:08",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=9548",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=9546",
     "confidence": "high"
   },
   "temenos-ch-3-stormhail-route-1-fd890f": {
@@ -1053,7 +1053,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Nameless Village: the area-name banner \"Toto'haha / Nameless Village\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "2:47:05",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10025",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10023",
     "confidence": "medium"
   },
   "temenos-ch-4-1-f0a251": {
@@ -1071,7 +1071,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map, move the cursor to Conning Creek (the green town icon the arrow points to; its name shows in the box next to it) and confirm. The screen fades out about a second later.",
     "kind": "travel",
     "videoTime": "2:51:40",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10300",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10298",
     "confidence": "high"
   },
   "the-cleric-thief-part-2-1-421d51": {
@@ -1080,7 +1080,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Cavern of the Moon and Sun: the area-name banner \"Harborlands / CavernoftheMoonandSun\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "2:52:47",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10367",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10365",
     "confidence": "medium"
   },
   "the-cleric-thief-part-2-1-72039b": {
@@ -1098,7 +1098,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Southern Cropdale Trail: the area-name banner \"Leaflands / Southern Cropdale Trail\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "2:54:33",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10473",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10470",
     "confidence": "medium"
   },
   "journey-for-the-dawn-1-2389b1": {
@@ -1107,7 +1107,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Flamechurch: Cathedral Entrance: the area-name banner \"Crestlands / Flamechurch:CathedralEnt\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "2:57:21",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10641",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10638",
     "confidence": "medium"
   },
   "journey-for-the-dawn-1-5311e3": {
@@ -1116,7 +1116,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Tombs of the Wardenbeasts: the area-name banner \"Toto'haha / Tombs of theWardenbeasts\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "2:58:20",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10700",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10698",
     "confidence": "medium"
   },
   "journey-for-the-dawn-1-5cb913": {
@@ -1125,7 +1125,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Tranquil Grotto: the area-name banner \"Hinoeuma / Tranquil Grotto\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "3:00:53",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10853",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10850",
     "confidence": "medium"
   },
   "journey-for-the-dawn-1-c1274d": {
@@ -1134,7 +1134,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Fellsun Ruins: the area-name banner \"Wildlands / FellsunRuins\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "3:02:04",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10924",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10922",
     "confidence": "medium"
   },
   "journey-for-the-dawn-1-607742": {
@@ -1143,7 +1143,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Entering Vidania: the area-name banner \"The Sundering Sea / Vidania\" pops up as you cross into the new area, which is the moment this step is done.",
     "kind": "travel",
     "videoTime": "3:02:52",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10972",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10969",
     "confidence": "medium"
   },
   "vide-the-wicked-1-ada0f5": {
@@ -1152,7 +1152,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Final boss: Vide, the Wicked. The fight starts here; in the guide it is the step \"Castti — Defend\" (Vide, the Wicked block). Last area banner before it: \"The Sundering Sea / Castle Vidania\". This frame is from the first seconds of the battle (video 3:03:56).",
     "kind": "battle",
     "videoTime": "3:03:56",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11032",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11033",
     "confidence": "high"
   },
   "vide-the-wicked-1-6fad35": {
@@ -1161,7 +1161,7 @@ export const stepPics: Record<string, StepPicture> = {
     "caption": "Fast travel: open the world map and select Conning Creek; the selected town's name is shown in the box on the map. Confirm and the screen fades out.",
     "kind": "travel",
     "videoTime": "3:05:31",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11131",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11128",
     "confidence": "medium"
   },
   "majestic-mysterious-travellers-1-476306": {

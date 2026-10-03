@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
+import { dirname, join } from "node:path";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
 import { stepPics } from "../data/step-pics.ts";
 import { frameHeading, watchFromLabel } from "./step-pictures.ts";
 
@@ -16,7 +19,17 @@ function labelSeconds(label: string) {
   return parts[0] * 3600 + parts[1] * 60 + parts[2];
 }
 
-test("watch label time equals the link t for every frame", () => {
+/** Same lead-in as scripts/build-step-pics.py: round half up, then three seconds early. */
+function leadSeconds(source: number) {
+  return Math.max(0, Math.floor(source + 0.5) - 3);
+}
+
+test("watch label time equals the link t, and t is the frame minus 3 seconds", () => {
+  const manifestPath = join(dirname(fileURLToPath(import.meta.url)), "../../scripts/step-pics/manifest.json");
+  const manifest = JSON.parse(readFileSync(manifestPath, "utf8")) as Record<
+    string,
+    { sourceFrameSeconds: number; extraImages?: { sourceFrameSeconds?: number }[] }
+  >;
   const pictures = Object.values(stepPics);
   assert.equal(pictures.length, 127);
   const frames = pictures.flatMap((picture) => [picture, ...(picture.extraImages ?? [])]);
@@ -25,12 +38,28 @@ test("watch label time equals the link t for every frame", () => {
     const label = watchFromLabel(frame.youtube_link);
     assert.equal(labelSeconds(label), linkSeconds(frame.youtube_link), frame.youtube_link);
   }
-  assert.equal(watchFromLabel(stepPics["galdera-1-107476"].youtube_link), "Watch from 2:14:48");
-  assert.equal(linkSeconds(stepPics["galdera-1-107476"].youtube_link), 8088);
-  assert.equal(watchFromLabel(stepPics["galdera-1-95ea15"].youtube_link), "Watch from 2:14:48");
-  assert.equal(linkSeconds(stepPics["galdera-1-95ea15"].youtube_link), 8088);
-  assert.equal(watchFromLabel(stepPics["castti-ch-2-sai-route-1-655e3d"].youtube_link), "Watch from 1:12:24");
-  assert.equal(linkSeconds(stepPics["castti-ch-2-sai-route-1-655e3d"].youtube_link), 4344);
+  for (const [stepId, item] of Object.entries(manifest)) {
+    const picture = stepPics[stepId];
+    if (!picture) continue;
+    const expected = leadSeconds(item.sourceFrameSeconds);
+    assert.equal(linkSeconds(picture.youtube_link), expected, stepId);
+    assert.equal(labelSeconds(watchFromLabel(picture.youtube_link)), expected, stepId);
+    const extras = item.extraImages ?? [];
+    assert.equal((picture.extraImages ?? []).length, extras.length, stepId);
+    extras.forEach((extra, index) => {
+      assert.equal(typeof extra.sourceFrameSeconds, "number", stepId);
+      const extraExpected = leadSeconds(extra.sourceFrameSeconds ?? 0);
+      const frame = picture.extraImages?.[index];
+      assert.ok(frame);
+      assert.equal(linkSeconds(frame.youtube_link), extraExpected, stepId);
+    });
+  }
+  assert.equal(watchFromLabel(stepPics["galdera-1-107476"].youtube_link), "Watch from 2:18:03");
+  assert.equal(linkSeconds(stepPics["galdera-1-107476"].youtube_link), 8283);
+  assert.equal(watchFromLabel(stepPics["galdera-1-95ea15"].youtube_link), "Watch from 2:15:09");
+  assert.equal(linkSeconds(stepPics["galdera-1-95ea15"].youtube_link), 8109);
+  assert.equal(watchFromLabel(stepPics["castti-ch-2-sai-route-1-655e3d"].youtube_link), "Watch from 1:12:31");
+  assert.equal(linkSeconds(stepPics["castti-ch-2-sai-route-1-655e3d"].youtube_link), 4351);
 });
 
 test("the guard outpost door is a travel frame", () => {
@@ -38,4 +67,5 @@ test("the guard outpost door is a travel frame", () => {
   assert.ok(extra);
   assert.equal(frameHeading("battle", extra.kind), "Where to go");
   assert.equal(frameHeading("battle"), "Fight");
+  assert.equal(watchFromLabel(extra.youtube_link), "Watch from 38:39");
 });

@@ -103,6 +103,7 @@ export function RouteApp() {
       const tag = target?.tagName;
       if (tag === "BUTTON" || tag === "A" || tag === "SELECT" || tag === "INPUT" || tag === "TEXTAREA") return;
       if (target?.closest("[role='dialog']")) return;
+      if (document.querySelector(".pic-lightbox")) return;
       if (about || confirm || tab !== "now") return;
       if (event.key === "Escape") return;
       if ((event.key === " " || event.key === "Enter") && target === document.body) {
@@ -515,11 +516,21 @@ function Now({
   const picture = pictureFor(current?.id);
   const [pictureHidden, setPictureHidden] = usePictureHidden();
   const showPictureRef = useRef<HTMLButtonElement>(null);
+  const hidePictureRef = useRef<HTMLButtonElement>(null);
   const pendingShowFocus = useRef(false);
+  const pendingHideFocus = useRef(false);
   useEffect(() => {
     if (!pictureHidden || !pendingShowFocus.current) return;
     pendingShowFocus.current = false;
     showPictureRef.current?.focus();
+  }, [pictureHidden]);
+  useEffect(() => {
+    if (pictureHidden || !pendingHideFocus.current) return;
+    pendingHideFocus.current = false;
+    const hides = [...document.querySelectorAll<HTMLButtonElement>(".step-pic-hide")];
+    const chip = document.querySelector<HTMLButtonElement>(".step-pic-chip");
+    const visible = [...hides, chip].find((button) => button && button.getClientRects().length > 0);
+    visible?.focus();
   }, [pictureHidden]);
   useEffect(() => {
     if (!current) return;
@@ -543,6 +554,7 @@ function Now({
         <StepPictureCard
           picture={picture}
           eager
+          hideRef={hidePictureRef}
           onHide={() => {
             pendingShowFocus.current = true;
             setPictureHidden(true);
@@ -554,7 +566,10 @@ function Now({
           <button
             ref={showPictureRef}
             type="button"
-            onClick={() => setPictureHidden(false)}
+            onClick={() => {
+              pendingHideFocus.current = true;
+              setPictureHidden(false);
+            }}
             className="mb-3 min-h-11 text-base text-gold"
           >
             Show picture
