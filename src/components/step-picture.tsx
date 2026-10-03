@@ -85,43 +85,45 @@ function PictureLightbox({
 
   return (
     <div ref={dialogRef} className="pic-lightbox" role="dialog" aria-modal="true" aria-label={heading}>
-      <div className="flex items-center justify-between gap-3">
+      <div className="pic-lightbox-head flex items-center justify-between gap-3">
         <p className="font-display text-lg font-semibold text-gold">{heading}</p>
         <button ref={closeRef} type="button" onClick={onClose} className="min-h-11 shrink-0 px-3 text-base text-gold">
           Close
         </button>
       </div>
       <img src={frame.image} alt={frame.caption} width={1280} height={720} className="pic-lightbox-img" />
-      {frame.confidence === "medium" ? (
-        <p className="text-sm leading-snug text-muted">
-          <span className="mr-2 inline-block rounded-full border border-gold px-2 py-0.5 text-xs tracking-wide text-gold uppercase">
-            approximate
-          </span>
-          {APPROXIMATE}
-        </p>
-      ) : null}
-      <p className="text-base text-fg">{frame.caption}</p>
-      {count > 1 ? (
-        <div className="flex items-center justify-between gap-2">
-          <button type="button" className="min-h-11 px-3 text-base text-gold disabled:opacity-40" onClick={onPrev} disabled={index === 0}>
-            Previous
-          </button>
-          <p className="text-base text-muted tabular-nums">
-            {index + 1} / {count}
+      <div className="pic-lightbox-side">
+        {frame.confidence === "medium" ? (
+          <p className="text-sm leading-snug text-muted">
+            <span className="mr-2 inline-block rounded-full border border-gold px-2 py-0.5 text-xs tracking-wide text-gold uppercase">
+              approximate
+            </span>
+            {APPROXIMATE}
           </p>
-          <button type="button" className="min-h-11 px-3 text-base text-gold disabled:opacity-40" onClick={onNext} disabled={index >= count - 1}>
-            Next
-          </button>
-        </div>
-      ) : null}
-      <a
-        className="inline-flex min-h-11 items-center text-base text-gold underline underline-offset-4"
-        href={frame.youtube_link}
-        target="_blank"
-        rel="noreferrer"
-      >
-        {watchFromLabel(frame.youtube_link)}
-      </a>
+        ) : null}
+        <p className="text-base text-fg">{frame.caption}</p>
+        {count > 1 ? (
+          <div className="flex items-center justify-between gap-2">
+            <button type="button" className="min-h-11 px-3 text-base text-gold disabled:opacity-40" onClick={onPrev} disabled={index === 0}>
+              Previous
+            </button>
+            <p className="text-base text-muted tabular-nums">
+              {index + 1} / {count}
+            </p>
+            <button type="button" className="min-h-11 px-3 text-base text-gold disabled:opacity-40" onClick={onNext} disabled={index >= count - 1}>
+              Next
+            </button>
+          </div>
+        ) : null}
+        <a
+          className="inline-flex min-h-11 items-center text-base text-gold underline underline-offset-4"
+          href={frame.youtube_link}
+          target="_blank"
+          rel="noreferrer"
+        >
+          {watchFromLabel(frame.youtube_link)}
+        </a>
+      </div>
     </div>
   );
 }

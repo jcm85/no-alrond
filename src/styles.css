@@ -152,6 +152,49 @@
   object-fit: contain;
 }
 
+/* Sits above the fixed Done bar. The bar stays tappable; only Undo takes taps. */
+.undo-toast {
+  position: fixed;
+  inset-inline: 0;
+  z-index: 30;
+  bottom: calc(8.75rem + env(safe-area-inset-bottom));
+  pointer-events: none;
+}
+
+.undo-toast button {
+  pointer-events: auto;
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .pic-lightbox {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(14rem, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 1rem;
+  }
+
+  .pic-lightbox-head {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .pic-lightbox-img {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    width: 100%;
+    height: auto;
+    max-height: calc(100dvh - 1.5rem);
+  }
+
+  .pic-lightbox-side {
+    grid-column: 2;
+    grid-row: 2;
+    min-height: 0;
+    overflow: auto;
+  }
+}
+
 @media (min-width: 1280px) and (orientation: landscape) {
   .app-shell {
     width: min(100%, calc(100% - 2rem));
@@ -399,7 +442,9 @@
   }
 
   .step-pic-short .step-pic-watch {
-    display: none;
+    display: inline-flex;
+    min-height: 2rem;
+    margin-top: 0;
   }
 
   .now-layout .now-actions {
