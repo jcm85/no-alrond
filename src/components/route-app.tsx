@@ -483,7 +483,7 @@ export function RouteApp() {
             setToast(`Marked ${confirm.count} steps`);
             setConfirm(null);
             if (confirm.kind === "carried") dismissNotice();
-            else setTab("now");
+            setTab("now");
           }}
         />
       ) : null}

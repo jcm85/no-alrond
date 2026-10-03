@@ -141,6 +141,11 @@ NAME_ONLY_RE = re.compile(
     r"^(?:Throne|Hikari|Castti|Partitio|Temenos|Osvald|Agnea|Ochette)"
     r"(?: (?:Throne|Hikari|Castti|Partitio|Temenos|Osvald|Agnea|Ochette))*$"
 )
+# Sheet labels that are not instructions. Menu still names a real menu block.
+STRAY_NOTES = {"Snow Yak", "Buttermeep", "Menu", "Prepare"}
+# Cells intentionally left out of the route, so they are not glued onto a neighbor.
+DROPPED_FRAGMENTS = {"Prepare", "Osvald Chapter 5"}
+
 SCAFFOLD_CELLS = {
     "formation",
     "change party",
@@ -208,7 +213,7 @@ def main():
         blocks_raw.append((start_row, current))
     changelog = parse_changelog(changelog_rows)
 
-    parsed_blocks = [parse_block(sr, body) for sr, body in blocks_raw]
+    parsed_blocks = peel_hear_a_tale([parse_block(sr, body) for sr, body in blocks_raw])
 
     # Group into chapters, then acts.
     chapters = []
@@ -546,6 +551,22 @@ def parse_block(start_row, body):
             continue
 
         side_turn_col = None
+        if c1 == "Hear a Tale" and not c2:
+            # A tavern action, not a fight turn and not a party slot.
+            steps.append(make_step(i, c1, "do", None))
+            continue
+        # Chapter names stuck on the row after Hear a Tale are not instructions.
+        if (
+            is_chapter_heading(c1)
+            and not c2
+            and not c.get(3)
+            and steps
+            and steps[-1]["text"] == "Hear a Tale"
+        ):
+            continue
+        if c1 in {"Snow Yak", "Buttermeep"} and not c2 and not c.get(3):
+            continue
+
         if is_section_header(c1) and not c2:
             harvest_side(c, pending_notes, skip={1})
             label = expand_turn(c1)
@@ -592,7 +613,9 @@ def parse_block(start_row, body):
             # A run of short labels is a heading plus the list under it
             # (Prepare / Snow Yak / Buttermeep), not three discarded contexts.
             if place_lead and place_lead.lower() not in SCAFFOLD_CELLS:
-                push(make_step(i, c1, "note", None))
+                # "Menu" under an existing heading is a sheet fragment, not a step.
+                if c1 not in STRAY_NOTES:
+                    push(make_step(i, c1, "note", None))
                 continue
             place_lead = c1
             continue
@@ -617,8 +640,12 @@ def parse_block(start_row, body):
             step["note"] = step["note"].replace("Other column:", f"{side_header}:", 1)
         push(step)
 
-    if place_lead and not any(
-        place_lead in (s.get("lead") or "") or place_lead in (s.get("text") or "") for s in steps
+    if (
+        place_lead
+        and place_lead not in STRAY_NOTES
+        and not any(
+            place_lead in (s.get("lead") or "") or place_lead in (s.get("text") or "") for s in steps
+        )
     ):
         push(make_step(start_row, place_lead, "note", None))
     if pending_notes and steps:
@@ -804,6 +831,43 @@ IMPERATIVES = {
 }
 
 
+def is_chapter_heading(text: str) -> bool:
+    """A sheet row that only names the next chapter, not an instruction."""
+    if text in PHASE_TITLES:
+        return True
+    if text.endswith((".", "!", "?")):
+        return False
+    return bool(re.fullmatch(r".{0,48}(?:Ch\.|Chapter)\s+\d+(?::\s*\S.*)?", text))
+
+
+def peel_hear_a_tale(blocks: list) -> list:
+    """Give each Hear a Tale step a block that is not the fight it follows."""
+    peeled = []
+    for block in blocks:
+        steps = block["steps"]
+        cut = next((index for index, step in enumerate(steps) if step["text"] == "Hear a Tale"), None)
+        if cut is None:
+            peeled.append(block)
+            continue
+        head, tail = steps[:cut], steps[cut:]
+        if head:
+            block["steps"] = head
+            peeled.append(block)
+        peeled.append(
+            {
+                "id": f"{block['id']}-tale",
+                "row": block["row"],
+                "title": "Hear a Tale",
+                "kind": "setup",
+                "when": None,
+                "foes": [],
+                "solo": False,
+                "steps": tail,
+            }
+        )
+    return peeled
+
+
 def is_bare_label(text: str) -> bool:
     if not text or text.endswith((".", "!", "?", ":")):
         return False
@@ -860,6 +924,8 @@ def step_blob(step: dict) -> str:
 
 def cell_allowed(value: str) -> bool:
     if value.lower() in SCAFFOLD_CELLS:
+        return True
+    if value in DROPPED_FRAGMENTS:
         return True
     if MARK_RE.fullmatch(value):
         return True

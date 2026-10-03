@@ -210,8 +210,11 @@ const SCAFFOLD = new Set([
   "Enemy",
 ]);
 
+// Sheet cells dropped on purpose: a roster label, and a chapter heading that is not the route's chapter title.
+const DROPPED_CELLS = new Set(["Prepare", "Osvald Chapter 5"]);
+
 function cellAllowed(value) {
-  if (SCAFFOLD.has(value)) return true;
+  if (SCAFFOLD.has(value) || DROPPED_CELLS.has(value)) return true;
   if (/^[\^v]$/.test(value) || /^[\^v] \d+$/.test(value)) return true;
   if (value === ">" || value === "<") return true;
   if (/^T\d+$/.test(value)) return true;
@@ -225,9 +228,9 @@ test("the changelog is not a step, and chapter marks never go backwards", () => 
   assert.equal(steps.at(-1).text, "GGs!");
   assert.equal(checks.at(-1).text, "GGs!");
   assert.equal(data.meta.steps, checks.length);
-  // 1,160 after the changelog cut, plus the two Turn 5.5 actions.
-  // 1,160 after the changelog cut, plus two Turn 5.5 actions, two Learn steps, and two Whimsical Leaf steps.
-  assert.equal(checks.length, 1166);
+  // 1,160 after the changelog cut, plus two Turn 5.5 actions, two Learn steps,
+  // and two Whimsical Leaf steps, minus two chapter-name rows that were not instructions.
+  assert.equal(checks.length, 1164);
   const dated = steps.filter((step) => /^\d{1,2}\/\d{1,2}\/\d{2,4}/.test(step.text));
   assert.deepEqual(
     dated.map((step) => step.text),
@@ -243,7 +246,6 @@ test("the changelog is not a step, and chapter marks never go backwards", () => 
     "H'aanit can get a patience turn here",
     "At the Flamechurch flame",
     "At the Toto'haha flame",
-    "Osvald Chapter 5",
     "Whimsical Leaf (skip if Castti already acts last)",
     "Learn Slowing Sweep after the fight.",
     "Learn Divine Dual-Edge.",
@@ -276,6 +278,47 @@ test("the changelog is not a step, and chapter marks never go backwards", () => 
     assert.equal(step.check, true);
     assert.equal(step.kind, "do");
   }
+});
+
+test("Hear a Tale is its own step, and sheet fragments are not notes", () => {
+  const { data } = loadRoute();
+  const titles = new Set();
+  const tales = [];
+  const steps = [];
+  for (const act of data.acts) {
+    for (const chapter of act.chapters) {
+      titles.add(chapter.title);
+      for (const block of chapter.blocks) {
+        for (const step of block.steps) {
+          steps.push(step);
+          if (step.text === "Hear a Tale") tales.push({ step, block });
+        }
+      }
+    }
+  }
+  const fragments = ["Snow Yak", "Buttermeep", "Menu", "Prepare", "Osvald Chapter 5", "Agnea Ch. 2"];
+  for (const step of steps) {
+    if (step.note) assert.equal(titles.has(step.note), false, step.note);
+    assert.equal(fragments.includes(step.text), false, step.text);
+    assert.equal(fragments.includes(step.note), false, step.note);
+  }
+  assert.equal(tales.length, 4);
+  for (const { step, block } of tales) {
+    assert.equal(step.check, true);
+    assert.equal(step.kind, "do");
+    assert.equal(step.lead, undefined);
+    assert.equal(step.ctx, undefined);
+    assert.equal(block.title, "Hear a Tale");
+    assert.equal(block.kind, "setup");
+  }
+  const byTitle = Object.fromEntries(
+    data.acts.flatMap((act) => act.chapters).map((chapter) => [chapter.title, chapter]),
+  );
+  assert.equal(byTitle["Castti Ch.2: Sai Route"].mark, "1:10:00");
+  assert.equal(byTitle["Castti Ch.2: Sai Route"].videoSeconds, 3720);
+  assert.equal(byTitle["Foreign Assassins"].mark, "1:10:30");
+  assert.equal(byTitle["Foreign Assassins"].seconds, 1 * 3600 + 10 * 60 + 30);
+  assert.equal(byTitle["Foreign Assassins"].orderNote, "order differs from the video");
 });
 
 test("idle-party name lists are not notes", () => {

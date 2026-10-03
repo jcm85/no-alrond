@@ -1,6 +1,9 @@
 {
   "name": "app-builder-workspace",
   "private": true,
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "sideEffects": false,
   "type": "module",
   "overrides": {
@@ -17,6 +20,7 @@
     "typecheck": "tsc --noEmit",
     "check:auth": "node scripts/check-auth-invariant.mjs",
     "test": "node scripts/run-tests.mjs",
+    "route:build": "python3 scripts/build-route.py",
     "lint": "eslint .",
     "format": "prettier --write ."
   },

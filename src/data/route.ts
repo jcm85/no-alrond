@@ -51,9 +51,9 @@ export const route: RouteData = {
     "runner": "chewythebigblackdog",
     "video": "https://youtu.be/d6YOJxTfIeQ",
     "sheetDate": "2026-07-04",
-    "steps": 1166,
+    "steps": 1164,
     "foes": 3,
-    "rev": "cd3322b2a953dcf6",
+    "rev": "81d550477a1ad1b6",
     "note": "Chewy's current No Alrond (more consistent) sheet tab; video uploaded 2025-06-08; sheet revised through 7/4/2026"
   },
   "acts": [
@@ -4347,20 +4347,20 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "party",
                   "lead": "Turn 2"
-                },
+                }
+              ]
+            },
+            {
+              "id": "castti-ch-4-b7",
+              "title": "Hear a Tale",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
                 {
                   "id": "castti-ch-4-1-509d99",
                   "text": "Hear a Tale",
                   "check": true,
-                  "kind": "party",
-                  "lead": "Turn 2"
-                },
-                {
-                  "id": "castti-ch-4-1-a9d427",
-                  "text": "Agnea Ch. 2",
-                  "check": false,
-                  "kind": "note",
-                  "lead": "Turn 2"
+                  "kind": "do"
                 }
               ]
             }
@@ -5144,20 +5144,20 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "party",
                   "lead": "Tavern"
-                },
+                }
+              ]
+            },
+            {
+              "id": "partitio-ch-4-b6",
+              "title": "Hear a Tale",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
                 {
                   "id": "partitio-ch-4-1-509d99",
                   "text": "Hear a Tale",
                   "check": true,
-                  "kind": "party",
-                  "lead": "Tavern"
-                },
-                {
-                  "id": "partitio-ch-4-1-fd31f2",
-                  "text": "Ochette Ch. 2: Cateracta's Route",
-                  "check": true,
-                  "kind": "party",
-                  "lead": "Tavern"
+                  "kind": "do"
                 }
               ]
             }
@@ -5321,22 +5321,7 @@ export const route: RouteData = {
               "kind": "setup",
               "when": "Before returning to Crackridge",
               "solo": false,
-              "steps": [
-                {
-                  "id": "ochette-ch-2-cateracta-s-route-1-d58613",
-                  "text": "Snow Yak",
-                  "check": false,
-                  "kind": "note",
-                  "lead": "Prepare"
-                },
-                {
-                  "id": "ochette-ch-2-cateracta-s-route-1-d91c08",
-                  "text": "Buttermeep",
-                  "check": false,
-                  "kind": "note",
-                  "lead": "Prepare"
-                }
-              ]
+              "steps": []
             },
             {
               "id": "ochette-ch-2-cateracta-s-route-b9",
@@ -7602,20 +7587,20 @@ export const route: RouteData = {
                   "check": true,
                   "kind": "party",
                   "lead": "Tavern"
-                },
+                }
+              ]
+            },
+            {
+              "id": "the-dancer-warrior-part-2-b4",
+              "title": "Hear a Tale",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
                 {
                   "id": "the-dancer-warrior-part-2-1-509d99",
                   "text": "Hear a Tale",
                   "check": true,
-                  "kind": "party",
-                  "lead": "Tavern"
-                },
-                {
-                  "id": "the-dancer-warrior-part-2-1-54f5a5",
-                  "text": "Osvald Chapter 5",
-                  "check": false,
-                  "kind": "note",
-                  "lead": "Tavern"
+                  "kind": "do"
                 }
               ]
             }
@@ -8290,18 +8275,20 @@ export const route: RouteData = {
                   "text": "Set Slot 2 to Ochette. Set Slot 3 to Castti",
                   "check": true,
                   "kind": "party"
-                },
+                }
+              ]
+            },
+            {
+              "id": "temenos-ch-4-b4",
+              "title": "Hear a Tale",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
                 {
                   "id": "temenos-ch-4-1-509d99",
                   "text": "Hear a Tale",
                   "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "temenos-ch-4-1-8a71dc",
-                  "text": "The Cleric & Thief, Part 1",
-                  "check": true,
-                  "kind": "party"
+                  "kind": "do"
                 }
               ]
             }
@@ -8516,13 +8503,6 @@ export const route: RouteData = {
                   "text": "Hikari — Divine Dual-Edge x3",
                   "check": true,
                   "kind": "do",
-                  "lead": "Shadowy Monsters"
-                },
-                {
-                  "id": "journey-for-the-dawn-1-57f5f5",
-                  "text": "Menu",
-                  "check": false,
-                  "kind": "note",
                   "lead": "Shadowy Monsters"
                 },
                 {
