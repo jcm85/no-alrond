@@ -2,71 +2,89 @@
 """Turn Chewy's published OT2 all-superbosses sheet into route data."""
 
 import csv
+import hashlib
 import json
 import re
+import sys
 from pathlib import Path
 
-SRC = Path("/tmp/route.csv")
-OUT = Path("/workspace/src/data/route.ts")
+ROOT = Path(__file__).resolve().parents[1]
+SRC = Path(sys.argv[1]) if len(sys.argv) > 1 else ROOT / "scripts" / "sheets" / "no-alrond.csv"
+OUT = Path(sys.argv[2]) if len(sys.argv) > 2 else ROOT / "src" / "data" / "route.ts"
 
+# Chapter order of the "No Alrond (more consistent)" tab.
+# Galdera starts at the night-switch row, after Hikari Ch.5. Agnea Ch.5 is after Galdera.
 ACTS = [
     ("prologue", "Prologue", "Throne Ch.1"),
     ("west", "Westbound", "Partitio Ch. 2"),
-    ("winter", "Snow & Castti", "Recruit Ochette"),
+    ("east", "The East", "Hikari Ch. 2"),
     ("boat", "The Boat", "Partitio Ch. 3"),
-    ("beasts", "Beasts", "Recruit Agnea"),
+    ("mid", "Midgame", "Hikari Ch. 3"),
     ("galdera", "Galdera", "Switch to night before fighting Galdera."),
-    ("stories", "The Stories", "Temenos Ch. 2"),
+    ("stories", "After Galdera", "Agnea Ch. 5"),
     ("dawn", "The Dawn", "Journey for the Dawn"),
     ("extras", "Extra Battles", "Majestic Mysterious Travellers"),
 ]
 
+
+def clock(h: int, m: int, s: int) -> tuple[str, int]:
+    return (f"{h}:{m:02d}:{s:02d}", h * 3600 + m * 60 + s)
+
+
+# Pinned marks are exact. The rest are the audit timeline, about ±20s.
 MARKS = {
+    "Throne Ch.1": clock(0, 0, 0),
+    "Partitio Ch. 2": clock(0, 20, 0),
+    "Hikari Ch. 2": clock(0, 31, 0),
+    "Recruit Temenos": clock(0, 36, 0),
+    "Throne Ch. 2: Mother's Route": clock(0, 37, 0),
+    "Osvald Ch. 3": clock(0, 38, 30),
+    "Osvald Ch. 4": clock(0, 40, 0),
+    "Partitio Ch. 3": clock(0, 58, 0),
+    "Hikari Ch. 3": clock(1, 15, 0),
+    "Castti Ch.2: Sai Route": clock(1, 2, 0),
+    "Foreign Assassins": clock(1, 10, 30),
+    "Hikari Ch. 4": clock(1, 18, 0),
     "Hikari Ch. 5": ("1:21:53", 4913),
+    "Castti Ch. 2: Winterbloom Route": clock(1, 29, 0),
+    "Castti Ch. 3": clock(1, 31, 0),
+    "Castti Ch. 4": clock(1, 33, 0),
+    "Agnea Ch. 2": clock(1, 42, 0),
+    "Throne Ch. 3: Father's Route": clock(1, 46, 0),
+    "Agnea Ch. 3": clock(1, 47, 0),
+    "Agnea Ch. 4": clock(1, 49, 0),
+    "Partitio Ch. 4": clock(1, 50, 0),
+    "Ochette Ch. 2: Cateracta's Route": clock(1, 55, 0),
+    "Ochette Ch. 2: Tera's Route": clock(2, 0, 0),
+    "Ochette Ch. 2: Glacis's Route": clock(2, 5, 0),
+    "Ochette Ch. 3": clock(2, 8, 0),
+    "The Apothecary & Hunter, Part 1": clock(2, 11, 0),
+    "The Apothecary & Hunter, Part 2": clock(2, 12, 30),
     "Switch to night before fighting Galdera.": ("2:14:42", 8082),
+    "Agnea Ch. 5": clock(2, 20, 57),
+    "Throne Ch. 3: Mother's Route": clock(2, 24, 0),
+    "Throne Ch. 4": clock(2, 26, 15),
+    "The Dancer & Warrior, Part 2": clock(2, 28, 0),
+    "Osvald Ch. 5": clock(2, 31, 37),
+    "The Scholar & Merchant, Part 1": clock(2, 34, 0),
+    "The Scholar & Merchant, Part 2": clock(2, 36, 0),
+    "Temenos Ch. 2": clock(2, 38, 47),
+    "Temenos Ch. 3: Crackridge Route": clock(2, 42, 0),
+    "Temenos Ch. 3: Stormhail Route": clock(2, 44, 0),
+    "Temenos Ch. 4": clock(2, 48, 0),
+    "The Cleric & Thief, Part 1": clock(2, 52, 0),
+    "The Cleric & Thief, Part 2": clock(2, 55, 0),
+    "Journey for the Dawn": clock(2, 57, 0),
     "Vide, the Wicked": ("3:03:15", 10995),
     "Majestic Mysterious Travellers": ("3:05:45", 11145),
+    "Masterly Mysterious Travellers": clock(3, 10, 0),
+    "True Vide (Phase 1)": clock(3, 14, 0),
+    "True Vide (Phase 2)": clock(3, 16, 0),
+    "True Vide, the Wicked": clock(3, 18, 0),
 }
 
 PHASE_TITLES = {start for _, _, start in ACTS} | set(MARKS) | {
-    "Hikari Ch. 2",
-    "Throne Ch. 2: Mother's Route",
-    "Osvald Ch. 3",
-    "Castti Ch. 2: Winterbloom Route",
-    "Castti Ch.2: Sai Route",
-    "Partitio Ch. 4",
-    "Foreign Assassins",
-    "Ochette Ch. 2: Tera's Route",
-    "Ochette Ch. 2: Glacis's Route",
-    "Osvald Ch. 4",
-    "Ochette Ch. 2: Cateracta's Route",
-    "Ochette Ch. 3",
-    "Throne Ch. 3: Mother's Route",
-    "Hikari Ch. 3",
-    "Agnea Ch. 2",
-    "Temenos Ch. 3: Stormhail Route",
-    "Hikari Ch. 4",
-    "Agnea Ch. 3",
-    "Agnea Ch. 4",
-    "Hikari Ch. 5",
-    "Agnea Ch. 5",
-    "The Dancer & Warrior, Part 1",
-    "Temenos Ch. 3: Crackridge Route",
-    "Temenos Ch. 4",
-    "The Cleric & Thief, Part 1",
-    "Osvald Ch. 5",
-    "The Scholar & Merchant, Part 1",
-    "Throne Ch. 2: Father's Route",
-    "Throne Ch. 3: Father's Route",
-    "Throne Ch. 4",
-    "Castti Ch. 3",
-    "Castti Ch. 4",
-    "The Apothecary & Hunter, Part 1",
     "The Cleric & Thief, Part 2",
-    "Vide, the Wicked",
-    "Masterly Mysterious Travellers",
-    "True Vide (Phase 1)",
-    "True Vide, the Wicked",
 }
 
 GENERIC_TITLES = {
@@ -199,6 +217,9 @@ def main():
         if ch["blocks"]:
             acts[-1]["chapters"].append(ch)
 
+    apply_revision_notes(acts)
+    rev = assign_stable_ids(acts)
+
     # Strip nulls for a tighter payload and count steps.
     n = 0
     foe_n = 0
@@ -228,10 +249,11 @@ def main():
             "category": "All superbosses, no Alrond",
             "runner": "chewythebigblackdog",
             "video": "https://youtu.be/d6YOJxTfIeQ",
-            "sheetDate": "2026-05-24",
+            "sheetDate": "2026-07-04",
             "steps": n,
             "foes": foe_n,
-            "note": "Chewy's published route sheet from the video. Early game was revised on May 20 and May 24, 2026, after the April upload. No Alrond and no Bewildering Grace.",
+            "rev": rev,
+            "note": "Chewy's current No Alrond (more consistent) sheet tab; video uploaded 2025-06-08; sheet revised through 7/4/2026",
         },
         "acts": acts,
     }
@@ -277,6 +299,7 @@ def main():
         "    sheetDate: string;\n"
         "    steps: number;\n"
         "    foes: number;\n"
+        "    rev: string;\n"
         "    note: string;\n"
         "  };\n"
         "  acts: Act[];\n"
@@ -284,7 +307,7 @@ def main():
         f"export const route: RouteData = {json.dumps(payload, ensure_ascii=False, indent=2)};\n",
         encoding="utf-8",
     )
-    print(f"acts={len(acts)} chapters={sum(len(a['chapters']) for a in acts)} steps={n} foes={foe_n}")
+    print(f"acts={len(acts)} chapters={sum(len(a['chapters']) for a in acts)} steps={n} foes={foe_n} rev={rev}")
     print("file", OUT, "bytes", OUT.stat().st_size)
 
 
@@ -689,6 +712,90 @@ def join_note(a, b):
 def is_warn(note: str) -> bool:
     n = note.lower()
     return any(w in n for w in ("chance to die", "die to", "game over", "% chance", "don't", "do not"))
+
+
+def step_blob(step: dict) -> str:
+    return " ".join([step.get("text") or "", *(step.get("lines") or [])])
+
+
+def apply_revision_notes(acts: list) -> None:
+    """Post-video sheet changes. Notes only — never warn flags."""
+    rules = [
+        (
+            "08/13/2025",
+            "Finisher's Claws were delayed until after Rai Mei.",
+            lambda step, ctx: "Finisher's Claws" in step_blob(step),
+        ),
+        (
+            "09/17/2025",
+            "no shaggy aurochs; mighty leaf and rotten meat instead.",
+            lambda step, ctx: "Mighty Leaf" in step_blob(step) or "Rotten Meat" in step_blob(step),
+        ),
+        (
+            "12/03/2025",
+            "no early Royal Guard's Helm; Thurston → Hikari 3 → Sand Lion.",
+            lambda step, ctx: "Thurston" in step_blob(step),
+        ),
+        (
+            "06/30/2026",
+            "Coat of Arms + Aegis Shield replace Empowering Necklace.",
+            lambda step, ctx: "Coat of Arms" in step_blob(step) or "Aegis Shield" in step_blob(step),
+        ),
+        (
+            "07/04/2026",
+            "omniscient eye: 8 Concoct hits.",
+            lambda step, ctx: ctx["block"] == "Omniscient Eye" and "Concoct" in step_blob(step),
+        ),
+    ]
+    for date, detail, match in rules:
+        tag = f"Changed since the video ({date}): {detail}"
+        placed = False
+        for act in acts:
+            for chapter in act["chapters"]:
+                for block in chapter["blocks"]:
+                    ctx = {"chapter": chapter["title"], "block": block["title"]}
+                    for step in block["steps"]:
+                        if not step.get("check"):
+                            continue
+                        if match(step, ctx):
+                            step["note"] = join_note(step.get("note"), tag)
+                            placed = True
+                            break
+                    if placed:
+                        break
+                if placed:
+                    break
+            if placed:
+                break
+        if not placed:
+            raise SystemExit(f"revision note did not match a step: {date}")
+
+
+def assign_stable_ids(acts: list) -> str:
+    """Chapter slug, occurrence within the chapter, and a short hash of the text.
+
+    Sheet row numbers are not part of the id, so a new row in one chapter
+    leaves every other chapter's ids alone.
+    """
+    used_chapters: dict[str, int] = {}
+    all_ids: list[str] = []
+    for act in acts:
+        for chapter in act["chapters"]:
+            base = slug(chapter["title"])
+            used_chapters[base] = used_chapters.get(base, 0) + 1
+            chapter["id"] = base if used_chapters[base] == 1 else f"{base}-{used_chapters[base]}"
+            seen_text: dict[str, int] = {}
+            for index, block in enumerate(chapter["blocks"], start=1):
+                block["id"] = f"{chapter['id']}-b{index}"
+                for step in block["steps"]:
+                    text = step["text"]
+                    seen_text[text] = seen_text.get(text, 0) + 1
+                    digest = hashlib.sha1(text.encode("utf-8")).hexdigest()[:6]
+                    step["id"] = f"{chapter['id']}-{seen_text[text]}-{digest}"
+                    all_ids.append(step["id"])
+    if len(all_ids) != len(set(all_ids)):
+        raise SystemExit("stable ids collided")
+    return hashlib.sha1("\n".join(all_ids).encode("utf-8")).hexdigest()[:16]
 
 
 if __name__ == "__main__":

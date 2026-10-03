@@ -37,6 +37,7 @@ export type RouteData = {
     sheetDate: string;
     steps: number;
     foes: number;
+    rev: string;
     note: string;
   };
   acts: Act[];
@@ -47,10 +48,11 @@ export const route: RouteData = {
     "category": "All superbosses, no Alrond",
     "runner": "chewythebigblackdog",
     "video": "https://youtu.be/d6YOJxTfIeQ",
-    "sheetDate": "2026-05-24",
-    "steps": 1001,
+    "sheetDate": "2026-07-04",
+    "steps": 1171,
     "foes": 3,
-    "note": "Chewy's published route sheet from the video. Early game was revised on May 20 and May 24, 2026, after the April upload. No Alrond and no Bewildering Grace."
+    "rev": "cef27d7bad935415",
+    "note": "Chewy's current No Alrond (more consistent) sheet tab; video uploaded 2025-06-08; sheet revised through 7/4/2026"
   },
   "acts": [
     {
@@ -58,11 +60,13 @@ export const route: RouteData = {
       "title": "Prologue",
       "chapters": [
         {
-          "id": "throne-ch-1-0",
+          "id": "throne-ch-1",
           "title": "Throne Ch.1",
+          "mark": "0:00:00",
+          "seconds": 0,
           "blocks": [
             {
-              "id": "b0",
+              "id": "throne-ch-1-b1",
               "title": "Throne Ch.1",
               "kind": "fight",
               "foes": [
@@ -73,28 +77,28 @@ export const route: RouteData = {
               "solo": false,
               "steps": [
                 {
-                  "id": "r3",
+                  "id": "throne-ch-1-1-df6557",
                   "text": "1st Person — Dagger / Axe x2 → Pursuer #1",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r4",
+                  "id": "throne-ch-1-1-f77d8e",
                   "text": "2nd Person — Dagger / Axe → Pursuer #2",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r5",
+                  "id": "throne-ch-1-1-3c172c",
                   "text": "3rd Person — Dagger / Axe → Pursuer #2",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r7",
+                  "id": "throne-ch-1-1-987a9f",
                   "text": "Everyone — Dagger / Axe x3",
                   "check": true,
                   "kind": "fight",
@@ -103,37 +107,37 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b15",
+              "id": "throne-ch-1-b2",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r16",
+                  "id": "throne-ch-1-1-acd678",
                   "text": "Steal the Brothel Girl's Clothes.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r17",
+                  "id": "throne-ch-1-1-ff15c6",
                   "text": "Steal the Shadow Soulstone from the boy at the bottom left side of the screen.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r18",
+                  "id": "throne-ch-1-1-253a85",
                   "text": "Go south to the next screen.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r19",
+                  "id": "throne-ch-1-1-daedf8",
                   "text": "Steal the Ice Soulstone, Wind Soulstone and Light Soulstone from the old man south of the armourer.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r20",
+                  "id": "throne-ch-1-1-02e1b4",
                   "text": "Go to the armourer.",
                   "check": true,
                   "kind": "do"
@@ -141,13 +145,13 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b22",
+              "id": "throne-ch-1-b3",
               "title": "Armourer",
               "kind": "shop",
               "solo": false,
               "steps": [
                 {
-                  "id": "r24",
+                  "id": "throne-ch-1-1-3b4661",
                   "text": "Buy Unerring Earring",
                   "check": true,
                   "kind": "shop"
@@ -155,13 +159,13 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b26",
+              "id": "throne-ch-1-b4",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r27",
+                  "id": "throne-ch-1-1-b4fc5d",
                   "text": "Heal to full before Pirro if you are under 210 HP.",
                   "check": true,
                   "kind": "do"
@@ -169,77 +173,77 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b29",
+              "id": "throne-ch-1-b5",
               "title": "Pirro",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r30",
+                  "id": "throne-ch-1-1-84df79",
                   "text": "Turn 1 — Darkest Night",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r31",
+                  "id": "throne-ch-1-1-3fcd03",
                   "text": "Turn 2 — Darkest Night",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r32",
+                  "id": "throne-ch-1-1-14d1fd",
                   "text": "Turn 3 — Darkest Night x4",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r33",
+                  "id": "throne-ch-1-1-8eebe3",
                   "text": "Turn 4 — Sword",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r34",
+                  "id": "throne-ch-1-1-92eaeb",
                   "text": "Turn 5 — Sword",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r35",
+                  "id": "throne-ch-1-1-47005d",
                   "text": "Turn 6 — Shadow Soulstone",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r37",
+                  "id": "throne-ch-1-1-460fb6",
                   "text": "Turn 7 — Light Soulstone",
                   "check": true,
                   "kind": "do",
                   "note": "Before Pirro on T8: Healing Grape"
                 },
                 {
-                  "id": "r38",
+                  "id": "throne-ch-1-1-acb87f",
                   "text": "Turn 8 — Sword x4",
                   "check": true,
                   "kind": "do",
                   "note": "Before Pirro on T8: Light Soulstone"
                 },
                 {
-                  "id": "r39",
+                  "id": "throne-ch-1-1-90e8dd",
                   "text": "Turn 9 — Latent Power + Wind Soulstone",
                   "check": true,
                   "kind": "do",
                   "note": "Before Pirro on T8: Latent Power + Sword x4"
                 },
                 {
-                  "id": "r40",
+                  "id": "throne-ch-1-1-7e2f52",
                   "text": "Then — Ice Soulstone",
                   "check": true,
                   "kind": "do",
                   "note": "Before Pirro on T8: Wind Soulstone"
                 },
                 {
-                  "id": "r41",
+                  "id": "throne-ch-1-1-0ccf3c",
                   "text": "Turn 10 — Sword",
                   "check": true,
                   "kind": "do",
@@ -248,37 +252,37 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b44",
+              "id": "throne-ch-1-b6",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r45",
+                  "id": "throne-ch-1-1-00d1fd",
                   "text": "Tag New Delsta Harbour: Anchorage.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r46",
+                  "id": "throne-ch-1-1-5536ab",
                   "text": "Tag Abandoned Village.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r47",
+                  "id": "throne-ch-1-1-219361",
                   "text": "Recruit Osvald.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r48",
+                  "id": "throne-ch-1-1-76aaab",
                   "text": "Go to Cape Cold.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r49",
+                  "id": "throne-ch-1-1-57ffa0",
                   "text": "Mug the man on the left.",
                   "check": true,
                   "kind": "do"
@@ -286,25 +290,25 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b51",
+              "id": "throne-ch-1-b7",
               "title": "Man",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r52",
+                  "id": "throne-ch-1-1-db0eeb",
                   "text": "Turn 1 — Icewind",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r53",
+                  "id": "throne-ch-1-1-79e189",
                   "text": "Turn 2 — Fireball x3",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r54",
+                  "id": "throne-ch-1-1-e70eb9",
                   "text": "Turn 3 — Staff (if needed)",
                   "check": true,
                   "kind": "do"
@@ -312,32 +316,31 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b56",
+              "id": "throne-ch-1-b8",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r57",
-                  "text": "Get the 2,000 leaves in the house behind the inn if you want an extra soulstone (M).",
+                  "id": "throne-ch-1-1-0890e2",
+                  "text": "Get the 2,000 leaves in the house behind the inn.",
                   "check": true,
-                  "kind": "do",
-                  "optional": true
+                  "kind": "do"
                 },
                 {
-                  "id": "r58",
+                  "id": "throne-ch-1-1-8426d9",
                   "text": "Warp to Abandoned Village.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r59",
+                  "id": "throne-ch-1-1-793e04",
                   "text": "Get the Herb of Serenity up the ladder near the Black Market.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r60",
+                  "id": "throne-ch-1-1-0ca638",
                   "text": "Reset the night market by toggling between day and night until you get clerics.",
                   "check": true,
                   "kind": "do"
@@ -345,99 +348,106 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b62",
+              "id": "throne-ch-1-b9",
               "title": "Black Market",
               "kind": "shop",
               "solo": false,
               "steps": [
                 {
-                  "id": "r64",
+                  "id": "throne-ch-1-1-bb847a",
                   "text": "Sell Old Locket",
                   "check": true,
                   "kind": "shop"
                 },
                 {
-                  "id": "r65",
+                  "id": "throne-ch-1-1-bc3419",
                   "text": "Sell Heavy Coin Pouch",
                   "check": true,
                   "kind": "shop"
                 },
                 {
-                  "id": "r66",
+                  "id": "throne-ch-1-1-96220c",
                   "text": "Sell Gold Pocket Watch",
                   "check": true,
                   "kind": "shop"
                 },
                 {
-                  "id": "r67",
+                  "id": "throne-ch-1-1-08a933",
                   "text": "Sell Herb of Serenity",
                   "check": true,
                   "kind": "shop"
                 },
                 {
-                  "id": "r69",
+                  "id": "throne-ch-1-1-427455",
                   "text": "Buy 2 Ice Soulstone",
                   "check": true,
                   "kind": "shop"
                 },
                 {
-                  "id": "r70",
+                  "id": "throne-ch-1-1-69fd2a",
                   "text": "Buy 1 Thunder Soulstone",
                   "check": true,
                   "kind": "shop"
                 },
                 {
-                  "id": "r71",
+                  "id": "throne-ch-1-1-36b5cb",
                   "text": "Buy 1 Ice Soulstone (M)",
                   "check": true,
                   "kind": "shop"
                 },
                 {
-                  "id": "r72",
-                  "text": "Buy 6 or 7 Light Soulstone (M)",
+                  "id": "throne-ch-1-1-bca5ca",
+                  "text": "Buy 7 Light Soulstone (M)",
                   "check": true,
                   "kind": "shop"
                 }
               ]
             },
             {
-              "id": "b74",
+              "id": "throne-ch-1-b10",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r75",
+                  "id": "throne-ch-1-1-6f1b3c",
                   "text": "Warp to New Delsta Harbour: Anchorage.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r76",
+                  "id": "throne-ch-1-1-0f1a6d",
                   "text": "Take the ship to Toto'haha Beasting Bay: Anchorage.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r77",
+                  "id": "throne-ch-1-1-55eed8",
                   "text": "Go to Western Tropu'hopu Traverse.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r78",
+                  "id": "throne-ch-1-1-e35f5f",
                   "text": "Kill an encounter with a Light Soulstone (M).",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r79",
+                  "id": "throne-ch-1-1-aa8862",
+                  "text": "Optionally save (guarantees good second encounter if you die).",
+                  "check": true,
+                  "kind": "do",
+                  "optional": true
+                },
+                {
+                  "id": "throne-ch-1-1-a7ba3d",
                   "text": "Get the Hunter Licence.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r80",
+                  "id": "throne-ch-1-1-9ed6aa",
                   "text": "Kill another encounter with a Light Soulstone (M). If Osvald does not have at least 130 JP, get the Light Soulstone (M) up the stairs to the right and kill another encounter with a Light Soulstone (M).",
                   "check": true,
                   "kind": "do"
@@ -445,36 +455,36 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b82",
+              "id": "throne-ch-1-b11",
               "title": "Menu",
               "kind": "menu",
-              "when": "After Osvald gets 130 JP",
+              "when": "After killing the encounter",
               "solo": false,
               "steps": [
                 {
-                  "id": "r85",
+                  "id": "throne-ch-1-1-9ec165",
                   "text": "Throne — HP Thief",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Learn Skills"
                 },
                 {
-                  "id": "r86",
+                  "id": "throne-ch-1-1-d31835",
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Learn Skills"
                 },
                 {
-                  "id": "r87",
+                  "id": "throne-ch-1-1-5195c6",
                   "text": "Osvald — First 2 Scholar skills",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Learn Skills"
                 },
                 {
-                  "id": "r89",
-                  "text": "Osvald — Evasive Manoeuvres → Slot 2",
+                  "id": "throne-ch-1-1-17dc80",
+                  "text": "Osvald — Evasive Manoeuvres → Slot 1",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
@@ -482,38 +492,38 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b91",
+              "id": "throne-ch-1-b12",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r92",
+                  "id": "throne-ch-1-1-bafc51",
                   "text": "Go to Tropu'hopu.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r93",
+                  "id": "throne-ch-1-1-f06d87",
                   "text": "Warp to Beasting Bay: Anchorage.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r94",
+                  "id": "throne-ch-1-1-22b194",
                   "text": "Go to the Cavern of Waves.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r95",
-                  "text": "Optionally S&Q. Walk and get the JP Augmentor from the red chest.",
+                  "id": "throne-ch-1-1-a0b2d7",
+                  "text": "Optionally save and quit to title to reset step count. Walk and get the JP Augmentor from the red chest.",
                   "check": true,
                   "kind": "do",
                   "optional": true
                 },
                 {
-                  "id": "r96",
+                  "id": "throne-ch-1-2-6f1b3c",
                   "text": "Warp to New Delsta Harbour: Anchorage.",
                   "check": true,
                   "kind": "do"
@@ -521,14 +531,14 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b98",
+              "id": "throne-ch-1-b13",
               "title": "Menu",
               "kind": "menu",
               "when": "After getting the JP Augmentor",
               "solo": false,
               "steps": [
                 {
-                  "id": "r101",
+                  "id": "throne-ch-1-1-d0bf54",
                   "text": "Give JP Augmentor to Throne (Slot 2)",
                   "check": true,
                   "kind": "menu",
@@ -537,55 +547,61 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b103",
+              "id": "throne-ch-1-b14",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r104",
+                  "id": "throne-ch-1-1-2c77c2",
                   "text": "Take the ship to Western Continent Crackridge Harbour: Anchorage.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r105",
+                  "id": "throne-ch-1-1-a8a066",
                   "text": "Go to Cropdale.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r106",
-                  "text": "Exit and get the Slumber Sage outside.",
+                  "id": "throne-ch-1-1-a792df",
+                  "text": "Recruit Agnea.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r107",
+                  "id": "throne-ch-1-1-c1c127",
+                  "text": "Get the Slumber Sage outside.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "throne-ch-1-1-752857",
                   "text": "Go to Oresrush.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r108",
+                  "id": "throne-ch-1-1-3e44a2",
                   "text": "Start Throne Ch. 2: Mother's Route.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r109",
+                  "id": "throne-ch-1-1-9a9d02",
                   "text": "Recruit Partitio.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r110",
+                  "id": "throne-ch-1-1-8b95b8",
                   "text": "Go to Ryu.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r111",
+                  "id": "throne-ch-1-1-533e07",
                   "text": "Go to the provisioner.",
                   "check": true,
                   "kind": "do"
@@ -593,13 +609,13 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b113",
+              "id": "throne-ch-1-b15",
               "title": "Provisioner",
               "kind": "shop",
               "solo": false,
               "steps": [
                 {
-                  "id": "r115",
+                  "id": "throne-ch-1-1-78b0f7",
                   "text": "Buy Blusterbloom x11",
                   "check": true,
                   "kind": "shop"
@@ -607,13 +623,13 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b117",
+              "id": "throne-ch-1-b16",
               "title": "Recruit Hikari.",
               "kind": "travel",
               "solo": true,
               "steps": [
                 {
-                  "id": "r117",
+                  "id": "throne-ch-1-1-e2ea13",
                   "text": "Recruit Hikari.",
                   "check": true,
                   "kind": "do"
@@ -621,19 +637,19 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b119",
+              "id": "throne-ch-1-b17",
               "title": "Ruffian Soldiers",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r120",
+                  "id": "throne-ch-1-1-2fdf48",
                   "text": "Anyone — Ice Soulstone",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r121",
+                  "id": "throne-ch-1-1-28e4f5",
                   "text": "Anyone — Attack",
                   "check": true,
                   "kind": "do"
@@ -641,113 +657,91 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b123",
+              "id": "throne-ch-1-b18",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r124",
+                  "id": "throne-ch-1-1-830589",
+                  "text": "Do not add Hikari to the party.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "throne-ch-1-1-b2f9ba",
                   "text": "Go to Northern Conning Creek Coast.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r125",
+                  "id": "throne-ch-1-1-e70239",
                   "text": "Kill the encounter at night with a Light Soulstone (M).",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r126",
+                  "id": "throne-ch-1-1-48b7f2",
                   "text": "Go to Western Conning Creek Coast.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r127",
+                  "id": "throne-ch-1-2-e70239",
                   "text": "Kill the encounter at night with a Light Soulstone (M).",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r128",
-                  "text": "Talk to the quest NPC outside Conning Creek to complete \"Goading the Grapes\".",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r129",
+                  "id": "throne-ch-1-1-2fbe54",
                   "text": "Go to Conning Creek.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r130",
+                  "id": "throne-ch-1-1-feb720",
                   "text": "Start Osvald Ch. 3.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r131",
+                  "id": "throne-ch-1-1-c813e8",
                   "text": "Go north to the next screen.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r132",
+                  "id": "throne-ch-1-1-ccae97",
                   "text": "Steal the Wind Soulstone (L) from the woman outside the house.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r133",
+                  "id": "throne-ch-1-1-2fa6ec",
                   "text": "Get the Rainbow Glass Bottle on the shore.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r134",
+                  "id": "throne-ch-1-2-f06d87",
                   "text": "Warp to Beasting Bay: Anchorage.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r135",
+                  "id": "throne-ch-1-1-a0459f",
                   "text": "Take the ship to Western Continent Canalbrine.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r136",
-                  "text": "Recruit Castti.",
+                  "id": "throne-ch-1-1-2fc023",
+                  "text": "Recruit Castti, but do not add her to the party.",
                   "check": true,
                   "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b138",
-              "title": "Recruit Castti",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
+                },
                 {
-                  "id": "r141",
-                  "text": "Set Slot 1 to Castti. Set Slot 4 to Hikari",
-                  "check": true,
-                  "kind": "party"
-                }
-              ]
-            },
-            {
-              "id": "b143",
-              "title": "Go to the armourer.",
-              "kind": "travel",
-              "solo": true,
-              "steps": [
-                {
-                  "id": "r143",
+                  "id": "throne-ch-1-2-02e1b4",
                   "text": "Go to the armourer.",
                   "check": true,
                   "kind": "do"
@@ -755,13 +749,13 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b145",
+              "id": "throne-ch-1-b19",
               "title": "Armourer",
               "kind": "shop",
               "solo": false,
               "steps": [
                 {
-                  "id": "r147",
+                  "id": "throne-ch-1-1-84a466",
                   "text": "Buy Critical Earring",
                   "check": true,
                   "kind": "shop"
@@ -769,19 +763,31 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b149",
+              "id": "throne-ch-1-b20",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r150",
+                  "id": "throne-ch-1-1-f4fcfe",
                   "text": "Warp to New Delsta.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r151",
+                  "id": "throne-ch-1-1-80d227",
+                  "text": "Do not start Agnea Ch. 2.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "throne-ch-1-1-c5d88e",
+                  "text": "Entreat the Fire Soulstone (M) from the man on the right near the entrance.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "throne-ch-1-1-f37a8d",
                   "text": "Go to the brigand.",
                   "check": true,
                   "kind": "do"
@@ -789,13 +795,13 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b153",
+              "id": "throne-ch-1-b21",
               "title": "Brigand",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r154",
+                  "id": "throne-ch-1-1-0c70df",
                   "text": "Throne — HP Thief x2",
                   "check": true,
                   "kind": "do"
@@ -803,64 +809,19 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b156",
+              "id": "throne-ch-1-b22",
               "title": "Talk to Arkar to get the Proof of the Inventor.",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r157",
+                  "id": "throne-ch-1-1-1b1fc8",
                   "text": "Craft Elemental Bomb Bottle and Critical Scope.",
                   "check": true,
                   "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b159",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "After crafting both inventions",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r162",
-                  "text": "Throne — Equip A Step Ahead (Slot 4)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
                 },
                 {
-                  "id": "r163",
-                  "text": "Osvald — Equip A Step Ahead (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r164",
-                  "text": "Partitio — Equip A Step Ahead (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r165",
-                  "text": "Castti — Equip A Step Ahead (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                }
-              ]
-            },
-            {
-              "id": "b167",
-              "title": "Sail to Clockbank.",
-              "kind": "travel",
-              "solo": true,
-              "steps": [
-                {
-                  "id": "r167",
+                  "id": "throne-ch-1-1-dc062b",
                   "text": "Sail to Clockbank.",
                   "check": true,
                   "kind": "do"
@@ -876,266 +837,148 @@ export const route: RouteData = {
       "title": "Westbound",
       "chapters": [
         {
-          "id": "partitio-ch-2-169",
+          "id": "partitio-ch-2",
           "title": "Partitio Ch. 2",
+          "mark": "0:20:00",
+          "seconds": 1200,
           "blocks": [
             {
-              "id": "b169",
+              "id": "partitio-ch-2-b1",
               "title": "Partitio Ch. 2",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r171",
-                  "text": "After delivering the Clockite, warp to New Delsta.",
+                  "id": "partitio-ch-2-1-213477",
+                  "text": "After delivering the Clockite, get the Thief Licence.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r172",
-                  "text": "Go to Eastern New Delsta Highroad.",
+                  "id": "partitio-ch-2-1-3acf7f",
+                  "text": "Entreat the Dazzling Artwork and Gold Pocket Watch from the boy.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r173",
-                  "text": "Talk to Al to complete \"The Traveler's Bag\".",
+                  "id": "partitio-ch-2-1-9fbb5f",
+                  "text": "Warp to Oresrush.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r174",
-                  "text": "Warp to Crackridge Harbour: Anchorage.",
+                  "id": "partitio-ch-2-1-4d3498",
+                  "text": "After the cutscene at the saddlery, hire the Peddler near the east exit.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r175",
-                  "text": "Go to Southern Crackridge Wilds.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r176",
-                  "text": "During this section, if you get surprised, use the Wind Soulstone (L) instead of the normal strat.",
-                  "check": true,
-                  "kind": "do",
-                  "note": "need castti alive for all encounters, rest can skip 1"
-                },
-                {
-                  "id": "r177",
-                  "text": "Break the Armour Eater with Sword/Axe/Staff and kill the encounter with a Light Soulstone (M).",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r178",
-                  "text": "Get the 6400 leaves from the gold chest down the ladder.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r179",
-                  "text": "Go to Western Crackridge Wilds.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r180",
-                  "text": "Break the Armour Eater with Sword/Axe/Staff and kill the encounter with a Light Soulstone (M).",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r181",
-                  "text": "Go to Crackridge.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r182",
-                  "text": "Purchase the Empowering Lychee (M) from the guitarist.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r183",
-                  "text": "Go to Western Crackridge Wilds.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r184",
-                  "text": "Kill the encounter with a Wind Soulstone (L). If you already used it, do the other strat.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r185",
-                  "text": "Get the Thunder Soulstone (M) beside the left merchant.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r186",
-                  "text": "Get the Merchant Licence.",
+                  "id": "partitio-ch-2-1-02e1b4",
+                  "text": "Go to the armourer.",
                   "check": true,
                   "kind": "do"
                 }
               ]
             },
             {
-              "id": "b188",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "After getting the Merchant License",
+              "id": "partitio-ch-2-b2",
+              "title": "Armourer",
+              "kind": "shop",
               "solo": false,
               "steps": [
                 {
-                  "id": "r191",
-                  "text": "Osvald — Merchant: 2 Merchant skills [^1], Hired Help",
+                  "id": "partitio-ch-2-1-ac4258",
+                  "text": "Sell Dazzling Artwork",
                   "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
+                  "kind": "shop"
                 },
                 {
-                  "id": "r193",
-                  "text": "Osvald — Inventor [^1]",
+                  "id": "partitio-ch-2-1-96220c",
+                  "text": "Sell Gold Pocket Watch",
                   "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r194",
-                  "text": "Partitio — Merchant: First 2 Merchant skills, Hired Help",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r196",
-                  "text": "Throne — Merchant: First 2 Merchant skills [^1], Hired Help",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r199",
-                  "text": "Throne — Equip Grows on Trees (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r200",
-                  "text": "Throne — Equip Boost-Start (Slot 2)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r201",
-                  "text": "Osvald — Equip Grows on Trees (Slot 3)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r202",
-                  "text": "Osvald — Equip Boost-Start (Slot 4)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r203",
-                  "text": "Partitio — Equip Boost-Start (Slot 4)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
+                  "kind": "shop"
                 }
               ]
             },
             {
-              "id": "b205",
-              "title": "Go to Western Gravell Wilds.",
+              "id": "partitio-ch-2-b3",
+              "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r206",
-                  "text": "Get the Thunder Soulstone (L) from the brown chest just up the stairs.",
+                  "id": "partitio-ch-2-1-0cd0de",
+                  "text": "Purchase the Sturdy Pickaxe and Forget-Me-Do from the man in the armourer.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r207",
-                  "text": "Kill the encounter at night by using Ruffians x2 with Throne, then HHGx4 with Partitio.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r208",
-                  "text": "Enter Gravell, then immediately leave.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r209",
-                  "text": "Head south down the ladder and get 23 500 leaves from the chest.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r210",
-                  "text": "Warp to Clockbank.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r211",
-                  "text": "Purchase the Wind Soulstone (M) and Fire Soulstone (M) from the old lady.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r212",
-                  "text": "Hire the Clockmaker in the tavern.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r213",
-                  "text": "Talk to the tavern keeper.",
+                  "id": "partitio-ch-2-1-f86179",
+                  "text": "After stealing the coin, speak to the tavern keeper.",
                   "check": true,
                   "kind": "do"
                 }
               ]
             },
             {
-              "id": "b215",
+              "id": "partitio-ch-2-b4",
               "title": "Tavern",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r218",
-                  "text": "Set Slot 1 to Hikari. Set Slot 4 to Castti",
+                  "id": "partitio-ch-2-1-112406",
+                  "text": "Set Slot 1 to Hikari. Set Slot 3 to Agnea",
                   "check": true,
                   "kind": "party"
                 }
               ]
             },
             {
-              "id": "b220",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before Garnet",
+              "id": "partitio-ch-2-b5",
+              "title": "Overworld",
+              "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r223",
-                  "text": "Hikari — Equip A Step Ahead (Slot 4)",
+                  "id": "partitio-ch-2-1-481bc4",
+                  "text": "Warp to Crackridge Harbour: Anchorage.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "partitio-ch-2-b6",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "After warping to Crackridge Harbour",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "partitio-ch-2-1-a5e392",
+                  "text": "Throne — Equip A Step Ahead (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "partitio-ch-2-1-cdb868",
+                  "text": "Osvald — Equip A Step Ahead (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "partitio-ch-2-1-aa999c",
+                  "text": "Hikari — Equip A Step Ahead (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "partitio-ch-2-1-a400fc",
+                  "text": "Partitio — Equip A Step Ahead (Slot 2)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
@@ -1143,13 +986,79 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b225",
-              "title": "Purchase the Shadow Soulstone (M) from the man by the statue (near the factory).",
+              "id": "partitio-ch-2-b7",
+              "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r226",
+                  "id": "partitio-ch-2-1-d84c2b",
+                  "text": "Go to Southern Crackridge Wilds.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-2-1-2283e2",
+                  "text": "Break the Armour Eater with Sword/Axe/Staff and kill the encounter with a Light Soulstone (M).",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-2-1-6c0536",
+                  "text": "Go to Western Crackridge Wilds.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-2-2-2283e2",
+                  "text": "Break the Armour Eater with Sword/Axe/Staff and kill the encounter with a Light Soulstone (M).",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-2-1-378e7b",
+                  "text": "Get the Merchant Licence.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-2-1-2f75dd",
+                  "text": "Get the Thunder Soulstone (M) beside the nearby merchant.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-2-1-1d25ed",
+                  "text": "Challenge the Merchant and flee.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-2-1-04c7d7",
+                  "text": "Run until the stairs outside Crackridge, then walk into Crackridge.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-2-1-c2bf5f",
+                  "text": "Warp to Clockbank.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-2-1-4761fe",
+                  "text": "Purchase the Wind Soulstone (M) and Fire Soulstone (M) from the old lady.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-2-1-a54b5d",
+                  "text": "Hire the Clockmaker in the tavern.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-2-1-220c20",
                   "text": "Switch to day before going back to the factory.",
                   "check": true,
                   "kind": "do"
@@ -1157,13 +1066,13 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b228",
+              "id": "partitio-ch-2-b8",
               "title": "Guards",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r229",
+                  "id": "partitio-ch-2-1-333eee",
                   "text": "Anyone — Thunder Soulstone (M)",
                   "check": true,
                   "kind": "do"
@@ -1171,19 +1080,105 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b231",
+              "id": "partitio-ch-2-b9",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r232",
-                  "text": "Kill the encounter with a Fire Soulstone (M).",
+                  "id": "partitio-ch-2-1-5d467d",
+                  "text": "Get the 7 000 leaves from the red chest outside.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r233",
+                  "id": "partitio-ch-2-1-20657b",
+                  "text": "Kill the encounter with a Fire Soulstone (M).",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "partitio-ch-2-b10",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "Before Garnet",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "partitio-ch-2-1-a26fd0",
+                  "text": "Osvald — Merchant: First 3 Merchant skills [^1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "partitio-ch-2-1-701640",
+                  "text": "Osvald — Inventor [^1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "partitio-ch-2-1-fab868",
+                  "text": "Partitio — Merchant: First 2 Merchant skills, Hired Help",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "partitio-ch-2-1-a98237",
+                  "text": "Throne — Merchant: First 2 Merchant skills [^1], Hired Help",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "partitio-ch-2-1-86dacb",
+                  "text": "Throne — Equip Grows on Trees (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "partitio-ch-2-1-46963e",
+                  "text": "Throne — Equip Boost-Start (Slot 3)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "partitio-ch-2-1-fb6262",
+                  "text": "Osvald — Equip Grows on Trees (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "partitio-ch-2-1-353055",
+                  "text": "Osvald — Equip Boost-Start (Slot 3)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "partitio-ch-2-1-50aede",
+                  "text": "Partitio — Equip Boost-Start (Slot 3)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            },
+            {
+              "id": "partitio-ch-2-b11",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "partitio-ch-2-1-d6adbe",
                   "text": "Fight Garnet in the day.",
                   "check": true,
                   "kind": "do"
@@ -1191,62 +1186,62 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b235",
+              "id": "partitio-ch-2-b12",
               "title": "Garnet",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r237",
+                  "id": "partitio-ch-2-1-d31835",
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r238",
+                  "id": "partitio-ch-2-1-684b4c",
                   "text": "Osvald — Defend",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r239",
+                  "id": "partitio-ch-2-1-de3f54",
                   "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r240",
+                  "id": "partitio-ch-2-1-047bfe",
                   "text": "Partitio — Spear",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r242",
-                  "text": "Osvald — Axe x4 [>]",
+                  "id": "partitio-ch-2-1-40a7e1",
+                  "text": "Osvald — Axe x4 [<]",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r243",
+                  "id": "partitio-ch-2-1-734f9a",
                   "text": "Hikari — Spear x3",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r244",
+                  "id": "partitio-ch-2-1-fe6045",
                   "text": "1st Merchant — Collect x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r245",
+                  "id": "partitio-ch-2-1-8bbdbd",
                   "text": "2nd Merchant — HHG x4",
                   "check": true,
                   "kind": "fight",
@@ -1255,43 +1250,50 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b247",
+              "id": "partitio-ch-2-b13",
               "title": "Menu",
               "kind": "menu",
               "when": "After Garnet",
               "solo": false,
               "steps": [
                 {
-                  "id": "r250",
+                  "id": "partitio-ch-2-1-bf583c",
+                  "text": "Osvald — Thief [^2]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "partitio-ch-2-1-4126f6",
                   "text": "Hikari — Merchant: 2 Merchant skills [v1], Hired Help",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r252",
+                  "id": "partitio-ch-2-1-21ee71",
+                  "text": "Partitio — Inventor [^1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "partitio-ch-2-1-898644",
                   "text": "Throne — Merchant [^1]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r254",
-                  "text": "Osvald — Unequip A Step Ahead (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r255",
+                  "id": "partitio-ch-2-1-b0617b",
                   "text": "Hikari — Equip Grows on Trees (Slot 1)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r256",
-                  "text": "Hikari — Equip Boost-Start (Slot 2)",
+                  "id": "partitio-ch-2-1-b00161",
+                  "text": "Hikari — Equip Boost-Start (Slot 3)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
@@ -1299,632 +1301,38 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b258",
+              "id": "partitio-ch-2-b14",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r259",
+                  "id": "partitio-ch-2-1-2cd59b",
                   "text": "Tag Flamechurch.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r260",
+                  "id": "partitio-ch-2-1-3e9c1b",
                   "text": "Go to Borderfall.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r261",
+                  "id": "partitio-ch-2-1-c3e350",
                   "text": "Get the Cleric Licence.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r262",
-                  "text": "Purchase the Fire Soulstone (M) from the rightmost cleric.",
+                  "id": "partitio-ch-2-1-2dd00e",
+                  "text": "Get the Thunder Soulstone (M) before the next screen.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r263",
-                  "text": "Get the Thunder Soulstone (M) from the chest before the next screen.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r264",
+                  "id": "partitio-ch-2-1-350fb1",
                   "text": "Go to Montwise.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "hikari-ch-2-266",
-          "title": "Hikari Ch. 2",
-          "blocks": [
-            {
-              "id": "b266",
-              "title": "Hikari Ch. 2",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r268",
-                  "text": "Rest at the inn if Throne does not have Latent Power.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r269",
-                  "text": "Purchase the Wind Soulstone (M) from the man on the bench.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r270",
-                  "text": "Go to Montwise: Underground Arena.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b272",
-              "title": "Gladiator",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r273",
-                  "text": "Turn 1 — Spear x3",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r274",
-                  "text": "Turn 2 — Fire Soulstone (M)",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r276",
-                  "text": "Learn Thrash after the fight.",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Notes"
-                }
-              ]
-            },
-            {
-              "id": "b278",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r279",
-                  "text": "Go to Montwise: Underground Arena.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b281",
-              "title": "Gladiators",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r282",
-                  "text": "Turn 1 — Ice Soulstone (M)",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b284",
-              "title": "Zeto the Butcher",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r285",
-                  "text": "Turn 1 — Sword x3",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r286",
-                  "text": "Turn 2 — Thunder Soulstone (M)",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r287",
-                  "text": "Turn 3 — Shadow Soulstone (M)",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r289",
-                  "text": "Learn Slowing Sweep after the fight.",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Notes"
-                }
-              ]
-            },
-            {
-              "id": "b291",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r292",
-                  "text": "Go to Montwise: Underground Arena.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b294",
-              "title": "Bandelam the Reaper",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r295",
-                  "text": "Turn 1 — Slowing Sweep / Spear (if first on t2)",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r296",
-                  "text": "Turn 2 — Spear x4",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r297",
-                  "text": "Turn 3 — Thunder Soulstone (L)",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b299",
-              "title": "Bandelam the Reaper",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r301",
-                  "text": "Throne — Armour Corrosive",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r302",
-                  "text": "Hikari — Spear x3",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r303",
-                  "text": "Partitio — Spear x3",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r305",
-                  "text": "Throne — HHG x4",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b307",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r308",
-                  "text": "Go to Montwise: Underground Arena.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r309",
-                  "text": "Ambush the Fainthearted Youth.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b311",
-              "title": "Yurinas",
-              "kind": "fight",
-              "when": "Requires Latent Power on Throne",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r313",
-                  "text": "Throne after Yurinas on T2",
-                  "check": true,
-                  "kind": "do",
-                  "note": "Throne before Yurinas on T2"
-                },
-                {
-                  "id": "r314",
-                  "text": "Turn 1 — Defend",
-                  "check": true,
-                  "kind": "do",
-                  "note": "Branch: T1 — Armour Corrosive"
-                },
-                {
-                  "id": "r315",
-                  "text": "Turn 2 — Latent Power + Armour Corrosive",
-                  "check": true,
-                  "kind": "do",
-                  "note": "Branch: T2 — HHV x4"
-                },
-                {
-                  "id": "r316",
-                  "text": "Throne after Yurinas on T2 — HHV x4",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b318",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r319",
-                  "text": "Warp to Flamechurch.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b321",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before recruiting Temenos",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r324",
-                  "text": "Give Reinforcing Jam (if no latent) to Throne",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Inventory"
-                },
-                {
-                  "id": "r325",
-                  "text": "Then — Champion's Belt (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Inventory"
-                }
-              ]
-            },
-            {
-              "id": "b327",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r328",
-                  "text": "Recruit Temenos at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b330",
-              "title": "Insurgent",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r331",
-                  "text": "Throne — Dagger x3",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b333",
-              "title": "Recruit Temenos",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r336",
-                  "text": "Set Slot 2 to Temenos. Set Slot 4 to Hikari",
-                  "check": true,
-                  "kind": "party"
-                }
-              ]
-            },
-            {
-              "id": "b338",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r339",
-                  "text": "Purchase the Herb of Serenity from the woman to the north.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r340",
-                  "text": "Warp to Conning Creek.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r341",
-                  "text": "Go to Conning Creek: Outskirts.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r342",
-                  "text": "After the cutscene, get the Fire Soulstone (M) from the nearby chest.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r343",
-                  "text": "Fight Lady Clarissa at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b345",
-              "title": "Lady Clarissa",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r346",
-                  "text": "Merchant — HHG x4",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b348",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r349",
-                  "text": "Warp to Oresrush.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "throne-ch-2-mother-s-route-351",
-          "title": "Throne Ch. 2: Mother's Route",
-          "blocks": [
-            {
-              "id": "b351",
-              "title": "Throne Ch. 2: Mother's Route",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r353",
-                  "text": "After the cutscene at the saddlery, hire the Peddler near the east exit.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r354",
-                  "text": "Purchase the Sturdy Pickaxe and Forget-Me-Do from the man in the armourer.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r355",
-                  "text": "After finishing the chapter, warp to Conning Creek.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "osvald-ch-3-357",
-          "title": "Osvald Ch. 3",
-          "blocks": [
-            {
-              "id": "b357",
-              "title": "Osvald Ch. 3",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r359",
-                  "text": "Fight the encounter during the day.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b361",
-              "title": "Guards",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r363",
-                  "text": "Throne — Wind Soulstone (M)",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r364",
-                  "text": "Partitio — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r366",
-                  "text": "Partitio — HHM x2",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r367",
-                  "text": "Throne — Latent Power + Steal → Any",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r368",
-                  "text": "Throne — Steal → Different",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r369",
-                  "text": "Osvald — Springy Boots (if needed) → Throne",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r371",
-                  "text": "Throne — Steal → Different",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 3"
-                },
-                {
-                  "id": "r372",
-                  "text": "Anyone — Run",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 3"
-                }
-              ]
-            },
-            {
-              "id": "b374",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r375",
-                  "text": "Fight Stenvar at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b377",
-              "title": "Stenvar",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r379",
-                  "text": "Merchants — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r381",
-                  "text": "1st Merchant — Collect x4 → Stenvar",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r382",
-                  "text": "2nd Merchant — HHB x4",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b384",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r385",
-                  "text": "Warp to Beasting Bay: Anchorage.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r386",
-                  "text": "Go to Beasting Village.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r387",
-                  "text": "Recruit Ochette.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r388",
-                  "text": "Pick Akala.",
                   "check": true,
                   "kind": "do"
                 }
@@ -1935,100 +1343,321 @@ export const route: RouteData = {
       ]
     },
     {
-      "id": "winter",
-      "title": "Snow & Castti",
+      "id": "east",
+      "title": "The East",
       "chapters": [
         {
-          "id": "recruit-ochette-390",
-          "title": "Recruit Ochette",
+          "id": "hikari-ch-2",
+          "title": "Hikari Ch. 2",
+          "mark": "0:31:00",
+          "seconds": 1860,
           "blocks": [
             {
-              "id": "b390",
-              "title": "Recruit Ochette",
+              "id": "hikari-ch-2-b1",
+              "title": "Hikari Ch. 2",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r393",
-                  "text": "Set Slot 1 to Castti. Set Slot 4 to Temenos",
+                  "id": "hikari-ch-2-1-9921ce",
+                  "text": "Rest at the inn if Throne does not have Latent Power.",
                   "check": true,
-                  "kind": "party"
+                  "kind": "do"
                 },
                 {
-                  "id": "r394",
-                  "text": "Set Slot 3 to Ochette. Set Slot 3 to Partitio",
+                  "id": "hikari-ch-2-1-c94091",
+                  "text": "Purchase the Wind Soulstone (M) from the man on the bench.",
                   "check": true,
-                  "kind": "party"
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-2-1-8336ac",
+                  "text": "Go to Montwise: Underground Arena.",
+                  "check": true,
+                  "kind": "do"
                 }
               ]
             },
             {
-              "id": "b396",
-              "title": "Steal Dispatches from Beastling Island and the Traveler's Bow from the NPC to the left.",
+              "id": "hikari-ch-2-b2",
+              "title": "Gladiator",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-2-1-b939d4",
+                  "text": "Turn 1 — Spear x3",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-2-1-506c3a",
+                  "text": "Turn 2 — Light Soulstone (M)",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-2-b3",
+              "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r397",
-                  "text": "Warp to Cape Cold.",
+                  "id": "hikari-ch-2-2-8336ac",
+                  "text": "Go to Montwise: Underground Arena.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-2-b4",
+              "title": "Gladiators",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-2-1-b35c33",
+                  "text": "Turn 1 — Ice Soulstone (M)",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-2-b5",
+              "title": "Zeto the Butcher",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-2-1-461d0f",
+                  "text": "Turn 1 — Sword x3",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-2-1-e6bf56",
+                  "text": "Turn 2 — Thunder Soulstone (M)",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-2-1-427c1f",
+                  "text": "Turn 3 — Fire Soulstone (M)",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-2-1-d1d344",
+                  "text": "Learn Slowing Sweep after the fight.",
+                  "check": false,
+                  "kind": "note",
+                  "ctx": "Notes"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-2-b6",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-2-3-8336ac",
+                  "text": "Go to Montwise: Underground Arena.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-2-b7",
+              "title": "Bandelam the Reaper",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-2-1-0d325a",
+                  "text": "Turn 1 — Slowing Sweep/Spear (if first on turn 2)",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-2-1-a58594",
+                  "text": "Turn 2 — Spear x4",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-2-1-0a69a4",
+                  "text": "Turn 3 — Wind Soulstone (L)",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-2-b8",
+              "title": "Bandelam the Reaper",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-2-1-d31835",
+                  "text": "Throne — Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-2-1-005e5f",
+                  "text": "Osvald — Dagger x3 [<]",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-2-1-734f9a",
+                  "text": "Hikari — Spear x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-2-1-cb44c6",
+                  "text": "Partitio — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-2-1-95b746",
+                  "text": "Partitio — HHG x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-2-b9",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-2-4-8336ac",
+                  "text": "Go to Montwise: Underground Arena.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-2-1-625d41",
+                  "text": "Ambush the Fainthearted Youth.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-2-b10",
+              "title": "Yurinas",
+              "kind": "fight",
+              "when": "Requires Latent Power on Throne",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-2-1-7791d7",
+                  "text": "Throne after Yurinas on T2",
                   "check": true,
                   "kind": "do",
-                  "note": "imo go for the steal but if you fail the 80% don't bother trying again",
-                  "warn": true
+                  "note": "Throne before Yurinas on T2"
+                },
+                {
+                  "id": "hikari-ch-2-1-b5b153",
+                  "text": "Turn 1 — Defend",
+                  "check": true,
+                  "kind": "do",
+                  "note": "Branch: T1 — Armour Corrosive"
+                },
+                {
+                  "id": "hikari-ch-2-1-09d6da",
+                  "text": "Turn 2 — Latent Power + Armour Corrosive",
+                  "check": true,
+                  "kind": "do",
+                  "note": "Branch: T2 — HHV x4"
+                },
+                {
+                  "id": "hikari-ch-2-1-640754",
+                  "text": "Throne after Yurinas on T2 — HHV x4",
+                  "check": true,
+                  "kind": "do"
                 }
               ]
             },
             {
-              "id": "b399",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before leaving Cape Cold",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r402",
-                  "text": "Castti — Unequip A Step Ahead (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r403",
-                  "text": "Ochette — Equip A Step Ahead (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r404",
-                  "text": "Osvald — Equip A Step Ahead (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                }
-              ]
-            },
-            {
-              "id": "b406",
-              "title": "Go to Western Winterbloom Snows.",
+              "id": "hikari-ch-2-b11",
+              "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r407",
-                  "text": "Use a Wind Soulstone (M) on the first encounter, then capture the Snow Yak.",
+                  "id": "hikari-ch-2-1-b8a3c0",
+                  "text": "Warp to Flamechurch.",
                   "check": true,
                   "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-2-b12",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "Before recruiting Temenos",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-2-1-87d8b4",
+                  "text": "Give Reinforcing Jam (if no latent) to Throne",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
                 },
                 {
-                  "id": "r408",
-                  "text": "Get the Scholar Licence.",
+                  "id": "hikari-ch-2-1-e08682",
+                  "text": "Then — Champion's Belt (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-2-b13",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-2-1-9a6e6c",
+                  "text": "Recruit Temenos at night.",
                   "check": true,
                   "kind": "do"
-                },
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-2-b14",
+              "title": "Insurgent",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
                 {
-                  "id": "r409",
-                  "text": "Go to Winterbloom. Start Castti's chapter (should be default option)",
+                  "id": "hikari-ch-2-1-05fde0",
+                  "text": "Throne — Dagger x3",
                   "check": true,
                   "kind": "do"
                 }
@@ -2037,72 +1666,781 @@ export const route: RouteData = {
           ]
         },
         {
-          "id": "castti-ch-2-winterbloom-route-411",
-          "title": "Castti Ch. 2: Winterbloom Route",
+          "id": "recruit-temenos",
+          "title": "Recruit Temenos",
+          "mark": "0:36:00",
+          "seconds": 2160,
           "blocks": [
             {
-              "id": "b411",
-              "title": "Castti Ch. 2: Winterbloom Route",
+              "id": "recruit-temenos-b1",
+              "title": "Recruit Temenos",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r413",
-                  "text": "Go to the tavern.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b415",
-              "title": "Tavern",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r418",
-                  "text": "Set Slot 1 to Temenos. Set Slot 2 to Osvald",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r419",
-                  "text": "Set Slot 3 to Partitio. Set Slot 3 to Ochette",
+                  "id": "recruit-temenos-1-292b73",
+                  "text": "Set Slot 3 to Temenos. Set Slot 3 to Hikari",
                   "check": true,
                   "kind": "party"
                 }
               ]
             },
             {
-              "id": "b421",
+              "id": "recruit-temenos-b2",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r422",
-                  "text": "Talk to the Troubled Woman to complete \"The Sword in the Stone\".",
+                  "id": "recruit-temenos-1-d2d7c6",
+                  "text": "Purchase the Herb of Serenity from the woman to the north.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r423",
-                  "text": "Fight Plukk at night.",
+                  "id": "recruit-temenos-1-6fad35",
+                  "text": "Warp to Conning Creek.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "recruit-temenos-1-dbbae3",
+                  "text": "Go to Conning Creek: Outskirts.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "recruit-temenos-1-5f60ef",
+                  "text": "After the cutscene, get the Fire Soulstone (M) from the nearby chest.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "recruit-temenos-1-925b73",
+                  "text": "Fight Lady Clarissa at night.",
                   "check": true,
                   "kind": "do"
                 }
               ]
             },
             {
-              "id": "b425",
-              "title": "Plukk",
+              "id": "recruit-temenos-b3",
+              "title": "Lady Clarissa",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "recruit-temenos-1-d51a23",
+                  "text": "Merchant — HHG x4",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "recruit-temenos-b4",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "recruit-temenos-1-9fbb5f",
+                  "text": "Warp to Oresrush.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "throne-ch-2-mother-s-route",
+          "title": "Throne Ch. 2: Mother's Route",
+          "mark": "0:37:00",
+          "seconds": 2220,
+          "blocks": [
+            {
+              "id": "throne-ch-2-mother-s-route-b1",
+              "title": "Throne Ch. 2: Mother's Route",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "throne-ch-2-mother-s-route-1-9c7ff7",
+                  "text": "After finishing the chapter, warp to Conning Creek.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "osvald-ch-3",
+          "title": "Osvald Ch. 3",
+          "mark": "0:38:30",
+          "seconds": 2310,
+          "blocks": [
+            {
+              "id": "osvald-ch-3-b1",
+              "title": "Osvald Ch. 3",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-3-1-a91bcd",
+                  "text": "Fight the encounter during the day.",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Guard Outpost"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-3-b2",
+              "title": "Guards",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r427",
-                  "text": "Merchant — HHB x4",
+                  "id": "osvald-ch-3-1-cb44c6",
+                  "text": "Partitio — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-3-1-876b4e",
+                  "text": "Anyone — Wind Soulstone (M)",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-3-1-d85c79",
+                  "text": "Partitio — HHM x2",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2+"
+                },
+                {
+                  "id": "osvald-ch-3-1-8c99a5",
+                  "text": "Throne — Latent Power + Steal → Any",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2+"
+                },
+                {
+                  "id": "osvald-ch-3-1-01fcfb",
+                  "text": "Throne — Steal → Different",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2+"
+                },
+                {
+                  "id": "osvald-ch-3-1-a6c898",
+                  "text": "Osvald — Steal → Different",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2+"
+                },
+                {
+                  "id": "osvald-ch-3-1-b7b530",
+                  "text": "Anyone — Run",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2+"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-3-b3",
+              "title": "Fight Stenvar at night.",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "osvald-ch-3-1-79f386",
+                  "text": "Fight Stenvar at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-3-b4",
+              "title": "Stenvar",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-3-1-4c0b71",
+                  "text": "Merchants — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-3-1-0d0310",
+                  "text": "1st Merchant — Collect x4 → Stenvar",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "osvald-ch-3-1-bbc69f",
+                  "text": "2nd Merchant — HHB x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-3-b5",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-3-1-27ebaa",
+                  "text": "Warp to Montwise.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "osvald-ch-4",
+          "title": "Osvald Ch. 4",
+          "mark": "0:40:00",
+          "seconds": 2400,
+          "blocks": [
+            {
+              "id": "osvald-ch-4-b1",
+              "title": "Osvald Ch. 4",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-135b77",
+                  "text": "Purchase the Herb of Serenity from the NPC up the stairs in the library. If you got zero medicinal concoct ingredients as drops, purchase the Grape Leaf from him too.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-a62bba",
+                  "text": "Infinite tries when scrutinising in the library.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b2",
+              "title": "Underground Laboratory",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-bd5059",
+                  "text": "If you missed the collect on Stenvar, walk and grab the 14 000 leaves in the chest to the right.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-5417c8",
+                  "text": "Hear the travel banter at the third door in the long corridor (at first door if you grabbed the chest).",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-2b3571",
+                  "text": "Switch to night before entering the room after the save point.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b3",
+              "title": "Harvey's Creatures",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-9448f9",
+                  "text": "Partitio — HHG x3",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-f8b87e",
+                  "text": "If Partitio has Latent Power, you can kill with Throne.",
+                  "check": false,
+                  "kind": "note",
+                  "ctx": "Notes"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b4",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "After the fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-acec68",
+                  "text": "Temenos — Equip A Step Ahead (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b5",
+              "title": "Fight Grieving Golem at night.",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-480890",
+                  "text": "Fight Grieving Golem at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b6",
+              "title": "Grieving Golem",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-2fddbd",
+                  "text": "Throne — Spear",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-4-1-dce425",
+                  "text": "Osvald — Staff x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-4-1-27f40f",
+                  "text": "Temenos — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-4-1-89e965",
+                  "text": "Partitio — Critical Scope",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-4-1-df4ae0",
+                  "text": "Merchant 1 — HHB x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "osvald-ch-4-1-0355d7",
+                  "text": "Merchant 2 — HHG x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "osvald-ch-4-1-d018b8",
+                  "text": "Osvald — Wind Soulstone (M)",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "osvald-ch-4-1-a4daf9",
+                  "text": "Temenos — Staff x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b7",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "Before leaving town",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-6fc7f1",
+                  "text": "Partitio — Cleric: 4 Cleric skills [v1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "osvald-ch-4-1-3824bd",
+                  "text": "Partitio — Equip Evil Ward (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b8",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-d186ec",
+                  "text": "Go to Western Merry Hills Pass.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-bf6b54",
+                  "text": "Get the Herb of Serenity outside Merry Hills.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-21b813",
+                  "text": "Enter Merry Hills.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-f06d87",
+                  "text": "Warp to Beasting Bay: Anchorage.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-aa683e",
+                  "text": "Go to Beasting Village.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-aefd8e",
+                  "text": "Recruit Ochette.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-f630c6",
+                  "text": "Pick Mahina.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-e16ec7",
+                  "text": "Hikari · Ochette",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "osvald-ch-4-1-02f165",
+                  "text": "Recruit Ochette",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-a4bc32",
+                  "text": "Set Slot 4 to Ochette. Set Slot 3 to Temenos",
+                  "check": true,
+                  "kind": "party"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b9",
+              "title": "Steal Dispatches from Beastling Island from the NPC to the left.",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-6fad35",
+                  "text": "Warp to Conning Creek.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-479669",
+                  "text": "Do not start Ochette ch. 2: Cateracta's Route.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b10",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "Before leaving Conning Creek",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-2a3351",
+                  "text": "Ochette — Equip A Step Ahead (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b11",
+              "title": "Tag Sai.",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-619773",
+                  "text": "Go to Eastern Wellgrove Trail.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-a91bcd",
+                  "text": "Fight the encounter during the day.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b12",
+              "title": "Woodland Birdian IV",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-10131c",
+                  "text": "Throne — HP Thief x2 → Woodland Birdian IV",
+                  "check": true,
+                  "kind": "fight",
+                  "note": "min roll w/o crits is 602 damage, max roll with crits is 784 damage",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-4-1-ab0547",
+                  "text": "Anyone — Fire Soulstone / Fireball x2 (if already broken)",
+                  "check": true,
+                  "kind": "fight",
+                  "note": "either way it drops below 25% HP when combined with a soulstone or fireball (and never dies)",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-4-1-cbebe9",
+                  "text": "Ochette — Defend / Capture → Woodland Birdian IV",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-4-1-573056",
+                  "text": "Ochette — Capture (if not done already)",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "osvald-ch-4-1-f9e6ad",
+                  "text": "Anyone — Flee",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "osvald-ch-4-1-244d34",
+                  "text": "Need soulstone OR fireball, don't use both. If it's already in red HP, don't need fireball at all.",
+                  "check": false,
+                  "kind": "note",
+                  "ctx": "Notes"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b13",
+              "title": "Go to Wellgrove.",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-355c37",
+                  "text": "Start Partitio Ch. 3.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-ce2bc2",
+                  "text": "Warp to Cape Cold.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-9b47b9",
+                  "text": "Go to Western Winterbloom Snows.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-78ced9",
+                  "text": "Use a Fire Soulstone (M) on the first encounter, then capture the Snow Yak.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-cc232c",
+                  "text": "Get the Scholar Licence.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-353efb",
+                  "text": "Go to Winterbloom.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b14",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "Before entering Winterbloom",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-b773e6",
+                  "text": "Partitio — Scholar: 2 Scholar skills",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "osvald-ch-4-1-a0fcb8",
+                  "text": "Partitio — Thief Armour Corrosive",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "osvald-ch-4-1-447ff4",
+                  "text": "Partitio — Equip Evasive Manoeuvres (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "osvald-ch-4-1-2fd4a6",
+                  "text": "Osvald — Unequip A Step Ahead (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "osvald-ch-4-1-4d9320",
+                  "text": "Ochette · Agnea",
+                  "check": false,
+                  "kind": "note",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "osvald-ch-4-1-2e83e0",
+                  "text": "Throne Ch. 2: Father's Route",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "osvald-ch-4-1-49bb35",
+                  "text": "If Osvald is below 765 HP, heal him with Partitio (or a grape).",
+                  "check": true,
+                  "kind": "menu"
+                },
+                {
+                  "id": "osvald-ch-4-1-80edba",
+                  "text": "Go to the tavern.",
+                  "check": true,
+                  "kind": "menu"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b15",
+              "title": "Tavern",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-bbf16c",
+                  "text": "Set Slot 1 to Agnea. Set Slot 2 to Osvald",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "osvald-ch-4-1-bc5cc0",
+                  "text": "Set Slot 2 to Castti. Set Slot 3 to Ochette",
+                  "check": true,
+                  "kind": "party"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b16",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-131c4d",
+                  "text": "Talk to the Troubled Woman to complete \"The Sword in the Stone\".",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-8b8ac4",
+                  "text": "Fight Bergomi during the day.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-4-b17",
+              "title": "Bergomi",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-4-1-5255f7",
+                  "text": "1st Merchant — Armour Corrosive → Bergomi",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-4-1-e582f7",
+                  "text": "2nd Merchant — HHB x3",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
@@ -2110,75 +2448,109 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b429",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before buying the boat",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r432",
-                  "text": "Castti — Scholar: 3 Scholar skills [^1]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r433",
-                  "text": "Partitio — Cleric: 4 Cleric skills [^1]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r435",
-                  "text": "Castti — Equip Elemental Augmentation (Slot 4)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r436",
-                  "text": "Castti — Equip Evasive Manoeuvres (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r437",
-                  "text": "Partitio — Equip Evil Ward (Slot 2)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                }
-              ]
-            },
-            {
-              "id": "b439",
+              "id": "osvald-ch-4-b18",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r440",
-                  "text": "Warp to Gravell.",
+                  "id": "osvald-ch-4-1-fa04b8",
+                  "text": "Warp to Wellgrove.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r441",
+                  "id": "osvald-ch-4-1-db2f8a",
+                  "text": "Go to Northern Wellgrove Trail.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-be1f4d",
+                  "text": "Go to the Altar of the Lady of Grace.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-dd36be",
+                  "text": "Learn Windy Refrain.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-d1b14e",
+                  "text": "Go to Timberain.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-63e9e6",
+                  "text": "Steal the Wind Soulstone (L) and Light Soulstone (L) from the lady near the entrance.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-64c465",
+                  "text": "Go to the next screen.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-d96f1e",
+                  "text": "Purchase the Ancient Circlet from the quest NPC.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-3cd4f6",
+                  "text": "Soothe the Elderly Soldier.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-5a465b",
+                  "text": "Get the Rusty Polearm at the end.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-901ee6",
+                  "text": "Warp to Crackridge.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-b1c3e6",
+                  "text": "Go to Western Gravell Wilds.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-cbcc31",
+                  "text": "Grab the Thunder Soulstone (L) from the brown chest before the stairs to the first bridge.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-eea48e",
+                  "text": "Go to Gravell.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-ad140b",
                   "text": "Soothe the Debt Collector.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r442",
-                  "text": "Talk to the Retired Blacksmith to get the Proof of the Armsmaster and Conqueror's Sword.",
+                  "id": "osvald-ch-4-1-d7c001",
+                  "text": "Talk to the Retired Blacksmith to get Proof of the Armsmaster, Conqueror's Sword and Warlord's Spear.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r443",
+                  "id": "osvald-ch-4-1-533e07",
                   "text": "Go to the provisioner.",
                   "check": true,
                   "kind": "do"
@@ -2186,150 +2558,65 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b445",
+              "id": "osvald-ch-4-b19",
               "title": "Provisioner",
               "kind": "shop",
               "solo": false,
               "steps": [
                 {
-                  "id": "r447",
-                  "text": "Sell Conquerer's Sword",
-                  "check": true,
-                  "kind": "shop"
-                },
-                {
-                  "id": "r449",
-                  "text": "Buy 2 Diffusing Serum",
-                  "check": true,
-                  "kind": "shop"
-                },
-                {
-                  "id": "r450",
-                  "text": "Buy 2 Dreamy Flowers",
+                  "id": "osvald-ch-4-1-15eda2",
+                  "text": "Sell Warlord's Spear",
                   "check": true,
                   "kind": "shop"
                 }
               ]
             },
             {
-              "id": "b452",
-              "title": "Overworld",
+              "id": "osvald-ch-4-b20",
+              "title": "Purchase the Herb of Serenity from the lady in the provisioner.",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r453",
-                  "text": "Purchase the Herb of Serenity from the lady.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r454",
+                  "id": "osvald-ch-4-1-ddcaac",
                   "text": "Warp to Tropu'hopu.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r455",
+                  "id": "osvald-ch-4-1-e4e920",
+                  "text": "Entreat the Marksman's Bow and Light Nut (L) from the beastling.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-4-1-9723ae",
                   "text": "Purchase the boat.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r456",
-                  "text": "Paint the boat black and choose the octopus for the sail symbol. This is very important.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r457",
-                  "text": "Get the Fortune Wand from the chest to the north.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r458",
+                  "id": "osvald-ch-4-1-f25573",
                   "text": "Tag Roque Island.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r459",
-                  "text": "Warp to Crackridge Harbour: Anchorage.",
+                  "id": "osvald-ch-4-1-194d30",
+                  "text": "Soothe the man guarding the house.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r460",
-                  "text": "Get the Sunken Gold Statue to the south.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r461",
-                  "text": "Warp to Conning Creek.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r462",
-                  "text": "Go to Sai.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "castti-ch-2-sai-route-464",
-          "title": "Castti Ch.2: Sai Route",
-          "blocks": [
-            {
-              "id": "b464",
-              "title": "Castti Ch.2: Sai Route",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r466",
-                  "text": "Switch to night before fighting the Sand Lion.",
+                  "id": "osvald-ch-4-1-a120d8",
+                  "text": "Get the Empowering Lychee (L), 39,800 leaves, 3 Rejuvenating Jams and Magic Nut (L) inside.",
                   "check": true,
                   "kind": "do",
-                  "ctx": "Sand Lion's Den"
-                }
-              ]
-            },
-            {
-              "id": "b468",
-              "title": "Sand Lion",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r470",
-                  "text": "Merchant — HHV x3",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                }
-              ]
-            },
-            {
-              "id": "b472",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r473",
-                  "text": "Finish the chapter.",
-                  "check": true,
-                  "kind": "do"
+                  "note": "skip lychee (rightmost chest) if Agnea has more than half latent"
                 },
                 {
-                  "id": "r474",
-                  "text": "Go to Wellgrove.",
+                  "id": "osvald-ch-4-2-fa04b8",
+                  "text": "Warp to Wellgrove.",
                   "check": true,
                   "kind": "do"
                 }
@@ -2344,267 +2631,182 @@ export const route: RouteData = {
       "title": "The Boat",
       "chapters": [
         {
-          "id": "partitio-ch-3-476",
+          "id": "partitio-ch-3",
           "title": "Partitio Ch. 3",
+          "mark": "0:58:00",
+          "seconds": 3480,
           "blocks": [
             {
-              "id": "b476",
+              "id": "partitio-ch-3-b1",
               "title": "Partitio Ch. 3",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r478",
-                  "text": "Go to the provisioner.",
+                  "id": "partitio-ch-3-1-b4d6a9",
+                  "text": "After telling Alrond about the ship, speak to the tavern keeper.",
                   "check": true,
                   "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b480",
-              "title": "Provisioner",
-              "kind": "shop",
-              "solo": false,
-              "steps": [
+                },
                 {
-                  "id": "r482",
-                  "text": "Sell Sunken Gold Statue",
+                  "id": "partitio-ch-3-1-1bf0b7",
+                  "text": "Temenos · Partitio",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "partitio-ch-3-1-9830d2",
+                  "text": "Set Slot 3 to Hikari. Set Slot 2 to Agnea",
                   "check": true,
-                  "kind": "shop"
-                }
-              ]
-            },
-            {
-              "id": "b484",
-              "title": "After the cutscene at the department store, warp to Crackridge Harbour: Anchorage.",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
+                  "kind": "party"
+                },
                 {
-                  "id": "r485",
+                  "id": "partitio-ch-3-2-1bf0b7",
+                  "text": "Temenos · Partitio",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "partitio-ch-3-1-b3c2a1",
+                  "text": "After the cutscene at the department store, warp to Crackridge Harbour: Anchorage.",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "partitio-ch-3-1-c4c07a",
                   "text": "Go to Shipwreck of the Empress.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "party"
                 },
                 {
-                  "id": "r486",
+                  "id": "partitio-ch-3-1-e7a7cf",
                   "text": "Get the Rusty Dagger at the end.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "party"
                 },
                 {
-                  "id": "r487",
+                  "id": "partitio-ch-3-1-6f1b3c",
+                  "text": "Warp to New Delsta Harbour: Anchorage.",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "partitio-ch-3-1-a3e409",
+                  "text": "Get the EXP Augmentor.",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "partitio-ch-3-1-fa04b8",
                   "text": "Warp to Wellgrove.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r488",
-                  "text": "Go to Timberain.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r489",
-                  "text": "Purchase the Blessed Vestments from the NPC in front of the courthouse.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r490",
-                  "text": "Go to the next screen.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r491",
-                  "text": "Purchase the Ancient Circlet from the quest NPC.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r492",
-                  "text": "Soothe the Elderly Soldier.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r493",
-                  "text": "Get the Rusty Polearm at the end.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r494",
-                  "text": "Warp to Gravell.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r495",
-                  "text": "Talk to Porta to get the Warlord's Spear and Dancer's Blade.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r496",
-                  "text": "Warp to Wellgrove.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r497",
-                  "text": "Go to the provisioner.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b499",
-              "title": "Provisioner",
-              "kind": "shop",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r501",
-                  "text": "Sell Warlord's Spear",
-                  "check": true,
-                  "kind": "shop"
-                }
-              ]
-            },
-            {
-              "id": "b503",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r504",
-                  "text": "Before hiring the last merchant in the tavern, speak to the tavern keeper.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b506",
-              "title": "Tavern",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r509",
-                  "text": "Set Slot 1 to Osvald. Set Slot 4 to Castti",
                   "check": true,
                   "kind": "party"
                 }
               ]
             },
             {
-              "id": "b511",
+              "id": "partitio-ch-3-b2",
               "title": "Menu",
               "kind": "menu",
               "when": "Before Thurston",
               "solo": false,
               "steps": [
                 {
-                  "id": "r514",
-                  "text": "Give Dancer's Blade to Throne",
+                  "id": "partitio-ch-3-1-2d66c9",
+                  "text": "Weapons — Conqueror's Sword → Hikari",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Inventory"
                 },
                 {
-                  "id": "r515",
-                  "text": "Then — Fortune Wand (Temenos)",
+                  "id": "partitio-ch-3-1-6c3b2d",
+                  "text": "Accessories — EXP Augmentor → Slot 1",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Inventory"
                 },
                 {
-                  "id": "r517",
+                  "id": "partitio-ch-3-1-734816",
+                  "text": "Accessories — Unequip Champion's Belt",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "partitio-ch-3-1-f6a55e",
+                  "text": "Accessories — Champion's Belt (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "partitio-ch-3-1-f198e9",
                   "text": "Throne — Inventor [^2]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r518",
-                  "text": "Osvald — Merchant [^2]",
+                  "id": "partitio-ch-3-1-d19de5",
+                  "text": "Hikari — Merchant [v2]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
-                },
-                {
-                  "id": "r520",
-                  "text": "Throne — Equip Peak Performance (Slot 3)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r522",
-                  "text": "Use Temenos to heal Throne if she is not at full HP.",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Notes"
                 }
               ]
             },
             {
-              "id": "b524",
+              "id": "partitio-ch-3-b3",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r525",
-                  "text": "Fight Thurston at night.",
+                  "id": "partitio-ch-3-1-84ddac",
+                  "text": "Fight Thurston during the day.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "note": "Changed since the video (12/03/2025): no early Royal Guard's Helm; Thurston → Hikari 3 → Sand Lion."
                 }
               ]
             },
             {
-              "id": "b527",
+              "id": "partitio-ch-3-b4",
               "title": "Thurston",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r529",
-                  "text": "Throne — HP Thief x3 → Steam Engine",
+                  "id": "partitio-ch-3-1-8d6297",
+                  "text": "Throne — Defend",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r530",
-                  "text": "Osvald — Defend [<]",
+                  "id": "partitio-ch-3-1-a5bee4",
+                  "text": "1st Merchant — Defend (if before Throne) / Attack",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r531",
-                  "text": "Partitio — Defend [>]",
+                  "id": "partitio-ch-3-1-e582f7",
+                  "text": "2nd Merchant — HHB x3",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r533",
-                  "text": "1st Merchant — Bow x4",
+                  "id": "partitio-ch-3-1-33f63f",
+                  "text": "Throne — Sword x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r534",
-                  "text": "2nd Merchant — HHV x4",
+                  "id": "partitio-ch-3-1-21cca9",
+                  "text": "Merchant — HHV x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
@@ -2612,805 +2814,26 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b536",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r537",
-                  "text": "Warp to Sai.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r538",
-                  "text": "Steal the Empowering Lychee (M) from the left disciple in the warriors' guild.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r539",
-                  "text": "Get the Warrior Licence.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r540",
-                  "text": "Warp to Roque Island.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "partitio-ch-4-542",
-          "title": "Partitio Ch. 4",
-          "blocks": [
-            {
-              "id": "b542",
-              "title": "Partitio Ch. 4",
+              "id": "partitio-ch-3-b5",
+              "title": "Wellgrove",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r544",
-                  "text": "On the next screen, hear travel banter just before going down the stairs to the floor with the books.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b546",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before Steam Tank Obsidian",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r549",
-                  "text": "Give 2 Empowering Lychee (M) to Throne",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Inventory"
-                },
-                {
-                  "id": "r551",
-                  "text": "Temenos — Cleric: 4 Cleric skills",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r552",
-                  "text": "Temenos — Hunter Leghold Trap [v3], Abating Orb",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r555",
-                  "text": "Temenos — Equip Evil Ward (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r556",
-                  "text": "Temenos — Equip A Step Ahead (Slot 2)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                }
-              ]
-            },
-            {
-              "id": "b558",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r559",
-                  "text": "Fight the Steam Tank at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b561",
-              "title": "Steam Tank Obsidian",
-              "kind": "fight",
-              "when": "Requires Latent Power on Throne",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r564",
-                  "text": "Throne — Latent Power + Critical Scope → Obsidian",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r565",
-                  "text": "Throne — HP Thief x3 → Obsidian",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r566",
-                  "text": "Osvald — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r567",
-                  "text": "Temenos — Abating Orb → Obsidian",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r568",
-                  "text": "Partitio — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r570",
-                  "text": "Merchants — HHV x4",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b572",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r573",
-                  "text": "Warp to Wellgrove.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r574",
-                  "text": "Start Throne Ch. 3: Mother's Route.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r575",
-                  "text": "Go to the armourer.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b577",
-              "title": "Armourer",
-              "kind": "shop",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r579",
-                  "text": "Throne — Unequip Dancer's Blade",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r581",
-                  "text": "Sell Drifting Dagger",
-                  "check": true,
-                  "kind": "shop"
-                },
-                {
-                  "id": "r582",
-                  "text": "Sell Dancer's Blade",
-                  "check": true,
-                  "kind": "shop"
-                },
-                {
-                  "id": "r583",
-                  "text": "Sell Axe of Avarice",
-                  "check": true,
-                  "kind": "shop"
-                }
-              ]
-            },
-            {
-              "id": "b585",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r586",
-                  "text": "Steal the Habit.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r587",
-                  "text": "Scrutinise the Eager Townsperson.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r588",
-                  "text": "Rest at the inn if Partitio doesn't have latent power.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r589",
-                  "text": "Go to the tavern.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b591",
-              "title": "Tavern",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r594",
-                  "text": "Set Slot 1 to Castti. Set Slot 2 to Temenos",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r595",
-                  "text": "Set Slot 2 to Hikari. Set Slot 4 to Osvald",
-                  "check": true,
-                  "kind": "party"
-                }
-              ]
-            },
-            {
-              "id": "b597",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "After the tavern",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r600",
-                  "text": "Castti — Lock Small Axe",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r601",
-                  "text": "Castti — Optimise",
-                  "check": true,
-                  "kind": "menu",
-                  "note": "equips ancient circlet and blessed vestments",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r603",
-                  "text": "Hikari — Inventor [^1]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r604",
-                  "text": "Throne — Thief: 3 Thief skills",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r605",
-                  "text": "Throne — Merchant [^2]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r607",
-                  "text": "Throne — Equip Life in the Shadows over Grows on Trees (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                }
-              ]
-            },
-            {
-              "id": "b609",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r610",
-                  "text": "Bribe the Strolling Townsperson.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r611",
-                  "text": "Get the Dancer Licence.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r612",
-                  "text": "Go to Wellgrove: Alrond's Estate.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r613",
-                  "text": "Talk to Misha twice to complete \"Misha's Next Chapter\".",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r614",
-                  "text": "Bribe Alrond, then hire him.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r615",
-                  "text": "Warp to Montwise.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r616",
-                  "text": "Go to Western Montwise Pass.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r617",
-                  "text": "Go to Western Merry Hills Pass.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r618",
-                  "text": "Tag Merry Hills.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r619",
-                  "text": "Fight the Foreign Assassins.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "foreign-assassins-621",
-          "title": "Foreign Assassins",
-          "blocks": [
-            {
-              "id": "b621",
-              "title": "Foreign Assassins",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r623",
-                  "text": "Throne — HHM",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r624",
-                  "text": "Hikari — Springy Boots → Castti",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r625",
-                  "text": "Partitio — Summon",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r627",
-                  "text": "Castti — Concoct x2",
-                  "check": true,
-                  "kind": "fight",
-                  "lines": [
-                    "Dreamy Flower x2",
-                    "Diffusing Serum"
-                  ],
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r630",
-                  "text": "Hikari — Critical Scope x3 → Back",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r632",
-                  "text": "Partitio — Summon (as needed)",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 3+"
-                },
-                {
-                  "id": "r633",
-                  "text": "Others — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 3+"
-                },
-                {
-                  "id": "r635",
-                  "text": "Throne — HHB x4*",
-                  "check": true,
-                  "kind": "fight",
-                  "lead": "After getting at least EXP x100 and JP x10, or after 5 Alrond procs",
-                  "ctx": "Turn 3+"
-                },
-                {
-                  "id": "r636",
-                  "text": "Partitio — HHV x4 (can defend to get a 6th proc)",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 3+"
-                },
-                {
-                  "id": "r638",
-                  "text": "Flee and reload the save if did not get EXP x100 and at least JP x10 (29.02% from 6 Alrond procs).",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Notes"
-                },
-                {
-                  "id": "r639",
-                  "text": "*Want to break with Throne to get Latent Power. If she already has it, you can break with Partitio.",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Notes"
-                }
-              ]
-            },
-            {
-              "id": "b641",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r642",
-                  "text": "Warp to Roque Island.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r643",
-                  "text": "Ambush the man guarding the house.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r644",
-                  "text": "Get the 39,800 leaves, 3 Rejuvenating Jams and Magic Nut (L) inside (all but the rightmost chest).",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r645",
+                  "id": "partitio-ch-3-1-47c095",
                   "text": "Warp to Gravell.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r646",
-                  "text": "Go to Ivory Ravine.",
+                  "id": "partitio-ch-3-1-3da05e",
+                  "text": "Talk to Porta to get the Dancer's Blade.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r647",
-                  "text": "Get the Giant's Club.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r648",
-                  "text": "Warp to Merry Hills.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b650",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r651",
-                  "text": "Steal the Diamond Dagger from the merchant at the bottom of the screen, then inquire him.",
-                  "check": true,
-                  "kind": "do",
-                  "note": "if you still have alrond following you, skip stealing the dagger"
-                },
-                {
-                  "id": "r652",
-                  "text": "Steal the Quick Cloak and Ice Soulstone (M) from the lady in blue.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r653",
-                  "text": "Go to the armourer.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b655",
-              "title": "Armourer",
-              "kind": "shop",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r657",
-                  "text": "Sell Diamond Dagger (if gotten)",
-                  "check": true,
-                  "kind": "shop"
-                },
-                {
-                  "id": "r659",
-                  "text": "Buy Breaker's Blade",
-                  "check": true,
-                  "kind": "shop"
-                },
-                {
-                  "id": "r660",
-                  "text": "Buy Swift Shield",
-                  "check": true,
-                  "kind": "shop"
-                },
-                {
-                  "id": "r661",
-                  "text": "Buy Dazzling Tiara",
-                  "check": true,
-                  "kind": "shop"
-                }
-              ]
-            },
-            {
-              "id": "b663",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r664",
-                  "text": "Steal the Platinum Helm from the man in blue.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r665",
-                  "text": "Steal the Poetry of the Soul and Magic Nut (L) from the person under the bridge.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r666",
-                  "text": "Warp to Beasting Bay: Anchorage.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b668",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before fighting Gigantes",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r671",
-                  "text": "Throne — Warrior: 5 Warrior skills [^3]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r672",
-                  "text": "Throne — Armsmaster [^2]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r673",
-                  "text": "Castti — Warrior: 5 Warrior skills [^4]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r674",
-                  "text": "Partitio — Cleric: 1 Cleric skill, Aelfric's Blessing",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r675",
-                  "text": "Hikari — Warrior: 5 Warrior skills [v1]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r676",
-                  "text": "Hikari — Merchant [v3]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r678",
-                  "text": "Throne — Optimise",
-                  "check": true,
-                  "kind": "menu",
-                  "note": "equips breaker's blade, swift shield, dazzling tiara, and butler's tailcoat",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r679",
-                  "text": "Throne — Lock Swift Shield",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r680",
-                  "text": "Throne — Equip Giant's Club",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r681",
-                  "text": "Throne — Unequip Traveler's Bow (if gotten)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r683",
-                  "text": "Throne — Equip Deal More Damage over Life in the Shadows (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                }
-              ]
-            },
-            {
-              "id": "b685",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r686",
-                  "text": "Go to the Nameless Isle.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r687",
-                  "text": "Fight Gigantes at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b689",
-              "title": "Gigantes",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r691",
-                  "text": "Throne — Armour Corrosive",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r692",
-                  "text": "Hikari — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r693",
-                  "text": "Partitio — Bow x3",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r695",
-                  "text": "Hikari — Aggressive Slash x4",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r696",
-                  "text": "Throne — HP Thief x4",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b698",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r699",
-                  "text": "Get the Finisher's Claws from the red chest.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r700",
-                  "text": "Inquire Georges Lazuli.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r701",
-                  "text": "Warp to Cropdale.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r702",
-                  "text": "Recruit Agnea.",
+                  "id": "partitio-ch-3-2-fa04b8",
+                  "text": "Warp to Wellgrove.",
                   "check": true,
                   "kind": "do"
                 }
@@ -3421,48 +2844,137 @@ export const route: RouteData = {
       ]
     },
     {
-      "id": "beasts",
-      "title": "Beasts",
+      "id": "mid",
+      "title": "Midgame",
       "chapters": [
         {
-          "id": "recruit-agnea-704",
-          "title": "Recruit Agnea",
+          "id": "hikari-ch-3",
+          "title": "Hikari Ch. 3",
+          "mark": "1:15:00",
+          "seconds": 4500,
           "blocks": [
             {
-              "id": "b704",
-              "title": "Recruit Agnea",
+              "id": "hikari-ch-3-b1",
+              "title": "Hikari Ch. 3",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r707",
-                  "text": "Set Slot 4 to Agnea. Set Slot 4 to Hikari",
+                  "id": "hikari-ch-3-1-02e1b4",
+                  "text": "Go to the armourer.",
                   "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r708",
-                  "text": "Set Slot 1 to Temenos. Set Slot 3 to Partitio",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r709",
-                  "text": "Set Slot 3 to Ochette. Set Slot 2 to Castti",
-                  "check": true,
-                  "kind": "party"
+                  "kind": "do"
                 }
               ]
             },
             {
-              "id": "b711",
+              "id": "hikari-ch-3-b2",
+              "title": "Provisioner",
+              "kind": "shop",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-3-1-a76e19",
+                  "text": "Sell Dancer's Blade",
+                  "check": true,
+                  "kind": "shop"
+                },
+                {
+                  "id": "hikari-ch-3-1-511b34",
+                  "text": "Sell Axe of Avarice",
+                  "check": true,
+                  "kind": "shop"
+                },
+                {
+                  "id": "hikari-ch-3-1-31d2db",
+                  "text": "Sell Marksman's Bow",
+                  "check": true,
+                  "kind": "shop"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-3-b3",
+              "title": "Steal 2 Energising Pomegranate (M) from the lady by the provisioner.",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-3-1-5966cd",
+                  "text": "Purchase the Sharp Nut (L) from the man in the inn.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-3-1-7f3c7d",
+                  "text": "Hear the travel banter before crossing the bridge.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-3-1-f7de09",
+                  "text": "Fight the Ku Soldiers in the day.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-3-b4",
+              "title": "Ku Soldiers",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-3-1-0990c5",
+                  "text": "Anyone — Light Soulstone (L)",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-3-b5",
+              "title": "General Rou",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-3-1-b5b153",
+                  "text": "Turn 1 — Defend",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-3-1-35af3c",
+                  "text": "Turn 2 — HHB x4",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-3-1-324180",
+                  "text": "Turn 3 — Hienka",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-3-1-ec53f5",
+                  "text": "Learn Divine Dual-Edge.",
+                  "check": false,
+                  "kind": "note",
+                  "ctx": "Notes"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-3-b6",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r712",
-                  "text": "Warp to Crackridge.",
+                  "id": "hikari-ch-3-1-2bb37b",
+                  "text": "Warp to Sai.",
                   "check": true,
                   "kind": "do"
                 }
@@ -3471,119 +2983,91 @@ export const route: RouteData = {
           ]
         },
         {
-          "id": "ochette-ch-2-tera-s-route-714",
-          "title": "Ochette Ch. 2: Tera's Route",
+          "id": "castti-ch-2-sai-route",
+          "title": "Castti Ch.2: Sai Route",
+          "mark": "1:02:00",
+          "seconds": 3720,
           "blocks": [
             {
-              "id": "b714",
-              "title": "Ochette Ch. 2: Tera's Route",
+              "id": "castti-ch-2-sai-route-b1",
+              "title": "Castti Ch.2: Sai Route",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r716",
-                  "text": "Hunt for Buttermeep at night.",
+                  "id": "castti-ch-2-sai-route-1-655e3d",
+                  "text": "Fight the Sand Lion during the day.",
                   "check": true,
                   "kind": "do"
                 }
               ]
             },
             {
-              "id": "b718",
-              "title": "Buttermeep",
+              "id": "castti-ch-2-sai-route-b2",
+              "title": "Sand Lion",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r720",
-                  "text": "Temenos — Staff → Buttermeep",
+                  "id": "castti-ch-2-sai-route-1-1e4df1",
+                  "text": "Thief — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r721",
-                  "text": "Ochette — Defend / Capture",
+                  "id": "castti-ch-2-sai-route-1-177f53",
+                  "text": "Merchant — HHV x3",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
-                },
-                {
-                  "id": "r723",
-                  "text": "Ochette — Capture x3 (if not done already) → Buttermeep",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r724",
-                  "text": "Anyone — Flee",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
                 }
               ]
             },
             {
-              "id": "b726",
+              "id": "castti-ch-2-sai-route-b3",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "castti-ch-2-sai-route-1-69b9a5",
+                  "text": "Get the Warrior Licence.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "castti-ch-2-sai-route-1-dcc20e",
+                  "text": "Warp to Merry Hills.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "castti-ch-2-sai-route-b4",
               "title": "Menu",
               "kind": "menu",
-              "when": "After the fight",
+              "when": "Before the Foreign Assassins",
               "solo": false,
               "steps": [
                 {
-                  "id": "r729",
-                  "text": "Throne — Equip Finisher's Claws (Slot 2)",
+                  "id": "castti-ch-2-sai-route-1-576e5f",
+                  "text": "Throne — Thief 3 Thief skills",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Equipment"
+                  "ctx": "Learn Skills"
                 },
                 {
-                  "id": "r730",
-                  "text": "Ochette — Optimise",
-                  "check": true,
-                  "kind": "menu",
-                  "note": "equips traveler's bow, platinum helm, and quick cloak",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r731",
-                  "text": "Temenos — Equip JP Augmentor (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r733",
-                  "text": "Agnea — Inventor [^3]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r734",
-                  "text": "Temenos — Scholar: 1 Scholar skill [^1], Elemental Barrage",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r736",
-                  "text": "Temenos — Hunter [v1]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r738",
-                  "text": "Agnea — Equip A Step Ahead (Slot 1)",
+                  "id": "castti-ch-2-sai-route-1-4bef57",
+                  "text": "Throne — Equip Life in the Shadows (Slot 4)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r739",
-                  "text": "Temenos — Equip Evasive Manoeuvres over A Step Ahead (Slot 2)",
+                  "id": "castti-ch-2-sai-route-1-37871e",
+                  "text": "Hikari — Equip Peak Performance (Slot 4)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
@@ -3591,75 +3075,64 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b741",
-              "title": "Notes",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r742",
-                  "text": "Use Temenos to heal Throne if she got hit.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b744",
-              "title": "Ochette: Monster Roster",
-              "kind": "setup",
-              "when": "After the fight",
-              "solo": false,
-              "steps": []
-            },
-            {
-              "id": "b750",
-              "title": "Overworld",
+              "id": "castti-ch-2-sai-route-b5",
+              "title": "Fight the Foreign Assassins at night.",
               "kind": "travel",
-              "solo": false,
+              "solo": true,
               "steps": [
                 {
-                  "id": "r751",
-                  "text": "Go to Crackridge.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r752",
-                  "text": "Ambush the scholar at the bottom right of the town.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r753",
-                  "text": "Get From the Far Reaches of Hell.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r754",
-                  "text": "Fight Tera at night.",
+                  "id": "castti-ch-2-sai-route-1-93d74f",
+                  "text": "Fight the Foreign Assassins at night.",
                   "check": true,
                   "kind": "do"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "id": "foreign-assassins",
+          "title": "Foreign Assassins",
+          "mark": "1:10:30",
+          "seconds": 4230,
+          "blocks": [
             {
-              "id": "b756",
-              "title": "Tera",
+              "id": "foreign-assassins-b1",
+              "title": "Foreign Assassins",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r758",
-                  "text": "Throne — Defend",
+                  "id": "foreign-assassins-1-b8556e",
+                  "text": "Throne — Critical Scope → Back",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r760",
-                  "text": "Throne — HP Thief x4",
+                  "id": "foreign-assassins-1-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "foreign-assassins-1-f672a6",
+                  "text": "Partitio — HHM",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "foreign-assassins-1-c74d9c",
+                  "text": "Hikari — HHB x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "foreign-assassins-1-67722a",
+                  "text": "Partitio — HHV x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
@@ -3667,37 +3140,74 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b762",
+              "id": "foreign-assassins-b2",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r763",
+                  "id": "foreign-assassins-1-47c095",
+                  "text": "Warp to Gravell.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "foreign-assassins-1-56ad29",
+                  "text": "Go to Ivory Ravine.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "foreign-assassins-1-066df2",
+                  "text": "Get the Giant's Club.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "foreign-assassins-1-27ebaa",
                   "text": "Warp to Montwise.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r764",
+                  "id": "foreign-assassins-1-08ea8b",
+                  "text": "Start Throne Ch. 3: Father's Route.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "foreign-assassins-1-803a68",
+                  "text": "Reset reputation if needed.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "foreign-assassins-1-dc65e2",
+                  "text": "Leave town to the west.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "foreign-assassins-1-fc1038",
                   "text": "Go to Southern Stormhail Snows.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r765",
-                  "text": "Steal The Curious Legend of the Great Wall.",
+                  "id": "foreign-assassins-1-0b1174",
+                  "text": "Purchase The Curious Legend of the Great Wall.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r766",
-                  "text": "Steal the Energising Pomegranate (M) and Energising Pomegranate (L) from the man near the ladder.",
+                  "id": "foreign-assassins-1-27e199",
+                  "text": "Steal the Mighty Leaf, Energising Pomegranate (M), and Energising Pomegranate (L) from the woman near the ladder.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "note": "Changed since the video (09/17/2025): no shaggy aurochs; mighty leaf and rotten meat instead."
                 },
                 {
-                  "id": "r767",
+                  "id": "foreign-assassins-1-b9e216",
                   "text": "Go to Stormhail.",
                   "check": true,
                   "kind": "do"
@@ -3707,51 +3217,1752 @@ export const route: RouteData = {
           ]
         },
         {
-          "id": "ochette-ch-2-glacis-s-route-769",
-          "title": "Ochette Ch. 2: Glacis's Route",
+          "id": "hikari-ch-4",
+          "title": "Hikari Ch. 4",
+          "mark": "1:18:00",
+          "seconds": 4680,
           "blocks": [
             {
-              "id": "b769",
-              "title": "Ochette Ch. 2: Glacis's Route",
+              "id": "hikari-ch-4-b1",
+              "title": "Hikari Ch. 4",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r771",
-                  "text": "Talk to the tavern keeper.",
+                  "id": "hikari-ch-4-1-80edba",
+                  "text": "Go to the tavern.",
                   "check": true,
                   "kind": "do"
                 }
               ]
             },
             {
-              "id": "b773",
+              "id": "hikari-ch-4-b2",
               "title": "Tavern",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r776",
-                  "text": "Set Slot 2 to Osvald. Set Slot 4 to Agnea",
+                  "id": "hikari-ch-4-1-b1d637",
+                  "text": "Set Slot 4 to Temenos. Set Slot 4 to Partitio",
                   "check": true,
                   "kind": "party"
                 }
               ]
             },
             {
-              "id": "b778",
+              "id": "hikari-ch-4-b3",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "Before Kunzo",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-4-1-710ec6",
+                  "text": "Throne — Cleric: 4 Cleric skills [v2]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "hikari-ch-4-1-67f158",
+                  "text": "Temenos — Merchant: 3 Merchant skills [v1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "hikari-ch-4-1-add85c",
+                  "text": "Temenos — Inventor [^3]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "hikari-ch-4-1-aa91c8",
+                  "text": "Castti — Scholar: 4 Scholar skills [^2]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "hikari-ch-4-1-bd80a5",
+                  "text": "Castti — Merchant 3 Merchant skills [^1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "hikari-ch-4-1-b05a5b",
+                  "text": "Castti — Hunter Abating Orb [v4]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "hikari-ch-4-1-673d15",
+                  "text": "Hikari — Armsmaster [^2]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "hikari-ch-4-1-138027",
+                  "text": "Throne — Merchant [v1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "hikari-ch-4-1-20d09b",
+                  "text": "Throne — Equip Evil Ward over Grows on Trees (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "hikari-ch-4-1-88d2d3",
+                  "text": "Castti — Equip Evasive Manoeuvres (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "hikari-ch-4-1-4ab1f0",
+                  "text": "Castti — Equip Extra Experience (Slot 3)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "hikari-ch-4-1-7e219e",
+                  "text": "Castti — Equip Boost-Start (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "hikari-ch-4-1-312e4d",
+                  "text": "Castti — Equip A Step Ahead (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "hikari-ch-4-1-e330aa",
+                  "text": "Temenos — Equip Grows on Trees (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "hikari-ch-4-1-9fb339",
+                  "text": "Temenos — Equip Boost-Start (Slot 3)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "hikari-ch-4-1-caeb1b",
+                  "text": "Give Giant's Club to Hikari",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "hikari-ch-4-1-0b66dc",
+                  "text": "Temenos — Fortifying Nut (L)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "hikari-ch-4-1-c1711a",
+                  "text": "If Hikari is not at full health, use a refreshing jam on him (right above the fortifying nut L in the menu)",
+                  "check": false,
+                  "kind": "note",
+                  "ctx": "Notes"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-4-b4",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r779",
-                  "text": "Steal the Warding Leaf from the child in the provisioner.",
+                  "id": "hikari-ch-4-1-2b0283",
+                  "text": "Steal the Sharp Nut and Warding Leaf from the girl in the provisioner.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r780",
+                  "id": "hikari-ch-4-1-2cba00",
+                  "text": "Agnea · Castti",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "hikari-ch-4-1-3b6c9f",
+                  "text": "Fight Kunzo at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-4-b5",
+              "title": "Kunzo",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-4-1-76173e",
+                  "text": "First — Dagger / Axe x3 → Kunzo",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-4-1-53f239",
+                  "text": "Second — Dagger / Axe x2 → Kunzo",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-4-1-34de72",
+                  "text": "Hikari — Divine Dual-Edge x3 (when broken)",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-4-b6",
+              "title": "Jin Mei",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-4-1-30cf28",
+                  "text": "Turn 1 — Sword",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-4-1-bb4fc4",
+                  "text": "Turn 2 — Sword",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-4-1-b59915",
+                  "text": "Turn 3 — Defend",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-4-1-bb6c10",
+                  "text": "Turn 4 — Wild Cut x2",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-4-1-c62409",
+                  "text": "Turn 5 — Wild Cut x4",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-4-b7",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-4-1-c07ee3",
+                  "text": "Get the Thunderstorm Amulet in the tower to the left before the save point (right before the boss).",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-4-1-8001eb",
+                  "text": "Fight Rai Mei at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-4-b8",
+              "title": "Rai Mei",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-4-1-1b4577",
+                  "text": "Throne — HHB x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-4-1-44abb9",
+                  "text": "Hikari — Energising Pomegranate (L) → Throne",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-4-1-27f40f",
+                  "text": "Temenos — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-4-1-7b2502",
+                  "text": "Throne — HHB x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "hikari-ch-4-1-23056b",
+                  "text": "Hikari — Divine Dual-Edge x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "hikari-ch-4-1-b2c082",
+                  "text": "Temenos — Staff x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-4-b9",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-4-1-f06d87",
+                  "text": "Warp to Beasting Bay: Anchorage.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-4-b10",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "Before fighting Gigantes",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-4-1-94ad7d",
+                  "text": "Hikari — 5 Warrior skills",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Learn Skills"
+                },
+                {
+                  "id": "hikari-ch-4-1-0c8a59",
+                  "text": "Hikari — Equip Deal More Damage over Grows on Trees (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-4-b11",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-4-1-b11e00",
+                  "text": "Go to the Nameless Isle.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-4-1-9974b8",
+                  "text": "Fight Gigantes at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-4-b12",
+              "title": "Gigantes",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-4-1-add45d",
+                  "text": "Throne — Bow x3 [>]",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-4-1-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-4-1-a0d4ee",
+                  "text": "Castti — Bow x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-4-1-8a70a1",
+                  "text": "Temenos — Sword x3 [>]",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-4-1-f79474",
+                  "text": "Hikari — Conqueror's Sword x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-4-b13",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-4-1-116f01",
+                  "text": "Get the Finisher's Claws from the red chest.",
+                  "check": true,
+                  "kind": "do",
+                  "note": "Changed since the video (08/13/2025): Finisher's Claws were delayed until after Rai Mei."
+                },
+                {
+                  "id": "hikari-ch-4-1-0c87b8",
+                  "text": "Inquire Georges Lazuli.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-4-1-2bb37b",
+                  "text": "Warp to Sai.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-4-1-19d801",
+                  "text": "Go to Ku.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "hikari-ch-5",
+          "title": "Hikari Ch. 5",
+          "mark": "1:21:53",
+          "seconds": 4913,
+          "blocks": [
+            {
+              "id": "hikari-ch-5-b1",
+              "title": "Hikari Ch. 5",
+              "kind": "menu",
+              "when": "Before fighting Ritsu",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-5-1-ada6e6",
+                  "text": "Give Finisher's Claws to Hikari (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "note": "whichever slot the champion's belt isn't in",
+                  "ctx": "Inventory"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-5-b2",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-5-1-14e367",
+                  "text": "Rest at the inn if Hikari died since the assassins fight (you'll know he died if his LP bar isn't near full)",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-5-1-2bb7f3",
+                  "text": "Fight Ritsu at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-5-b3",
+              "title": "Ritsu",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-5-1-8d6297",
+                  "text": "Throne — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-5-1-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-5-1-a0d4ee",
+                  "text": "Castti — Bow x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-5-1-cfe886",
+                  "text": "Temenos — Critical Scope [<]",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-5-1-a0359c",
+                  "text": "Throne — Spear / Bow x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "hikari-ch-5-1-f79474",
+                  "text": "Hikari — Conqueror's Sword x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "hikari-ch-5-1-eddb33",
+                  "text": "Castti — Abating Orb",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-5-b4",
+              "title": "Mugen",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-5-1-eb49dd",
+                  "text": "Throne — Spear x3 [<]",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-5-2-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-5-1-7b0e9d",
+                  "text": "Castti — Axe x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-5-1-b975db",
+                  "text": "Temenos — Critical Scope",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-5-2-f79474",
+                  "text": "Hikari — Conqueror's Sword x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "hikari-ch-5-2-eddb33",
+                  "text": "Castti — Abating Orb",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-5-b5",
+              "title": "\"Hikari\"",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-5-1-8ec5fe",
+                  "text": "Turn 1 — Aggressive Slash x2",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-5-1-327e3b",
+                  "text": "Turn 2 — Defend",
+                  "check": true,
+                  "kind": "do",
+                  "note": "using slowing sweep here raises the odds of getting a hienka crit to 93.75%"
+                },
+                {
+                  "id": "hikari-ch-5-1-e30026",
+                  "text": "Turn 3 — Aggressive Slash",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-5-1-d99259",
+                  "text": "Turn 4 — Hienka x4 (non crit is 8k damage, crit is 15k)",
+                  "check": true,
+                  "kind": "do",
+                  "note": "75% chance to get at least 1 crit",
+                  "warn": true
+                },
+                {
+                  "id": "hikari-ch-5-1-a9175c",
+                  "text": "T4-a — Thunder Soulstone (L) / Defend (if you got a Hienka crit)",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-5-1-7c1a39",
+                  "text": "Turn 5 — Sword x4",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-5-b6",
+              "title": "Enshrouded King",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-5-1-ee054c",
+                  "text": "Throne — Spear / Bow x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-5-3-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-5-1-832da9",
+                  "text": "Castti — Concoct x3",
+                  "check": true,
+                  "kind": "fight",
+                  "lines": [
+                    "Blusterbloom x4"
+                  ],
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-5-1-a4daf9",
+                  "text": "Temenos — Staff x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "hikari-ch-5-1-d31835",
+                  "text": "Throne — Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "hikari-ch-5-3-f79474",
+                  "text": "Hikari — Conqueror's Sword x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "hikari-ch-5-1-e7ac11",
+                  "text": "Castti — Concoct → Hikari",
+                  "check": true,
+                  "kind": "fight",
+                  "lines": [
+                    "Weeds",
+                    "Mighty Leaf"
+                  ],
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "hikari-ch-5-2-b975db",
+                  "text": "Temenos — Critical Scope",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "hikari-ch-5-1-0aa391",
+                  "text": "In place of weeds, can use anything that isn't the warding leaf to remove it from the concoct inventory. You need to leave 1 \"junk\" item for galdy, which is usually the grape leaf. This is completely optional.",
+                  "check": false,
+                  "kind": "note",
+                  "ctx": "Notes"
+                }
+              ]
+            },
+            {
+              "id": "hikari-ch-5-b7",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "hikari-ch-5-1-8b44fc",
+                  "text": "Steal 2 Whimsical Leaves and a Light Soulstone (M) from the merchant to the right.",
+                  "check": true,
+                  "kind": "do",
+                  "note": "skip the soulstone if you didn't need to use the thunder L"
+                },
+                {
+                  "id": "hikari-ch-5-1-bbcf89",
+                  "text": "Steal the Fortifying Nut and Magic Nut from the man on the right blocking the alley.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-5-1-a33c33",
+                  "text": "Steal the Unerring Bracelet from the quest NPC outside the tavern.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-5-1-80edba",
+                  "text": "Go to the tavern.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "hikari-ch-5-1-81c526",
+                  "text": "Partitio · Temenos",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "hikari-ch-5-1-250c37",
+                  "text": "Set Slot 4 to Partitio. Set Slot 4 to Temenos",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "hikari-ch-5-1-1bf0b7",
+                  "text": "Temenos · Partitio",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "hikari-ch-5-1-481bc4",
+                  "text": "Warp to Crackridge Harbour: Anchorage.",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "hikari-ch-5-1-cb5697",
+                  "text": "Steal the Giant Shield and purchase the Battle-Tested Blade from Bandelam.",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "hikari-ch-5-1-de5388",
+                  "text": "Warp to Winterbloom.",
+                  "check": true,
+                  "kind": "party"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "castti-ch-2-winterbloom-route",
+          "title": "Castti Ch. 2: Winterbloom Route",
+          "mark": "1:29:00",
+          "seconds": 5340,
+          "blocks": [
+            {
+              "id": "castti-ch-2-winterbloom-route-b1",
+              "title": "Castti Ch. 2: Winterbloom Route",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "castti-ch-2-winterbloom-route-1-720e3b",
+                  "text": "Inquire the man in blue in the tavern for \"Easier Inquiries\".",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Winterbloom"
+                }
+              ]
+            },
+            {
+              "id": "castti-ch-2-winterbloom-route-b2",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "Before Plukk",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "castti-ch-2-winterbloom-route-1-353005",
+                  "text": "Give Battle-Tested Blade to Hikari",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "castti-ch-2-winterbloom-route-1-d220cf",
+                  "text": "Then — 2 Fortifying Nuts",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "castti-ch-2-winterbloom-route-1-3556f9",
+                  "text": "Castti — Inventor [v2]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "castti-ch-2-winterbloom-route-1-3d75a7",
+                  "text": "Throne — Merchant: 2 Merchant skills",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "castti-ch-2-winterbloom-route-1-7dccd0",
+                  "text": "Throne — Hunter Take Aim [v3], Abating Orb",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "castti-ch-2-winterbloom-route-1-4f6930",
+                  "text": "Throne — Equip Full Power over Boost-Start (Slot 3)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            },
+            {
+              "id": "castti-ch-2-winterbloom-route-b3",
+              "title": "Winterbloom: Thieves' Quarters",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "castti-ch-2-winterbloom-route-1-8a853e",
+                  "text": "Inquire the man guarding the door in the Thieves' Quarters for \"Thieving Tips and Tricks\".",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "castti-ch-2-winterbloom-route-1-a92679",
+                  "text": "Fight Plukk at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "castti-ch-2-winterbloom-route-b4",
+              "title": "Plukk",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "castti-ch-2-winterbloom-route-1-5e716d",
+                  "text": "Hikari — Divine Dual-Edge x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                }
+              ]
+            },
+            {
+              "id": "castti-ch-2-winterbloom-route-b5",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "castti-ch-2-winterbloom-route-1-d45c83",
+                  "text": "After finishing the chapter, warp to Abandoned Village.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "castti-ch-3",
+          "title": "Castti Ch. 3",
+          "mark": "1:31:00",
+          "seconds": 5460,
+          "blocks": [
+            {
+              "id": "castti-ch-3-b1",
+              "title": "Castti Ch. 3",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "castti-ch-3-1-45cc3c",
+                  "text": "After finishing the chapter, warp to Timberain.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "castti-ch-4",
+          "title": "Castti Ch. 4",
+          "mark": "1:33:00",
+          "seconds": 5580,
+          "blocks": [
+            {
+              "id": "castti-ch-4-b1",
+              "title": "Castti Ch. 4",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "castti-ch-4-1-35129d",
+                  "text": "Bribe the soldier with a helmet near the entrance to town on the way to the tavern.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "castti-ch-4-1-5e5df7",
+                  "text": "After it starts raining, go to the provisioner.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "castti-ch-4-b2",
+              "title": "Armourer",
+              "kind": "shop",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "castti-ch-4-1-b404b5",
+                  "text": "Sell Conqueror's Sword",
+                  "check": true,
+                  "kind": "shop"
+                },
+                {
+                  "id": "castti-ch-4-1-14c4d2",
+                  "text": "Sell Drifting Dagger",
+                  "check": true,
+                  "kind": "shop"
+                },
+                {
+                  "id": "castti-ch-4-1-940b35",
+                  "text": "Sell Bow of Carnage",
+                  "check": true,
+                  "kind": "shop"
+                },
+                {
+                  "id": "castti-ch-4-1-5dc68b",
+                  "text": "Buy 7 Strengthening Serum",
+                  "check": true,
+                  "kind": "shop"
+                },
+                {
+                  "id": "castti-ch-4-1-c8d2e2",
+                  "text": "Buy 1 Diffusing Serum",
+                  "check": true,
+                  "kind": "shop"
+                }
+              ]
+            },
+            {
+              "id": "castti-ch-4-b3",
+              "title": "Go to the armourer.",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "castti-ch-4-1-02e1b4",
+                  "text": "Go to the armourer.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "castti-ch-4-b4",
+              "title": "Armourer",
+              "kind": "shop",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "castti-ch-4-1-edfea1",
+                  "text": "Buy 4 Empowering Bracelet",
+                  "check": true,
+                  "kind": "shop"
+                },
+                {
+                  "id": "castti-ch-4-1-c6a4a3",
+                  "text": "Buy 2 Royal Guard's Mail",
+                  "check": true,
+                  "kind": "shop"
+                },
+                {
+                  "id": "castti-ch-4-1-2123a3",
+                  "text": "Buy Royal Guard's Helm",
+                  "check": true,
+                  "kind": "shop"
+                }
+              ]
+            },
+            {
+              "id": "castti-ch-4-b5",
+              "title": "Purchase the Blessed Vestments from the judge in the inn.",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "castti-ch-4-1-1c50a0",
+                  "text": "Get the Wind Soulstone (L) from the chest to the left of the castle entrance.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "castti-ch-4-1-c79d17",
+                  "text": "Fight Trousseau at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "castti-ch-4-b6",
+              "title": "Trousseau",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "castti-ch-4-1-8de399",
+                  "text": "Throne — Latent Power + Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "castti-ch-4-1-dd4ac4",
+                  "text": "Throne — Abating Orb",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "castti-ch-4-1-ea2633",
+                  "text": "Hikari — Slowing Sweep",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "castti-ch-4-1-4b9af3",
+                  "text": "Castti — Axe x3 / Defend (need at least one defend)",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "castti-ch-4-1-25d233",
+                  "text": "Partitio — Spear x3 / Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "castti-ch-4-1-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "castti-ch-4-1-0a311c",
+                  "text": "Castti / Partitio — Axe / Spear x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "castti-ch-4-1-96a74d",
+                  "text": "Osvald · Throne",
+                  "check": false,
+                  "kind": "note",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "castti-ch-4-1-f2de05",
+                  "text": "After finishing the chapter, warp to New Delsta.",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "castti-ch-4-1-80edba",
+                  "text": "Go to the tavern.",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "castti-ch-4-1-1bf0b7",
+                  "text": "Temenos · Partitio",
+                  "check": false,
+                  "kind": "note",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "castti-ch-4-1-78ad47",
+                  "text": "Set Slot 3 to Agnea. Set Slot 4 to Partitio",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "castti-ch-4-1-509d99",
+                  "text": "Hear a Tale",
+                  "check": true,
+                  "kind": "party"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "agnea-ch-2",
+          "title": "Agnea Ch. 2",
+          "mark": "1:42:00",
+          "seconds": 6120,
+          "blocks": [
+            {
+              "id": "agnea-ch-2-b1",
+              "title": "Agnea Ch. 2",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-2-1-ebc766",
+                  "text": "After the cutscene outside the theatre, warp to Beasting Bay: Anchorage..",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-08cfd3",
+                  "text": "Get the Fortune Wand from the chest to the north.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-baf3e6",
+                  "text": "Go to Curious Nest.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-3b79ec",
+                  "text": "Fight the Battle-Worn Shark at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-2-b2",
+              "title": "Battle-Worn Shark",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-2-1-d31835",
+                  "text": "Throne — Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-2-1-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-2-1-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-2-b3",
+              "title": "Fight Tyrannodrake at night.",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "agnea-ch-2-1-8f3c27",
+                  "text": "Fight Tyrannodrake at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-2-b4",
+              "title": "Tyrannodrake",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-2-1-8de399",
+                  "text": "Throne — Latent Power + Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-2-1-8d6297",
+                  "text": "Throne — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-2-1-0dfafc",
+                  "text": "Hikari — Sixfold Strike",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-2-1-f6a5d4",
+                  "text": "Castti — Critical Scope",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-2-1-8fa5c4",
+                  "text": "Throne — Precise Shot x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "agnea-ch-2-2-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-2-b5",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-2-1-aa0e83",
+                  "text": "Get the 2 Decaying Dragon's Essences, Fang of Ferocity and Tornado Glaive.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-f06d87",
+                  "text": "Warp to Beasting Bay: Anchorage.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-ee9a04",
+                  "text": "Get the Reinforcing Jam on the way to Scourge of the Sea.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-2041b2",
+                  "text": "Fight the Scourge of the Sea at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-2-b6",
+              "title": "Scourge of the Sea",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-2-2-d31835",
+                  "text": "Throne — Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-2-2-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-2-2-f6a5d4",
+                  "text": "Castti — Critical Scope",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-2-3-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-2-b7",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-2-1-f4fcfe",
+                  "text": "Warp to New Delsta.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-1f6365",
+                  "text": "Entreat the Theatre Ticket.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-2e1196",
+                  "text": "Entreat the Fortifying Nut (M) and Nourishing Nut (M) from the man near the tavern entrance.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-d9ec4f",
+                  "text": "After alluring both NPCs on the second screen to Gil, warp to Winterbloom.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-391752",
+                  "text": "Entreat the Fortifying Nut (L) from the soldier.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-98dff4",
+                  "text": "Steal the Lightning Amulet and Dazzling Artwork from Greg up the stairs.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-ac054e",
+                  "text": "Steal the Thick Tome and Brooch of Joy from Melia. (brooch should be 55%, else you forgot to inquire thieving tips and tricks)",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-2-b8",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "Before La'mani",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-2-1-91407d",
+                  "text": "Give Brooch of Joy to Castti (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "agnea-ch-2-1-773aa2",
+                  "text": "Then — Fortifying Nut (L)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "agnea-ch-2-1-980641",
+                  "text": "Castti — Unequip A Step Ahead (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-2-b9",
+              "title": "Warp to New Delsta.",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-2-1-31d793",
+                  "text": "Steal the Sprightly Ring from the topmost of the trio of 3 NPCs near the entrance.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-f1edab",
+                  "text": "Allure the woman on the way back to the tavern.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-8edcaf",
+                  "text": "Get the Lightning Amulet in the top floor on the first screen in the theatre.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-1dfd88",
+                  "text": "Fight La'mani in the day.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-2-b10",
+              "title": "La'mani",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-2-1-2971e0",
+                  "text": "Hikari — Shinjumonjigiri x2",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-2-1-dff3b7",
+                  "text": "Ochette · Hikari",
+                  "check": false,
+                  "kind": "note",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-2-1-c82f3a",
+                  "text": "Talk to Al to complete \"The Traveler's Bag\".",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-ddcaac",
+                  "text": "Warp to Tropu'hopu.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-30ef95",
+                  "text": "Start Agnea Ch. 3.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-2-1-e0591e",
+                  "text": "After the cutscene on the next screen, warp to Montwise.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "throne-ch-3-father-s-route",
+          "title": "Throne Ch. 3: Father's Route",
+          "mark": "1:46:00",
+          "seconds": 6360,
+          "blocks": [
+            {
+              "id": "throne-ch-3-father-s-route-b1",
+              "title": "Throne Ch. 3: Father's Route",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "throne-ch-3-father-s-route-1-e04c85",
+                  "text": "Fight Father at night.",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Abandoned Church"
+                }
+              ]
+            },
+            {
+              "id": "throne-ch-3-father-s-route-b2",
+              "title": "Father",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "throne-ch-3-father-s-route-1-e434e0",
+                  "text": "Throne — Latent Power + Abating Orb",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "throne-ch-3-father-s-route-1-d31835",
+                  "text": "Throne — Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "throne-ch-3-father-s-route-1-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "throne-ch-3-father-s-route-1-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "throne-ch-3-father-s-route-b3",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "throne-ch-3-father-s-route-1-ddcaac",
+                  "text": "Warp to Tropu'hopu.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "agnea-ch-3",
+          "title": "Agnea Ch. 3",
+          "mark": "1:47:00",
+          "seconds": 6420,
+          "blocks": [
+            {
+              "id": "agnea-ch-3-b1",
+              "title": "Agnea Ch. 3",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-3-1-1cf256",
+                  "text": "After finishing the chapter, warp to Sai.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "agnea-ch-4",
+          "title": "Agnea Ch. 4",
+          "mark": "1:49:00",
+          "seconds": 6540,
+          "blocks": [
+            {
+              "id": "agnea-ch-4-b1",
+              "title": "Agnea Ch. 4",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-4-1-2810c6",
+                  "text": "Steal the Reinforcing Jam from the lady down the stairs if you needed to use one after Yurinas.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-4-1-6094e6",
+                  "text": "Grab the Wind Whisperer from the first red chest.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-4-1-13e654",
+                  "text": "Fight Veronica at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-4-b2",
+              "title": "Veronica",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-4-1-d31835",
+                  "text": "Throne — Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-4-1-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-4-1-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-4-b3",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-4-1-a6526f",
+                  "text": "After finishing the chapter, warp to Ryu.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-4-1-96a74d",
+                  "text": "Osvald · Throne",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "agnea-ch-4-1-5b187f",
+                  "text": "The Dancer & Warrior, Part 1",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-4-1-0e83e6",
+                  "text": "While waiting for the next day, go to the tavern.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-4-b4",
+              "title": "Tavern",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-4-1-51dd5d",
+                  "text": "Set Slot 3 to Partitio. Set Slot 3 to Castti",
+                  "check": true,
+                  "kind": "party"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-4-b5",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-4-1-533e07",
                   "text": "Go to the provisioner.",
                   "check": true,
                   "kind": "do"
@@ -3759,61 +4970,574 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b782",
+              "id": "agnea-ch-4-b6",
               "title": "Provisioner",
               "kind": "shop",
               "solo": false,
               "steps": [
                 {
-                  "id": "r784",
-                  "text": "Sell Poetry of the Soul",
+                  "id": "agnea-ch-4-1-1ccffd",
+                  "text": "Buy Blusterbloom x22",
                   "check": true,
                   "kind": "shop"
                 },
                 {
-                  "id": "r786",
-                  "text": "Buy 8 Strengthening Serum",
+                  "id": "agnea-ch-4-1-72ed62",
+                  "text": "Sell Thick Tome",
+                  "check": true,
+                  "kind": "shop"
+                },
+                {
+                  "id": "agnea-ch-4-1-ac4258",
+                  "text": "Sell Dazzling Artwork",
+                  "check": true,
+                  "kind": "shop"
+                },
+                {
+                  "id": "agnea-ch-4-1-d593f1",
+                  "text": "Sell Lost Tribe's Blade",
                   "check": true,
                   "kind": "shop"
                 }
               ]
             },
             {
-              "id": "b788",
-              "title": "Sanctum Knight",
-              "kind": "fight",
+              "id": "agnea-ch-4-b7",
+              "title": "After finishing the chapter, warp to Roque Island.",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "agnea-ch-4-1-7605c9",
+                  "text": "After finishing the chapter, warp to Roque Island.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "partitio-ch-4",
+          "title": "Partitio Ch. 4",
+          "mark": "1:50:00",
+          "seconds": 6600,
+          "blocks": [
+            {
+              "id": "partitio-ch-4-b1",
+              "title": "Partitio Ch. 4",
+              "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r789",
-                  "text": "Turn 1 — Ice Soulstone (M)",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r790",
-                  "text": "Turn 2 — Defend",
+                  "id": "partitio-ch-4-1-cdd66b",
+                  "text": "After the cutscene on the next screen, steal the Energising Pomegranate (M), Energising Pomegranate (L), and Wind Soulstone (M) from the man outside the inn.",
                   "check": true,
                   "kind": "do",
-                  "note": "3.5% chance to die to crit here if sanctum knight goes first",
-                  "warn": true
+                  "ctx": "Roque Island"
                 },
                 {
-                  "id": "r791",
-                  "text": "Turn 3 — Tera",
+                  "id": "partitio-ch-4-1-818454",
+                  "text": "Rest at the inn if Partitio doesn't have latent power.",
                   "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "ctx": "Roque Island"
+                },
+                {
+                  "id": "partitio-ch-4-1-45241f",
+                  "text": "Bribe the man on the right northeast of the statue.",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Roque Island"
+                },
+                {
+                  "id": "partitio-ch-4-1-a12603",
+                  "text": "Talk to the tavern keeper.",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Roque Island"
                 }
               ]
             },
             {
-              "id": "b793",
-              "title": "Overworld",
+              "id": "partitio-ch-4-b2",
+              "title": "Tavern",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "partitio-ch-4-1-0f92a5",
+                  "text": "Set Slot 3 to Castti. Set Slot 4 to Agnea",
+                  "check": true,
+                  "kind": "party"
+                }
+              ]
+            },
+            {
+              "id": "partitio-ch-4-b3",
+              "title": "Get the Critical Nut (L).",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r794",
+                  "id": "partitio-ch-4-1-6e3e82",
+                  "text": "In the East Tower, hear travel banter just before going down the stairs to the floor with the books.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-4-1-dc278c",
+                  "text": "Fight the Steam Tank at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "partitio-ch-4-b4",
+              "title": "Steam Tank Obsidian",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "partitio-ch-4-1-7f54f6",
+                  "text": "Throne — Latent Power + Abating Orb → Steam Tank",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "partitio-ch-4-1-108a46",
+                  "text": "Throne — Take Aim",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "partitio-ch-4-1-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "partitio-ch-4-1-1a6f51",
+                  "text": "Partitio — HHR x2",
+                  "check": true,
+                  "kind": "fight",
+                  "note": "debuffing the parts gets overkill",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "partitio-ch-4-1-43fc5b",
+                  "text": "Hikari — Shinjumonjigiri x4 → Steam Tank",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "partitio-ch-4-b5",
+              "title": "Clockbank",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "partitio-ch-4-1-8c8056",
+                  "text": "After finishing the chapter, steal the Light Nut (M) from the man near the entrance.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-4-1-9fbb5f",
+                  "text": "Warp to Oresrush.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-4-1-52f067",
+                  "text": "Purchase the Battle-Tested Staff from Roque.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-4-1-6fad35",
+                  "text": "Warp to Conning Creek.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-4-1-00e1ac",
+                  "text": "Steal the Critical Nut (L) from the old man in the tavern.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-4-2-a12603",
+                  "text": "Talk to the tavern keeper.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "partitio-ch-4-1-a11aaa",
+                  "text": "Temenos · Castti",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "partitio-ch-4-1-1953f2",
+                  "text": "Set Slot 2 to Ochette. Set Slot 3 to Partitio",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "partitio-ch-4-1-509d99",
+                  "text": "Hear a Tale",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "partitio-ch-4-1-fd31f2",
+                  "text": "Ochette Ch. 2: Cateracta's Route",
+                  "check": true,
+                  "kind": "party"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ochette-ch-2-cateracta-s-route",
+          "title": "Ochette Ch. 2: Cateracta's Route",
+          "mark": "1:55:00",
+          "seconds": 6900,
+          "blocks": [
+            {
+              "id": "ochette-ch-2-cateracta-s-route-b1",
+              "title": "Ochette Ch. 2: Cateracta's Route",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-63dd2f",
+                  "text": "Steal the Sharp Nut and Light Nut from the lady to the right on the way to Alpione.",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Conning Creek: Harbour"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-2-cateracta-s-route-b2",
+              "title": "Alpione",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-08a97c",
+                  "text": "Turn 1 — Soulstone (M)",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-2-cateracta-s-route-b3",
+              "title": "Conning Creek: Harbour",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-9cac78",
+                  "text": "After finishing the chapter, warp to Crackridge.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-63a4dc",
+                  "text": "Start Ochette Ch. 2: Tera's Route.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-2-cateracta-s-route-b4",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "Before leaving Crackridge",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-2b3a18",
+                  "text": "Hikari — Scholar [^3]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-b37d60",
+                  "text": "Ochette — Armsmaster [v1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-e12509",
+                  "text": "Castti — Unequip Evasive Manoeuvres (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-2-cateracta-s-route-b5",
+              "title": "Leave town to the west and hunt for Buttermeep at night.",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-010387",
+                  "text": "Leave town to the west and hunt for Buttermeep at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-2-cateracta-s-route-b6",
+              "title": "Buttermeep",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-cea8bc",
+                  "text": "Anyone — Attack (Hikari uses spear)",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-0ee040",
+                  "text": "Ochette — Defend / Capture",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-f9e6ad",
+                  "text": "Anyone — Flee",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-2-cateracta-s-route-b7",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "After capturing the Buttermeep",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-03b4cd",
+                  "text": "Ochette — Optimize",
+                  "check": true,
+                  "kind": "menu",
+                  "note": "Equips Wind Whisperer, Tornado Glaive, Royal Guard's Mail",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-eab8fd",
+                  "text": "Castti — Equip Evasive Manoeuvres (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-2-cateracta-s-route-b8",
+              "title": "Ochette: Monster Roster",
+              "kind": "setup",
+              "when": "Before returning to Crackridge",
+              "solo": false,
+              "steps": []
+            },
+            {
+              "id": "ochette-ch-2-cateracta-s-route-b9",
+              "title": "After catching the Buttermeep, warp to Crackridge (can also walk back if close enough).",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-cateracta-s-route-1-18f49b",
+                  "text": "After catching the Buttermeep, warp to Crackridge (can also walk back if close enough).",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ochette-ch-2-tera-s-route",
+          "title": "Ochette Ch. 2: Tera's Route",
+          "mark": "2:00:00",
+          "seconds": 7200,
+          "blocks": [
+            {
+              "id": "ochette-ch-2-tera-s-route-b1",
+              "title": "Ochette Ch. 2: Tera's Route",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-tera-s-route-1-1d1495",
+                  "text": "Before going to the Bed of the Titan, challenge the old lady near the east exit.",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Crackridge"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-2-tera-s-route-b2",
+              "title": "Elderly Woman",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-tera-s-route-1-97c621",
+                  "text": "Hikari — Sword",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-2-tera-s-route-b3",
+              "title": "Learn Vacant Stare.",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-tera-s-route-1-06c94b",
+                  "text": "Ambush the scholar at the bottom right of the town.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "ochette-ch-2-tera-s-route-1-a4c132",
+                  "text": "Get From the Far Reaches of Hell.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "ochette-ch-2-tera-s-route-1-f2882a",
+                  "text": "Go to Bed of the Titan.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "ochette-ch-2-tera-s-route-1-8fa4b7",
+                  "text": "Fight Tera at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-2-tera-s-route-b4",
+              "title": "Tera",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-tera-s-route-1-d31835",
+                  "text": "Throne — Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "ochette-ch-2-tera-s-route-1-bceb68",
+                  "text": "Hikari — Defend / Shinjumonjigiri x3 (if after Throne)",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "ochette-ch-2-tera-s-route-1-78d939",
+                  "text": "Hikari — Shinjumonjigiri x3 (if not done already)",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-2-tera-s-route-b5",
+              "title": "After finishing the chapter, warp to Stormhail.",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-tera-s-route-1-6bc564",
+                  "text": "After finishing the chapter, warp to Stormhail.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "ochette-ch-2-glacis-s-route",
+          "title": "Ochette Ch. 2: Glacis's Route",
+          "mark": "2:05:00",
+          "seconds": 7500,
+          "blocks": [
+            {
+              "id": "ochette-ch-2-glacis-s-route-b1",
+              "title": "Ochette Ch. 2: Glacis's Route",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-glacis-s-route-1-b89570",
+                  "text": "Turn 1 — Thunder Soulstone (L) (if you still have it) or Soulstone (M)",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Sanctum Knight"
+                },
+                {
+                  "id": "ochette-ch-2-glacis-s-route-1-327e3b",
+                  "text": "Turn 2 — Defend",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Sanctum Knight"
+                },
+                {
+                  "id": "ochette-ch-2-glacis-s-route-1-2232c1",
+                  "text": "Turn 3 — Tera",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Sanctum Knight"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-2-glacis-s-route-b2",
+              "title": "Fight Glacis at night.",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "ochette-ch-2-glacis-s-route-1-3639da",
                   "text": "Fight Glacis at night.",
                   "check": true,
                   "kind": "do"
@@ -3821,21 +5545,28 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b796",
+              "id": "ochette-ch-2-glacis-s-route-b3",
               "title": "Glacis",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r798",
-                  "text": "Throne — Defend",
+                  "id": "ochette-ch-2-glacis-s-route-1-d31835",
+                  "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r800",
-                  "text": "Throne — HP Thief x4",
+                  "id": "ochette-ch-2-glacis-s-route-1-bceb68",
+                  "text": "Hikari — Defend / Shinjumonjigiri x3 (if after Throne)",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "ochette-ch-2-glacis-s-route-1-78d939",
+                  "text": "Hikari — Shinjumonjigiri x3 (if not done already)",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
@@ -3843,233 +5574,13 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b802",
-              "title": "Overworld",
+              "id": "ochette-ch-2-glacis-s-route-b4",
+              "title": "After finishing the chapter, warp to Beasting Village.",
               "kind": "travel",
-              "solo": false,
+              "solo": true,
               "steps": [
                 {
-                  "id": "r803",
-                  "text": "Warp to Montwise.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b805",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before Harvey's Creatures",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r808",
-                  "text": "Throne — Thief: Aeber's Reckoning [^2]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r809",
-                  "text": "Throne — Dancer Dagger Dance [^3]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r811",
-                  "text": "Osvald — Unequip A Step Ahead (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r812",
-                  "text": "Ochette — Unequip A Step Ahead (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "osvald-ch-4-814",
-          "title": "Osvald Ch. 4",
-          "blocks": [
-            {
-              "id": "b814",
-              "title": "Osvald Ch. 4",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r816",
-                  "text": "Enter the library.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r817",
-                  "text": "Talk to the Unusual Tome Specialist (quest NPC on the left) to complete \"Procuring Peculiar Tomes\".",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r818",
-                  "text": "Scrutinise the first story NPC on the left. Infinite tries when scrutinising.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r819",
-                  "text": "Talk to Al on the right side of the library to complete \"From the Far Reaches of Hell\". You may need to switch time to make him show up (also ensure you completed \"The Traveller's Bag\")",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r820",
-                  "text": "Scrutinise the other 2 story NPCs.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b822",
-              "title": "Underground Laboratory",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r823",
-                  "text": "Hear the travel banter at the third door in the long corridor.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r824",
-                  "text": "Switch to night before entering the room after the save point (keep it night until the boss).",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b826",
-              "title": "Harvey's Creatures",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r827",
-                  "text": "Throne — Dagger Dance x2",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b829",
-              "title": "Grieving Golem",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r831",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r833",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b835",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r836",
-                  "text": "Steal the Magic Nut (M) from the merchant.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r837",
-                  "text": "Go to the tavern. Reset reputation if needed.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b839",
-              "title": "Tavern",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r842",
-                  "text": "Set Slot 3 to Castti. Set Slot 4 to Osvald",
-                  "check": true,
-                  "kind": "party"
-                }
-              ]
-            },
-            {
-              "id": "b844",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r845",
-                  "text": "Warp to Conning Creek.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "ochette-ch-2-cateracta-s-route-847",
-          "title": "Ochette Ch. 2: Cateracta's Route",
-          "blocks": [
-            {
-              "id": "b847",
-              "title": "Ochette Ch. 2: Cateracta's Route",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r849",
-                  "text": "Turn 1 — Fire Soulstone (M)",
-                  "check": true,
-                  "kind": "do",
-                  "ctx": "Alpione"
-                }
-              ]
-            },
-            {
-              "id": "b851",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r852",
+                  "id": "ochette-ch-2-glacis-s-route-1-c29678",
                   "text": "After finishing the chapter, warp to Beasting Village.",
                   "check": true,
                   "kind": "do"
@@ -4079,379 +5590,682 @@ export const route: RouteData = {
           ]
         },
         {
-          "id": "ochette-ch-3-854",
+          "id": "ochette-ch-3",
           "title": "Ochette Ch. 3",
+          "mark": "2:08:00",
+          "seconds": 7680,
           "blocks": [
             {
-              "id": "b854",
+              "id": "ochette-ch-3-b1",
               "title": "Ochette Ch. 3",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r856",
-                  "text": "Fight the Shadowy Monsters at night.",
+                  "id": "ochette-ch-3-1-876766",
+                  "text": "On the way to Juvah, steal the Fortifying Nut from the beastling guarding the house.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "ochette-ch-3-1-c63de8",
+                  "text": "Fight the Shadowy Monsters during the day.",
                   "check": true,
                   "kind": "do"
                 }
               ]
             },
             {
-              "id": "b858",
+              "id": "ochette-ch-3-b2",
               "title": "Shadowy Monsters",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r859",
-                  "text": "Throne — Dagger Dance x2",
+                  "id": "ochette-ch-3-1-5e716d",
+                  "text": "Hikari — Divine Dual-Edge x3",
                   "check": true,
                   "kind": "do"
                 }
               ]
             },
             {
-              "id": "b861",
+              "id": "ochette-ch-3-b3",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r862",
+                  "id": "ochette-ch-3-1-2b5959",
                   "text": "Get the Tornado Bow after crossing the bridge at Stormy Cape.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r863",
-                  "text": "Kill the encounter at night with Dagger Dance x2. Dagger Dance x4 during day works too.",
+                  "id": "ochette-ch-3-1-301023",
+                  "text": "Kill the encounter in the day with Divine Dual-Edge x3.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "ochette-ch-3-1-6c5fe5",
+                  "text": "Switch to night before fighting Lajackal.",
                   "check": true,
                   "kind": "do"
                 }
               ]
             },
             {
-              "id": "b865",
+              "id": "ochette-ch-3-b4",
               "title": "Menu",
               "kind": "menu",
-              "when": "After killing the encounter",
+              "when": "Before fighting Lajackal",
               "solo": false,
               "steps": [
                 {
-                  "id": "r868",
-                  "text": "Throne — Scholar [v2]",
+                  "id": "ochette-ch-3-1-d4df45",
+                  "text": "Give Tornado Bow to Ochette",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "ochette-ch-3-1-bf976a",
+                  "text": "Throne — Thief Aeber's Reckoning",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Learn Skills"
+                },
+                {
+                  "id": "ochette-ch-3-1-611a9b",
+                  "text": "Ochette — Hunter Leghold Trap",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Learn Skills"
+                },
+                {
+                  "id": "ochette-ch-3-1-696bcb",
+                  "text": "Castti — Equip A Step Ahead over Boost-Start (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-3-b5",
+              "title": "Lajackal of the Sorrowful Moon",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-3-1-8de399",
+                  "text": "Throne — Latent Power + Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "ochette-ch-3-1-dd4ac4",
+                  "text": "Throne — Abating Orb",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "ochette-ch-3-1-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "ochette-ch-3-1-f6a5d4",
+                  "text": "Castti — Critical Scope",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "ochette-ch-3-1-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "ochette-ch-3-b6",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "ochette-ch-3-1-c05ffc",
+                  "text": "After finishing the chapter, warp to Cropdale.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "the-apothecary-hunter-part-1",
+          "title": "The Apothecary & Hunter, Part 1",
+          "mark": "2:11:00",
+          "seconds": 7860,
+          "blocks": [
+            {
+              "id": "the-apothecary-hunter-part-1-b1",
+              "title": "The Apothecary & Hunter, Part 1",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-1-1-38a592",
+                  "text": "Fight the Dire Duorduor during the day.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "the-apothecary-hunter-part-1-b2",
+              "title": "Dire Duorduor",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-1-1-e74ce0",
+                  "text": "Hikari — Sword x3",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-1-1-1222ac",
+                  "text": "Partitio · Hikari",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-1-1-c05ffc",
+                  "text": "After finishing the chapter, warp to Cropdale.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "the-apothecary-hunter-part-2",
+          "title": "The Apothecary & Hunter, Part 2",
+          "mark": "2:12:30",
+          "seconds": 7950,
+          "blocks": [
+            {
+              "id": "the-apothecary-hunter-part-2-b1",
+              "title": "The Apothecary & Hunter, Part 2",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-2-1-9f4c40",
+                  "text": "Turn 1 — Wind Soulstone (L)",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Wriggling Shadow"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-e64400",
+                  "text": "Turn 2 — Wind Soulstone (L)",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Wriggling Shadow"
+                }
+              ]
+            },
+            {
+              "id": "the-apothecary-hunter-part-2-b2",
+              "title": "Creeping Shadow",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-2-1-d31835",
+                  "text": "Throne — Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "the-apothecary-hunter-part-2-b3",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-2-1-65dfd3",
+                  "text": "After finishing the chapter, warp to Gravell.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-98899d",
+                  "text": "Inquire/Bribe the hunter outside.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-47c095",
+                  "text": "Warp to Gravell.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-27e9fb",
+                  "text": "Steal the Empowering Lychee (L) and Sharp Nut (L) from the old man.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-a8e886",
+                  "text": "Steal the Tough Nut (L) from Alpione.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-30a9d1",
+                  "text": "Talk to Alpione twice to complete \"Alpione's Next Chapter\".",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-dcc20e",
+                  "text": "Warp to Merry Hills.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-7ae1ac",
+                  "text": "Steal the Quick Cloak from the lady in blue.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-24c832",
+                  "text": "Bribe the merchant in the provisioner.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-02e1b4",
+                  "text": "Go to the armourer.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "the-apothecary-hunter-part-2-b4",
+              "title": "Armourer",
+              "kind": "shop",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-2-1-0ade86",
+                  "text": "Buy Breaker's Blade",
+                  "check": true,
+                  "kind": "shop"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-0e58a6",
+                  "text": "Buy Swift Shield",
+                  "check": true,
+                  "kind": "shop"
+                }
+              ]
+            },
+            {
+              "id": "the-apothecary-hunter-part-2-b5",
+              "title": "Steal the Magic Nut (L) from the person under the bridge.",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-2-1-fa04b8",
+                  "text": "Warp to Wellgrove.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-b27701",
+                  "text": "Start Throne ch.3: Mother's Route.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-221140",
+                  "text": "Steal the Habit.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-80edba",
+                  "text": "Go to the tavern.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "the-apothecary-hunter-part-2-b6",
+              "title": "Tavern",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-2-1-7117af",
+                  "text": "Set Slot 3 to Agnea. Set Slot 3 to Ochette",
+                  "check": true,
+                  "kind": "party"
+                }
+              ]
+            },
+            {
+              "id": "the-apothecary-hunter-part-2-b7",
+              "title": "Entreat the Nourishing Nut (M) and Magic Nut (L) from the merchant outside the department store.",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-2-1-460792",
+                  "text": "Get the dancer licence.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "the-apothecary-hunter-part-2-b8",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "After getting the Dancer Licence",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-2-1-90b4f2",
+                  "text": "Castti — Dancer: 5 Dancer skills, Sealticge's Seduction [v3]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r869",
+                  "id": "the-apothecary-hunter-part-2-1-844c73",
+                  "text": "Castti — Warrior 5 Warrior skills [^2]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-170f1b",
                   "text": "Castti — Armsmaster [^2]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r870",
-                  "text": "Ochette — Dancer: Peacock Strut [^3]",
+                  "id": "the-apothecary-hunter-part-2-1-36752e",
+                  "text": "Agnea — Dancer: Peacock Strut",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r872",
-                  "text": "Castti — Equip A Step Ahead (Slot 2)",
+                  "id": "the-apothecary-hunter-part-2-1-912196",
+                  "text": "Agnea — Inventor [^3]",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Support Skills"
+                  "ctx": "Jobs"
                 },
                 {
-                  "id": "r873",
-                  "text": "Castti — Equip Deal More Damage (Slot 3)",
+                  "id": "the-apothecary-hunter-part-2-1-1abefe",
+                  "text": "Hikari — Thief: 5 Thief skills [v1]",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Support Skills"
+                  "ctx": "Jobs"
                 },
                 {
-                  "id": "r874",
-                  "text": "Temenos — Equip A Step Ahead (Slot 3)",
+                  "id": "the-apothecary-hunter-part-2-1-5cbbaa",
+                  "text": "Hikari — Dancer 5 Dancer skills, Sealticge's Seduction [^3]",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Support Skills"
+                  "ctx": "Jobs"
                 },
                 {
-                  "id": "r875",
-                  "text": "Ochette — Equip A Step Ahead (Slot 4)",
+                  "id": "the-apothecary-hunter-part-2-1-3d2444",
+                  "text": "Throne — Warrior: 5 Warrior skills [v3]",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Support Skills"
+                  "ctx": "Jobs"
                 },
                 {
-                  "id": "r877",
-                  "text": "Items — Magic Nuts (2L, 1M) → Castti",
+                  "id": "the-apothecary-hunter-part-2-1-3aedbe",
+                  "text": "Throne — Scholar [v4]",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Inventory"
-                },
-                {
-                  "id": "r878",
-                  "text": "Items — Rejuvenating Jam (Ochette)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Inventory"
-                },
-                {
-                  "id": "r879",
-                  "text": "Weapons — Giant's Club → Throne",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Inventory"
+                  "ctx": "Jobs"
                 }
               ]
             },
             {
-              "id": "b881",
-              "title": "Overworld",
+              "id": "the-apothecary-hunter-part-2-b9",
+              "title": "Get 2 more dancer licences.",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r882",
-                  "text": "Fight the Malamaowl at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b884",
-              "title": "Malamaowl of the Sorrowful Moon",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r886",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r887",
-                  "text": "Temenos — Abating Orb",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r889",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b891",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r892",
-                  "text": "Warp to Beasting Bay: Anchorage.",
+                  "id": "the-apothecary-hunter-part-2-1-27ebaa",
+                  "text": "Warp to Montwise.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r893",
-                  "text": "Go to Curious Nest.",
+                  "id": "the-apothecary-hunter-part-2-1-9bff70",
+                  "text": "Steal the Magic Nut (M) from the merchant.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r894",
-                  "text": "Fight both bosses at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b896",
-              "title": "Battle-Worn Shark",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r898",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r900",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b902",
-              "title": "Tyrannodrake",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r904",
-                  "text": "Throne — Energising Pomegranate (M) → Self",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r905",
-                  "text": "Ochette — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r906",
-                  "text": "Temenos — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r907",
-                  "text": "Castti — Sixfold Strike",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r909",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r910",
-                  "text": "Ochette — Bow x2",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r911",
-                  "text": "Temenos — Bow x2",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r913",
-                  "text": "Throne — HP Thief x3",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 3"
-                }
-              ]
-            },
-            {
-              "id": "b915",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r916",
-                  "text": "Get the 2 Decaying Dragon's Essences, Fang of Ferocity and Tornado Glaive.",
+                  "id": "the-apothecary-hunter-part-2-2-80edba",
+                  "text": "Go to the tavern.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r917",
-                  "text": "Warp to Oresrush.",
-                  "check": true,
-                  "kind": "do"
+                  "id": "the-apothecary-hunter-part-2-1-30eb87",
+                  "text": "Castti · Temenos",
+                  "check": false,
+                  "kind": "note"
                 },
                 {
-                  "id": "r918",
-                  "text": "Steal the Battle-Tested Staff from Roque.",
+                  "id": "the-apothecary-hunter-part-2-1-263b64",
+                  "text": "Set Slot 4 to Temenos. Set Slot 4 to Castti",
                   "check": true,
-                  "kind": "do"
+                  "kind": "party"
                 },
                 {
-                  "id": "r919",
-                  "text": "Warp to Gravell.",
+                  "id": "the-apothecary-hunter-part-2-1-11ee44",
+                  "text": "Set Slot 2 to Partitio. Set Slot 3 to Agnea",
                   "check": true,
-                  "kind": "do"
+                  "kind": "party"
                 },
                 {
-                  "id": "r920",
-                  "text": "Inquire the hunter outside.",
+                  "id": "the-apothecary-hunter-part-2-1-108088",
+                  "text": "Ochette — Unequip All",
                   "check": true,
-                  "kind": "do"
+                  "kind": "menu",
+                  "ctx": "Equipment"
                 },
                 {
-                  "id": "r921",
-                  "text": "Steal the Sharp Nut (L) from the old man.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r922",
-                  "text": "Talk to Alpione twice to complete \"Alpione's Next Chapter\".",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r923",
-                  "text": "Warp to Beasting Bay: Anchorage.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b925",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before Scourge of the Sea",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r928",
+                  "id": "the-apothecary-hunter-part-2-1-5e6297",
                   "text": "Castti — Optimise",
                   "check": true,
                   "kind": "menu",
-                  "note": "equips tornado glaive, tornado bow, and battle-tested staff",
+                  "note": "Equips tornado glaive, wind whisperer, tornado bow, battle-tested staff, giant shield, ancient circlet, and royal guard's mail",
                   "ctx": "Equipment"
                 },
                 {
-                  "id": "r929",
-                  "text": "Castti — Equip Fang of Ferocity (Slot 2)",
+                  "id": "the-apothecary-hunter-part-2-1-2bc1fd",
+                  "text": "Castti — Equip Alpione's Amulet",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Equipment"
                 },
                 {
-                  "id": "r930",
-                  "text": "Castti — Equip Alpione's Amulet (Slot 1)",
+                  "id": "the-apothecary-hunter-part-2-1-4d5bc2",
+                  "text": "Castti — Equip Fang of Ferocity",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Equipment"
                 },
                 {
-                  "id": "r932",
-                  "text": "Throne — Equip Summon Strength over Boost-Start (Slot 2)",
+                  "id": "the-apothecary-hunter-part-2-1-d1671e",
+                  "text": "Castti — Equip Blessed Vestments",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-4181c0",
+                  "text": "Osvald — Optimise",
+                  "check": true,
+                  "kind": "menu",
+                  "note": "Equips fortune wand and royal guard's mail",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-aa1466",
+                  "text": "Osvald — Equip Sprightly Ring",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-b92759",
+                  "text": "Agnea — Equip EXP Augmentor",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-81c8a3",
+                  "text": "Partitio — Equip Unerring Bracelet",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-6f3bca",
+                  "text": "Hikari — Unequip All",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-c9ec05",
+                  "text": "Hikari — Equip Brooch of Joy",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-311fec",
+                  "text": "Throne — Optimise",
+                  "check": true,
+                  "kind": "menu",
+                  "note": "Equips Battle-Tested Blade, Royal Guard's Helm, and Royal Guard's Mail",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-123ad2",
+                  "text": "Throne — Equip Finisher's Claws",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-9ef3f5",
+                  "text": "Throne — Equip Champion's Belt",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-acf2f4",
+                  "text": "Throne — Equip Quick Cloak",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-f5edf5",
+                  "text": "Throne — Equip Giant's Club",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                }
+              ]
+            },
+            {
+              "id": "the-apothecary-hunter-part-2-b10",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "After swapping in Temenos",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-2-1-03df8f",
+                  "text": "Temenos — Dancer: Stimulate",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-59c928",
+                  "text": "Partitio — Dancer: 1 Dancer skill, Stimulate",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-9edf7c",
+                  "text": "Partitio — Cleric 1 Cleric skill, Aelfric's Blessing",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-bc4fda",
+                  "text": "Partitio — Equip The Show Goes On over Evasive Manoeuvres (Slot 1)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
@@ -4459,58 +6273,233 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b934",
-              "title": "Overworld",
+              "id": "the-apothecary-hunter-part-2-b11",
+              "title": "Talk to the tavern keeper again.",
               "kind": "travel",
-              "solo": false,
+              "solo": true,
               "steps": [
                 {
-                  "id": "r935",
-                  "text": "Get the Reinforcing Jam on the way to Scourge of the Sea.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r936",
-                  "text": "Fight the Scourge of the Sea at night.",
+                  "id": "the-apothecary-hunter-part-2-1-a6f159",
+                  "text": "Talk to the tavern keeper again.",
                   "check": true,
                   "kind": "do"
                 }
               ]
             },
             {
-              "id": "b938",
-              "title": "Scourge of the Sea",
-              "kind": "fight",
+              "id": "the-apothecary-hunter-part-2-b12",
+              "title": "Tavern",
+              "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r940",
-                  "text": "Throne — Defend (if first) / Aeber's Reckoning",
+                  "id": "the-apothecary-hunter-part-2-1-c0743e",
+                  "text": "Set Slot 4 to Castti. Set Slot 4 to Temenos",
                   "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
+                  "kind": "party"
                 },
                 {
-                  "id": "r941",
-                  "text": "Castti — Icicle x2",
+                  "id": "the-apothecary-hunter-part-2-1-9affd7",
+                  "text": "Set Slot 2 to Agnea. Set Slot 3 to Partitio",
                   "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
+                  "kind": "party"
+                }
+              ]
+            },
+            {
+              "id": "the-apothecary-hunter-part-2-b13",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-2-1-d0802b",
+                  "text": "Enter the library.",
+                  "check": true,
+                  "kind": "do"
                 },
                 {
-                  "id": "r942",
-                  "text": "Anyone — Revitalizing Jam → Throne",
+                  "id": "the-apothecary-hunter-part-2-1-c2511b",
+                  "text": "Talk to the Unusual Tome Specialist (quest NPC on the left) to complete \"Procuring Peculiar Tomes\".",
                   "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
+                  "kind": "do"
                 },
                 {
-                  "id": "r944",
-                  "text": "Throne — Aeber's Reckoning (if needed)",
+                  "id": "the-apothecary-hunter-part-2-1-d25cb2",
+                  "text": "Talk to Al on the right side of the library to complete \"From the Far Reaches of Hell\". You may need to switch time to make him show up (also ensure you completed \"The Traveller's Bag\")",
                   "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-f06d87",
+                  "text": "Warp to Beasting Bay: Anchorage.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-4e2957",
+                  "text": "Sail slowly to the Gate of Finis.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "the-apothecary-hunter-part-2-b14",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "After reaching the Gate of Finis",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-apothecary-hunter-part-2-1-454a0f",
+                  "text": "Items — up to 2 Empowering Lychee (L) → Agnea",
+                  "check": true,
+                  "kind": "menu",
+                  "note": "to fill latent",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-4611cc",
+                  "text": "Items — Nourishing Nut (L) (Throne)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-6a3d82",
+                  "text": "Items — 2 Nourishing Nut (M) (Throne)",
+                  "check": true,
+                  "kind": "menu",
+                  "note": "DO NOT USE ALL 3",
+                  "warn": true,
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-3da3c4",
+                  "text": "Items — Fortifying Nut (M) + Fortifying Nut (Throne)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-664c31",
+                  "text": "Items — Tough Nut (L) (Throne)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-839bba",
+                  "text": "Items — All Magic Nuts (2S + 1M + 3L) (Castti)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-265887",
+                  "text": "Items — Resistant Nut (M) (Hikari)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-e80a78",
+                  "text": "Items — All Sharp Nuts (2L + 2S) (Throne)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-bd98fc",
+                  "text": "Items — All Critical Nuts (2L) (Throne)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-18f004",
+                  "text": "Items — All Light Nuts (2S + 1M + 1L) (Throne)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-639afc",
+                  "text": "Throne — Unequip Life in the Shadows (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-ee515b",
+                  "text": "Throne — Equip Full Power (Slot 3)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-d732a1",
+                  "text": "Throne — Equip Peak Performance over Evil Ward (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-8eff13",
+                  "text": "Throne — Equip Deal More Damage (Slot 3)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-c0cd80",
+                  "text": "Throne — Equip Summon Strength (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-265d99",
+                  "text": "Hikari — Unequip Peak Performance (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-836d25",
+                  "text": "Hikari — Equip Life in the Shadows over Deal More Damage (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-10c47c",
+                  "text": "Hikari — Equip The Show Goes On (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-d0a41c",
+                  "text": "Agnea — Equip A Step Ahead (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-792fba",
+                  "text": "Castti — Equip Deal More Damage over Evasive Manoeuvres (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "the-apothecary-hunter-part-2-1-74dddc",
+                  "text": "Castti — Equip Elemental Augmentation (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
                 }
               ]
             }
@@ -4523,19 +6512,19 @@ export const route: RouteData = {
       "title": "Galdera",
       "chapters": [
         {
-          "id": "switch-to-night-before-fighting-galdera-946",
+          "id": "galdera",
           "title": "Galdera",
           "mark": "2:14:42",
           "seconds": 8082,
           "blocks": [
             {
-              "id": "b946",
+              "id": "galdera-b1",
               "title": "Switch to night before fighting Galdera.",
               "kind": "travel",
               "solo": true,
               "steps": [
                 {
-                  "id": "r946",
+                  "id": "galdera-1-0c1141",
                   "text": "Switch to night before fighting Galdera.",
                   "check": true,
                   "kind": "do"
@@ -4543,130 +6532,129 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b948",
+              "id": "galdera-b2",
               "title": "Galdera Party Setup",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r949",
-                  "text": "Swap Agnea with Temenos",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r950",
+                  "id": "galdera-1-6e6d7a",
                   "text": "Swap Throne with Osvald",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r952",
+                  "id": "galdera-1-888fe4",
                   "text": "Primary party: Osvald",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r100952",
-                  "text": "Secondary party: Partitio",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r953",
-                  "text": "Primary party: Ochette",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r100953",
-                  "text": "Secondary party: Temenos",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r954",
-                  "text": "Primary party: Agnea",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r100954",
+                  "id": "galdera-1-87c5c1",
                   "text": "Secondary party: Throne",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r955",
+                  "id": "galdera-1-c8dc4b",
+                  "text": "Primary party: Hikari",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "galdera-1-127a17",
+                  "text": "Secondary party: Partitio",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "galdera-1-845970",
+                  "text": "Primary party: Agnea",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "galdera-1-0be4e4",
+                  "text": "Secondary party: Ochette",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "galdera-1-78beb0",
                   "text": "Primary party: Castti",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r100955",
-                  "text": "Secondary party: Hikari",
+                  "id": "galdera-1-14e5b0",
+                  "text": "Secondary party: Temenos",
                   "check": true,
                   "kind": "party"
                 }
               ]
             },
             {
-              "id": "b957",
+              "id": "galdera-b3",
               "title": "Omniscient Eye",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r959",
-                  "text": "Ochette — Peacock Strut x2 → Castti",
+                  "id": "galdera-1-95ea15",
+                  "text": "Hikari — Peacock Strut x2 → Castti",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r960",
-                  "text": "Agnea — Springy Boots → Self",
+                  "id": "galdera-1-8a2047",
+                  "text": "Agnea — Latent Power + Springy Boots",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r961",
-                  "text": "Castti — Snowy Stew → Self",
+                  "id": "galdera-1-da2c91",
+                  "text": "Castti — Concoct → Self",
                   "check": true,
                   "kind": "fight",
+                  "lines": [
+                    "Grape Leaf (or anything else that isn't weeds)",
+                    "Whimsical Leaf"
+                  ],
+                  "note": "Changed since the video (07/04/2026): omniscient eye: 8 Concoct hits.",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r963",
-                  "text": "Osvald — Defend",
+                  "id": "galdera-1-7488e9",
+                  "text": "Osvald/Agnea — Snowy Stew (whoever is first) → Castti",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r964",
-                  "text": "Ochette — Defend",
+                  "id": "galdera-1-0ab8c9",
+                  "text": "Osvald/Agnea — Forbidden Elixir (whoever is second) → Castti",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r965",
-                  "text": "Agnea — Forbidden Elixir → Castti",
+                  "id": "galdera-1-d1cac8",
+                  "text": "Hikari — Vacant Stare",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r966",
+                  "id": "galdera-1-d38ea1",
                   "text": "Castti — Switch to Staff",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r967",
+                  "id": "galdera-1-b65c41",
                   "text": "Castti — Latent Power + Concoct x3",
                   "check": true,
                   "kind": "fight",
@@ -4678,28 +6666,35 @@ export const route: RouteData = {
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r972",
+                  "id": "galdera-1-4cd35b",
+                  "text": "Turn order from this point onwards is fixed",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 3"
+                },
+                {
+                  "id": "galdera-1-30e750",
                   "text": "Osvald — Analyse x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r973",
-                  "text": "Ochette — Latent Power - Beastly Howl",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 3"
-                },
-                {
-                  "id": "r974",
+                  "id": "galdera-1-b04892",
                   "text": "Agnea — Elemental Bomb Bottle x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r975",
+                  "id": "galdera-1-b73092",
+                  "text": "Hikari — Vacant Stare x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 3"
+                },
+                {
+                  "id": "galdera-1-91a7f5",
                   "text": "Castti — Concoct x4",
                   "check": true,
                   "kind": "fight",
@@ -4710,14 +6705,14 @@ export const route: RouteData = {
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r979",
-                  "text": "Agnea — Energising Pomegranate (L) → Castti",
+                  "id": "galdera-1-cb14be",
+                  "text": "Anyone — Energising Pomegranate (L) → Castti",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 4"
                 },
                 {
-                  "id": "r980",
+                  "id": "galdera-2-91a7f5",
                   "text": "Castti — Concoct x4",
                   "check": true,
                   "kind": "fight",
@@ -4726,189 +6721,388 @@ export const route: RouteData = {
                     "Strengthening Serum"
                   ],
                   "ctx": "Turn 4"
+                },
+                {
+                  "id": "galdera-1-d7a05f",
+                  "text": "Anyone — Energising Pomegranate (M) → Castti",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 5"
+                },
+                {
+                  "id": "galdera-3-91a7f5",
+                  "text": "Castti — Concoct x4",
+                  "check": true,
+                  "kind": "fight",
+                  "lines": [
+                    "Blusterbloom x4",
+                    "Strengthening Serum"
+                  ],
+                  "ctx": "Turn 5"
                 }
               ]
             },
             {
-              "id": "b984",
+              "id": "galdera-b4",
               "title": "Galdera, the Fallen",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r986",
+                  "id": "galdera-1-107476",
+                  "text": "Throne — Latent Power + Rejuvenating Jam → Self",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "galdera-1-688285",
+                  "text": "Throne — Aeber's Reckoning",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "galdera-1-48b742",
                   "text": "Partitio — Latent Power (if needed) + Aelfric's Blessing → Throne",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r987",
-                  "text": "Temenos — Energising Pomegranate (L) → Partitio",
+                  "id": "galdera-1-e2e548",
+                  "text": "Ochette — Energising Pomegranate (L) → Partitio",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r988",
+                  "id": "galdera-1-27f40f",
+                  "text": "Temenos — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "galdera-1-476306",
                   "text": "Throne — Latent Power + Reinforcing Jam → Self",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 1"
+                  "ctx": "Turn 1 - Aelfric's"
                 },
                 {
-                  "id": "r989",
+                  "id": "galdera-2-688285",
                   "text": "Throne — Aeber's Reckoning",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 1"
+                  "ctx": "Turn 1 - Aelfric's"
                 },
                 {
-                  "id": "r990",
-                  "text": "Hikari — HHV x3",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r992",
+                  "id": "galdera-1-568595",
                   "text": "Throne — Latent Power + Energising Pomegranate (M) → Self",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 1 - Aelfric's"
+                  "ctx": "Turn 2"
                 },
                 {
-                  "id": "r993",
+                  "id": "galdera-3-688285",
                   "text": "Throne — Aeber's Reckoning",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 1 - Aelfric's"
-                },
-                {
-                  "id": "r995",
-                  "text": "Partitio — Latent Power (if needed) + Aelfric's Blessing (if needed) → Temenos",
-                  "check": true,
-                  "kind": "fight",
-                  "note": "skip aelfric's if temenos is after galdera",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r996",
-                  "text": "Temenos — Leghold Trap (if Galdera is vulnerable)",
+                  "id": "galdera-1-eb43c3",
+                  "text": "Partitio — Latent Power (if needed) + Aelfric's Blessing → Ochette",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r997",
-                  "text": "Throne — Rejuvenating Jam → Self",
+                  "id": "galdera-1-61fbfe",
+                  "text": "Ochette — Rejuvenating Jam → Throne",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r998",
-                  "text": "Hikari — Defend",
+                  "id": "galdera-1-73f0dd",
+                  "text": "Temenos — Stimulate x4 → Throne",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1000",
+                  "id": "galdera-1-dc7e4b",
+                  "text": "Ochette — Leghold Trap",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2 - Aelfric's"
+                },
+                {
+                  "id": "galdera-1-05fde0",
+                  "text": "Throne — Dagger x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2 - Aelfric's"
+                },
+                {
+                  "id": "galdera-1-8de399",
                   "text": "Throne — Latent Power + Armour Corrosive",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2 - Aelfric's"
+                  "ctx": "Turn 3"
                 },
                 {
-                  "id": "r1001",
+                  "id": "galdera-1-305c9a",
+                  "text": "Throne — Dagger x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 3"
+                },
+                {
+                  "id": "galdera-1-09853b",
+                  "text": "Partitio — Spear x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 3"
+                },
+                {
+                  "id": "galdera-1-da936c",
+                  "text": "Ochette — Provoke Beasts x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 3"
+                },
+                {
+                  "id": "galdera-1-61b1b2",
+                  "text": "Ochette — Woodland Birdian IV x6",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 3"
+                },
+                {
+                  "id": "galdera-1-1b8814",
+                  "text": "Temenos — Lion Dance → Throne",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 3"
+                },
+                {
+                  "id": "galdera-2-61fbfe",
+                  "text": "Ochette — Rejuvenating Jam → Throne",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 3 - Aelfric's"
+                },
+                {
+                  "id": "galdera-4-688285",
                   "text": "Throne — Aeber's Reckoning",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2 - Aelfric's"
+                  "ctx": "Turn 3 - Aelfric's"
                 },
                 {
-                  "id": "r1002",
-                  "text": "Temenos — Leghold Trap (if not done already)",
+                  "id": "galdera-2-568595",
+                  "text": "Throne — Latent Power + Energising Pomegranate (M) → Self",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2 - Aelfric's"
+                  "ctx": "Turn 4"
                 },
                 {
-                  "id": "r1004",
-                  "text": "Partitio — HHA x3",
+                  "id": "galdera-5-688285",
+                  "text": "Throne — Aeber's Reckoning",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 3"
+                  "ctx": "Turn 4"
                 },
                 {
-                  "id": "r1005",
-                  "text": "Throne — Latent Power + Aeber's Reckoning → Self",
+                  "id": "galdera-1-131109",
+                  "text": "Ochette — Energising Pomegranate (M) → Throne",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 3"
+                  "ctx": "Turn 4 - Aelfric's"
                 },
                 {
-                  "id": "r1006",
-                  "text": "Throne — HP Thief x3",
+                  "id": "galdera-6-688285",
+                  "text": "Throne — Aeber's Reckoning",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 3"
-                },
-                {
-                  "id": "r1007",
-                  "text": "Hikari — Rejuvenating Jam → Throne",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 3"
+                  "ctx": "Turn 4 - Aelfric's"
                 }
               ]
             },
             {
-              "id": "b1009",
+              "id": "galdera-b5",
               "title": "Menu",
               "kind": "menu",
               "when": "After Galdera",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1012",
-                  "text": "Ochette — Unequip All",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1013",
-                  "text": "Castti — Unequip Fang of Ferocity (Slot 2)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1015",
-                  "text": "Ochette — Armsmaster [^4]",
+                  "id": "galdera-1-4c8bd2",
+                  "text": "Hikari — Scholar [^2]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r1017",
-                  "text": "Throne — Equip Boost-Start over Summon Strength (Slot 2)",
+                  "id": "galdera-1-ebc9f2",
+                  "text": "Throne — Hunter [v1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "galdera-1-daa83e",
+                  "text": "Throne — Unequip All",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "galdera-1-12b30e",
+                  "text": "Hikari — Optimize",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "galdera-1-4ca373",
+                  "text": "Hikari — Equip Finisher's Claws (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "galdera-1-585560",
+                  "text": "Agnea — Unequip EXP Augmentor (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "galdera-1-4f65aa",
+                  "text": "Castti — Unequip All",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "galdera-1-c295ec",
+                  "text": "Castti — Equip EXP Augmentor (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "galdera-1-f52934",
+                  "text": "Throne — Equip Spurning Ribbon (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "galdera-1-67d55d",
+                  "text": "Throne — Equip Brooch of Joy (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "galdera-1-dedec9",
+                  "text": "Hikari — Equip Champion's Belt (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "galdera-1-835e28",
+                  "text": "Hikari — Unequip Royal Guard's Mail (Body)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "galdera-1-c56616",
+                  "text": "Hikari — Equip Giant's Club (Staff)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "galdera-1-4ddcd4",
+                  "text": "Agnea — Equip Giant Shield (Shield)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "galdera-1-40889f",
+                  "text": "Throne — Unequip Summon Strength (Slot 4)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r1018",
-                  "text": "Castti — Unequip A Step Ahead (Slot 2)",
+                  "id": "galdera-1-8eff13",
+                  "text": "Throne — Equip Deal More Damage (Slot 3)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r1019",
-                  "text": "Agnea — Unequip A Step Ahead (Slot 1)",
+                  "id": "galdera-1-ef5033",
+                  "text": "Throne — Equip Life in the Shadows over Peak Performance (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "galdera-1-46963e",
+                  "text": "Throne — Equip Boost-Start (Slot 3)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "galdera-1-e95192",
+                  "text": "Throne — Equip Full Power (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "galdera-1-430511",
+                  "text": "Hikari — Unequip The Show Goes On (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "galdera-1-7f10a0",
+                  "text": "Hikari — Equip Peak Performance over Life in the Shadows (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "galdera-1-c81262",
+                  "text": "Hikari — Equip Deal More Damage (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "galdera-1-2e449d",
+                  "text": "Agnea — Unequip A Step Ahead (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "galdera-1-df473d",
+                  "text": "Castti — Equip Grows on Trees over A Step Ahead (Slot 4)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
@@ -4916,144 +7110,40 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1021",
+              "id": "galdera-b6",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1022",
+                  "id": "galdera-1-169668",
+                  "text": "Board the ship.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "galdera-1-b5cb4a",
                   "text": "Go to the Lost Isle.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1023",
+                  "id": "galdera-1-7fcb33",
                   "text": "Get the Proof of the Arcanist.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1024",
-                  "text": "Get the Ancient Cursed Talisman on the right.",
+                  "id": "galdera-1-992803",
+                  "text": "Get the 2 Ancient Cursed Talismans on the right.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1025",
-                  "text": "Warp to New Delsta.",
+                  "id": "galdera-1-dcc20e",
+                  "text": "Warp to Merry Hills.",
                   "check": true,
                   "kind": "do"
-                },
-                {
-                  "id": "r1026",
-                  "text": "Start Agnea Ch. 2.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1027",
-                  "text": "After entreating the Theatre Ticket, entreat the Fortifying Nut (M) and the Nourishing Nut (M) from the man near the tavern entrance.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1028",
-                  "text": "Talk to the tavern keeper.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1030",
-              "title": "Tavern",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1033",
-                  "text": "Set Slot 2 to Temenos. Set Slot 4 to Castti",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r1034",
-                  "text": "Set Slot 3 to Hikari. Set Slot 2 to Ochette",
-                  "check": true,
-                  "kind": "party"
-                }
-              ]
-            },
-            {
-              "id": "b1036",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1037",
-                  "text": "After alluring both NPCs on the second screen to Gil, warp to Canalbrine.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1039",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "After the tavern",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1042",
-                  "text": "Hikari — Dancer: All Dancer skills, including divine [^]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1043",
-                  "text": "Hikari — Hunter Abating Orb [v3]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1044",
-                  "text": "Agnea — Dancer: Peacock Strut [v3]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1045",
-                  "text": "Agnea — Merchant 2 Merchant skills [v], Hired Help",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1047",
-                  "text": "Agnea — Inventor [^4]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1048",
-                  "text": "Temenos — Cleric: 1 Cleric skill, Aelfric's Blessing",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1049",
-                  "text": "Temenos — Warrior [^]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
                 }
               ]
             }
@@ -5063,170 +7153,71 @@ export const route: RouteData = {
     },
     {
       "id": "stories",
-      "title": "The Stories",
+      "title": "After Galdera",
       "chapters": [
         {
-          "id": "temenos-ch-2-1051",
-          "title": "Temenos Ch. 2",
+          "id": "agnea-ch-5",
+          "title": "Agnea Ch. 5",
+          "mark": "2:20:57",
+          "seconds": 8457,
           "blocks": [
             {
-              "id": "b1051",
-              "title": "Temenos Ch. 2",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1052",
-                  "text": "???",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1053",
-                  "text": "Turn 1 — Aggressive Slash x2",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1054",
-                  "text": "Turn 2 — Aggressive Slash",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1056",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "After the coerce",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1059",
-                  "text": "Hikari — Optimise",
-                  "check": true,
-                  "kind": "menu",
-                  "note": "equips lost tribe's blade, tornado glaive, and guardian's great axe (tornado bow too but that doesn't matter)",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1060",
-                  "text": "Hikari — Equip Fang of Ferocity (Slot 2)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1061",
-                  "text": "Temenos — Equip Spurning Ribbon (Slot 2)",
-                  "check": true,
-                  "kind": "menu",
-                  "note": "whichever slot JP augmentor isn't in",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1063",
-                  "text": "Hikari — Equip Peak Performance (Slot 3)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r1064",
-                  "text": "Temenos — Unequip A Step Ahead (Slot 3)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                }
-              ]
-            },
-            {
-              "id": "b1066",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1067",
-                  "text": "Fight Vados the Architect in the day.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1069",
-              "title": "Vados the Architect",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1071",
-                  "text": "Throne — HP Thief x3",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                }
-              ]
-            },
-            {
-              "id": "b1073",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1074",
-                  "text": "Warp to Wellgrove.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "throne-ch-3-mother-s-route-1076",
-          "title": "Throne Ch. 3: Mother's Route",
-          "blocks": [
-            {
-              "id": "b1076",
-              "title": "Throne Ch. 3: Mother's Route",
+              "id": "agnea-ch-5-b1",
+              "title": "Agnea Ch. 5",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1078",
-                  "text": "Fight Mother at night.",
+                  "id": "agnea-ch-5-1-9d180a",
+                  "text": "Hikari — Divine Dual-Edge x2",
+                  "check": true,
+                  "kind": "do",
+                  "ctx": "Hired Men"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-5-b2",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-5-1-dd0bd6",
+                  "text": "After alluring Gil, entreat the Magic Nut (M) from the lady in blue to the south.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-5-1-e6280f",
+                  "text": "Get the Empowering Necklace from the chest at the upper right corner of the screen.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "agnea-ch-5-1-e653d6",
+                  "text": "Fight Dolcinaea at night.",
                   "check": true,
                   "kind": "do"
                 }
               ]
             },
             {
-              "id": "b1080",
-              "title": "Mother",
+              "id": "agnea-ch-5-b3",
+              "title": "Dolcinaea",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1082",
-                  "text": "Throne — Defend",
+                  "id": "agnea-ch-5-1-de3f54",
+                  "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1083",
-                  "text": "Hikari — Abating Orb → Mother",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1085",
-                  "text": "Throne — Aeber's Reckoning",
+                  "id": "agnea-ch-5-1-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
@@ -5234,13 +7225,42 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1087",
+              "id": "agnea-ch-5-b4",
+              "title": "Dolcinaea the Star",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "agnea-ch-5-1-d31835",
+                  "text": "Throne — Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-5-2-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "agnea-ch-5-2-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "agnea-ch-5-b5",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1088",
+                  "id": "agnea-ch-5-1-fa04b8",
                   "text": "Warp to Wellgrove.",
                   "check": true,
                   "kind": "do"
@@ -5250,90 +7270,287 @@ export const route: RouteData = {
           ]
         },
         {
-          "id": "hikari-ch-3-1090",
-          "title": "Hikari Ch. 3",
+          "id": "throne-ch-3-mother-s-route",
+          "title": "Throne Ch. 3: Mother's Route",
+          "mark": "2:24:00",
+          "seconds": 8640,
           "blocks": [
             {
-              "id": "b1090",
-              "title": "Hikari Ch. 3",
+              "id": "throne-ch-3-mother-s-route-b1",
+              "title": "Throne Ch. 3: Mother's Route",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1092",
-                  "text": "After bribing Azuma, entreat the Nourishing Nut (M) and Magic Nut (L) from the merchant outside the department store.",
+                  "id": "throne-ch-3-mother-s-route-1-676baa",
+                  "text": "Fight Mother at night.",
                   "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1093",
-                  "text": "Get another Dancer License.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1094",
-                  "text": "Fight the Ku Soldiers in the day.",
-                  "check": true,
-                  "kind": "do"
+                  "kind": "do",
+                  "ctx": "Mother's Garden"
                 }
               ]
             },
             {
-              "id": "b1096",
-              "title": "Ku Soldiers",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1097",
-                  "text": "Hikari — Thrash x3",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1099",
-              "title": "General Rou",
+              "id": "throne-ch-3-mother-s-route-b2",
+              "title": "Mother",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1100",
-                  "text": "Turn 1 — Switch to Spear",
+                  "id": "throne-ch-3-mother-s-route-1-683b59",
+                  "text": "Throne — Abating Orb → Mother",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "throne-ch-3-mother-s-route-1-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "throne-ch-3-mother-s-route-1-90bf7a",
+                  "text": "Hikari — Shinjumonjigiri x4 → Mother",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "throne-ch-3-mother-s-route-b3",
+              "title": "Warp to New Delsta.",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "throne-ch-3-mother-s-route-1-f4fcfe",
+                  "text": "Warp to New Delsta.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "throne-ch-3-mother-s-route-b4",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "Before Claude",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "throne-ch-3-mother-s-route-1-358399",
+                  "text": "Agnea — Equip A Step Ahead (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "throne-ch-4",
+          "title": "Throne Ch. 4",
+          "mark": "2:26:15",
+          "seconds": 8775,
+          "blocks": [
+            {
+              "id": "throne-ch-4-b1",
+              "title": "Throne Ch. 4",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "throne-ch-4-1-7f75f6",
+                  "text": "Talk to Veronica before entering the sewers.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1101",
-                  "text": "Then — Abating Orb",
+                  "id": "throne-ch-4-1-2087a9",
+                  "text": "Go to Lostseed.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1102",
-                  "text": "Turn 2 — Piercing Thrust x4",
+                  "id": "throne-ch-4-1-bcd14f",
+                  "text": "Steal the Forbidden Elixir from the girl guarding the house.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1104",
-                  "text": "Turn 3 — Defend",
+                  "id": "throne-ch-4-1-bf844d",
+                  "text": "Steal a Rotten Meat from the NPC up the stairs.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "throne-ch-4-1-b210f9",
+                  "text": "Steal the Almighty Olive from the man before the next screen.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "throne-ch-4-1-89d69d",
+                  "text": "Fight Claude at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "throne-ch-4-b2",
+              "title": "Claude",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "throne-ch-4-1-8de399",
+                  "text": "Throne — Latent Power + Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "throne-ch-4-1-dd4ac4",
+                  "text": "Throne — Abating Orb",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "throne-ch-4-1-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "throne-ch-4-1-160340",
+                  "text": "Agnea — Critical Scope",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "throne-ch-4-1-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "throne-ch-4-b3",
+              "title": "Warp to Ku.",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "throne-ch-4-1-1fefbc",
+                  "text": "Warp to Ku.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "the-dancer-warrior-part-2",
+          "title": "The Dancer & Warrior, Part 2",
+          "mark": "2:28:00",
+          "seconds": 8880,
+          "blocks": [
+            {
+              "id": "the-dancer-warrior-part-2-b1",
+              "title": "The Dancer & Warrior, Part 2",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-dancer-warrior-part-2-1-8e5f4e",
+                  "text": "Entreat the Magic Nut (M) and Dancer's Mask on the next screen.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-2bb37b",
+                  "text": "Warp to Sai.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-d651b9",
+                  "text": "Go to the East District.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-072aa8",
+                  "text": "Entreat the Elemental Augmentor from the man in the straw hat.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-5929bd",
+                  "text": "Bribe Platt's Wife in the house to the north (inquire also works, but she's slightly further away).",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-1fefbc",
+                  "text": "Warp to Ku.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-1e1592",
+                  "text": "Entreat the Sacred Wood.",
                   "check": true,
                   "kind": "do",
-                  "ctx": "If you got hit"
+                  "note": "Don't get the platinum hatchet (if you do, make sure to sell it)",
+                  "warn": true
                 },
                 {
-                  "id": "r1105",
-                  "text": "Turn 4 — Piercing Thrust x2",
+                  "id": "the-dancer-warrior-part-2-1-fb5ff1",
+                  "text": "Entreat the Wine Offering.",
                   "check": true,
-                  "kind": "do",
-                  "ctx": "If you got hit"
+                  "kind": "do"
                 },
                 {
-                  "id": "r1107",
-                  "text": "Learn Divine Dual-Edge.",
+                  "id": "the-dancer-warrior-part-2-1-3811e3",
+                  "text": "Talk to Benkei.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-5cb913",
+                  "text": "Go to Tranquil Grotto.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "the-dancer-warrior-part-2-b2",
+              "title": "Yomi",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-dancer-warrior-part-2-1-a7f33b",
+                  "text": "Hikari — Shinjumonjigiri x3",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-29976a",
+                  "text": "Do not learn Forlorn Requiem.",
                   "check": false,
                   "kind": "note",
                   "ctx": "Notes"
@@ -5341,13 +7558,293 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1109",
+              "id": "the-dancer-warrior-part-2-b3",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1110",
+                  "id": "the-dancer-warrior-part-2-1-ac3826",
+                  "text": "Entreat the Fortifying Nut (M) from the soldier in the house.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-47c095",
+                  "text": "Warp to Gravell.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-b6b638",
+                  "text": "Entreat the Aegis Shield from the soldier near the entrance.",
+                  "check": true,
+                  "kind": "do",
+                  "note": "Changed since the video (06/30/2026): Coat of Arms + Aegis Shield replace Empowering Necklace."
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-046aca",
+                  "text": "Inquire the girl in the trio of children.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-0d0600",
+                  "text": "Get the Magic Nut (M) you just inquired.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-a12603",
+                  "text": "Talk to the tavern keeper.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-14c2d4",
+                  "text": "Temenos · Agnea",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-7c4557",
+                  "text": "Set Slot 4 to Osvald. Set Slot 4 to Castti",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-094e1c",
+                  "text": "Set Slot 1 to Partitio. Set Slot 3 to Agnea",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "the-dancer-warrior-part-2-1-509d99",
+                  "text": "Hear a Tale",
+                  "check": true,
+                  "kind": "party"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "osvald-ch-5",
+          "title": "Osvald Ch. 5",
+          "mark": "2:31:37",
+          "seconds": 9097,
+          "blocks": [
+            {
+              "id": "osvald-ch-5-b1",
+              "title": "Osvald Ch. 5",
+              "kind": "menu",
+              "when": "Before the mugs",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-5-1-eb7caa",
+                  "text": "Give Aegis Shield to Throne",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "osvald-ch-5-1-ff6a39",
+                  "text": "Then — Fortifying Nut (M) (Hikari)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "osvald-ch-5-1-b4bf52",
+                  "text": "Osvald — Merchant: 2 Merchant skills [^1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "osvald-ch-5-1-cdfe00",
+                  "text": "Osvald — Warrior 5 Warrior skills [^3]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "osvald-ch-5-1-d7ab4e",
+                  "text": "Osvald — Armsmaster [^2]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "osvald-ch-5-1-56c15d",
+                  "text": "Osvald — Optimize",
+                  "check": true,
+                  "kind": "menu",
+                  "note": "Equips guardian's iceblade, battle-tested staff, ancient circlet, and blessed vestments",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "osvald-ch-5-1-7f9fa9",
+                  "text": "Osvald — Equip Fang of Ferocity",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "osvald-ch-5-1-ca84ad",
+                  "text": "Osvald — Equip Elemental Augmentor",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "osvald-ch-5-1-aaa441",
+                  "text": "Osvald — Unequip Evasive Manoeuvres (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "osvald-ch-5-1-21ca0a",
+                  "text": "Osvald — Equip Full Power over Grows on Trees (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "osvald-ch-5-1-a1bd9f",
+                  "text": "Osvald — Equip Deal More Damage (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "osvald-ch-5-1-ee45c3",
+                  "text": "Osvald — Equip Peak Performance (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "osvald-ch-5-1-7ba23e",
+                  "text": "Partitio — Unequip A Step Ahead (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-5-b2",
+              "title": "Mugs",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-5-1-f405b2",
+                  "text": "#1 — Latent Power + Icewind x3",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-5-1-fbbe36",
+                  "text": "#2 — Latent Power + Icewind x3",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-5-1-47ae28",
+                  "text": "#3 — Latent Power + Fireball x3",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-5-1-c46741",
+                  "text": "#4 — Latent Power + Fireball x2",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "osvald-ch-5-1-85c903",
+                  "text": "#5 — Latent Power + Icewind x3",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-5-b3",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-5-1-2111bb",
+                  "text": "Fight Harvey at night.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-5-b4",
+              "title": "Small Golems",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-5-1-5e716d",
+                  "text": "Hikari — Divine Dual-Edge x3",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-5-b5",
+              "title": "Professor Harvey",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-5-1-8de399",
+                  "text": "Throne — Latent Power + Armour Corrosive",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-5-1-dd4ac4",
+                  "text": "Throne — Abating Orb",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-5-1-de3f54",
+                  "text": "Hikari — Defend",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "osvald-ch-5-1-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                }
+              ]
+            },
+            {
+              "id": "osvald-ch-5-b6",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "osvald-ch-5-1-f4fcfe",
                   "text": "Warp to New Delsta.",
                   "check": true,
                   "kind": "do"
@@ -5357,788 +7854,274 @@ export const route: RouteData = {
           ]
         },
         {
-          "id": "agnea-ch-2-1112",
-          "title": "Agnea Ch. 2",
+          "id": "the-scholar-merchant-part-1",
+          "title": "The Scholar & Merchant, Part 1",
+          "mark": "2:34:00",
+          "seconds": 9240,
           "blocks": [
             {
-              "id": "b1112",
-              "title": "Agnea Ch. 2",
+              "id": "the-scholar-merchant-part-1-b1",
+              "title": "The Scholar & Merchant, Part 1",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1114",
-                  "text": "Allure the woman on the way back to the tavern.",
+                  "id": "the-scholar-merchant-part-1-1-416444",
+                  "text": "Before buying the first part, talk to the tavern keeper.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1115",
-                  "text": "Get the Lightning Amulet in the top floor on the first screen in the theatre.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1116",
-                  "text": "Fight La'mani in the day.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1118",
-              "title": "La'mani",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1120",
-                  "text": "Throne — HP Thief x3",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                }
-              ]
-            },
-            {
-              "id": "b1122",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1123",
-                  "text": "After finishing the chapter, warp to Tropu'hopu.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1124",
-                  "text": "Start Agnea Ch.3.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1125",
-                  "text": "After the cutscene on the second screen, warp to Stormhail. Start Temenos' chapter, not Hikari's.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "temenos-ch-3-stormhail-route-1127",
-          "title": "Temenos Ch. 3: Stormhail Route",
-          "blocks": [
-            {
-              "id": "b1127",
-              "title": "Temenos Ch. 3: Stormhail Route",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1129",
-                  "text": "Steal the Thunderstorm Amulet from the merchant outside the headquarters.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1130",
-                  "text": "Fight Cubaryi at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1132",
-              "title": "Deputy Cubaryi",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1134",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1136",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b1138",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1139",
-                  "text": "Warp to Stormhail.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "hikari-ch-4-1141",
-          "title": "Hikari Ch. 4",
-          "blocks": [
-            {
-              "id": "b1141",
-              "title": "Hikari Ch. 4",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1143",
-                  "text": "Fight Kunzo at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1145",
-              "title": "Kunzo",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1146",
-                  "text": "Hikari — Divine Dual-Edge",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1148",
-              "title": "Jin Mei",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1149",
-                  "text": "Turn 1 — Sword",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1150",
-                  "text": "Turn 2 — Sword",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1151",
-                  "text": "Turn 3 — Defend",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1152",
-                  "text": "Turn 4 — Wild Cut x2",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1153",
-                  "text": "Turn 5 — Wild Cut x4",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1155",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1156",
-                  "text": "Get the Thunderstorm Amulet in the tower to the left before the save point.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1157",
-                  "text": "Fight Rai Mei at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1159",
-              "title": "Rai Mei",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1161",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1163",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b1165",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1166",
-                  "text": "Warp to Tropu'hopu.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "agnea-ch-3-1168",
-          "title": "Agnea Ch. 3",
-          "blocks": [
-            {
-              "id": "b1168",
-              "title": "Agnea Ch. 3",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1170",
-                  "text": "After finishing the chapter, steal the Fortifying Nut (M) from the sailor to the north.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1171",
-                  "text": "Warp to Sai.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "agnea-ch-4-1173",
-          "title": "Agnea Ch. 4",
-          "blocks": [
-            {
-              "id": "b1173",
-              "title": "Agnea Ch. 4",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1175",
-                  "text": "Steal the Reinforcing Jam from the lady down the stairs if you have none left. Need 2 for endgame.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1176",
-                  "text": "Fight Veronica at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1178",
-              "title": "Veronica",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1180",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1182",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b1184",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1185",
-                  "text": "Go to Ku.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "hikari-ch-5-1187",
-          "title": "Hikari Ch. 5",
-          "mark": "1:21:53",
-          "seconds": 4913,
-          "blocks": [
-            {
-              "id": "b1187",
-              "title": "Hikari Ch. 5",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1189",
-                  "text": "Fight Ritsu at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1191",
-              "title": "Ritsu",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1193",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1194",
-                  "text": "Hikari — Abating Orb",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1196",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b1198",
-              "title": "Mugen",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1200",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1201",
-                  "text": "Hikari — Abating Orb",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1203",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b1205",
-              "title": "\"Hikari\"",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1206",
-                  "text": "Turn 1 — Aggressive Slash x2",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1207",
-                  "text": "Turn 2 — Abating Orb",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1208",
-                  "text": "Turn 3 — Aggressive Slash",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1209",
-                  "text": "Turn 4 — Hienka x4",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1211",
-              "title": "Enshrouded King",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1213",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1214",
-                  "text": "Hikari — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1216",
-                  "text": "Throne — Staff x4",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r1217",
-                  "text": "Hikari — Aggressive Slash x4",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r1218",
-                  "text": "Agnea — Lion Dance → Throne",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r1219",
-                  "text": "Temenos — Energizing Pomegranate (L) → Throne",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r1221",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 3"
-                }
-              ]
-            },
-            {
-              "id": "b1223",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1224",
-                  "text": "Warp to Crackridge Harbour: Anchorage.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1225",
-                  "text": "Steal the Battle-Tested Blade and Giant Shield from Bandelam.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1227",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before the next fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1230",
-                  "text": "Give Giant Shield to Agnea",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Inventory"
-                },
-                {
-                  "id": "r1231",
-                  "text": "Then — Battle-Tested Blade (Hikari)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Inventory"
-                }
-              ]
-            },
-            {
-              "id": "b1233",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1234",
-                  "text": "Warp to Merry Hills.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "agnea-ch-5-1236",
-          "title": "Agnea Ch. 5",
-          "blocks": [
-            {
-              "id": "b1236",
-              "title": "Agnea Ch. 5",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1238",
-                  "text": "Hikari — Divine Dual-Edge x2",
-                  "check": true,
-                  "kind": "do",
-                  "ctx": "Hired Men"
-                }
-              ]
-            },
-            {
-              "id": "b1240",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1241",
-                  "text": "Fight Dolcinaea at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1243",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before Dolcinaea",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1246",
-                  "text": "Hikari — Unequip Grows on Trees (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r1247",
-                  "text": "Hikari — Equip Deal More Damage over A Step Ahead (Slot 4)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r1248",
-                  "text": "Hikari — Equip Summon Strength (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                }
-              ]
-            },
-            {
-              "id": "b1250",
-              "title": "Dolcinaea",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1252",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1254",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b1256",
-              "title": "Dolcinaea the Star",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1258",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1260",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b1262",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1263",
-                  "text": "Warp to Ryu.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "the-dancer-warrior-part-1-1265",
-          "title": "The Dancer & Warrior, Part 1",
-          "blocks": [
-            {
-              "id": "b1265",
-              "title": "The Dancer & Warrior, Part 1",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1267",
-                  "text": "While waiting for the next day, go to the provisioner.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1269",
-              "title": "Provisioner",
-              "kind": "shop",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1271",
-                  "text": "Buy Blusterbloom x31",
-                  "check": true,
-                  "kind": "shop"
-                },
-                {
-                  "id": "r1273",
-                  "text": "Sell Guardian's Iceblade",
-                  "check": true,
-                  "kind": "shop"
-                },
-                {
-                  "id": "r1274",
-                  "text": "Sell Lost Tribe's Blade",
-                  "check": true,
-                  "kind": "shop"
-                },
-                {
-                  "id": "r1276",
-                  "text": "If you needed to restore reputation, sell Marietta as well.",
+                  "id": "the-scholar-merchant-part-1-1-865908",
+                  "text": "Castti · Osvald",
                   "check": false,
-                  "kind": "note",
-                  "ctx": "Notes"
+                  "kind": "note"
+                },
+                {
+                  "id": "the-scholar-merchant-part-1-1-b23b4a",
+                  "text": "Set Slot 3 to Temenos. Set Slot 1 to Throne",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "the-scholar-merchant-part-1-2-865908",
+                  "text": "Castti · Osvald",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "the-scholar-merchant-part-1-1-8274b4",
+                  "text": "After buying all 3 components, talk to Veronica to finish \"Veronica's Next Chapter\".",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "the-scholar-merchant-part-1-1-e52e3d",
+                  "text": "After finishing the chapter, warp to Montwise.",
+                  "check": true,
+                  "kind": "party"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "the-scholar-merchant-part-2",
+          "title": "The Scholar & Merchant, Part 2",
+          "mark": "2:36:00",
+          "seconds": 9360,
+          "blocks": [
+            {
+              "id": "the-scholar-merchant-part-2-b1",
+              "title": "The Scholar & Merchant, Part 2",
+              "kind": "menu",
+              "when": "Before the Thugs",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-scholar-merchant-part-2-1-728099",
+                  "text": "Give Bodyguard's Vantage to Hikari",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "the-scholar-merchant-part-2-1-b3cdd6",
+                  "text": "Temenos — Cleric: 5 Cleric skills, Aelfric's Blessing [^1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "the-scholar-merchant-part-2-1-ec4191",
+                  "text": "Temenos — Warrior [^1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
                 }
               ]
             },
             {
-              "id": "b1278",
+              "id": "the-scholar-merchant-part-2-b2",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1279",
-                  "text": "Steal the Light Nut from the boy on the way to see Yomi on the hill.",
+                  "id": "the-scholar-merchant-part-2-1-01f594",
+                  "text": "Fight the thugs in the day.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "the-scholar-merchant-part-2-b3",
+              "title": "Thugs",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-scholar-merchant-part-2-1-3e2c0a",
+                  "text": "#1 — Divine Dual-Edge x2",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1280",
-                  "text": "After finishing the chapter, warp to Ku.",
+                  "id": "the-scholar-merchant-part-2-1-e7680a",
+                  "text": "#2 — Divine Dual-Edge x2",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "the-scholar-merchant-part-2-b4",
+              "title": "Moneylender",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "the-scholar-merchant-part-2-1-ed7567",
+                  "text": "Turn 1 — Latent Power + Fireball x3",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "the-scholar-merchant-part-2-b5",
+              "title": "After finishing the chapter, warp to Canalbrine.",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "the-scholar-merchant-part-2-1-6b5522",
+                  "text": "After finishing the chapter, warp to Canalbrine.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "temenos-ch-2",
+          "title": "Temenos Ch. 2",
+          "mark": "2:38:47",
+          "seconds": 9527,
+          "blocks": [
+            {
+              "id": "temenos-ch-2-b1",
+              "title": "Temenos Ch. 2",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "temenos-ch-2-1-ae4ef3",
+                  "text": "Before going upstairs, talk to the tavern keeper.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1281",
-                  "text": "Start The Dancer & Warrior, Part 2.",
+                  "id": "temenos-ch-2-1-865908",
+                  "text": "Castti · Osvald",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "temenos-ch-2-1-2c44af",
+                  "text": "Set Slot 3 to Throne. Set Slot 4 to Osvald",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "temenos-ch-2-1-64e8ce",
+                  "text": "Set Slot 4 to Castti. Set Slot 3 to Partitio",
+                  "check": true,
+                  "kind": "party"
+                }
+              ]
+            },
+            {
+              "id": "temenos-ch-2-b2",
+              "title": "???",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "temenos-ch-2-1-2d2606",
+                  "text": "Turn 1 — Staff",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1282",
-                  "text": "Entreat the Magic Nut (M) and Dancer's Mask on the next screen.",
+                  "id": "temenos-ch-2-1-98d5bb",
+                  "text": "Turn 2 — Aggressive Slash x4",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "temenos-ch-2-b3",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "After the coerce",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "temenos-ch-2-1-35521e",
+                  "text": "Temenos — Equip Evil Ward over A Step Ahead (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                }
+              ]
+            },
+            {
+              "id": "temenos-ch-2-b4",
+              "title": "Overworld",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "temenos-ch-2-1-e19d7a",
+                  "text": "Steal the Magic Nut from the cleric on the right of the church.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1283",
+                  "id": "temenos-ch-2-1-f7f564",
+                  "text": "Fight Vados the Architect in the day.",
+                  "check": true,
+                  "kind": "do"
+                }
+              ]
+            },
+            {
+              "id": "temenos-ch-2-b5",
+              "title": "Vados the Architect",
+              "kind": "fight",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "temenos-ch-2-1-5e716d",
+                  "text": "Hikari — Divine Dual-Edge x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                }
+              ]
+            },
+            {
+              "id": "temenos-ch-2-b6",
+              "title": "Warp to Crackridge.",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "temenos-ch-2-1-901ee6",
                   "text": "Warp to Crackridge.",
                   "check": true,
                   "kind": "do"
@@ -6148,108 +8131,88 @@ export const route: RouteData = {
           ]
         },
         {
-          "id": "temenos-ch-3-crackridge-route-1285",
+          "id": "temenos-ch-3-crackridge-route",
           "title": "Temenos Ch. 3: Crackridge Route",
+          "mark": "2:42:00",
+          "seconds": 9720,
           "blocks": [
             {
-              "id": "b1285",
+              "id": "temenos-ch-3-crackridge-route-b1",
               "title": "Temenos Ch. 3: Crackridge Route",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1287",
-                  "text": "After finishing the chapter, warp to Ku.",
+                  "id": "temenos-ch-3-crackridge-route-1-6bc564",
+                  "text": "After finishing the chapter, warp to Stormhail.",
                   "check": true,
                   "kind": "do"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "id": "temenos-ch-3-stormhail-route",
+          "title": "Temenos Ch. 3: Stormhail Route",
+          "mark": "2:44:00",
+          "seconds": 9840,
+          "blocks": [
             {
-              "id": "b1289",
-              "title": "The Dancer & Warrior, Part 2",
+              "id": "temenos-ch-3-stormhail-route-b1",
+              "title": "Temenos Ch. 3: Stormhail Route",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1291",
-                  "text": "Entreat the Tough Nut (M) and Sacred Wood from the NPC to the right.",
+                  "id": "temenos-ch-3-stormhail-route-1-59a4a0",
+                  "text": "Steal the Magic Nut from the knight on the right in the pair.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1292",
-                  "text": "Entreat the Wine Offering in the tavern.",
+                  "id": "temenos-ch-3-stormhail-route-1-1e732e",
+                  "text": "Steal the Ogre's Bane and Thunderstorm Amulet from the merchant outside the headquarters.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1293",
-                  "text": "Steal the Unerring Bracelet from the quest NPC outside the tavern.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1294",
-                  "text": "Steal the Fortifying Nut and Magic Nut from the man on the right of the 2 blocking the alley.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1295",
-                  "text": "Talk to Benkei.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1296",
-                  "text": "Go to Tranquil Grotto.",
+                  "id": "temenos-ch-3-stormhail-route-1-cd5a79",
+                  "text": "Fight Cubaryi at night.",
                   "check": true,
                   "kind": "do"
                 }
               ]
             },
             {
-              "id": "b1298",
-              "title": "Yomi",
+              "id": "temenos-ch-3-stormhail-route-b2",
+              "title": "Deputy Cubaryi",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1299",
-                  "text": "Turn 1 — Shinjumonjigiri x3",
+                  "id": "temenos-ch-3-stormhail-route-1-a7f33b",
+                  "text": "Hikari — Shinjumonjigiri x3",
                   "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1301",
-                  "text": "Do not learn Forlorn Requiem.",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Notes"
+                  "kind": "fight",
+                  "ctx": "Turn 1"
                 }
               ]
             },
             {
-              "id": "b1303",
+              "id": "temenos-ch-3-stormhail-route-b3",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1304",
-                  "text": "After finishing the chapter, entreat the Fortifying Nut (M) from the soldier in the house.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1305",
+                  "id": "temenos-ch-3-stormhail-route-1-ddcaac",
                   "text": "Warp to Tropu'hopu.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1306",
+                  "id": "temenos-ch-3-stormhail-route-1-fd890f",
                   "text": "Go to Nameless Village.",
                   "check": true,
                   "kind": "do"
@@ -6259,110 +8222,67 @@ export const route: RouteData = {
           ]
         },
         {
-          "id": "temenos-ch-4-1308",
+          "id": "temenos-ch-4",
           "title": "Temenos Ch. 4",
+          "mark": "2:48:00",
+          "seconds": 10080,
           "blocks": [
             {
-              "id": "b1308",
+              "id": "temenos-ch-4-b1",
               "title": "Temenos Ch. 4",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1310",
-                  "text": "Steal the Wind Soulstone (L) from the beastling near the entrance.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1311",
+                  "id": "temenos-ch-4-1-6923e0",
                   "text": "Guide Shirlutto.",
                   "check": true,
                   "kind": "do"
+                },
+                {
+                  "id": "temenos-ch-4-1-f0a251",
+                  "text": "Fight Kaldena at night.",
+                  "check": true,
+                  "kind": "do"
                 }
               ]
             },
             {
-              "id": "b1313",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before Kaldena",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1316",
-                  "text": "Hikari — Unequip All",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1317",
-                  "text": "Throne — Battle-Tested Blade",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1319",
-                  "text": "Hikari — Equip A Step Ahead over Boost-Start (Slot 2)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                },
-                {
-                  "id": "r1320",
-                  "text": "Temenos — Equip A Step Ahead over Evasive Maneouvres (Slot 2)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                }
-              ]
-            },
-            {
-              "id": "b1322",
+              "id": "temenos-ch-4-b2",
               "title": "Kaldena",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1324",
-                  "text": "Throne — Defend",
+                  "id": "temenos-ch-4-1-de3f54",
+                  "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1325",
-                  "text": "Hikari — Abating Orb",
+                  "id": "temenos-ch-4-1-dd4ac4",
+                  "text": "Throne — Abating Orb",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1326",
-                  "text": "Temenos — Staff",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1328",
-                  "text": "Throne — Aeber's Reckoning",
+                  "id": "temenos-ch-4-1-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b1330",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
+                },
                 {
-                  "id": "r1331",
+                  "id": "temenos-ch-4-1-dff3b7",
+                  "text": "Ochette · Hikari",
+                  "check": false,
+                  "kind": "note",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "temenos-ch-4-1-80edba",
                   "text": "Go to the tavern.",
                   "check": true,
                   "kind": "do"
@@ -6370,31 +8290,25 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1333",
+              "id": "temenos-ch-4-b3",
               "title": "Tavern",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1336",
-                  "text": "Set Slot 4 to Osvald. Set Slot 2 to Hikari",
+                  "id": "temenos-ch-4-1-f49023",
+                  "text": "Set Slot 2 to Ochette. Set Slot 3 to Castti",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1337",
-                  "text": "Set Slot 1 to Partitio. Set Slot 3 to Agnea",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r1338",
+                  "id": "temenos-ch-4-1-509d99",
                   "text": "Hear a Tale",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1339",
+                  "id": "temenos-ch-4-1-8a71dc",
                   "text": "The Cleric & Thief, Part 1",
                   "check": true,
                   "kind": "party"
@@ -6404,25 +8318,27 @@ export const route: RouteData = {
           ]
         },
         {
-          "id": "the-cleric-thief-part-1-1341",
+          "id": "the-cleric-thief-part-1",
           "title": "The Cleric & Thief, Part 1",
+          "mark": "2:52:00",
+          "seconds": 10320,
           "blocks": [
             {
-              "id": "b1341",
+              "id": "the-cleric-thief-part-1-b1",
               "title": "The Cleric & Thief, Part 1",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1343",
-                  "text": "Turn 1 — Staff",
+                  "id": "the-cleric-thief-part-1-1-b5b153",
+                  "text": "Turn 1 — Defend",
                   "check": true,
                   "kind": "do",
                   "ctx": "Forgetful Old Man"
                 },
                 {
-                  "id": "r1344",
-                  "text": "Turn 2 — Aggressive Slash x3",
+                  "id": "the-cleric-thief-part-1-1-98d5bb",
+                  "text": "Turn 2 — Aggressive Slash x4",
                   "check": true,
                   "kind": "do",
                   "ctx": "Forgetful Old Man"
@@ -6430,845 +8346,53 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1346",
+              "id": "the-cleric-thief-part-1-b2",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1347",
+                  "id": "the-cleric-thief-part-1-1-aecbb3",
                   "text": "Steal the Imperial Armour and Swift Shield from Ort.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1348",
+                  "id": "the-cleric-thief-part-1-1-8e7f5b",
                   "text": "Steal the Reinforcing Jam from the lady by the torch.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1349",
-                  "text": "After finishing the chapter, warp to Gravell.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "osvald-ch-5-1351",
-          "title": "Osvald Ch. 5",
-          "blocks": [
-            {
-              "id": "b1351",
-              "title": "Osvald Ch. 5",
-              "kind": "menu",
-              "when": "Before the mugs",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1355",
-                  "text": "Give Swift Shield to Osvald",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Inventory"
-                },
-                {
-                  "id": "r1357",
-                  "text": "Throne — Dancer [^2]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1358",
-                  "text": "Osvald — Merchant: 1 Merchant skill [^1]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1359",
-                  "text": "Partitio — Arcanist: 3 Arcanist skills [^4]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1360",
-                  "text": "Partitio — Cleric [v4]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1361",
-                  "text": "Temenos — Hunter [^4]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1363",
-                  "text": "Partitio — Unequip A Step Ahead (Slot 1)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Support Skills"
-                }
-              ]
-            },
-            {
-              "id": "b1365",
-              "title": "Mugs",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1366",
-                  "text": "#1 — HHV x3",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1367",
-                  "text": "#2 — HHB x3",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1368",
-                  "text": "#3 — HHV x3",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1369",
-                  "text": "#4 — HHG x3",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1370",
-                  "text": "#5 — HHV x3",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1372",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1373",
-                  "text": "Fight the Small Golems at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1375",
-              "title": "Small Golems",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1376",
-                  "text": "Throne — Dagger Dance x3",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1378",
-              "title": "Professor Harvey",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1380",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1381",
-                  "text": "Temenos — Abating Orb",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1383",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b1385",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1386",
-                  "text": "Warp to New Delsta.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "the-scholar-merchant-part-1-1388",
-          "title": "The Scholar & Merchant, Part 1",
-          "blocks": [
-            {
-              "id": "b1388",
-              "title": "The Scholar & Merchant, Part 1",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1390",
-                  "text": "Go to the tavern.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1392",
-              "title": "Tavern",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1395",
-                  "text": "Set Slot 1 to Agnea. Set Slot 4 to Temenos",
-                  "check": true,
-                  "kind": "party"
-                }
-              ]
-            },
-            {
-              "id": "b1397",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1398",
-                  "text": "After finishing the chapter, warp to Montwise.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1400",
-              "title": "The Scholar & Merchant, Part 2",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1402",
-                  "text": "Entreat the Lightning Amulet from the librarian.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1403",
-                  "text": "Fight the first wave in the day, and the second wave at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1405",
-              "title": "Thugs",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1406",
-                  "text": "#1 — Dagger Dance x3",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1407",
-                  "text": "#2 — Dagger Dance x3",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1409",
-              "title": "Moneylender",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1410",
-                  "text": "Turn 1 — HHB x3",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1412",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1413",
-                  "text": "Warp to Winterbloom.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "throne-ch-2-father-s-route-1415",
-          "title": "Throne Ch. 2: Father's Route",
-          "blocks": [
-            {
-              "id": "b1415",
-              "title": "Throne Ch. 2: Father's Route",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1417",
-                  "text": "Talk to the tavern keeper.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1419",
-              "title": "Tavern",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1422",
-                  "text": "Set Slot 1 to Temenos. Set Slot 2 to Osvald",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r1423",
-                  "text": "Set Slot 2 to Castti. Set Slot 3 to Partitio",
-                  "check": true,
-                  "kind": "party"
-                }
-              ]
-            },
-            {
-              "id": "b1425",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1426",
-                  "text": "Entreat the Soldier's Spear and Fortifying Nut (L) from the soldier.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1427",
-                  "text": "Fight Bergomi at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1429",
-              "title": "Bergomi",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1431",
-                  "text": "Throne — Dagger Dance x3",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                }
-              ]
-            },
-            {
-              "id": "b1433",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1434",
-                  "text": "Warp to Montwise.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "throne-ch-3-father-s-route-1436",
-          "title": "Throne Ch. 3: Father's Route",
-          "blocks": [
-            {
-              "id": "b1436",
-              "title": "Throne Ch. 3: Father's Route",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1438",
-                  "text": "Fight Father at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1440",
-              "title": "Father",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1442",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1443",
-                  "text": "Temenos — Abating Orb",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1445",
-                  "text": "Throne — Surprise Attack x4",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b1447",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1448",
-                  "text": "Warp to New Delsta.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "throne-ch-4-1450",
-          "title": "Throne Ch. 4",
-          "blocks": [
-            {
-              "id": "b1450",
-              "title": "Throne Ch. 4",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1452",
-                  "text": "Go to Lostseed.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1453",
-                  "text": "Steal the Mooneater from the man near the entrance.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1454",
-                  "text": "Steal the Forbidden Elixir from the girl guarding the house.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1455",
-                  "text": "Steal 2 Rotten Meat from the NPC up the stairs.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1456",
-                  "text": "Steal the Almighty Olive from the man before the next screen.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1457",
-                  "text": "Fight Claude at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1459",
-              "title": "Claude",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1461",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1462",
-                  "text": "Temenos — Abating Orb",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1464",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "note": "2.5% chance to miss crit :(",
-                  "warn": true,
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r1465",
-                  "text": "surprise attack has guaranteed crit but doesn't kill",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r1467",
-                  "text": "After finishing the chapter, warp to Abandoned Village.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "castti-ch-3-1469",
-          "title": "Castti Ch. 3",
-          "blocks": [
-            {
-              "id": "b1469",
-              "title": "Castti Ch. 3",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1471",
-                  "text": "After the first flashback, go to the tavern keeper.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1473",
-              "title": "Tavern",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1476",
-                  "text": "Set Slot 3 to Ochette. Set Slot 4 to Agnea",
-                  "check": true,
-                  "kind": "party"
-                }
-              ]
-            },
-            {
-              "id": "b1478",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1479",
+                  "id": "the-cleric-thief-part-1-1-9c7ff7",
                   "text": "After finishing the chapter, warp to Conning Creek.",
                   "check": true,
                   "kind": "do"
-                },
-                {
-                  "id": "r1480",
-                  "text": "Start The Cleric & Thief, Part 2.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1481",
-                  "text": "After stealing the Folded Paper, warp to Timberain.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1483",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before Trousseau",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1486",
-                  "text": "Throne — Equip Quick Cloak (Body)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1487",
-                  "text": "Ochette — Optimise (with hotkey)",
-                  "check": true,
-                  "kind": "menu",
-                  "note": "Equips mooneater, tornado glaive, bow of carnage",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1488",
-                  "text": "Ochette — Equip Tornado Bow (Bow)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
                 }
               ]
             }
           ]
         },
         {
-          "id": "castti-ch-4-1490",
-          "title": "Castti Ch. 4",
-          "blocks": [
-            {
-              "id": "b1490",
-              "title": "Castti Ch. 4",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1492",
-                  "text": "Steal the Wind Soulstone (L) from the lady near the entrance.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1493",
-                  "text": "Once it starts raining, steal the Empowering Necklace from the soldier across the bridge.",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1494",
-                  "text": "Fight Trousseau at night.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1496",
-              "title": "Trousseau",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1498",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1499",
-                  "text": "Temenos — Abating Orb",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1501",
-                  "text": "Throne — Aeber's Reckoning",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                }
-              ]
-            },
-            {
-              "id": "b1503",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1504",
-                  "text": "Warp to Cropdale.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "the-apothecary-hunter-part-1-1506",
-          "title": "The Apothecary & Hunter, Part 1",
-          "blocks": [
-            {
-              "id": "b1506",
-              "title": "The Apothecary & Hunter, Part 1",
-              "kind": "setup",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1508",
-                  "text": "Throne — Dagger x3",
-                  "check": true,
-                  "kind": "do",
-                  "ctx": "Dire Duorduor"
-                }
-              ]
-            },
-            {
-              "id": "b1510",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1511",
-                  "text": "After finishing the chapter, warp to Cropdale.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            },
-            {
-              "id": "b1513",
-              "title": "The Apothecary & Hunter, Part 2",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1515",
-                  "text": "Turn 1 — Wind Soulstone (L)",
-                  "check": true,
-                  "kind": "do",
-                  "ctx": "Wriggling Shadow"
-                },
-                {
-                  "id": "r1516",
-                  "text": "Turn 2 — Wind Soulstone (L)",
-                  "check": true,
-                  "kind": "do",
-                  "ctx": "Wriggling Shadow"
-                }
-              ]
-            },
-            {
-              "id": "b1518",
-              "title": "Creeping Shadow",
-              "kind": "fight",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1520",
-                  "text": "Throne — Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1522",
-                  "text": "Throne — Surprise Attack x4",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                }
-              ]
-            },
-            {
-              "id": "b1524",
-              "title": "Overworld",
-              "kind": "travel",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1525",
-                  "text": "Warp to Conning Creek.",
-                  "check": true,
-                  "kind": "do"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id": "the-cleric-thief-part-2-1527",
+          "id": "the-cleric-thief-part-2",
           "title": "The Cleric & Thief, Part 2",
+          "mark": "2:55:00",
+          "seconds": 10500,
           "blocks": [
             {
-              "id": "b1527",
+              "id": "the-cleric-thief-part-2-b1",
               "title": "The Cleric & Thief, Part 2",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1529",
-                  "text": "Steal the Whimsical Leaf from the merchant outside if you do not have one.",
+                  "id": "the-cleric-thief-part-2-1-b8bf43",
+                  "text": "Steal the Folded Paper.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1530",
+                  "id": "the-cleric-thief-part-2-1-421d51",
                   "text": "Go to Cavern of the Moon and Sun.",
                   "check": true,
                   "kind": "do"
@@ -7276,55 +8400,22 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1532",
+              "id": "the-cleric-thief-part-2-b2",
               "title": "Menu",
               "kind": "menu",
+              "when": "After getting to Cavern of the Moon and Sun",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1533",
-                  "text": "Right before entering the Cavern of the Moon and Sun",
-                  "check": true,
-                  "kind": "do"
-                },
-                {
-                  "id": "r1535",
-                  "text": "Castti — Apothecary: All Apothecary skills, including divine",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1536",
-                  "text": "Castti — Arcanist 3 Arcanist skills [v2]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1537",
-                  "text": "Castti — Armsmaster [v]",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Jobs"
-                },
-                {
-                  "id": "r1539",
-                  "text": "Temenos — Unequip Spurning Ribbon",
+                  "id": "the-cleric-thief-part-2-1-cdf9cb",
+                  "text": "Throne — Unequip Spurning Ribbon (Slot 2)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Equipment"
                 },
                 {
-                  "id": "r1540",
-                  "text": "Ochette — Unequip all",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1541",
-                  "text": "Ochette — Equip Bow of Carnage",
+                  "id": "the-cleric-thief-part-2-1-682f1b",
+                  "text": "Hikari — Equip Imperial Armour (Body)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Equipment"
@@ -7332,13 +8423,13 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1543",
+              "id": "the-cleric-thief-part-2-b3",
               "title": "Fight the encounter in the day.",
               "kind": "travel",
               "solo": true,
               "steps": [
                 {
-                  "id": "r1543",
+                  "id": "the-cleric-thief-part-2-1-72039b",
                   "text": "Fight the encounter in the day.",
                   "check": true,
                   "kind": "do"
@@ -7346,27 +8437,27 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1545",
+              "id": "the-cleric-thief-part-2-b4",
               "title": "Vagrant Frogkings I",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1547",
-                  "text": "Throne — Dagger x3",
+                  "id": "the-cleric-thief-part-2-1-31f640",
+                  "text": "Hikari — Sword x2",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1548",
+                  "id": "the-cleric-thief-part-2-1-0ee040",
                   "text": "Ochette — Defend / Capture",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1549",
+                  "id": "the-cleric-thief-part-2-1-b7b530",
                   "text": "Anyone — Run",
                   "check": true,
                   "kind": "fight",
@@ -7375,64 +8466,35 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1551",
+              "id": "the-cleric-thief-part-2-b5",
               "title": "Menu",
               "kind": "menu",
-              "when": "After the fight",
+              "when": "After capturing the Vagrant Frogking I",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1554",
-                  "text": "Items — Nourishing Nut (L) → Throne",
+                  "id": "the-cleric-thief-part-2-1-f52934",
+                  "text": "Throne — Equip Spurning Ribbon (Slot 2)",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Inventory"
-                },
-                {
-                  "id": "r1555",
-                  "text": "Items — All Magic Nuts (1L, 1M, 2S) (Castti)",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Inventory"
-                },
-                {
-                  "id": "r1557",
-                  "text": "Throne — Equip Spurning Ribbon over Champion's Belt",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1558",
-                  "text": "Castti — Equip Fang of Ferocity",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1559",
-                  "text": "Castti — Optimise",
-                  "check": true,
-                  "kind": "menu",
-                  "note": "equips tornado glaive, mooneater, tornado bow, battle-tested staff",
                   "ctx": "Equipment"
                 }
               ]
             },
             {
-              "id": "b1561",
+              "id": "the-cleric-thief-part-2-b6",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1562",
+                  "id": "the-cleric-thief-part-2-1-41783e",
                   "text": "After finishing the chapter, warp to Oresrush.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1563",
+                  "id": "the-cleric-thief-part-2-1-1db9dd",
                   "text": "Go to Southern Cropdale Trail.",
                   "check": true,
                   "kind": "do"
@@ -7448,110 +8510,169 @@ export const route: RouteData = {
       "title": "The Dawn",
       "chapters": [
         {
-          "id": "journey-for-the-dawn-1565",
+          "id": "journey-for-the-dawn",
           "title": "Journey for the Dawn",
+          "mark": "2:57:00",
+          "seconds": 10620,
           "blocks": [
             {
-              "id": "b1565",
+              "id": "journey-for-the-dawn-b1",
               "title": "Journey for the Dawn",
               "kind": "setup",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1567",
-                  "text": "Throne — Dagger Dance x3",
+                  "id": "journey-for-the-dawn-1-5e716d",
+                  "text": "Hikari — Divine Dual-Edge x3",
                   "check": true,
                   "kind": "do",
                   "ctx": "Shadowy Monsters"
                 },
                 {
-                  "id": "r1568",
-                  "text": "Agnea · Castti",
+                  "id": "journey-for-the-dawn-1-ba2bad",
+                  "text": "Osvald · Castti",
                   "check": false,
                   "kind": "note",
                   "ctx": "Shadowy Monsters"
                 },
                 {
-                  "id": "r1572",
-                  "text": "Throne — Merchant [v]",
+                  "id": "journey-for-the-dawn-1-bc5cc0",
+                  "text": "Set Slot 2 to Castti. Set Slot 3 to Ochette",
+                  "check": true,
+                  "kind": "party",
+                  "note": "Ochette Hikari",
+                  "lead": "After the fight"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-a4ad1e",
+                  "text": "Castti — Apothecary: 5 Apothecary skills, Dohter's Charity",
                   "check": true,
                   "kind": "menu",
-                  "lead": "After the fight",
+                  "note": "Partitio Throne",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r1573",
-                  "text": "Hikari — Scholar [v4]",
+                  "id": "journey-for-the-dawn-1-3503d8",
+                  "text": "Castti — Arcanist 3 Arcanist skills [v2]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r1574",
+                  "id": "journey-for-the-dawn-1-1edf37",
+                  "text": "Castti — Armsmaster [v]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-86feec",
+                  "text": "Ochette — Merchant: 3 Merchant skills [^3]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-663757",
+                  "text": "Ochette — Dancer Peacock Strut [^1]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-075a5d",
+                  "text": "Partitio — Arcanist: 3 Arcanist skills [^4]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-cad034",
+                  "text": "Partitio — Cleric [v4]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-35392d",
                   "text": "Osvald — Arcanist: 2 Arcanist skills [v3], Seal of Immortality",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r1577",
-                  "text": "Throne — Equip Life in the Shadows over Deal More Damage (Slot 1)",
+                  "id": "journey-for-the-dawn-1-75d3f3",
+                  "text": "Temenos — Equip A Step Ahead (Slot 4)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r1578",
-                  "text": "Castti — Equip Peak Performance over Evasive Manoeuvres (Slot 1)",
+                  "id": "journey-for-the-dawn-1-196a4d",
+                  "text": "Partitio — Equip Lasting Memory over Evil Ward (Slot 4)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r1579",
-                  "text": "Castti — Equip A Step Ahead (Slot 2)",
+                  "id": "journey-for-the-dawn-1-a400fc",
+                  "text": "Partitio — Equip A Step Ahead (Slot 2)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r1580",
-                  "text": "Osvald — Equip Hang Tough over Evasive Manoeuvres (Slot 2)",
+                  "id": "journey-for-the-dawn-1-6b49ed",
+                  "text": "Osvald — Unequip Peak Performance (Slot 2)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r1581",
-                  "text": "Osvald — Equip Lasting Memory (Slot 1)",
+                  "id": "journey-for-the-dawn-1-8de2e1",
+                  "text": "Osvald — Equip Hang Tough over Deal More Damage (Slot 1)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r1582",
-                  "text": "Partitio — Equip Lasting Memory (Slot 1)",
+                  "id": "journey-for-the-dawn-1-95d1a4",
+                  "text": "Osvald — Equip Lasting Memory (Slot 2)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r1583",
-                  "text": "Partitio — Equip A Step Ahead (Slot 3)",
+                  "id": "journey-for-the-dawn-1-525748",
+                  "text": "Ochette — Equip Boost-Start (Slot 2)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r1584",
-                  "text": "Agnea — Equip Boost-Start (Slot 3)",
+                  "id": "journey-for-the-dawn-1-2b2c26",
+                  "text": "Castti — Unequip Extra Experience (Slot 3)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r1585",
-                  "text": "Agnea — Equip A Step Ahead (Slot 4)",
+                  "id": "journey-for-the-dawn-1-c04570",
+                  "text": "Castti — Equip Lasting Memory over Grows on Trees (Slot 4)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-cc5209",
+                  "text": "Castti — Equip A Step Ahead (Slot 3)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Support Skills"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-abd20a",
+                  "text": "Hikari — Equip Summon Strength over Boost-Start (Slot 3)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
@@ -7559,13 +8680,13 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1587",
+              "id": "journey-for-the-dawn-b2",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1588",
+                  "id": "journey-for-the-dawn-1-b8a3c0",
                   "text": "Warp to Flamechurch.",
                   "check": true,
                   "kind": "do"
@@ -7573,79 +8694,92 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1590",
+              "id": "journey-for-the-dawn-b3",
               "title": "Arcanette",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1592",
-                  "text": "Throne — Spear x3 / Defend [<]",
+                  "id": "journey-for-the-dawn-1-785e1f",
+                  "text": "Temenos — Spear x3 (can do latent power with staff if you have it) [<]",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1593",
-                  "text": "Ochette — Axe x2 / Defend",
+                  "id": "journey-for-the-dawn-1-de3f54",
+                  "text": "Hikari — Defend",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1594",
-                  "text": "Castti — Defend / Axe (if last)",
+                  "id": "journey-for-the-dawn-1-d5a6f3",
+                  "text": "Castti — Axe x2",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1595",
-                  "text": "Temenos — Axe x2 / Defend [>]",
+                  "id": "journey-for-the-dawn-1-2db696",
+                  "text": "Throne — Axe x3 [>]",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1597",
-                  "text": "Castti — Switch to Staff",
+                  "id": "journey-for-the-dawn-1-a7f33b",
+                  "text": "Hikari — Shinjumonjigiri x3",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r1598",
-                  "text": "Castti — Concoct x3",
-                  "check": true,
-                  "kind": "fight",
-                  "lines": [
-                    "Blusterbloom x3",
-                    "Strengthening Serum"
-                  ],
                   "ctx": "Turn 2"
                 }
               ]
             },
             {
-              "id": "b1602",
+              "id": "journey-for-the-dawn-b4",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1603",
+                  "id": "journey-for-the-dawn-1-2389b1",
                   "text": "Go to Flamechurch: Cathedral Entrance.",
                   "check": true,
                   "kind": "do"
-                },
+                }
+              ]
+            },
+            {
+              "id": "journey-for-the-dawn-b5",
+              "title": "Menu",
+              "kind": "menu",
+              "solo": false,
+              "steps": [
                 {
-                  "id": "r1604",
-                  "text": "After lighting the flame, warp to Beasting Village.",
+                  "id": "journey-for-the-dawn-1-92e0ad",
+                  "text": "Items — All Magic Nuts (2S, 4M) - will be 3M if you used all nuts b4 galdy → Castti",
                   "check": true,
-                  "kind": "do"
+                  "kind": "menu",
+                  "ctx": "Inventory"
                 },
                 {
-                  "id": "r1605",
+                  "id": "journey-for-the-dawn-1-4ae88b",
+                  "text": "Valuables — Shiny Mirror",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                }
+              ]
+            },
+            {
+              "id": "journey-for-the-dawn-b6",
+              "title": "After lighting the flame, warp to Beasting Village.",
+              "kind": "travel",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "journey-for-the-dawn-1-5311e3",
                   "text": "Go to Tombs of the Wardenbeasts.",
                   "check": true,
                   "kind": "do"
@@ -7653,275 +8787,300 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1607",
+              "id": "journey-for-the-dawn-b7",
               "title": "Grotesque Monster",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1609",
-                  "text": "Throne — Bow x3 [>]",
+                  "id": "journey-for-the-dawn-1-92767c",
+                  "text": "Anyone — Energising Pomegranate (M) → Hikari",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1610",
-                  "text": "Ochette — Bow x2",
+                  "id": "journey-for-the-dawn-1-b8cbd2",
+                  "text": "Hikari — Defend / Shinjumonjigiri x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1611",
-                  "text": "Castti — Defend",
+                  "id": "journey-for-the-dawn-1-d6019e",
+                  "text": "Anyone — Soulstone (L)",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1612",
-                  "text": "Temenos — Axe / Bow x2",
+                  "id": "journey-for-the-dawn-1-2e635b",
+                  "text": "Hikari — Shinjumonjigiri x4 (if needed)",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1614",
-                  "text": "Castti — Switch to Staff",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r1615",
-                  "text": "Castti — Concoct x3",
-                  "check": true,
-                  "kind": "fight",
-                  "lines": [
-                    "Blusterbloom x3",
-                    "Strengthening Serum"
-                  ],
                   "ctx": "Turn 2"
                 }
               ]
             },
             {
-              "id": "b1619",
-              "title": "Overworld",
-              "kind": "travel",
+              "id": "journey-for-the-dawn-b8",
+              "title": "Menu",
+              "kind": "menu",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1620",
+                  "id": "journey-for-the-dawn-1-f98892",
+                  "text": "Set Slot 2 to Ochette. Set Slot 1 to Temenos",
+                  "check": true,
+                  "kind": "party",
+                  "note": "Temenos Hikari"
+                },
+                {
+                  "id": "journey-for-the-dawn-2-ba2bad",
+                  "text": "Osvald · Castti",
+                  "check": false,
+                  "kind": "note"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-b9134a",
                   "text": "After lighting the flame, warp to Ku.",
+                  "check": true,
+                  "kind": "party"
+                }
+              ]
+            },
+            {
+              "id": "journey-for-the-dawn-b9",
+              "title": "Menu",
+              "kind": "menu",
+              "when": "Before going to the Armourer",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "journey-for-the-dawn-1-df1b81",
+                  "text": "Set Slot 3 to Osvald. Set Slot 4 to Throne",
+                  "check": true,
+                  "kind": "party",
+                  "note": "Temenos Hikari"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-96997c",
+                  "text": "Set Slot 1 to Agnea. Set Slot 3 to Castti",
+                  "check": true,
+                  "kind": "party",
+                  "note": "Throne"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-1bb732",
+                  "text": "Set Slot 4 to Partitio. Set Slot 1 to Ochette",
+                  "check": true,
+                  "kind": "party",
+                  "note": "Ochette Osvald"
+                }
+              ]
+            },
+            {
+              "id": "journey-for-the-dawn-b10",
+              "title": "Go to the armourer. Make sure you swapped parties first (need the extra sell value).",
+              "kind": "travel",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "journey-for-the-dawn-1-589578",
+                  "text": "Go to the armourer. Make sure you swapped parties first (need the extra sell value).",
                   "check": true,
                   "kind": "do"
                 }
               ]
             },
             {
-              "id": "b1622",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before leaving Ku",
+              "id": "journey-for-the-dawn-b11",
+              "title": "Armourer",
+              "kind": "shop",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1625",
-                  "text": "Throne — Unequip all",
+                  "id": "journey-for-the-dawn-1-25a433",
+                  "text": "Buy 3 Great Helm",
                   "check": true,
-                  "kind": "menu",
-                  "note": "swift shield stays on (thanks to lock)",
-                  "ctx": "Equipment"
+                  "kind": "shop"
                 },
                 {
-                  "id": "r1626",
-                  "text": "Hikari — Optimise",
+                  "id": "journey-for-the-dawn-1-1ea24b",
+                  "text": "Sell Guardian's Iceblade",
                   "check": true,
-                  "kind": "menu",
-                  "note": "equips battle-tested blade, soldier's spear, dazzling tiara, and butler's tailcoat",
-                  "ctx": "Equipment"
+                  "kind": "shop"
                 },
                 {
-                  "id": "r1627",
-                  "text": "Hikari — Equip Finisher's Claws",
+                  "id": "journey-for-the-dawn-1-c3fa58",
+                  "text": "Sell Ogre's Bane",
                   "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
+                  "kind": "shop"
                 },
                 {
-                  "id": "r1628",
-                  "text": "Hikari — Equip Champion's Belt",
+                  "id": "journey-for-the-dawn-1-136303",
+                  "text": "Sell Eclipse Edge",
                   "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
+                  "kind": "shop"
                 },
                 {
-                  "id": "r1629",
-                  "text": "Hikari — Unequip Dazzling Tiara",
+                  "id": "journey-for-the-dawn-1-38fd59",
+                  "text": "Sell Marietta",
                   "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
+                  "kind": "shop"
                 },
                 {
-                  "id": "r1630",
-                  "text": "Hikari — Equip Giant's Club",
+                  "id": "journey-for-the-dawn-1-8e036e",
+                  "text": "Sell Breaker's Blade",
                   "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
+                  "kind": "shop"
                 },
                 {
-                  "id": "r1631",
-                  "text": "Hikari — Unequip Soldier's Spear",
+                  "id": "journey-for-the-dawn-1-b7f54c",
+                  "text": "Sell Black Bow",
                   "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
+                  "kind": "shop"
                 },
                 {
-                  "id": "r1632",
-                  "text": "Partitio — Equip Soldier's Spear",
-                  "check": true,
-                  "kind": "menu",
-                  "ctx": "Equipment"
+                  "id": "journey-for-the-dawn-1-c2e428",
+                  "text": "Need to have at least 297k after selling.",
+                  "check": false,
+                  "kind": "note",
+                  "ctx": "Notes"
                 },
                 {
-                  "id": "r1633",
-                  "text": "Osvald — Optimise",
-                  "check": true,
-                  "kind": "menu",
-                  "note": "equips dazzling tiara and imperial armour",
-                  "ctx": "Equipment"
-                },
-                {
-                  "id": "r1634",
-                  "text": "Osvald — Equip Empowering Necklace",
+                  "id": "journey-for-the-dawn-1-143117",
+                  "text": "Osvald — Unequip all",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Equipment"
                 },
                 {
-                  "id": "r1635",
-                  "text": "Osvald — Equip Librarian's Amulet",
+                  "id": "journey-for-the-dawn-1-5e6297",
+                  "text": "Castti — Optimise",
+                  "check": true,
+                  "kind": "menu",
+                  "note": "equips tornado glaive, wind whisperer, tornado bow, battle-tested staff, swift shield, great helm, and royal guard's mail",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-35045d",
+                  "text": "Castti — Equip Fang of Ferocity (Slot 2)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Equipment"
                 },
                 {
-                  "id": "r1636",
-                  "text": "Ochette — Equip 2 Lightning Amulets",
+                  "id": "journey-for-the-dawn-1-86fd6b",
+                  "text": "Castti — Equip Alpione's Amulet (Slot 1)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Equipment"
                 },
                 {
-                  "id": "r1637",
-                  "text": "Temenos — Equip Thunderstorm Amulet",
+                  "id": "journey-for-the-dawn-1-2ef507",
+                  "text": "Castti — Equip Blessed Vestments (Body)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Equipment"
                 },
                 {
-                  "id": "r1638",
-                  "text": "Temenos — Equip Unerring Bracelet",
+                  "id": "journey-for-the-dawn-1-24db21",
+                  "text": "Castti — Equip Ancient Circlet (Head)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Equipment"
                 },
                 {
-                  "id": "r1639",
-                  "text": "Throne — Equip Thunderstorm Amulet",
+                  "id": "journey-for-the-dawn-1-ff5d8e",
+                  "text": "Castti — Unequip Swift Shield (Shield)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Equipment"
                 },
                 {
-                  "id": "r1640",
-                  "text": "Throne — Equip Coat of Arms",
+                  "id": "journey-for-the-dawn-1-897ebc",
+                  "text": "Temenos — Equip Fortune Wand (Staff)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Equipment"
                 },
                 {
-                  "id": "r1641",
+                  "id": "journey-for-the-dawn-1-4b3d26",
+                  "text": "Throne — Lock Aegis Shield → Shield",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-736a06",
+                  "text": "Throne — Equip Coat of Arms over Spurning Ribbon (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-311fec",
                   "text": "Throne — Optimise",
                   "check": true,
                   "kind": "menu",
-                  "note": "equips platinum helm and quick cloak",
+                  "note": "equips great helm and royal guard's mail",
                   "ctx": "Equipment"
                 },
                 {
-                  "id": "r1644",
-                  "text": "Set Slot 1 to Osvald. Set Slot 2 to Temenos",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r1645",
-                  "text": "Set Slot 4 to Hikari. Set Slot 3 to Castti",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r1646",
-                  "text": "Set Slot 3 to Agnea. Set Slot 4 to Ochette",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r1647",
-                  "text": "Set Slot 2 to Partitio. Set Slot 1 to Throne",
-                  "check": true,
-                  "kind": "party"
-                }
-              ]
-            },
-            {
-              "id": "b1649",
-              "title": "Menu",
-              "kind": "menu",
-              "when": "Before leaving Ku (menu 2)",
-              "solo": false,
-              "steps": [
-                {
-                  "id": "r1652",
-                  "text": "Items — 3 Nourishing Nut (M) → Osvald",
+                  "id": "journey-for-the-dawn-1-fee21e",
+                  "text": "Ochette — Equip EXP Augmentor (Slot 2)",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Inventory"
+                  "ctx": "Equipment"
                 },
                 {
-                  "id": "r1653",
-                  "text": "Items — All Fortifying Nuts (2S, 3M, 2L) (Hikari)",
+                  "id": "journey-for-the-dawn-1-733529",
+                  "text": "Ochette — Equip Sprightly Ring (Slot 1)",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Inventory"
+                  "ctx": "Equipment"
                 },
                 {
-                  "id": "r1654",
-                  "text": "Items — Tough Nut (M) (Osvald)",
+                  "id": "journey-for-the-dawn-1-54d34f",
+                  "text": "Partitio — Optimise (with hotkey)",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Inventory"
+                  "note": "equips swift shield, great helm, and royal guard's mail",
+                  "ctx": "Equipment"
                 },
                 {
-                  "id": "r1655",
-                  "text": "Items — Sharp Nut (L) (Hikari)",
+                  "id": "journey-for-the-dawn-1-f066fb",
+                  "text": "Partitio — Equip Quick Cloak",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Inventory"
+                  "ctx": "Equipment"
                 },
                 {
-                  "id": "r1656",
-                  "text": "Items — 2 Light Nut (Osvald)",
+                  "id": "journey-for-the-dawn-1-b43e0e",
+                  "text": "Partitio — Equip 2 Empowering Bracelets",
                   "check": true,
                   "kind": "menu",
-                  "note": "needed to prevent crits on true vide the wicked",
-                  "ctx": "Inventory"
+                  "ctx": "Equipment"
                 },
                 {
-                  "id": "r1658",
-                  "text": "Partitio — Equip Spurning Ribbon",
+                  "id": "journey-for-the-dawn-1-d63bf8",
+                  "text": "Agnea — Equip Spurning Ribbon (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-4181c0",
+                  "text": "Osvald — Optimise",
+                  "check": true,
+                  "kind": "menu",
+                  "note": "equips swift shield, great helm, and royal guard's mail",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "journey-for-the-dawn-1-ddefcc",
+                  "text": "Osvald — Equip 2 Empowering Bracelets",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Equipment"
@@ -7929,37 +9088,37 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1660",
+              "id": "journey-for-the-dawn-b12",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1661",
+                  "id": "journey-for-the-dawn-1-5cb913",
                   "text": "Go to Tranquil Grotto.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1662",
+                  "id": "journey-for-the-dawn-1-119821",
                   "text": "After lighting the flame, warp to Crackridge.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1663",
+                  "id": "journey-for-the-dawn-1-c1274d",
                   "text": "Go to Fellsun Ruins.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1664",
+                  "id": "journey-for-the-dawn-1-e01958",
                   "text": "After lighting the flame, warp to New Delsta Harbour.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1665",
+                  "id": "journey-for-the-dawn-1-607742",
                   "text": "Go to Vidania.",
                   "check": true,
                   "kind": "do"
@@ -7967,55 +9126,55 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1667",
+              "id": "journey-for-the-dawn-b13",
               "title": "Menu",
               "kind": "menu",
               "when": "Before Vide",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1671",
-                  "text": "Set Slot 2 to Throne. Set Slot 1 to Partitio",
+                  "id": "journey-for-the-dawn-1-54bca4",
+                  "text": "Set Slot 3 to Throne. Set Slot 1 to Partitio",
                   "check": true,
                   "kind": "party",
-                  "note": "Partitio Osvald"
+                  "note": "Agnea Hikari"
                 },
                 {
-                  "id": "r1672",
-                  "text": "Set Slot 1 to Temenos. Set Slot 4 to Agnea",
+                  "id": "journey-for-the-dawn-1-503369",
+                  "text": "Set Slot 2 to Temenos. Set Slot 3 to Agnea",
                   "check": true,
                   "kind": "party",
-                  "note": "Ochette Hikari"
+                  "note": "Partitio"
                 },
                 {
-                  "id": "r1673",
-                  "text": "Castti · Temenos",
+                  "id": "journey-for-the-dawn-1-420643",
+                  "text": "Ochette · Osvald",
                   "check": false,
                   "kind": "note"
                 },
                 {
-                  "id": "r1676",
-                  "text": "Throne — Energising Pomegranate (L) → Hikari",
+                  "id": "journey-for-the-dawn-1-764b34",
+                  "text": "Throne — Abating Orb → Vide",
                   "check": true,
                   "kind": "party",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1677",
-                  "text": "Hikari — Latent Power - Hienka x2 → Vide",
+                  "id": "journey-for-the-dawn-1-58ad20",
+                  "text": "Hikari — Latent Power + Hienka x2 → Vide",
                   "check": true,
                   "kind": "party",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1678",
-                  "text": "Temenos — Abating Orb → Vide",
+                  "id": "journey-for-the-dawn-1-d72ed2",
+                  "text": "Temenos — Energising Pomegranate (L) → Hikari",
                   "check": true,
                   "kind": "party",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1680",
+                  "id": "journey-for-the-dawn-1-956398",
                   "text": "Hikari — Shinjumonjigiri x4 → Vide",
                   "check": true,
                   "kind": "party",
@@ -8026,99 +9185,106 @@ export const route: RouteData = {
           ]
         },
         {
-          "id": "vide-the-wicked-1682",
+          "id": "vide-the-wicked",
           "title": "Vide, the Wicked",
           "mark": "3:03:15",
           "seconds": 10995,
           "blocks": [
             {
-              "id": "b1682",
+              "id": "vide-the-wicked-b1",
               "title": "Vide, the Wicked",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1684",
-                  "text": "Agnea — Latent Power + Springy Boots",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1685",
-                  "text": "Partitio/Ochette — Rotten Meat (whoever is first) → Castti",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1686",
-                  "text": "Partitio/Ochette — Forbidden Elixir (whoever is second) → Castti",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1687",
+                  "id": "vide-the-wicked-1-ada0f5",
                   "text": "Castti — Defend",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1689",
-                  "text": "Agnea — Dagger x4",
+                  "id": "vide-the-wicked-1-c57688",
+                  "text": "Partitio — Forbidden Elixir → Castti",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2"
+                  "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1690",
-                  "text": "Partitio — Bow x3",
+                  "id": "vide-the-wicked-1-8a2047",
+                  "text": "Agnea — Latent Power + Springy Boots",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2"
+                  "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1691",
-                  "text": "Ochette — Bow x3",
+                  "id": "vide-the-wicked-1-fdb5dd",
+                  "text": "Ochette — Peacock Strut → Castti",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2"
+                  "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1692",
+                  "id": "vide-the-wicked-1-d38ea1",
                   "text": "Castti — Switch to Staff",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1693",
-                  "text": "Castti — Latent Power + Concoct x3",
+                  "id": "vide-the-wicked-1-867b47",
+                  "text": "Castti — Latent Power + Concoct x4",
                   "check": true,
                   "kind": "fight",
                   "lines": [
-                    "Blusterbloom x2",
+                    "Blusterbloom x3",
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1698",
+                  "id": "vide-the-wicked-1-da57bb",
+                  "text": "Partitio — Bow x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "vide-the-wicked-1-173843",
+                  "text": "Agnea — Dagger x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "vide-the-wicked-1-da6e32",
+                  "text": "Ochette — Bow x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "vide-the-wicked-1-cad42d",
                   "text": "Partitio — HHT x2",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r1699",
-                  "text": "Castti — Concoct x4",
+                  "id": "vide-the-wicked-1-6e9c2c",
+                  "text": "Ochette — Latent Power - Beastly Howl",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 3"
+                },
+                {
+                  "id": "vide-the-wicked-1-832da9",
+                  "text": "Castti — Concoct x3",
                   "check": true,
                   "kind": "fight",
                   "lines": [
-                    "Blusterbloom x4",
+                    "Blusterbloom x3",
                     "Strengthening Serum"
                   ],
                   "ctx": "Turn 3"
@@ -8126,74 +9292,68 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1703",
+              "id": "vide-the-wicked-b2",
               "title": "Menu",
               "kind": "menu",
               "when": "After reaching Canalbrine",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1707",
-                  "text": "Set Slot 4 to Castti. Set Slot 2 to Osvald",
+                  "id": "vide-the-wicked-1-2fb028",
+                  "text": "Set Slot 1 to Castti. Set Slot 2 to Hikari",
                   "check": true,
                   "kind": "party",
-                  "note": "Temenos Partitio"
+                  "note": "Osvald Temenos"
                 },
                 {
-                  "id": "r1708",
-                  "text": "Set Slot 2 to Partitio. Set Slot 3 to Hikari",
+                  "id": "vide-the-wicked-1-99270e",
+                  "text": "Set Slot 3 to Partitio. Set Slot 4 to Osvald",
                   "check": true,
                   "kind": "party",
-                  "note": "Osvald Ochette"
+                  "note": "Ochette"
                 },
                 {
-                  "id": "r1709",
-                  "text": "Set Slot 3 to Ochette. Set Slot 4 to Temenos",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r1711",
-                  "text": "Ochette — Inventor [v3]",
+                  "id": "vide-the-wicked-1-9416f6",
+                  "text": "Throne — Merchant [^3]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r1713",
-                  "text": "Castti — Equip Lasting Memory over Peak Performance (Slot 1)",
+                  "id": "vide-the-wicked-1-a3d854",
+                  "text": "Temenos — Inventor [^1]",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Support Skills"
+                  "ctx": "Jobs"
                 }
               ]
             },
             {
-              "id": "b1715",
+              "id": "vide-the-wicked-b3",
               "title": "Overworld",
               "kind": "travel",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1716",
+                  "id": "vide-the-wicked-1-0e0d6e",
                   "text": "Hire the Cleric in the church.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1717",
+                  "id": "vide-the-wicked-1-6fad35",
                   "text": "Warp to Conning Creek.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1718",
+                  "id": "vide-the-wicked-1-9b96ed",
                   "text": "Save the game.",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1719",
+                  "id": "vide-the-wicked-1-7e8702",
                   "text": "Exit and load the same file under Extra Battles.",
                   "check": true,
                   "kind": "do"
@@ -8209,157 +9369,149 @@ export const route: RouteData = {
       "title": "Extra Battles",
       "chapters": [
         {
-          "id": "majestic-mysterious-travellers-1721",
+          "id": "majestic-mysterious-travellers",
           "title": "Majestic Mysterious Travellers",
           "mark": "3:05:45",
           "seconds": 11145,
           "blocks": [
             {
-              "id": "b1721",
+              "id": "majestic-mysterious-travellers-b1",
               "title": "Majestic Mysterious Travellers",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1723",
+                  "id": "majestic-mysterious-travellers-1-476306",
                   "text": "Throne — Latent Power + Reinforcing Jam → Self",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1724",
+                  "id": "majestic-mysterious-travellers-1-7b2502",
                   "text": "Throne — HHB x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1725",
+                  "id": "majestic-mysterious-travellers-1-43ec8c",
                   "text": "Castti — Energising Pomegranate (L) → Self",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1726",
-                  "text": "Ochette — Springy Boots → Throne",
+                  "id": "majestic-mysterious-travellers-1-10c53e",
+                  "text": "Temenos — Springy Boots → Throne",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1727",
+                  "id": "majestic-mysterious-travellers-1-a7a979",
                   "text": "Partitio — Latent Power + Aelfric's Blessing → Castti",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1729",
+                  "id": "majestic-mysterious-travellers-1-c98810",
                   "text": "Castti — Dohter's Charity → Throne",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 1 End"
+                  "ctx": "Turn 1 - Aelfric's"
                 },
                 {
-                  "id": "r1731",
+                  "id": "majestic-mysterious-travellers-1-2b3658",
                   "text": "Throne — Latent Power + Forbidden Elixir",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1732",
+                  "id": "majestic-mysterious-travellers-2-7b2502",
                   "text": "Throne — HHB x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1733",
+                  "id": "majestic-mysterious-travellers-1-d38ea1",
+                  "text": "Castti — Switch to Staff",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "majestic-mysterious-travellers-1-b65c41",
+                  "text": "Castti — Latent Power + Concoct x3",
+                  "check": true,
+                  "kind": "fight",
+                  "lines": [
+                    "Forget-Me-Do (if before Temenos)",
+                    "Blusterbloom x1 (x2 if after Temenos)",
+                    "Strengthening Serum",
+                    "Diffusing Serum"
+                  ],
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "majestic-mysterious-travellers-1-8df21f",
+                  "text": "Temenos — Ancient Cursed Talisman",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "majestic-mysterious-travellers-1-5ed35a",
                   "text": "Partitio — Aelfric's Blessing → Throne",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1735",
-                  "text": "Castti — Switch to Staff",
+                  "id": "majestic-mysterious-travellers-1-91a7f5",
+                  "text": "Castti — Concoct x4",
                   "check": true,
-                  "kind": "do",
-                  "ctx": "Castti after Ochette"
-                },
-                {
-                  "id": "r1736",
-                  "text": "Castti — Latent Power + Concoct x4",
-                  "check": true,
-                  "kind": "do",
+                  "kind": "fight",
                   "lines": [
                     "Blusterbloom x3",
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
-                  "ctx": "Castti after Ochette"
+                  "ctx": "Turn 2 - Aelfric's"
                 },
                 {
-                  "id": "r1740",
-                  "text": "Ochette — Latent Power - Beastly Howl",
-                  "check": true,
-                  "kind": "do",
-                  "note": "Diffusing Serum",
-                  "ctx": "Castti after Ochette"
-                },
-                {
-                  "id": "r1741",
-                  "text": "Ochette · Energising Pomegranate (L) · Castti",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Castti after Ochette"
-                },
-                {
-                  "id": "r1743",
-                  "text": "Castti — Concoct x3 (x4 if full BP)",
-                  "check": true,
-                  "kind": "fight",
-                  "lines": [
-                    "Blusterbloom x2/x3",
-                    "Strengthening Serum",
-                    "Diffusing Serum"
-                  ],
-                  "ctx": "Turn 2 End"
-                },
-                {
-                  "id": "r1747",
+                  "id": "majestic-mysterious-travellers-1-ca6da8",
                   "text": "Throne — Latent Power",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2 End"
+                  "ctx": "Turn 2 - Aelfric's"
                 },
                 {
-                  "id": "r1748",
+                  "id": "majestic-mysterious-travellers-1-c15aba",
                   "text": "Throne — 2 Decaying Dragon's Essence",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2 End"
+                  "ctx": "Turn 2 - Aelfric's"
                 },
                 {
-                  "id": "r1750",
+                  "id": "majestic-mysterious-travellers-1-26e34d",
                   "text": "Throne — Latent Power + Reinforcing Jam",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r1751",
+                  "id": "majestic-mysterious-travellers-1-8208a7",
                   "text": "Throne — Ancient Cursed Talisman",
                   "check": true,
                   "kind": "fight",
-                  "note": "If Castti is not second, skip latent and use talisman with someone else",
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r1752",
+                  "id": "majestic-mysterious-travellers-1-867b47",
                   "text": "Castti — Latent Power + Concoct x4",
                   "check": true,
                   "kind": "fight",
@@ -8371,7 +9523,7 @@ export const route: RouteData = {
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r1757",
+                  "id": "majestic-mysterious-travellers-1-832da9",
                   "text": "Castti — Concoct x3",
                   "check": true,
                   "kind": "fight",
@@ -8380,87 +9532,89 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
-                  "ctx": "Turn 3 End"
+                  "ctx": "Turn 3 - Aelfric's"
                 }
               ]
             }
           ]
         },
         {
-          "id": "masterly-mysterious-travellers-1762",
+          "id": "masterly-mysterious-travellers",
           "title": "Masterly Mysterious Travellers",
+          "mark": "3:10:00",
+          "seconds": 11400,
           "blocks": [
             {
-              "id": "b1762",
+              "id": "masterly-mysterious-travellers-b1",
               "title": "Masterly Mysterious Travellers",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1764",
+                  "id": "masterly-mysterious-travellers-1-476306",
                   "text": "Throne — Latent Power + Reinforcing Jam → Self",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1765",
+                  "id": "masterly-mysterious-travellers-1-7b2502",
                   "text": "Throne — HHB x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1766",
+                  "id": "masterly-mysterious-travellers-1-43ec8c",
                   "text": "Castti — Energising Pomegranate (L) → Self",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1767",
-                  "text": "Ochette — Springy Boots → Throne",
+                  "id": "masterly-mysterious-travellers-1-10c53e",
+                  "text": "Temenos — Springy Boots → Throne",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1768",
+                  "id": "masterly-mysterious-travellers-1-a7a979",
                   "text": "Partitio — Latent Power + Aelfric's Blessing → Castti",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1770",
+                  "id": "masterly-mysterious-travellers-1-c98810",
                   "text": "Castti — Dohter's Charity → Throne",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 1 End"
+                  "ctx": "Turn 1 - Aelfric's"
                 },
                 {
-                  "id": "r1772",
+                  "id": "masterly-mysterious-travellers-1-2b3658",
                   "text": "Throne — Latent Power + Forbidden Elixir",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1773",
+                  "id": "masterly-mysterious-travellers-2-7b2502",
                   "text": "Throne — HHB x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1774",
+                  "id": "masterly-mysterious-travellers-1-d38ea1",
                   "text": "Castti — Switch to Staff",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1775",
+                  "id": "masterly-mysterious-travellers-1-867b47",
                   "text": "Castti — Latent Power + Concoct x4",
                   "check": true,
                   "kind": "fight",
@@ -8472,48 +9626,67 @@ export const route: RouteData = {
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1779",
+                  "id": "masterly-mysterious-travellers-1-5ed35a",
                   "text": "Partitio — Aelfric's Blessing → Throne",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1781",
-                  "text": "Castti — Concoct x3",
+                  "id": "masterly-mysterious-travellers-1-03e71a",
+                  "text": "Castti — Concoct x2",
                   "check": true,
                   "kind": "fight",
                   "lines": [
-                    "Blusterbloom x2",
+                    "Blusterbloom",
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
-                  "ctx": "Turn 2 End"
+                  "ctx": "Turn 2 - Aelfric's"
                 },
                 {
-                  "id": "r1785",
+                  "id": "masterly-mysterious-travellers-1-ca6da8",
                   "text": "Throne — Latent Power",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2 End"
+                  "ctx": "Turn 2 - Aelfric's"
                 },
                 {
-                  "id": "r1786",
+                  "id": "masterly-mysterious-travellers-1-c15aba",
                   "text": "Throne — 2 Decaying Dragon's Essence",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2 End"
+                  "ctx": "Turn 2 - Aelfric's"
                 },
                 {
-                  "id": "r1788",
+                  "id": "masterly-mysterious-travellers-1-7b55df",
                   "text": "Throne — Reinforcing Jam",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r1789",
-                  "text": "Castti — Latent Power + Concoct x4",
+                  "id": "masterly-mysterious-travellers-1-d9c95d",
+                  "text": "Castti — Latent Power + Concoct x2",
+                  "check": true,
+                  "kind": "fight",
+                  "lines": [
+                    "Blusterbloom",
+                    "Strengthening Serum",
+                    "Diffusing Serum"
+                  ],
+                  "ctx": "Turn 3"
+                },
+                {
+                  "id": "masterly-mysterious-travellers-1-f4ea80",
+                  "text": "Anyone — Ancient Cursed Talisman",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 3"
+                },
+                {
+                  "id": "masterly-mysterious-travellers-1-91a7f5",
+                  "text": "Castti — Concoct x4",
                   "check": true,
                   "kind": "fight",
                   "lines": [
@@ -8521,61 +9694,69 @@ export const route: RouteData = {
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
-                  "ctx": "Turn 3"
-                },
-                {
-                  "id": "r1794",
-                  "text": "Castti — Concoct x3",
-                  "check": true,
-                  "kind": "fight",
-                  "lines": [
-                    "Blusterbloom x2",
-                    "Strengthening Serum",
-                    "Diffusing Serum"
-                  ],
-                  "ctx": "Turn 3 End"
+                  "ctx": "Turn 3 - Aelfric's"
                 }
               ]
             },
             {
-              "id": "b1799",
+              "id": "masterly-mysterious-travellers-b2",
               "title": "Menu",
               "kind": "menu",
               "when": "Before True Vide",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1803",
-                  "text": "Set Slot 2 to Hikari. Set Slot 2 to Castti",
+                  "id": "masterly-mysterious-travellers-1-6e5201",
+                  "text": "Set Slot 4 to Ochette. Set Slot 2 to Castti",
                   "check": true,
                   "kind": "party",
-                  "note": "Castti"
+                  "note": "Agnea"
                 },
                 {
-                  "id": "r1805",
+                  "id": "masterly-mysterious-travellers-1-935f58",
+                  "text": "Set Slot 1 to Hikari. Set Slot 3 to Temenos",
+                  "check": true,
+                  "kind": "party",
+                  "note": "Osvald"
+                },
+                {
+                  "id": "masterly-mysterious-travellers-1-8d0b0d",
+                  "text": "Items — Nourishing Nut (M) → Partitio",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "masterly-mysterious-travellers-1-60eb5d",
+                  "text": "Items — Reinforcing Jam (Ochette)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Inventory"
+                },
+                {
+                  "id": "masterly-mysterious-travellers-1-35e324",
                   "text": "Throne — Cleric: All Cleric skills [^2]",
                   "check": true,
                   "kind": "menu",
-                  "note": "Ochette",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r1806",
+                  "id": "masterly-mysterious-travellers-1-f8b801",
                   "text": "Partitio — Merchant: 1 Merchant skill",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r1807",
-                  "text": "Partitio — Dancer Stimulate [^1]",
+                  "id": "masterly-mysterious-travellers-1-e328b6",
+                  "text": "Partitio — Dancer [^1]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r1808",
-                  "text": "Agnea — Merchant [v1]",
+                  "id": "masterly-mysterious-travellers-1-0f471c",
+                  "text": "Agnea — Merchant: Hired Help [v1]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
@@ -8585,179 +9766,211 @@ export const route: RouteData = {
           ]
         },
         {
-          "id": "true-vide-phase-1-1810",
+          "id": "true-vide-phase-1",
           "title": "True Vide (Phase 1)",
+          "mark": "3:14:00",
+          "seconds": 11640,
           "blocks": [
             {
-              "id": "b1810",
+              "id": "true-vide-phase-1-b1",
               "title": "True Vide (Phase 1)",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1812",
-                  "text": "Throne — Defend",
+                  "id": "true-vide-phase-1-1-0625d2",
+                  "text": "Throne — Energising Pomegranate (L) → Hikari",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1813",
-                  "text": "Hikari — Divine Dual-Edge x2 (if after both Ochette and Partitio)",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1814",
-                  "text": "Hikari — Otherwise, Latent Power - Hienka → Any",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1815",
-                  "text": "Partitio — Latent Power - HHB x4",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1816",
+                  "id": "true-vide-phase-1-1-6e9c2c",
                   "text": "Ochette — Latent Power - Beastly Howl",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1818",
-                  "text": "Hikari — Divine Dual-Edge x2",
+                  "id": "true-vide-phase-1-1-00e5aa",
+                  "text": "Hikari — Divine Dual-Edge x4 (if last)",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 1 End"
+                  "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1820",
+                  "id": "true-vide-phase-1-1-a2fc4b",
+                  "text": "Hikari — Otherwise, Latent Power - Hienka → Vide",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "true-vide-phase-1-1-ac9110",
+                  "text": "Partitio — Latent Power + HHB x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "true-vide-phase-1-1-23056b",
+                  "text": "Hikari — Divine Dual-Edge x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1 - Aelfric's"
+                },
+                {
+                  "id": "true-vide-phase-1-1-b629fe",
                   "text": "Throne — Latent Power + Energising Pomegranate (L) → Self",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1821",
+                  "id": "true-vide-phase-1-1-023611",
                   "text": "Throne — Aelfric's Blessing → Partitio",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1822",
-                  "text": "Hikari — Latent Power - Hienka → Different",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r1823",
-                  "text": "Partitio — Summon",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r1824",
+                  "id": "true-vide-phase-1-1-b23c6d",
                   "text": "Ochette — Revitalising Jam → Hikari",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1826",
+                  "id": "true-vide-phase-1-1-76c4b1",
+                  "text": "Hikari — Latent Power - Hienka → Vide",
+                  "check": true,
+                  "kind": "fight",
+                  "note": "cursor should still be on vide",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "true-vide-phase-1-1-1804a1",
                   "text": "Partitio — Summon",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2 End"
+                  "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1827",
-                  "text": "Hikari — Divine Dual-Edge x4",
+                  "id": "true-vide-phase-1-2-1804a1",
+                  "text": "Partitio — Summon",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2 End"
+                  "ctx": "Turn 2 - Aelfric's"
                 },
                 {
-                  "id": "r1829",
+                  "id": "true-vide-phase-1-1-5e716d",
+                  "text": "Hikari — Divine Dual-Edge x3",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2 - Aelfric's"
+                },
+                {
+                  "id": "true-vide-phase-1-1-d31835",
                   "text": "Throne — Armour Corrosive",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r1830",
-                  "text": "Hikari — Shinjumonjigiri x3",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 3"
-                },
-                {
-                  "id": "r1831",
-                  "text": "Partitio — Lion Dance → Hikari",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 3"
-                },
-                {
-                  "id": "r1832",
+                  "id": "true-vide-phase-1-1-f84044",
                   "text": "Ochette — Provoke Beasts x2",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r1833",
+                  "id": "true-vide-phase-1-1-72d5e0",
                   "text": "Ochette — Vagrant Frogking I x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r1835",
+                  "id": "true-vide-phase-1-1-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 3"
+                },
+                {
+                  "id": "true-vide-phase-1-1-e8a29d",
+                  "text": "Partitio — Lion Dance → Hikari",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 3"
+                },
+                {
+                  "id": "true-vide-phase-1-1-e7b9ed",
                   "text": "Partitio — Reinforcing Jam → Hikari",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 3 End"
+                  "ctx": "Turn 3 - Aelfric's"
                 },
                 {
-                  "id": "r1837",
+                  "id": "true-vide-phase-1-1-8d31f1",
                   "text": "Hikari — Latent Power - Hienka x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 4"
                 },
                 {
-                  "id": "r1839",
-                  "text": "Hikari — Shinjumonjigiri x3",
+                  "id": "true-vide-phase-1-1-d04d7b",
+                  "text": "Partitio — Energising Pomegranate → Hikari",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 4 End"
+                  "ctx": "Turn 4 - Aelfric's"
+                },
+                {
+                  "id": "true-vide-phase-1-2-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 4 - Aelfric's"
                 }
               ]
-            },
+            }
+          ]
+        },
+        {
+          "id": "true-vide-phase-2",
+          "title": "True Vide (Phase 2)",
+          "mark": "3:16:00",
+          "seconds": 11760,
+          "blocks": [
             {
-              "id": "b1841",
+              "id": "true-vide-phase-2-b1",
               "title": "True Vide (Phase 2)",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1843",
+                  "id": "true-vide-phase-2-1-9517f0",
+                  "text": "Temenos — Aelfric's Blessing → Castti",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "true-vide-phase-2-1-7b87af",
+                  "text": "Osvald — One True Magic",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 1"
+                },
+                {
+                  "id": "true-vide-phase-2-1-b90fce",
                   "text": "Agnea — HHB x4",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1844",
+                  "id": "true-vide-phase-2-1-832da9",
                   "text": "Castti — Concoct x3",
                   "check": true,
                   "kind": "fight",
@@ -8770,135 +9983,107 @@ export const route: RouteData = {
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1849",
-                  "text": "Temenos — Aelfric's Blessing → Castti",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1850",
-                  "text": "Osvald — One True Magic",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 1"
-                },
-                {
-                  "id": "r1852",
+                  "id": "true-vide-phase-2-1-03113e",
                   "text": "Castti — Decaying Dragon's Essence → Bottom right [^]",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 1 End"
+                  "ctx": "Turn 1 - Aelfric's"
                 },
                 {
-                  "id": "r1854",
-                  "text": "Agnea — Refreshing Jam (if needed, else Peacock Strut x2 Castti) → Osvald",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 2"
-                },
-                {
-                  "id": "r1855",
+                  "id": "true-vide-phase-2-1-f9d73d",
                   "text": "Temenos — Sacred Shield x3 → Osvald",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1856",
+                  "id": "true-vide-phase-2-1-99c436",
                   "text": "Osvald — Seal of Immortality",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1857",
+                  "id": "true-vide-phase-2-1-80ebe5",
+                  "text": "Agnea — Refreshing Jam (if Osvald is at 1 HP, else Peacock Strut x2 Castti) → Osvald",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 2"
+                },
+                {
+                  "id": "true-vide-phase-2-1-4d8025",
                   "text": "Castti — Forbidden Elixir → Self",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 2"
                 },
                 {
-                  "id": "r1859",
+                  "id": "true-vide-phase-2-1-d38ea1",
                   "text": "Castti — Switch to Staff",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 2 End"
+                  "ctx": "Turn 2 - Aelfric's"
                 },
                 {
-                  "id": "r1860",
-                  "text": "Castti — Concoct x4",
+                  "id": "true-vide-phase-2-1-02f182",
+                  "text": "Castti — Concoct x4 (x3 if peacock)",
                   "check": true,
                   "kind": "fight",
                   "lines": [
-                    "Blusterbloom x3",
+                    "Blusterbloom x3 (can do x2 if peacock)",
                     "Strengthening Serum",
                     "Diffusing Serum"
                   ],
-                  "ctx": "Turn 2 End"
+                  "ctx": "Turn 2 - Aelfric's"
                 },
                 {
-                  "id": "r1865",
+                  "id": "true-vide-phase-2-1-78bd83",
                   "text": "Osvald — Almighty Olive",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r1867",
+                  "id": "true-vide-phase-2-2-4d8025",
                   "text": "Castti — Forbidden Elixir → Self",
                   "check": true,
                   "kind": "fight",
-                  "ctx": "Turn 3 End"
+                  "ctx": "Turn 3 - Aelfric's"
                 },
                 {
-                  "id": "r1869",
+                  "id": "true-vide-phase-2-1-97f51d",
                   "text": "Agnea — Peacock Strut (if not done already) → Castti",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 4"
                 },
                 {
-                  "id": "r1870",
+                  "id": "true-vide-phase-2-1-f4ea80",
                   "text": "Anyone — Ancient Cursed Talisman",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 4"
                 },
                 {
-                  "id": "r1871",
-                  "text": "Castti — Staff (if before both Agnea and Ancient Cursed Talisman)",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 4"
-                },
-                {
-                  "id": "r1872",
-                  "text": "Castti — Otherwise, Concoct x4",
+                  "id": "true-vide-phase-2-1-03e71a",
+                  "text": "Castti — Concoct x2",
                   "check": true,
                   "kind": "fight",
                   "lines": [
-                    "Blusterbloom x4",
+                    "Blusterbloom x2",
                     "Strengthening Serum"
                   ],
                   "ctx": "Turn 4"
                 },
                 {
-                  "id": "r1875",
-                  "text": "Anyone — Energising Pomegranate (L) (if after Castti) → Castti",
+                  "id": "true-vide-phase-2-1-55ce43",
+                  "text": "Anyone — Defend",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 4"
                 },
                 {
-                  "id": "r1876",
-                  "text": "Castti — Otherwise, Defend",
-                  "check": true,
-                  "kind": "fight",
-                  "ctx": "Turn 4"
-                },
-                {
-                  "id": "r1878",
+                  "id": "true-vide-phase-2-1-91a7f5",
                   "text": "Castti — Concoct x4",
                   "check": true,
                   "kind": "fight",
@@ -8906,10 +10091,17 @@ export const route: RouteData = {
                     "Blusterbloom x4",
                     "Strengthening Serum"
                   ],
-                  "ctx": "Turn 4 End"
+                  "ctx": "Turn 4 - Aelfric's"
                 },
                 {
-                  "id": "r1882",
+                  "id": "true-vide-phase-2-1-d7a05f",
+                  "text": "Anyone — Energising Pomegranate (M) → Castti",
+                  "check": true,
+                  "kind": "fight",
+                  "ctx": "Turn 5"
+                },
+                {
+                  "id": "true-vide-phase-2-2-91a7f5",
                   "text": "Castti — Concoct x4",
                   "check": true,
                   "kind": "fight",
@@ -8922,70 +10114,105 @@ export const route: RouteData = {
               ]
             },
             {
-              "id": "b1886",
+              "id": "true-vide-phase-2-b2",
               "title": "Menu",
               "kind": "menu",
               "when": "Before True Vide, the Wicked",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1890",
-                  "text": "Set Slot 1 to Agnea. Set Slot 2 to Hikari",
+                  "id": "true-vide-phase-2-1-2ee536",
+                  "text": "Set Slot 2 to Agnea. Set Slot 4 to Partitio",
                   "check": true,
                   "kind": "party",
-                  "note": "Castti"
+                  "note": "Partitio Ochette"
                 },
                 {
-                  "id": "r1891",
-                  "text": "Set Slot 3 to Temenos. Set Slot 3 to Partitio",
+                  "id": "true-vide-phase-2-1-d3e8b3",
+                  "text": "Set Slot 1 to Temenos. Set Slot 3 to Hikari",
                   "check": true,
                   "kind": "party",
-                  "note": "Partitio"
+                  "note": "Osvald"
                 },
                 {
-                  "id": "r1893",
-                  "text": "Agnea — Inventor [^4]",
+                  "id": "true-vide-phase-2-1-fcc8ea",
+                  "text": "Throne — Equip Thunderstorm Amulet over Brooch of Joy (Slot 1)",
                   "check": true,
                   "kind": "menu",
-                  "ctx": "Jobs"
+                  "ctx": "Equipment"
                 },
                 {
-                  "id": "r1894",
+                  "id": "true-vide-phase-2-1-317a58",
+                  "text": "Ochette — Unequip Sprightly Ring (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "true-vide-phase-2-1-0f222b",
+                  "text": "Temenos — Equip Thunderstorm Amulet (Slot 1)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "true-vide-phase-2-1-679f40",
+                  "text": "Temenos — Equip Unerring Bracelet (Slot 2)",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "true-vide-phase-2-1-be3ee0",
+                  "text": "Agnea — Equip 2 Lightning Amulets",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Equipment"
+                },
+                {
+                  "id": "true-vide-phase-2-1-898644",
                   "text": "Throne — Merchant [^1]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r1895",
-                  "text": "Osvald — Dancer: Stimulate [^4]",
+                  "id": "true-vide-phase-2-1-9982e6",
+                  "text": "Osvald — Dancer: Stimulate [v5]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r1896",
+                  "id": "true-vide-phase-2-1-5adedf",
                   "text": "Hikari — Arcanist [v3]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r1897",
-                  "text": "Temenos — Scholar [^2]",
+                  "id": "true-vide-phase-2-1-912196",
+                  "text": "Agnea — Inventor [^3]",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Jobs"
                 },
                 {
-                  "id": "r1899",
-                  "text": "Partitio — Equip Hang Tough over Evil Ward (Slot 2)",
+                  "id": "true-vide-phase-2-1-a1da67",
+                  "text": "Temenos — Scholar: Elemental Barrage [v3]",
+                  "check": true,
+                  "kind": "menu",
+                  "ctx": "Jobs"
+                },
+                {
+                  "id": "true-vide-phase-2-1-7177e5",
+                  "text": "Partitio — Equip Hang Tough over The Show Goes On (Slot 1)",
                   "check": true,
                   "kind": "menu",
                   "ctx": "Support Skills"
                 },
                 {
-                  "id": "r1900",
+                  "id": "true-vide-phase-2-1-186462",
                   "text": "Hikari — Equip Boost-Start over A Step Ahead (Slot 2)",
                   "check": true,
                   "kind": "menu",
@@ -8996,94 +10223,96 @@ export const route: RouteData = {
           ]
         },
         {
-          "id": "true-vide-the-wicked-1902",
+          "id": "true-vide-the-wicked",
           "title": "True Vide, the Wicked",
+          "mark": "3:18:00",
+          "seconds": 11880,
           "blocks": [
             {
-              "id": "b1902",
+              "id": "true-vide-the-wicked-b1",
               "title": "True Vide, the Wicked",
               "kind": "fight",
               "solo": false,
               "steps": [
                 {
-                  "id": "r1904",
-                  "text": "Throne — Latent Power + Defend",
+                  "id": "true-vide-the-wicked-1-81f90c",
+                  "text": "Throne — Latent Power + HHA x3",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1905",
-                  "text": "Throne — HHG x3",
+                  "id": "true-vide-the-wicked-1-5c18c2",
+                  "text": "Throne — Forbidden Elixir → Castti",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1906",
-                  "text": "Agnea — Peacock Strut x3 → Castti",
+                  "id": "true-vide-the-wicked-1-4dffbe",
+                  "text": "Ochette — Peacock Strut x3 → Castti",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1907",
-                  "text": "Anyone — Rotten Meat (whoever is first of Ochette and Temenos) → Hikari",
+                  "id": "true-vide-the-wicked-1-7f3d40",
+                  "text": "Temenos — Rotten Meat → Hikari",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1908",
-                  "text": "Anyone — Forbidden Elixir (whoever is second of Ochette and Temenos) → Castti",
+                  "id": "true-vide-the-wicked-1-24a668",
+                  "text": "Agnea — Windy Refrain",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 1"
                 },
                 {
-                  "id": "r1911",
+                  "id": "true-vide-the-wicked-1-56cda0",
                   "text": "Hikari — Shinjumonjigiri x4 → Top",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1912",
-                  "text": "Castti — Switch to Staff",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r1913",
-                  "text": "Castti — Latent Power + Concoct x3 → Bottom",
-                  "check": true,
-                  "kind": "do",
-                  "lines": [
-                    "Blusterbloom x3",
-                    "Strengthening Serum"
-                  ]
-                },
-                {
-                  "id": "r1916",
+                  "id": "true-vide-the-wicked-1-cb44c6",
                   "text": "Partitio — Defend",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1917",
+                  "id": "true-vide-the-wicked-1-d38ea1",
+                  "text": "Castti — Switch to Staff",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-0f45b4",
+                  "text": "Castti — Latent Power + Concoct x4 → Bottom",
+                  "check": true,
+                  "kind": "do",
+                  "lines": [
+                    "Blusterbloom x4",
+                    "Strengthening Serum"
+                  ]
+                },
+                {
+                  "id": "true-vide-the-wicked-1-d3862a",
                   "text": "Osvald after both Castti and Hikari",
                   "check": true,
                   "kind": "party",
                   "note": "Otherwise"
                 },
                 {
-                  "id": "r1918",
+                  "id": "true-vide-the-wicked-1-172305",
                   "text": "Osvald — Decaying Dragon's Essence",
                   "check": true,
                   "kind": "party",
                   "note": "Lion Dance"
                 },
                 {
-                  "id": "r1920",
+                  "id": "true-vide-the-wicked-1-fa16db",
                   "text": "Partitio — HHA x4",
                   "check": true,
                   "kind": "party",
@@ -9091,14 +10320,14 @@ export const route: RouteData = {
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r1921",
+                  "id": "true-vide-the-wicked-1-223665",
                   "text": "Osvald — Stimulate x3 → Partitio",
                   "check": true,
                   "kind": "party",
                   "ctx": "Turn 3"
                 },
                 {
-                  "id": "r1923",
+                  "id": "true-vide-the-wicked-1-752b3a",
                   "text": "Partitio — Latent Power + HHA x4",
                   "check": true,
                   "kind": "party",
@@ -9106,14 +10335,14 @@ export const route: RouteData = {
                   "ctx": "Turn 4"
                 },
                 {
-                  "id": "r1924",
+                  "id": "true-vide-the-wicked-2-223665",
                   "text": "Osvald — Stimulate x3 → Partitio",
                   "check": true,
                   "kind": "party",
                   "ctx": "Turn 4"
                 },
                 {
-                  "id": "r1925",
+                  "id": "true-vide-the-wicked-1-980195",
                   "text": "Osvald has used Decaying Dragon's Essence (3 shields left)",
                   "check": true,
                   "kind": "party",
@@ -9121,15 +10350,15 @@ export const route: RouteData = {
                   "ctx": "Turn 4"
                 },
                 {
-                  "id": "r1927",
-                  "text": "Partitio — Spear x3",
+                  "id": "true-vide-the-wicked-1-812f43",
+                  "text": "Partitio — HHB x3",
                   "check": true,
                   "kind": "party",
                   "note": "Branch: Partitio — HHA x3",
                   "ctx": "Turn 5"
                 },
                 {
-                  "id": "r1928",
+                  "id": "true-vide-the-wicked-1-0f01e1",
                   "text": "Osvald — Ancient Cursed Talisman",
                   "check": true,
                   "kind": "party",
@@ -9137,34 +10366,48 @@ export const route: RouteData = {
                   "ctx": "Turn 5"
                 },
                 {
-                  "id": "r1929",
+                  "id": "true-vide-the-wicked-1-afea7f",
                   "text": "Turn 5.5",
                   "check": false,
                   "kind": "note"
                 },
                 {
-                  "id": "r1930",
+                  "id": "true-vide-the-wicked-1-6356ff",
                   "text": "Partitio · Ancient Cursed Talisman",
                   "check": false,
                   "kind": "note",
                   "ctx": "Turn 5"
                 },
                 {
-                  "id": "r1931",
+                  "id": "true-vide-the-wicked-1-4ba097",
                   "text": "Osvald · Decaying Dragon's Essence",
                   "check": false,
                   "kind": "note",
                   "ctx": "Turn 5"
                 },
                 {
-                  "id": "r1933",
-                  "text": "Hikari — Latent Power - Hienka x2 (x3 if after Osvald)",
+                  "id": "true-vide-the-wicked-1-167fa0",
+                  "text": "Hikari — Latent Power - Hienka x2 (x3 if after Partitio)",
                   "check": true,
                   "kind": "party",
                   "ctx": "Turn 6"
                 },
                 {
-                  "id": "r1934",
+                  "id": "true-vide-the-wicked-1-f380c5",
+                  "text": "Partitio — Revitalising Jam → Hikari",
+                  "check": true,
+                  "kind": "party",
+                  "ctx": "Turn 6"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-457d5f",
+                  "text": "Osvald — Refreshing Jam → Throne",
+                  "check": true,
+                  "kind": "party",
+                  "ctx": "Turn 6"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-91a7f5",
                   "text": "Castti — Concoct x4",
                   "check": true,
                   "kind": "party",
@@ -9175,64 +10418,50 @@ export const route: RouteData = {
                   "ctx": "Turn 6"
                 },
                 {
-                  "id": "r1937",
-                  "text": "Partitio — Revitalising Jam → Hikari",
-                  "check": true,
-                  "kind": "party",
-                  "ctx": "Turn 6"
-                },
-                {
-                  "id": "r1938",
-                  "text": "Osvald — Refreshing Jam → Throne",
-                  "check": true,
-                  "kind": "party",
-                  "ctx": "Turn 6"
-                },
-                {
-                  "id": "r1940",
+                  "id": "true-vide-the-wicked-1-fec412",
                   "text": "Hikari — Shinjumonjigiri x4",
                   "check": true,
                   "kind": "party",
-                  "ctx": "Turn 6 End"
+                  "ctx": "Turn 6 - Aelfric's"
                 },
                 {
-                  "id": "r1943",
+                  "id": "true-vide-the-wicked-1-e25de3",
                   "text": "Throne — Latent Power + Spear x4 → Bottom",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1944",
+                  "id": "true-vide-the-wicked-1-471d0d",
                   "text": "Throne — Energising Pomegranate (L) → Castti",
                   "check": true,
                   "kind": "do"
                 },
                 {
-                  "id": "r1945",
-                  "text": "Agnea — Latent Power + Springy Boots x2",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r1946",
-                  "text": "Temenos — Staff x4 → Bottom",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r1947",
+                  "id": "true-vide-the-wicked-1-6e9c2c",
                   "text": "Ochette — Latent Power - Beastly Howl",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1950",
+                  "id": "true-vide-the-wicked-1-d57479",
+                  "text": "Temenos — Staff x4 → Bottom",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-866332",
+                  "text": "Agnea — Latent Power + Springy Boots x3",
+                  "check": true,
+                  "kind": "party"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-9e5b45",
                   "text": "Dancer — Stimulate x2 (if Castti is last) → Castti",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1951",
+                  "id": "true-vide-the-wicked-2-91a7f5",
                   "text": "Castti — Concoct x4",
                   "check": true,
                   "kind": "party",
@@ -9243,86 +10472,67 @@ export const route: RouteData = {
                   ]
                 },
                 {
-                  "id": "r1955",
+                  "id": "true-vide-the-wicked-1-f9fa70",
                   "text": "Anyone — Energising Pomegranate (L) → Throne",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1956",
+                  "id": "true-vide-the-wicked-1-46ea35",
                   "text": "Anyone — Decaying Dragon's Essence (after Castti)",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1958",
-                  "text": "Partitio is able to use Latent Power + Spear x4 instead of the Dragon Essence.",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Notes"
-                },
-                {
-                  "id": "r1960",
+                  "id": "true-vide-the-wicked-1-3f43de",
                   "text": "Throne — Latent Power + Spear x4",
-                  "check": false,
-                  "kind": "note",
+                  "check": true,
+                  "kind": "party",
                   "ctx": "Turn 9"
                 },
                 {
-                  "id": "r1961",
-                  "text": "Throne — Reinforcing Jam → Self",
+                  "id": "true-vide-the-wicked-1-8208a7",
+                  "text": "Throne — Ancient Cursed Talisman",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 9"
                 },
                 {
-                  "id": "r1962",
-                  "text": "Ochette — Provoke Beasts x4",
-                  "check": false,
-                  "kind": "note",
+                  "id": "true-vide-the-wicked-1-125b37",
+                  "text": "Temenos — Revive",
+                  "check": true,
+                  "kind": "party",
                   "ctx": "Turn 9"
                 },
                 {
-                  "id": "r1963",
+                  "id": "true-vide-the-wicked-1-302cf3",
+                  "text": "Agnea — Energising Pomegranate (M) → Castti",
+                  "check": true,
+                  "kind": "party",
+                  "ctx": "Turn 9"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-da936c",
+                  "text": "Ochette — Provoke Beasts x4",
+                  "check": true,
+                  "kind": "party",
+                  "ctx": "Turn 9"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-b4c385",
                   "text": "Ochette — Vagrant Frogking I x6",
                   "check": true,
                   "kind": "fight",
                   "ctx": "Turn 9"
                 },
                 {
-                  "id": "r1964",
-                  "text": "Temenos — Revive",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Turn 9"
-                },
-                {
-                  "id": "r1965",
-                  "text": "Agnea — Energising Pomegranate (L) → Castti",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Turn 9"
-                },
-                {
-                  "id": "r1968",
-                  "text": "Dancer — Stimulate (may need to x2 depending on turn order) → Castti / Hikari",
+                  "id": "true-vide-the-wicked-2-9e5b45",
+                  "text": "Dancer — Stimulate x2 (if Castti is last) → Castti",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1969",
-                  "text": "2nd Person — Switch to Ochette, Beastly Howl x3 (if needed)",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r1970",
-                  "text": "Hikari — Shinjumonjigiri x2 (if needed)",
-                  "check": true,
-                  "kind": "party"
-                },
-                {
-                  "id": "r1971",
+                  "id": "true-vide-the-wicked-3-91a7f5",
                   "text": "Castti — Concoct x4",
                   "check": true,
                   "kind": "party",
@@ -9332,137 +10542,93 @@ export const route: RouteData = {
                   ]
                 },
                 {
-                  "id": "r1974",
+                  "id": "true-vide-the-wicked-1-19f8a0",
                   "text": "Last Person — Switch Party",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1975",
-                  "text": "Agnea — Latent Power + Peacock Strut x2",
+                  "id": "true-vide-the-wicked-1-95e2d0",
+                  "text": "Ochette — Latent Power - Beastly Howl x3",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1977",
-                  "text": "Need Concoct with either Beastly Howl debuff or Shinjumonjigiri (Castti also cannot act last).",
-                  "check": false,
-                  "kind": "note",
-                  "note": "you're always able to guarantee one of these options via stimulate",
-                  "ctx": "Notes"
-                },
-                {
-                  "id": "r1978",
-                  "text": "Ochette has used Beastly Howl (0 BP)",
-                  "check": false,
-                  "kind": "note",
-                  "note": "Ochette has not used Beastly Howl (3 BP)",
-                  "ctx": "Notes"
-                },
-                {
-                  "id": "r1980",
-                  "text": "Throne — Latent Power + Sword x4",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Turn 11"
-                },
-                {
-                  "id": "r1981",
+                  "id": "true-vide-the-wicked-1-83e0cb",
                   "text": "Throne — Almighty Olive",
                   "check": true,
-                  "kind": "fight",
+                  "kind": "party",
                   "ctx": "Turn 11"
                 },
                 {
-                  "id": "r1982",
-                  "text": "Ochette — Energising Pomegranate (M) → Self",
-                  "check": false,
-                  "kind": "note",
-                  "note": "Branch: Ochette — Provoke Beasts x4",
-                  "ctx": "Turn 11"
-                },
-                {
-                  "id": "r1983",
+                  "id": "true-vide-the-wicked-1-a56fbd",
                   "text": "Temenos — Latent Power + Elemental Barrage x4",
-                  "check": false,
-                  "kind": "note",
-                  "note": "Akala x6",
+                  "check": true,
+                  "kind": "party",
                   "ctx": "Turn 11"
                 },
                 {
-                  "id": "r1985",
-                  "text": "Throne — Latent Power + Sword x3",
-                  "check": false,
-                  "kind": "note",
-                  "note": "Turn 12",
+                  "id": "true-vide-the-wicked-2-24a668",
+                  "text": "Agnea — Windy Refrain",
+                  "check": true,
+                  "kind": "party",
+                  "ctx": "Turn 11"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-a66f3c",
+                  "text": "Throne — Latent Power + Sword x4",
+                  "check": true,
+                  "kind": "party",
                   "ctx": "Turn 12"
                 },
                 {
-                  "id": "r1986",
+                  "id": "true-vide-the-wicked-1-8e6463",
                   "text": "Throne — Reinforcing Jam → Temenos",
                   "check": true,
                   "kind": "fight",
-                  "note": "Throne",
                   "ctx": "Turn 12"
                 },
                 {
-                  "id": "r1987",
-                  "text": "Ochette — Provoke Beasts x4",
-                  "check": false,
-                  "kind": "note",
-                  "note": "Reinforcing Jam",
-                  "ctx": "Turn 12"
-                },
-                {
-                  "id": "r1988",
-                  "text": "Ochette — Akala x6",
-                  "check": true,
-                  "kind": "fight",
-                  "note": "Ochette",
-                  "ctx": "Turn 12"
-                },
-                {
-                  "id": "r1989",
+                  "id": "true-vide-the-wicked-2-a56fbd",
                   "text": "Temenos — Latent Power + Elemental Barrage x4",
-                  "check": false,
-                  "kind": "note",
-                  "note": "Branch: Temenos — Latent Power + Elemental Barrage x3 (x4 if Akala glitched)",
+                  "check": true,
+                  "kind": "party",
                   "ctx": "Turn 12"
                 },
                 {
-                  "id": "r1991",
-                  "text": "If you still have a Dragon Essence, use it with Throne instead of the jam (Temenos does Staff x3)",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Notes"
+                  "id": "true-vide-the-wicked-1-b04892",
+                  "text": "Agnea — Elemental Bomb Bottle x4",
+                  "check": true,
+                  "kind": "party",
+                  "ctx": "Turn 12"
                 },
                 {
-                  "id": "r1992",
-                  "text": "If the boss has 9 shields or fewer on Temenos' turn, can use Staff x4 instead of barrage.",
-                  "check": false,
-                  "kind": "note",
-                  "ctx": "Notes"
+                  "id": "true-vide-the-wicked-1-28d97e",
+                  "text": "Ochette — Peacock Strut x2 → Castti",
+                  "check": true,
+                  "kind": "party",
+                  "ctx": "Turn 12"
                 },
                 {
-                  "id": "r1995",
+                  "id": "true-vide-the-wicked-1-19e374",
                   "text": "Partitio — Latent Power + Stimulate x4 → Hikari",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1996",
+                  "id": "true-vide-the-wicked-1-0b3249",
                   "text": "Hikari — Aggressive Slash x3",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1997",
+                  "id": "true-vide-the-wicked-1-e80e7b",
                   "text": "Osvald — Forbidden Elixir → Castti",
                   "check": true,
                   "kind": "party"
                 },
                 {
-                  "id": "r1998",
+                  "id": "true-vide-the-wicked-1-867b47",
                   "text": "Castti — Latent Power + Concoct x4",
                   "check": true,
                   "kind": "party",
@@ -9472,22 +10638,124 @@ export const route: RouteData = {
                   ]
                 },
                 {
-                  "id": "r2002",
-                  "text": "Osvald — Energising Pomegranate (any size) → Castti",
+                  "id": "true-vide-the-wicked-1-8c3105",
+                  "text": "Osvald — Revitalising Jam → Hikari",
                   "check": true,
                   "kind": "party",
                   "ctx": "Turn 14"
                 },
                 {
-                  "id": "r2003",
-                  "text": "Castti — Concoct x4",
+                  "id": "true-vide-the-wicked-1-832da9",
+                  "text": "Castti — Concoct x3",
                   "check": true,
                   "kind": "party",
                   "lines": [
-                    "Blusterbloom x4",
+                    "Blusterbloom x3",
                     "Strengthening Serum"
                   ],
                   "ctx": "Turn 14"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-36aee5",
+                  "text": "Hikari — Latent Power - Hienka x3",
+                  "check": true,
+                  "kind": "party",
+                  "ctx": "Turn 14"
+                },
+                {
+                  "id": "true-vide-the-wicked-2-fec412",
+                  "text": "Hikari — Shinjumonjigiri x4",
+                  "check": true,
+                  "kind": "party",
+                  "ctx": "Turn 14 - Aelfric's"
+                }
+              ]
+            },
+            {
+              "id": "true-vide-the-wicked-b2",
+              "title": "GGs!",
+              "kind": "setup",
+              "solo": true,
+              "steps": [
+                {
+                  "id": "true-vide-the-wicked-1-7a333a",
+                  "text": "GGs!",
+                  "check": true,
+                  "kind": "fight"
+                }
+              ]
+            },
+            {
+              "id": "true-vide-the-wicked-b3",
+              "title": "Changelog",
+              "kind": "setup",
+              "solo": false,
+              "steps": [
+                {
+                  "id": "true-vide-the-wicked-1-20b168",
+                  "text": "02/20/2025 — Initial version.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-1d3683",
+                  "text": "05/08/2025 — Slightly changed galdera fight to avoid agnea + osvald speed investment. Because of this, sprightly bracelet can be replaced with a sprightly ring (also don't need to worry about cait XP potentially screwing up speeds)",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-3c0e9c",
+                  "text": "05/21/2025 — Reworked midgame chapter order to move veronica to before galdera in place of mother, which saves time on encounters. This also allows wind whisperer to be picked up in place of mooneater and allows skipping the sunken gold statue.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-eb3fc7",
+                  "text": "08/13/2025 — Minor revision to delay finisher's claws until after Rai Mei. This allows for a faster Gigantes fight and saves 15k (can cut Castle Mei chest)",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-016d73",
+                  "text": "08/13/2025 — Reworked job setups for hikari chapters - temenos inventor with the sharp nut from stormhail (similar speed to nameless anyways) can always hit enshrouded with attacks (so no need for HHM), also can now buy blusterblooms in ryu as the girl with the sharp nut also has a warding leaf. Only downside is not having critical scope on castti, but sticky flower (on lajackal) or take aim (on everything else) can replace it.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-906082",
+                  "text": "09/17/2025 — Removed the shaggy aurochs capture (for mountain sausage). This is possible via using mighty leaf on enshrouded king and rotten meat on true vide the wicked. This cuts out a warp and preparation menu.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-c6dae5",
+                  "text": "09/17/2025 — Reworked the job setups for the hikari chapters again, since I forgot that throne learning full power kicks castti off of merchant, screwing up the tyrannodrake fight. Throne is now merchant, temenos is hunter (still with sharp nut to hit EK), and castti is inventor.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-c9fb7d",
+                  "text": "12/03/2025 — Removed the extra trip to Timberain for early royal guard's helm, as with a new strat on shadow hikari you don't need any crits. Temenos now is back to inventor for hikari chapters, as take aim is no longer sufficient for crits on enshrouded king.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-08cdce",
+                  "text": "12/03/2025 — Re-ordered the Sand Lion -> Thurston -> Hikari 3 segment to be Thurston -> Hikari 3 -> Sand Lion in order to have higher level for Sand Lion.",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-147229",
+                  "text": "06/30/2026 — Reworked lategame defensive gear. Empowering necklace has been replaced by coat of arms + aegis shield + tough nut L (thanks to redistributing nuts).",
+                  "check": true,
+                  "kind": "do"
+                },
+                {
+                  "id": "true-vide-the-wicked-1-693ecf",
+                  "text": "7/4/26 — Reworked omniscient eye fight. By doing 8 hits of concoct, can get to final phase which avoids the need to deal with souls.",
+                  "check": true,
+                  "kind": "do"
                 }
               ]
             }

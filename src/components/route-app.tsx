@@ -8,6 +8,7 @@ import {
   Undo2,
 } from "lucide-react";
 import { route, type Block, type Step } from "@/data/route";
+import { RUN_KEY } from "@/lib/migrate-progress";
 import { playhead, remaining, steps, useRun, videoAt, type FlatStep } from "@/lib/run-store";
 
 type Tab = "now" | "route" | "find";
@@ -24,9 +25,13 @@ export function RouteApp() {
   const done = useRun((s) => s.done);
   const skipped = useRun((s) => s.skipped);
   const history = useRun((s) => s.history);
+  const notice = useRun((s) => s.notice);
+  const hydrated = useRun((s) => s.hydrated);
   const complete = useRun((s) => s.complete);
   const toggle = useRun((s) => s.toggle);
   const undo = useRun((s) => s.undo);
+  const reset = useRun((s) => s.reset);
+  const dismissNotice = useRun((s) => s.dismissNotice);
   const markBeforeChapter = useRun((s) => s.markBeforeChapter);
   const setHydrated = useRun((s) => s.setHydrated);
 
@@ -38,8 +43,18 @@ export function RouteApp() {
   const [leftOnly, setLeftOnly] = useState(false);
 
   useEffect(() => {
-    void Promise.resolve(useRun.persist.rehydrate()).then(() => setHydrated(true));
+    void Promise.resolve(useRun.persist.rehydrate()).finally(() => setHydrated(true));
   }, [setHydrated]);
+
+  useEffect(() => {
+    function onStorage(event: StorageEvent) {
+      if (event.key === RUN_KEY && event.newValue) {
+        void useRun.persist.rehydrate();
+      }
+    }
+    window.addEventListener("storage", onStorage);
+    return () => window.removeEventListener("storage", onStorage);
+  }, []);
 
   const current = playhead(done);
   const left = remaining(done);
@@ -50,6 +65,7 @@ export function RouteApp() {
   useEffect(() => {
     function onKey(event: KeyboardEvent) {
       const target = event.target as HTMLElement | null;
+      if (!hydrated) return;
       if (target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA")) return;
       if (event.key === " " || event.key === "Enter") {
         if (!current) return;
@@ -61,7 +77,7 @@ export function RouteApp() {
     }
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [complete, current, undo]);
+  }, [complete, current, hydrated, undo]);
 
   const act = route.acts.find((item) => item.id === actId) ?? route.acts[0];
 
@@ -86,6 +102,7 @@ export function RouteApp() {
             type="button"
             className="grid size-11 place-items-center rounded-full text-muted hover:bg-raise hover:text-fg"
             onClick={() => setAbout((v) => !v)}
+            disabled={!hydrated}
             aria-expanded={about}
             aria-label="About this route"
           >
@@ -95,9 +112,11 @@ export function RouteApp() {
         <div className="mx-auto w-full max-w-2xl px-4 pb-3">
           <div className="mb-1.5 flex items-baseline justify-between text-xs text-muted">
             <span>
-              {doneCount.toLocaleString()} / {total.toLocaleString()} steps
+              {hydrated
+                ? `${doneCount.toLocaleString()} / ${total.toLocaleString()} steps`
+                : "Loading progress"}
             </span>
-            <span className="tabular-nums">{pct}%</span>
+            <span className="tabular-nums">{hydrated ? `${pct}%` : ""}</span>
           </div>
           <div className="h-1 overflow-hidden rounded-full bg-line" aria-hidden="true">
             <div className="h-full bg-gold" style={{ width: `${pct}%` }} />
@@ -106,9 +125,40 @@ export function RouteApp() {
       </header>
 
       <main className="mx-auto w-full max-w-2xl px-4 pt-4 pb-28">
-        {about ? <About onClose={() => setAbout(false)} /> : null}
+        {!hydrated ? (
+          <p className="text-base text-muted">Loading your saved progress…</p>
+        ) : null}
+        {hydrated && notice ? (
+          <div role="status" className="mb-4 rounded-card border border-gold bg-surface p-4">
+            <p className="text-base text-fg">
+              {notice.carried === 0
+                ? "The route was updated. Your old progress can't be carried over safely."
+                : `${notice.carried} of ${notice.total} carried over.`}
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              <button
+                type="button"
+                onClick={() => reset()}
+                className="rounded-card bg-gold px-4 py-3 text-sm font-semibold text-ink"
+              >
+                Start over
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setTab("route");
+                  dismissNotice();
+                }}
+                className="rounded-card border border-line px-4 py-3 text-sm"
+              >
+                Pick a chapter to start from
+              </button>
+            </div>
+          </div>
+        ) : null}
+        {hydrated && about ? <About onClose={() => setAbout(false)} /> : null}
 
-        {tab === "now" ? (
+        {hydrated && tab === "now" ? (
           <Now
             current={current}
             doneCount={doneCount}
@@ -124,7 +174,7 @@ export function RouteApp() {
           />
         ) : null}
 
-        {tab === "route" ? (
+        {hydrated && tab === "route" ? (
           <section>
             <div className="mb-3 flex gap-2 overflow-x-auto pb-1">
               {route.acts.map((item) => (
@@ -170,7 +220,7 @@ export function RouteApp() {
                       </h2>
                       <p className="mt-1 text-sm text-muted">
                         {ahead} left
-                        {chapter.mark ? ` · video ${chapter.mark}` : ""}
+                        {chapter.mark ? ` · Chapter starts ≈ ${chapter.mark}` : ""}
                       </p>
                     </div>
                     <div className="flex shrink-0 flex-col items-end gap-2">
@@ -181,7 +231,7 @@ export function RouteApp() {
                           target="_blank"
                           rel="noreferrer"
                         >
-                          Watch {chapter.mark}
+                          Watch from here
                         </a>
                       ) : null}
                       <button
@@ -209,7 +259,7 @@ export function RouteApp() {
           </section>
         ) : null}
 
-        {tab === "find" ? (
+        {hydrated && tab === "find" ? (
           <section>
             <label className="mb-3 block">
               <span className="sr-only">Search the route</span>
@@ -353,14 +403,14 @@ function Now({
         {current.note ? (
           <p className={"mt-3 text-sm " + (current.warn ? "text-ember" : "text-muted")}>{current.note}</p>
         ) : null}
-        {current.seconds ? (
+        {current.mark && isFirstInChapter(current) ? (
           <a
             className="mt-3 inline-block text-sm text-gold underline underline-offset-4"
-            href={videoAt(current.seconds)}
+            href={current.seconds != null ? videoAt(current.seconds) : route.meta.video}
             target="_blank"
             rel="noreferrer"
           >
-            Video at {current.mark}
+            Chapter starts ≈ {current.mark}
           </a>
         ) : null}
         <div className="mt-5 grid grid-cols-4 gap-2">
@@ -549,7 +599,11 @@ function TabButton({
 
 function About({ onClose }: { onClose: () => void }) {
   const reset = useRun((s) => s.reset);
+  const exportProgress = useRun((s) => s.exportProgress);
+  const importProgress = useRun((s) => s.importProgress);
   const [armed, setArmed] = useState(false);
+  const [paste, setPaste] = useState("");
+  const [message, setMessage] = useState("");
   return (
     <section className="mb-4 rounded-card border border-line bg-surface p-4">
       <div className="flex items-start justify-between gap-3">
@@ -571,6 +625,40 @@ function About({ onClose }: { onClose: () => void }) {
       >
         Watch the run
       </a>
+      <div className="mt-4 flex flex-wrap gap-2">
+        <button
+          type="button"
+          className="rounded-card border border-line px-3 py-2 text-sm"
+          onClick={() => {
+            const json = exportProgress();
+            setPaste(json);
+            setMessage("Progress copied below. Paste it on another device to restore.");
+            void navigator.clipboard?.writeText(json).catch(() => undefined);
+          }}
+        >
+          Copy progress
+        </button>
+      </div>
+      <label className="mt-3 block text-sm text-muted">
+        Paste progress
+        <textarea
+          value={paste}
+          onChange={(event) => setPaste(event.target.value)}
+          rows={4}
+          className="mt-1 w-full rounded-card border border-line bg-bg px-3 py-2 text-sm text-fg"
+        />
+      </label>
+      <button
+        type="button"
+        className="mt-2 rounded-card border border-line px-3 py-2 text-sm"
+        onClick={() => {
+          const result = importProgress(paste);
+          setMessage(result.ok ? "Progress restored." : result.error);
+        }}
+      >
+        Restore pasted progress
+      </button>
+      {message ? <p className="mt-2 text-sm text-muted">{message}</p> : null}
       <div className="mt-4">
         {armed ? (
           <button
@@ -661,6 +749,10 @@ function upcoming(done: Record<string, boolean>) {
 
 function isFirstInBlock(step: FlatStep) {
   return steps.find((item) => item.blockId === step.blockId)?.id === step.id;
+}
+
+function isFirstInChapter(step: FlatStep) {
+  return steps.find((item) => item.chapterId === step.chapterId)?.id === step.id;
 }
 
 function haystack(step: FlatStep) {

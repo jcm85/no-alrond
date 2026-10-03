@@ -1,6 +1,16 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { createJSONStorage, persist } from "zustand/middleware";
 import { route, type Step } from "@/data/route";
+import { legacyIds } from "@/data/legacy-ids";
+import {
+  BACKUP_KEY,
+  RUN_KEY,
+  readMigration,
+  type Kv,
+  type RouteNotice,
+  type StepRef,
+  type StoredProgress,
+} from "@/lib/migrate-progress";
 
 export type FlatStep = Step & {
   actId: string;
@@ -53,27 +63,58 @@ export function videoAt(seconds: number) {
   return `${route.meta.video}?t=${seconds}`;
 }
 
+const stepRefs: StepRef[] = steps.map((step) => ({
+  id: step.id,
+  chapter: step.chapter,
+  text: step.text,
+}));
+
+function browserKv(): (Kv & Storage) | null {
+  if (typeof window === "undefined") return null;
+  try {
+    return window.localStorage;
+  } catch {
+    return null;
+  }
+}
+
+function backupCurrent(progress: StoredProgress) {
+  const kv = browserKv();
+  if (!kv) return;
+  kv.setItem(BACKUP_KEY, JSON.stringify({ state: progress, version: 2 }));
+}
+
 type RunState = {
   done: Record<string, boolean>;
   skipped: Record<string, boolean>;
   history: string[];
+  notice: RouteNotice | null;
   hydrated: boolean;
   complete: (id: string, how: "done" | "skip") => void;
   toggle: (id: string) => void;
   undo: () => void;
   reset: () => void;
+  dismissNotice: () => void;
+  exportProgress: () => string;
+  importProgress: (raw: string) => { ok: true } | { ok: false; error: string };
   markBeforeChapter: (chapterId: string) => void;
   setHydrated: (value: boolean) => void;
+};
+
+const fresh = {
+  done: {} as Record<string, boolean>,
+  skipped: {} as Record<string, boolean>,
+  history: [] as string[],
+  notice: null as RouteNotice | null,
 };
 
 export const useRun = create<RunState>()(
   persist(
     (set, get) => ({
-      done: {},
-      skipped: {},
-      history: [],
+      ...fresh,
       hydrated: false,
       setHydrated: (value) => set({ hydrated: value }),
+      dismissNotice: () => set({ notice: null }),
       complete: (id, how) => {
         const { done, skipped, history } = get();
         if (done[id]) return;
@@ -112,7 +153,62 @@ export const useRun = create<RunState>()(
         delete nextSkip[id];
         set({ done: nextDone, skipped: nextSkip, history: history.slice(0, -1) });
       },
-      reset: () => set({ done: {}, skipped: {}, history: [] }),
+      reset: () => {
+        const { done, skipped, history } = get();
+        backupCurrent({
+          done,
+          skipped,
+          history,
+          version: 2,
+          routeRev: route.meta.rev,
+          notice: get().notice,
+        });
+        set({ ...fresh });
+      },
+      exportProgress: () => {
+        const { done, skipped, history } = get();
+        return JSON.stringify(
+          { version: 2, routeRev: route.meta.rev, done, skipped, history },
+          null,
+          2,
+        );
+      },
+      importProgress: (raw) => {
+        let data: unknown;
+        try {
+          data = JSON.parse(raw);
+        } catch {
+          return { ok: false, error: "That isn't valid progress JSON." };
+        }
+        if (!data || typeof data !== "object") {
+          return { ok: false, error: "That isn't valid progress JSON." };
+        }
+        const body = data as Record<string, unknown>;
+        if (body.version !== 2 || body.routeRev !== route.meta.rev) {
+          return {
+            ok: false,
+            error: "That progress is from a different route revision and was not applied.",
+          };
+        }
+        const known = new Set(steps.map((step) => step.id));
+        const done: Record<string, boolean> = {};
+        const skipped: Record<string, boolean> = {};
+        if (body.done && typeof body.done === "object") {
+          for (const [id, on] of Object.entries(body.done as Record<string, unknown>)) {
+            if (on && known.has(id)) done[id] = true;
+          }
+        }
+        if (body.skipped && typeof body.skipped === "object") {
+          for (const [id, on] of Object.entries(body.skipped as Record<string, unknown>)) {
+            if (on && done[id]) skipped[id] = true;
+          }
+        }
+        const history = Array.isArray(body.history)
+          ? body.history.filter((id): id is string => typeof id === "string" && Boolean(done[id]))
+          : [];
+        set({ done, skipped, history, notice: null });
+        return { ok: true };
+      },
       markBeforeChapter: (chapterId) => {
         const { done, history } = get();
         const nextDone = { ...done };
@@ -128,12 +224,31 @@ export const useRun = create<RunState>()(
       },
     }),
     {
-      name: "no-alrond-run-v1",
+      name: RUN_KEY,
+      version: 2,
       skipHydration: true,
+      storage: createJSONStorage(() => ({
+        getItem: () => {
+          const kv = browserKv();
+          if (!kv) return null;
+          const result = readMigration(kv, route.meta.rev, legacyIds, stepRefs);
+          if (!result.progress) return null;
+          return JSON.stringify({ state: result.progress, version: 2 });
+        },
+        setItem: (_name, value) => {
+          browserKv()?.setItem(RUN_KEY, value);
+        },
+        removeItem: () => {
+          browserKv()?.removeItem(RUN_KEY);
+        },
+      })),
       partialize: (state) => ({
         done: state.done,
         skipped: state.skipped,
         history: state.history,
+        version: 2 as const,
+        routeRev: route.meta.rev,
+        notice: state.notice,
       }),
       onRehydrateStorage: () => (state) => {
         state?.setHydrated(true);
