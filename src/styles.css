@@ -70,6 +70,15 @@
   }
 }
 
+.step-pic-img {
+  max-height: min(52vh, 36rem);
+  background: #070b10;
+}
+
+.step-pic-compact .step-pic-img {
+  max-height: 16rem;
+}
+
 @media (min-width: 1280px) and (orientation: landscape) {
   .app-shell {
     width: min(100%, calc(100% - 2rem));
@@ -85,6 +94,26 @@
 
   .step-title {
     font-size: clamp(2rem, 2.2vw, 3rem);
+  }
+
+  .now-layout:has(.step-pic) > .step-pic {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    align-self: start;
+  }
+
+  .now-layout:has(.step-pic) > .now-main {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .now-layout:has(.step-pic) > .upcoming {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .now-layout:has(.step-pic) .step-pic-img {
+    max-height: min(46vh, 28rem);
   }
 }
 
@@ -124,6 +153,46 @@
     padding-block: 0.28rem;
     font-size: 0.875rem;
     line-height: 1.25;
+  }
+
+  /* Picture stays above the step, and Done stays above the nav. */
+  .now-layout:has(.step-pic) {
+    max-height: calc(100dvh - 15.25rem);
+    overflow: hidden;
+  }
+
+  .now-layout:has(.step-pic) > .step-pic {
+    display: flex;
+    min-height: 0;
+    flex: 1 1 auto;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .now-layout:has(.step-pic) > .now-main {
+    flex: 0 0 auto;
+  }
+
+  .now-layout:has(.step-pic) > .upcoming {
+    min-height: 0;
+    flex: 0 1 auto;
+    overflow: auto;
+  }
+
+  .now-layout:has(.step-pic) .step-pic-body {
+    min-height: 0;
+    overflow: auto;
+  }
+
+  .now-layout:has(.step-pic) .step-pic-img {
+    max-height: 11.25rem;
+  }
+
+  .now-layout:has(.step-pic) .step-pic-caption {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
   }
 }
 

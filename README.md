@@ -48,6 +48,8 @@ npm run route:build
 
 That runs `python3 scripts/build-route.py` and rewrites `src/data/route.ts` and `src/data/changelog.ts`. On Windows, if `python3` is not found, run `py -3 scripts/build-route.py` instead.
 
+Some steps include a snapshot from the run, in `public/step-pics/`. Those files are ordinary images. They are not part of the JavaScript bundle. `npm run pics:build` rewrites `src/data/step-pics.ts` from `scripts/step-pics/manifest.json` after the images are already in `public/step-pics/`.
+
 `meta.rev` in `src/data/route.ts` is a hash of the step ids. When that hash changes, the app shows a one-time migration banner so an older save is not applied blindly. `src/data/legacy-ids.ts` maps older ids, and a step that still has the same chapter and text can be carried over.
 
 ## `startup.sh`
