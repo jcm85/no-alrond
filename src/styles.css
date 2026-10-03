@@ -89,7 +89,39 @@
 }
 
 @media (max-width: 699px) {
-  .upcoming li:nth-child(n + 3) {
+  .now-card {
+    padding: 0.75rem;
+  }
+
+  .step-title {
+    font-size: 1.35rem;
+    line-height: 1.12;
+  }
+
+  .now-actions {
+    margin-top: 0.5rem;
+  }
+
+  .now-actions button {
+    min-height: 2.75rem;
+    padding-block: 0.5rem;
+  }
+
+  .now-tools {
+    margin-top: 0.25rem;
+  }
+
+  .upcoming {
+    padding-inline: 0.75rem;
+  }
+
+  .upcoming li {
+    padding-block: 0.28rem;
+    font-size: 0.875rem;
+    line-height: 1.25;
+  }
+
+  .upcoming li:nth-child(n + 5) {
     display: none;
   }
 }

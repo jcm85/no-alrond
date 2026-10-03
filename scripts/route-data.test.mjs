@@ -164,3 +164,121 @@ test("regenerating the same sheet keeps ids, and another chapter's row does not 
     after.steps.filter((step) => step.chapter === "Throne Ch.1").map((step) => step.id),
   );
 });
+
+function parseCsv(text) {
+  const rows = [];
+  let row = [];
+  let cur = "";
+  let quoted = false;
+  for (let i = 0; i < text.length; i += 1) {
+    const ch = text[i];
+    if (quoted) {
+      if (ch === '"') {
+        if (text[i + 1] === '"') {
+          cur += '"';
+          i += 1;
+        } else quoted = false;
+      } else cur += ch;
+    } else if (ch === '"') quoted = true;
+    else if (ch === ",") {
+      row.push(cur);
+      cur = "";
+    } else if (ch === "\n") {
+      row.push(cur);
+      rows.push(row);
+      row = [];
+      cur = "";
+    } else if (ch !== "\r") cur += ch;
+  }
+  if (cur.length || row.length) {
+    row.push(cur);
+    rows.push(row);
+  }
+  return rows;
+}
+
+const SCAFFOLD = new Set([
+  "Formation",
+  "Change Party",
+  "Idle Party Members",
+  "Current Party",
+  "Order Obtained",
+  "Primary",
+  "Secondary",
+  "Idle",
+  "Current",
+  "Enemy",
+]);
+
+function cellAllowed(value) {
+  if (SCAFFOLD.has(value)) return true;
+  if (/^[\^v]$/.test(value) || /^[\^v] \d+$/.test(value)) return true;
+  if (value === ">" || value === "<") return true;
+  if (/^T\d+$/.test(value)) return true;
+  return false;
+}
+
+test("the changelog is not a step, and chapter marks never go backwards", () => {
+  const { text, data } = loadRoute();
+  const { chapters, steps } = flat(data);
+  const checks = steps.filter((step) => step.check);
+  assert.equal(steps.at(-1).text, "GGs!");
+  assert.equal(checks.at(-1).text, "GGs!");
+  assert.equal(data.meta.steps, checks.length);
+  // 1,160 after the changelog cut, plus the two Turn 5.5 actions.
+  assert.equal(checks.length, 1162);
+  const dated = steps.filter((step) => /^\d{1,2}\/\d{1,2}\/\d{2,4}/.test(step.text));
+  assert.deepEqual(
+    dated.map((step) => step.text),
+    [],
+  );
+  assert.equal(text.includes("Changelog"), false);
+  assert.equal(text.includes("Mooneater"), false);
+  for (const phrase of [
+    "Turn 5.5 — Partitio: Ancient Cursed Talisman",
+    "Turn 5.5 — Osvald: Decaying Dragon's Essence",
+    "skip lychee if Agnea has full latent",
+    "weeds can give a speed buff, which messes up the strat",
+    "H'aanit can get a patience turn here",
+    "At the Flamechurch flame",
+    "At the Toto'haha flame",
+    "Osvald Chapter 5",
+    "skip if turn order is lucky",
+  ]) {
+    assert.equal(text.includes(phrase), true, phrase);
+  }
+  let previous = -1;
+  for (const chapter of chapters) {
+    assert.equal(typeof chapter.seconds, "number", chapter.title);
+    assert.ok(chapter.seconds >= previous, `${chapter.title} ${chapter.seconds} < ${previous}`);
+    previous = chapter.seconds;
+  }
+  const byTitle = Object.fromEntries(chapters.map((chapter) => [chapter.title, chapter]));
+  assert.equal(byTitle["Hikari Ch. 3"].mark, "1:09:47");
+  assert.equal(byTitle["Hikari Ch. 3"].seconds, 1 * 3600 + 9 * 60 + 47);
+  assert.ok(byTitle["Castti Ch.2: Sai Route"].seconds >= byTitle["Hikari Ch. 3"].seconds);
+  assert.equal(byTitle["Castti Ch.2: Sai Route"].videoSeconds, 1 * 3600 + 2 * 60);
+  assert.equal(byTitle["Foreign Assassins"].seconds >= byTitle["Castti Ch.2: Sai Route"].seconds, true);
+});
+
+test("every non-empty sheet cell is in the route or on the scaffolding allowlist", () => {
+  const routeText = readFileSync(routePath, "utf8");
+  const rows = parseCsv(readFileSync(csvPath, "utf8"));
+  const missing = [];
+  for (const row of rows) {
+    const title = (row[1] || "").trim();
+    if (/^change ?log$/i.test(title)) break;
+    for (const cell of row) {
+      const value = cell.trim();
+      if (!value || cellAllowed(value)) continue;
+      const escaped = JSON.stringify(value).slice(1, -1);
+      if (routeText.includes(value) || routeText.includes(escaped)) continue;
+      const lines = value.split(/\n/).map((part) => part.trim()).filter(Boolean);
+      if (lines.length > 1 && lines.every((part) => routeText.includes(part) || routeText.includes(JSON.stringify(part).slice(1, -1)))) {
+        continue;
+      }
+      missing.push(value.slice(0, 140));
+    }
+  }
+  assert.deepEqual(missing, []);
+});

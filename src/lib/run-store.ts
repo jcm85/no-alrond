@@ -3,8 +3,8 @@ import { createJSONStorage, persist } from "zustand/middleware";
 import { route, type Step } from "@/data/route";
 import { legacyIds } from "@/data/legacy-ids";
 import {
-  BACKUP_KEY,
   RUN_KEY,
+  preserveBackup,
   readMigration,
   type Kv,
   type RouteNotice,
@@ -22,6 +22,8 @@ export type FlatStep = Step & {
   chapter: string;
   mark?: string;
   seconds?: number;
+  videoSeconds?: number;
+  orderNote?: string;
   blockId: string;
   block: string;
   blockKind: string;
@@ -59,6 +61,8 @@ for (const act of route.acts) {
           chapter: chapter.title,
           mark: chapter.mark,
           seconds: chapter.seconds,
+          videoSeconds: chapter.videoSeconds,
+          orderNote: chapter.orderNote,
           blockId: block.id,
           block: block.title,
           blockKind: block.kind,
@@ -118,7 +122,7 @@ function browserKv(): (Kv & Storage) | null {
 function backupCurrent(progress: StoredProgress) {
   const kv = browserKv();
   if (!kv) return;
-  kv.setItem(BACKUP_KEY, JSON.stringify({ state: progress, version: 2 }));
+  preserveBackup(kv, JSON.stringify({ state: progress, version: 2 }));
 }
 
 type RunState = {
