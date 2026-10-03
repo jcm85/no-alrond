@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Camera, Check, Info, List, RotateCcw, Search, Undo2 } from "lucide-react";
 import { changelog } from "@/data/changelog";
 import { route, type Block } from "@/data/route";
@@ -518,19 +518,12 @@ function Now({
   const showPictureRef = useRef<HTMLButtonElement>(null);
   const hidePictureRef = useRef<HTMLButtonElement>(null);
   const pendingShowFocus = useRef(false);
-  const pendingHideFocus = useRef(false);
+  const [takeHideFocus, setTakeHideFocus] = useState(false);
+  const clearHideFocus = useCallback(() => setTakeHideFocus(false), []);
   useEffect(() => {
     if (!pictureHidden || !pendingShowFocus.current) return;
     pendingShowFocus.current = false;
     showPictureRef.current?.focus();
-  }, [pictureHidden]);
-  useEffect(() => {
-    if (pictureHidden || !pendingHideFocus.current) return;
-    pendingHideFocus.current = false;
-    const hides = [...document.querySelectorAll<HTMLButtonElement>(".step-pic-hide")];
-    const chip = document.querySelector<HTMLButtonElement>(".step-pic-chip");
-    const visible = [...hides, chip].find((button) => button && button.getClientRects().length > 0);
-    visible?.focus();
   }, [pictureHidden]);
   useEffect(() => {
     if (!current) return;
@@ -555,6 +548,8 @@ function Now({
           picture={picture}
           eager
           hideRef={hidePictureRef}
+          takeHideFocus={takeHideFocus}
+          onHideFocused={clearHideFocus}
           onHide={() => {
             pendingShowFocus.current = true;
             setPictureHidden(true);
@@ -567,7 +562,7 @@ function Now({
             ref={showPictureRef}
             type="button"
             onClick={() => {
-              pendingHideFocus.current = true;
+              setTakeHideFocus(true);
               setPictureHidden(false);
             }}
             className="mb-3 min-h-11 text-base text-gold"
