@@ -23,7 +23,10 @@ function EnemyLine({ enemy, ignores }: { enemy: FightEnemy; ignores: boolean }) 
         </span>
       ) : null}
       {enemy.shield ? <span>shield {enemy.shield}</span> : null}
-      <span>{enemy.confidence}</span>
+      <span>
+        {enemy.confidence}
+        {enemy.note ? ` · ${enemy.note}` : ""}
+      </span>
       {enemy.recheck ? <span>re-check on screen after a phase change</span> : null}
     </li>
   );
@@ -48,6 +51,7 @@ export function FightWeakness({ stepId, onShowGuide }: { stepId: string; onShowG
   if (!note) return null;
   const many = note.enemies.length > 1;
   const ignores = Boolean(note.ignoresWeakness);
+  const names = note.enemies.map((enemy) => enemy.name).join(", ");
   return (
     <div className="fight-weak mt-2 text-base text-muted">
       {many ? (
@@ -55,6 +59,7 @@ export function FightWeakness({ stepId, onShowGuide }: { stepId: string; onShowG
           type="button"
           className="weak-toggle min-h-11 text-left"
           aria-expanded={open}
+          aria-label={`${names}, ${open ? "Hide" : "Show"} weaknesses`}
           onClick={() => setOpen((value) => !value)}
         >
           <Summary note={note} />

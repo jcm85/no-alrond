@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Camera, Check, Info, List, RotateCcw, Search, Undo2 } from "lucide-react";
 import { CombatGuide } from "@/components/combat-guide";
 import { FightWeakness } from "@/components/fight-weakness";
@@ -209,44 +209,19 @@ export function RouteApp() {
             />
           </div>
         </div>
-        {toast ? (
-          <div className="undo-toast">
-            <div className="app-shell pb-3">
-              <div role="status" className="flex items-center justify-between gap-4 rounded-card border border-gold bg-raise px-4 py-2">
-                <p className="min-w-0 truncate text-base">{toast}</p>
-                <button
-                  type="button"
-                  className="min-h-11 shrink-0 rounded-card border border-line px-3 text-base text-gold"
-                  onClick={() => {
-                    undo();
-                    setToast(null);
-                  }}
-                >
-                  Undo
-                </button>
-              </div>
-            </div>
-          </div>
-        ) : null}
+      </header>
+
+      <main className="app-shell relative flex min-h-0 flex-1 flex-col overflow-hidden pt-3">
         {hydrated && notice ? (
-          <div role="status" className="route-notice mb-2 shrink-0 rounded-card border border-gold bg-surface px-3 py-2">
-            <p
-              className="text-base text-fg"
-              title={
-                notice.added
-                  ? `${notice.added} new steps were added; they start unchecked.`
-                  : notice.carried === 0
-                    ? "The route was updated. Your old progress can't be carried over safely."
-                    : `${notice.carried} of ${notice.total} carried over.`
-              }
-            >
+          <div role="status" className="route-notice">
+            <p className="text-base text-fg">
               {notice.added
                 ? `${notice.added} new steps were added; they start unchecked.`
                 : notice.carried === 0
                   ? "The route was updated. Your old progress can't be carried over safely."
                   : `${notice.carried} of ${notice.total} carried over.`}
             </p>
-            <div className="flex flex-wrap gap-2">
+            <div className="route-notice-actions">
               {notice.added && lastDone ? (
                 <button
                   type="button"
@@ -254,7 +229,7 @@ export function RouteApp() {
                     setResumeAfter(lastDone.id);
                     dismissNotice();
                   }}
-                  className="min-h-11 rounded-card bg-gold px-3 py-2 font-semibold text-ink"
+                  className="rounded-card bg-gold px-3 py-2 font-semibold text-ink"
                 >
                   Jump past them
                 </button>
@@ -266,61 +241,44 @@ export function RouteApp() {
                     setResumeAfter(null);
                     dismissNotice();
                   }}
-                  className="notice-review min-h-11 rounded-card border border-gold px-3 py-2 text-gold"
+                  className="rounded-card border border-gold px-3 py-2 text-gold"
                 >
                   Review the new steps
                 </button>
               ) : null}
-              <details className="route-notice-more">
-                <summary className="min-h-11 cursor-pointer list-none rounded-card border border-line px-3 py-2">More</summary>
-                <div className="mt-2 flex flex-wrap gap-2">
-                  {notice.added ? (
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setResumeAfter(null);
-                        dismissNotice();
-                      }}
-                      className="min-h-11 rounded-card border border-gold px-3 py-2 text-gold"
-                    >
-                      Review the new steps
-                    </button>
-                  ) : null}
-                  <button type="button" onClick={() => reset()} className="min-h-11 rounded-card border border-line px-3 py-2">
-                    Start over
-                  </button>
-                  {latestCarried ? (
-                    <button
-                      type="button"
-                      onClick={() => {
-                        const holes = undoneBefore(done, latestCarried.id);
-                        goTo(latestCarried);
-                        if (holes > 0) setConfirm({ kind: "carried", id: latestCarried.id, count: holes });
-                        else dismissNotice();
-                      }}
-                      className="min-h-11 rounded-card border border-gold px-3 py-2 text-gold"
-                    >
-                      Jump to latest carried step {latestCarried.n}
-                    </button>
-                  ) : null}
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setTab("route");
-                      dismissNotice();
-                    }}
-                    className="min-h-11 rounded-card border border-line px-3 py-2"
-                  >
-                    Pick a chapter to start from
-                  </button>
-                </div>
-              </details>
+              <button type="button" onClick={() => reset()} className="rounded-card border border-line px-3 py-2">
+                Start over
+              </button>
+              {latestCarried ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    const holes = undoneBefore(done, latestCarried.id);
+                    goTo(latestCarried);
+                    if (holes > 0) setConfirm({ kind: "carried", id: latestCarried.id, count: holes });
+                    else dismissNotice();
+                  }}
+                  className="rounded-card border border-gold px-3 py-2 text-gold"
+                >
+                  Jump to latest carried step {latestCarried.n}
+                </button>
+              ) : null}
+              <button
+                type="button"
+                onClick={() => {
+                  setTab("route");
+                  dismissNotice();
+                }}
+                className="rounded-card border border-line px-3 py-2"
+              >
+                Pick a chapter to start from
+              </button>
+              <button type="button" onClick={() => dismissNotice()} className="rounded-card border border-line px-3 py-2">
+                Dismiss
+              </button>
             </div>
           </div>
         ) : null}
-      </header>
-
-      <main className="app-shell flex min-h-0 flex-1 flex-col overflow-hidden pt-3">
         {!hydrated ? <p className="text-lg text-muted">Loading your saved progress…</p> : null}
         {hydrated && about ? <About guideOpen={guideOpen} onClose={() => setAbout(false)} /> : null}
 
@@ -534,6 +492,16 @@ export function RouteApp() {
         </div>
       </nav>
 
+      {toast ? (
+        <UndoToast
+          text={toast}
+          onUndo={() => {
+            undo();
+            setToast(null);
+          }}
+        />
+      ) : null}
+
       {confirm ? (
         <Confirm
           title={
@@ -556,6 +524,66 @@ export function RouteApp() {
           }}
         />
       ) : null}
+    </div>
+  );
+}
+
+function UndoToast({ text, onUndo }: { text: string; onUndo: () => void }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [box, setBox] = useState<{ top: number; left: number; width: number } | null>(null);
+  useLayoutEffect(() => {
+    function place() {
+      const el = ref.current;
+      if (!el) return;
+      const height = el.getBoundingClientRect().height;
+      const gap = 8;
+      const title = document.querySelector(".step-title");
+      const progress = document.querySelector(".app-progress");
+      const header = document.querySelector("header");
+      const done = [...document.querySelectorAll("button")].find(
+        (button) => button.textContent?.trim() === "Done" && button.getClientRects().length > 0,
+      );
+      const nav = document.querySelector("nav");
+      const limitTop =
+        Math.max(
+          header?.getBoundingClientRect().bottom ?? 0,
+          progress?.getBoundingClientRect().bottom ?? 0,
+          title?.getBoundingClientRect().bottom ?? 0,
+        ) + gap;
+      const navTop = nav?.getBoundingClientRect().top ?? window.innerHeight;
+      let top = navTop - height - gap;
+      if (done) top = done.getBoundingClientRect().top - height - gap;
+      if (top < limitTop) top = limitTop;
+      if (done) {
+        const doneTop = done.getBoundingClientRect().top;
+        if (top + height > doneTop - gap) top = Math.max(gap, doneTop - height - gap);
+      }
+      const shell = document.querySelector("header .app-shell");
+      const shellBox = shell?.getBoundingClientRect();
+      const left = (shellBox?.left ?? 12) + 8;
+      const width = Math.max(160, (shellBox?.width ?? window.innerWidth - 24) - 16);
+      setBox({ top: Math.round(top), left: Math.round(left), width: Math.round(width) });
+    }
+    place();
+    const frame = requestAnimationFrame(place);
+    window.addEventListener("resize", place);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("resize", place);
+    };
+  }, [text]);
+  return (
+    <div
+      ref={ref}
+      className="undo-toast"
+      style={box ? { top: box.top, left: box.left, width: box.width } : { top: -1000, left: 0, width: "min(40rem, calc(100% - 1.5rem))" }}
+    >
+      <div role="status" className="undo-toast-bar">
+        <p className="min-w-0 flex-1 truncate text-base">{text}</p>
+        <button type="button" className="shrink-0 rounded-card border border-line px-3 text-base text-gold" onClick={onUndo}>
+          Undo
+        </button>
+      </div>
     </div>
   );
 }
@@ -662,7 +690,7 @@ function Now({
             </div>
             <h2 className="step-title">{current.text}</h2>
           </div>
-          <div className="now-card-body min-h-0 flex-1 overflow-auto">
+          <div className="now-card-body min-h-0 flex-1 overflow-auto" tabIndex={0} role="region" aria-label="Step details">
           {current.when ? <p className="text-base text-gold">{current.when}</p> : null}
           {current.lead ? <p className="mt-2 text-base text-gold">{current.lead}</p> : null}
           {current.foes && current.foes.length > 0 && isFirstInBlock(current) ? (
@@ -939,7 +967,7 @@ function About({ guideOpen, onClose }: { guideOpen: boolean; onClose: () => void
   const [paste, setPaste] = useState("");
   const [message, setMessage] = useState("");
   return (
-    <section className="mb-3 max-h-[42%] shrink-0 overflow-auto rounded-card border border-line bg-surface p-4">
+    <section className="about-panel rounded-card border border-line bg-surface p-4">
       <div className="flex items-start justify-between gap-3">
         <h2 className="font-display text-xl font-semibold">The sheet, as a checklist</h2>
         <button type="button" onClick={onClose} className="min-h-11 text-base text-gold">

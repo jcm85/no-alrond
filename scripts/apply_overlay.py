@@ -339,8 +339,15 @@ def build_notes(acts, overlay: dict) -> dict:
         enemies = []
         for enemy in fight["weakness"].get("enemies") or []:
             confidence = confidence_of(enemy)
-            entry = {"name": enemy["name"], "confidence": confidence}
-            note = (enemy.get("note") or "") + " " + (enemy.get("name") or "")
+            raw_name = enemy["name"] or ""
+            inferred = re.search(r"\s+[—-]\s+(identity of route .*inferred)\s*$", raw_name, re.I)
+            entry = {
+                "name": raw_name[: inferred.start()].strip() if inferred else raw_name,
+                "confidence": confidence,
+            }
+            if inferred:
+                entry["note"] = inferred.group(1).strip()
+            note = (enemy.get("note") or "") + " " + raw_name
             if entry["confidence"] == "verified" and re.search(r"inferred", note, re.I):
                 # The weakness list is published, but the enemy name is an inference.
                 entry["confidence"] = "single-source"
@@ -397,6 +404,7 @@ def write_notes(notes: dict) -> None:
         "  weak?: WeakName[];\n"
         "  shield?: string;\n"
         "  recheck?: boolean;\n"
+        "  note?: string;\n"
         "};\n"
         "export type FightNote = {\n"
         "  enemies: FightEnemy[];\n"
