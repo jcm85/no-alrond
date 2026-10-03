@@ -232,7 +232,7 @@ test("the changelog is not a step, and chapter marks never go backwards", () => 
   // 1,160 after the changelog cut, plus two Turn 5.5 actions, two Learn steps,
   // and two Whimsical Leaf steps, minus two chapter-name rows that were not instructions,
   // plus 40 frame-confirmed steps from the overlay.
-  assert.equal(checks.length, 1204);
+  assert.equal(checks.length, 1205);
   const dated = steps.filter((step) => /^\d{1,2}\/\d{1,2}\/\d{2,4}/.test(step.text));
   assert.deepEqual(
     dated.map((step) => step.text),

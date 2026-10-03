@@ -162,9 +162,17 @@ export function StepPictureCard({
     if (!narrow || collapsed) return;
     const title = document.querySelector(".step-title");
     const done = [...document.querySelectorAll("button")].find((button) => button.textContent?.trim() === "Done");
-    if (title && done && title.getBoundingClientRect().bottom > done.getBoundingClientRect().top + 1) {
-      setCollapsedId(picture.stepId);
-    }
+    const nav = document.querySelector("nav");
+    const card = document.querySelector(".now-card");
+    if (!title || !done || !nav || !card) return;
+    const titleBox = title.getBoundingClientRect();
+    const doneBox = done.getBoundingClientRect();
+    const navBox = nav.getBoundingClientRect();
+    const cardBox = card.getBoundingClientRect();
+    const overlaps = titleBox.bottom > doneBox.top + 1;
+    const doneCut = doneBox.bottom > navBox.top + 1 || doneBox.bottom > cardBox.bottom + 1;
+    const titleCut = titleBox.top < cardBox.top - 1 || titleBox.bottom > cardBox.bottom + 1;
+    if (overlaps || doneCut || titleCut) setCollapsedId(picture.stepId);
   }, [picture.stepId, collapsed, index]);
   useEffect(() => {
     if (!takeHideFocus) return;

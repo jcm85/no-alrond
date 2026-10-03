@@ -4,6 +4,7 @@ import { combatGuide, fleeGuide } from "../data/combat-guide.ts";
 import { fightNotes, weakOrder } from "../data/fight-notes.ts";
 import { route } from "../data/route.ts";
 import { readMigration, RUN_KEY, type Kv, type StepRef } from "./migrate-progress.ts";
+import { playhead } from "./run-store.ts";
 import { watchFromLabel } from "./step-pictures.ts";
 
 function checks() {
@@ -75,7 +76,7 @@ test("old step ids still exist, new steps are separate, and a save carries by id
   const steps = checks();
   const ids = new Set(steps.map((step) => step.id));
   assert.equal(ids.size, steps.length);
-  assert.equal(route.meta.steps, 1204);
+  assert.equal(route.meta.steps, 1205);
   for (const id of ["throne-ch-1-1-df6557", "throne-ch-1-1-84df79", "osvald-ch-3-1-bbc69f"]) {
     assert.equal(ids.has(id), true, id);
   }
@@ -105,6 +106,14 @@ test("old step ids still exist, new steps are separate, and a save carries by id
   const carried = readMigration(onlyOld, route.meta.rev, {}, current);
   assert.equal(carried.progress?.done["throne-ch-1-1-df6557"], true);
   assert.equal(carried.progress?.done[fresh.id], undefined);
+  assert.equal(carried.progress?.notice?.added, 41);
+  assert.equal(carried.progress?.resumeAfterId, "throne-ch-1-1-df6557");
+  const done = carried.progress?.done ?? {};
+  const resumed = playhead(done, carried.progress?.resumeAfterId);
+  assert.notEqual(resumed?.id, fresh.id);
+  const resumedAt = steps.findIndex((step) => step.id === resumed?.id);
+  const anchorAt = steps.findIndex((step) => step.id === "throne-ch-1-1-df6557");
+  assert.ok(resumedAt > anchorAt);
 });
 
 test("fight wording names a confirmed actor and does not invent a weapon", () => {
@@ -117,6 +126,18 @@ test("fight wording names a confirmed actor and does not invent a weapon", () =>
   assert.equal(steps.filter((step) => step.text === "Anyone — Flee").length, 4);
   assert.equal(steps.filter((step) => step.sheet === "Anyone — Run").length, 2);
   assert.match(steps.find((step) => step.id === "throne-ch-1-1-84df79")?.note ?? "", /not available in boss fights/);
+  const birdian = steps.find((step) => step.text.includes("Fire Soulstone / Fireball"));
+  assert.equal(birdian?.text, "Anyone — Fire Soulstone / Fireball x2 (if already broken)");
+  assert.equal(steps.filter((step) => step.text.includes("under 210 HP")).length, 1);
+  assert.equal(steps.some((step) => step.text.includes("sheet check")), false);
+  const summit = steps.findIndex((step) => step.text.includes("make for the summit"));
+  const warp = steps.findIndex((step) => step.text === "After finishing the chapter, warp to Timberain.");
+  const edmund = steps.findIndex((step) => step.text.includes("follow Edmund"));
+  assert.ok(summit > 0 && summit < warp && edmund === warp + 1);
+  assert.equal(steps[summit]?.watch, 5435);
+  assert.equal(steps[edmund]?.watch, 5576);
+  assert.equal(steps.find((step) => step.id === "castti-ch-2-sai-route-1-655e3d")?.watch, 3725);
+  assert.equal(watchFromLabel("https://youtu.be/d6YOJxTfIeQ?t=3725"), "Watch from 1:02:05");
 });
 
 test("weakness chips stay in game order and never guess a conflict", () => {
@@ -141,6 +162,9 @@ test("weakness chips stay in game order and never guess a conflict", () => {
   assert.equal(pursuer.enemies[0]?.confidence, "verified");
   assert.equal(pursuer.enemies[1]?.confidence, "unverified");
   assert.equal(pursuer.enemies[1]?.weak, undefined);
+  const snake = fightNotes["throne-ch-1-1-db0eeb"];
+  assert.equal(snake?.enemies[0]?.confidence, "single-source");
+  assert.deepEqual(snake?.enemies[0]?.weak, ["Sword", "Light", "Dark"]);
   const hhb = fightNotes["osvald-ch-3-1-bbc69f"];
   assert.equal(hhb?.ignoresWeakness, true);
   const blob = JSON.stringify(fightNotes);

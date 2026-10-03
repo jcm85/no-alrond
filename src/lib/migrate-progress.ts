@@ -14,6 +14,7 @@ export type StepRef = { id: string; chapter: string; text: string };
 export type RouteNotice = {
   carried: number;
   total: number;
+  added?: number;
 };
 
 export type StoredProgress = {
@@ -23,6 +24,8 @@ export type StoredProgress = {
   version: 2;
   routeRev: string;
   notice: RouteNotice | null;
+  /** Last step the player had finished. Now continues after this instead of the first hole. */
+  resumeAfterId: string | null;
 };
 
 export type MigrateResult = {
@@ -67,7 +70,25 @@ function asHistory(value: unknown): string[] {
 }
 
 function empty(rev: string, notice: RouteNotice | null): StoredProgress {
-  return { done: {}, skipped: {}, history: [], version: 2, routeRev: rev, notice };
+  return { done: {}, skipped: {}, history: [], version: 2, routeRev: rev, notice, resumeAfterId: null };
+}
+
+function resumeId(parsed: Record<string, unknown>, current: StepRef[]): string | null {
+  const id = parsed.resumeAfterId;
+  if (typeof id !== "string") return null;
+  return current.some((step) => step.id === id) ? id : null;
+}
+
+function lastDoneId(done: Record<string, boolean>, current: StepRef[]): string | null {
+  for (let index = current.length - 1; index >= 0; index -= 1) {
+    const step = current[index];
+    if (step && done[step.id]) return step.id;
+  }
+  return null;
+}
+
+function addedSteps(done: Record<string, boolean>, current: StepRef[]) {
+  return current.filter((step) => /-900-/.test(step.id) && !done[step.id]).length;
 }
 
 function unwrapState(raw: string | null): Record<string, unknown> | null {
@@ -186,8 +207,17 @@ function carryLegacy(
   const rest = Object.keys(doneIn).filter((id) => !ordered.includes(id));
   for (const id of [...ordered, ...rest]) take(id, Boolean(skippedIn[id]));
 
-  const notice = total > 0 ? { carried, total } : null;
-  return { done, skipped, history, version: 2, routeRev: rev, notice };
+  const added = addedSteps(done, current);
+  const notice = total > 0 || added > 0 ? { carried, total, ...(added > 0 ? { added } : {}) } : null;
+  return {
+    done,
+    skipped,
+    history,
+    version: 2,
+    routeRev: rev,
+    notice,
+    resumeAfterId: added > 0 ? lastDoneId(done, current) : null,
+  };
 }
 
 function sanitizeMatching(parsed: Record<string, unknown>, current: StepRef[], rev: string): StoredProgress {
@@ -206,10 +236,14 @@ function sanitizeMatching(parsed: Record<string, unknown>, current: StepRef[], r
   if (noticeRaw && typeof noticeRaw === "object") {
     const obj = noticeRaw as Record<string, unknown>;
     if (typeof obj.carried === "number" && typeof obj.total === "number") {
-      notice = { carried: obj.carried, total: obj.total };
+      notice = {
+        carried: obj.carried,
+        total: obj.total,
+        ...(typeof obj.added === "number" ? { added: obj.added } : {}),
+      };
     }
   }
-  return { done, skipped, history, version: 2, routeRev: rev, notice };
+  return { done, skipped, history, version: 2, routeRev: rev, notice, resumeAfterId: resumeId(parsed, current) };
 }
 
 function countMarked(parsed: Record<string, unknown> | null) {
@@ -223,8 +257,15 @@ function carryById(parsed: Record<string, unknown>, current: StepRef[], rev: str
   const total = countMarked(parsed);
   const carried = Object.keys(kept.done).length;
   if (carried === 0) return empty(rev, total > 0 ? { carried: 0, total } : null);
-  const notice = carried < total ? { carried, total } : null;
-  return { ...kept, notice };
+  const added = addedSteps(kept.done, current);
+  const resumeAfterId = added > 0 ? lastDoneId(kept.done, current) : null;
+  const notice: RouteNotice | null =
+    added > 0
+      ? { carried, total, added }
+      : carried < total
+        ? { carried, total }
+        : null;
+  return { ...kept, notice, resumeAfterId };
 }
 
 /**

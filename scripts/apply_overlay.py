@@ -250,6 +250,11 @@ def update_wording(acts, overlay: dict) -> list[dict]:
             if weapon_unclear(raw) and has_weapon(step["text"]):
                 continue
             tail = sheet_tail(step["text"])
+            # A slash line names two options. Do not assign the whole line to an
+            # actor whose inventory action is only one of them (Fireball stayed
+            # unconfirmed on the Birdian step).
+            if re.search(r"\bFireball\b", tail, re.I) and not re.search(r"\bFireball\b", raw, re.I):
+                continue
             if weapon_unclear(raw) and not has_weapon(tail):
                 wording = f"{actor}: {tail} (weapon unclear)" if tail else f"{actor}: Attack (weapon unclear)"
             else:
@@ -335,11 +340,15 @@ def build_notes(acts, overlay: dict) -> dict:
         for enemy in fight["weakness"].get("enemies") or []:
             confidence = confidence_of(enemy)
             entry = {"name": enemy["name"], "confidence": confidence}
-            if confidence in {"verified", "single-source"}:
+            note = (enemy.get("note") or "") + " " + (enemy.get("name") or "")
+            if entry["confidence"] == "verified" and re.search(r"inferred", note, re.I):
+                # The weakness list is published, but the enemy name is an inference.
+                entry["confidence"] = "single-source"
+            if confidence in {"verified", "single-source"} or entry["confidence"] == "single-source":
                 weak = canonical_weak(enemy.get("weak"))
-                if weak:
+                if weak and entry["confidence"] != "unverified":
                     entry["weak"] = weak
-                else:
+                elif entry["confidence"] != "single-source":
                     entry["confidence"] = "unverified"
             shield = shield_text(enemy.get("shield"))
             if shield and entry["confidence"] != "unverified":
@@ -405,9 +414,49 @@ def rehash(acts) -> str:
     return hashlib.sha1("\n".join(ids).encode("utf-8")).hexdigest()[:16]
 
 
+def editorial(acts) -> None:
+    """User-facing fixes that the raw inventory does not get right on its own."""
+    used = {step["id"] for _c, _b, _i, step in walk(acts)}
+    for _chapter, _block, _index, step in walk(acts):
+        ref = step.get("overlay")
+        if ref == "C13":
+            step["text"] = step["text"].replace(" (Steal/Inquire items need a sheet check.)", "")
+        elif ref == "O17":
+            step["text"] = step["text"].replace(" Heal if you are under 210 HP before Pirro.", "")
+        elif ref == "C21":
+            step["text"] = "Inquire around town, find Malaya, investigate the smoke, and make for the summit."
+            # The Abandoned Village warp frame is 1:30:38. The inventory start
+            # (1:30:00) is before that picture, so the watch used the warp link.
+            step["watch"] = 5435
+    lion = find_step(acts, "castti-ch-2-sai-route-1-655e3d")
+    if lion:
+        # The attached frame is Gigantes at 1:12:34. The Sand Lion fight is at
+        # 1:02:08. No replacement frame is in the repo, so the picture is removed
+        # and the watch is the fight time minus 3 seconds.
+        lion[3]["watch"] = 3725
+    anchor = find_step(acts, "castti-ch-3-1-45cc3c")
+    if not anchor:
+        return
+    chapter, block, index, _step = anchor
+    if any(step.get("overlay") == "C21b" for step in block["steps"]):
+        return
+    block["steps"].insert(
+        index + 1,
+        {
+            "id": overlay_id(chapter["id"], "C21b", used),
+            "text": "In Timberain, look around town and follow Edmund to the castle.",
+            "check": True,
+            "kind": "do",
+            "watch": 5576,
+            "overlay": "C21b",
+        },
+    )
+
+
 def apply_overlay(acts, write_notes_file: bool = True) -> dict:
     overlay = load_overlay()
     added, missing = insert_steps(acts, overlay)
+    editorial(acts)
     changes = update_wording(acts, overlay)
     apply_flee(acts)
     notes = build_notes(acts, overlay)
