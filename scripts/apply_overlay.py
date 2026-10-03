@@ -430,10 +430,8 @@ def editorial(acts) -> None:
             step["watch"] = 5435
     lion = find_step(acts, "castti-ch-2-sai-route-1-655e3d")
     if lion:
-        # The attached frame is Gigantes at 1:12:34. The Sand Lion fight is at
-        # 1:02:08. No replacement frame is in the repo, so the picture is removed
-        # and the watch is the fight time minus 3 seconds.
-        lion[3]["watch"] = 3725
+        # Sand Lion frame is 1:02:09. Watch is that frame minus 3 seconds.
+        lion[3]["watch"] = 3726
     anchor = find_step(acts, "castti-ch-3-1-45cc3c")
     if not anchor:
         return

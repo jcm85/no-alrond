@@ -525,6 +525,24 @@ export const stepPics: Record<string, StepPicture> = {
     "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4174",
     "confidence": "medium"
   },
+  "castti-ch-2-sai-route-1-655e3d": {
+    "stepId": "castti-ch-2-sai-route-1-655e3d",
+    "image": "/step-pics/castti-ch-2-sai-route-1-655e3d.jpg",
+    "caption": "Boss: Sand Lion. The fight starts here, right after the short cutscene inside Sand Lion's Den; in the guide it is the step \"Fight the Sand Lion during the day.\" (Sand Lion block). Last area banner before it: \"Hinoeuma / Sand Lion's Den\". This frame is from the first seconds of the battle (video 1:02:09).",
+    "kind": "battle",
+    "videoTime": "1:02:09",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3726",
+    "confidence": "high"
+  },
+  "castti-ch-2-sai-route-1-93d74f": {
+    "stepId": "castti-ch-2-sai-route-1-93d74f",
+    "image": "/step-pics/castti-ch-2-sai-route-1-93d74f.jpg",
+    "caption": "Required fight: Foreign Assassins. This step is the lead-in line for the Foreign Assassins fight block (the next steps are Throne - Critical Scope etc.), so it shows the same battle as foreign-assassins-1-b8556e (video 1:10:33).",
+    "kind": "battle",
+    "videoTime": "1:10:33",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4230",
+    "confidence": "high"
+  },
   "foreign-assassins-1-b8556e": {
     "stepId": "foreign-assassins-1-b8556e",
     "image": "/step-pics/foreign-assassins-1-b8556e.jpg",
@@ -532,7 +550,7 @@ export const stepPics: Record<string, StepPicture> = {
     "kind": "battle",
     "videoTime": "1:10:33",
     "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4230",
-    "confidence": "medium"
+    "confidence": "high"
   },
   "foreign-assassins-1-56ad29": {
     "stepId": "foreign-assassins-1-56ad29",
@@ -582,11 +600,11 @@ export const stepPics: Record<string, StepPicture> = {
   "hikari-ch-4-1-9974b8": {
     "stepId": "hikari-ch-4-1-9974b8",
     "image": "/step-pics/hikari-ch-4-1-9974b8.jpg",
-    "caption": "Boss: Gigantes. The fight starts here; in the guide it is the step \"Fight Gigantes at night.\" (Gigantes block). Last area banner before it: \"Winterlands / Castle Mei:East Tower\". This frame is from the first seconds of the battle (video 1:19:15).",
+    "caption": "Boss: Gigantes. Frame from the first seconds of the real fight (video 1:12:32); in the guide it is the step \"Fight Gigantes at night.\".",
     "kind": "battle",
-    "videoTime": "1:19:15",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4752",
-    "confidence": "medium"
+    "videoTime": "1:12:32",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4349",
+    "confidence": "high"
   },
   "hikari-ch-5-1-2bb7f3": {
     "stepId": "hikari-ch-5-1-2bb7f3",
@@ -690,10 +708,10 @@ export const stepPics: Record<string, StepPicture> = {
   "agnea-ch-2-1-8f3c27": {
     "stepId": "agnea-ch-2-1-8f3c27",
     "image": "/step-pics/agnea-ch-2-1-8f3c27.jpg",
-    "caption": "Boss: Tyrannodrake. The fight starts here; in the guide it is the step \"Fight Tyrannodrake at night.\" (Tyrannodrake block). Last area banner before it: \"Curious Nest\". This frame is from the first seconds of the battle (video 1:37:57).",
+    "caption": "Boss: Tyrannodrake. Frame from the first seconds of the real fight (video 1:38:06); in the guide it is the step \"Fight Tyrannodrake at night.\".",
     "kind": "battle",
-    "videoTime": "1:37:57",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5874",
+    "videoTime": "1:38:06",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5883",
     "confidence": "high"
   },
   "agnea-ch-2-1-2041b2": {
@@ -712,6 +730,15 @@ export const stepPics: Record<string, StepPicture> = {
     "kind": "travel",
     "videoTime": "1:41:33",
     "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6090",
+    "confidence": "high"
+  },
+  "agnea-ch-2-1-1dfd88": {
+    "stepId": "agnea-ch-2-1-1dfd88",
+    "image": "/step-pics/agnea-ch-2-1-1dfd88.jpg",
+    "caption": "Boss: La'mani. Frame from the first seconds of the real fight (video 1:43:27); in the guide it is the step \"Fight La'mani in the day.\".",
+    "kind": "battle",
+    "videoTime": "1:43:27",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6204",
     "confidence": "high"
   },
   "agnea-ch-2-1-ddcaac": {
@@ -865,6 +892,15 @@ export const stepPics: Record<string, StepPicture> = {
     "kind": "travel",
     "videoTime": "2:01:55",
     "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7313",
+    "confidence": "high"
+  },
+  "ochette-ch-3-1-8de399": {
+    "stepId": "ochette-ch-3-1-8de399",
+    "image": "/step-pics/ochette-ch-3-1-8de399.jpg",
+    "caption": "Boss: Lajackal of the Sorrowful Moon. Frame from the first seconds of the real fight (video 2:05:18); in the guide it is the step \"Throne — Latent Power + Armour Corrosive\".",
+    "kind": "battle",
+    "videoTime": "2:05:18",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7515",
     "confidence": "high"
   },
   "ochette-ch-3-1-c05ffc": {
@@ -1162,6 +1198,33 @@ export const stepPics: Record<string, StepPicture> = {
     "kind": "battle",
     "videoTime": "3:05:53",
     "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11150",
+    "confidence": "high"
+  },
+  "masterly-mysterious-travellers-1-476306": {
+    "stepId": "masterly-mysterious-travellers-1-476306",
+    "image": "/step-pics/masterly-mysterious-travellers-1-476306.jpg",
+    "caption": "Superboss (Extra Battle): Masterly Mysterious Travellers. Frame from the first seconds of the real fight (video 3:07:35); in the guide it is the step \"Throne — Latent Power + Reinforcing Jam → Self\".",
+    "kind": "battle",
+    "videoTime": "3:07:35",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11252",
+    "confidence": "medium"
+  },
+  "true-vide-phase-1-1-0625d2": {
+    "stepId": "true-vide-phase-1-1-0625d2",
+    "image": "/step-pics/true-vide-phase-1-1-0625d2.jpg",
+    "caption": "Superboss (Extra Battle): True Vide (Phase 1). Frame from the first seconds of the real fight (video 3:09:44); in the guide it is the step \"Throne — Energising Pomegranate (L) → Hikari\".",
+    "kind": "battle",
+    "videoTime": "3:09:44",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11381",
+    "confidence": "high"
+  },
+  "true-vide-phase-2-1-9517f0": {
+    "stepId": "true-vide-phase-2-1-9517f0",
+    "image": "/step-pics/true-vide-phase-2-1-9517f0.jpg",
+    "caption": "Superboss (Extra Battle): True Vide (Phase 2). Frame from the first seconds of the real fight (video 3:11:49); in the guide it is the step \"Temenos — Aelfric's Blessing → Castti\".",
+    "kind": "battle",
+    "videoTime": "3:11:49",
+    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11506",
     "confidence": "high"
   }
 };

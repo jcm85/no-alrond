@@ -136,8 +136,8 @@ test("fight wording names a confirmed actor and does not invent a weapon", () =>
   assert.ok(summit > 0 && summit < warp && edmund === warp + 1);
   assert.equal(steps[summit]?.watch, 5435);
   assert.equal(steps[edmund]?.watch, 5576);
-  assert.equal(steps.find((step) => step.id === "castti-ch-2-sai-route-1-655e3d")?.watch, 3725);
-  assert.equal(watchFromLabel("https://youtu.be/d6YOJxTfIeQ?t=3725"), "Watch from 1:02:05");
+  assert.equal(steps.find((step) => step.id === "castti-ch-2-sai-route-1-655e3d")?.watch, 3726);
+  assert.equal(watchFromLabel("https://youtu.be/d6YOJxTfIeQ?t=3726"), "Watch from 1:02:06");
 });
 
 test("weakness chips stay in game order and never guess a conflict", () => {
