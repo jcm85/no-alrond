@@ -1,58 +1,78 @@
-import { fightNotes, weakOrder, type WeakName } from "@/data/fight-notes";
+import { useEffect, useState } from "react";
+import { fightNotes, type FightEnemy, type FightNote } from "@/data/fight-notes";
 
-const SHORT: Record<WeakName, string> = {
-  Sword: "Sw",
-  Spear: "Spear",
-  Dagger: "Da",
-  Axe: "Ax",
-  Bow: "Bo",
-  Staff: "St",
-  Fire: "Fi",
-  Ice: "Ic",
-  Lightning: "Li",
-  Wind: "Wi",
-  Light: "Lt",
-  Dark: "Dk",
-};
-
-function Chips({ weak }: { weak: readonly string[] }) {
-  const known = new Set(weak);
+function EnemyLine({ enemy, ignores }: { enemy: FightEnemy; ignores: boolean }) {
+  const weak = !ignores && enemy.weak && enemy.weak.length > 0 ? enemy.weak : null;
   return (
-    <span className="weak-row">
-      {weakOrder.map((name, index) => {
-        const on = known.has(name);
-        return (
-          <span key={name} className="contents">
-            {index === 6 ? <span className="weak-gap" aria-hidden="true" /> : null}
-            <span className={on ? "weak-chip is-weak" : "weak-chip is-unknown"} title={on ? name : `${name} unknown`}>
-              <span className="sr-only">{on ? name : `${name} unknown`}</span>
-              <span aria-hidden="true">{on ? SHORT[name] : "?"}</span>
+    <li className="flex flex-wrap items-center gap-x-2 gap-y-1">
+      <span className="text-fg">{enemy.name}</span>
+      {ignores ? <span className="fight-tag">ignores weakness</span> : null}
+      {!ignores && weak
+        ? weak.map((name) => (
+            <span key={name} className="weak-chip is-weak">
+              {name}
             </span>
-          </span>
-        );
-      })}
+          ))
+        : null}
+      {!ignores && !weak ? (
+        <span>
+          <span className="weak-chip is-unknown" aria-hidden="true">
+            ?
+          </span>{" "}
+          <span>weak: unverified</span>
+        </span>
+      ) : null}
+      {enemy.shield ? <span>shield {enemy.shield}</span> : null}
+      <span>{enemy.confidence}</span>
+      {enemy.recheck ? <span>re-check on screen after a phase change</span> : null}
+    </li>
+  );
+}
+
+function Summary({ note }: { note: FightNote }) {
+  const names = note.enemies.map((enemy) => enemy.name).join(", ");
+  return (
+    <span className="text-fg">
+      Weaknesses
+      <span className="text-muted"> · {names}</span>
     </span>
   );
 }
 
-export function FightWeakness({ stepId }: { stepId: string }) {
+export function FightWeakness({ stepId, onShowGuide }: { stepId: string; onShowGuide?: () => void }) {
   const note = fightNotes[stepId];
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    setOpen(false);
+  }, [stepId]);
   if (!note) return null;
+  const many = note.enemies.length > 1;
+  const ignores = Boolean(note.ignoresWeakness);
   return (
     <div className="fight-weak mt-2 text-base text-muted">
-      {note.ignoresWeakness ? <p className="fight-tag">ignores weakness</p> : null}
-      <ul className="mt-1 flex flex-col gap-1">
-        {note.enemies.map((enemy) => (
-          <li key={enemy.name} className="flex flex-wrap items-center gap-1">
-            <span className="text-fg">{enemy.name}</span>
-            {!note.ignoresWeakness && enemy.weak ? <Chips weak={enemy.weak} /> : null}
-            {!note.ignoresWeakness && !enemy.weak ? <span>weak: unverified</span> : null}
-            {enemy.shield ? <span>shield {enemy.shield}</span> : null}
-            <span>{enemy.confidence}</span>
-            {enemy.recheck ? <span>re-check on screen after a phase change</span> : null}
-          </li>
-        ))}
-      </ul>
+      {many ? (
+        <button
+          type="button"
+          className="weak-toggle min-h-11 text-left"
+          aria-expanded={open}
+          onClick={() => setOpen((value) => !value)}
+        >
+          <Summary note={note} />
+          <span className="ml-2 text-gold">{open ? "Hide" : "Show"}</span>
+        </button>
+      ) : null}
+      {!many || open ? (
+        <ul className="mt-1 flex flex-col gap-1">
+          {note.enemies.map((enemy) => (
+            <EnemyLine key={enemy.name} enemy={enemy} ignores={ignores} />
+          ))}
+        </ul>
+      ) : null}
+      {onShowGuide ? (
+        <button type="button" className="mt-1 min-h-11 text-gold underline underline-offset-4" onClick={onShowGuide}>
+          How weaknesses work
+        </button>
+      ) : null}
     </div>
   );
 }

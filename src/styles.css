@@ -96,7 +96,101 @@
 .now-layout {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
+  min-height: 0;
+}
+
+.now-card-head {
+  flex: 0 0 auto;
+}
+
+.now-card-head .step-title {
+  margin-top: 0.35rem;
+}
+
+.now-card-meta {
+  min-height: 2.75rem;
+}
+
+.how-combat {
+  min-height: 2.75rem;
+}
+
+header {
+  position: relative;
+}
+
+.route-notice {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 6;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.75rem;
+  margin: 0;
+  border-right: 0;
+  border-bottom: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+
+.route-notice p {
+  margin: 0;
+}
+
+.route-notice button,
+.route-notice summary {
+  min-height: 2.75rem;
+}
+
+@media (max-width: 700px), (max-height: 860px) {
+  .route-notice {
+    flex-wrap: nowrap;
+    align-items: center;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .route-notice > p {
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .route-notice > div {
+    flex-wrap: nowrap;
+  }
+
+  .notice-review {
+    display: none;
+  }
+}
+
+.now-layout > .upcoming {
+  flex: 0 1 auto;
+  max-height: 7rem;
+  overflow: auto;
+}
+
+.now-layout > .step-pic {
+  flex: 0 1 auto;
+  min-height: 0;
+}
+
+@media (max-width: 1279px) and (max-height: 1100px) {
+  .now-layout > .step-pic {
+    max-height: 26dvh;
+    overflow: auto;
+  }
+}
+
+.now-main {
+  overflow: hidden;
 }
 
 @media (min-width: 900px) and (orientation: portrait) {
@@ -192,12 +286,8 @@
   object-fit: contain;
 }
 
-/* Sits above the fixed Done bar. The bar stays tappable; only Undo takes taps. */
+/* In the header, so it never covers the step title or Done. Only Undo takes taps. */
 .undo-toast {
-  position: fixed;
-  inset-inline: 0;
-  z-index: 30;
-  bottom: calc(8.75rem + env(safe-area-inset-bottom));
   pointer-events: none;
 }
 
@@ -244,8 +334,10 @@
   .now-layout {
     display: grid;
     grid-template-columns: minmax(0, 3fr) minmax(16rem, 2fr);
+    grid-template-rows: minmax(0, 1fr) auto;
     gap: 1.25rem;
-    align-items: start;
+    align-items: stretch;
+    height: 100%;
   }
 
   .step-title {
@@ -261,6 +353,7 @@
   .now-layout:has(.step-pic) > .now-main {
     grid-column: 1;
     grid-row: 1;
+    min-height: 0;
   }
 
   .now-layout:has(.step-pic) > .upcoming {
@@ -279,8 +372,9 @@
   }
 
   .step-title {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     line-height: 1.15;
+    text-wrap: wrap;
   }
 
   .now-actions {
@@ -346,23 +440,9 @@
     font-size: 0.875rem;
   }
 
-  .now-layout:has(.step-pic) .now-actions,
-  .now-layout:has(.step-pic-fallback) .now-actions {
-    position: fixed;
-    z-index: 15;
-    bottom: calc(4.35rem + env(safe-area-inset-bottom));
-    left: 50%;
-    width: min(40rem, calc(100% - 2rem));
-    transform: translateX(-50%);
-    margin-top: 0;
-    padding: 0.35rem 0 0.15rem;
-    background: var(--color-bg);
-  }
-
   .now-layout:has(.step-pic),
   .now-layout:has(.step-pic-fallback) {
     gap: 0.35rem;
-    padding-bottom: 4.25rem;
   }
 
   .now-layout:has(.step-pic) .step-title,
@@ -383,24 +463,6 @@
 }
 
 @media (min-width: 700px) and (max-height: 820px) {
-  .now-layout:has(.step-pic) .now-actions,
-  .now-layout:has(.step-pic-fallback) .now-actions {
-    position: fixed;
-    z-index: 15;
-    bottom: calc(4.35rem + env(safe-area-inset-bottom));
-    left: 50%;
-    width: min(40rem, calc(100% - 2rem));
-    transform: translateX(-50%);
-    margin-top: 0;
-    padding: 0.35rem 0 0.15rem;
-    background: var(--color-bg);
-  }
-
-  .now-layout:has(.step-pic),
-  .now-layout:has(.step-pic-fallback) {
-    padding-bottom: 4.25rem;
-  }
-
   .now-layout:has(.step-pic) .fight-weak {
     margin-top: 0.25rem;
   }
@@ -445,8 +507,10 @@
 @media (max-height: 520px) {
   main.app-shell {
     padding-top: 0.25rem;
-    max-height: calc(100dvh - 7.15rem - env(safe-area-inset-bottom));
-    overflow: auto;
+  }
+
+  .now-layout > .upcoming {
+    display: none;
   }
 
   .now-layout .now-main > p {
@@ -458,13 +522,51 @@
     padding: 0.4rem 0.65rem;
   }
 
-  .now-layout .now-card > .flex:first-child {
+  .now-layout .step-title {
+    margin-top: 0.15rem;
+    font-size: 1.125rem;
+    line-height: 1.15;
+  }
+
+  .app-kicker {
     display: none;
   }
 
-  .now-layout .step-title {
-    margin-top: 0;
-    font-size: 1.25rem;
+  header .app-brand {
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+
+  header h1 {
+    font-size: 1.125rem;
+  }
+
+  header .size-10 {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .app-progress {
+    padding-bottom: 0.2rem;
+  }
+
+  .app-progress .mb-2 {
+    margin-bottom: 0.15rem;
+  }
+
+  nav button {
+    min-height: 2.25rem;
+    flex-direction: row;
+    gap: 0.25rem;
+  }
+
+  .safe-bottom {
+    padding-bottom: 0.15rem;
+  }
+
+  .how-combat,
+  .now-card-meta {
+    min-height: 2rem;
   }
 
   .now-layout .now-actions {
@@ -494,31 +596,51 @@
     margin-top: 0;
   }
 
-  .now-layout .now-actions {
-    position: fixed;
-    z-index: 15;
-    bottom: calc(4.35rem + env(safe-area-inset-bottom));
-    left: 50%;
-    width: min(40rem, calc(100% - 2rem));
-    transform: translateX(-50%);
-    margin-top: 0;
-    padding: 0.35rem 0 0.15rem;
-    background: var(--color-bg);
-  }
-
-  .now-layout {
-    padding-bottom: 3.5rem;
-  }
-
   .now-layout > .step-pic-short {
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: space-between;
     gap: 0.5rem;
+    max-height: 2rem;
+    overflow: hidden;
   }
 
   .now-layout > .step-pic {
     display: none;
+  }
+}
+
+@media (max-height: 860px) {
+  .now-layout > .upcoming,
+  .now-tools {
+    display: none;
+  }
+
+  header {
+    position: relative;
+  }
+
+  .undo-toast {
+    position: absolute;
+    right: 0;
+    bottom: 0.25rem;
+    left: 0;
+    z-index: 5;
+  }
+}
+
+@media (max-height: 740px) {
+  .now-layout .now-main > p {
+    display: none;
+  }
+}
+
+@media (max-height: 860px) and (min-width: 700px) {
+  .step-title {
+    font-size: 1.5rem;
+    line-height: 1.15;
+    text-wrap: wrap;
   }
 }
 

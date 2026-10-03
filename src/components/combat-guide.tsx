@@ -1,8 +1,13 @@
+import { useEffect, useRef } from "react";
 import { combatGuide, fleeGuide } from "@/data/combat-guide";
 
-export function CombatGuide() {
+export function CombatGuide({ startOpen = false }: { startOpen?: boolean }) {
+  const ref = useRef<HTMLDetailsElement>(null);
+  useEffect(() => {
+    if (startOpen && ref.current) ref.current.open = true;
+  }, [startOpen]);
   return (
-    <details className="combat-guide mb-3 rounded-card border border-line bg-surface px-4 py-2">
+    <details ref={ref} id="how-combat-works" className="combat-guide mb-3 rounded-card border border-line bg-surface px-4 py-2">
       <summary className="flex min-h-11 cursor-pointer items-center text-base font-medium">How combat works</summary>
       <ol className="mt-2 flex list-decimal flex-col gap-2 pl-5 text-base text-muted">
         {combatGuide.map((line) => (

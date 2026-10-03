@@ -31,9 +31,9 @@ test("watch label time equals the link t, and t is the frame minus 3 seconds", (
     { sourceFrameSeconds: number; extraImages?: { sourceFrameSeconds?: number }[] }
   >;
   const pictures = Object.values(stepPics);
-  assert.equal(pictures.length, 127);
+  assert.equal(pictures.length, 126);
   const frames = pictures.flatMap((picture) => [picture, ...(picture.extraImages ?? [])]);
-  assert.equal(frames.length, 128);
+  assert.equal(frames.length, 127);
   for (const frame of frames) {
     const label = watchFromLabel(frame.youtube_link);
     assert.equal(labelSeconds(label), linkSeconds(frame.youtube_link), frame.youtube_link);
@@ -58,8 +58,7 @@ test("watch label time equals the link t, and t is the frame minus 3 seconds", (
   assert.equal(linkSeconds(stepPics["galdera-1-107476"].youtube_link), 8283);
   assert.equal(watchFromLabel(stepPics["galdera-1-95ea15"].youtube_link), "Watch from 2:15:09");
   assert.equal(linkSeconds(stepPics["galdera-1-95ea15"].youtube_link), 8109);
-  assert.equal(watchFromLabel(stepPics["castti-ch-2-sai-route-1-655e3d"].youtube_link), "Watch from 1:12:31");
-  assert.equal(linkSeconds(stepPics["castti-ch-2-sai-route-1-655e3d"].youtube_link), 4351);
+  assert.equal(stepPics["castti-ch-2-sai-route-1-655e3d"], undefined);
 });
 
 test("the guard outpost door is a travel frame", () => {

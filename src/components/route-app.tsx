@@ -41,6 +41,7 @@ export function RouteApp() {
   const skipped = useRun((s) => s.skipped);
   const history = useRun((s) => s.history);
   const notice = useRun((s) => s.notice);
+  const resumeAfterId = useRun((s) => s.resumeAfterId);
   const hydrated = useRun((s) => s.hydrated);
   const complete = useRun((s) => s.complete);
   const toggle = useRun((s) => s.toggle);
@@ -48,6 +49,7 @@ export function RouteApp() {
   const undo = useRun((s) => s.undo);
   const reset = useRun((s) => s.reset);
   const dismissNotice = useRun((s) => s.dismissNotice);
+  const setResumeAfter = useRun((s) => s.setResumeAfter);
   const markBeforeChapter = useRun((s) => s.markBeforeChapter);
   const setHydrated = useRun((s) => s.setHydrated);
 
@@ -61,6 +63,7 @@ export function RouteApp() {
   const [openChapters, setOpenChapters] = useState<Record<string, boolean>>({});
   const [highlightId, setHighlightId] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
+  const [guideOpen, setGuideOpen] = useState(false);
 
   useEffect(() => {
     void Promise.resolve(useRun.persist.rehydrate()).finally(() => setHydrated(true));
@@ -80,7 +83,13 @@ export function RouteApp() {
     return () => window.clearTimeout(timer);
   }, [toast]);
 
-  const current = playhead(done);
+  const current = playhead(done, resumeAfterId);
+  const lastDone = [...steps].reverse().find((step) => done[step.id]);
+  function showGuide() {
+    setGuideOpen(true);
+    setAbout(true);
+    setTab("now");
+  }
   const latestCarried =
     notice && notice.carried > 0 ? [...steps].reverse().find((step) => done[step.id]) : undefined;
   const left = remaining(done);
@@ -158,12 +167,12 @@ export function RouteApp() {
   }
 
   return (
-    <div className="min-h-dvh bg-bg text-fg">
-      <header className="sticky top-0 z-20 border-b border-line bg-bg/95 backdrop-blur-sm">
-        <div className="app-shell flex items-center gap-3 py-3">
+    <div className="flex h-dvh flex-col overflow-hidden bg-bg text-fg">
+      <header className="shrink-0 border-b border-line bg-bg">
+        <div className="app-shell app-brand flex items-center gap-3 py-3">
           <Mark />
           <div className="min-w-0 flex-1">
-            <p className="text-sm tracking-widest text-gold uppercase">All superbosses</p>
+            <p className="app-kicker text-sm tracking-widest text-gold uppercase">All superbosses</p>
             <h1 className="truncate font-display text-2xl leading-tight font-semibold text-fg">No Alrond</h1>
           </div>
           <button
@@ -177,7 +186,7 @@ export function RouteApp() {
             <Info className="size-5" />
           </button>
         </div>
-        <div className="app-shell pb-3">
+        <div className="app-shell app-progress pb-3">
           <div className="mb-2 flex items-baseline justify-between gap-3 text-base text-muted">
             <span>
               {hydrated
@@ -200,49 +209,120 @@ export function RouteApp() {
             />
           </div>
         </div>
-      </header>
-
-      <main className="app-shell pt-4 pb-28">
-        {!hydrated ? <p className="text-lg text-muted">Loading your saved progress…</p> : null}
-        {hydrated && notice ? (
-          <div role="status" className="mb-4 rounded-card border border-gold bg-surface p-4">
-            <p className="text-lg text-fg">
-              {notice.carried === 0
-                ? "The route was updated. Your old progress can't be carried over safely."
-                : `${notice.carried} of ${notice.total} carried over. Next unchecked step is ${current?.n ?? "the end"}.`}
-            </p>
-            <div className="mt-3 flex flex-wrap gap-3">
-              <button type="button" onClick={() => reset()} className="min-h-12 rounded-card bg-gold px-4 py-3 font-semibold text-ink">
-                Start over
-              </button>
-              {latestCarried ? (
+        {toast ? (
+          <div className="undo-toast">
+            <div className="app-shell pb-3">
+              <div role="status" className="flex items-center justify-between gap-4 rounded-card border border-gold bg-raise px-4 py-2">
+                <p className="min-w-0 truncate text-base">{toast}</p>
                 <button
                   type="button"
+                  className="min-h-11 shrink-0 rounded-card border border-line px-3 text-base text-gold"
                   onClick={() => {
-                    const holes = undoneBefore(done, latestCarried.id);
-                    goTo(latestCarried);
-                    if (holes > 0) setConfirm({ kind: "carried", id: latestCarried.id, count: holes });
-                    else dismissNotice();
+                    undo();
+                    setToast(null);
                   }}
-                  className="min-h-12 rounded-card border border-gold px-4 py-3 text-gold"
                 >
-                  Jump to latest carried step {latestCarried.n}
+                  Undo
                 </button>
-              ) : null}
-              <button
-                type="button"
-                onClick={() => {
-                  setTab("route");
-                  dismissNotice();
-                }}
-                className="min-h-12 rounded-card border border-line px-4 py-3"
-              >
-                Pick a chapter to start from
-              </button>
+              </div>
             </div>
           </div>
         ) : null}
-        {hydrated && about ? <About onClose={() => setAbout(false)} /> : null}
+        {hydrated && notice ? (
+          <div role="status" className="route-notice mb-2 shrink-0 rounded-card border border-gold bg-surface px-3 py-2">
+            <p
+              className="text-base text-fg"
+              title={
+                notice.added
+                  ? `${notice.added} new steps were added; they start unchecked.`
+                  : notice.carried === 0
+                    ? "The route was updated. Your old progress can't be carried over safely."
+                    : `${notice.carried} of ${notice.total} carried over.`
+              }
+            >
+              {notice.added
+                ? `${notice.added} new steps were added; they start unchecked.`
+                : notice.carried === 0
+                  ? "The route was updated. Your old progress can't be carried over safely."
+                  : `${notice.carried} of ${notice.total} carried over.`}
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {notice.added && lastDone ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setResumeAfter(lastDone.id);
+                    dismissNotice();
+                  }}
+                  className="min-h-11 rounded-card bg-gold px-3 py-2 font-semibold text-ink"
+                >
+                  Jump past them
+                </button>
+              ) : null}
+              {notice.added ? (
+                <button
+                  type="button"
+                  onClick={() => {
+                    setResumeAfter(null);
+                    dismissNotice();
+                  }}
+                  className="notice-review min-h-11 rounded-card border border-gold px-3 py-2 text-gold"
+                >
+                  Review the new steps
+                </button>
+              ) : null}
+              <details className="route-notice-more">
+                <summary className="min-h-11 cursor-pointer list-none rounded-card border border-line px-3 py-2">More</summary>
+                <div className="mt-2 flex flex-wrap gap-2">
+                  {notice.added ? (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setResumeAfter(null);
+                        dismissNotice();
+                      }}
+                      className="min-h-11 rounded-card border border-gold px-3 py-2 text-gold"
+                    >
+                      Review the new steps
+                    </button>
+                  ) : null}
+                  <button type="button" onClick={() => reset()} className="min-h-11 rounded-card border border-line px-3 py-2">
+                    Start over
+                  </button>
+                  {latestCarried ? (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const holes = undoneBefore(done, latestCarried.id);
+                        goTo(latestCarried);
+                        if (holes > 0) setConfirm({ kind: "carried", id: latestCarried.id, count: holes });
+                        else dismissNotice();
+                      }}
+                      className="min-h-11 rounded-card border border-gold px-3 py-2 text-gold"
+                    >
+                      Jump to latest carried step {latestCarried.n}
+                    </button>
+                  ) : null}
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setTab("route");
+                      dismissNotice();
+                    }}
+                    className="min-h-11 rounded-card border border-line px-3 py-2"
+                  >
+                    Pick a chapter to start from
+                  </button>
+                </div>
+              </details>
+            </div>
+          </div>
+        ) : null}
+      </header>
+
+      <main className="app-shell flex min-h-0 flex-1 flex-col overflow-hidden pt-3">
+        {!hydrated ? <p className="text-lg text-muted">Loading your saved progress…</p> : null}
+        {hydrated && about ? <About guideOpen={guideOpen} onClose={() => setAbout(false)} /> : null}
 
         {hydrated && tab === "now" ? (
           <Now
@@ -257,11 +337,14 @@ export function RouteApp() {
             canUndo={history.length > 0}
             upcoming={upcoming(done, 6)}
             onOpenRoute={() => current && goTo(current)}
+            onShowGuide={showGuide}
+            holes={left}
+            onReview={() => setResumeAfter(null)}
           />
         ) : null}
 
         {hydrated && tab === "route" ? (
-          <section>
+          <section className="min-h-0 flex-1 overflow-auto pb-4">
             <div className="act-row mb-3 flex gap-2 overflow-x-auto pb-1">
               {route.acts.map((item) => (
                 <button
@@ -360,6 +443,7 @@ export function RouteApp() {
                         currentId={current?.id ?? null}
                         highlightId={highlightId}
                         onCheck={checkStep}
+                        onShowGuide={showGuide}
                       />
                     ))
                   )}
@@ -370,7 +454,7 @@ export function RouteApp() {
         ) : null}
 
         {hydrated && tab === "find" ? (
-          <section>
+          <section className="min-h-0 flex-1 overflow-auto pb-4">
             <label className="mb-3 block">
               <span className="sr-only">Search the route</span>
               <input
@@ -442,27 +526,7 @@ export function RouteApp() {
         ) : null}
       </main>
 
-      {toast ? (
-        <div className="undo-toast">
-          <div className="app-shell">
-            <div role="status" className="flex items-center justify-between gap-4 rounded-card border border-gold bg-raise px-4 py-3">
-              <p className="min-w-0 text-base">{toast}</p>
-              <button
-                type="button"
-                className="min-h-11 shrink-0 rounded-card border border-line px-3 text-base text-gold"
-                onClick={() => {
-                  undo();
-                  setToast(null);
-                }}
-              >
-                Undo
-              </button>
-            </div>
-          </div>
-        </div>
-      ) : null}
-
-      <nav className="safe-bottom fixed inset-x-0 bottom-0 z-20 border-t border-line bg-bg/95 backdrop-blur-sm">
+      <nav className="safe-bottom shrink-0 border-t border-line bg-bg">
         <div className="app-shell grid grid-cols-3 !px-0">
           <TabButton active={tab === "now"} onClick={() => setTab("now")} label="Now" icon={<Check className="size-5" />} />
           <TabButton active={tab === "route"} onClick={() => setTab("route")} label="Route" icon={<List className="size-5" />} />
@@ -505,6 +569,9 @@ function Now({
   canUndo,
   upcoming: upcomingSteps,
   onOpenRoute,
+  onShowGuide,
+  holes,
+  onReview,
 }: {
   current: FlatStep | null;
   doneCount: number;
@@ -514,6 +581,9 @@ function Now({
   canUndo: boolean;
   upcoming: FlatStep[];
   onOpenRoute: () => void;
+  onShowGuide: () => void;
+  holes: number;
+  onReview: () => void;
 }) {
   const picture = pictureFor(current?.id);
   const [pictureHidden, setPictureHidden] = usePictureHidden();
@@ -539,12 +609,17 @@ function Now({
         <p className="mt-3 text-lg text-muted">
           Galdera, Vide, and all four extra battles are checked off. {doneCount.toLocaleString()} steps.
         </p>
+        {holes > 0 ? (
+          <button type="button" onClick={onReview} className="mt-4 min-h-12 rounded-card border border-gold px-4 py-3 text-gold">
+            Review {holes} unchecked steps
+          </button>
+        ) : null}
       </section>
     );
   }
 
   return (
-    <div className="now-layout">
+    <div className="now-layout min-h-0 flex-1">
       {picture && !pictureHidden ? (
         <StepPictureCard
           picture={picture}
@@ -558,7 +633,7 @@ function Now({
           }}
         />
       ) : null}
-      <section className="now-main">
+      <section className="now-main flex min-h-0 flex-1 flex-col">
         {picture && pictureHidden ? (
           <button
             ref={showPictureRef}
@@ -573,15 +648,22 @@ function Now({
           </button>
         ) : null}
         <p className="text-base text-muted">{placeLabel(current)}</p>
-        <div className="now-card mt-3 rounded-card border border-line bg-surface p-4">
-          <div className="flex items-center justify-between gap-3">
-            <p className="text-sm tracking-widest text-gold uppercase">
-              Step {current.n}
-              {current.ctx ? ` · ${current.ctx}` : ` · ${KIND_LABEL[current.blockKind] ?? "Step"}`}
-            </p>
-            {current.optional ? <span className="text-base text-muted">Optional</span> : null}
+        <div className="now-card mt-3 flex min-h-0 flex-1 flex-col overflow-hidden rounded-card border border-line bg-surface p-4">
+          <div className="now-card-head">
+            <div className="now-card-meta flex items-center gap-3">
+              <p className="min-w-0 flex-1 truncate text-sm tracking-widest text-gold uppercase">
+                Step {current.n}
+                {current.ctx ? ` · ${current.ctx}` : ` · ${KIND_LABEL[current.blockKind] ?? "Step"}`}
+                {current.optional ? " · Optional" : ""}
+              </p>
+              <button type="button" onClick={onShowGuide} className="how-combat shrink-0 text-base text-gold">
+                How combat works
+              </button>
+            </div>
+            <h2 className="step-title">{current.text}</h2>
           </div>
-          {current.when ? <p className="mt-2 text-base text-gold">{current.when}</p> : null}
+          <div className="now-card-body min-h-0 flex-1 overflow-auto">
+          {current.when ? <p className="text-base text-gold">{current.when}</p> : null}
           {current.lead ? <p className="mt-2 text-base text-gold">{current.lead}</p> : null}
           {current.foes && current.foes.length > 0 && isFirstInBlock(current) ? (
             <ul className="mt-3 flex flex-col gap-1 border-l-2 border-ember pl-3 text-base text-muted">
@@ -590,8 +672,7 @@ function Now({
               ))}
             </ul>
           ) : null}
-          <h2 className="step-title mt-3">{current.text}</h2>
-          <FightWeakness stepId={current.id} />
+          <FightWeakness stepId={current.id} onShowGuide={onShowGuide} />
           {current.watch != null ? <StepWatch seconds={current.watch} /> : null}
           {current.lines && current.lines.length > 0 ? (
             <ul className="mt-3 flex flex-col gap-1 text-lg text-fg">
@@ -623,7 +704,8 @@ function Now({
               {current.orderNote ? ` · ${current.orderNote}` : ""}
             </a>
           ) : null}
-          <div className="now-actions mt-5 flex gap-6">
+          </div>
+          <div className="now-actions mt-3 flex shrink-0 gap-3">
             <button type="button" onClick={onDone} className="min-h-14 flex-1 rounded-card bg-gold px-4 py-3 text-lg font-semibold text-ink">
               Done
             </button>
@@ -670,6 +752,7 @@ function BlockCard({
   currentId,
   highlightId,
   onCheck,
+  onShowGuide,
 }: {
   block: Block;
   done: Record<string, boolean>;
@@ -678,6 +761,7 @@ function BlockCard({
   currentId: string | null;
   highlightId: string | null;
   onCheck: (step: FlatStep) => void;
+  onShowGuide: () => void;
 }) {
   const [openPic, setOpenPic] = useState<string | null>(null);
   const visible = steps.filter((step) => {
@@ -737,7 +821,7 @@ function BlockCard({
                 <p className={"text-lg break-words " + (done[step.id] ? "text-muted line-through" : "text-fg")}>
                   {step.text}
                 </p>
-                <FightWeakness stepId={step.id} />
+                <FightWeakness stepId={step.id} onShowGuide={onShowGuide} />
                 {step.watch != null ? <StepWatch seconds={step.watch} /> : null}
                 {step.lines && step.lines.length > 0 ? (
                   <p className="mt-1 text-base text-muted">{step.lines.join(" · ")}</p>
@@ -847,7 +931,7 @@ function TabButton({
   );
 }
 
-function About({ onClose }: { onClose: () => void }) {
+function About({ guideOpen, onClose }: { guideOpen: boolean; onClose: () => void }) {
   const reset = useRun((s) => s.reset);
   const exportProgress = useRun((s) => s.exportProgress);
   const importProgress = useRun((s) => s.importProgress);
@@ -855,7 +939,7 @@ function About({ onClose }: { onClose: () => void }) {
   const [paste, setPaste] = useState("");
   const [message, setMessage] = useState("");
   return (
-    <section className="mb-4 rounded-card border border-line bg-surface p-4">
+    <section className="mb-3 max-h-[42%] shrink-0 overflow-auto rounded-card border border-line bg-surface p-4">
       <div className="flex items-start justify-between gap-3">
         <h2 className="font-display text-xl font-semibold">The sheet, as a checklist</h2>
         <button type="button" onClick={onClose} className="min-h-11 text-base text-gold">
@@ -863,10 +947,10 @@ function About({ onClose }: { onClose: () => void }) {
         </button>
       </div>
       <p className="mt-2 text-base text-muted">{route.meta.note}</p>
-      <CombatGuide />
+      <CombatGuide startOpen={guideOpen} />
       <p className="mt-2 text-base text-muted">
         On the Now tab, Space or Enter marks the current step done when nothing else is focused. S skips. Z or Backspace
-        undoes. A skip or a done step can also be undone from the note that appears at the bottom.
+        undoes. A skip or a done step can also be undone from the note under the title.
       </p>
       <a className="mt-3 inline-block text-base text-gold underline underline-offset-4" href={route.meta.video} target="_blank" rel="noreferrer">
         Watch the run

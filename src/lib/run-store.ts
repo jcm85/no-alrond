@@ -126,6 +126,7 @@ type RunState = {
   history: string[];
   jumps: number[];
   notice: RouteNotice | null;
+  resumeAfterId: string | null;
   hydrated: boolean;
   complete: (id: string, how: "done" | "skip") => void;
   toggle: (id: string) => void;
@@ -133,6 +134,7 @@ type RunState = {
   undo: () => void;
   reset: () => void;
   dismissNotice: () => void;
+  setResumeAfter: (id: string | null) => void;
   exportProgress: () => string;
   importProgress: (raw: string) => { ok: true } | { ok: false; error: string };
   markBeforeChapter: (chapterId: string) => void;
@@ -145,6 +147,7 @@ const fresh = {
   history: [] as string[],
   jumps: [] as number[],
   notice: null as RouteNotice | null,
+  resumeAfterId: null as string | null,
 };
 
 function dropId(history: string[], jumps: number[], id: string) {
@@ -173,6 +176,7 @@ export const useRun = create<RunState>()(
       hydrated: false,
       setHydrated: (value) => set({ hydrated: value }),
       dismissNotice: () => set({ notice: null }),
+      setResumeAfter: (id) => set({ resumeAfterId: id }),
       complete: (id, how) => {
         const { done, skipped, history, jumps } = get();
         if (done[id]) return;
@@ -246,6 +250,7 @@ export const useRun = create<RunState>()(
           version: 2,
           routeRev: route.meta.rev,
           notice: get().notice,
+          resumeAfterId: get().resumeAfterId,
         });
         set({ ...fresh });
       },
@@ -300,9 +305,17 @@ export const useRun = create<RunState>()(
         const history = Array.isArray(body.history)
           ? body.history.filter((id): id is string => typeof id === "string" && Boolean(done[id]))
           : [];
+        const added = steps.filter((step) => /-900-/.test(step.id) && !done[step.id]).length;
+        const fromBody = typeof body.resumeAfterId === "string" && known.has(body.resumeAfterId) ? body.resumeAfterId : null;
+        const lastDone = [...steps].reverse().find((step) => done[step.id])?.id ?? null;
+        const resumeAfterId = body.routeRev !== route.meta.rev && added > 0 ? lastDone : fromBody;
         const notice =
-          body.routeRev !== route.meta.rev && incoming > carried ? { carried, total: incoming } : null;
-        set({ done, skipped, history, jumps: history.map(() => 1), notice });
+          body.routeRev !== route.meta.rev && added > 0 && carried > 0
+            ? { carried, total: incoming, added }
+            : body.routeRev !== route.meta.rev && incoming > carried
+              ? { carried, total: incoming }
+              : null;
+        set({ done, skipped, history, jumps: history.map(() => 1), notice, resumeAfterId });
         return { ok: true };
       },
       markBeforeChapter: (chapterId) => {
@@ -351,6 +364,7 @@ export const useRun = create<RunState>()(
         version: 2 as const,
         routeRev: route.meta.rev,
         notice: state.notice,
+        resumeAfterId: state.resumeAfterId,
       }),
       onRehydrateStorage: () => (state) => {
         state?.setHydrated(true);
@@ -359,7 +373,15 @@ export const useRun = create<RunState>()(
   ),
 );
 
-export function playhead(done: Record<string, boolean>) {
+export function playhead(done: Record<string, boolean>, resumeAfterId?: string | null) {
+  if (resumeAfterId) {
+    const index = steps.findIndex((step) => step.id === resumeAfterId);
+    if (index >= 0) {
+      const anchor = steps[index];
+      if (anchor && !done[anchor.id]) return anchor;
+      return steps.slice(index + 1).find((step) => !done[step.id]) ?? null;
+    }
+  }
   return steps.find((step) => !done[step.id]) ?? null;
 }
 

@@ -1528,24 +1528,6 @@
     "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4174",
     "order": 321
   },
-  "castti-ch-2-sai-route-1-655e3d": {
-    "stepId": "castti-ch-2-sai-route-1-655e3d",
-    "chapter": "castti-ch-2-sai-route",
-    "chapterTitle": "Castti Ch.2: Sai Route",
-    "stepText": "Fight the Sand Lion during the day.",
-    "kind": "fight",
-    "enemy": "Sand Lion",
-    "videoTime": "1:12:34",
-    "sourceFrameSeconds": 4354,
-    "battleEpisodeStart": 4344,
-    "imagePath": "/workspace/section-pics/final/castti-ch-2-sai-route-1-655e3d.jpg",
-    "caption": "Boss: Sand Lion. The fight starts here; in the guide it is the step \"Fight the Sand Lion during the day.\" (Sand Lion block). Last area banner before it: \"Nameless Isle\". This frame is from the first seconds of the battle (video 1:12:34).",
-    "arrowLabel": "(label only: \"Boss: Sand Lion\")",
-    "confidence": "medium",
-    "evidence": "Boss prompt \"The sense of danger is overwhelming. Are you certain you wish to proceed?\" at 4350s followed by a white horned beast.",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4344",
-    "order": 326
-  },
   "foreign-assassins-1-b8556e": {
     "stepId": "foreign-assassins-1-b8556e",
     "chapter": "foreign-assassins",

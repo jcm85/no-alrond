@@ -118,7 +118,9 @@ test("a mismatched revision is kept silently when every done id still exists", (
   );
   const result = readMigration(storage, rev, legacyIds, current);
   assert.equal(result.progress?.done[kept], true);
-  assert.equal(result.progress?.notice, null);
+  assert.equal(result.progress?.notice?.carried, 1);
+  assert.equal(result.progress?.notice?.added, 40);
+  assert.equal(result.progress?.resumeAfterId, kept);
   assert.equal(result.progress?.routeRev, rev);
   assert.equal(Object.keys(result.progress?.done ?? {}).length, 1);
 });

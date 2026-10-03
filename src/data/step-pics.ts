@@ -525,15 +525,6 @@ export const stepPics: Record<string, StepPicture> = {
     "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4174",
     "confidence": "medium"
   },
-  "castti-ch-2-sai-route-1-655e3d": {
-    "stepId": "castti-ch-2-sai-route-1-655e3d",
-    "image": "/step-pics/castti-ch-2-sai-route-1-655e3d.jpg",
-    "caption": "Boss: Sand Lion. The fight starts here; in the guide it is the step \"Fight the Sand Lion during the day.\" (Sand Lion block). Last area banner before it: \"Nameless Isle\". This frame is from the first seconds of the battle (video 1:12:34).",
-    "kind": "battle",
-    "videoTime": "1:12:34",
-    "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4351",
-    "confidence": "medium"
-  },
   "foreign-assassins-1-b8556e": {
     "stepId": "foreign-assassins-1-b8556e",
     "image": "/step-pics/foreign-assassins-1-b8556e.jpg",

@@ -55,9 +55,9 @@ export const route: RouteData = {
     "runner": "chewythebigblackdog",
     "video": "https://youtu.be/d6YOJxTfIeQ",
     "sheetDate": "2026-07-04",
-    "steps": 1204,
+    "steps": 1205,
     "foes": 3,
-    "rev": "630efeef71c696a4",
+    "rev": "6ce74051ed6f76bb",
     "note": "Chewy's current No Alrond (more consistent) sheet tab; video uploaded 2025-06-08; sheet revised through 7/4/2026"
   },
   "acts": [
@@ -296,7 +296,7 @@ export const route: RouteData = {
                 },
                 {
                   "id": "throne-ch-1-900-eaf252",
-                  "text": "Run up the grand staircase. Win the forced Guard fight (break and kill). Heal if you are under 210 HP before Pirro.",
+                  "text": "Run up the grand staircase. Win the forced Guard fight (break and kill).",
                   "check": true,
                   "kind": "fight",
                   "watch": 241
@@ -2918,14 +2918,13 @@ export const route: RouteData = {
                 },
                 {
                   "id": "osvald-ch-4-1-ab0547",
-                  "text": "Partitio: Fire Soulstone / Fireball x2 (if already broken)",
+                  "text": "Anyone — Fire Soulstone / Fireball x2 (if already broken)",
                   "check": true,
                   "kind": "fight",
                   "note": "either way it drops below 25% HP when combined with a soulstone or fireball (and never dies)",
                   "warn": false,
                   "optional": false,
-                  "ctx": "Turn 1",
-                  "sheet": "Anyone — Fire Soulstone / Fireball x2 (if already broken)"
+                  "ctx": "Turn 1"
                 },
                 {
                   "id": "osvald-ch-4-1-cbebe9",
@@ -3830,7 +3829,7 @@ export const route: RouteData = {
                 },
                 {
                   "id": "hikari-ch-3-900-1d4537",
-                  "text": "Make for the hospital, then the camp, then the Sand Lion’s den. (Steal/Inquire items need a sheet check.)",
+                  "text": "Make for the hospital, then the camp, then the Sand Lion’s den.",
                   "check": true,
                   "kind": "do",
                   "watch": 3607
@@ -3860,7 +3859,8 @@ export const route: RouteData = {
                   "kind": "do",
                   "note": "Changed since the video (12/03/2025): video does Sand Lion first (~1:02:00); sheet order is Thurston, then Hikari 3, then Sand Lion.",
                   "warn": false,
-                  "optional": false
+                  "optional": false,
+                  "watch": 3725
                 }
               ]
             },
@@ -5264,10 +5264,10 @@ export const route: RouteData = {
                 },
                 {
                   "id": "castti-ch-2-winterbloom-route-900-187be4",
-                  "text": "Inquire around town, find Malaya, investigate the smoke, make for the summit; in Timberain follow Edmund to the castle.",
+                  "text": "Inquire around town, find Malaya, investigate the smoke, and make for the summit.",
                   "check": true,
                   "kind": "do",
-                  "watch": 5397
+                  "watch": 5435
                 }
               ]
             }
@@ -5292,6 +5292,13 @@ export const route: RouteData = {
                   "kind": "do",
                   "warn": false,
                   "optional": false
+                },
+                {
+                  "id": "castti-ch-3-900-a3c458",
+                  "text": "In Timberain, look around town and follow Edmund to the castle.",
+                  "check": true,
+                  "kind": "do",
+                  "watch": 5576
                 }
               ]
             }

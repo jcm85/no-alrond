@@ -248,7 +248,7 @@ export const fightNotes: Record<string, FightNote> = {
     "enemies": [
       {
         "name": "Phantom Snake (Man) — identity of route \"Man\" inferred",
-        "confidence": "verified",
+        "confidence": "single-source",
         "weak": [
           "Sword",
           "Light",
@@ -262,7 +262,7 @@ export const fightNotes: Record<string, FightNote> = {
     "enemies": [
       {
         "name": "Phantom Snake (Man) — identity of route \"Man\" inferred",
-        "confidence": "verified",
+        "confidence": "single-source",
         "weak": [
           "Sword",
           "Light",
@@ -276,7 +276,7 @@ export const fightNotes: Record<string, FightNote> = {
     "enemies": [
       {
         "name": "Phantom Snake (Man) — identity of route \"Man\" inferred",
-        "confidence": "verified",
+        "confidence": "single-source",
         "weak": [
           "Sword",
           "Light",
@@ -290,7 +290,7 @@ export const fightNotes: Record<string, FightNote> = {
     "enemies": [
       {
         "name": "Phantom Snake (Man) — identity of route \"Man\" inferred",
-        "confidence": "verified",
+        "confidence": "single-source",
         "weak": [
           "Sword",
           "Light",
