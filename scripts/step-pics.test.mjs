@@ -47,6 +47,7 @@ test("every step picture exists, matches a route step, and is not bundled", () =
       assert.equal(extra.length, 1);
     }
     for (const frame of extra) {
+      assert.equal(frame.kind, "travel");
       assert.match(frame.image, /^\/step-pics\/[^/]+\.jpg$/);
       const extraName = frame.image.slice("/step-pics/".length);
       assert.equal(files.has(extraName), true, extraName);

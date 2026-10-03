@@ -3,7 +3,8 @@ import { Camera, Check, Info, List, RotateCcw, Search, Undo2 } from "lucide-reac
 import { changelog } from "@/data/changelog";
 import { route, type Block } from "@/data/route";
 import { RUN_KEY } from "@/lib/migrate-progress";
-import { pictureFor, preloadPicture, StepPictureCard, usePictureHidden } from "@/components/step-picture";
+import { StepPictureCard } from "@/components/step-picture";
+import { pictureFor, preloadPicture, usePictureHidden } from "@/lib/step-pictures";
 import {
   chapterOrder,
   playhead,
@@ -513,6 +514,13 @@ function Now({
 }) {
   const picture = pictureFor(current?.id);
   const [pictureHidden, setPictureHidden] = usePictureHidden();
+  const showPictureRef = useRef<HTMLButtonElement>(null);
+  const pendingShowFocus = useRef(false);
+  useEffect(() => {
+    if (!pictureHidden || !pendingShowFocus.current) return;
+    pendingShowFocus.current = false;
+    showPictureRef.current?.focus();
+  }, [pictureHidden]);
   useEffect(() => {
     if (!current) return;
     preloadPicture(steps[current.n]?.id);
@@ -532,11 +540,23 @@ function Now({
   return (
     <div className="now-layout">
       {picture && !pictureHidden ? (
-        <StepPictureCard picture={picture} eager onHide={() => setPictureHidden(true)} />
+        <StepPictureCard
+          picture={picture}
+          eager
+          onHide={() => {
+            pendingShowFocus.current = true;
+            setPictureHidden(true);
+          }}
+        />
       ) : null}
       <section className="now-main">
         {picture && pictureHidden ? (
-          <button type="button" onClick={() => setPictureHidden(false)} className="mb-3 min-h-11 text-base text-gold">
+          <button
+            ref={showPictureRef}
+            type="button"
+            onClick={() => setPictureHidden(false)}
+            className="mb-3 min-h-11 text-base text-gold"
+          >
             Show picture
           </button>
         ) : null}

@@ -1,35 +1,9 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { stepPics, type StepPicture, type StepPictureFrame } from "@/data/step-pics";
-
-export const PICTURE_HIDDEN_KEY = "no-alrond-picture-hidden";
+import type { StepPicture, StepPictureFrame } from "@/data/step-pics";
+import { frameHeading, watchFromLabel } from "@/lib/step-pictures";
 
 const APPROXIMATE = "This frame is close to this step, not exact";
-
-export function usePictureHidden() {
-  const [hidden, setHidden] = useState(false);
-  useEffect(() => {
-    try {
-      setHidden(window.localStorage.getItem(PICTURE_HIDDEN_KEY) === "1");
-    } catch {
-      /* private mode */
-    }
-  }, []);
-  function setPictureHidden(next: boolean) {
-    setHidden(next);
-    try {
-      window.localStorage.setItem(PICTURE_HIDDEN_KEY, next ? "1" : "0");
-    } catch {
-      /* private mode */
-    }
-  }
-  return [hidden, setPictureHidden] as const;
-}
-
-export function pictureFor(stepId: string | undefined) {
-  if (!stepId) return undefined;
-  return stepPics[stepId];
-}
 
 function framesOf(picture: StepPicture): StepPictureFrame[] {
   return [
@@ -39,6 +13,7 @@ function framesOf(picture: StepPicture): StepPictureFrame[] {
       videoTime: picture.videoTime,
       youtube_link: picture.youtube_link,
       confidence: picture.confidence,
+      kind: picture.kind,
     },
     ...(picture.extraImages ?? []),
   ];
@@ -62,7 +37,7 @@ export function StepPictureCard({
     setIndex(0);
   }, [picture.stepId]);
   const frame = frames[Math.min(index, frames.length - 1)] ?? frames[0];
-  const heading = picture.kind === "battle" ? "Fight" : "Where to go";
+  const heading = frameHeading(picture.kind, frame.kind);
 
   function move(delta: number) {
     setIndex((current) => Math.min(frames.length - 1, Math.max(0, current + delta)));
@@ -105,9 +80,9 @@ export function StepPictureCard({
           className="step-pic-img w-full rounded-lg bg-bg object-contain"
         />
         {frame.confidence === "medium" ? (
-          <p className="mt-2 text-sm leading-snug text-muted">
+          <p className="step-pic-note mt-2 text-sm leading-snug text-muted">
             <span
-              className="mr-2 inline-block rounded-full border border-gold px-2 py-0.5 text-xs tracking-wide text-gold uppercase"
+              className="step-pic-badge mr-2 inline-block rounded-full border border-gold px-2 py-0.5 text-xs tracking-wide text-gold uppercase"
               title={APPROXIMATE}
             >
               approximate
@@ -143,20 +118,13 @@ export function StepPictureCard({
         </div>
       ) : null}
       <a
-        className="mt-2 inline-flex min-h-11 items-center text-base text-gold underline underline-offset-4"
+        className="step-pic-watch mt-2 inline-flex min-h-11 items-center text-base text-gold underline underline-offset-4"
         href={frame.youtube_link}
         target="_blank"
         rel="noreferrer"
       >
-        Watch this moment ({frame.videoTime})
+        {watchFromLabel(frame.youtube_link)}
       </a>
     </article>
   );
-}
-
-export function preloadPicture(stepId: string | undefined) {
-  const picture = pictureFor(stepId);
-  if (!picture || typeof Image === "undefined") return;
-  const img = new Image();
-  img.src = picture.image;
 }

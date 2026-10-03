@@ -65,7 +65,7 @@ test("a v1 blob containing r614 does not mark r614 or any other step", () => {
   assert.equal(JSON.stringify(saved.state.done).includes("r614"), false);
 });
 
-test("a mismatched route revision is not applied, even when an id still exists", () => {
+test("a mismatched route revision keeps ids that still exist", () => {
   const storage = memory();
   const kept = current[10]?.id;
   assert.ok(kept);
@@ -75,7 +75,7 @@ test("a mismatched route revision is not applied, even when an id still exists",
       state: {
         done: { [kept]: true, r614: true },
         skipped: {},
-        history: [kept],
+        history: [kept, "r614"],
         version: 2,
         routeRev: "not-this-route",
       },
@@ -83,10 +83,66 @@ test("a mismatched route revision is not applied, even when an id still exists",
     }),
   );
   const result = readMigration(storage, rev, legacyIds, current);
-  assert.equal(result.progress?.done[kept], undefined);
+  assert.equal(result.progress?.done[kept], true);
   assert.equal(result.progress?.done.r614, undefined);
-  assert.equal(Object.keys(result.progress?.done ?? {}).length, 0);
+  assert.equal(result.progress?.routeRev, rev);
+  assert.equal(result.progress?.history.includes(kept), true);
+  assert.equal(result.progress?.history.includes("r614"), false);
+  assert.equal(result.progress?.notice?.carried, 1);
+  assert.equal(result.progress?.notice?.total, 2);
+  assert.equal(result.backupWritten, true);
   assert.ok(storage.getItem(BACKUP_KEY)?.includes(kept));
+  const saved = JSON.parse(storage.getItem(RUN_KEY) ?? "{}") as {
+    state: { done: Record<string, boolean>; routeRev: string };
+  };
+  assert.equal(saved.state.done[kept], true);
+  assert.equal(saved.state.routeRev, rev);
+});
+
+test("a mismatched revision is kept silently when every done id still exists", () => {
+  const storage = memory();
+  const kept = current[4]?.id;
+  assert.ok(kept);
+  storage.setItem(
+    RUN_KEY,
+    JSON.stringify({
+      state: {
+        done: { [kept]: true },
+        skipped: {},
+        history: [kept],
+        version: 2,
+        routeRev: "cd3322b2a953dcf6",
+      },
+      version: 2,
+    }),
+  );
+  const result = readMigration(storage, rev, legacyIds, current);
+  assert.equal(result.progress?.done[kept], true);
+  assert.equal(result.progress?.notice, null);
+  assert.equal(result.progress?.routeRev, rev);
+  assert.equal(Object.keys(result.progress?.done ?? {}).length, 1);
+});
+
+test("a mismatched revision with no surviving ids is not applied", () => {
+  const storage = memory();
+  storage.setItem(
+    RUN_KEY,
+    JSON.stringify({
+      state: {
+        done: { r614: true },
+        skipped: {},
+        history: ["r614"],
+        version: 2,
+        routeRev: "not-this-route",
+      },
+      version: 2,
+    }),
+  );
+  const result = readMigration(storage, rev, legacyIds, current);
+  assert.deepEqual(result.progress?.done, {});
+  assert.equal(result.progress?.notice?.carried, 0);
+  assert.equal(result.progress?.notice?.total, 1);
+  assert.ok(storage.getItem(BACKUP_KEY)?.includes("r614"));
 });
 
 test("matching route revision restores progress", () => {
