@@ -268,7 +268,7 @@ export const useRun = create<RunState>()(
           return { ok: false, error: "That isn't valid progress JSON." };
         }
         const body = data as Record<string, unknown>;
-        if (body.version !== 2 || body.routeRev !== route.meta.rev) {
+        if (body.version !== 2 || typeof body.routeRev !== "string") {
           return {
             ok: false,
             error: "That progress is from a different route revision and was not applied.",
@@ -277,10 +277,20 @@ export const useRun = create<RunState>()(
         const known = new Set(steps.map((step) => step.id));
         const done: Record<string, boolean> = {};
         const skipped: Record<string, boolean> = {};
+        let incoming = 0;
         if (body.done && typeof body.done === "object") {
           for (const [id, on] of Object.entries(body.done as Record<string, unknown>)) {
-            if (on && known.has(id)) done[id] = true;
+            if (!on) continue;
+            incoming += 1;
+            if (known.has(id)) done[id] = true;
           }
+        }
+        const carried = Object.keys(done).length;
+        if (body.routeRev !== route.meta.rev && carried === 0) {
+          return {
+            ok: false,
+            error: "That progress is from a different route revision and was not applied.",
+          };
         }
         if (body.skipped && typeof body.skipped === "object") {
           for (const [id, on] of Object.entries(body.skipped as Record<string, unknown>)) {
@@ -290,7 +300,9 @@ export const useRun = create<RunState>()(
         const history = Array.isArray(body.history)
           ? body.history.filter((id): id is string => typeof id === "string" && Boolean(done[id]))
           : [];
-        set({ done, skipped, history, jumps: history.map(() => 1), notice: null });
+        const notice =
+          body.routeRev !== route.meta.rev && incoming > carried ? { carried, total: incoming } : null;
+        set({ done, skipped, history, jumps: history.map(() => 1), notice });
         return { ok: true };
       },
       markBeforeChapter: (chapterId) => {

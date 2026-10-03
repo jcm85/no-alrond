@@ -29,16 +29,30 @@ def youtube_at(label: str) -> str:
     return f"{VIDEO}?t={clock_seconds(label)}"
 
 
-def frame(image_name: str, caption: str, video_time: str, confidence: str, link: str) -> dict:
+def frame(
+    image_name: str,
+    caption: str,
+    video_time: str,
+    confidence: str,
+    link: str,
+    kind: str | None = None,
+) -> dict:
     if confidence not in {"high", "medium"}:
         raise SystemExit(f"unexpected confidence: {confidence}")
-    return {
+    body = {
         "image": f"/step-pics/{image_name}",
         "caption": caption,
         "videoTime": video_time,
         "youtube_link": link,
         "confidence": confidence,
     }
+    if kind:
+        if kind == "fight":
+            kind = "battle"
+        if kind not in {"travel", "battle"}:
+            raise SystemExit(f"unexpected extra kind: {kind}")
+        body["kind"] = kind
+    return body
 
 
 def main() -> None:
@@ -86,6 +100,7 @@ def main() -> None:
                     extra["videoTime"],
                     extra["confidence"],
                     youtube_at(extra["videoTime"]),
+                    extra.get("kind"),
                 )
             )
         pictures.append(
@@ -121,6 +136,7 @@ def main() -> None:
         "  videoTime: string;\n"
         "  youtube_link: string;\n"
         "  confidence: PictureConfidence;\n"
+        "  kind?: PictureKind;\n"
         "};\n"
         "export type StepPicture = {\n"
         "  stepId: string;\n"

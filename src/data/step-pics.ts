@@ -7,6 +7,7 @@ export type StepPictureFrame = {
   videoTime: string;
   youtube_link: string;
   confidence: PictureConfidence;
+  kind?: PictureKind;
 };
 export type StepPicture = {
   stepId: string;
@@ -303,7 +304,8 @@ export const stepPics: Record<string, StepPicture> = {
         "caption": "Before the fight: climb the stairs and go in through the Guard Outpost doors; the guaranteed guard encounter happens inside.",
         "videoTime": "0:38:42",
         "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2322",
-        "confidence": "medium"
+        "confidence": "medium",
+        "kind": "travel"
       }
     ]
   },

@@ -217,9 +217,21 @@ function countMarked(parsed: Record<string, unknown> | null) {
   return Object.keys(asMap(parsed.done)).length;
 }
 
+/** Keep marks whose step ids still exist. A revision-string change alone does not wipe them. */
+function carryById(parsed: Record<string, unknown>, current: StepRef[], rev: string): StoredProgress {
+  const kept = sanitizeMatching(parsed, current, rev);
+  const total = countMarked(parsed);
+  const carried = Object.keys(kept.done).length;
+  if (carried === 0) return empty(rev, total > 0 ? { carried: 0, total } : null);
+  const notice = carried < total ? { carried, total } : null;
+  return { ...kept, notice };
+}
+
 /**
- * Read v2 progress. A mismatched revision, or a v1 blob, is never applied by id.
- * The raw blob is copied to the backup key when that key is still empty.
+ * Read v2 progress. A matching revision is restored as saved.
+ * A different revision is carried by step id when those ids still exist.
+ * The raw blob is copied to the backup key. If none of the saved ids exist,
+ * the save is not applied.
  * v1 progress may be carried by a unique (chapter, text) pair.
  */
 export function readMigration(
@@ -235,7 +247,8 @@ export function readMigration(
       return { progress: sanitizeMatching(parsed, current, rev), backupWritten: false };
     }
     const backupWritten = writeBackup(storage, rawV2);
-    const progress = empty(rev, { carried: 0, total: countMarked(parsed) });
+    const progress =
+      parsed && parsed.version === 2 ? carryById(parsed, current, rev) : empty(rev, { carried: 0, total: countMarked(parsed) });
     persist(storage, progress);
     return { progress, backupWritten };
   }
