@@ -68,7 +68,21 @@ function withApproxPolicy(picture: StepPicture, stepId: string): StepPicture {
   return picture.approx ? picture : { ...picture, approx: true };
 }
 
+/** Deploy base path ("" at the site root, "/no-alrond" on a GitHub Pages project site). */
+export const BASE_PATH = ((import.meta as { env?: { BASE_URL?: string } }).env?.BASE_URL ?? "/").replace(/\/$/, "");
+
+export function withBase(path: string) {
+  return BASE_PATH && path.startsWith("/") && !path.startsWith(`${BASE_PATH}/`) ? `${BASE_PATH}${path}` : path;
+}
+
 export function pictureFor(stepId: string | undefined): StepPicture | undefined {
+  const picture = rawPictureFor(stepId);
+  if (!picture || !BASE_PATH) return picture;
+  const image = withBase(picture.image);
+  return image === picture.image ? picture : { ...picture, image };
+}
+
+function rawPictureFor(stepId: string | undefined): StepPicture | undefined {
   if (!stepId) return undefined;
   const curated = stepPics[stepId];
   if (curated) return withApproxPolicy(curated, stepId);
@@ -94,7 +108,7 @@ export function pictureFor(stepId: string | undefined): StepPicture | undefined 
 export function pictureSmallSrc(image: string) {
   const file = image.split("/").pop() ?? image;
   const base = file.replace(/\.(jpe?g|png|webp)$/i, "");
-  return `/step-pics/w640/${base}.webp`;
+  return withBase(`/step-pics/w640/${base}.webp`);
 }
 
 /** Phone and small landscape thumbnails. A tall portrait screen keeps the full frame. */
