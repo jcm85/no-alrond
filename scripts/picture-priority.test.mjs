@@ -27,17 +27,17 @@ test("phones load the 640 variant and the lightbox loads the full frame", async 
       return { src: img?.getAttribute("src") ?? "", currentSrc: img?.currentSrc ?? "" };
     });
     assert.match(thumb.currentSrc, /\/step-pics\/w640\//, thumb.currentSrc);
-    assert.equal(thumb.src.includes("/w640/"), false, thumb.src);
-    assert.ok(paths.some((path) => path.includes("/step-pics/w640/")), paths.join(" "));
+    assert.match(thumb.src, /\/step-pics\/w640\//, thumb.src);
+    assert.equal(thumb.currentSrc.endsWith(thumb.src) || thumb.src.endsWith(new URL(thumb.currentSrc).pathname), true);
     assert.equal(
-      paths.some((path) => path === thumb.src),
+      paths.some((path) => /\/step-pics\/[^/]+\.(webp|jpe?g)$/.test(path) && !path.includes("/w640/")),
       false,
-      `phone downloaded the full frame ${thumb.src}`,
+      `phone downloaded a full frame: ${paths.join(" ")}`,
     );
     await page.getByRole("button", { name: /Enlarge picture/ }).click();
     await page.locator(".pic-lightbox-img").waitFor();
     const full = await page.locator(".pic-lightbox-img").getAttribute("src");
-    assert.equal(full, thumb.src);
+    assert.equal(full?.includes("/w640/"), false, full ?? "");
     await page.waitForTimeout(300);
     assert.ok(paths.includes(full), `lightbox did not request ${full}`);
     await page.close();
@@ -209,7 +209,52 @@ test("a desktop curated jpg still loads when the steps before it are tapped quic
     }, null, { timeout: 8000 });
     const currentSrc = await shown.jsonValue();
     assert.equal(aborted.includes(jpg), false, `jpg aborted; aborted ${aborted.join(" ")}`);
-    assert.match(currentSrc, /partitio-ch-2-1-9fbb5f/, currentSrc);
+    assert.match(currentSrc, /partitio-ch-2-1-9fbb5f\.jpe?g/, currentSrc);
+    await page.close();
+  } finally {
+    await browser.close();
+  }
+});
+
+test("a phone step requests one 640px file, and a revisit does not download it again", async () => {
+  const browser = await chromium.launch({ headless: true, args: ["--no-sandbox"] });
+  try {
+    const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
+    const requested = [];
+    page.on("request", (request) => {
+      if (request.resourceType() === "image" && request.url().includes("/step-pics/")) requested.push(pathOf(request.url()));
+    });
+    await page.addInitScript(() => {
+      localStorage.removeItem("no-alrond-run-v2");
+      localStorage.removeItem("no-alrond-picture-hidden");
+    });
+    await page.goto(PAGE, { waitUntil: "domcontentloaded" });
+    const done = page.getByRole("button", { name: "Done", exact: true });
+    await done.waitFor({ timeout: 20000 });
+    const steps = 8;
+    let previous = await page.locator(".step-kicker-full").textContent();
+    for (let i = 0; i < steps - 1; i += 1) {
+      await done.click();
+      await page.waitForFunction((before) => document.querySelector(".step-kicker-full")?.textContent !== before, previous);
+      previous = await page.locator(".step-kicker-full").textContent();
+    }
+    await page.waitForTimeout(200);
+    const full = requested.filter((path) => !path.includes("/w640/"));
+    assert.deepEqual(full, [], `full-size files: ${full.join(" ")}`);
+    const counts = new Map();
+    for (const path of requested) counts.set(path, (counts.get(path) ?? 0) + 1);
+    const dupes = [...counts.entries()].filter(([, count]) => count > 1);
+    assert.deepEqual(dupes, [], `downloaded twice: ${dupes.map(([path]) => path).join(" ")}`);
+    assert.ok(requested.length <= steps + 2, `${requested.length} image requests for ${steps} steps`);
+    assert.ok(requested.length >= steps, `only ${requested.length} images for ${steps} steps`);
+    const seen = requested.length;
+    await page.waitForFunction(() => {
+      const button = document.querySelector(".undo-toast button");
+      return button instanceof HTMLButtonElement && !button.disabled;
+    });
+    await page.locator(".undo-toast").getByRole("button", { name: "Undo", exact: true }).click();
+    await page.waitForTimeout(250);
+    assert.equal(requested.length, seen, `revisit downloaded ${requested.slice(seen).join(" ")}`);
     await page.close();
   } finally {
     await browser.close();

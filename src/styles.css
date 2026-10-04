@@ -266,6 +266,16 @@ header {
   display: none;
 }
 
+.step-pic-enlarge {
+  display: none;
+}
+
+.step-pic-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .step-pic-zoom {
   position: relative;
   display: block;
@@ -991,7 +1001,61 @@ header {
   }
 }
 
-/* Short phones: a thin picture strip so the details window can stay 120px. Tap opens the full frame. 390×844 is taller and keeps its picture. */
+/* Phones and small tablets: a shorter header. Desktop portrait is wider than this and stays as it is. */
+@media (max-width: 899px) {
+  .app-kicker {
+    display: none;
+  }
+
+  header .app-brand {
+    gap: 0.4rem;
+    padding-top: 0.35rem;
+    padding-bottom: 0.2rem;
+  }
+
+  header h1 {
+    font-size: 1.25rem;
+  }
+
+  header .size-12 {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .app-progress {
+    padding-bottom: 0.35rem;
+  }
+
+  .app-progress .mb-2 {
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.15;
+  }
+}
+
+/* Tall phones: one meta row, so a long title does not have to steal the details window. */
+@media (max-width: 699px) and (min-height: 761px) {
+  .now-layout > .step-pic-holder {
+    box-sizing: border-box;
+    height: 219px;
+    min-height: 219px;
+    max-height: 219px;
+  }
+
+  .now-layout .now-card-meta {
+    flex-wrap: nowrap;
+    min-height: 0;
+    gap: 0.35rem;
+  }
+
+  .now-layout .now-card-meta .step-watch,
+  .now-layout .how-combat {
+    min-height: 2rem;
+    font-size: 0.8125rem;
+  }
+}
+
+/* Short phones: a picture strip you can tap, with the instruction at full height. 390×844 keeps its 16:9 frame. */
 @media (max-width: 699px) and (max-height: 760px) {
   .app-kicker {
     display: none;
@@ -1042,29 +1106,60 @@ header {
     font-size: 0.8125rem;
   }
 
-  .now-layout .step-title {
-    max-height: 3.5rem;
-    overflow: auto;
+  .now-layout:has(.step-pic) .step-pic,
+  .now-layout > .step-pic-holder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    height: 9.25rem;
+    min-height: 9.25rem;
+    max-height: 9.25rem;
+    padding: 0.2rem 0.5rem;
+    overflow: hidden;
   }
 
-  .now-layout:has(.step-pic) .step-pic {
-    padding: 0.2rem 0.5rem;
+  .now-layout:has(.step-pic) .step-pic > .flex {
+    position: static;
+    top: auto;
+    right: auto;
+    z-index: auto;
+    order: 2;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    margin-top: 0.2rem;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .now-layout:has(.step-pic) .step-pic-enlarge {
+    display: inline;
+    margin-right: auto;
+    color: var(--color-muted);
+    font-size: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .now-layout:has(.step-pic) .step-pic-hide {
+    min-height: 2.75rem;
+  }
+
+  .now-layout:has(.step-pic) .step-pic-body {
+    order: 1;
+    margin-top: 0;
   }
 
   .now-layout:has(.step-pic) .step-pic-zoom {
     width: 100%;
     max-width: 100%;
-    height: 2.75rem;
-    max-height: 2.75rem;
+    height: 4.5rem;
+    max-height: 4.5rem;
     aspect-ratio: auto;
   }
 
   .now-layout:has(.step-pic) .step-pic-zoom .step-pic-img {
     object-fit: cover;
-  }
-
-  .now-layout:has(.step-pic) .now-card-body {
-    min-height: 7.5rem;
+    object-position: center;
   }
 }
 
@@ -1118,25 +1213,6 @@ header {
     max-height: min(46vh, 18rem);
   }
 
-  .now-layout:has(.step-pic) .step-title {
-    max-height: 7.5rem;
-    overflow: auto;
-  }
-}
-
-/* Phones: a long instruction scrolls so the details window can stay about 120px. */
-@media (max-width: 699px) and (min-height: 800px) {
-  .now-layout .step-title {
-    max-height: 6rem;
-    overflow: auto;
-  }
-}
-
-@media (max-width: 699px) and (max-height: 760px) {
-  .now-layout .step-title {
-    max-height: 3.5rem;
-    overflow: auto;
-  }
 }
 
 /* Short landscape: keep a readable text window while the picture stays beside the card. */

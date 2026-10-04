@@ -722,8 +722,8 @@ function Now({
           }}
         />
       ) : null}
-      <section className="now-main flex min-h-0 flex-1 flex-col">
-        {picture && pictureHidden ? (
+      {picture && pictureHidden ? (
+        <div className="step-pic step-pic-holder rounded-card border border-line bg-surface">
           <button
             ref={showPictureRef}
             type="button"
@@ -731,11 +731,13 @@ function Now({
               setTakeHideFocus(true);
               setPictureHidden(false);
             }}
-            className="mb-3 min-h-11 text-base text-gold"
+            className="min-h-11 px-3 text-base text-gold"
           >
             Show picture
           </button>
-        ) : null}
+        </div>
+      ) : null}
+      <section className="now-main flex min-h-0 flex-1 flex-col">
         <p className="text-base text-muted">{placeLabel(current)}</p>
         <div className="now-card mt-3 flex min-h-0 flex-1 flex-col overflow-hidden rounded-card border border-line bg-surface p-4">
           <div className="now-card-head">

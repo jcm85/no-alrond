@@ -2,7 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState, type Ref } f
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { StepPicture, StepPictureFrame } from "@/data/step-pics";
 import { focusableIn, holdBackground, nextTabIndex, pickVisibleHide, restoreFocusChoice } from "@/lib/picture-focus";
-import { frameHeading, pictureSmallSrc, watchFromLabel } from "@/lib/step-pictures";
+import { frameHeading, pictureRequestSrc, pictureSmallSrc, watchFromLabel } from "@/lib/step-pictures";
 
 const APPROXIMATE = "This frame is close to this step, not exact";
 
@@ -154,7 +154,7 @@ export function StepPictureCard({
 }) {
   const frames = framesOf(picture);
   const [index, setIndex] = useState(0);
-  const [useSmall, setUseSmall] = useState(false);
+  const [brokenSrc, setBrokenSrc] = useState<string | null>(null);
   const [open, setOpen] = useState(false);
   const [collapsedId, setCollapsedId] = useState<string | null>(null);
   const collapsed = collapsedId === picture.stepId;
@@ -164,11 +164,8 @@ export function StepPictureCard({
   useEffect(() => {
     setIndex(0);
     setOpen(false);
-    setUseSmall(false);
+    setBrokenSrc(null);
   }, [picture.stepId]);
-  useEffect(() => {
-    setUseSmall(false);
-  }, [index]);
   useLayoutEffect(() => {
     const portrait = window.matchMedia("(min-width: 900px) and (orientation: portrait)").matches;
     const narrow = window.matchMedia("(max-width: 1279px)").matches;
@@ -218,6 +215,13 @@ export function StepPictureCard({
   }, [picture.stepId, collapsed, index, takeHideFocus, onHideFocused]);
   const frame = frames[Math.min(index, frames.length - 1)] ?? frames[0];
   const heading = frame.caption ? frameHeading(picture.kind, frame.kind) : "This step";
+  const preferredSrc = pictureRequestSrc(frame.image);
+  const thumbSrc =
+    brokenSrc === preferredSrc
+      ? preferredSrc === frame.image
+        ? pictureSmallSrc(frame.image)
+        : frame.image
+      : preferredSrc;
 
   function move(delta: number) {
     setIndex((current) => Math.min(frames.length - 1, Math.max(0, current + delta)));
@@ -308,6 +312,7 @@ export function StepPictureCard({
         <div className="flex items-center justify-between gap-3">
           <h3 className="font-display text-lg font-semibold text-gold">{heading}</h3>
           {picture.approx ? <span className="step-pic-approx step-pic-approx-head">Approx.</span> : null}
+          <span className="step-pic-enlarge">Tap to enlarge</span>
           {onHide ? (
             <button ref={hideRef} type="button" onClick={onHide} className="step-pic-hide min-h-11 shrink-0 px-2 text-base text-gold">
               Hide picture
@@ -343,25 +348,17 @@ export function StepPictureCard({
               openFrom(event);
             }}
           >
-            <picture>
-              <source
-                media="(max-width: 899px), (max-width: 1100px) and (orientation: landscape)"
-                srcSet={pictureSmallSrc(frame.image)}
-                type="image/webp"
-              />
-              <img
-                key={useSmall ? `${frame.image}#small` : frame.image}
-                src={useSmall ? pictureSmallSrc(frame.image) : frame.image}
-                alt={alt}
-                width={1280}
-                height={720}
-                loading={eager ? "eager" : "lazy"}
-                decoding="async"
-                fetchPriority={eager ? "high" : "low"}
-                className="step-pic-img"
-                onError={() => setUseSmall(true)}
-              />
-            </picture>
+            <img
+              src={thumbSrc}
+              alt={alt}
+              width={1280}
+              height={720}
+              loading={eager ? "eager" : "lazy"}
+              decoding={eager ? "sync" : "async"}
+              fetchPriority={eager ? "high" : "low"}
+              className="step-pic-img"
+              onError={() => setBrokenSrc(preferredSrc)}
+            />
           </button>
           {picture.approx ? <span className="step-pic-approx step-pic-approx-below">Approx.</span> : null}
           </div>
