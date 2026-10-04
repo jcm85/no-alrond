@@ -38,6 +38,8 @@ function PictureLightbox({
   index,
   count,
   opener,
+  alt,
+  approx,
 }: {
   frame: StepPictureFrame;
   heading: string;
@@ -47,6 +49,8 @@ function PictureLightbox({
   index: number;
   count: number;
   opener: HTMLElement | null;
+  alt: string;
+  approx?: boolean;
 }) {
   const closeRef = useRef<HTMLButtonElement>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -91,9 +95,10 @@ function PictureLightbox({
           Close
         </button>
       </div>
-      <img src={frame.image} alt={frame.caption} width={1280} height={720} className="pic-lightbox-img" />
+      <img src={frame.image} alt={alt} width={1280} height={720} className="pic-lightbox-img" />
       <div className="pic-lightbox-side">
-        {frame.confidence === "medium" ? (
+        {approx ? <p className="step-pic-approx step-pic-approx-inline">Approx. moment</p> : null}
+        {!approx && frame.confidence === "medium" ? (
           <p className="text-sm leading-snug text-muted">
             <span className="mr-2 inline-block rounded-full border border-gold px-2 py-0.5 text-xs tracking-wide text-gold uppercase">
               approximate
@@ -101,7 +106,7 @@ function PictureLightbox({
             {APPROXIMATE}
           </p>
         ) : null}
-        <p className="text-base text-fg">{frame.caption}</p>
+        {frame.caption ? <p className="text-base text-fg">{frame.caption}</p> : null}
         {count > 1 ? (
           <div className="flex items-center justify-between gap-2">
             <button type="button" className="min-h-11 px-3 text-base text-gold disabled:opacity-40" onClick={onPrev} disabled={index === 0}>
@@ -136,6 +141,7 @@ export function StepPictureCard({
   hideRef,
   takeHideFocus = false,
   onHideFocused,
+  alt,
 }: {
   picture: StepPicture;
   compact?: boolean;
@@ -144,6 +150,7 @@ export function StepPictureCard({
   hideRef?: Ref<HTMLButtonElement>;
   takeHideFocus?: boolean;
   onHideFocused?: () => void;
+  alt: string;
 }) {
   const frames = framesOf(picture);
   const [index, setIndex] = useState(0);
@@ -158,8 +165,9 @@ export function StepPictureCard({
     setOpen(false);
   }, [picture.stepId]);
   useLayoutEffect(() => {
+    const portrait = window.matchMedia("(min-width: 900px) and (orientation: portrait)").matches;
     const narrow = window.matchMedia("(max-width: 1279px)").matches;
-    if (!narrow || collapsed) return;
+    if (portrait || !narrow || collapsed) return;
     const title = document.querySelector(".step-title");
     const done = [...document.querySelectorAll("button")].find((button) => button.textContent?.trim() === "Done");
     const nav = document.querySelector("nav");
@@ -172,9 +180,7 @@ export function StepPictureCard({
     const overlaps = titleBox.bottom > doneBox.top + 1;
     const doneCut = doneBox.bottom > navBox.top + 1 || doneBox.bottom > cardBox.bottom + 1;
     const titleCut = titleBox.top < cardBox.top - 1 || titleBox.bottom > cardBox.bottom + 1;
-    const body = document.querySelector(".now-card-body");
-    const bodyShort = !!body && body.clientHeight < 72 && body.scrollHeight > body.clientHeight + 8;
-    if (overlaps || doneCut || titleCut || bodyShort) setCollapsedId(picture.stepId);
+    if (overlaps || doneCut || titleCut) setCollapsedId(picture.stepId);
   }, [picture.stepId, collapsed, index]);
   useEffect(() => {
     if (!takeHideFocus) return;
@@ -206,7 +212,7 @@ export function StepPictureCard({
     };
   }, [picture.stepId, collapsed, index, takeHideFocus, onHideFocused]);
   const frame = frames[Math.min(index, frames.length - 1)] ?? frames[0];
-  const heading = frameHeading(picture.kind, frame.kind);
+  const heading = frame.caption ? frameHeading(picture.kind, frame.kind) : "This step";
 
   function move(delta: number) {
     setIndex((current) => Math.min(frames.length - 1, Math.max(0, current + delta)));
@@ -257,6 +263,8 @@ export function StepPictureCard({
             index={index}
             count={frames.length}
             opener={openerRef.current}
+            alt={alt}
+            approx={picture.approx}
           />
         ) : null}
       </>
@@ -319,7 +327,7 @@ export function StepPictureCard({
           <button
             type="button"
             className="step-pic-zoom"
-            aria-label={`Enlarge picture: ${heading}`}
+            aria-label={picture.approx ? `Enlarge picture: ${heading}. Approx. moment` : `Enlarge picture: ${heading}`}
             onClick={(event) => {
               if (suppressClick.current) {
                 suppressClick.current = false;
@@ -331,7 +339,7 @@ export function StepPictureCard({
             <img
               key={frame.image}
               src={frame.image}
-              alt=""
+              alt={alt}
               width={1280}
               height={720}
               loading={eager ? "eager" : "lazy"}
@@ -339,8 +347,9 @@ export function StepPictureCard({
               fetchPriority={eager ? "high" : "low"}
               className="step-pic-img"
             />
+            {picture.approx ? <span className="step-pic-approx">Approx. moment</span> : null}
           </button>
-          {frame.confidence === "medium" ? (
+          {!picture.approx && frame.confidence === "medium" ? (
             <p className="step-pic-note mt-2 text-sm leading-snug text-muted">
               <span
                 className="step-pic-badge mr-2 inline-block rounded-full border border-gold px-2 py-0.5 text-xs tracking-wide text-gold uppercase"
@@ -351,7 +360,7 @@ export function StepPictureCard({
               {APPROXIMATE}
             </p>
           ) : null}
-          <p className="step-pic-caption mt-2 text-base text-fg">{frame.caption}</p>
+          {frame.caption ? <p className="step-pic-caption mt-2 text-base text-fg">{frame.caption}</p> : null}
         </div>
         {frames.length > 1 ? (
           <div className="step-pic-nav mt-2 flex items-center justify-between gap-2">
@@ -389,6 +398,8 @@ export function StepPictureCard({
           index={index}
           count={frames.length}
           opener={openerRef.current}
+          alt={alt}
+          approx={picture.approx}
         />
       ) : null}
     </>

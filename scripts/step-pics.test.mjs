@@ -60,3 +60,34 @@ test("every step picture exists, matches a route step, and is not bundled", () =
   assert.deepEqual([...files].filter((name) => !used.has(name)), []);
   assert.equal(files.size, 134);
 });
+
+test("webp screenshots cover the remaining steps and stay out of the bundle", () => {
+  const extraPath = join(root, "src/data/step-pic-extra.ts");
+  const extra = readFileSync(extraPath, "utf8");
+  assert.equal(extra.includes("import "), false);
+  assert.equal(/from\s+["'][^"']*\.webp["']/.test(extra), false);
+  const ids = [...extra.matchAll(/"([^"]+)": \[/g)].map((match) => match[1]);
+  assert.equal(ids.length, 1072);
+  const webp = readdirSync(picDir).filter((name) => name.endsWith(".webp"));
+  const jpg = readdirSync(picDir).filter((name) => name.endsWith(".jpg"));
+  assert.equal(jpg.length, 134);
+  assert.equal(webp.length, 1078);
+  const webpSet = new Set(webp);
+  for (const id of ids) {
+    assert.equal(webpSet.has(`${id}.webp`), true, id);
+    assert.ok(statSync(join(picDir, `${id}.webp`)).size > 1000, id);
+  }
+  const unwired = [
+    "osvald-ch-4-1-f8b87e",
+    "osvald-ch-4-1-244d34",
+    "hikari-ch-4-1-c1711a",
+    "hikari-ch-5-1-0aa391",
+    "the-dancer-warrior-part-2-1-29976a",
+    "journey-for-the-dawn-1-c2e428",
+  ];
+  for (const id of unwired) {
+    assert.equal(ids.includes(id), false, id);
+    assert.equal(webpSet.has(`${id}.webp`), true, id);
+  }
+  assert.equal(jpg.length + webp.length, 1212);
+});

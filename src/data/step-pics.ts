@@ -1,5 +1,5 @@
 /** Generated from scripts/step-pics/manifest.json. Do not hand-edit. */
-export type PictureConfidence = "high" | "medium";
+export type PictureConfidence = "high" | "medium" | "low";
 export type PictureKind = "travel" | "battle";
 export type StepPictureFrame = {
   image: string;
@@ -17,6 +17,8 @@ export type StepPicture = {
   videoTime: string;
   youtube_link: string;
   confidence: PictureConfidence;
+  /** Quiet "Approx. moment" tag. Curated jpg frames leave this unset. */
+  approx?: boolean;
   extraImages?: StepPictureFrame[];
 };
 export const stepPics: Record<string, StepPicture> = {

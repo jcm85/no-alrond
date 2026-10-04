@@ -59,6 +59,7 @@ test("undo toast overlay does not move the card and layout shift stays 0", async
       await page.goto(URL, { waitUntil: "domcontentloaded" });
       const done = page.getByRole("button", { name: "Done", exact: true });
       await done.waitFor({ timeout: 20000 });
+      const before = await readLayout(page);
       await done.click();
       const undo = page.locator(".undo-toast").getByRole("button", { name: "Undo", exact: true });
       await undo.waitFor({ timeout: 5000 });
@@ -72,20 +73,23 @@ test("undo toast overlay does not move the card and layout shift stays 0", async
         }).observe({ type: "layout-shift", buffered: false });
       });
       const during = await readLayout(page);
-      const placed = await page.evaluate(() => {
-        function box(el) {
-          if (!el) return null;
-          const rect = el.getBoundingClientRect();
-          return { top: rect.top, bottom: rect.bottom, left: rect.left, right: rect.right, width: rect.width, height: rect.height };
-        }
-        return { nav: box(document.querySelector("nav")), card: box(document.querySelector(".now-card")), picture: box(document.querySelector(".step-pic")) };
+      const undoBox = await undo.boundingBox();
+      assert.ok(undoBox && undoBox.height >= 44, `${width}x${height} Undo is ${undoBox?.height}px`);
+      const tabs = await page.locator("nav button").all();
+      for (const tab of tabs) {
+        const tabBox = await tab.boundingBox();
+        assert.equal(overlaps(undoBox, tabBox), false, `${width}x${height} Undo covers a nav tab`);
+      }
+      const findHit = await page.getByRole("button", { name: "Find", exact: true }).evaluate((el) => {
+        const rect = el.getBoundingClientRect();
+        const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+        return hit === el || el.contains(hit);
       });
-      assert.equal(overlaps(during.toast, during.title), false, `${width}x${height} toast covers the title`);
-      assert.equal(overlaps(during.toast, during.done), false, `${width}x${height} toast covers Done`);
-      assert.equal(overlaps(during.toast, during.progress), false, `${width}x${height} toast covers the progress line`);
-      assert.equal(overlaps(during.toast, placed.card), false, `${width}x${height} toast covers the card`);
-      assert.equal(overlaps(during.toast, placed.picture), false, `${width}x${height} toast covers the picture`);
-      assert.ok(during.toast.top >= placed.nav.top - 1 && during.toast.bottom <= placed.nav.bottom + 1, `${width}x${height} toast is outside the nav`);
+      assert.equal(findHit, true, `${width}x${height} Find is not tappable`);
+      assert.equal(overlaps(undoBox, during.title), false, `${width}x${height} Undo covers the title`);
+      assert.equal(overlaps(undoBox, during.done), false, `${width}x${height} Undo covers Done`);
+      assert.equal(during.title.top, before.title.top, `${width}x${height} title moved when Undo appeared`);
+      assert.equal(during.done.top, before.done.top, `${width}x${height} Done moved when Undo appeared`);
       await undo.waitFor({ state: "hidden", timeout: 8000 });
       const after = await readLayout(page);
       const cls = await page.evaluate(() => window.__cls);
@@ -133,7 +137,18 @@ test("old-save notice buttons are reachable on phone sizes and the header stays 
         return { noticeHeight: notice.height, noticeTop: notice.top, headerBottom: h1.bottom, viewport: window.innerHeight };
       });
       assert.ok(collapsed.noticeTop >= collapsed.headerBottom - 1, `${width}x${height} notice covers the header`);
-      assert.ok(collapsed.noticeHeight <= Math.max(72, collapsed.viewport * 0.12), `${width}x${height} notice is ${collapsed.noticeHeight}px`);
+      assert.ok(collapsed.noticeHeight <= 140, `${width}x${height} notice is ${collapsed.noticeHeight}px`);
+      const sentence = await page.evaluate(() => {
+        const p = document.querySelector(".route-notice-banner p");
+        const style = getComputedStyle(p);
+        return {
+          text: p.textContent,
+          cut: p.scrollHeight > p.clientHeight + 2 || p.scrollWidth > p.clientWidth + 2,
+          ellipsis: style.textOverflow === "ellipsis" && style.whiteSpace === "nowrap",
+        };
+      });
+      assert.equal(sentence.cut, false, `${width}x${height} notice sentence is cut off: ${sentence.text}`);
+      assert.equal(sentence.ellipsis, false, `${width}x${height} notice sentence uses an ellipsis`);
       const reviewBox = await review.boundingBox();
       assert.ok(reviewBox && reviewBox.height >= 44, `${width}x${height} Review target`);
       await review.click();
@@ -176,6 +191,14 @@ test("old-save notice buttons are reachable on phone sizes and the header stays 
       });
       assert.equal(header.title, true, `${width}x${height} notice covers the app name`);
       assert.equal(header.progress, true, `${width}x${height} notice covers the progress line`);
+      const stepTitleClear = await page.evaluate(() => {
+        const title = document.querySelector(".step-title");
+        if (!title) return false;
+        const rect = title.getBoundingClientRect();
+        const hit = document.elementFromPoint(rect.left + 8, rect.top + Math.min(12, rect.height / 2));
+        return !!hit && (hit === title || title.contains(hit));
+      });
+      assert.equal(stepTitleClear, true, `${width}x${height} the open notice covers the step title`);
       assert.ok(header.noticeTop >= 0, `${width}x${height} notice above the viewport`);
       assert.ok(header.noticeBottom <= header.height + 1, `${width}x${height} notice below the viewport`);
       const doneState = await page.evaluate(() => {
@@ -352,6 +375,12 @@ test("start over confirms and restore brings the backup back", async () => {
     await page.getByText("Backed-up progress restored.").waitFor();
     await page.getByRole("button", { name: "Close", exact: true }).click();
     assert.equal(await metaText(page), stepped, "restore did not bring the backed-up step back");
+    await page.getByRole("button", { name: "About this route" }).click();
+    await page.getByRole("button", { name: "Restore backed-up progress" }).click();
+    await page.getByRole("heading", { name: "Restore the backup?" }).waitFor();
+    await page.getByText("This replaces the progress on screen with the backup saved on this device.").waitFor();
+    await page.getByRole("button", { name: "Cancel", exact: true }).click();
+    assert.equal(await metaText(page), stepped, "Cancel restore replaced current progress");
     await page.close();
   } finally {
     await browser.close();
@@ -385,7 +414,7 @@ test("the watch link sits with the step text and picture steps keep it out of th
       const link = page.locator(".now-card-head .step-watch");
       await link.waitFor();
       assert.equal(await link.innerText(), label);
-      assert.equal(await page.locator(".step-pic").count(), 0, `${label} still has a picture slot`);
+      assert.equal(await page.locator(".step-pic img").count(), 1, `${label} is missing its screenshot`);
       assert.equal(await page.locator(".step-pic .step-watch, .step-pic-short .step-watch, .step-pic-fallback .step-watch").count(), 0);
       await details.focus();
       const before = await metaText(page);
