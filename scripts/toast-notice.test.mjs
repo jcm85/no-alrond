@@ -7,8 +7,11 @@ const URL = "http://127.0.0.1:8080/";
 const TOAST_SIZES = [
   [1080, 1920],
   [1920, 1080],
-  [768, 1024],
   [390, 844],
+  [360, 740],
+  [375, 667],
+  [1024, 768],
+  [768, 1024],
   [844, 390],
 ];
 
@@ -19,9 +22,19 @@ const NOTICE_SIZES = [
   [844, 390],
 ];
 
+function edges(box) {
+  if (!box || box.width < 1) return null;
+  const left = box.left ?? box.x;
+  const top = box.top ?? box.y;
+  if (left == null || top == null) return null;
+  return { left, top, right: box.right ?? left + box.width, bottom: box.bottom ?? top + box.height, width: box.width, height: box.height };
+}
+
 function overlaps(a, b) {
-  if (!a || !b || a.width < 1 || b.width < 1) return false;
-  return a.top < b.bottom - 1 && a.bottom > b.top + 1 && a.left < b.right - 1 && a.right > b.left + 1;
+  const ea = edges(a);
+  const eb = edges(b);
+  if (!ea || !eb) return false;
+  return ea.top < eb.bottom - 1 && ea.bottom > eb.top + 1 && ea.left < eb.right - 1 && ea.right > eb.left + 1;
 }
 
 async function readLayout(page) {
@@ -79,7 +92,33 @@ test("undo toast overlay does not move the card and layout shift stays 0", async
       const skip = page.getByRole("button", { name: "Skip", exact: true });
       const skipBox = await skip.boundingBox();
       assert.ok(skipBox && skipBox.height >= 44, `${width}x${height} Skip left the action row`);
+      const doneBox = await done.boundingBox();
+      assert.ok(doneBox && doneBox.width >= 44, `${width}x${height} Done is ${doneBox?.width}px wide`);
       assert.equal(overlaps(undoBox, skipBox), false, `${width}x${height} Undo covers Skip`);
+      assert.equal(overlaps(doneBox, undoBox), false, `${width}x${height} Undo covers Done`);
+      assert.equal(overlaps(doneBox, skipBox), false, `${width}x${height} Done covers Skip`);
+      const hits = await page.evaluate(() => {
+        const row = document.querySelector(".now-actions");
+        const button = (name) => [...row.querySelectorAll("button")].find((el) => el.textContent.trim() === name);
+        const hit = (el, ratio) => {
+          const rect = el.getBoundingClientRect();
+          const target = document.elementFromPoint(rect.left + rect.width * ratio, rect.top + rect.height / 2);
+          return target === el || el.contains(target);
+        };
+        const doneEl = button("Done");
+        const undoEl = button("Undo");
+        const skipEl = button("Skip");
+        return {
+          doneEdge: hit(doneEl, 0.9),
+          doneCenter: hit(doneEl, 0.5),
+          undoCenter: hit(undoEl, 0.5),
+          skipCenter: hit(skipEl, 0.5),
+        };
+      });
+      assert.equal(hits.doneEdge, true, `${width}x${height} a tap at 90% of Done hits Undo`);
+      assert.equal(hits.doneCenter, true, `${width}x${height} Done center is covered`);
+      assert.equal(hits.undoCenter, true, `${width}x${height} Undo center is covered`);
+      assert.equal(hits.skipCenter, true, `${width}x${height} Skip center is covered`);
       assert.ok(skipBefore, `${width}x${height} Skip was missing`);
       assert.ok(Math.abs(skipBox.x - skipBefore.x) < 1 && Math.abs(skipBox.y - skipBefore.y) < 1, `${width}x${height} Skip moved when Undo appeared`);
       const tabs = await page.locator("nav button").all();
@@ -339,6 +378,11 @@ test("about closes on escape, holds the page, and restores focus", async () => {
     await about.click();
     const dialog = page.getByRole("dialog", { name: "The sheet, as a checklist" });
     await dialog.waitFor();
+    for (const name of ["Watch the run", "Chewy's All Superbosses run"]) {
+      const link = dialog.getByRole("link", { name, exact: true });
+      const box = await link.boundingBox();
+      assert.ok(box && box.height >= 44, `${name} tap target is ${box?.height}px`);
+    }
     const inert = await page.evaluate(() => ({
       header: document.querySelector("header")?.hasAttribute("inert") ?? false,
       nav: document.querySelector("nav")?.hasAttribute("inert") ?? false,

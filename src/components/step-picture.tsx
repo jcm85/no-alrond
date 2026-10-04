@@ -2,7 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useRef, useState, type Ref } f
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { StepPicture, StepPictureFrame } from "@/data/step-pics";
 import { focusableIn, holdBackground, nextTabIndex, pickVisibleHide, restoreFocusChoice } from "@/lib/picture-focus";
-import { frameHeading, watchFromLabel } from "@/lib/step-pictures";
+import { frameHeading, pictureSmallSrc, watchFromLabel } from "@/lib/step-pictures";
 
 const APPROXIMATE = "This frame is close to this step, not exact";
 
@@ -97,7 +97,7 @@ function PictureLightbox({
       </div>
       <img src={frame.image} alt={alt} width={1280} height={720} className="pic-lightbox-img" />
       <div className="pic-lightbox-side">
-        {approx ? <p className="step-pic-approx step-pic-approx-inline">Approx. moment</p> : null}
+        {approx ? <p className="step-pic-approx step-pic-approx-inline">Approx.</p> : null}
         {!approx && frame.confidence === "medium" ? (
           <p className="text-sm leading-snug text-muted">
             <span className="mr-2 inline-block rounded-full border border-gold px-2 py-0.5 text-xs tracking-wide text-gold uppercase">
@@ -302,6 +302,7 @@ export function StepPictureCard({
       <article className={"step-pic rounded-card border border-line bg-surface p-3 " + (compact ? "step-pic-compact" : "")}>
         <div className="flex items-center justify-between gap-3">
           <h3 className="font-display text-lg font-semibold text-gold">{heading}</h3>
+          {picture.approx ? <span className="step-pic-approx step-pic-approx-head">Approx.</span> : null}
           {onHide ? (
             <button ref={hideRef} type="button" onClick={onHide} className="step-pic-hide min-h-11 shrink-0 px-2 text-base text-gold">
               Hide picture
@@ -328,7 +329,7 @@ export function StepPictureCard({
           <button
             type="button"
             className="step-pic-zoom"
-            aria-label={picture.approx ? `Enlarge picture: ${heading}. Approx. moment` : `Enlarge picture: ${heading}`}
+            aria-label={picture.approx ? `Enlarge picture: ${heading}. Approximate` : `Enlarge picture: ${heading}`}
             onClick={(event) => {
               if (suppressClick.current) {
                 suppressClick.current = false;
@@ -337,23 +338,21 @@ export function StepPictureCard({
               openFrom(event);
             }}
           >
-            <img
-              src={frame.image}
-              alt={alt}
-              width={1280}
-              height={720}
-              loading={eager ? "eager" : "lazy"}
-              decoding="async"
-              fetchPriority={eager ? "high" : "low"}
-              className="step-pic-img"
-            />
+            <picture>
+              <source media="(max-width: 899px)" srcSet={pictureSmallSrc(frame.image)} type="image/webp" />
+              <img
+                src={frame.image}
+                alt={alt}
+                width={1280}
+                height={720}
+                loading={eager ? "eager" : "lazy"}
+                decoding="async"
+                fetchPriority={eager ? "high" : "low"}
+                className="step-pic-img"
+              />
+            </picture>
           </button>
-          {picture.approx ? (
-            <span className="step-pic-approx">
-              <span className="step-pic-approx-long">Approx. moment</span>
-              <span className="step-pic-approx-short">Approx.</span>
-            </span>
-          ) : null}
+          {picture.approx ? <span className="step-pic-approx step-pic-approx-below">Approx.</span> : null}
           </div>
           {!picture.approx && frame.confidence === "medium" ? (
             <p className="step-pic-note mt-2 text-sm leading-snug text-muted">

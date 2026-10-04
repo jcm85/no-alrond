@@ -36,6 +36,11 @@ const FORCED_LOW = new Set([
   "partitio-ch-4-1-52f067",
   "journey-for-the-dawn-1-24db21",
   "masterly-mysterious-travellers-1-8d0b0d",
+  "throne-ch-1-900-31bcfe",
+  "throne-ch-1-1-8426d9",
+  "hikari-ch-2-1-625d41",
+  "agnea-ch-4-1-533e07",
+  "majestic-mysterious-travellers-1-2b3658",
 ]);
 
 const stepById = new Map(steps.map((step) => [step.id, step]));
@@ -81,33 +86,104 @@ export function pictureFor(stepId: string | undefined): StepPicture | undefined 
   );
 }
 
-const prefetched = new Map<string, HTMLImageElement>();
+/** 640px-wide phone variant. Same basename, always webp, never imported into the bundle. */
+export function pictureSmallSrc(image: string) {
+  const file = image.split("/").pop() ?? image;
+  const base = file.replace(/\.(jpe?g|png|webp)$/i, "");
+  return `/step-pics/w640/${base}.webp`;
+}
 
-/** Keep image requests for the current step and the next two. Drop the rest so a fast tap-through does not finish downloads the player has already left. */
-export function syncPicturePrefetch(stepIds: Array<string | undefined>) {
-  if (typeof Image === "undefined") return;
-  const keep = new Set<string>();
-  for (const id of stepIds) {
-    const picture = pictureFor(id);
-    if (picture) keep.add(picture.image);
+/** URL the thumbnail will actually request at this viewport. Desktop keeps the full frame. */
+export function pictureRequestSrc(image: string) {
+  if (typeof matchMedia !== "undefined" && matchMedia("(max-width: 899px)").matches) return pictureSmallSrc(image);
+  return image;
+}
+
+function picturePath(url: string) {
+  try {
+    return new URL(url, "http://local").pathname;
+  } catch {
+    return url;
   }
-  for (const [url, img] of prefetched) {
-    if (keep.has(url)) continue;
+}
+
+const prefetched = new Map<string, HTMLImageElement>();
+let preloadWait: { img: HTMLImageElement; onDone: () => void } | null = null;
+
+function clearPreloadWait() {
+  if (!preloadWait) return;
+  preloadWait.img.removeEventListener("load", preloadWait.onDone);
+  preloadWait.img.removeEventListener("error", preloadWait.onDone);
+  preloadWait = null;
+}
+
+function livePicturePaths() {
+  const paths = new Set<string>();
+  if (typeof document === "undefined") return paths;
+  for (const img of document.querySelectorAll<HTMLImageElement>("img.step-pic-img, img.pic-lightbox-img")) {
+    if (img.currentSrc) paths.add(picturePath(img.currentSrc));
+    const attr = img.getAttribute("src");
+    if (attr) paths.add(picturePath(attr));
+  }
+  return paths;
+}
+
+/**
+ * Which in-flight preloads may be aborted. The current step, and any URL a visible
+ * image is already using, are protected so a fast tap-through cannot cancel them.
+ */
+export function prefetchCancelUrls(inflight: string[], nextUrls: string[], protectedUrls: string[]) {
+  const next = new Set(nextUrls);
+  const keep = new Set(protectedUrls.map(picturePath));
+  return inflight.filter((url) => !next.has(url) && !keep.has(picturePath(url)));
+}
+
+/** Next steps only, at low priority. The visible image owns the current step. */
+export function syncPicturePrefetch(currentId: string | undefined, nextIds: Array<string | undefined> = []) {
+  if (typeof Image === "undefined") return () => undefined;
+  clearPreloadWait();
+  const currentPicture = pictureFor(currentId);
+  const currentUrl = currentPicture ? pictureRequestSrc(currentPicture.image) : undefined;
+  const next = new Set<string>();
+  for (const id of nextIds) {
+    const picture = pictureFor(id);
+    if (!picture) continue;
+    const url = pictureRequestSrc(picture.image);
+    if (url && url !== currentUrl) next.add(url);
+  }
+  const protectedUrls = [...livePicturePaths()];
+  if (currentUrl) protectedUrls.push(currentUrl);
+  for (const url of prefetchCancelUrls([...prefetched.keys()], [...next], protectedUrls)) {
+    const img = prefetched.get(url);
+    if (!img) continue;
     img.onload = null;
     img.onerror = null;
     img.src = "";
     prefetched.delete(url);
   }
-  for (const url of keep) {
+  const currentImg = typeof document !== "undefined" ? document.querySelector<HTMLImageElement>("img.step-pic-img") : null;
+  if (currentImg && !currentImg.complete) {
+    const onDone = () => {
+      clearPreloadWait();
+      syncPicturePrefetch(currentId, nextIds);
+    };
+    preloadWait = { img: currentImg, onDone };
+    currentImg.addEventListener("load", onDone);
+    currentImg.addEventListener("error", onDone);
+    return clearPreloadWait;
+  }
+  for (const url of next) {
     if (prefetched.has(url)) continue;
     const img = new Image();
+    img.setAttribute("fetchpriority", "low");
     prefetched.set(url, img);
     img.src = url;
   }
+  return clearPreloadWait;
 }
 
 export function preloadPicture(stepId: string | undefined) {
-  syncPicturePrefetch([stepId]);
+  syncPicturePrefetch(undefined, [stepId]);
 }
 
 export function frameHeading(pictureKind: PictureKind, frameKind?: PictureKind) {

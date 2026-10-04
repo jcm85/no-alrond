@@ -22,6 +22,7 @@
     "test": "node scripts/run-tests.mjs",
     "route:build": "python3 scripts/build-route.py",
     "pics:build": "python3 scripts/build-step-pics.py",
+    "pics:w640": "node scripts/build-w640.mjs",
     "lint": "eslint .",
     "format": "prettier --write ."
   },
