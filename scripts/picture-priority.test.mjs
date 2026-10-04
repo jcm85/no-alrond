@@ -71,6 +71,26 @@ test("phones load the 640 variant and the lightbox loads the full frame", async 
       desktopPaths.join(" "),
     );
     await desktop.close();
+
+    const tablet = await browser.newPage({ viewport: { width: 1024, height: 768 } });
+    const tabletPaths = [];
+    tablet.on("request", (request) => {
+      if (request.url().includes("/step-pics/")) tabletPaths.push(pathOf(request.url()));
+    });
+    await tablet.addInitScript(() => {
+      localStorage.removeItem("no-alrond-run-v2");
+      localStorage.removeItem("no-alrond-picture-hidden");
+    });
+    await tablet.goto(PAGE, { waitUntil: "networkidle" });
+    const thumb1024 = await tablet.evaluate(() => document.querySelector("img.step-pic-img")?.currentSrc ?? "");
+    assert.match(thumb1024, /\/step-pics\/w640\//, thumb1024);
+    assert.equal(tabletPaths.some((path) => path.includes("/w640/")), true);
+    assert.equal(
+      tabletPaths.some((path) => /\/step-pics\/[^/]+\.(webp|jpe?g)$/.test(path) && !path.includes("/w640/")),
+      false,
+      tabletPaths.join(" "),
+    );
+    await tablet.close();
   } finally {
     await browser.close();
   }
@@ -121,6 +141,75 @@ test("fast walking does not cancel the current step image", async () => {
     });
     assert.ok(started.includes(current), `never requested ${current}; recent ${started.slice(-6).join(" ")}`);
     assert.equal(aborted.includes(current), false, `cancelled current ${current}; aborted ${aborted.join(" ")}`);
+    await page.close();
+  } finally {
+    await browser.close();
+  }
+});
+
+test("a desktop curated jpg still loads when the steps before it are tapped quickly", async () => {
+  const browser = await chromium.launch({ headless: true, args: ["--no-sandbox"] });
+  try {
+    const page = await browser.newPage({ viewport: { width: 1400, height: 900 } });
+    const aborted = [];
+    const started = [];
+    page.on("request", (request) => {
+      if (request.url().includes("/step-pics/")) started.push(pathOf(request.url()));
+    });
+    page.on("requestfailed", (request) => {
+      const reason = request.failure()?.errorText ?? "";
+      if (request.url().includes("/step-pics/") && reason.includes("ERR_ABORTED")) aborted.push(pathOf(request.url()));
+    });
+    await page.route(/\/step-pics\//, async (route) => {
+      await new Promise((resolve) => setTimeout(resolve, 400));
+      try {
+        await route.continue();
+      } catch {
+        /* cancelled */
+      }
+    });
+    const jpg = "/step-pics/partitio-ch-2-1-9fbb5f.jpg";
+    await page.addInitScript(() => {
+      localStorage.setItem(
+        "no-alrond-run-v2",
+        JSON.stringify({
+          state: {
+            done: {},
+            skipped: {},
+            history: [],
+            jumps: [],
+            version: 2,
+            routeRev: "6ce74051ed6f76bb",
+            notice: null,
+            resumeAfterId: "throne-ch-1-900-f44214",
+          },
+          version: 2,
+        }),
+      );
+      localStorage.removeItem("no-alrond-picture-hidden");
+    });
+    await page.goto(PAGE, { waitUntil: "domcontentloaded" });
+    const done = page.getByRole("button", { name: "Done", exact: true });
+    await done.waitFor({ timeout: 20000 });
+    const kicker = () => page.locator(".step-kicker-full").textContent();
+    let previous = await kicker();
+    assert.match(previous ?? "", /Step 117/);
+    for (let i = 0; i < 3; i += 1) {
+      await done.click();
+      await page.waitForFunction((before) => document.querySelector(".step-kicker-full")?.textContent !== before, previous);
+      previous = await kicker();
+    }
+    assert.match(previous ?? "", /Step 120/, previous ?? "");
+    const jpgRequests = () => started.filter((path) => path === jpg);
+    await page.waitForTimeout(200);
+    assert.ok(jpgRequests().length >= 1, `jpg was not requested; recent ${started.slice(-8).join(" ")}`);
+    const shown = await page.waitForFunction(() => {
+      const img = document.querySelector("img.step-pic-img");
+      return img && img.complete && img.naturalWidth > 0 ? img.currentSrc : "";
+    }, null, { timeout: 8000 });
+    const currentSrc = await shown.jsonValue();
+    assert.equal(aborted.includes(jpg), false, `jpg aborted; aborted ${aborted.join(" ")}`);
+    assert.match(currentSrc, /partitio-ch-2-1-9fbb5f/, currentSrc);
     await page.close();
   } finally {
     await browser.close();

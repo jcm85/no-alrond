@@ -11,8 +11,8 @@ const app = readFileSync(join(root, "../components/route-app.tsx"), "utf8");
 test("the undo control keeps its own column between Done and Skip", () => {
   const column = /\.undo-slot,\s*\.undo-toast\s*\{([^}]+)\}/.exec(css)?.[1];
   assert.ok(column, "undo column rule");
-  assert.match(column, /flex:\s*0\s+0\s+6rem/);
-  assert.match(column, /width:\s*6rem/);
+  assert.match(column, /flex:\s*0\s+0\s+4rem/);
+  assert.match(column, /width:\s*4rem/);
   assert.match(column, /min-height:\s*2\.75rem/);
   assert.doesNotMatch(css, /\.undo-toast\s*\{[^}]*position:\s*fixed/);
   assert.doesNotMatch(css, /\.undo-toast\s*\{[^}]*position:\s*absolute/);

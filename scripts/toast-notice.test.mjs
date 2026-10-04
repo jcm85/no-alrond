@@ -93,7 +93,8 @@ test("undo toast overlay does not move the card and layout shift stays 0", async
       const skipBox = await skip.boundingBox();
       assert.ok(skipBox && skipBox.height >= 44, `${width}x${height} Skip left the action row`);
       const doneBox = await done.boundingBox();
-      assert.ok(doneBox && doneBox.width >= 44, `${width}x${height} Done is ${doneBox?.width}px wide`);
+      assert.ok(doneBox && doneBox.width >= 120, `${width}x${height} Done is ${doneBox?.width}px wide`);
+      assert.ok(doneBox.width >= skipBox.width, `${width}x${height} Done ${doneBox.width}px is narrower than Skip ${skipBox.width}px`);
       assert.equal(overlaps(undoBox, skipBox), false, `${width}x${height} Undo covers Skip`);
       assert.equal(overlaps(doneBox, undoBox), false, `${width}x${height} Undo covers Done`);
       assert.equal(overlaps(doneBox, skipBox), false, `${width}x${height} Done covers Skip`);
@@ -449,6 +450,64 @@ test("start over confirms and restore brings the backup back", async () => {
     await page.getByRole("button", { name: "Cancel", exact: true }).click();
     assert.equal(await metaText(page), stepped, "Cancel restore replaced current progress");
     await page.close();
+  } finally {
+    await browser.close();
+  }
+});
+
+test("eight rapid Done taps count one through eight and Done stays the wide button", async () => {
+  const browser = await chromium.launch({ headless: true, args: ["--no-sandbox"] });
+  try {
+    for (const [width, height] of TOAST_SIZES) {
+      const page = await browser.newPage({ viewport: { width, height } });
+      await page.addInitScript(() => {
+        localStorage.removeItem("no-alrond-run-v2");
+        localStorage.removeItem("no-alrond-picture-hidden");
+      });
+      await page.route(/\.(jpg|jpeg|png|webp)(\?|$)/i, (route) => route.abort());
+      await page.goto(URL, { waitUntil: "domcontentloaded" });
+      const done = page.getByRole("button", { name: "Done", exact: true });
+      await done.waitFor({ timeout: 20000 });
+      const numberOf = async () => {
+        const text = await page.locator(".step-kicker-full").textContent();
+        return Number(/step\s+(\d+)/i.exec(text ?? "")?.[1] ?? 0);
+      };
+      const start = await numberOf();
+      for (let i = 1; i <= 8; i += 1) {
+        if (i > 1) {
+          await page.waitForFunction(() => {
+            const undo = document.querySelector(".undo-toast button");
+            return undo instanceof HTMLButtonElement && !undo.disabled;
+          });
+        }
+        const box = await done.boundingBox();
+        assert.ok(box && box.width >= 120 && box.height >= 44, `${width}x${height} Done is ${box?.width}x${box?.height}`);
+        const skipBox = await page.getByRole("button", { name: "Skip", exact: true }).boundingBox();
+        assert.ok(skipBox && box.width >= skipBox.width, `${width}x${height} Done ${box.width}px vs Skip ${skipBox?.width}px`);
+        await page.mouse.click(box.x + box.width * 0.9, box.y + box.height / 2);
+        const expected = start + i;
+        await page.waitForFunction((next) => {
+          const text = document.querySelector(".step-kicker-full")?.textContent ?? "";
+          const match = /step\s+(\d+)/i.exec(text);
+          return match ? Number(match[1]) === next : false;
+        }, expected);
+        assert.equal(await numberOf(), expected, `${width}x${height} tap ${i}`);
+      }
+      const boxes = await page.evaluate(() => {
+        const row = document.querySelector(".now-actions");
+        const button = (name) => [...row.querySelectorAll("button")].find((el) => el.textContent.trim() === name);
+        const rect = (el) => {
+          const box = el.getBoundingClientRect();
+          return { left: box.left, top: box.top, right: box.right, bottom: box.bottom, width: box.width, height: box.height };
+        };
+        return { done: rect(button("Done")), undo: rect(button("Undo")), skip: rect(button("Skip")) };
+      });
+      assert.equal(overlaps(boxes.done, boxes.undo), false, `${width}x${height} Done overlaps Undo`);
+      assert.equal(overlaps(boxes.done, boxes.skip), false, `${width}x${height} Done overlaps Skip`);
+      assert.equal(overlaps(boxes.undo, boxes.skip), false, `${width}x${height} Undo overlaps Skip`);
+      assert.ok(boxes.undo.height >= 44 && boxes.skip.height >= 44, `${width}x${height} action height`);
+      await page.close();
+    }
   } finally {
     await browser.close();
   }

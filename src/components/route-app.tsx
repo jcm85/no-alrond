@@ -653,7 +653,29 @@ function Now({
     pendingShowFocus.current = false;
     showPictureRef.current?.focus();
   }, [pictureHidden]);
+  const detailsRef = useRef<HTMLDivElement>(null);
+  const [detailsMore, setDetailsMore] = useState(false);
   const [undoLive, setUndoLive] = useState(false);
+  useEffect(() => {
+    const el = detailsRef.current;
+    if (!el) {
+      setDetailsMore(false);
+      return;
+    }
+    const update = () => {
+      const hidden = el.scrollHeight - el.clientHeight;
+      const atEnd = el.scrollTop + el.clientHeight >= el.scrollHeight - 4;
+      setDetailsMore(hidden > 2 && !atEnd);
+    };
+    update();
+    el.addEventListener("scroll", update, { passive: true });
+    const observer = new ResizeObserver(update);
+    observer.observe(el);
+    return () => {
+      el.removeEventListener("scroll", update);
+      observer.disconnect();
+    };
+  }, [current]);
   useEffect(() => {
     if (!toast) {
       setUndoLive(false);
@@ -729,7 +751,8 @@ function Now({
             </div>
             <h2 className="step-title">{current.text}</h2>
           </div>
-          <div className="now-card-body min-h-0 flex-1 overflow-auto" tabIndex={0} role="region" aria-label="Step details">
+          <div className="now-card-details relative min-h-0 flex-1">
+          <div ref={detailsRef} className="now-card-body h-full min-h-0 overflow-auto" tabIndex={0} role="region" aria-label="Step details">
           {current.when ? <p className="text-base text-gold">{current.when}</p> : null}
           {current.lead ? <p className="mt-2 text-base text-gold">{current.lead}</p> : null}
           {current.foes && current.foes.length > 0 && isFirstInBlock(current) ? (
@@ -771,8 +794,14 @@ function Now({
             </a>
           ) : null}
           </div>
+          {detailsMore ? (
+            <div className="now-card-more" aria-hidden="true">
+              More
+            </div>
+          ) : null}
+          </div>
           <div className="now-actions relative mt-3 flex shrink-0 flex-nowrap gap-3">
-            <button type="button" onClick={onDone} className="min-h-14 min-w-0 flex-1 rounded-card bg-gold px-4 py-3 text-lg font-semibold text-ink">
+            <button type="button" onClick={onDone} className="step-done min-h-14 min-w-[7.5rem] flex-1 rounded-card bg-gold px-4 py-3 text-lg font-semibold text-ink">
               Done
             </button>
             {toast ? (
@@ -782,7 +811,7 @@ function Now({
                   type="button"
                   onClick={onUndo}
                   disabled={!undoLive}
-                  className="min-h-14 w-full rounded-card border border-line px-3 py-3 text-lg text-fg disabled:opacity-50"
+                  className="min-h-11 w-full rounded-card border border-line px-1 py-2 text-base text-fg disabled:opacity-50"
                 >
                   Undo
                 </button>
@@ -790,7 +819,7 @@ function Now({
             ) : (
               <div className="undo-slot" aria-hidden="true" />
             )}
-            <button type="button" onClick={onSkip} className="step-skip min-h-14 w-24 shrink-0 rounded-card border border-line px-3 py-3 text-lg text-fg">
+            <button type="button" onClick={onSkip} className="step-skip min-h-11 w-16 shrink-0 rounded-card border border-line px-1 py-2 text-base text-fg">
               Skip
             </button>
           </div>

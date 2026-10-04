@@ -154,6 +154,7 @@ export function StepPictureCard({
 }) {
   const frames = framesOf(picture);
   const [index, setIndex] = useState(0);
+  const [useSmall, setUseSmall] = useState(false);
   const [open, setOpen] = useState(false);
   const [collapsedId, setCollapsedId] = useState<string | null>(null);
   const collapsed = collapsedId === picture.stepId;
@@ -163,7 +164,11 @@ export function StepPictureCard({
   useEffect(() => {
     setIndex(0);
     setOpen(false);
+    setUseSmall(false);
   }, [picture.stepId]);
+  useEffect(() => {
+    setUseSmall(false);
+  }, [index]);
   useLayoutEffect(() => {
     const portrait = window.matchMedia("(min-width: 900px) and (orientation: portrait)").matches;
     const narrow = window.matchMedia("(max-width: 1279px)").matches;
@@ -339,9 +344,14 @@ export function StepPictureCard({
             }}
           >
             <picture>
-              <source media="(max-width: 899px)" srcSet={pictureSmallSrc(frame.image)} type="image/webp" />
+              <source
+                media="(max-width: 899px), (max-width: 1100px) and (orientation: landscape)"
+                srcSet={pictureSmallSrc(frame.image)}
+                type="image/webp"
+              />
               <img
-                src={frame.image}
+                key={useSmall ? `${frame.image}#small` : frame.image}
+                src={useSmall ? pictureSmallSrc(frame.image) : frame.image}
                 alt={alt}
                 width={1280}
                 height={720}
@@ -349,6 +359,7 @@ export function StepPictureCard({
                 decoding="async"
                 fetchPriority={eager ? "high" : "low"}
                 className="step-pic-img"
+                onError={() => setUseSmall(true)}
               />
             </picture>
           </button>
