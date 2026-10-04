@@ -8,7 +8,7 @@ import { beforeFleeing, fightPlanCounts, isFirstPlanStep, planFor, planIsUnverif
 
 test("every mapped fight step has a plan and the counts match the file", () => {
   assert.equal(fightPlanCounts.plans, 94);
-  assert.equal(fightPlanCounts.steps, 527);
+  assert.equal(fightPlanCounts.steps, 502);
   const ids = new Set(steps.map((step) => step.id));
   let shown = 0;
   let leads = 0;
@@ -24,10 +24,22 @@ test("every mapped fight step has a plan and the counts match the file", () => {
       assert.equal(turnLine(turn).startsWith("T0 — :"), false, step.id);
     }
   }
-  assert.equal(shown, 527);
+  assert.equal(shown, 502);
   assert.equal(leads, 94);
   assert.equal(planFor("true-vide-the-wicked-1-7a333a"), undefined);
   assert.equal(planFor("throne-ch-1-1-f37a8d"), undefined);
+  for (const id of [
+    "throne-ch-1-900-5d721c",
+    "throne-ch-1-1-aa8862",
+    "hikari-ch-2-1-d1d344",
+    "castti-ch-4-1-f2de05",
+    "temenos-ch-4-1-80edba",
+  ]) {
+    assert.equal(planFor(id), undefined, id);
+    assert.equal(isFirstPlanStep(id), false, id);
+  }
+  assert.equal(planFor("the-scholar-merchant-part-2-1-e7680a")?.id, "the-scholar-merchant-part-2-b3");
+  assert.equal(isFirstPlanStep("the-scholar-merchant-part-2-1-e7680a"), false);
   assert.equal(isFirstPlanStep("throne-ch-1-900-263edd"), true);
   assert.equal(planFor("throne-ch-1-900-263edd")?.id, "throne-ch-1-b21");
   assert.equal(isFirstPlanStep("the-apothecary-hunter-part-1-1-38a592"), true);
@@ -64,6 +76,7 @@ test("turn lines, flee prep, and unverified badges use the file as given", () =>
   const now = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../components/route-app.tsx"), "utf8");
   assert.equal(now.includes("FightWeakness"), false);
   assert.equal(now.includes("How weaknesses work"), false);
+  assert.match(card, /if \(!plan\) return null/);
   assert.match(card, /Fight plan: see first step/);
   assert.match(card, /Show full plan/);
   assert.match(card, /Show fight plan/);
