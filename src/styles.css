@@ -98,6 +98,54 @@
   color: var(--color-fg);
 }
 
+.fight-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+  line-height: 1.35;
+}
+
+.fight-plan-head,
+.fight-plan-enemy {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+}
+
+.fight-plan-head,
+.fight-plan-flee {
+  margin: 0;
+  color: var(--color-fg);
+  font-weight: 600;
+}
+
+.fight-plan-enemies {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fight-plan-turn,
+.fight-plan-why p {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.fight-plan summary {
+  display: flex;
+  min-height: 2.75rem;
+  cursor: pointer;
+  align-items: center;
+  color: var(--color-gold);
+}
+
 .now-layout {
   display: flex;
   flex-direction: column;
@@ -593,7 +641,7 @@ header {
 }
 
 @media (min-width: 700px) and (max-height: 820px) {
-  .now-layout:has(.step-pic) .fight-weak {
+  .now-layout:has(.step-pic) .fight-plan {
     margin-top: 0.25rem;
   }
 

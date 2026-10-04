@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { Camera, Check, Info, List, RotateCcw, Search, Undo2 } from "lucide-react";
 import { CombatGuide } from "@/components/combat-guide";
-import { FightWeakness } from "@/components/fight-weakness";
+import { FightPlan } from "@/components/fight-plan";
 import { changelog } from "@/data/changelog";
 import { route, type Block } from "@/data/route";
 import { RUN_KEY } from "@/lib/migrate-progress";
@@ -764,7 +764,7 @@ function Now({
               ))}
             </ul>
           ) : null}
-          <FightWeakness stepId={current.id} onShowGuide={onShowGuide} />
+          <FightPlan stepId={current.id} />
           {current.lines && current.lines.length > 0 ? (
             <ul className="mt-3 flex flex-col gap-1 text-lg text-fg">
               {current.lines.map((line) => (
@@ -933,7 +933,7 @@ function BlockCard({
                 <p className={"text-lg break-words " + (done[step.id] ? "text-muted line-through" : "text-fg")}>
                   {step.text}
                 </p>
-                <FightWeakness stepId={step.id} onShowGuide={onShowGuide} />
+                <FightPlan stepId={step.id} />
                 <StepWatch step={step} />
                 {step.lines && step.lines.length > 0 ? (
                   <p className="mt-1 text-base text-muted">{step.lines.join(" · ")}</p>
