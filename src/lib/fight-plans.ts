@@ -29,6 +29,7 @@ export type FightPlan = {
 
 const plans = data.plans as unknown as Record<string, FightPlan>;
 const stepUids = data.steps as Record<string, number>;
+const hints = (data as { hints?: Record<string, { t: number; h?: string }> }).hints ?? {};
 
 /** Earliest route step that uses each plan. Later steps of the same fight stay compact. */
 const firstStepByUid = new Map<number, string>();
@@ -110,16 +111,36 @@ function stepBody(text: string) {
   return core(parts.length > 1 ? parts.slice(1).join(" ") : stripped);
 }
 
-function actionMatches(stepTextValue: string, action: string) {
+function actionScore(stepTextValue: string, who: string, action: string) {
   const step = stepBody(stepTextValue);
   const act = core(action);
-  if (!step || !act) return false;
-  if (step === act) return true;
-  if (act.length >= 4 && (step.includes(act) || act.includes(step))) return true;
-  const tokens = act.split(" ").filter((token) => token.length > 2 || /^x\d+$/.test(token));
-  if (!tokens.length) return false;
-  const hit = tokens.filter((token) => step.includes(token)).length;
-  return hit === tokens.length || (hit / tokens.length >= 0.67 && hit >= 2);
+  if (!step || !act) return 0;
+  let score = 0;
+  if (step === act) score = 100;
+  else if (act.length >= 4 && step.includes(act)) score = 80 + Math.min(act.length, 40);
+  else if (act.length >= 4 && act.includes(step)) score = 60 + Math.min(step.length, 40);
+  else {
+    const tokens = act.split(" ").filter((token) => token.length > 2 || /^x\d+$/.test(token));
+    if (tokens.length) {
+      const hit = tokens.filter((token) => step.includes(token)).length;
+      if (hit === tokens.length) score = 40 + hit;
+      else if (hit / tokens.length >= 0.67 && hit >= 2) score = 20 + hit;
+    }
+  }
+  if (!score) return 0;
+  const name = core(who);
+  const whole = core(stepTextValue);
+  if (name && whole.startsWith(name)) score += 15;
+  else if (name && whole.includes(name)) score += 5;
+  return score;
+}
+
+function actionMatches(stepTextValue: string, action: string) {
+  return actionScore(stepTextValue, "", action) > 0;
+}
+
+function hintIndex(turns: FightPlanTurn[], hint: { t: number; h?: string }) {
+  return turns.findIndex((turn) => turn.t === hint.t && (hint.h == null ? turn.h == null : turn.h === hint.h));
 }
 
 function explicitTurn(text: string) {
@@ -139,6 +160,15 @@ for (const [uid, ids] of stepsByUid) {
   let cursor = -1;
   for (const id of ids) {
     if (firstStepByUid.get(uid) === id) continue;
+    const hint = hints[id];
+    if (hint) {
+      const hinted = hintIndex(turns, hint);
+      if (hinted >= 0) {
+        turnIndexByStep.set(id, hinted);
+        cursor = hinted;
+        continue;
+      }
+    }
     const text = stepText.get(id) ?? "";
     const wanted = explicitTurn(text);
     const hits: number[] = [];
@@ -164,6 +194,22 @@ export function matchedTurnIndex(stepId: string | undefined) {
   if (!stepId) return null;
   const index = turnIndexByStep.get(stepId);
   return index == null ? null : index;
+}
+
+/** Which action in this turn the step text is asking the player to do. */
+export function matchedActionIndex(stepId: string | undefined, turn: FightPlanTurn) {
+  const text = stepId ? stepText.get(stepId) : undefined;
+  if (!text) return null;
+  let best = -1;
+  let bestScore = 0;
+  turn.a.forEach(([who, action], index) => {
+    const score = actionScore(text, who, action);
+    if (score > bestScore) {
+      bestScore = score;
+      best = index;
+    }
+  });
+  return best >= 0 ? best : null;
 }
 
 /** Later battle steps (not the lead, not a flee) and how many landed on a turn. */

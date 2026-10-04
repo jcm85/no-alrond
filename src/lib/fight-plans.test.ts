@@ -8,6 +8,7 @@ import {
   beforeFleeing,
   fightPlanCounts,
   isFirstPlanStep,
+  matchedActionIndex,
   matchedTurnIndex,
   planFor,
   planIsUnverified,
@@ -17,7 +18,7 @@ import {
 
 test("every mapped fight step has a plan and the counts match the file", () => {
   assert.equal(fightPlanCounts.plans, 94);
-  assert.equal(fightPlanCounts.steps, 502);
+  assert.equal(fightPlanCounts.steps, 500);
   const ids = new Set(steps.map((step) => step.id));
   let shown = 0;
   let leads = 0;
@@ -33,7 +34,7 @@ test("every mapped fight step has a plan and the counts match the file", () => {
       assert.equal(turnLine(turn).startsWith("T0 — :"), false, step.id);
     }
   }
-  assert.equal(shown, 502);
+  assert.equal(shown, 500);
   assert.equal(leads, 94);
   assert.equal(planFor("true-vide-the-wicked-1-7a333a"), undefined);
   assert.equal(planFor("throne-ch-1-1-f37a8d"), undefined);
@@ -49,8 +50,11 @@ test("every mapped fight step has a plan and the counts match the file", () => {
   }
   assert.equal(planFor("the-scholar-merchant-part-2-1-e7680a")?.id, "the-scholar-merchant-part-2-b3");
   assert.equal(isFirstPlanStep("the-scholar-merchant-part-2-1-e7680a"), false);
-  assert.equal(isFirstPlanStep("throne-ch-1-900-263edd"), true);
-  assert.equal(planFor("throne-ch-1-900-263edd")?.id, "throne-ch-1-b21");
+  // walking steps carry no plan: the wagon walk (112) and the sewer-exit walk (9)
+  assert.equal(planFor("throne-ch-1-900-263edd"), undefined);
+  assert.equal(planFor("throne-ch-1-900-4aece1"), undefined);
+  assert.equal(isFirstPlanStep("throne-ch-1-1-0c70df"), true);
+  assert.equal(planFor("throne-ch-1-1-0c70df")?.id, "throne-ch-1-b21");
   assert.equal(isFirstPlanStep("the-apothecary-hunter-part-1-1-38a592"), true);
   assert.equal(isFirstPlanStep("the-apothecary-hunter-part-1-1-e74ce0"), false);
 });
@@ -93,7 +97,12 @@ test("turn lines, flee prep, and unverified badges use the file as given", () =>
   assert.equal(card.includes("see first step"), false);
   assert.match(card, /Show full plan/);
   assert.match(card, /Show fight plan/);
-  assert.match(card, /sessionStorage/);
+  assert.match(card, /localStorage/);
+  assert.equal(card.includes("sessionStorage"), false);
+  assert.match(card, /fight-plan-you/);
+  assert.match(card, /if \(variant === "route"\)/);
+  assert.match(card, /if \(!lead\) return null/);
+  assert.match(card, /plan\.flee === 1 && !lead\) return null/);
   const rate = planTurnMatchRate();
   assert.equal(rate.later > 300, true);
   assert.equal(rate.matched / rate.later >= 0.95, true);
@@ -102,6 +111,39 @@ test("turn lines, flee prep, and unverified badges use the file as given", () =>
   assert.equal(matchedTurnIndex("throne-ch-1-1-79e189"), 1);
   assert.equal(matchedTurnIndex("true-vide-the-wicked-1-5c18c2"), 0);
   assert.equal(matchedTurnIndex("throne-ch-1-900-ca73a5"), null);
+  const party = planFor("vide-the-wicked-1-ada0f5");
+  const partyIndex = matchedTurnIndex("vide-the-wicked-1-ada0f5");
+  assert.equal(partyIndex != null, true);
+  assert.equal(party?.T?.[partyIndex ?? -1]?.h, "Party 2");
+  assert.equal(party?.T?.[partyIndex ?? -1]?.t, 1);
+  const extra = planFor("galdera-1-476306");
+  const extraIndex = matchedTurnIndex("galdera-1-476306");
+  assert.equal(extra?.T?.[extraIndex ?? -1]?.h, "Aelfric's extra action");
+  const elixir = planFor("true-vide-the-wicked-1-5c18c2");
+  const elixirTurn = elixir?.T?.[0];
+  assert.ok(elixirTurn);
+  assert.equal(matchedActionIndex("true-vide-the-wicked-1-5c18c2", elixirTurn) != null, true);
   assert.match(card, /unverified/);
   assert.match(now, /How combat works/);
+});
+
+test("plan ids are unique and every turn hint resolves to exactly one turn of its plan", () => {
+  const raw = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../data/fight-plans.json"), "utf8")) as {
+    plans: Record<string, { id: string; T?: { t: number; h?: string }[] }>;
+    steps: Record<string, number>;
+    hints: Record<string, { t: number; h?: string }>;
+  };
+  const planIds = Object.values(raw.plans).map((plan) => plan.id);
+  assert.equal(new Set(planIds).size, planIds.length);
+  const ids = new Set(steps.map((step) => step.id));
+  const hinted = Object.entries(raw.hints);
+  assert.equal(hinted.length, 23);
+  for (const [stepId, hint] of hinted) {
+    assert.equal(ids.has(stepId), true, stepId);
+    const uid = raw.steps[stepId];
+    assert.equal(uid != null, true, stepId);
+    assert.equal(isFirstPlanStep(stepId), false, stepId);
+    const matches = (raw.plans[String(uid)]?.T ?? []).filter((turn) => turn.t === hint.t && turn.h === hint.h);
+    assert.equal(matches.length, 1, stepId);
+  }
 });
