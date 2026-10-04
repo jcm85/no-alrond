@@ -13,12 +13,15 @@ function Unverified() {
   return <span className="fight-tag">unverified</span>;
 }
 
-function Enemies({ plan }: { plan: FightPlanData }) {
+function Enemies({ plan, preview = false }: { plan: FightPlanData; preview?: boolean }) {
   if (!plan.e?.length) return null;
   return (
     <ul className="fight-plan-enemies">
       {plan.e.map((enemy, index) => (
-        <li key={`${enemy.n}-${index}`} className="fight-plan-enemy">
+        <li
+          key={`${enemy.n}-${index}`}
+          className={"fight-plan-enemy" + (preview && index > 0 ? " fight-plan-extra" : "")}
+        >
           <span className="text-fg">{enemy.n}</span>
           {enemy.s ? <span>shield {enemy.s}</span> : null}
           {enemy.w?.map((name) => (
@@ -115,14 +118,14 @@ export function FightPlan({ stepId, variant = "now" }: { stepId: string; variant
   }
 
   const turns = plan.T ?? [];
-  const hasMore = turns.length > 1 || Boolean(plan.why);
+  const hasMore = (plan.e?.length ?? 0) > 1 || turns.length > 1 || Boolean(plan.why);
   return (
     <section className={"fight-plan is-lead" + (open ? " is-open" : "")} aria-label="Fight plan">
       <p className="fight-plan-head">
         <span>Fight plan</span>
         {unverified ? <Unverified /> : null}
       </p>
-      <Enemies plan={plan} />
+      <Enemies plan={plan} preview />
       <Turns turns={turns.slice(0, 1)} />
       {hasMore ? (
         <>

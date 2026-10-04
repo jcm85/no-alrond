@@ -178,13 +178,22 @@
   gap: 0.35rem;
 }
 
+.fight-plan-extra {
+  display: none;
+}
+
 .fight-plan.is-open .fight-plan-rest {
+  display: flex;
+}
+
+.fight-plan.is-open .fight-plan-extra {
   display: flex;
 }
 
 /* Desktop portrait and wide landscape keep the whole plan on a fight's first step. */
 @media (min-width: 900px) and (orientation: portrait), (min-width: 1280px) and (orientation: landscape) {
-  .fight-plan.is-lead .fight-plan-rest {
+  .fight-plan.is-lead .fight-plan-rest,
+  .fight-plan.is-lead .fight-plan-extra {
     display: flex;
   }
 
