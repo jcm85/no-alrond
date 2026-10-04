@@ -104,6 +104,27 @@
   flex: 0 0 auto;
 }
 
+.now-card-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.now-card-more {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 1.75rem;
+  background: linear-gradient(to bottom, transparent, var(--color-surface) 70%);
+  color: var(--color-muted);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  pointer-events: none;
+}
+
 .now-card-head .step-title {
   margin-top: 0.35rem;
 }
@@ -354,7 +375,7 @@ header {
   object-fit: contain;
 }
 
-/* Undo has its own column between Done and Skip. The slot stays reserved so Skip never moves. */
+/* Undo keeps a compact column so Done stays the wide primary button. The slot stays reserved so Skip never moves. */
 .now-actions {
   position: relative;
 }
@@ -362,9 +383,9 @@ header {
 .undo-slot,
 .undo-toast {
   display: flex;
-  flex: 0 0 6rem;
-  width: 6rem;
-  min-width: 6rem;
+  flex: 0 0 4rem;
+  width: 4rem;
+  min-width: 4rem;
   min-height: 2.75rem;
 }
 
@@ -970,21 +991,80 @@ header {
   }
 }
 
-/* Short phones: larger than a 56px thumb, still short enough for the title and Done. */
+/* Short phones: a thin picture strip so the details window can stay 120px. Tap opens the full frame. 390×844 is taller and keeps its picture. */
 @media (max-width: 699px) and (max-height: 760px) {
+  .app-kicker {
+    display: none;
+  }
+
+  header .app-brand {
+    gap: 0.4rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.15rem;
+  }
+
+  header h1 {
+    font-size: 1.125rem;
+  }
+
+  header .size-12 {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .app-progress {
+    padding-bottom: 0.25rem;
+  }
+
+  .app-progress .mb-2 {
+    margin-bottom: 0.15rem;
+    font-size: 0.8125rem;
+    line-height: 1.15;
+  }
+
+  .app-progress .h-3 {
+    height: 0.35rem;
+  }
+
+  main.app-shell {
+    padding-top: 0.25rem;
+  }
+
+  .now-layout .now-card-meta {
+    flex-wrap: nowrap;
+    min-height: 0;
+    gap: 0.35rem;
+  }
+
+  .now-layout .now-card-meta .step-watch,
+  .now-layout .how-combat {
+    min-height: 2rem;
+    font-size: 0.8125rem;
+  }
+
+  .now-layout .step-title {
+    max-height: 3.5rem;
+    overflow: auto;
+  }
+
+  .now-layout:has(.step-pic) .step-pic {
+    padding: 0.2rem 0.5rem;
+  }
+
   .now-layout:has(.step-pic) .step-pic-zoom {
     width: 100%;
     max-width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    max-height: 8.5rem;
+    height: 2.75rem;
+    max-height: 2.75rem;
+    aspect-ratio: auto;
   }
-}
 
-/* Very short phones: keep the text window near 120px without going back to a tiny thumb. */
-@media (max-width: 699px) and (max-height: 680px) {
-  .now-layout:has(.step-pic) .step-pic-zoom {
-    max-height: 8rem;
+  .now-layout:has(.step-pic) .step-pic-zoom .step-pic-img {
+    object-fit: cover;
+  }
+
+  .now-layout:has(.step-pic) .now-card-body {
+    min-height: 7.5rem;
   }
 }
 
@@ -1052,16 +1132,9 @@ header {
   }
 }
 
-@media (max-width: 699px) and (max-height: 760px) and (min-height: 681px) {
+@media (max-width: 699px) and (max-height: 760px) {
   .now-layout .step-title {
-    max-height: 6.5rem;
-    overflow: auto;
-  }
-}
-
-@media (max-width: 699px) and (max-height: 680px) {
-  .now-layout .step-title {
-    max-height: 3.25rem;
+    max-height: 3.5rem;
     overflow: auto;
   }
 }

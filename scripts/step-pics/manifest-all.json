@@ -4251,8 +4251,8 @@
   "file": "/step-pics/castti-ch-2-winterbloom-route-900-754275.webp",
   "videoSeconds": 5282.0,
   "videoTime": "1:28:02",
-  "approx": false,
-  "confidence": "high",
+  "approx": true,
+  "confidence": "low",
   "source": "new",
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5279"
  },
@@ -9660,8 +9660,8 @@
   "file": "/step-pics/masterly-mysterious-travellers-1-2b3658.webp",
   "videoSeconds": 11287.0,
   "videoTime": "3:08:07",
-  "approx": false,
-  "confidence": "high",
+  "approx": true,
+  "confidence": "low",
   "source": "new",
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11284"
  },

@@ -97,6 +97,8 @@ test("every route step has a screenshot and weak frames stay tagged", () => {
     "hikari-ch-2-1-625d41",
     "agnea-ch-4-1-533e07",
     "majestic-mysterious-travellers-1-2b3658",
+    "castti-ch-2-winterbloom-route-900-754275",
+    "masterly-mysterious-travellers-1-2b3658",
   ];
   for (const id of forcedLow) {
     const picture = pictureFor(id);
@@ -116,8 +118,9 @@ test("every route step has a screenshot and weak frames stay tagged", () => {
     const entry = manifest[step.id];
     assert.ok(entry, step.id);
     if (weakPictureStep(step)) {
-      const exempt = picture.confidence === "high" && picture.source === "text-evidence";
-      if (!exempt) {
+      if (picture.confidence === "high") {
+        assert.equal(picture.confidence, "high", step.id);
+      } else {
         assert.equal(picture.approx, true, step.id);
         assert.equal(entry.approx, true, step.id);
       }
@@ -158,11 +161,19 @@ test("prefetch never cancels the current picture, and phones use the 640 variant
   const next = "/step-pics/w640/next.webp";
   const cancel = prefetchCancelUrls([current, next, "/step-pics/w640/left.webp"], [next], [current]);
   assert.deepEqual(cancel, ["/step-pics/w640/left.webp"]);
+  const jpg = "/step-pics/partitio-ch-2-1-3acf7f.jpg";
+  const jpgSmall = pictureSmallSrc(jpg);
+  const jpgCancel = prefetchCancelUrls([jpg, jpgSmall, "/step-pics/old.webp"], ["/step-pics/next.webp"], [jpg, jpgSmall]);
+  assert.deepEqual(jpgCancel, ["/step-pics/old.webp"]);
   const source = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "step-pictures.ts"), "utf8");
   assert.match(source, /setAttribute\("fetchpriority", "low"\)/);
+  assert.match(source, /currentFull/);
+  assert.match(source, /retainedJpegs/);
+  assert.match(source, /isJpeg\(url\)/);
   const card = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../components/step-picture.tsx"), "utf8");
-  assert.match(card, /media="\(max-width: 899px\)"/);
-  assert.match(card, /src=\{frame\.image\}/);
+  assert.match(card, /max-width: 1100px/);
+  assert.match(card, /orientation: landscape/);
+  assert.match(card, /src=\{useSmall \? pictureSmallSrc\(frame\.image\) : frame\.image\}/);
 });
 
 test("the guard outpost door is a travel frame", () => {

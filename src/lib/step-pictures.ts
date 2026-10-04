@@ -31,7 +31,7 @@ export function usePictureHidden() {
   return [hidden, setPictureHidden] as const;
 }
 
-/** Menu, party, shop, and item frames are a weak match unless a high-confidence text-evidence source exists. The route has no "item" kind; inventory context and buy/sell/purchase lines count as item steps. */
+/** Menu, party, shop, and item frames are a weak match unless the picture confidence is already high. The route has no "item" kind; inventory context and buy/sell/purchase lines count as item steps. */
 const FORCED_LOW = new Set([
   "partitio-ch-4-1-52f067",
   "journey-for-the-dawn-1-24db21",
@@ -41,6 +41,8 @@ const FORCED_LOW = new Set([
   "hikari-ch-2-1-625d41",
   "agnea-ch-4-1-533e07",
   "majestic-mysterious-travellers-1-2b3658",
+  "castti-ch-2-winterbloom-route-900-754275",
+  "masterly-mysterious-travellers-1-2b3658",
 ]);
 
 const stepById = new Map(steps.map((step) => [step.id, step]));
@@ -60,7 +62,7 @@ function withApproxPolicy(picture: StepPicture, stepId: string): StepPicture {
   if (FORCED_LOW.has(stepId)) return { ...picture, approx: true, confidence: "low" };
   const step = stepById.get(stepId);
   if (!step || !weakPictureStep(step)) return picture;
-  if (picture.confidence === "high" && picture.source === "text-evidence") return picture;
+  if (picture.confidence === "high") return picture;
   return picture.approx ? picture : { ...picture, approx: true };
 }
 
@@ -93,9 +95,12 @@ export function pictureSmallSrc(image: string) {
   return `/step-pics/w640/${base}.webp`;
 }
 
-/** URL the thumbnail will actually request at this viewport. Desktop keeps the full frame. */
+/** Phone and small landscape thumbnails. A tall portrait screen keeps the full frame. */
+export const SMALL_PICTURE_QUERY = "(max-width: 899px), (max-width: 1100px) and (orientation: landscape)";
+
+/** URL the thumbnail will actually request at this viewport. Desktop portrait keeps the full frame. */
 export function pictureRequestSrc(image: string) {
-  if (typeof matchMedia !== "undefined" && matchMedia("(max-width: 899px)").matches) return pictureSmallSrc(image);
+  if (typeof matchMedia !== "undefined" && matchMedia(SMALL_PICTURE_QUERY).matches) return pictureSmallSrc(image);
   return image;
 }
 
@@ -108,6 +113,8 @@ function picturePath(url: string) {
 }
 
 const prefetched = new Map<string, HTMLImageElement>();
+/** Jpeg requests are shared with the visible <img>. Dropping or clearing the prefetch aborts that request, and the element does not retry. Hold the loader until it finishes. */
+const retainedJpegs = new Set<HTMLImageElement>();
 let preloadWait: { img: HTMLImageElement; onDone: () => void } | null = null;
 
 function clearPreloadWait() {
@@ -115,6 +122,29 @@ function clearPreloadWait() {
   preloadWait.img.removeEventListener("load", preloadWait.onDone);
   preloadWait.img.removeEventListener("error", preloadWait.onDone);
   preloadWait = null;
+}
+
+function isJpeg(url: string) {
+  return /\.jpe?g($|\?)/i.test(picturePath(url));
+}
+
+function dropPrefetch(url: string) {
+  const img = prefetched.get(url);
+  if (!img) return;
+  img.onload = null;
+  img.onerror = null;
+  prefetched.delete(url);
+  if (!isJpeg(url)) {
+    img.src = "";
+    return;
+  }
+  if (img.complete) return;
+  retainedJpegs.add(img);
+  const release = () => {
+    retainedJpegs.delete(img);
+  };
+  img.addEventListener("load", release, { once: true });
+  img.addEventListener("error", release, { once: true });
 }
 
 function livePicturePaths() {
@@ -143,24 +173,22 @@ export function syncPicturePrefetch(currentId: string | undefined, nextIds: Arra
   if (typeof Image === "undefined") return () => undefined;
   clearPreloadWait();
   const currentPicture = pictureFor(currentId);
-  const currentUrl = currentPicture ? pictureRequestSrc(currentPicture.image) : undefined;
+  const currentFull = currentPicture?.image;
+  const currentSmall = currentFull ? pictureSmallSrc(currentFull) : undefined;
+  const currentUrl = currentFull ? pictureRequestSrc(currentFull) : undefined;
   const next = new Set<string>();
   for (const id of nextIds) {
     const picture = pictureFor(id);
     if (!picture) continue;
     const url = pictureRequestSrc(picture.image);
-    if (url && url !== currentUrl) next.add(url);
+    if (!url || url === currentUrl || url === currentFull || url === currentSmall) continue;
+    next.add(url);
   }
   const protectedUrls = [...livePicturePaths()];
+  if (currentFull) protectedUrls.push(currentFull);
+  if (currentSmall) protectedUrls.push(currentSmall);
   if (currentUrl) protectedUrls.push(currentUrl);
-  for (const url of prefetchCancelUrls([...prefetched.keys()], [...next], protectedUrls)) {
-    const img = prefetched.get(url);
-    if (!img) continue;
-    img.onload = null;
-    img.onerror = null;
-    img.src = "";
-    prefetched.delete(url);
-  }
+  for (const url of prefetchCancelUrls([...prefetched.keys()], [...next], protectedUrls)) dropPrefetch(url);
   const currentImg = typeof document !== "undefined" ? document.querySelector<HTMLImageElement>("img.step-pic-img") : null;
   if (currentImg && !currentImg.complete) {
     const onDone = () => {
