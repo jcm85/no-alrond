@@ -4,7 +4,16 @@ import { dirname, join } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 import { steps } from "./run-store.ts";
-import { beforeFleeing, fightPlanCounts, isFirstPlanStep, planFor, planIsUnverified, turnLine } from "./fight-plans.ts";
+import {
+  beforeFleeing,
+  fightPlanCounts,
+  isFirstPlanStep,
+  matchedTurnIndex,
+  planFor,
+  planIsUnverified,
+  planTurnMatchRate,
+  turnLine,
+} from "./fight-plans.ts";
 
 test("every mapped fight step has a plan and the counts match the file", () => {
   assert.equal(fightPlanCounts.plans, 94);
@@ -58,7 +67,11 @@ test("turn lines, flee prep, and unverified badges use the file as given", () =>
   assert.ok(headed);
   assert.equal(
     turnLine(headed),
-    "T1 (first encounter) — Any character: Fire Soulstone (M) · Ochette: Capture → Snow Yak",
+    "T1 · first encounter — Any character: Fire Soulstone (M) · Ochette: Capture → Snow Yak",
+  );
+  assert.equal(
+    turnLine({ t: 1, h: "Party 1 (opening)", a: [["Throne", "Attack"]] }),
+    "T1 · Party 1 (opening) — Throne: Attack",
   );
   assert.equal(planIsUnverified(opening), false);
   const flee = planFor("partitio-ch-2-1-1d25ed");
@@ -77,9 +90,18 @@ test("turn lines, flee prep, and unverified badges use the file as given", () =>
   assert.equal(now.includes("FightWeakness"), false);
   assert.equal(now.includes("How weaknesses work"), false);
   assert.match(card, /if \(!plan\) return null/);
-  assert.match(card, /Fight plan: see first step/);
+  assert.equal(card.includes("see first step"), false);
   assert.match(card, /Show full plan/);
   assert.match(card, /Show fight plan/);
+  assert.match(card, /sessionStorage/);
+  const rate = planTurnMatchRate();
+  assert.equal(rate.later > 300, true);
+  assert.equal(rate.matched / rate.later >= 0.95, true);
+  assert.equal(matchedTurnIndex("throne-ch-1-1-df6557"), 0);
+  assert.equal(matchedTurnIndex("throne-ch-1-900-4aece1"), null);
+  assert.equal(matchedTurnIndex("throne-ch-1-1-79e189"), 1);
+  assert.equal(matchedTurnIndex("true-vide-the-wicked-1-5c18c2"), 0);
+  assert.equal(matchedTurnIndex("throne-ch-1-900-ca73a5"), null);
   assert.match(card, /unverified/);
   assert.match(now, /How combat works/);
 });

@@ -159,10 +159,25 @@
 
 .fight-plan-jump {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 0.35rem 0.6rem;
   width: 100%;
+  max-height: 2.75rem;
+  overflow: hidden;
+}
+
+.fight-plan-jump > .text-fg {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fight-plan-jump > .text-gold,
+.fight-plan-jump > .fight-tag {
+  flex: 0 0 auto;
+  white-space: nowrap;
 }
 
 .fight-plan-more {
@@ -199,6 +214,26 @@
 
   .fight-plan.is-lead .fight-plan-more {
     display: none;
+  }
+}
+
+/* Phones: an expanded long plan leads with the turns, then the enemy list. */
+@media (max-width: 899px) {
+  .fight-plan.is-open:not(.is-matched) > .fight-plan-turn,
+  .fight-plan.is-open:not(.is-matched) > .fight-plan-rest {
+    order: 1;
+  }
+
+  .fight-plan.is-open:not(.is-matched) > .fight-plan-enemies {
+    order: 2;
+  }
+
+  .fight-plan.is-open:not(.is-matched) > .fight-plan-more {
+    order: 3;
+  }
+
+  .fight-plan.is-open:not(.is-matched) > .fight-plan-why {
+    order: 4;
   }
 }
 
@@ -1349,6 +1384,27 @@ header {
     max-height: min(46vh, 18rem);
   }
 
+  .now-card-meta {
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 2.75rem;
+    min-height: 2.75rem;
+    max-height: 2.75rem;
+    overflow: hidden;
+  }
+
+  .now-card-meta .step-kicker {
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .now-card-meta .step-watch,
+  .now-card-meta .how-combat {
+    flex: 0 0 auto;
+  }
 }
 
 /* Short landscape phones: the title stays fully visible beside a smaller picture. */
@@ -1364,6 +1420,15 @@ header {
 
   .now-layout:has(.step-pic) .step-pic-zoom {
     max-height: 5.5rem;
+  }
+}
+
+/* Phones: a 44px watch target without adding a row of height. */
+@media (max-width: 699px) {
+  .now-layout .now-card-meta .step-watch {
+    box-sizing: border-box;
+    min-height: 2.75rem;
+    margin-block: -0.375rem;
   }
 }
 
