@@ -4,22 +4,34 @@ import { dirname, join } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 import { steps } from "./run-store.ts";
-import { beforeFleeing, fightPlanCounts, planFor, planIsUnverified, turnLine } from "./fight-plans.ts";
+import { beforeFleeing, fightPlanCounts, isFirstPlanStep, planFor, planIsUnverified, turnLine } from "./fight-plans.ts";
 
 test("every mapped fight step has a plan and the counts match the file", () => {
-  assert.equal(fightPlanCounts.plans, 92);
-  assert.equal(fightPlanCounts.steps, 523);
+  assert.equal(fightPlanCounts.plans, 94);
+  assert.equal(fightPlanCounts.steps, 527);
   const ids = new Set(steps.map((step) => step.id));
   let shown = 0;
+  let leads = 0;
   for (const step of steps) {
     const plan = planFor(step.id);
     if (!plan) continue;
     shown += 1;
+    if (isFirstPlanStep(step.id)) leads += 1;
     assert.equal(ids.has(step.id), true);
     assert.equal(typeof plan.id, "string");
+    for (const turn of plan.T ?? []) {
+      assert.equal(turn.a.length > 0, true, step.id);
+      assert.equal(turnLine(turn).startsWith("T0 — :"), false, step.id);
+    }
   }
-  assert.equal(shown, 523);
+  assert.equal(shown, 527);
+  assert.equal(leads, 94);
   assert.equal(planFor("true-vide-the-wicked-1-7a333a"), undefined);
+  assert.equal(planFor("throne-ch-1-1-f37a8d"), undefined);
+  assert.equal(isFirstPlanStep("throne-ch-1-900-263edd"), true);
+  assert.equal(planFor("throne-ch-1-900-263edd")?.id, "throne-ch-1-b21");
+  assert.equal(isFirstPlanStep("the-apothecary-hunter-part-1-1-38a592"), true);
+  assert.equal(isFirstPlanStep("the-apothecary-hunter-part-1-1-e74ce0"), false);
 });
 
 test("turn lines, flee prep, and unverified badges use the file as given", () => {
@@ -27,7 +39,14 @@ test("turn lines, flee prep, and unverified badges use the file as given", () =>
   assert.ok(opening?.T?.[0]);
   assert.equal(
     turnLine(opening.T[0]),
-    "T1 — 1st Person: Dagger / Axe x2 → Pursuer #1 · 2nd Person: Dagger / Axe → Pursuer #2 · 3rd Person: Dagger / Axe → Pursuer #2 · Everyone: Dagger / Axe x3",
+    "T1 — First to act: Dagger / Axe x2 → Pursuer #1 · Second to act: Dagger / Axe → Pursuer #2 · Third to act: Dagger / Axe → Pursuer #2 · All: Dagger / Axe x3",
+  );
+  const grouped = planFor("osvald-ch-4-1-78ced9");
+  const headed = grouped?.T?.find((turn) => turn.h);
+  assert.ok(headed);
+  assert.equal(
+    turnLine(headed),
+    "T1 (first encounter) — Any character: Fire Soulstone (M) · Ochette: Capture → Snow Yak",
   );
   assert.equal(planIsUnverified(opening), false);
   const flee = planFor("partitio-ch-2-1-1d25ed");
@@ -45,7 +64,9 @@ test("turn lines, flee prep, and unverified badges use the file as given", () =>
   const now = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../components/route-app.tsx"), "utf8");
   assert.equal(now.includes("FightWeakness"), false);
   assert.equal(now.includes("How weaknesses work"), false);
-  assert.match(card, /Fight plan/);
+  assert.match(card, /Fight plan: see first step/);
+  assert.match(card, /Show full plan/);
+  assert.match(card, /Show fight plan/);
   assert.match(card, /unverified/);
   assert.match(now, /How combat works/);
 });

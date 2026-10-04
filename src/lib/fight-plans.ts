@@ -1,4 +1,5 @@
 import data from "@/data/fight-plans.json";
+import { steps } from "@/lib/run-store";
 
 export type FightPlanEnemy = {
   n: string;
@@ -10,6 +11,7 @@ export type FightPlanEnemy = {
 
 export type FightPlanTurn = {
   t: number;
+  h?: string;
   a: [string, string][];
 };
 
@@ -28,11 +30,31 @@ export type FightPlan = {
 const plans = data.plans as unknown as Record<string, FightPlan>;
 const stepUids = data.steps as Record<string, number>;
 
+/** Earliest route step that uses each plan. Later steps of the same fight stay compact. */
+const firstStepByUid = new Map<number, string>();
+for (const step of steps) {
+  const uid = stepUids[step.id];
+  if (uid == null || firstStepByUid.has(uid)) continue;
+  firstStepByUid.set(uid, step.id);
+}
+
 export function planFor(stepId: string | undefined): FightPlan | undefined {
   if (!stepId) return undefined;
   const uid = stepUids[stepId];
   if (uid == null) return undefined;
   return plans[String(uid)];
+}
+
+export function isFirstPlanStep(stepId: string | undefined) {
+  if (!stepId) return false;
+  const uid = stepUids[stepId];
+  if (uid == null) return false;
+  return firstStepByUid.get(uid) === stepId;
+}
+
+export function planEnemyLabel(plan: FightPlan) {
+  if (plan.flee === 1 && !plan.e?.length) return "Flee";
+  return plan.e?.[0]?.n ?? plan.t;
 }
 
 export function planIsUnverified(plan: FightPlan) {
@@ -41,7 +63,8 @@ export function planIsUnverified(plan: FightPlan) {
 
 export function turnLine(turn: FightPlanTurn) {
   const actions = turn.a.map(([who, action]) => `${who}: ${action}`).join(" · ");
-  return `T${turn.t} — ${actions}`;
+  const label = turn.h ? `T${turn.t} (${turn.h})` : `T${turn.t}`;
+  return `${label} — ${actions}`;
 }
 
 /** One line. Turn numbers stay when the prep covers more than one turn. */

@@ -764,7 +764,7 @@ function Now({
               ))}
             </ul>
           ) : null}
-          <FightPlan stepId={current.id} />
+          <FightPlan stepId={current.id} variant="now" />
           {current.lines && current.lines.length > 0 ? (
             <ul className="mt-3 flex flex-col gap-1 text-lg text-fg">
               {current.lines.map((line) => (
@@ -933,7 +933,7 @@ function BlockCard({
                 <p className={"text-lg break-words " + (done[step.id] ? "text-muted line-through" : "text-fg")}>
                   {step.text}
                 </p>
-                <FightPlan stepId={step.id} />
+                <FightPlan stepId={step.id} variant="route" />
                 <StepWatch step={step} />
                 {step.lines && step.lines.length > 0 ? (
                   <p className="mt-1 text-base text-muted">{step.lines.join(" · ")}</p>
