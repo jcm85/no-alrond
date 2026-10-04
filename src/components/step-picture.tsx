@@ -172,7 +172,9 @@ export function StepPictureCard({
     const overlaps = titleBox.bottom > doneBox.top + 1;
     const doneCut = doneBox.bottom > navBox.top + 1 || doneBox.bottom > cardBox.bottom + 1;
     const titleCut = titleBox.top < cardBox.top - 1 || titleBox.bottom > cardBox.bottom + 1;
-    if (overlaps || doneCut || titleCut) setCollapsedId(picture.stepId);
+    const body = document.querySelector(".now-card-body");
+    const bodyShort = !!body && body.clientHeight < 72 && body.scrollHeight > body.clientHeight + 8;
+    if (overlaps || doneCut || titleCut || bodyShort) setCollapsedId(picture.stepId);
   }, [picture.stepId, collapsed, index]);
   useEffect(() => {
     if (!takeHideFocus) return;
@@ -239,9 +241,6 @@ export function StepPictureCard({
               </button>
             </span>
           ) : null}
-          <a className="step-pic-watch" href={frame.youtube_link} target="_blank" rel="noreferrer">
-            {watchFromLabel(frame.youtube_link)}
-          </a>
           {onHide ? (
             <button ref={hideRef} type="button" onClick={onHide} className="step-pic-hide min-h-11 px-2 text-base text-gold">
               Hide picture
@@ -286,9 +285,6 @@ export function StepPictureCard({
             </button>
           </span>
         ) : null}
-        <a className="step-pic-watch" href={frame.youtube_link} target="_blank" rel="noreferrer">
-          {watchFromLabel(frame.youtube_link)}
-        </a>
         {onHide ? (
           <button type="button" onClick={onHide} className="step-pic-hide min-h-11 px-2 text-base text-gold">
             Hide picture
@@ -382,14 +378,6 @@ export function StepPictureCard({
             </button>
           </div>
         ) : null}
-        <a
-          className="step-pic-watch mt-2 inline-flex min-h-11 items-center text-base text-gold underline underline-offset-4"
-          href={frame.youtube_link}
-          target="_blank"
-          rel="noreferrer"
-        >
-          {watchFromLabel(frame.youtube_link)}
-        </a>
       </article>
       {open ? (
         <PictureLightbox

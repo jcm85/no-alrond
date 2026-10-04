@@ -6,6 +6,7 @@ import { changelog } from "@/data/changelog";
 import { route, type Block } from "@/data/route";
 import { RUN_KEY } from "@/lib/migrate-progress";
 import { StepPictureCard } from "@/components/step-picture";
+import { focusableIn, holdBackground, nextTabIndex } from "@/lib/picture-focus";
 import { pictureFor, preloadPicture, usePictureHidden, watchFromLabel } from "@/lib/step-pictures";
 import {
   chapterOrder,
@@ -23,6 +24,7 @@ type ConfirmState =
   | { kind: "chapter"; id: string; count: number }
   | { kind: "through"; id: string; count: number }
   | { kind: "carried"; id: string; count: number }
+  | { kind: "reset" }
   | null;
 
 const KIND_LABEL: Record<string, string> = {
@@ -64,6 +66,8 @@ export function RouteApp() {
   const [highlightId, setHighlightId] = useState<string | null>(null);
   const [toast, setToast] = useState<string | null>(null);
   const [guideOpen, setGuideOpen] = useState(false);
+  const [noticeOpen, setNoticeOpen] = useState(false);
+  const aboutOpener = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     void Promise.resolve(useRun.persist.rehydrate()).finally(() => setHydrated(true));
@@ -79,13 +83,14 @@ export function RouteApp() {
 
   useEffect(() => {
     if (!toast) return;
-    const timer = window.setTimeout(() => setToast(null), 6000);
+    const timer = window.setTimeout(() => setToast(null), 2800);
     return () => window.clearTimeout(timer);
   }, [toast]);
 
   const current = playhead(done, resumeAfterId);
   const lastDone = [...steps].reverse().find((step) => done[step.id]);
   function showGuide() {
+    aboutOpener.current = document.activeElement instanceof HTMLElement ? document.activeElement : null;
     setGuideOpen(true);
     setAbout(true);
     setTab("now");
@@ -113,11 +118,12 @@ export function RouteApp() {
       const target = event.target as HTMLElement | null;
       const tag = target?.tagName;
       if (tag === "BUTTON" || tag === "A" || tag === "SELECT" || tag === "INPUT" || tag === "TEXTAREA") return;
-      if (target?.closest("[role='dialog']")) return;
+      if (target?.isContentEditable) return;
+      if (target?.closest("button, a, [role='dialog']")) return;
       if (document.querySelector(".pic-lightbox")) return;
       if (about || confirm || tab !== "now") return;
       if (event.key === "Escape") return;
-      if ((event.key === " " || event.key === "Enter") && target === document.body) {
+      if (event.key === " " || event.key === "Enter") {
         if (!current) return;
         event.preventDefault();
         finish(current.id, "done");
@@ -178,7 +184,10 @@ export function RouteApp() {
           <button
             type="button"
             className="grid size-12 place-items-center rounded-full text-muted hover:bg-raise hover:text-fg"
-            onClick={() => setAbout((value) => !value)}
+            onClick={(event) => {
+              aboutOpener.current = event.currentTarget;
+              setAbout((value) => !value);
+            }}
             disabled={!hydrated}
             aria-expanded={about}
             aria-label="About this route"
@@ -213,14 +222,25 @@ export function RouteApp() {
 
       <main className="app-shell relative flex min-h-0 flex-1 flex-col overflow-hidden pt-3">
         {hydrated && notice ? (
-          <div role="status" className="route-notice">
-            <p className="text-base text-fg">
-              {notice.added
-                ? `${notice.added} new steps were added; they start unchecked.`
-                : notice.carried === 0
-                  ? "The route was updated. Your old progress can't be carried over safely."
-                  : `${notice.carried} of ${notice.total} carried over.`}
-            </p>
+          <div role="status" className={"route-notice" + (noticeOpen ? " is-open" : "")}>
+            <div className="route-notice-banner">
+              <p className="text-base text-fg">
+                {notice.added
+                  ? `${notice.added} new steps were added; they start unchecked.`
+                  : notice.carried === 0
+                    ? "The route was updated. Your old progress can't be carried over safely."
+                    : `${notice.carried} of ${notice.total} carried over.`}
+              </p>
+              <button
+                type="button"
+                aria-expanded={noticeOpen}
+                onClick={() => setNoticeOpen((value) => !value)}
+                className="shrink-0 rounded-card border border-gold px-3 text-gold"
+              >
+                {noticeOpen ? "Close" : "Review"}
+              </button>
+            </div>
+            {noticeOpen ? (
             <div className="route-notice-actions">
               {notice.added && lastDone ? (
                 <button
@@ -246,7 +266,11 @@ export function RouteApp() {
                   Review the new steps
                 </button>
               ) : null}
-              <button type="button" onClick={() => reset()} className="rounded-card border border-line px-3 py-2">
+              <button
+                type="button"
+                onClick={() => setConfirm({ kind: "reset" })}
+                className="rounded-card border border-line px-3 py-2"
+              >
                 Start over
               </button>
               {latestCarried ? (
@@ -277,10 +301,21 @@ export function RouteApp() {
                 Dismiss
               </button>
             </div>
+            ) : null}
           </div>
         ) : null}
         {!hydrated ? <p className="text-lg text-muted">Loading your saved progress…</p> : null}
-        {hydrated && about ? <About guideOpen={guideOpen} onClose={() => setAbout(false)} /> : null}
+        {hydrated && about ? (
+          <About
+            guideOpen={guideOpen}
+            opener={aboutOpener.current}
+            onClose={() => setAbout(false)}
+            onReset={() => {
+              setAbout(false);
+              setConfirm({ kind: "reset" });
+            }}
+          />
+        ) : null}
 
         {hydrated && tab === "now" ? (
           <Now
@@ -505,16 +540,30 @@ export function RouteApp() {
       {confirm ? (
         <Confirm
           title={
-            confirm.kind === "chapter"
-              ? "Start at this chapter?"
-              : confirm.kind === "carried"
-                ? `Mark the ${confirm.count} steps before it as done?`
-                : "Mark all steps before this as done?"
+            confirm.kind === "reset"
+              ? "Start over?"
+              : confirm.kind === "chapter"
+                ? "Start at this chapter?"
+                : confirm.kind === "carried"
+                  ? `Mark the ${confirm.count} steps before it as done?`
+                  : "Mark all steps before this as done?"
           }
-          body={`Marks ${confirm.count} steps done.`}
-          confirm={confirm.kind === "chapter" ? "Start here" : "Mark them"}
+          body={
+            confirm.kind === "reset"
+              ? "Your progress is backed up on this device. You can restore it from About."
+              : `Marks ${confirm.count} steps done.`
+          }
+          confirm={confirm.kind === "reset" ? "Start over" : confirm.kind === "chapter" ? "Start here" : "Mark them"}
           onCancel={() => setConfirm(null)}
           onConfirm={() => {
+            if (confirm.kind === "reset") {
+              reset();
+              dismissNotice();
+              setToast("Started over. The previous progress is backed up.");
+              setConfirm(null);
+              setTab("now");
+              return;
+            }
             if (confirm.kind === "chapter") markBeforeChapter(confirm.id);
             else markThrough(confirm.id);
             setToast(`Marked ${confirm.count} steps`);
@@ -530,39 +579,20 @@ export function RouteApp() {
 
 function UndoToast({ text, onUndo }: { text: string; onUndo: () => void }) {
   const ref = useRef<HTMLDivElement>(null);
-  const [box, setBox] = useState<{ top: number; left: number; width: number } | null>(null);
+  const [box, setBox] = useState<{ top: number; left: number; width: number; height: number } | null>(null);
   useLayoutEffect(() => {
     function place() {
-      const el = ref.current;
-      if (!el) return;
-      const height = el.getBoundingClientRect().height;
-      const gap = 8;
-      const title = document.querySelector(".step-title");
-      const progress = document.querySelector(".app-progress");
-      const header = document.querySelector("header");
-      const done = [...document.querySelectorAll("button")].find(
-        (button) => button.textContent?.trim() === "Done" && button.getClientRects().length > 0,
-      );
       const nav = document.querySelector("nav");
-      const limitTop =
-        Math.max(
-          header?.getBoundingClientRect().bottom ?? 0,
-          progress?.getBoundingClientRect().bottom ?? 0,
-          title?.getBoundingClientRect().bottom ?? 0,
-        ) + gap;
-      const navTop = nav?.getBoundingClientRect().top ?? window.innerHeight;
-      let top = navTop - height - gap;
-      if (done) top = done.getBoundingClientRect().top - height - gap;
-      if (top < limitTop) top = limitTop;
-      if (done) {
-        const doneTop = done.getBoundingClientRect().top;
-        if (top + height > doneTop - gap) top = Math.max(gap, doneTop - height - gap);
-      }
+      if (!nav) return;
+      const navBox = nav.getBoundingClientRect();
       const shell = document.querySelector("header .app-shell");
       const shellBox = shell?.getBoundingClientRect();
-      const left = (shellBox?.left ?? 12) + 8;
-      const width = Math.max(160, (shellBox?.width ?? window.innerWidth - 24) - 16);
-      setBox({ top: Math.round(top), left: Math.round(left), width: Math.round(width) });
+      setBox({
+        top: Math.round(navBox.top),
+        left: Math.round(shellBox?.left ?? navBox.left),
+        width: Math.round(shellBox?.width ?? navBox.width),
+        height: Math.round(navBox.height),
+      });
     }
     place();
     const frame = requestAnimationFrame(place);
@@ -576,7 +606,7 @@ function UndoToast({ text, onUndo }: { text: string; onUndo: () => void }) {
     <div
       ref={ref}
       className="undo-toast"
-      style={box ? { top: box.top, left: box.left, width: box.width } : { top: -1000, left: 0, width: "min(40rem, calc(100% - 1.5rem))" }}
+      style={box ? { top: box.top, left: box.left, width: box.width, height: box.height } : { top: -1000, left: 0, width: 320, height: 56 }}
     >
       <div role="status" className="undo-toast-bar">
         <p className="min-w-0 flex-1 truncate text-base">{text}</p>
@@ -678,13 +708,14 @@ function Now({
         <p className="text-base text-muted">{placeLabel(current)}</p>
         <div className="now-card mt-3 flex min-h-0 flex-1 flex-col overflow-hidden rounded-card border border-line bg-surface p-4">
           <div className="now-card-head">
-            <div className="now-card-meta flex items-center gap-3">
-              <p className="min-w-0 flex-1 truncate text-sm tracking-widest text-gold uppercase">
+            <div className="now-card-meta flex flex-wrap items-center gap-x-3 gap-y-1">
+              <p className="min-w-0 truncate text-sm tracking-widest text-gold uppercase">
                 Step {current.n}
                 {current.ctx ? ` · ${current.ctx}` : ` · ${KIND_LABEL[current.blockKind] ?? "Step"}`}
                 {current.optional ? " · Optional" : ""}
               </p>
-              <button type="button" onClick={onShowGuide} className="how-combat shrink-0 text-base text-gold">
+              <StepWatch step={current} />
+              <button type="button" onClick={onShowGuide} className="how-combat ml-auto shrink-0 text-base text-gold">
                 How combat works
               </button>
             </div>
@@ -701,7 +732,6 @@ function Now({
             </ul>
           ) : null}
           <FightWeakness stepId={current.id} onShowGuide={onShowGuide} />
-          {current.watch != null ? <StepWatch seconds={current.watch} /> : null}
           {current.lines && current.lines.length > 0 ? (
             <ul className="mt-3 flex flex-col gap-1 text-lg text-fg">
               {current.lines.map((line) => (
@@ -850,7 +880,7 @@ function BlockCard({
                   {step.text}
                 </p>
                 <FightWeakness stepId={step.id} onShowGuide={onShowGuide} />
-                {step.watch != null ? <StepWatch seconds={step.watch} /> : null}
+                <StepWatch step={step} />
                 {step.lines && step.lines.length > 0 ? (
                   <p className="mt-1 text-base text-muted">{step.lines.join(" · ")}</p>
                 ) : null}
@@ -885,15 +915,16 @@ function BlockCard({
   );
 }
 
-function StepWatch({ seconds }: { seconds: number }) {
-  const href = videoAt(seconds);
+function watchHref(step: FlatStep) {
+  if (step.watch != null) return videoAt(step.watch);
+  return pictureFor(step.id)?.youtube_link;
+}
+
+function StepWatch({ step }: { step: FlatStep }) {
+  const href = watchHref(step);
+  if (!href) return null;
   return (
-    <a
-      className="step-watch mt-2 inline-flex min-h-11 items-center text-base text-gold underline underline-offset-4"
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-    >
+    <a className="step-watch" href={href} target="_blank" rel="noreferrer">
       {watchFromLabel(href)}
     </a>
   );
@@ -959,26 +990,75 @@ function TabButton({
   );
 }
 
-function About({ guideOpen, onClose }: { guideOpen: boolean; onClose: () => void }) {
-  const reset = useRun((s) => s.reset);
+function About({
+  guideOpen,
+  onClose,
+  onReset,
+  opener,
+}: {
+  guideOpen: boolean;
+  onClose: () => void;
+  onReset: () => void;
+  opener: HTMLElement | null;
+}) {
   const exportProgress = useRun((s) => s.exportProgress);
   const importProgress = useRun((s) => s.importProgress);
-  const [armed, setArmed] = useState(false);
+  const restoreBackup = useRun((s) => s.restoreBackup);
+  const panelRef = useRef<HTMLElement>(null);
+  const closeRef = useRef<HTMLButtonElement>(null);
+  const onCloseRef = useRef(onClose);
+  const openerRef = useRef(opener);
+  onCloseRef.current = onClose;
+  openerRef.current = opener;
   const [paste, setPaste] = useState("");
   const [message, setMessage] = useState("");
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (!panel) return;
+    const release = holdBackground(panel);
+    closeRef.current?.focus();
+    function onKey(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        event.stopPropagation();
+        onCloseRef.current();
+        return;
+      }
+      if (event.key !== "Tab" || !panel) return;
+      const items = focusableIn(panel);
+      if (!items.length) return;
+      event.preventDefault();
+      event.stopPropagation();
+      const current = items.indexOf(document.activeElement as HTMLElement);
+      items[nextTabIndex(items.length, current, event.shiftKey)]?.focus();
+    }
+    document.addEventListener("keydown", onKey, true);
+    return () => {
+      document.removeEventListener("keydown", onKey, true);
+      release();
+      const openerNode = openerRef.current;
+      if (openerNode?.isConnected) openerNode.focus();
+    };
+  }, []);
   return (
-    <section className="about-panel rounded-card border border-line bg-surface p-4">
+    <section
+      ref={panelRef}
+      className="about-panel rounded-card border border-line bg-surface p-4"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="about-title"
+    >
       <div className="flex items-start justify-between gap-3">
-        <h2 className="font-display text-xl font-semibold">The sheet, as a checklist</h2>
-        <button type="button" onClick={onClose} className="min-h-11 text-base text-gold">
+        <h2 id="about-title" className="font-display text-xl font-semibold">The sheet, as a checklist</h2>
+        <button ref={closeRef} type="button" onClick={onClose} className="min-h-11 text-base text-gold">
           Close
         </button>
       </div>
       <p className="mt-2 text-base text-muted">{route.meta.note}</p>
       <CombatGuide startOpen={guideOpen} />
       <p className="mt-2 text-base text-muted">
-        On the Now tab, Space or Enter marks the current step done when nothing else is focused. S skips. Z or Backspace
-        undoes. A skip or a done step can also be undone from the note under the title.
+        On the Now tab, Space or Enter marks the current step done, including when the step details are focused. A
+        button, link, or text field keeps its own key. S skips. Z or Backspace undoes.
       </p>
       <a className="mt-3 inline-block text-base text-gold underline underline-offset-4" href={route.meta.video} target="_blank" rel="noreferrer">
         Watch the run
@@ -1033,26 +1113,21 @@ function About({ guideOpen, onClose }: { guideOpen: boolean; onClose: () => void
         Restore pasted progress
       </button>
       {message ? <p className="mt-2 text-base text-muted">{message}</p> : null}
-      <div className="mt-4">
-        {armed ? (
-          <button
-            type="button"
-            onClick={() => {
-              reset();
-              setArmed(false);
-              onClose();
-            }}
-            className="inline-flex min-h-11 items-center gap-2 rounded-card border border-ember px-3 text-base text-ember"
-          >
-            <RotateCcw className="size-4" />
-            Confirm reset
-          </button>
-        ) : (
-          <button type="button" onClick={() => setArmed(true)} className="inline-flex min-h-11 items-center gap-2 text-base text-muted">
-            <RotateCcw className="size-4" />
-            Reset progress
-          </button>
-        )}
+      <div className="mt-4 flex flex-wrap gap-2">
+        <button type="button" onClick={onReset} className="inline-flex min-h-11 items-center gap-2 text-base text-muted">
+          <RotateCcw className="size-4" />
+          Reset progress
+        </button>
+        <button
+          type="button"
+          className="min-h-11 rounded-card border border-line px-3 text-base"
+          onClick={() => {
+            const result = restoreBackup();
+            setMessage(result.ok ? "Backed-up progress restored." : result.error);
+          }}
+        >
+          Restore backed-up progress
+        </button>
       </div>
     </section>
   );

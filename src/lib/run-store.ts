@@ -3,6 +3,7 @@ import { createJSONStorage, persist } from "zustand/middleware";
 import { route, type Step } from "@/data/route";
 import { legacyIds } from "@/data/legacy-ids";
 import {
+  BACKUP_KEY,
   RUN_KEY,
   preserveBackup,
   readMigration,
@@ -137,6 +138,7 @@ type RunState = {
   setResumeAfter: (id: string | null) => void;
   exportProgress: () => string;
   importProgress: (raw: string) => { ok: true } | { ok: false; error: string };
+  restoreBackup: () => { ok: true } | { ok: false; error: string };
   markBeforeChapter: (chapterId: string) => void;
   setHydrated: (value: boolean) => void;
 };
@@ -317,6 +319,26 @@ export const useRun = create<RunState>()(
               : null;
         set({ done, skipped, history, jumps: history.map(() => 1), notice, resumeAfterId });
         return { ok: true };
+      },
+      restoreBackup: () => {
+        const raw = browserKv()?.getItem(BACKUP_KEY);
+        if (!raw) return { ok: false, error: "No backed-up progress on this device." };
+        let data: unknown;
+        try {
+          data = JSON.parse(raw);
+        } catch {
+          return { ok: false, error: "That backup could not be read." };
+        }
+        const obj = data && typeof data === "object" ? (data as Record<string, unknown>) : null;
+        const state = obj && obj.state && typeof obj.state === "object" ? (obj.state as Record<string, unknown>) : obj;
+        if (!state) return { ok: false, error: "No backed-up progress on this device." };
+        const saved = state.done;
+        const count =
+          saved && typeof saved === "object"
+            ? Object.values(saved as Record<string, unknown>).filter(Boolean).length
+            : 0;
+        if (count === 0) return { ok: false, error: "No backed-up progress on this device." };
+        return get().importProgress(JSON.stringify(state));
       },
       markBeforeChapter: (chapterId) => {
         const { done, history, jumps } = get();
