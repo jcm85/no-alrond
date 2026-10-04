@@ -1,7 +1,7 @@
 {
  "throne-ch-1-900-ca73a5": {
   "file": "/step-pics/throne-ch-1-900-ca73a5.webp",
-  "videoSeconds": 71.0,
+  "videoSeconds": 71,
   "videoTime": "0:01:11",
   "approx": false,
   "confidence": "high",
@@ -19,7 +19,7 @@
  },
  "throne-ch-1-900-88f5ed": {
   "file": "/step-pics/throne-ch-1-900-88f5ed.webp",
-  "videoSeconds": 93.0,
+  "videoSeconds": 93,
   "videoTime": "0:01:33",
   "approx": false,
   "confidence": "high",
@@ -37,7 +37,7 @@
  },
  "throne-ch-1-900-d0f2b7": {
   "file": "/step-pics/throne-ch-1-900-d0f2b7.webp",
-  "videoSeconds": 104.0,
+  "videoSeconds": 104,
   "videoTime": "0:01:44",
   "approx": false,
   "confidence": "high",
@@ -46,7 +46,7 @@
  },
  "throne-ch-1-900-bd473a": {
   "file": "/step-pics/throne-ch-1-900-bd473a.webp",
-  "videoSeconds": 105.0,
+  "videoSeconds": 105,
   "videoTime": "0:01:45",
   "approx": false,
   "confidence": "high",
@@ -55,7 +55,7 @@
  },
  "throne-ch-1-900-31bcfe": {
   "file": "/step-pics/throne-ch-1-900-31bcfe.webp",
-  "videoSeconds": 106.0,
+  "videoSeconds": 106,
   "videoTime": "0:01:46",
   "approx": true,
   "confidence": "low",
@@ -118,7 +118,7 @@
  },
  "throne-ch-1-900-18f4e4": {
   "file": "/step-pics/throne-ch-1-900-18f4e4.webp",
-  "videoSeconds": 148.0,
+  "videoSeconds": 148,
   "videoTime": "0:02:28",
   "approx": false,
   "confidence": "high",
@@ -136,7 +136,7 @@
  },
  "throne-ch-1-900-34e5f1": {
   "file": "/step-pics/throne-ch-1-900-34e5f1.webp",
-  "videoSeconds": 165.0,
+  "videoSeconds": 165,
   "videoTime": "0:02:45",
   "approx": false,
   "confidence": "high",
@@ -163,7 +163,7 @@
  },
  "throne-ch-1-1-acd678": {
   "file": "/step-pics/throne-ch-1-1-acd678.webp",
-  "videoSeconds": 192.0,
+  "videoSeconds": 192,
   "videoTime": "0:03:12",
   "approx": false,
   "confidence": "high",
@@ -172,7 +172,7 @@
  },
  "throne-ch-1-1-ff15c6": {
   "file": "/step-pics/throne-ch-1-1-ff15c6.webp",
-  "videoSeconds": 192.0,
+  "videoSeconds": 192,
   "videoTime": "0:03:12",
   "approx": true,
   "confidence": "medium",
@@ -181,7 +181,7 @@
  },
  "throne-ch-1-1-253a85": {
   "file": "/step-pics/throne-ch-1-1-253a85.webp",
-  "videoSeconds": 192.0,
+  "videoSeconds": 192,
   "videoTime": "0:03:12",
   "approx": true,
   "confidence": "low",
@@ -190,7 +190,7 @@
  },
  "throne-ch-1-1-daedf8": {
   "file": "/step-pics/throne-ch-1-1-daedf8.webp",
-  "videoSeconds": 192.0,
+  "videoSeconds": 192,
   "videoTime": "0:03:12",
   "approx": true,
   "confidence": "medium",
@@ -208,7 +208,7 @@
  },
  "throne-ch-1-1-3b4661": {
   "file": "/step-pics/throne-ch-1-1-3b4661.webp",
-  "videoSeconds": 199.0,
+  "videoSeconds": 199,
   "videoTime": "0:03:19",
   "approx": true,
   "confidence": "medium",
@@ -261,7 +261,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=261"
  },
  "throne-ch-1-1-84df79": {
-  "file": "/step-pics/throne-ch-1-1-84df79.jpg",
+  "file": "/step-pics/throne-ch-1-1-84df79.webp",
   "videoSeconds": 274,
   "videoTime": "0:04:34",
   "approx": false,
@@ -280,7 +280,7 @@
  },
  "throne-ch-1-1-14d1fd": {
   "file": "/step-pics/throne-ch-1-1-14d1fd.webp",
-  "videoSeconds": 282.0,
+  "videoSeconds": 282,
   "videoTime": "0:04:42",
   "approx": false,
   "confidence": "high",
@@ -289,7 +289,7 @@
  },
  "throne-ch-1-1-8eebe3": {
   "file": "/step-pics/throne-ch-1-1-8eebe3.webp",
-  "videoSeconds": 288.0,
+  "videoSeconds": 288,
   "videoTime": "0:04:48",
   "approx": true,
   "confidence": "low",
@@ -316,7 +316,7 @@
  },
  "throne-ch-1-1-460fb6": {
   "file": "/step-pics/throne-ch-1-1-460fb6.webp",
-  "videoSeconds": 302.0,
+  "videoSeconds": 302,
   "videoTime": "0:05:02",
   "approx": false,
   "confidence": "high",
@@ -343,7 +343,7 @@
  },
  "throne-ch-1-1-7e2f52": {
   "file": "/step-pics/throne-ch-1-1-7e2f52.webp",
-  "videoSeconds": 312.0,
+  "videoSeconds": 312,
   "videoTime": "0:05:12",
   "approx": true,
   "confidence": "medium",
@@ -361,7 +361,7 @@
  },
  "throne-ch-1-900-e015d0": {
   "file": "/step-pics/throne-ch-1-900-e015d0.webp",
-  "videoSeconds": 324.0,
+  "videoSeconds": 324,
   "videoTime": "0:05:24",
   "approx": false,
   "confidence": "high",
@@ -379,7 +379,7 @@
  },
  "throne-ch-1-1-5536ab": {
   "file": "/step-pics/throne-ch-1-1-5536ab.webp",
-  "videoSeconds": 396.0,
+  "videoSeconds": 396,
   "videoTime": "0:06:36",
   "approx": false,
   "confidence": "high",
@@ -388,7 +388,7 @@
  },
  "throne-ch-1-1-219361": {
   "file": "/step-pics/throne-ch-1-1-219361.webp",
-  "videoSeconds": 417.0,
+  "videoSeconds": 417,
   "videoTime": "0:06:57",
   "approx": true,
   "confidence": "low",
@@ -396,8 +396,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=414"
  },
  "throne-ch-1-1-76aaab": {
-  "file": "/step-pics/throne-ch-1-1-76aaab.jpg",
-  "videoSeconds": 441.0,
+  "file": "/step-pics/throne-ch-1-1-76aaab.webp",
+  "videoSeconds": 441,
   "videoTime": "0:07:21",
   "approx": false,
   "confidence": "medium",
@@ -406,7 +406,7 @@
  },
  "throne-ch-1-1-57ffa0": {
   "file": "/step-pics/throne-ch-1-1-57ffa0.webp",
-  "videoSeconds": 452.0,
+  "videoSeconds": 452,
   "videoTime": "0:07:32",
   "approx": true,
   "confidence": "medium",
@@ -433,7 +433,7 @@
  },
  "throne-ch-1-1-e70eb9": {
   "file": "/step-pics/throne-ch-1-1-e70eb9.webp",
-  "videoSeconds": 460.0,
+  "videoSeconds": 460,
   "videoTime": "0:07:40",
   "approx": true,
   "confidence": "medium",
@@ -499,7 +499,7 @@
   "videoSeconds": 496.5,
   "videoTime": "0:08:16",
   "approx": true,
-  "confidence": "high",
+  "confidence": "low",
   "source": "new",
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=493"
  },
@@ -532,7 +532,7 @@
  },
  "throne-ch-1-1-36b5cb": {
   "file": "/step-pics/throne-ch-1-1-36b5cb.webp",
-  "videoSeconds": 507.0,
+  "videoSeconds": 507,
   "videoTime": "0:08:27",
   "approx": true,
   "confidence": "medium",
@@ -541,7 +541,7 @@
  },
  "throne-ch-1-1-bca5ca": {
   "file": "/step-pics/throne-ch-1-1-bca5ca.webp",
-  "videoSeconds": 507.0,
+  "videoSeconds": 507,
   "videoTime": "0:08:27",
   "approx": true,
   "confidence": "high",
@@ -549,7 +549,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=504"
  },
  "throne-ch-1-1-6f1b3c": {
-  "file": "/step-pics/throne-ch-1-1-6f1b3c.jpg",
+  "file": "/step-pics/throne-ch-1-1-6f1b3c.webp",
   "videoSeconds": 507.5,
   "videoTime": "0:08:27",
   "approx": false,
@@ -567,7 +567,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=507"
  },
  "throne-ch-1-1-55eed8": {
-  "file": "/step-pics/throne-ch-1-1-55eed8.jpg",
+  "file": "/step-pics/throne-ch-1-1-55eed8.webp",
   "videoSeconds": 548.5,
   "videoTime": "0:09:08",
   "approx": false,
@@ -577,7 +577,7 @@
  },
  "throne-ch-1-1-e35f5f": {
   "file": "/step-pics/throne-ch-1-1-e35f5f.webp",
-  "videoSeconds": 560.0,
+  "videoSeconds": 560,
   "videoTime": "0:09:20",
   "approx": false,
   "confidence": "high",
@@ -586,7 +586,7 @@
  },
  "throne-ch-1-1-aa8862": {
   "file": "/step-pics/throne-ch-1-1-aa8862.webp",
-  "videoSeconds": 583.0,
+  "videoSeconds": 583,
   "videoTime": "0:09:43",
   "approx": true,
   "confidence": "low",
@@ -613,7 +613,7 @@
  },
  "throne-ch-1-1-9ec165": {
   "file": "/step-pics/throne-ch-1-1-9ec165.webp",
-  "videoSeconds": 611.0,
+  "videoSeconds": 611,
   "videoTime": "0:10:11",
   "approx": true,
   "confidence": "medium",
@@ -649,7 +649,7 @@
  },
  "throne-ch-1-1-bafc51": {
   "file": "/step-pics/throne-ch-1-1-bafc51.webp",
-  "videoSeconds": 637.0,
+  "videoSeconds": 637,
   "videoTime": "0:10:37",
   "approx": false,
   "confidence": "high",
@@ -657,7 +657,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=634"
  },
  "throne-ch-1-1-f06d87": {
-  "file": "/step-pics/throne-ch-1-1-f06d87.jpg",
+  "file": "/step-pics/throne-ch-1-1-f06d87.webp",
   "videoSeconds": 641.5,
   "videoTime": "0:10:41",
   "approx": false,
@@ -675,8 +675,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=638"
  },
  "throne-ch-1-1-22b194": {
-  "file": "/step-pics/throne-ch-1-1-22b194.jpg",
-  "videoSeconds": 675.0,
+  "file": "/step-pics/throne-ch-1-1-22b194.webp",
+  "videoSeconds": 675,
   "videoTime": "0:11:15",
   "approx": false,
   "confidence": "medium",
@@ -685,7 +685,7 @@
  },
  "throne-ch-1-1-a0b2d7": {
   "file": "/step-pics/throne-ch-1-1-a0b2d7.webp",
-  "videoSeconds": 688.0,
+  "videoSeconds": 688,
   "videoTime": "0:11:28",
   "approx": false,
   "confidence": "high",
@@ -694,7 +694,7 @@
  },
  "throne-ch-1-2-6f1b3c": {
   "file": "/step-pics/throne-ch-1-2-6f1b3c.webp",
-  "videoSeconds": 706.0,
+  "videoSeconds": 706,
   "videoTime": "0:11:46",
   "approx": false,
   "confidence": "high",
@@ -703,7 +703,7 @@
  },
  "throne-ch-1-1-d0bf54": {
   "file": "/step-pics/throne-ch-1-1-d0bf54.webp",
-  "videoSeconds": 714.0,
+  "videoSeconds": 714,
   "videoTime": "0:11:54",
   "approx": true,
   "confidence": "high",
@@ -712,7 +712,7 @@
  },
  "throne-ch-1-1-2c77c2": {
   "file": "/step-pics/throne-ch-1-1-2c77c2.webp",
-  "videoSeconds": 714.0,
+  "videoSeconds": 714,
   "videoTime": "0:11:54",
   "approx": false,
   "confidence": "high",
@@ -720,8 +720,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=711"
  },
  "throne-ch-1-1-a8a066": {
-  "file": "/step-pics/throne-ch-1-1-a8a066.jpg",
-  "videoSeconds": 762.0,
+  "file": "/step-pics/throne-ch-1-1-a8a066.webp",
+  "videoSeconds": 762,
   "videoTime": "0:12:42",
   "approx": false,
   "confidence": "medium",
@@ -730,7 +730,7 @@
  },
  "throne-ch-1-1-a792df": {
   "file": "/step-pics/throne-ch-1-1-a792df.webp",
-  "videoSeconds": 786.0,
+  "videoSeconds": 786,
   "videoTime": "0:13:06",
   "approx": true,
   "confidence": "low",
@@ -739,7 +739,7 @@
  },
  "throne-ch-1-1-c1c127": {
   "file": "/step-pics/throne-ch-1-1-c1c127.webp",
-  "videoSeconds": 791.0,
+  "videoSeconds": 791,
   "videoTime": "0:13:11",
   "approx": false,
   "confidence": "high",
@@ -747,8 +747,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=788"
  },
  "throne-ch-1-1-752857": {
-  "file": "/step-pics/throne-ch-1-1-752857.jpg",
-  "videoSeconds": 829.0,
+  "file": "/step-pics/throne-ch-1-1-752857.webp",
+  "videoSeconds": 829,
   "videoTime": "0:13:49",
   "approx": false,
   "confidence": "medium",
@@ -766,7 +766,7 @@
  },
  "throne-ch-1-1-9a9d02": {
   "file": "/step-pics/throne-ch-1-1-9a9d02.webp",
-  "videoSeconds": 873.0,
+  "videoSeconds": 873,
   "videoTime": "0:14:33",
   "approx": true,
   "confidence": "low",
@@ -774,7 +774,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=870"
  },
  "throne-ch-1-1-8b95b8": {
-  "file": "/step-pics/throne-ch-1-1-8b95b8.jpg",
+  "file": "/step-pics/throne-ch-1-1-8b95b8.webp",
   "videoSeconds": 893.5,
   "videoTime": "0:14:53",
   "approx": false,
@@ -793,7 +793,7 @@
  },
  "throne-ch-1-1-78b0f7": {
   "file": "/step-pics/throne-ch-1-1-78b0f7.webp",
-  "videoSeconds": 908.0,
+  "videoSeconds": 908,
   "videoTime": "0:15:08",
   "approx": true,
   "confidence": "high",
@@ -820,7 +820,7 @@
  },
  "throne-ch-1-1-28e4f5": {
   "file": "/step-pics/throne-ch-1-1-28e4f5.webp",
-  "videoSeconds": 913.0,
+  "videoSeconds": 913,
   "videoTime": "0:15:13",
   "approx": true,
   "confidence": "medium",
@@ -837,7 +837,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=960"
  },
  "throne-ch-1-1-b2f9ba": {
-  "file": "/step-pics/throne-ch-1-1-b2f9ba.jpg",
+  "file": "/step-pics/throne-ch-1-1-b2f9ba.webp",
   "videoSeconds": 972.5,
   "videoTime": "0:16:12",
   "approx": false,
@@ -855,7 +855,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=981"
  },
  "throne-ch-1-1-48b7f2": {
-  "file": "/step-pics/throne-ch-1-1-48b7f2.jpg",
+  "file": "/step-pics/throne-ch-1-1-48b7f2.webp",
   "videoSeconds": 999.5,
   "videoTime": "0:16:39",
   "approx": false,
@@ -873,7 +873,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1017"
  },
  "throne-ch-1-1-2fbe54": {
-  "file": "/step-pics/throne-ch-1-1-2fbe54.jpg",
+  "file": "/step-pics/throne-ch-1-1-2fbe54.webp",
   "videoSeconds": 1032.5,
   "videoTime": "0:17:12",
   "approx": false,
@@ -883,7 +883,7 @@
  },
  "throne-ch-1-1-feb720": {
   "file": "/step-pics/throne-ch-1-1-feb720.webp",
-  "videoSeconds": 1041.0,
+  "videoSeconds": 1041,
   "videoTime": "0:17:21",
   "approx": true,
   "confidence": "low",
@@ -892,7 +892,7 @@
  },
  "throne-ch-1-1-c813e8": {
   "file": "/step-pics/throne-ch-1-1-c813e8.webp",
-  "videoSeconds": 1043.0,
+  "videoSeconds": 1043,
   "videoTime": "0:17:23",
   "approx": true,
   "confidence": "low",
@@ -910,7 +910,7 @@
  },
  "throne-ch-1-1-2fa6ec": {
   "file": "/step-pics/throne-ch-1-1-2fa6ec.webp",
-  "videoSeconds": 1059.0,
+  "videoSeconds": 1059,
   "videoTime": "0:17:39",
   "approx": true,
   "confidence": "medium",
@@ -928,7 +928,7 @@
  },
  "throne-ch-1-1-a0459f": {
   "file": "/step-pics/throne-ch-1-1-a0459f.webp",
-  "videoSeconds": 1070.0,
+  "videoSeconds": 1070,
   "videoTime": "0:17:50",
   "approx": true,
   "confidence": "medium",
@@ -937,7 +937,7 @@
  },
  "throne-ch-1-1-2fc023": {
   "file": "/step-pics/throne-ch-1-1-2fc023.webp",
-  "videoSeconds": 1074.0,
+  "videoSeconds": 1074,
   "videoTime": "0:17:54",
   "approx": true,
   "confidence": "low",
@@ -964,7 +964,7 @@
  },
  "throne-ch-1-1-84a466": {
   "file": "/step-pics/throne-ch-1-1-84a466.webp",
-  "videoSeconds": 1092.0,
+  "videoSeconds": 1092,
   "videoTime": "0:18:12",
   "approx": true,
   "confidence": "high",
@@ -991,7 +991,7 @@
  },
  "throne-ch-1-1-c5d88e": {
   "file": "/step-pics/throne-ch-1-1-c5d88e.webp",
-  "videoSeconds": 1131.0,
+  "videoSeconds": 1131,
   "videoTime": "0:18:51",
   "approx": true,
   "confidence": "low",
@@ -1000,7 +1000,7 @@
  },
  "throne-ch-1-900-263edd": {
   "file": "/step-pics/throne-ch-1-900-263edd.webp",
-  "videoSeconds": 1131.0,
+  "videoSeconds": 1131,
   "videoTime": "0:18:51",
   "approx": false,
   "confidence": "high",
@@ -1018,7 +1018,7 @@
  },
  "throne-ch-1-1-0c70df": {
   "file": "/step-pics/throne-ch-1-1-0c70df.webp",
-  "videoSeconds": 1148.0,
+  "videoSeconds": 1148,
   "videoTime": "0:19:08",
   "approx": true,
   "confidence": "low",
@@ -1045,7 +1045,7 @@
  },
  "throne-ch-1-900-f44214": {
   "file": "/step-pics/throne-ch-1-900-f44214.webp",
-  "videoSeconds": 1235.0,
+  "videoSeconds": 1235,
   "videoTime": "0:20:35",
   "approx": false,
   "confidence": "high",
@@ -1063,7 +1063,7 @@
  },
  "partitio-ch-2-1-3acf7f": {
   "file": "/step-pics/partitio-ch-2-1-3acf7f.webp",
-  "videoSeconds": 1319.0,
+  "videoSeconds": 1319,
   "videoTime": "0:21:59",
   "approx": false,
   "confidence": "high",
@@ -1071,7 +1071,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1316"
  },
  "partitio-ch-2-1-9fbb5f": {
-  "file": "/step-pics/partitio-ch-2-1-9fbb5f.jpg",
+  "file": "/step-pics/partitio-ch-2-1-9fbb5f.webp",
   "videoSeconds": 1321.5,
   "videoTime": "0:22:01",
   "approx": false,
@@ -1126,7 +1126,7 @@
  },
  "partitio-ch-2-1-f86179": {
   "file": "/step-pics/partitio-ch-2-1-f86179.webp",
-  "videoSeconds": 1358.0,
+  "videoSeconds": 1358,
   "videoTime": "0:22:38",
   "approx": false,
   "confidence": "high",
@@ -1144,10 +1144,10 @@
  },
  "partitio-ch-2-1-481bc4": {
   "file": "/step-pics/partitio-ch-2-1-481bc4.webp",
-  "videoSeconds": 1369.0,
+  "videoSeconds": 1369,
   "videoTime": "0:22:49",
-  "approx": false,
-  "confidence": "high",
+  "approx": true,
+  "confidence": "low",
   "source": "new",
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1366"
  },
@@ -1171,7 +1171,7 @@
  },
  "partitio-ch-2-1-aa999c": {
   "file": "/step-pics/partitio-ch-2-1-aa999c.webp",
-  "videoSeconds": 1380.0,
+  "videoSeconds": 1380,
   "videoTime": "0:23:00",
   "approx": true,
   "confidence": "high",
@@ -1188,8 +1188,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1379"
  },
  "partitio-ch-2-1-d84c2b": {
-  "file": "/step-pics/partitio-ch-2-1-d84c2b.jpg",
-  "videoSeconds": 1405.0,
+  "file": "/step-pics/partitio-ch-2-1-d84c2b.webp",
+  "videoSeconds": 1405,
   "videoTime": "0:23:25",
   "approx": false,
   "confidence": "medium",
@@ -1206,8 +1206,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1448"
  },
  "partitio-ch-2-1-6c0536": {
-  "file": "/step-pics/partitio-ch-2-1-6c0536.jpg",
-  "videoSeconds": 1475.0,
+  "file": "/step-pics/partitio-ch-2-1-6c0536.webp",
+  "videoSeconds": 1475,
   "videoTime": "0:24:35",
   "approx": false,
   "confidence": "medium",
@@ -1216,7 +1216,7 @@
  },
  "partitio-ch-2-2-2283e2": {
   "file": "/step-pics/partitio-ch-2-2-2283e2.webp",
-  "videoSeconds": 1492.0,
+  "videoSeconds": 1492,
   "videoTime": "0:24:52",
   "approx": true,
   "confidence": "medium",
@@ -1225,7 +1225,7 @@
  },
  "partitio-ch-2-1-378e7b": {
   "file": "/step-pics/partitio-ch-2-1-378e7b.webp",
-  "videoSeconds": 1512.0,
+  "videoSeconds": 1512,
   "videoTime": "0:25:12",
   "approx": true,
   "confidence": "medium",
@@ -1251,8 +1251,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1513"
  },
  "partitio-ch-2-1-04c7d7": {
-  "file": "/step-pics/partitio-ch-2-1-04c7d7.jpg",
-  "videoSeconds": 1535.0,
+  "file": "/step-pics/partitio-ch-2-1-04c7d7.webp",
+  "videoSeconds": 1535,
   "videoTime": "0:25:35",
   "approx": false,
   "confidence": "high",
@@ -1270,7 +1270,7 @@
  },
  "partitio-ch-2-1-4761fe": {
   "file": "/step-pics/partitio-ch-2-1-4761fe.webp",
-  "videoSeconds": 1550.0,
+  "videoSeconds": 1550,
   "videoTime": "0:25:50",
   "approx": true,
   "confidence": "medium",
@@ -1297,7 +1297,7 @@
  },
  "partitio-ch-2-900-588054": {
   "file": "/step-pics/partitio-ch-2-900-588054.webp",
-  "videoSeconds": 1580.0,
+  "videoSeconds": 1580,
   "videoTime": "0:26:20",
   "approx": false,
   "confidence": "high",
@@ -1306,7 +1306,7 @@
  },
  "partitio-ch-2-1-333eee": {
   "file": "/step-pics/partitio-ch-2-1-333eee.webp",
-  "videoSeconds": 1598.0,
+  "videoSeconds": 1598,
   "videoTime": "0:26:38",
   "approx": false,
   "confidence": "high",
@@ -1315,7 +1315,7 @@
  },
  "partitio-ch-2-1-5d467d": {
   "file": "/step-pics/partitio-ch-2-1-5d467d.webp",
-  "videoSeconds": 1601.0,
+  "videoSeconds": 1601,
   "videoTime": "0:26:41",
   "approx": true,
   "confidence": "low",
@@ -1324,7 +1324,7 @@
  },
  "partitio-ch-2-1-20657b": {
   "file": "/step-pics/partitio-ch-2-1-20657b.webp",
-  "videoSeconds": 1617.0,
+  "videoSeconds": 1617,
   "videoTime": "0:26:57",
   "approx": true,
   "confidence": "medium",
@@ -1342,7 +1342,7 @@
  },
  "partitio-ch-2-1-701640": {
   "file": "/step-pics/partitio-ch-2-1-701640.webp",
-  "videoSeconds": 1636.0,
+  "videoSeconds": 1636,
   "videoTime": "0:27:16",
   "approx": true,
   "confidence": "high",
@@ -1387,7 +1387,7 @@
  },
  "partitio-ch-2-1-fb6262": {
   "file": "/step-pics/partitio-ch-2-1-fb6262.webp",
-  "videoSeconds": 1649.0,
+  "videoSeconds": 1649,
   "videoTime": "0:27:29",
   "approx": true,
   "confidence": "medium",
@@ -1405,7 +1405,7 @@
  },
  "partitio-ch-2-1-50aede": {
   "file": "/step-pics/partitio-ch-2-1-50aede.webp",
-  "videoSeconds": 1661.0,
+  "videoSeconds": 1661,
   "videoTime": "0:27:41",
   "approx": true,
   "confidence": "low",
@@ -1413,7 +1413,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1658"
  },
  "partitio-ch-2-1-d6adbe": {
-  "file": "/step-pics/partitio-ch-2-1-d6adbe.jpg",
+  "file": "/step-pics/partitio-ch-2-1-d6adbe.webp",
   "videoSeconds": 1673,
   "videoTime": "0:27:53",
   "approx": false,
@@ -1423,7 +1423,7 @@
  },
  "partitio-ch-2-1-d31835": {
   "file": "/step-pics/partitio-ch-2-1-d31835.webp",
-  "videoSeconds": 1680.0,
+  "videoSeconds": 1680,
   "videoTime": "0:28:00",
   "approx": false,
   "confidence": "high",
@@ -1432,7 +1432,7 @@
  },
  "partitio-ch-2-1-684b4c": {
   "file": "/step-pics/partitio-ch-2-1-684b4c.webp",
-  "videoSeconds": 1684.0,
+  "videoSeconds": 1684,
   "videoTime": "0:28:04",
   "approx": true,
   "confidence": "medium",
@@ -1441,7 +1441,7 @@
  },
  "partitio-ch-2-1-de3f54": {
   "file": "/step-pics/partitio-ch-2-1-de3f54.webp",
-  "videoSeconds": 1687.0,
+  "videoSeconds": 1687,
   "videoTime": "0:28:07",
   "approx": true,
   "confidence": "low",
@@ -1477,7 +1477,7 @@
  },
  "partitio-ch-2-1-fe6045": {
   "file": "/step-pics/partitio-ch-2-1-fe6045.webp",
-  "videoSeconds": 1699.0,
+  "videoSeconds": 1699,
   "videoTime": "0:28:19",
   "approx": false,
   "confidence": "high",
@@ -1486,7 +1486,7 @@
  },
  "partitio-ch-2-1-8bbdbd": {
   "file": "/step-pics/partitio-ch-2-1-8bbdbd.webp",
-  "videoSeconds": 1699.0,
+  "videoSeconds": 1699,
   "videoTime": "0:28:19",
   "approx": true,
   "confidence": "medium",
@@ -1495,7 +1495,7 @@
  },
  "partitio-ch-2-1-bf583c": {
   "file": "/step-pics/partitio-ch-2-1-bf583c.webp",
-  "videoSeconds": 1715.0,
+  "videoSeconds": 1715,
   "videoTime": "0:28:35",
   "approx": true,
   "confidence": "medium",
@@ -1531,7 +1531,7 @@
  },
  "partitio-ch-2-1-b0617b": {
   "file": "/step-pics/partitio-ch-2-1-b0617b.webp",
-  "videoSeconds": 1729.0,
+  "videoSeconds": 1729,
   "videoTime": "0:28:49",
   "approx": true,
   "confidence": "high",
@@ -1540,7 +1540,7 @@
  },
  "partitio-ch-2-1-b00161": {
   "file": "/step-pics/partitio-ch-2-1-b00161.webp",
-  "videoSeconds": 1729.0,
+  "videoSeconds": 1729,
   "videoTime": "0:28:49",
   "approx": true,
   "confidence": "medium",
@@ -1557,7 +1557,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1783"
  },
  "partitio-ch-2-1-3e9c1b": {
-  "file": "/step-pics/partitio-ch-2-1-3e9c1b.jpg",
+  "file": "/step-pics/partitio-ch-2-1-3e9c1b.webp",
   "videoSeconds": 1805.5,
   "videoTime": "0:30:05",
   "approx": false,
@@ -1567,7 +1567,7 @@
  },
  "partitio-ch-2-1-c3e350": {
   "file": "/step-pics/partitio-ch-2-1-c3e350.webp",
-  "videoSeconds": 1837.0,
+  "videoSeconds": 1837,
   "videoTime": "0:30:37",
   "approx": true,
   "confidence": "low",
@@ -1584,7 +1584,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1866"
  },
  "partitio-ch-2-1-350fb1": {
-  "file": "/step-pics/partitio-ch-2-1-350fb1.jpg",
+  "file": "/step-pics/partitio-ch-2-1-350fb1.webp",
   "videoSeconds": 1897.5,
   "videoTime": "0:31:37",
   "approx": false,
@@ -1594,7 +1594,7 @@
  },
  "hikari-ch-2-1-9921ce": {
   "file": "/step-pics/hikari-ch-2-1-9921ce.webp",
-  "videoSeconds": 1901.0,
+  "videoSeconds": 1901,
   "videoTime": "0:31:41",
   "approx": true,
   "confidence": "low",
@@ -1603,7 +1603,7 @@
  },
  "hikari-ch-2-1-c94091": {
   "file": "/step-pics/hikari-ch-2-1-c94091.webp",
-  "videoSeconds": 1907.0,
+  "videoSeconds": 1907,
   "videoTime": "0:31:47",
   "approx": true,
   "confidence": "medium",
@@ -1611,8 +1611,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1904"
  },
  "hikari-ch-2-1-8336ac": {
-  "file": "/step-pics/hikari-ch-2-1-8336ac.jpg",
-  "videoSeconds": 1913.0,
+  "file": "/step-pics/hikari-ch-2-1-8336ac.webp",
+  "videoSeconds": 1913,
   "videoTime": "0:31:53",
   "approx": false,
   "confidence": "medium",
@@ -1620,7 +1620,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1913"
  },
  "hikari-ch-2-1-b939d4": {
-  "file": "/step-pics/hikari-ch-2-1-b939d4.jpg",
+  "file": "/step-pics/hikari-ch-2-1-b939d4.webp",
   "videoSeconds": 1926,
   "videoTime": "0:32:06",
   "approx": false,
@@ -1630,7 +1630,7 @@
  },
  "hikari-ch-2-1-506c3a": {
   "file": "/step-pics/hikari-ch-2-1-506c3a.webp",
-  "videoSeconds": 1932.0,
+  "videoSeconds": 1932,
   "videoTime": "0:32:12",
   "approx": false,
   "confidence": "high",
@@ -1647,7 +1647,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1952"
  },
  "hikari-ch-2-1-b35c33": {
-  "file": "/step-pics/hikari-ch-2-1-b35c33.jpg",
+  "file": "/step-pics/hikari-ch-2-1-b35c33.webp",
   "videoSeconds": 1968,
   "videoTime": "0:32:48",
   "approx": false,
@@ -1656,7 +1656,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=1966"
  },
  "hikari-ch-2-1-461d0f": {
-  "file": "/step-pics/hikari-ch-2-1-461d0f.jpg",
+  "file": "/step-pics/hikari-ch-2-1-461d0f.webp",
   "videoSeconds": 2000,
   "videoTime": "0:33:20",
   "approx": false,
@@ -1666,7 +1666,7 @@
  },
  "hikari-ch-2-1-e6bf56": {
   "file": "/step-pics/hikari-ch-2-1-e6bf56.webp",
-  "videoSeconds": 2005.0,
+  "videoSeconds": 2005,
   "videoTime": "0:33:25",
   "approx": false,
   "confidence": "high",
@@ -1684,7 +1684,7 @@
  },
  "hikari-ch-2-1-d1d344": {
   "file": "/step-pics/hikari-ch-2-1-d1d344.webp",
-  "videoSeconds": 2027.0,
+  "videoSeconds": 2027,
   "videoTime": "0:33:47",
   "approx": true,
   "confidence": "low",
@@ -1701,7 +1701,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2032"
  },
  "hikari-ch-2-1-0d325a": {
-  "file": "/step-pics/hikari-ch-2-1-0d325a.jpg",
+  "file": "/step-pics/hikari-ch-2-1-0d325a.webp",
   "videoSeconds": 2050,
   "videoTime": "0:34:10",
   "approx": false,
@@ -1728,7 +1728,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2057"
  },
  "hikari-ch-2-1-d31835": {
-  "file": "/step-pics/hikari-ch-2-1-d31835.jpg",
+  "file": "/step-pics/hikari-ch-2-1-d31835.webp",
   "videoSeconds": 2076,
   "videoTime": "0:34:36",
   "approx": false,
@@ -1756,7 +1756,7 @@
  },
  "hikari-ch-2-1-cb44c6": {
   "file": "/step-pics/hikari-ch-2-1-cb44c6.webp",
-  "videoSeconds": 2093.0,
+  "videoSeconds": 2093,
   "videoTime": "0:34:53",
   "approx": true,
   "confidence": "low",
@@ -1765,7 +1765,7 @@
  },
  "hikari-ch-2-1-95b746": {
   "file": "/step-pics/hikari-ch-2-1-95b746.webp",
-  "videoSeconds": 2097.0,
+  "videoSeconds": 2097,
   "videoTime": "0:34:57",
   "approx": true,
   "confidence": "low",
@@ -1774,7 +1774,7 @@
  },
  "hikari-ch-2-4-8336ac": {
   "file": "/step-pics/hikari-ch-2-4-8336ac.webp",
-  "videoSeconds": 2108.0,
+  "videoSeconds": 2108,
   "videoTime": "0:35:08",
   "approx": true,
   "confidence": "low",
@@ -1782,7 +1782,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2108"
  },
  "hikari-ch-2-1-625d41": {
-  "file": "/step-pics/hikari-ch-2-1-625d41.jpg",
+  "file": "/step-pics/hikari-ch-2-1-625d41.webp",
   "videoSeconds": 2122,
   "videoTime": "0:35:22",
   "approx": true,
@@ -1792,7 +1792,7 @@
  },
  "hikari-ch-2-1-7791d7": {
   "file": "/step-pics/hikari-ch-2-1-7791d7.webp",
-  "videoSeconds": 2128.0,
+  "videoSeconds": 2128,
   "videoTime": "0:35:28",
   "approx": true,
   "confidence": "medium",
@@ -1801,7 +1801,7 @@
  },
  "hikari-ch-2-1-b5b153": {
   "file": "/step-pics/hikari-ch-2-1-b5b153.webp",
-  "videoSeconds": 2129.0,
+  "videoSeconds": 2129,
   "videoTime": "0:35:29",
   "approx": true,
   "confidence": "medium",
@@ -1810,7 +1810,7 @@
  },
  "hikari-ch-2-1-09d6da": {
   "file": "/step-pics/hikari-ch-2-1-09d6da.webp",
-  "videoSeconds": 2133.0,
+  "videoSeconds": 2133,
   "videoTime": "0:35:33",
   "approx": true,
   "confidence": "medium",
@@ -1827,8 +1827,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2142"
  },
  "hikari-ch-2-1-b8a3c0": {
-  "file": "/step-pics/hikari-ch-2-1-b8a3c0.jpg",
-  "videoSeconds": 2149.0,
+  "file": "/step-pics/hikari-ch-2-1-b8a3c0.webp",
+  "videoSeconds": 2149,
   "videoTime": "0:35:49",
   "approx": false,
   "confidence": "high",
@@ -1837,7 +1837,7 @@
  },
  "hikari-ch-2-1-87d8b4": {
   "file": "/step-pics/hikari-ch-2-1-87d8b4.webp",
-  "videoSeconds": 2154.0,
+  "videoSeconds": 2154,
   "videoTime": "0:35:54",
   "approx": true,
   "confidence": "medium",
@@ -1846,7 +1846,7 @@
  },
  "hikari-ch-2-1-e08682": {
   "file": "/step-pics/hikari-ch-2-1-e08682.webp",
-  "videoSeconds": 2156.0,
+  "videoSeconds": 2156,
   "videoTime": "0:35:56",
   "approx": true,
   "confidence": "medium",
@@ -1855,7 +1855,7 @@
  },
  "hikari-ch-2-1-9a6e6c": {
   "file": "/step-pics/hikari-ch-2-1-9a6e6c.webp",
-  "videoSeconds": 2162.0,
+  "videoSeconds": 2162,
   "videoTime": "0:36:02",
   "approx": true,
   "confidence": "medium",
@@ -1882,7 +1882,7 @@
  },
  "recruit-temenos-1-d2d7c6": {
   "file": "/step-pics/recruit-temenos-1-d2d7c6.webp",
-  "videoSeconds": 2184.0,
+  "videoSeconds": 2184,
   "videoTime": "0:36:24",
   "approx": true,
   "confidence": "high",
@@ -1890,8 +1890,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2181"
  },
  "recruit-temenos-1-6fad35": {
-  "file": "/step-pics/recruit-temenos-1-6fad35.jpg",
-  "videoSeconds": 2186.0,
+  "file": "/step-pics/recruit-temenos-1-6fad35.webp",
+  "videoSeconds": 2186,
   "videoTime": "0:36:26",
   "approx": false,
   "confidence": "high",
@@ -1899,8 +1899,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2186"
  },
  "recruit-temenos-1-dbbae3": {
-  "file": "/step-pics/recruit-temenos-1-dbbae3.jpg",
-  "videoSeconds": 2194.0,
+  "file": "/step-pics/recruit-temenos-1-dbbae3.webp",
+  "videoSeconds": 2194,
   "videoTime": "0:36:34",
   "approx": false,
   "confidence": "high",
@@ -1909,7 +1909,7 @@
  },
  "recruit-temenos-1-5f60ef": {
   "file": "/step-pics/recruit-temenos-1-5f60ef.webp",
-  "videoSeconds": 2212.0,
+  "videoSeconds": 2212,
   "videoTime": "0:36:52",
   "approx": false,
   "confidence": "high",
@@ -1953,8 +1953,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2217"
  },
  "throne-ch-2-mother-s-route-1-9c7ff7": {
-  "file": "/step-pics/throne-ch-2-mother-s-route-1-9c7ff7.jpg",
-  "videoSeconds": 2299.0,
+  "file": "/step-pics/throne-ch-2-mother-s-route-1-9c7ff7.webp",
+  "videoSeconds": 2299,
   "videoTime": "0:38:19",
   "approx": false,
   "confidence": "high",
@@ -1962,7 +1962,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2299"
  },
  "osvald-ch-3-1-a91bcd": {
-  "file": "/step-pics/osvald-ch-3-1-a91bcd.jpg",
+  "file": "/step-pics/osvald-ch-3-1-a91bcd.webp",
   "videoSeconds": 2339,
   "videoTime": "0:38:59",
   "approx": false,
@@ -1990,7 +1990,7 @@
  },
  "osvald-ch-3-1-d85c79": {
   "file": "/step-pics/osvald-ch-3-1-d85c79.webp",
-  "videoSeconds": 2354.0,
+  "videoSeconds": 2354,
   "videoTime": "0:39:14",
   "approx": true,
   "confidence": "low",
@@ -1999,7 +1999,7 @@
  },
  "osvald-ch-3-1-8c99a5": {
   "file": "/step-pics/osvald-ch-3-1-8c99a5.webp",
-  "videoSeconds": 2358.0,
+  "videoSeconds": 2358,
   "videoTime": "0:39:18",
   "approx": true,
   "confidence": "medium",
@@ -2034,7 +2034,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2375"
  },
  "osvald-ch-3-1-79f386": {
-  "file": "/step-pics/osvald-ch-3-1-79f386.jpg",
+  "file": "/step-pics/osvald-ch-3-1-79f386.webp",
   "videoSeconds": 2379,
   "videoTime": "0:39:39",
   "approx": false,
@@ -2044,7 +2044,7 @@
  },
  "osvald-ch-3-1-4c0b71": {
   "file": "/step-pics/osvald-ch-3-1-4c0b71.webp",
-  "videoSeconds": 2386.0,
+  "videoSeconds": 2386,
   "videoTime": "0:39:46",
   "approx": false,
   "confidence": "high",
@@ -2062,7 +2062,7 @@
  },
  "osvald-ch-3-1-bbc69f": {
   "file": "/step-pics/osvald-ch-3-1-bbc69f.webp",
-  "videoSeconds": 2399.0,
+  "videoSeconds": 2399,
   "videoTime": "0:39:59",
   "approx": true,
   "confidence": "medium",
@@ -2079,7 +2079,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2428"
  },
  "osvald-ch-4-1-135b77": {
-  "file": "/step-pics/osvald-ch-4-1-135b77.jpg",
+  "file": "/step-pics/osvald-ch-4-1-135b77.webp",
   "videoSeconds": 2429,
   "videoTime": "0:40:29",
   "approx": true,
@@ -2098,7 +2098,7 @@
  },
  "osvald-ch-4-900-826ea8": {
   "file": "/step-pics/osvald-ch-4-900-826ea8.webp",
-  "videoSeconds": 2424.0,
+  "videoSeconds": 2424,
   "videoTime": "0:40:24",
   "approx": false,
   "confidence": "high",
@@ -2116,7 +2116,7 @@
  },
  "osvald-ch-4-1-5417c8": {
   "file": "/step-pics/osvald-ch-4-1-5417c8.webp",
-  "videoSeconds": 2469.0,
+  "videoSeconds": 2469,
   "videoTime": "0:41:09",
   "approx": true,
   "confidence": "low",
@@ -2134,7 +2134,7 @@
  },
  "osvald-ch-4-1-9448f9": {
   "file": "/step-pics/osvald-ch-4-1-9448f9.webp",
-  "videoSeconds": 2497.0,
+  "videoSeconds": 2497,
   "videoTime": "0:41:37",
   "approx": true,
   "confidence": "medium",
@@ -2160,7 +2160,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2509"
  },
  "osvald-ch-4-1-480890": {
-  "file": "/step-pics/osvald-ch-4-1-480890.jpg",
+  "file": "/step-pics/osvald-ch-4-1-480890.webp",
   "videoSeconds": 2525,
   "videoTime": "0:42:05",
   "approx": false,
@@ -2170,7 +2170,7 @@
  },
  "osvald-ch-4-1-2fddbd": {
   "file": "/step-pics/osvald-ch-4-1-2fddbd.webp",
-  "videoSeconds": 2528.0,
+  "videoSeconds": 2528,
   "videoTime": "0:42:08",
   "approx": true,
   "confidence": "medium",
@@ -2179,7 +2179,7 @@
  },
  "osvald-ch-4-1-dce425": {
   "file": "/step-pics/osvald-ch-4-1-dce425.webp",
-  "videoSeconds": 2531.0,
+  "videoSeconds": 2531,
   "videoTime": "0:42:11",
   "approx": true,
   "confidence": "medium",
@@ -2188,7 +2188,7 @@
  },
  "osvald-ch-4-1-27f40f": {
   "file": "/step-pics/osvald-ch-4-1-27f40f.webp",
-  "videoSeconds": 2534.0,
+  "videoSeconds": 2534,
   "videoTime": "0:42:14",
   "approx": true,
   "confidence": "medium",
@@ -2215,7 +2215,7 @@
  },
  "osvald-ch-4-1-0355d7": {
   "file": "/step-pics/osvald-ch-4-1-0355d7.webp",
-  "videoSeconds": 2543.0,
+  "videoSeconds": 2543,
   "videoTime": "0:42:23",
   "approx": true,
   "confidence": "low",
@@ -2224,7 +2224,7 @@
  },
  "osvald-ch-4-1-d018b8": {
   "file": "/step-pics/osvald-ch-4-1-d018b8.webp",
-  "videoSeconds": 2549.0,
+  "videoSeconds": 2549,
   "videoTime": "0:42:29",
   "approx": true,
   "confidence": "low",
@@ -2233,7 +2233,7 @@
  },
  "osvald-ch-4-1-a4daf9": {
   "file": "/step-pics/osvald-ch-4-1-a4daf9.webp",
-  "videoSeconds": 2549.0,
+  "videoSeconds": 2549,
   "videoTime": "0:42:29",
   "approx": true,
   "confidence": "low",
@@ -2242,7 +2242,7 @@
  },
  "osvald-ch-4-1-6fc7f1": {
   "file": "/step-pics/osvald-ch-4-1-6fc7f1.webp",
-  "videoSeconds": 2567.0,
+  "videoSeconds": 2567,
   "videoTime": "0:42:47",
   "approx": true,
   "confidence": "low",
@@ -2251,7 +2251,7 @@
  },
  "osvald-ch-4-1-3824bd": {
   "file": "/step-pics/osvald-ch-4-1-3824bd.webp",
-  "videoSeconds": 2567.0,
+  "videoSeconds": 2567,
   "videoTime": "0:42:47",
   "approx": true,
   "confidence": "low",
@@ -2260,7 +2260,7 @@
  },
  "osvald-ch-4-1-d186ec": {
   "file": "/step-pics/osvald-ch-4-1-d186ec.webp",
-  "videoSeconds": 2567.0,
+  "videoSeconds": 2567,
   "videoTime": "0:42:47",
   "approx": true,
   "confidence": "low",
@@ -2269,7 +2269,7 @@
  },
  "osvald-ch-4-1-bf6b54": {
   "file": "/step-pics/osvald-ch-4-1-bf6b54.webp",
-  "videoSeconds": 2567.0,
+  "videoSeconds": 2567,
   "videoTime": "0:42:47",
   "approx": true,
   "confidence": "low",
@@ -2278,7 +2278,7 @@
  },
  "osvald-ch-4-1-21b813": {
   "file": "/step-pics/osvald-ch-4-1-21b813.webp",
-  "videoSeconds": 2567.0,
+  "videoSeconds": 2567,
   "videoTime": "0:42:47",
   "approx": true,
   "confidence": "low",
@@ -2286,8 +2286,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2564"
  },
  "osvald-ch-4-1-f06d87": {
-  "file": "/step-pics/osvald-ch-4-1-f06d87.jpg",
-  "videoSeconds": 2569.0,
+  "file": "/step-pics/osvald-ch-4-1-f06d87.webp",
+  "videoSeconds": 2569,
   "videoTime": "0:42:49",
   "approx": false,
   "confidence": "high",
@@ -2295,7 +2295,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2569"
  },
  "osvald-ch-4-1-aa683e": {
-  "file": "/step-pics/osvald-ch-4-1-aa683e.jpg",
+  "file": "/step-pics/osvald-ch-4-1-aa683e.webp",
   "videoSeconds": 2625.5,
   "videoTime": "0:43:45",
   "approx": false,
@@ -2305,7 +2305,7 @@
  },
  "osvald-ch-4-1-aefd8e": {
   "file": "/step-pics/osvald-ch-4-1-aefd8e.webp",
-  "videoSeconds": 2634.0,
+  "videoSeconds": 2634,
   "videoTime": "0:43:54",
   "approx": true,
   "confidence": "low",
@@ -2332,7 +2332,7 @@
  },
  "osvald-ch-4-1-a4bc32": {
   "file": "/step-pics/osvald-ch-4-1-a4bc32.webp",
-  "videoSeconds": 2648.0,
+  "videoSeconds": 2648,
   "videoTime": "0:44:08",
   "approx": true,
   "confidence": "medium",
@@ -2340,8 +2340,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2645"
  },
  "osvald-ch-4-1-6fad35": {
-  "file": "/step-pics/osvald-ch-4-1-6fad35.jpg",
-  "videoSeconds": 2652.0,
+  "file": "/step-pics/osvald-ch-4-1-6fad35.webp",
+  "videoSeconds": 2652,
   "videoTime": "0:44:12",
   "approx": false,
   "confidence": "high",
@@ -2350,7 +2350,7 @@
  },
  "osvald-ch-4-1-479669": {
   "file": "/step-pics/osvald-ch-4-1-479669.webp",
-  "videoSeconds": 2655.0,
+  "videoSeconds": 2655,
   "videoTime": "0:44:15",
   "approx": false,
   "confidence": "high",
@@ -2367,8 +2367,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2662"
  },
  "osvald-ch-4-1-619773": {
-  "file": "/step-pics/osvald-ch-4-1-619773.jpg",
-  "videoSeconds": 2756.0,
+  "file": "/step-pics/osvald-ch-4-1-619773.webp",
+  "videoSeconds": 2756,
   "videoTime": "0:45:56",
   "approx": false,
   "confidence": "medium",
@@ -2376,7 +2376,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2756"
  },
  "osvald-ch-4-1-a91bcd": {
-  "file": "/step-pics/osvald-ch-4-1-a91bcd.jpg",
+  "file": "/step-pics/osvald-ch-4-1-a91bcd.webp",
   "videoSeconds": 2773,
   "videoTime": "0:46:13",
   "approx": false,
@@ -2386,7 +2386,7 @@
  },
  "osvald-ch-4-1-10131c": {
   "file": "/step-pics/osvald-ch-4-1-10131c.webp",
-  "videoSeconds": 2785.0,
+  "videoSeconds": 2785,
   "videoTime": "0:46:25",
   "approx": false,
   "confidence": "high",
@@ -2395,7 +2395,7 @@
  },
  "osvald-ch-4-1-ab0547": {
   "file": "/step-pics/osvald-ch-4-1-ab0547.webp",
-  "videoSeconds": 2787.0,
+  "videoSeconds": 2787,
   "videoTime": "0:46:27",
   "approx": true,
   "confidence": "medium",
@@ -2413,7 +2413,7 @@
  },
  "osvald-ch-4-1-573056": {
   "file": "/step-pics/osvald-ch-4-1-573056.webp",
-  "videoSeconds": 2826.0,
+  "videoSeconds": 2826,
   "videoTime": "0:47:06",
   "approx": true,
   "confidence": "medium",
@@ -2449,7 +2449,7 @@
  },
  "osvald-ch-4-1-ce2bc2": {
   "file": "/step-pics/osvald-ch-4-1-ce2bc2.webp",
-  "videoSeconds": 2921.0,
+  "videoSeconds": 2921,
   "videoTime": "0:48:41",
   "approx": true,
   "confidence": "medium",
@@ -2457,8 +2457,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2918"
  },
  "osvald-ch-4-1-9b47b9": {
-  "file": "/step-pics/osvald-ch-4-1-9b47b9.jpg",
-  "videoSeconds": 2938.0,
+  "file": "/step-pics/osvald-ch-4-1-9b47b9.webp",
+  "videoSeconds": 2938,
   "videoTime": "0:48:58",
   "approx": false,
   "confidence": "medium",
@@ -2476,7 +2476,7 @@
  },
  "osvald-ch-4-1-cc232c": {
   "file": "/step-pics/osvald-ch-4-1-cc232c.webp",
-  "videoSeconds": 2986.0,
+  "videoSeconds": 2986,
   "videoTime": "0:49:46",
   "approx": true,
   "confidence": "medium",
@@ -2484,8 +2484,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=2983"
  },
  "osvald-ch-4-1-353efb": {
-  "file": "/step-pics/osvald-ch-4-1-353efb.jpg",
-  "videoSeconds": 3010.0,
+  "file": "/step-pics/osvald-ch-4-1-353efb.webp",
+  "videoSeconds": 3010,
   "videoTime": "0:50:10",
   "approx": false,
   "confidence": "medium",
@@ -2494,7 +2494,7 @@
  },
  "osvald-ch-4-1-b773e6": {
   "file": "/step-pics/osvald-ch-4-1-b773e6.webp",
-  "videoSeconds": 3013.0,
+  "videoSeconds": 3013,
   "videoTime": "0:50:13",
   "approx": true,
   "confidence": "medium",
@@ -2512,7 +2512,7 @@
  },
  "osvald-ch-4-1-447ff4": {
   "file": "/step-pics/osvald-ch-4-1-447ff4.webp",
-  "videoSeconds": 3018.0,
+  "videoSeconds": 3018,
   "videoTime": "0:50:18",
   "approx": true,
   "confidence": "medium",
@@ -2521,7 +2521,7 @@
  },
  "osvald-ch-4-1-2fd4a6": {
   "file": "/step-pics/osvald-ch-4-1-2fd4a6.webp",
-  "videoSeconds": 3018.0,
+  "videoSeconds": 3018,
   "videoTime": "0:50:18",
   "approx": true,
   "confidence": "medium",
@@ -2566,7 +2566,7 @@
  },
  "osvald-ch-4-1-bc5cc0": {
   "file": "/step-pics/osvald-ch-4-1-bc5cc0.webp",
-  "videoSeconds": 3023.0,
+  "videoSeconds": 3023,
   "videoTime": "0:50:23",
   "approx": true,
   "confidence": "medium",
@@ -2592,7 +2592,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3016"
  },
  "osvald-ch-4-1-8b8ac4": {
-  "file": "/step-pics/osvald-ch-4-1-8b8ac4.jpg",
+  "file": "/step-pics/osvald-ch-4-1-8b8ac4.webp",
   "videoSeconds": 3125,
   "videoTime": "0:52:05",
   "approx": false,
@@ -2611,7 +2611,7 @@
  },
  "osvald-ch-4-1-e582f7": {
   "file": "/step-pics/osvald-ch-4-1-e582f7.webp",
-  "videoSeconds": 3131.0,
+  "videoSeconds": 3131,
   "videoTime": "0:52:11",
   "approx": true,
   "confidence": "medium",
@@ -2619,8 +2619,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3128"
  },
  "osvald-ch-4-1-fa04b8": {
-  "file": "/step-pics/osvald-ch-4-1-fa04b8.jpg",
-  "videoSeconds": 3151.0,
+  "file": "/step-pics/osvald-ch-4-1-fa04b8.webp",
+  "videoSeconds": 3151,
   "videoTime": "0:52:31",
   "approx": false,
   "confidence": "high",
@@ -2628,7 +2628,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3151"
  },
  "osvald-ch-4-1-db2f8a": {
-  "file": "/step-pics/osvald-ch-4-1-db2f8a.jpg",
+  "file": "/step-pics/osvald-ch-4-1-db2f8a.webp",
   "videoSeconds": 3177.5,
   "videoTime": "0:52:57",
   "approx": false,
@@ -2637,8 +2637,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3177"
  },
  "osvald-ch-4-1-be1f4d": {
-  "file": "/step-pics/osvald-ch-4-1-be1f4d.jpg",
-  "videoSeconds": 3193.0,
+  "file": "/step-pics/osvald-ch-4-1-be1f4d.webp",
+  "videoSeconds": 3193,
   "videoTime": "0:53:13",
   "approx": false,
   "confidence": "medium",
@@ -2655,8 +2655,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3204"
  },
  "osvald-ch-4-1-d1b14e": {
-  "file": "/step-pics/osvald-ch-4-1-d1b14e.jpg",
-  "videoSeconds": 3285.0,
+  "file": "/step-pics/osvald-ch-4-1-d1b14e.webp",
+  "videoSeconds": 3285,
   "videoTime": "0:54:45",
   "approx": false,
   "confidence": "medium",
@@ -2665,7 +2665,7 @@
  },
  "osvald-ch-4-1-63e9e6": {
   "file": "/step-pics/osvald-ch-4-1-63e9e6.webp",
-  "videoSeconds": 3294.0,
+  "videoSeconds": 3294,
   "videoTime": "0:54:54",
   "approx": true,
   "confidence": "medium",
@@ -2674,7 +2674,7 @@
  },
  "osvald-ch-4-1-64c465": {
   "file": "/step-pics/osvald-ch-4-1-64c465.webp",
-  "videoSeconds": 3306.0,
+  "videoSeconds": 3306,
   "videoTime": "0:55:06",
   "approx": true,
   "confidence": "low",
@@ -2683,7 +2683,7 @@
  },
  "osvald-ch-4-1-d96f1e": {
   "file": "/step-pics/osvald-ch-4-1-d96f1e.webp",
-  "videoSeconds": 3312.0,
+  "videoSeconds": 3312,
   "videoTime": "0:55:12",
   "approx": true,
   "confidence": "high",
@@ -2692,7 +2692,7 @@
  },
  "osvald-ch-4-1-3cd4f6": {
   "file": "/step-pics/osvald-ch-4-1-3cd4f6.webp",
-  "videoSeconds": 3330.0,
+  "videoSeconds": 3330,
   "videoTime": "0:55:30",
   "approx": true,
   "confidence": "low",
@@ -2701,7 +2701,7 @@
  },
  "osvald-ch-4-1-5a465b": {
   "file": "/step-pics/osvald-ch-4-1-5a465b.webp",
-  "videoSeconds": 3339.0,
+  "videoSeconds": 3339,
   "videoTime": "0:55:39",
   "approx": true,
   "confidence": "low",
@@ -2710,7 +2710,7 @@
  },
  "osvald-ch-4-1-901ee6": {
   "file": "/step-pics/osvald-ch-4-1-901ee6.webp",
-  "videoSeconds": 3340.0,
+  "videoSeconds": 3340,
   "videoTime": "0:55:40",
   "approx": true,
   "confidence": "medium",
@@ -2718,8 +2718,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3337"
  },
  "osvald-ch-4-1-b1c3e6": {
-  "file": "/step-pics/osvald-ch-4-1-b1c3e6.jpg",
-  "videoSeconds": 3359.0,
+  "file": "/step-pics/osvald-ch-4-1-b1c3e6.webp",
+  "videoSeconds": 3359,
   "videoTime": "0:55:59",
   "approx": false,
   "confidence": "medium",
@@ -2728,7 +2728,7 @@
  },
  "osvald-ch-4-1-cbcc31": {
   "file": "/step-pics/osvald-ch-4-1-cbcc31.webp",
-  "videoSeconds": 3375.0,
+  "videoSeconds": 3375,
   "videoTime": "0:56:15",
   "approx": true,
   "confidence": "low",
@@ -2736,8 +2736,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3372"
  },
  "osvald-ch-4-1-eea48e": {
-  "file": "/step-pics/osvald-ch-4-1-eea48e.jpg",
-  "videoSeconds": 3387.0,
+  "file": "/step-pics/osvald-ch-4-1-eea48e.webp",
+  "videoSeconds": 3387,
   "videoTime": "0:56:27",
   "approx": false,
   "confidence": "medium",
@@ -2746,7 +2746,7 @@
  },
  "osvald-ch-4-1-ad140b": {
   "file": "/step-pics/osvald-ch-4-1-ad140b.webp",
-  "videoSeconds": 3393.0,
+  "videoSeconds": 3393,
   "videoTime": "0:56:33",
   "approx": true,
   "confidence": "low",
@@ -2764,7 +2764,7 @@
  },
  "osvald-ch-4-1-533e07": {
   "file": "/step-pics/osvald-ch-4-1-533e07.webp",
-  "videoSeconds": 3414.0,
+  "videoSeconds": 3414,
   "videoTime": "0:56:54",
   "approx": false,
   "confidence": "high",
@@ -2773,7 +2773,7 @@
  },
  "osvald-ch-4-1-15eda2": {
   "file": "/step-pics/osvald-ch-4-1-15eda2.webp",
-  "videoSeconds": 3415.0,
+  "videoSeconds": 3415,
   "videoTime": "0:56:55",
   "approx": true,
   "confidence": "high",
@@ -2782,7 +2782,7 @@
  },
  "osvald-ch-4-1-ddcaac": {
   "file": "/step-pics/osvald-ch-4-1-ddcaac.webp",
-  "videoSeconds": 3426.0,
+  "videoSeconds": 3426,
   "videoTime": "0:57:06",
   "approx": false,
   "confidence": "high",
@@ -2791,7 +2791,7 @@
  },
  "osvald-ch-4-1-e4e920": {
   "file": "/step-pics/osvald-ch-4-1-e4e920.webp",
-  "videoSeconds": 3432.0,
+  "videoSeconds": 3432,
   "videoTime": "0:57:12",
   "approx": false,
   "confidence": "high",
@@ -2818,7 +2818,7 @@
  },
  "osvald-ch-4-1-194d30": {
   "file": "/step-pics/osvald-ch-4-1-194d30.webp",
-  "videoSeconds": 3536.0,
+  "videoSeconds": 3536,
   "videoTime": "0:58:56",
   "approx": true,
   "confidence": "low",
@@ -2835,7 +2835,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3537"
  },
  "osvald-ch-4-2-fa04b8": {
-  "file": "/step-pics/osvald-ch-4-2-fa04b8.jpg",
+  "file": "/step-pics/osvald-ch-4-2-fa04b8.webp",
   "videoSeconds": 3610.5,
   "videoTime": "1:00:10",
   "approx": false,
@@ -2845,7 +2845,7 @@
  },
  "partitio-ch-3-1-b4d6a9": {
   "file": "/step-pics/partitio-ch-3-1-b4d6a9.webp",
-  "videoSeconds": 3637.0,
+  "videoSeconds": 3637,
   "videoTime": "1:00:37",
   "approx": true,
   "confidence": "low",
@@ -2863,7 +2863,7 @@
  },
  "partitio-ch-3-1-b3c2a1": {
   "file": "/step-pics/partitio-ch-3-1-b3c2a1.webp",
-  "videoSeconds": 3789.0,
+  "videoSeconds": 3789,
   "videoTime": "1:03:09",
   "approx": true,
   "confidence": "high",
@@ -2871,8 +2871,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3786"
  },
  "partitio-ch-3-1-c4c07a": {
-  "file": "/step-pics/partitio-ch-3-1-c4c07a.jpg",
-  "videoSeconds": 3800.0,
+  "file": "/step-pics/partitio-ch-3-1-c4c07a.webp",
+  "videoSeconds": 3800,
   "videoTime": "1:03:20",
   "approx": true,
   "confidence": "medium",
@@ -2889,8 +2889,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3858"
  },
  "partitio-ch-3-1-6f1b3c": {
-  "file": "/step-pics/partitio-ch-3-1-6f1b3c.jpg",
-  "videoSeconds": 3868.0,
+  "file": "/step-pics/partitio-ch-3-1-6f1b3c.webp",
+  "videoSeconds": 3868,
   "videoTime": "1:04:28",
   "approx": true,
   "confidence": "medium",
@@ -2899,7 +2899,7 @@
  },
  "partitio-ch-3-1-a3e409": {
   "file": "/step-pics/partitio-ch-3-1-a3e409.webp",
-  "videoSeconds": 3882.0,
+  "videoSeconds": 3882,
   "videoTime": "1:04:42",
   "approx": true,
   "confidence": "low",
@@ -2907,7 +2907,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3879"
  },
  "partitio-ch-3-1-fa04b8": {
-  "file": "/step-pics/partitio-ch-3-1-fa04b8.jpg",
+  "file": "/step-pics/partitio-ch-3-1-fa04b8.webp",
   "videoSeconds": 3895.5,
   "videoTime": "1:04:55",
   "approx": true,
@@ -2917,7 +2917,7 @@
  },
  "partitio-ch-3-900-53627e": {
   "file": "/step-pics/partitio-ch-3-900-53627e.webp",
-  "videoSeconds": 3904.0,
+  "videoSeconds": 3904,
   "videoTime": "1:05:04",
   "approx": false,
   "confidence": "high",
@@ -2926,7 +2926,7 @@
  },
  "partitio-ch-3-1-2d66c9": {
   "file": "/step-pics/partitio-ch-3-1-2d66c9.webp",
-  "videoSeconds": 3939.0,
+  "videoSeconds": 3939,
   "videoTime": "1:05:39",
   "approx": true,
   "confidence": "medium",
@@ -2935,7 +2935,7 @@
  },
  "partitio-ch-3-1-6c3b2d": {
   "file": "/step-pics/partitio-ch-3-1-6c3b2d.webp",
-  "videoSeconds": 3939.0,
+  "videoSeconds": 3939,
   "videoTime": "1:05:39",
   "approx": true,
   "confidence": "high",
@@ -2944,7 +2944,7 @@
  },
  "partitio-ch-3-1-734816": {
   "file": "/step-pics/partitio-ch-3-1-734816.webp",
-  "videoSeconds": 3944.0,
+  "videoSeconds": 3944,
   "videoTime": "1:05:44",
   "approx": true,
   "confidence": "high",
@@ -2953,7 +2953,7 @@
  },
  "partitio-ch-3-1-f6a55e": {
   "file": "/step-pics/partitio-ch-3-1-f6a55e.webp",
-  "videoSeconds": 3944.0,
+  "videoSeconds": 3944,
   "videoTime": "1:05:44",
   "approx": true,
   "confidence": "high",
@@ -2962,7 +2962,7 @@
  },
  "partitio-ch-3-1-f198e9": {
   "file": "/step-pics/partitio-ch-3-1-f198e9.webp",
-  "videoSeconds": 3949.0,
+  "videoSeconds": 3949,
   "videoTime": "1:05:49",
   "approx": true,
   "confidence": "high",
@@ -2971,7 +2971,7 @@
  },
  "partitio-ch-3-1-d19de5": {
   "file": "/step-pics/partitio-ch-3-1-d19de5.webp",
-  "videoSeconds": 3951.0,
+  "videoSeconds": 3951,
   "videoTime": "1:05:51",
   "approx": true,
   "confidence": "low",
@@ -2979,7 +2979,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3948"
  },
  "partitio-ch-3-1-84ddac": {
-  "file": "/step-pics/partitio-ch-3-1-84ddac.jpg",
+  "file": "/step-pics/partitio-ch-3-1-84ddac.webp",
   "videoSeconds": 4017,
   "videoTime": "1:06:57",
   "approx": false,
@@ -3034,7 +3034,7 @@
  },
  "partitio-ch-3-1-47c095": {
   "file": "/step-pics/partitio-ch-3-1-47c095.webp",
-  "videoSeconds": 4071.0,
+  "videoSeconds": 4071,
   "videoTime": "1:07:51",
   "approx": true,
   "confidence": "low",
@@ -3043,7 +3043,7 @@
  },
  "partitio-ch-3-1-3da05e": {
   "file": "/step-pics/partitio-ch-3-1-3da05e.webp",
-  "videoSeconds": 4082.0,
+  "videoSeconds": 4082,
   "videoTime": "1:08:02",
   "approx": true,
   "confidence": "low",
@@ -3051,8 +3051,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4079"
  },
  "partitio-ch-3-2-fa04b8": {
-  "file": "/step-pics/partitio-ch-3-2-fa04b8.jpg",
-  "videoSeconds": 4088.0,
+  "file": "/step-pics/partitio-ch-3-2-fa04b8.webp",
+  "videoSeconds": 4088,
   "videoTime": "1:08:08",
   "approx": false,
   "confidence": "high",
@@ -3061,7 +3061,7 @@
  },
  "hikari-ch-3-1-02e1b4": {
   "file": "/step-pics/hikari-ch-3-1-02e1b4.webp",
-  "videoSeconds": 4087.0,
+  "videoSeconds": 4087,
   "videoTime": "1:08:07",
   "approx": false,
   "confidence": "high",
@@ -3079,7 +3079,7 @@
  },
  "hikari-ch-3-1-511b34": {
   "file": "/step-pics/hikari-ch-3-1-511b34.webp",
-  "videoSeconds": 4093.0,
+  "videoSeconds": 4093,
   "videoTime": "1:08:13",
   "approx": true,
   "confidence": "medium",
@@ -3097,7 +3097,7 @@
  },
  "hikari-ch-3-1-5966cd": {
   "file": "/step-pics/hikari-ch-3-1-5966cd.webp",
-  "videoSeconds": 4115.0,
+  "videoSeconds": 4115,
   "videoTime": "1:08:35",
   "approx": true,
   "confidence": "medium",
@@ -3106,7 +3106,7 @@
  },
  "hikari-ch-3-1-7f3c7d": {
   "file": "/step-pics/hikari-ch-3-1-7f3c7d.webp",
-  "videoSeconds": 4143.0,
+  "videoSeconds": 4143,
   "videoTime": "1:09:03",
   "approx": true,
   "confidence": "medium",
@@ -3115,7 +3115,7 @@
  },
  "hikari-ch-3-1-f7de09": {
   "file": "/step-pics/hikari-ch-3-1-f7de09.webp",
-  "videoSeconds": 4158.0,
+  "videoSeconds": 4158,
   "videoTime": "1:09:18",
   "approx": false,
   "confidence": "high",
@@ -3132,7 +3132,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4159"
  },
  "hikari-ch-3-1-b5b153": {
-  "file": "/step-pics/hikari-ch-3-1-b5b153.jpg",
+  "file": "/step-pics/hikari-ch-3-1-b5b153.webp",
   "videoSeconds": 4177,
   "videoTime": "1:09:37",
   "approx": false,
@@ -3142,7 +3142,7 @@
  },
  "hikari-ch-3-1-35af3c": {
   "file": "/step-pics/hikari-ch-3-1-35af3c.webp",
-  "videoSeconds": 4182.0,
+  "videoSeconds": 4182,
   "videoTime": "1:09:42",
   "approx": true,
   "confidence": "medium",
@@ -3151,7 +3151,7 @@
  },
  "hikari-ch-3-1-324180": {
   "file": "/step-pics/hikari-ch-3-1-324180.webp",
-  "videoSeconds": 4189.0,
+  "videoSeconds": 4189,
   "videoTime": "1:09:49",
   "approx": true,
   "confidence": "low",
@@ -3178,7 +3178,7 @@
  },
  "hikari-ch-3-900-1d4537": {
   "file": "/step-pics/hikari-ch-3-900-1d4537.webp",
-  "videoSeconds": 3611.0,
+  "videoSeconds": 3611,
   "videoTime": "1:00:11",
   "approx": false,
   "confidence": "high",
@@ -3186,7 +3186,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=3608"
  },
  "castti-ch-2-sai-route-1-655e3d": {
-  "file": "/step-pics/castti-ch-2-sai-route-1-655e3d.jpg",
+  "file": "/step-pics/castti-ch-2-sai-route-1-655e3d.webp",
   "videoSeconds": 3729,
   "videoTime": "1:02:09",
   "approx": false,
@@ -3196,7 +3196,7 @@
  },
  "castti-ch-2-sai-route-1-1e4df1": {
   "file": "/step-pics/castti-ch-2-sai-route-1-1e4df1.webp",
-  "videoSeconds": 4205.0,
+  "videoSeconds": 4205,
   "videoTime": "1:10:05",
   "approx": true,
   "confidence": "low",
@@ -3205,7 +3205,7 @@
  },
  "castti-ch-2-sai-route-1-177f53": {
   "file": "/step-pics/castti-ch-2-sai-route-1-177f53.webp",
-  "videoSeconds": 4210.0,
+  "videoSeconds": 4210,
   "videoTime": "1:10:10",
   "approx": true,
   "confidence": "medium",
@@ -3214,7 +3214,7 @@
  },
  "castti-ch-2-sai-route-1-69b9a5": {
   "file": "/step-pics/castti-ch-2-sai-route-1-69b9a5.webp",
-  "videoSeconds": 4212.0,
+  "videoSeconds": 4212,
   "videoTime": "1:10:12",
   "approx": true,
   "confidence": "low",
@@ -3241,7 +3241,7 @@
  },
  "castti-ch-2-sai-route-1-4bef57": {
   "file": "/step-pics/castti-ch-2-sai-route-1-4bef57.webp",
-  "videoSeconds": 4224.0,
+  "videoSeconds": 4224,
   "videoTime": "1:10:24",
   "approx": true,
   "confidence": "medium",
@@ -3250,7 +3250,7 @@
  },
  "castti-ch-2-sai-route-1-37871e": {
   "file": "/step-pics/castti-ch-2-sai-route-1-37871e.webp",
-  "videoSeconds": 4230.0,
+  "videoSeconds": 4230,
   "videoTime": "1:10:30",
   "approx": true,
   "confidence": "medium",
@@ -3258,7 +3258,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4227"
  },
  "castti-ch-2-sai-route-1-93d74f": {
-  "file": "/step-pics/castti-ch-2-sai-route-1-93d74f.jpg",
+  "file": "/step-pics/castti-ch-2-sai-route-1-93d74f.webp",
   "videoSeconds": 4233,
   "videoTime": "1:10:33",
   "approx": false,
@@ -3267,7 +3267,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4230"
  },
  "foreign-assassins-1-b8556e": {
-  "file": "/step-pics/foreign-assassins-1-b8556e.jpg",
+  "file": "/step-pics/foreign-assassins-1-b8556e.webp",
   "videoSeconds": 4233,
   "videoTime": "1:10:33",
   "approx": false,
@@ -3277,7 +3277,7 @@
  },
  "foreign-assassins-1-de3f54": {
   "file": "/step-pics/foreign-assassins-1-de3f54.webp",
-  "videoSeconds": 4255.0,
+  "videoSeconds": 4255,
   "videoTime": "1:10:55",
   "approx": true,
   "confidence": "low",
@@ -3286,7 +3286,7 @@
  },
  "foreign-assassins-1-f672a6": {
   "file": "/step-pics/foreign-assassins-1-f672a6.webp",
-  "videoSeconds": 4321.0,
+  "videoSeconds": 4321,
   "videoTime": "1:12:01",
   "approx": true,
   "confidence": "low",
@@ -3313,7 +3313,7 @@
  },
  "foreign-assassins-1-47c095": {
   "file": "/step-pics/foreign-assassins-1-47c095.webp",
-  "videoSeconds": 4398.0,
+  "videoSeconds": 4398,
   "videoTime": "1:13:18",
   "approx": false,
   "confidence": "high",
@@ -3321,7 +3321,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4395"
  },
  "foreign-assassins-1-56ad29": {
-  "file": "/step-pics/foreign-assassins-1-56ad29.jpg",
+  "file": "/step-pics/foreign-assassins-1-56ad29.webp",
   "videoSeconds": 4429.5,
   "videoTime": "1:13:49",
   "approx": false,
@@ -3349,7 +3349,7 @@
  },
  "foreign-assassins-1-08ea8b": {
   "file": "/step-pics/foreign-assassins-1-08ea8b.webp",
-  "videoSeconds": 4481.0,
+  "videoSeconds": 4481,
   "videoTime": "1:14:41",
   "approx": false,
   "confidence": "high",
@@ -3358,7 +3358,7 @@
  },
  "foreign-assassins-1-803a68": {
   "file": "/step-pics/foreign-assassins-1-803a68.webp",
-  "videoSeconds": 4508.0,
+  "videoSeconds": 4508,
   "videoTime": "1:15:08",
   "approx": true,
   "confidence": "low",
@@ -3367,7 +3367,7 @@
  },
  "foreign-assassins-1-dc65e2": {
   "file": "/step-pics/foreign-assassins-1-dc65e2.webp",
-  "videoSeconds": 4522.0,
+  "videoSeconds": 4522,
   "videoTime": "1:15:22",
   "approx": true,
   "confidence": "low",
@@ -3375,7 +3375,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4519"
  },
  "foreign-assassins-1-fc1038": {
-  "file": "/step-pics/foreign-assassins-1-fc1038.jpg",
+  "file": "/step-pics/foreign-assassins-1-fc1038.webp",
   "videoSeconds": 4537.5,
   "videoTime": "1:15:37",
   "approx": false,
@@ -3402,8 +3402,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4566"
  },
  "foreign-assassins-1-b9e216": {
-  "file": "/step-pics/foreign-assassins-1-b9e216.jpg",
-  "videoSeconds": 4587.0,
+  "file": "/step-pics/foreign-assassins-1-b9e216.webp",
+  "videoSeconds": 4587,
   "videoTime": "1:16:27",
   "approx": false,
   "confidence": "medium",
@@ -3421,7 +3421,7 @@
  },
  "hikari-ch-4-1-b1d637": {
   "file": "/step-pics/hikari-ch-4-1-b1d637.webp",
-  "videoSeconds": 4606.0,
+  "videoSeconds": 4606,
   "videoTime": "1:16:46",
   "approx": true,
   "confidence": "low",
@@ -3529,7 +3529,7 @@
  },
  "hikari-ch-4-1-7e219e": {
   "file": "/step-pics/hikari-ch-4-1-7e219e.webp",
-  "videoSeconds": 4623.0,
+  "videoSeconds": 4623,
   "videoTime": "1:17:03",
   "approx": true,
   "confidence": "medium",
@@ -3538,7 +3538,7 @@
  },
  "hikari-ch-4-1-312e4d": {
   "file": "/step-pics/hikari-ch-4-1-312e4d.webp",
-  "videoSeconds": 4623.0,
+  "videoSeconds": 4623,
   "videoTime": "1:17:03",
   "approx": true,
   "confidence": "high",
@@ -3547,7 +3547,7 @@
  },
  "hikari-ch-4-1-e330aa": {
   "file": "/step-pics/hikari-ch-4-1-e330aa.webp",
-  "videoSeconds": 4623.0,
+  "videoSeconds": 4623,
   "videoTime": "1:17:03",
   "approx": true,
   "confidence": "high",
@@ -3556,7 +3556,7 @@
  },
  "hikari-ch-4-1-9fb339": {
   "file": "/step-pics/hikari-ch-4-1-9fb339.webp",
-  "videoSeconds": 4623.0,
+  "videoSeconds": 4623,
   "videoTime": "1:17:03",
   "approx": true,
   "confidence": "medium",
@@ -3565,7 +3565,7 @@
  },
  "hikari-ch-4-1-caeb1b": {
   "file": "/step-pics/hikari-ch-4-1-caeb1b.webp",
-  "videoSeconds": 4626.0,
+  "videoSeconds": 4626,
   "videoTime": "1:17:06",
   "approx": true,
   "confidence": "medium",
@@ -3601,7 +3601,7 @@
  },
  "hikari-ch-4-1-3b6c9f": {
   "file": "/step-pics/hikari-ch-4-1-3b6c9f.webp",
-  "videoSeconds": 4646.0,
+  "videoSeconds": 4646,
   "videoTime": "1:17:26",
   "approx": false,
   "confidence": "high",
@@ -3628,7 +3628,7 @@
  },
  "hikari-ch-4-1-34de72": {
   "file": "/step-pics/hikari-ch-4-1-34de72.webp",
-  "videoSeconds": 4658.0,
+  "videoSeconds": 4658,
   "videoTime": "1:17:38",
   "approx": false,
   "confidence": "high",
@@ -3636,7 +3636,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4655"
  },
  "hikari-ch-4-1-30cf28": {
-  "file": "/step-pics/hikari-ch-4-1-30cf28.jpg",
+  "file": "/step-pics/hikari-ch-4-1-30cf28.webp",
   "videoSeconds": 4679,
   "videoTime": "1:17:59",
   "approx": false,
@@ -3664,7 +3664,7 @@
  },
  "hikari-ch-4-1-bb6c10": {
   "file": "/step-pics/hikari-ch-4-1-bb6c10.webp",
-  "videoSeconds": 4697.0,
+  "videoSeconds": 4697,
   "videoTime": "1:18:17",
   "approx": false,
   "confidence": "high",
@@ -3673,7 +3673,7 @@
  },
  "hikari-ch-4-1-c62409": {
   "file": "/step-pics/hikari-ch-4-1-c62409.webp",
-  "videoSeconds": 4697.0,
+  "videoSeconds": 4697,
   "videoTime": "1:18:17",
   "approx": false,
   "confidence": "high",
@@ -3682,7 +3682,7 @@
  },
  "hikari-ch-4-1-c07ee3": {
   "file": "/step-pics/hikari-ch-4-1-c07ee3.webp",
-  "videoSeconds": 4741.0,
+  "videoSeconds": 4741,
   "videoTime": "1:19:01",
   "approx": true,
   "confidence": "low",
@@ -3690,7 +3690,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4738"
  },
  "hikari-ch-4-1-8001eb": {
-  "file": "/step-pics/hikari-ch-4-1-8001eb.jpg",
+  "file": "/step-pics/hikari-ch-4-1-8001eb.webp",
   "videoSeconds": 4791,
   "videoTime": "1:19:51",
   "approx": false,
@@ -3700,7 +3700,7 @@
  },
  "hikari-ch-4-1-1b4577": {
   "file": "/step-pics/hikari-ch-4-1-1b4577.webp",
-  "videoSeconds": 4797.0,
+  "videoSeconds": 4797,
   "videoTime": "1:19:57",
   "approx": true,
   "confidence": "low",
@@ -3709,7 +3709,7 @@
  },
  "hikari-ch-4-1-44abb9": {
   "file": "/step-pics/hikari-ch-4-1-44abb9.webp",
-  "videoSeconds": 4804.0,
+  "videoSeconds": 4804,
   "videoTime": "1:20:04",
   "approx": true,
   "confidence": "medium",
@@ -3718,7 +3718,7 @@
  },
  "hikari-ch-4-1-27f40f": {
   "file": "/step-pics/hikari-ch-4-1-27f40f.webp",
-  "videoSeconds": 4809.0,
+  "videoSeconds": 4809,
   "videoTime": "1:20:09",
   "approx": true,
   "confidence": "low",
@@ -3745,7 +3745,7 @@
  },
  "hikari-ch-4-1-b2c082": {
   "file": "/step-pics/hikari-ch-4-1-b2c082.webp",
-  "videoSeconds": 4825.0,
+  "videoSeconds": 4825,
   "videoTime": "1:20:25",
   "approx": true,
   "confidence": "low",
@@ -3772,7 +3772,7 @@
  },
  "hikari-ch-4-1-0c8a59": {
   "file": "/step-pics/hikari-ch-4-1-0c8a59.webp",
-  "videoSeconds": 4850.0,
+  "videoSeconds": 4850,
   "videoTime": "1:20:50",
   "approx": true,
   "confidence": "high",
@@ -3781,7 +3781,7 @@
  },
  "hikari-ch-4-1-b11e00": {
   "file": "/step-pics/hikari-ch-4-1-b11e00.webp",
-  "videoSeconds": 4309.0,
+  "videoSeconds": 4309,
   "videoTime": "1:11:49",
   "approx": false,
   "confidence": "high",
@@ -3789,7 +3789,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4306"
  },
  "hikari-ch-4-1-9974b8": {
-  "file": "/step-pics/hikari-ch-4-1-9974b8.jpg",
+  "file": "/step-pics/hikari-ch-4-1-9974b8.webp",
   "videoSeconds": 4352,
   "videoTime": "1:12:32",
   "approx": false,
@@ -3799,7 +3799,7 @@
  },
  "hikari-ch-4-1-add45d": {
   "file": "/step-pics/hikari-ch-4-1-add45d.webp",
-  "videoSeconds": 4880.0,
+  "videoSeconds": 4880,
   "videoTime": "1:21:20",
   "approx": true,
   "confidence": "low",
@@ -3808,7 +3808,7 @@
  },
  "hikari-ch-4-1-de3f54": {
   "file": "/step-pics/hikari-ch-4-1-de3f54.webp",
-  "videoSeconds": 4880.0,
+  "videoSeconds": 4880,
   "videoTime": "1:21:20",
   "approx": true,
   "confidence": "low",
@@ -3817,7 +3817,7 @@
  },
  "hikari-ch-4-1-a0d4ee": {
   "file": "/step-pics/hikari-ch-4-1-a0d4ee.webp",
-  "videoSeconds": 4880.0,
+  "videoSeconds": 4880,
   "videoTime": "1:21:20",
   "approx": true,
   "confidence": "low",
@@ -3826,7 +3826,7 @@
  },
  "hikari-ch-4-1-8a70a1": {
   "file": "/step-pics/hikari-ch-4-1-8a70a1.webp",
-  "videoSeconds": 4881.0,
+  "videoSeconds": 4881,
   "videoTime": "1:21:21",
   "approx": true,
   "confidence": "low",
@@ -3835,7 +3835,7 @@
  },
  "hikari-ch-4-1-f79474": {
   "file": "/step-pics/hikari-ch-4-1-f79474.webp",
-  "videoSeconds": 4881.0,
+  "videoSeconds": 4881,
   "videoTime": "1:21:21",
   "approx": true,
   "confidence": "low",
@@ -3844,7 +3844,7 @@
  },
  "hikari-ch-4-1-116f01": {
   "file": "/step-pics/hikari-ch-4-1-116f01.webp",
-  "videoSeconds": 4899.0,
+  "videoSeconds": 4899,
   "videoTime": "1:21:39",
   "approx": true,
   "confidence": "low",
@@ -3880,7 +3880,7 @@
  },
  "hikari-ch-4-900-dbc1f4": {
   "file": "/step-pics/hikari-ch-4-900-dbc1f4.webp",
-  "videoSeconds": 4928.0,
+  "videoSeconds": 4928,
   "videoTime": "1:22:08",
   "approx": false,
   "confidence": "high",
@@ -3889,7 +3889,7 @@
  },
  "hikari-ch-5-1-ada6e6": {
   "file": "/step-pics/hikari-ch-5-1-ada6e6.webp",
-  "videoSeconds": 4950.0,
+  "videoSeconds": 4950,
   "videoTime": "1:22:30",
   "approx": true,
   "confidence": "low",
@@ -3898,7 +3898,7 @@
  },
  "hikari-ch-5-1-14e367": {
   "file": "/step-pics/hikari-ch-5-1-14e367.webp",
-  "videoSeconds": 4974.0,
+  "videoSeconds": 4974,
   "videoTime": "1:22:54",
   "approx": true,
   "confidence": "low",
@@ -3906,7 +3906,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=4971"
  },
  "hikari-ch-5-1-2bb7f3": {
-  "file": "/step-pics/hikari-ch-5-1-2bb7f3.jpg",
+  "file": "/step-pics/hikari-ch-5-1-2bb7f3.webp",
   "videoSeconds": 4993,
   "videoTime": "1:23:13",
   "approx": false,
@@ -3934,7 +3934,7 @@
  },
  "hikari-ch-5-1-a0d4ee": {
   "file": "/step-pics/hikari-ch-5-1-a0d4ee.webp",
-  "videoSeconds": 5007.0,
+  "videoSeconds": 5007,
   "videoTime": "1:23:27",
   "approx": true,
   "confidence": "medium",
@@ -3943,7 +3943,7 @@
  },
  "hikari-ch-5-1-cfe886": {
   "file": "/step-pics/hikari-ch-5-1-cfe886.webp",
-  "videoSeconds": 5010.0,
+  "videoSeconds": 5010,
   "videoTime": "1:23:30",
   "approx": false,
   "confidence": "high",
@@ -3978,7 +3978,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5019"
  },
  "hikari-ch-5-1-eb49dd": {
-  "file": "/step-pics/hikari-ch-5-1-eb49dd.jpg",
+  "file": "/step-pics/hikari-ch-5-1-eb49dd.webp",
   "videoSeconds": 5039,
   "videoTime": "1:23:59",
   "approx": false,
@@ -3988,7 +3988,7 @@
  },
  "hikari-ch-5-2-de3f54": {
   "file": "/step-pics/hikari-ch-5-2-de3f54.webp",
-  "videoSeconds": 5046.0,
+  "videoSeconds": 5046,
   "videoTime": "1:24:06",
   "approx": true,
   "confidence": "medium",
@@ -4006,7 +4006,7 @@
  },
  "hikari-ch-5-1-b975db": {
   "file": "/step-pics/hikari-ch-5-1-b975db.webp",
-  "videoSeconds": 5056.0,
+  "videoSeconds": 5056,
   "videoTime": "1:24:16",
   "approx": false,
   "confidence": "high",
@@ -4032,7 +4032,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5059"
  },
  "hikari-ch-5-1-8ec5fe": {
-  "file": "/step-pics/hikari-ch-5-1-8ec5fe.jpg",
+  "file": "/step-pics/hikari-ch-5-1-8ec5fe.webp",
   "videoSeconds": 5079,
   "videoTime": "1:24:39",
   "approx": false,
@@ -4042,7 +4042,7 @@
  },
  "hikari-ch-5-1-327e3b": {
   "file": "/step-pics/hikari-ch-5-1-327e3b.webp",
-  "videoSeconds": 5083.0,
+  "videoSeconds": 5083,
   "videoTime": "1:24:43",
   "approx": true,
   "confidence": "medium",
@@ -4060,7 +4060,7 @@
  },
  "hikari-ch-5-1-d99259": {
   "file": "/step-pics/hikari-ch-5-1-d99259.webp",
-  "videoSeconds": 5095.0,
+  "videoSeconds": 5095,
   "videoTime": "1:24:55",
   "approx": true,
   "confidence": "low",
@@ -4069,7 +4069,7 @@
  },
  "hikari-ch-5-1-a9175c": {
   "file": "/step-pics/hikari-ch-5-1-a9175c.webp",
-  "videoSeconds": 5115.0,
+  "videoSeconds": 5115,
   "videoTime": "1:25:15",
   "approx": true,
   "confidence": "low",
@@ -4086,7 +4086,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5125"
  },
  "hikari-ch-5-1-ee054c": {
-  "file": "/step-pics/hikari-ch-5-1-ee054c.jpg",
+  "file": "/step-pics/hikari-ch-5-1-ee054c.webp",
   "videoSeconds": 5145,
   "videoTime": "1:25:45",
   "approx": false,
@@ -4105,7 +4105,7 @@
  },
  "hikari-ch-5-1-832da9": {
   "file": "/step-pics/hikari-ch-5-1-832da9.webp",
-  "videoSeconds": 5160.0,
+  "videoSeconds": 5160,
   "videoTime": "1:26:00",
   "approx": true,
   "confidence": "low",
@@ -4123,7 +4123,7 @@
  },
  "hikari-ch-5-1-d31835": {
   "file": "/step-pics/hikari-ch-5-1-d31835.webp",
-  "videoSeconds": 5172.0,
+  "videoSeconds": 5172,
   "videoTime": "1:26:12",
   "approx": false,
   "confidence": "high",
@@ -4141,7 +4141,7 @@
  },
  "hikari-ch-5-1-e7ac11": {
   "file": "/step-pics/hikari-ch-5-1-e7ac11.webp",
-  "videoSeconds": 5178.0,
+  "videoSeconds": 5178,
   "videoTime": "1:26:18",
   "approx": true,
   "confidence": "low",
@@ -4159,7 +4159,7 @@
  },
  "hikari-ch-5-1-0aa391": {
   "file": "/step-pics/hikari-ch-5-1-0aa391.webp",
-  "videoSeconds": 5202.0,
+  "videoSeconds": 5202,
   "videoTime": "1:26:42",
   "approx": true,
   "confidence": "low",
@@ -4177,7 +4177,7 @@
  },
  "hikari-ch-5-1-bbcf89": {
   "file": "/step-pics/hikari-ch-5-1-bbcf89.webp",
-  "videoSeconds": 5216.0,
+  "videoSeconds": 5216,
   "videoTime": "1:26:56",
   "approx": true,
   "confidence": "medium",
@@ -4186,7 +4186,7 @@
  },
  "hikari-ch-5-1-a33c33": {
   "file": "/step-pics/hikari-ch-5-1-a33c33.webp",
-  "videoSeconds": 5221.0,
+  "videoSeconds": 5221,
   "videoTime": "1:27:01",
   "approx": false,
   "confidence": "high",
@@ -4195,7 +4195,7 @@
  },
  "hikari-ch-5-1-80edba": {
   "file": "/step-pics/hikari-ch-5-1-80edba.webp",
-  "videoSeconds": 5226.0,
+  "videoSeconds": 5226,
   "videoTime": "1:27:06",
   "approx": true,
   "confidence": "medium",
@@ -4204,7 +4204,7 @@
  },
  "hikari-ch-5-1-250c37": {
   "file": "/step-pics/hikari-ch-5-1-250c37.webp",
-  "videoSeconds": 5226.0,
+  "videoSeconds": 5226,
   "videoTime": "1:27:06",
   "approx": true,
   "confidence": "medium",
@@ -4213,7 +4213,7 @@
  },
  "hikari-ch-5-1-481bc4": {
   "file": "/step-pics/hikari-ch-5-1-481bc4.webp",
-  "videoSeconds": 5229.0,
+  "videoSeconds": 5229,
   "videoTime": "1:27:09",
   "approx": false,
   "confidence": "high",
@@ -4222,7 +4222,7 @@
  },
  "hikari-ch-5-1-cb5697": {
   "file": "/step-pics/hikari-ch-5-1-cb5697.webp",
-  "videoSeconds": 5254.0,
+  "videoSeconds": 5254,
   "videoTime": "1:27:34",
   "approx": false,
   "confidence": "high",
@@ -4249,7 +4249,7 @@
  },
  "castti-ch-2-winterbloom-route-900-754275": {
   "file": "/step-pics/castti-ch-2-winterbloom-route-900-754275.webp",
-  "videoSeconds": 5282.0,
+  "videoSeconds": 5282,
   "videoTime": "1:28:02",
   "approx": true,
   "confidence": "low",
@@ -4258,7 +4258,7 @@
  },
  "castti-ch-2-winterbloom-route-1-353005": {
   "file": "/step-pics/castti-ch-2-winterbloom-route-1-353005.webp",
-  "videoSeconds": 5370.0,
+  "videoSeconds": 5370,
   "videoTime": "1:29:30",
   "approx": true,
   "confidence": "medium",
@@ -4267,7 +4267,7 @@
  },
  "castti-ch-2-winterbloom-route-1-d220cf": {
   "file": "/step-pics/castti-ch-2-winterbloom-route-1-d220cf.webp",
-  "videoSeconds": 5373.0,
+  "videoSeconds": 5373,
   "videoTime": "1:29:33",
   "approx": true,
   "confidence": "medium",
@@ -4276,7 +4276,7 @@
  },
  "castti-ch-2-winterbloom-route-1-3556f9": {
   "file": "/step-pics/castti-ch-2-winterbloom-route-1-3556f9.webp",
-  "videoSeconds": 5375.0,
+  "videoSeconds": 5375,
   "videoTime": "1:29:35",
   "approx": true,
   "confidence": "medium",
@@ -4294,7 +4294,7 @@
  },
  "castti-ch-2-winterbloom-route-1-7dccd0": {
   "file": "/step-pics/castti-ch-2-winterbloom-route-1-7dccd0.webp",
-  "videoSeconds": 5382.0,
+  "videoSeconds": 5382,
   "videoTime": "1:29:42",
   "approx": true,
   "confidence": "medium",
@@ -4320,7 +4320,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5353"
  },
  "castti-ch-2-winterbloom-route-1-a92679": {
-  "file": "/step-pics/castti-ch-2-winterbloom-route-1-a92679.jpg",
+  "file": "/step-pics/castti-ch-2-winterbloom-route-1-a92679.webp",
   "videoSeconds": 5382,
   "videoTime": "1:29:42",
   "approx": false,
@@ -4338,8 +4338,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5383"
  },
  "castti-ch-2-winterbloom-route-1-d45c83": {
-  "file": "/step-pics/castti-ch-2-winterbloom-route-1-d45c83.jpg",
-  "videoSeconds": 5438.0,
+  "file": "/step-pics/castti-ch-2-winterbloom-route-1-d45c83.webp",
+  "videoSeconds": 5438,
   "videoTime": "1:30:38",
   "approx": false,
   "confidence": "high",
@@ -4356,7 +4356,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5434"
  },
  "castti-ch-3-1-45cc3c": {
-  "file": "/step-pics/castti-ch-3-1-45cc3c.jpg",
+  "file": "/step-pics/castti-ch-3-1-45cc3c.webp",
   "videoSeconds": 5578.5,
   "videoTime": "1:32:58",
   "approx": false,
@@ -4366,7 +4366,7 @@
  },
  "castti-ch-3-900-a3c458": {
   "file": "/step-pics/castti-ch-3-900-a3c458.webp",
-  "videoSeconds": 5578.0,
+  "videoSeconds": 5578,
   "videoTime": "1:32:58",
   "approx": false,
   "confidence": "high",
@@ -4375,7 +4375,7 @@
  },
  "castti-ch-4-1-35129d": {
   "file": "/step-pics/castti-ch-4-1-35129d.webp",
-  "videoSeconds": 5597.0,
+  "videoSeconds": 5597,
   "videoTime": "1:33:17",
   "approx": true,
   "confidence": "low",
@@ -4384,7 +4384,7 @@
  },
  "castti-ch-4-1-5e5df7": {
   "file": "/step-pics/castti-ch-4-1-5e5df7.webp",
-  "videoSeconds": 5608.0,
+  "videoSeconds": 5608,
   "videoTime": "1:33:28",
   "approx": false,
   "confidence": "high",
@@ -4411,7 +4411,7 @@
  },
  "castti-ch-4-1-940b35": {
   "file": "/step-pics/castti-ch-4-1-940b35.webp",
-  "videoSeconds": 5612.0,
+  "videoSeconds": 5612,
   "videoTime": "1:33:32",
   "approx": true,
   "confidence": "medium",
@@ -4420,7 +4420,7 @@
  },
  "castti-ch-4-1-5dc68b": {
   "file": "/step-pics/castti-ch-4-1-5dc68b.webp",
-  "videoSeconds": 5615.0,
+  "videoSeconds": 5615,
   "videoTime": "1:33:35",
   "approx": true,
   "confidence": "high",
@@ -4438,7 +4438,7 @@
  },
  "castti-ch-4-1-02e1b4": {
   "file": "/step-pics/castti-ch-4-1-02e1b4.webp",
-  "videoSeconds": 5621.0,
+  "videoSeconds": 5621,
   "videoTime": "1:33:41",
   "approx": false,
   "confidence": "high",
@@ -4447,7 +4447,7 @@
  },
  "castti-ch-4-1-edfea1": {
   "file": "/step-pics/castti-ch-4-1-edfea1.webp",
-  "videoSeconds": 5623.0,
+  "videoSeconds": 5623,
   "videoTime": "1:33:43",
   "approx": true,
   "confidence": "high",
@@ -4456,7 +4456,7 @@
  },
  "castti-ch-4-1-c6a4a3": {
   "file": "/step-pics/castti-ch-4-1-c6a4a3.webp",
-  "videoSeconds": 5623.0,
+  "videoSeconds": 5623,
   "videoTime": "1:33:43",
   "approx": true,
   "confidence": "high",
@@ -4465,7 +4465,7 @@
  },
  "castti-ch-4-1-2123a3": {
   "file": "/step-pics/castti-ch-4-1-2123a3.webp",
-  "videoSeconds": 5623.0,
+  "videoSeconds": 5623,
   "videoTime": "1:33:43",
   "approx": true,
   "confidence": "high",
@@ -4474,7 +4474,7 @@
  },
  "castti-ch-4-1-1c50a0": {
   "file": "/step-pics/castti-ch-4-1-1c50a0.webp",
-  "videoSeconds": 5660.0,
+  "videoSeconds": 5660,
   "videoTime": "1:34:20",
   "approx": true,
   "confidence": "medium",
@@ -4482,7 +4482,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5657"
  },
  "castti-ch-4-1-c79d17": {
-  "file": "/step-pics/castti-ch-4-1-c79d17.jpg",
+  "file": "/step-pics/castti-ch-4-1-c79d17.webp",
   "videoSeconds": 5729,
   "videoTime": "1:35:29",
   "approx": false,
@@ -4492,7 +4492,7 @@
  },
  "castti-ch-4-1-8de399": {
   "file": "/step-pics/castti-ch-4-1-8de399.webp",
-  "videoSeconds": 5736.0,
+  "videoSeconds": 5736,
   "videoTime": "1:35:36",
   "approx": false,
   "confidence": "high",
@@ -4501,7 +4501,7 @@
  },
  "castti-ch-4-1-dd4ac4": {
   "file": "/step-pics/castti-ch-4-1-dd4ac4.webp",
-  "videoSeconds": 5745.0,
+  "videoSeconds": 5745,
   "videoTime": "1:35:45",
   "approx": false,
   "confidence": "high",
@@ -4510,7 +4510,7 @@
  },
  "castti-ch-4-1-ea2633": {
   "file": "/step-pics/castti-ch-4-1-ea2633.webp",
-  "videoSeconds": 5750.0,
+  "videoSeconds": 5750,
   "videoTime": "1:35:50",
   "approx": true,
   "confidence": "low",
@@ -4519,7 +4519,7 @@
  },
  "castti-ch-4-1-4b9af3": {
   "file": "/step-pics/castti-ch-4-1-4b9af3.webp",
-  "videoSeconds": 5752.0,
+  "videoSeconds": 5752,
   "videoTime": "1:35:52",
   "approx": true,
   "confidence": "low",
@@ -4528,7 +4528,7 @@
  },
  "castti-ch-4-1-25d233": {
   "file": "/step-pics/castti-ch-4-1-25d233.webp",
-  "videoSeconds": 5759.0,
+  "videoSeconds": 5759,
   "videoTime": "1:35:59",
   "approx": true,
   "confidence": "low",
@@ -4546,7 +4546,7 @@
  },
  "castti-ch-4-1-0a311c": {
   "file": "/step-pics/castti-ch-4-1-0a311c.webp",
-  "videoSeconds": 5768.0,
+  "videoSeconds": 5768,
   "videoTime": "1:36:08",
   "approx": true,
   "confidence": "low",
@@ -4555,7 +4555,7 @@
  },
  "castti-ch-4-1-f2de05": {
   "file": "/step-pics/castti-ch-4-1-f2de05.webp",
-  "videoSeconds": 5801.0,
+  "videoSeconds": 5801,
   "videoTime": "1:36:41",
   "approx": true,
   "confidence": "low",
@@ -4582,7 +4582,7 @@
  },
  "castti-ch-4-1-509d99": {
   "file": "/step-pics/castti-ch-4-1-509d99.webp",
-  "videoSeconds": 5812.0,
+  "videoSeconds": 5812,
   "videoTime": "1:36:52",
   "approx": false,
   "confidence": "high",
@@ -4590,7 +4590,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5809"
  },
  "agnea-ch-2-1-ebc766": {
-  "file": "/step-pics/agnea-ch-2-1-ebc766.jpg",
+  "file": "/step-pics/agnea-ch-2-1-ebc766.webp",
   "videoSeconds": 5827.5,
   "videoTime": "1:37:07",
   "approx": false,
@@ -4600,7 +4600,7 @@
  },
  "agnea-ch-2-1-08cfd3": {
   "file": "/step-pics/agnea-ch-2-1-08cfd3.webp",
-  "videoSeconds": 5838.0,
+  "videoSeconds": 5838,
   "videoTime": "1:37:18",
   "approx": false,
   "confidence": "high",
@@ -4608,7 +4608,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5835"
  },
  "agnea-ch-2-1-baf3e6": {
-  "file": "/step-pics/agnea-ch-2-1-baf3e6.jpg",
+  "file": "/step-pics/agnea-ch-2-1-baf3e6.webp",
   "videoSeconds": 5861.5,
   "videoTime": "1:37:41",
   "approx": false,
@@ -4617,7 +4617,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5861"
  },
  "agnea-ch-2-1-3b79ec": {
-  "file": "/step-pics/agnea-ch-2-1-3b79ec.jpg",
+  "file": "/step-pics/agnea-ch-2-1-3b79ec.webp",
   "videoSeconds": 5846,
   "videoTime": "1:37:26",
   "approx": false,
@@ -4636,7 +4636,7 @@
  },
  "agnea-ch-2-1-de3f54": {
   "file": "/step-pics/agnea-ch-2-1-de3f54.webp",
-  "videoSeconds": 5855.0,
+  "videoSeconds": 5855,
   "videoTime": "1:37:35",
   "approx": true,
   "confidence": "low",
@@ -4653,7 +4653,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5858"
  },
  "agnea-ch-2-1-8f3c27": {
-  "file": "/step-pics/agnea-ch-2-1-8f3c27.jpg",
+  "file": "/step-pics/agnea-ch-2-1-8f3c27.webp",
   "videoSeconds": 5886,
   "videoTime": "1:38:06",
   "approx": false,
@@ -4672,7 +4672,7 @@
  },
  "agnea-ch-2-1-8d6297": {
   "file": "/step-pics/agnea-ch-2-1-8d6297.webp",
-  "videoSeconds": 5894.0,
+  "videoSeconds": 5894,
   "videoTime": "1:38:14",
   "approx": true,
   "confidence": "medium",
@@ -4681,7 +4681,7 @@
  },
  "agnea-ch-2-1-0dfafc": {
   "file": "/step-pics/agnea-ch-2-1-0dfafc.webp",
-  "videoSeconds": 5894.0,
+  "videoSeconds": 5894,
   "videoTime": "1:38:14",
   "approx": false,
   "confidence": "high",
@@ -4708,7 +4708,7 @@
  },
  "agnea-ch-2-2-fec412": {
   "file": "/step-pics/agnea-ch-2-2-fec412.webp",
-  "videoSeconds": 5908.0,
+  "videoSeconds": 5908,
   "videoTime": "1:38:28",
   "approx": true,
   "confidence": "medium",
@@ -4726,7 +4726,7 @@
  },
  "agnea-ch-2-1-f06d87": {
   "file": "/step-pics/agnea-ch-2-1-f06d87.webp",
-  "videoSeconds": 5929.0,
+  "videoSeconds": 5929,
   "videoTime": "1:38:49",
   "approx": true,
   "confidence": "medium",
@@ -4743,7 +4743,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5934"
  },
  "agnea-ch-2-1-2041b2": {
-  "file": "/step-pics/agnea-ch-2-1-2041b2.jpg",
+  "file": "/step-pics/agnea-ch-2-1-2041b2.webp",
   "videoSeconds": 5949,
   "videoTime": "1:39:09",
   "approx": false,
@@ -4753,7 +4753,7 @@
  },
  "agnea-ch-2-2-d31835": {
   "file": "/step-pics/agnea-ch-2-2-d31835.webp",
-  "videoSeconds": 5954.0,
+  "videoSeconds": 5954,
   "videoTime": "1:39:14",
   "approx": false,
   "confidence": "high",
@@ -4762,7 +4762,7 @@
  },
  "agnea-ch-2-2-de3f54": {
   "file": "/step-pics/agnea-ch-2-2-de3f54.webp",
-  "videoSeconds": 5958.0,
+  "videoSeconds": 5958,
   "videoTime": "1:39:18",
   "approx": true,
   "confidence": "medium",
@@ -4788,8 +4788,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=5957"
  },
  "agnea-ch-2-1-f4fcfe": {
-  "file": "/step-pics/agnea-ch-2-1-f4fcfe.jpg",
-  "videoSeconds": 6093.0,
+  "file": "/step-pics/agnea-ch-2-1-f4fcfe.webp",
+  "videoSeconds": 6093,
   "videoTime": "1:41:33",
   "approx": false,
   "confidence": "high",
@@ -4825,7 +4825,7 @@
  },
  "agnea-ch-2-1-391752": {
   "file": "/step-pics/agnea-ch-2-1-391752.webp",
-  "videoSeconds": 6097.0,
+  "videoSeconds": 6097,
   "videoTime": "1:41:37",
   "approx": true,
   "confidence": "medium",
@@ -4834,7 +4834,7 @@
  },
  "agnea-ch-2-1-98dff4": {
   "file": "/step-pics/agnea-ch-2-1-98dff4.webp",
-  "videoSeconds": 6097.0,
+  "videoSeconds": 6097,
   "videoTime": "1:41:37",
   "approx": true,
   "confidence": "medium",
@@ -4843,7 +4843,7 @@
  },
  "agnea-ch-2-1-ac054e": {
   "file": "/step-pics/agnea-ch-2-1-ac054e.webp",
-  "videoSeconds": 6099.0,
+  "videoSeconds": 6099,
   "videoTime": "1:41:39",
   "approx": true,
   "confidence": "medium",
@@ -4852,7 +4852,7 @@
  },
  "agnea-ch-2-1-91407d": {
   "file": "/step-pics/agnea-ch-2-1-91407d.webp",
-  "videoSeconds": 6099.0,
+  "videoSeconds": 6099,
   "videoTime": "1:41:39",
   "approx": true,
   "confidence": "medium",
@@ -4897,7 +4897,7 @@
  },
  "agnea-ch-2-1-8edcaf": {
   "file": "/step-pics/agnea-ch-2-1-8edcaf.webp",
-  "videoSeconds": 6154.0,
+  "videoSeconds": 6154,
   "videoTime": "1:42:34",
   "approx": true,
   "confidence": "low",
@@ -4905,7 +4905,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6151"
  },
  "agnea-ch-2-1-1dfd88": {
-  "file": "/step-pics/agnea-ch-2-1-1dfd88.jpg",
+  "file": "/step-pics/agnea-ch-2-1-1dfd88.webp",
   "videoSeconds": 6207,
   "videoTime": "1:43:27",
   "approx": false,
@@ -4915,7 +4915,7 @@
  },
  "agnea-ch-2-1-2971e0": {
   "file": "/step-pics/agnea-ch-2-1-2971e0.webp",
-  "videoSeconds": 6211.0,
+  "videoSeconds": 6211,
   "videoTime": "1:43:31",
   "approx": true,
   "confidence": "medium",
@@ -4932,7 +4932,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6240"
  },
  "agnea-ch-2-1-ddcaac": {
-  "file": "/step-pics/agnea-ch-2-1-ddcaac.jpg",
+  "file": "/step-pics/agnea-ch-2-1-ddcaac.webp",
   "videoSeconds": 6244.5,
   "videoTime": "1:44:04",
   "approx": false,
@@ -4942,7 +4942,7 @@
  },
  "agnea-ch-2-1-30ef95": {
   "file": "/step-pics/agnea-ch-2-1-30ef95.webp",
-  "videoSeconds": 6221.0,
+  "videoSeconds": 6221,
   "videoTime": "1:43:41",
   "approx": true,
   "confidence": "low",
@@ -4951,7 +4951,7 @@
  },
  "agnea-ch-2-1-e0591e": {
   "file": "/step-pics/agnea-ch-2-1-e0591e.webp",
-  "videoSeconds": 6235.0,
+  "videoSeconds": 6235,
   "videoTime": "1:43:55",
   "approx": true,
   "confidence": "low",
@@ -4960,7 +4960,7 @@
  },
  "agnea-ch-2-900-ab4879": {
   "file": "/step-pics/agnea-ch-2-900-ab4879.webp",
-  "videoSeconds": 6244.0,
+  "videoSeconds": 6244,
   "videoTime": "1:44:04",
   "approx": false,
   "confidence": "high",
@@ -4968,7 +4968,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6241"
  },
  "throne-ch-3-father-s-route-1-e04c85": {
-  "file": "/step-pics/throne-ch-3-father-s-route-1-e04c85.jpg",
+  "file": "/step-pics/throne-ch-3-father-s-route-1-e04c85.webp",
   "videoSeconds": 6373,
   "videoTime": "1:46:13",
   "approx": false,
@@ -4978,7 +4978,7 @@
  },
  "throne-ch-3-father-s-route-1-e434e0": {
   "file": "/step-pics/throne-ch-3-father-s-route-1-e434e0.webp",
-  "videoSeconds": 6376.0,
+  "videoSeconds": 6376,
   "videoTime": "1:46:16",
   "approx": false,
   "confidence": "high",
@@ -4987,7 +4987,7 @@
  },
  "throne-ch-3-father-s-route-1-d31835": {
   "file": "/step-pics/throne-ch-3-father-s-route-1-d31835.webp",
-  "videoSeconds": 6379.0,
+  "videoSeconds": 6379,
   "videoTime": "1:46:19",
   "approx": false,
   "confidence": "high",
@@ -4996,7 +4996,7 @@
  },
  "throne-ch-3-father-s-route-1-de3f54": {
   "file": "/step-pics/throne-ch-3-father-s-route-1-de3f54.webp",
-  "videoSeconds": 6384.0,
+  "videoSeconds": 6384,
   "videoTime": "1:46:24",
   "approx": true,
   "confidence": "medium",
@@ -5013,7 +5013,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6388"
  },
  "throne-ch-3-father-s-route-1-ddcaac": {
-  "file": "/step-pics/throne-ch-3-father-s-route-1-ddcaac.jpg",
+  "file": "/step-pics/throne-ch-3-father-s-route-1-ddcaac.webp",
   "videoSeconds": 6404.5,
   "videoTime": "1:46:44",
   "approx": false,
@@ -5023,7 +5023,7 @@
  },
  "throne-ch-3-father-s-route-900-ab4fc6": {
   "file": "/step-pics/throne-ch-3-father-s-route-900-ab4fc6.webp",
-  "videoSeconds": 6404.0,
+  "videoSeconds": 6404,
   "videoTime": "1:46:44",
   "approx": false,
   "confidence": "high",
@@ -5031,8 +5031,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6401"
  },
  "agnea-ch-3-1-1cf256": {
-  "file": "/step-pics/agnea-ch-3-1-1cf256.jpg",
-  "videoSeconds": 6495.0,
+  "file": "/step-pics/agnea-ch-3-1-1cf256.webp",
+  "videoSeconds": 6495,
   "videoTime": "1:48:15",
   "approx": false,
   "confidence": "medium",
@@ -5041,7 +5041,7 @@
  },
  "agnea-ch-4-1-2810c6": {
   "file": "/step-pics/agnea-ch-4-1-2810c6.webp",
-  "videoSeconds": 6500.0,
+  "videoSeconds": 6500,
   "videoTime": "1:48:20",
   "approx": true,
   "confidence": "low",
@@ -5050,7 +5050,7 @@
  },
  "agnea-ch-4-1-6094e6": {
   "file": "/step-pics/agnea-ch-4-1-6094e6.webp",
-  "videoSeconds": 6550.0,
+  "videoSeconds": 6550,
   "videoTime": "1:49:10",
   "approx": true,
   "confidence": "low",
@@ -5058,7 +5058,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6547"
  },
  "agnea-ch-4-1-13e654": {
-  "file": "/step-pics/agnea-ch-4-1-13e654.jpg",
+  "file": "/step-pics/agnea-ch-4-1-13e654.webp",
   "videoSeconds": 6577,
   "videoTime": "1:49:37",
   "approx": false,
@@ -5068,7 +5068,7 @@
  },
  "agnea-ch-4-1-d31835": {
   "file": "/step-pics/agnea-ch-4-1-d31835.webp",
-  "videoSeconds": 6582.0,
+  "videoSeconds": 6582,
   "videoTime": "1:49:42",
   "approx": false,
   "confidence": "high",
@@ -5104,7 +5104,7 @@
  },
  "agnea-ch-4-1-5b187f": {
   "file": "/step-pics/agnea-ch-4-1-5b187f.webp",
-  "videoSeconds": 6611.0,
+  "videoSeconds": 6611,
   "videoTime": "1:50:11",
   "approx": false,
   "confidence": "high",
@@ -5113,7 +5113,7 @@
  },
  "agnea-ch-4-900-10cc50": {
   "file": "/step-pics/agnea-ch-4-900-10cc50.webp",
-  "videoSeconds": 6611.0,
+  "videoSeconds": 6611,
   "videoTime": "1:50:11",
   "approx": false,
   "confidence": "high",
@@ -5122,7 +5122,7 @@
  },
  "agnea-ch-4-1-0e83e6": {
   "file": "/step-pics/agnea-ch-4-1-0e83e6.webp",
-  "videoSeconds": 6621.0,
+  "videoSeconds": 6621,
   "videoTime": "1:50:21",
   "approx": true,
   "confidence": "medium",
@@ -5140,7 +5140,7 @@
  },
  "agnea-ch-4-1-533e07": {
   "file": "/step-pics/agnea-ch-4-1-533e07.webp",
-  "videoSeconds": 6637.0,
+  "videoSeconds": 6637,
   "videoTime": "1:50:37",
   "approx": true,
   "confidence": "low",
@@ -5149,7 +5149,7 @@
  },
  "agnea-ch-4-1-1ccffd": {
   "file": "/step-pics/agnea-ch-4-1-1ccffd.webp",
-  "videoSeconds": 6637.0,
+  "videoSeconds": 6637,
   "videoTime": "1:50:37",
   "approx": true,
   "confidence": "medium",
@@ -5158,7 +5158,7 @@
  },
  "agnea-ch-4-1-72ed62": {
   "file": "/step-pics/agnea-ch-4-1-72ed62.webp",
-  "videoSeconds": 6637.0,
+  "videoSeconds": 6637,
   "videoTime": "1:50:37",
   "approx": true,
   "confidence": "medium",
@@ -5167,7 +5167,7 @@
  },
  "agnea-ch-4-1-ac4258": {
   "file": "/step-pics/agnea-ch-4-1-ac4258.webp",
-  "videoSeconds": 6638.0,
+  "videoSeconds": 6638,
   "videoTime": "1:50:38",
   "approx": true,
   "confidence": "high",
@@ -5176,7 +5176,7 @@
  },
  "agnea-ch-4-1-d593f1": {
   "file": "/step-pics/agnea-ch-4-1-d593f1.webp",
-  "videoSeconds": 6638.0,
+  "videoSeconds": 6638,
   "videoTime": "1:50:38",
   "approx": true,
   "confidence": "high",
@@ -5184,7 +5184,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6635"
  },
  "agnea-ch-4-1-7605c9": {
-  "file": "/step-pics/agnea-ch-4-1-7605c9.jpg",
+  "file": "/step-pics/agnea-ch-4-1-7605c9.webp",
   "videoSeconds": 6687.5,
   "videoTime": "1:51:27",
   "approx": false,
@@ -5203,7 +5203,7 @@
  },
  "partitio-ch-4-1-818454": {
   "file": "/step-pics/partitio-ch-4-1-818454.webp",
-  "videoSeconds": 6710.0,
+  "videoSeconds": 6710,
   "videoTime": "1:51:50",
   "approx": true,
   "confidence": "low",
@@ -5212,7 +5212,7 @@
  },
  "partitio-ch-4-1-45241f": {
   "file": "/step-pics/partitio-ch-4-1-45241f.webp",
-  "videoSeconds": 6712.0,
+  "videoSeconds": 6712,
   "videoTime": "1:51:52",
   "approx": true,
   "confidence": "low",
@@ -5221,7 +5221,7 @@
  },
  "partitio-ch-4-1-a12603": {
   "file": "/step-pics/partitio-ch-4-1-a12603.webp",
-  "videoSeconds": 6715.0,
+  "videoSeconds": 6715,
   "videoTime": "1:51:55",
   "approx": true,
   "confidence": "low",
@@ -5239,7 +5239,7 @@
  },
  "partitio-ch-4-1-6e3e82": {
   "file": "/step-pics/partitio-ch-4-1-6e3e82.webp",
-  "videoSeconds": 6775.0,
+  "videoSeconds": 6775,
   "videoTime": "1:52:55",
   "approx": true,
   "confidence": "medium",
@@ -5247,7 +5247,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6772"
  },
  "partitio-ch-4-1-dc278c": {
-  "file": "/step-pics/partitio-ch-4-1-dc278c.jpg",
+  "file": "/step-pics/partitio-ch-4-1-dc278c.webp",
   "videoSeconds": 6821,
   "videoTime": "1:53:41",
   "approx": false,
@@ -5257,7 +5257,7 @@
  },
  "partitio-ch-4-1-7f54f6": {
   "file": "/step-pics/partitio-ch-4-1-7f54f6.webp",
-  "videoSeconds": 6820.0,
+  "videoSeconds": 6820,
   "videoTime": "1:53:40",
   "approx": true,
   "confidence": "low",
@@ -5266,7 +5266,7 @@
  },
  "partitio-ch-4-1-108a46": {
   "file": "/step-pics/partitio-ch-4-1-108a46.webp",
-  "videoSeconds": 6823.0,
+  "videoSeconds": 6823,
   "videoTime": "1:53:43",
   "approx": true,
   "confidence": "low",
@@ -5275,7 +5275,7 @@
  },
  "partitio-ch-4-1-de3f54": {
   "file": "/step-pics/partitio-ch-4-1-de3f54.webp",
-  "videoSeconds": 6823.0,
+  "videoSeconds": 6823,
   "videoTime": "1:53:43",
   "approx": true,
   "confidence": "low",
@@ -5284,7 +5284,7 @@
  },
  "partitio-ch-4-1-1a6f51": {
   "file": "/step-pics/partitio-ch-4-1-1a6f51.webp",
-  "videoSeconds": 6823.0,
+  "videoSeconds": 6823,
   "videoTime": "1:53:43",
   "approx": true,
   "confidence": "low",
@@ -5293,7 +5293,7 @@
  },
  "partitio-ch-4-1-43fc5b": {
   "file": "/step-pics/partitio-ch-4-1-43fc5b.webp",
-  "videoSeconds": 6823.0,
+  "videoSeconds": 6823,
   "videoTime": "1:53:43",
   "approx": false,
   "confidence": "high",
@@ -5302,7 +5302,7 @@
  },
  "partitio-ch-4-1-8c8056": {
   "file": "/step-pics/partitio-ch-4-1-8c8056.webp",
-  "videoSeconds": 6870.0,
+  "videoSeconds": 6870,
   "videoTime": "1:54:30",
   "approx": true,
   "confidence": "medium",
@@ -5310,7 +5310,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6867"
  },
  "partitio-ch-4-1-9fbb5f": {
-  "file": "/step-pics/partitio-ch-4-1-9fbb5f.jpg",
+  "file": "/step-pics/partitio-ch-4-1-9fbb5f.webp",
   "videoSeconds": 6872.5,
   "videoTime": "1:54:32",
   "approx": false,
@@ -5320,7 +5320,7 @@
  },
  "partitio-ch-4-1-52f067": {
   "file": "/step-pics/partitio-ch-4-1-52f067.webp",
-  "videoSeconds": 6882.0,
+  "videoSeconds": 6882,
   "videoTime": "1:54:42",
   "approx": true,
   "confidence": "low",
@@ -5329,7 +5329,7 @@
  },
  "partitio-ch-4-1-6fad35": {
   "file": "/step-pics/partitio-ch-4-1-6fad35.webp",
-  "videoSeconds": 6887.0,
+  "videoSeconds": 6887,
   "videoTime": "1:54:47",
   "approx": false,
   "confidence": "high",
@@ -5374,7 +5374,7 @@
  },
  "ochette-ch-2-cateracta-s-route-1-63dd2f": {
   "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-63dd2f.webp",
-  "videoSeconds": 6919.0,
+  "videoSeconds": 6919,
   "videoTime": "1:55:19",
   "approx": true,
   "confidence": "medium",
@@ -5382,7 +5382,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6916"
  },
  "ochette-ch-2-cateracta-s-route-1-08a97c": {
-  "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-08a97c.jpg",
+  "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-08a97c.webp",
   "videoSeconds": 6933,
   "videoTime": "1:55:33",
   "approx": false,
@@ -5391,8 +5391,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=6930"
  },
  "ochette-ch-2-cateracta-s-route-1-9cac78": {
-  "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-9cac78.jpg",
-  "videoSeconds": 7044.0,
+  "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-9cac78.webp",
+  "videoSeconds": 7044,
   "videoTime": "1:57:24",
   "approx": false,
   "confidence": "medium",
@@ -5410,7 +5410,7 @@
  },
  "ochette-ch-2-cateracta-s-route-1-2b3a18": {
   "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-2b3a18.webp",
-  "videoSeconds": 7009.0,
+  "videoSeconds": 7009,
   "videoTime": "1:56:49",
   "approx": true,
   "confidence": "high",
@@ -5437,7 +5437,7 @@
  },
  "ochette-ch-2-cateracta-s-route-1-010387": {
   "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-010387.webp",
-  "videoSeconds": 7016.0,
+  "videoSeconds": 7016,
   "videoTime": "1:56:56",
   "approx": false,
   "confidence": "high",
@@ -5445,7 +5445,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7013"
  },
  "ochette-ch-2-cateracta-s-route-1-cea8bc": {
-  "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-cea8bc.jpg",
+  "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-cea8bc.webp",
   "videoSeconds": 7027,
   "videoTime": "1:57:07",
   "approx": false,
@@ -5455,7 +5455,7 @@
  },
  "ochette-ch-2-cateracta-s-route-1-0ee040": {
   "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-0ee040.webp",
-  "videoSeconds": 7033.0,
+  "videoSeconds": 7033,
   "videoTime": "1:57:13",
   "approx": false,
   "confidence": "high",
@@ -5464,7 +5464,7 @@
  },
  "ochette-ch-2-cateracta-s-route-1-f9e6ad": {
   "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-f9e6ad.webp",
-  "videoSeconds": 7033.0,
+  "videoSeconds": 7033,
   "videoTime": "1:57:13",
   "approx": false,
   "confidence": "high",
@@ -5482,7 +5482,7 @@
  },
  "ochette-ch-2-cateracta-s-route-1-eab8fd": {
   "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-eab8fd.webp",
-  "videoSeconds": 7044.0,
+  "videoSeconds": 7044,
   "videoTime": "1:57:24",
   "approx": true,
   "confidence": "high",
@@ -5490,7 +5490,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7041"
  },
  "ochette-ch-2-cateracta-s-route-1-18f49b": {
-  "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-18f49b.jpg",
+  "file": "/step-pics/ochette-ch-2-cateracta-s-route-1-18f49b.webp",
   "videoSeconds": 7052.5,
   "videoTime": "1:57:32",
   "approx": false,
@@ -5500,7 +5500,7 @@
  },
  "ochette-ch-2-tera-s-route-1-1d1495": {
   "file": "/step-pics/ochette-ch-2-tera-s-route-1-1d1495.webp",
-  "videoSeconds": 7077.0,
+  "videoSeconds": 7077,
   "videoTime": "1:57:57",
   "approx": false,
   "confidence": "high",
@@ -5509,7 +5509,7 @@
  },
  "ochette-ch-2-tera-s-route-1-97c621": {
   "file": "/step-pics/ochette-ch-2-tera-s-route-1-97c621.webp",
-  "videoSeconds": 7086.0,
+  "videoSeconds": 7086,
   "videoTime": "1:58:06",
   "approx": true,
   "confidence": "medium",
@@ -5518,7 +5518,7 @@
  },
  "ochette-ch-2-tera-s-route-1-06c94b": {
   "file": "/step-pics/ochette-ch-2-tera-s-route-1-06c94b.webp",
-  "videoSeconds": 7107.0,
+  "videoSeconds": 7107,
   "videoTime": "1:58:27",
   "approx": false,
   "confidence": "high",
@@ -5535,7 +5535,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7127"
  },
  "ochette-ch-2-tera-s-route-1-f2882a": {
-  "file": "/step-pics/ochette-ch-2-tera-s-route-1-f2882a.jpg",
+  "file": "/step-pics/ochette-ch-2-tera-s-route-1-f2882a.webp",
   "videoSeconds": 7141.5,
   "videoTime": "1:59:01",
   "approx": false,
@@ -5544,7 +5544,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7141"
  },
  "ochette-ch-2-tera-s-route-1-8fa4b7": {
-  "file": "/step-pics/ochette-ch-2-tera-s-route-1-8fa4b7.jpg",
+  "file": "/step-pics/ochette-ch-2-tera-s-route-1-8fa4b7.webp",
   "videoSeconds": 7155,
   "videoTime": "1:59:15",
   "approx": false,
@@ -5572,7 +5572,7 @@
  },
  "ochette-ch-2-tera-s-route-1-78d939": {
   "file": "/step-pics/ochette-ch-2-tera-s-route-1-78d939.webp",
-  "videoSeconds": 7168.0,
+  "videoSeconds": 7168,
   "videoTime": "1:59:28",
   "approx": true,
   "confidence": "medium",
@@ -5581,7 +5581,7 @@
  },
  "ochette-ch-2-tera-s-route-1-6bc564": {
   "file": "/step-pics/ochette-ch-2-tera-s-route-1-6bc564.webp",
-  "videoSeconds": 7184.0,
+  "videoSeconds": 7184,
   "videoTime": "1:59:44",
   "approx": true,
   "confidence": "medium",
@@ -5589,7 +5589,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7181"
  },
  "ochette-ch-2-glacis-s-route-1-b89570": {
-  "file": "/step-pics/ochette-ch-2-glacis-s-route-1-b89570.jpg",
+  "file": "/step-pics/ochette-ch-2-glacis-s-route-1-b89570.webp",
   "videoSeconds": 7219,
   "videoTime": "2:00:19",
   "approx": false,
@@ -5599,7 +5599,7 @@
  },
  "ochette-ch-2-glacis-s-route-1-327e3b": {
   "file": "/step-pics/ochette-ch-2-glacis-s-route-1-327e3b.webp",
-  "videoSeconds": 7230.0,
+  "videoSeconds": 7230,
   "videoTime": "2:00:30",
   "approx": true,
   "confidence": "low",
@@ -5608,7 +5608,7 @@
  },
  "ochette-ch-2-glacis-s-route-1-2232c1": {
   "file": "/step-pics/ochette-ch-2-glacis-s-route-1-2232c1.webp",
-  "videoSeconds": 7236.0,
+  "videoSeconds": 7236,
   "videoTime": "2:00:36",
   "approx": true,
   "confidence": "medium",
@@ -5616,7 +5616,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7233"
  },
  "ochette-ch-2-glacis-s-route-1-3639da": {
-  "file": "/step-pics/ochette-ch-2-glacis-s-route-1-3639da.jpg",
+  "file": "/step-pics/ochette-ch-2-glacis-s-route-1-3639da.webp",
   "videoSeconds": 7283,
   "videoTime": "2:01:23",
   "approx": false,
@@ -5635,7 +5635,7 @@
  },
  "ochette-ch-2-glacis-s-route-1-bceb68": {
   "file": "/step-pics/ochette-ch-2-glacis-s-route-1-bceb68.webp",
-  "videoSeconds": 7292.0,
+  "videoSeconds": 7292,
   "videoTime": "2:01:32",
   "approx": true,
   "confidence": "medium",
@@ -5644,7 +5644,7 @@
  },
  "ochette-ch-2-glacis-s-route-1-78d939": {
   "file": "/step-pics/ochette-ch-2-glacis-s-route-1-78d939.webp",
-  "videoSeconds": 7292.0,
+  "videoSeconds": 7292,
   "videoTime": "2:01:32",
   "approx": true,
   "confidence": "medium",
@@ -5652,7 +5652,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7289"
  },
  "ochette-ch-2-glacis-s-route-1-c29678": {
-  "file": "/step-pics/ochette-ch-2-glacis-s-route-1-c29678.jpg",
+  "file": "/step-pics/ochette-ch-2-glacis-s-route-1-c29678.webp",
   "videoSeconds": 7315.5,
   "videoTime": "2:01:55",
   "approx": false,
@@ -5671,7 +5671,7 @@
  },
  "ochette-ch-3-1-c63de8": {
   "file": "/step-pics/ochette-ch-3-1-c63de8.webp",
-  "videoSeconds": 7395.0,
+  "videoSeconds": 7395,
   "videoTime": "2:03:15",
   "approx": true,
   "confidence": "medium",
@@ -5743,7 +5743,7 @@
  },
  "ochette-ch-3-1-696bcb": {
   "file": "/step-pics/ochette-ch-3-1-696bcb.webp",
-  "videoSeconds": 7479.0,
+  "videoSeconds": 7479,
   "videoTime": "2:04:39",
   "approx": true,
   "confidence": "high",
@@ -5751,7 +5751,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7476"
  },
  "ochette-ch-3-1-8de399": {
-  "file": "/step-pics/ochette-ch-3-1-8de399.jpg",
+  "file": "/step-pics/ochette-ch-3-1-8de399.webp",
   "videoSeconds": 7518,
   "videoTime": "2:05:18",
   "approx": false,
@@ -5779,7 +5779,7 @@
  },
  "ochette-ch-3-1-f6a5d4": {
   "file": "/step-pics/ochette-ch-3-1-f6a5d4.webp",
-  "videoSeconds": 7531.0,
+  "videoSeconds": 7531,
   "videoTime": "2:05:31",
   "approx": true,
   "confidence": "medium",
@@ -5788,7 +5788,7 @@
  },
  "ochette-ch-3-1-fec412": {
   "file": "/step-pics/ochette-ch-3-1-fec412.webp",
-  "videoSeconds": 7533.0,
+  "videoSeconds": 7533,
   "videoTime": "2:05:33",
   "approx": true,
   "confidence": "low",
@@ -5796,8 +5796,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7530"
  },
  "ochette-ch-3-1-c05ffc": {
-  "file": "/step-pics/ochette-ch-3-1-c05ffc.jpg",
-  "videoSeconds": 7597.0,
+  "file": "/step-pics/ochette-ch-3-1-c05ffc.webp",
+  "videoSeconds": 7597,
   "videoTime": "2:06:37",
   "approx": false,
   "confidence": "high",
@@ -5806,7 +5806,7 @@
  },
  "the-apothecary-hunter-part-1-1-38a592": {
   "file": "/step-pics/the-apothecary-hunter-part-1-1-38a592.webp",
-  "videoSeconds": 7637.0,
+  "videoSeconds": 7637,
   "videoTime": "2:07:17",
   "approx": true,
   "confidence": "medium",
@@ -5823,8 +5823,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7644"
  },
  "the-apothecary-hunter-part-1-1-c05ffc": {
-  "file": "/step-pics/the-apothecary-hunter-part-1-1-c05ffc.jpg",
-  "videoSeconds": 7671.0,
+  "file": "/step-pics/the-apothecary-hunter-part-1-1-c05ffc.webp",
+  "videoSeconds": 7671,
   "videoTime": "2:07:51",
   "approx": false,
   "confidence": "high",
@@ -5832,7 +5832,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7671"
  },
  "the-apothecary-hunter-part-2-1-9f4c40": {
-  "file": "/step-pics/the-apothecary-hunter-part-2-1-9f4c40.jpg",
+  "file": "/step-pics/the-apothecary-hunter-part-2-1-9f4c40.webp",
   "videoSeconds": 7713,
   "videoTime": "2:08:33",
   "approx": false,
@@ -5842,7 +5842,7 @@
  },
  "the-apothecary-hunter-part-2-1-e64400": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-e64400.webp",
-  "videoSeconds": 7720.0,
+  "videoSeconds": 7720,
   "videoTime": "2:08:40",
   "approx": false,
   "confidence": "high",
@@ -5850,7 +5850,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7717"
  },
  "the-apothecary-hunter-part-2-1-d31835": {
-  "file": "/step-pics/the-apothecary-hunter-part-2-1-d31835.jpg",
+  "file": "/step-pics/the-apothecary-hunter-part-2-1-d31835.webp",
   "videoSeconds": 7761,
   "videoTime": "2:09:21",
   "approx": false,
@@ -5860,7 +5860,7 @@
  },
  "the-apothecary-hunter-part-2-1-de3f54": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-de3f54.webp",
-  "videoSeconds": 7766.0,
+  "videoSeconds": 7766,
   "videoTime": "2:09:26",
   "approx": true,
   "confidence": "medium",
@@ -5869,7 +5869,7 @@
  },
  "the-apothecary-hunter-part-2-1-fec412": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-fec412.webp",
-  "videoSeconds": 7768.0,
+  "videoSeconds": 7768,
   "videoTime": "2:09:28",
   "approx": true,
   "confidence": "medium",
@@ -5905,7 +5905,7 @@
  },
  "the-apothecary-hunter-part-2-1-27e9fb": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-27e9fb.webp",
-  "videoSeconds": 7780.0,
+  "videoSeconds": 7780,
   "videoTime": "2:09:40",
   "approx": true,
   "confidence": "medium",
@@ -5914,7 +5914,7 @@
  },
  "the-apothecary-hunter-part-2-1-a8e886": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-a8e886.webp",
-  "videoSeconds": 7783.0,
+  "videoSeconds": 7783,
   "videoTime": "2:09:43",
   "approx": true,
   "confidence": "medium",
@@ -5932,7 +5932,7 @@
  },
  "the-apothecary-hunter-part-2-1-dcc20e": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-dcc20e.webp",
-  "videoSeconds": 7785.0,
+  "videoSeconds": 7785,
   "videoTime": "2:09:45",
   "approx": false,
   "confidence": "high",
@@ -5941,7 +5941,7 @@
  },
  "the-apothecary-hunter-part-2-1-7ae1ac": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-7ae1ac.webp",
-  "videoSeconds": 7794.0,
+  "videoSeconds": 7794,
   "videoTime": "2:09:54",
   "approx": false,
   "confidence": "high",
@@ -5950,7 +5950,7 @@
  },
  "the-apothecary-hunter-part-2-1-24c832": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-24c832.webp",
-  "videoSeconds": 7798.0,
+  "videoSeconds": 7798,
   "videoTime": "2:09:58",
   "approx": false,
   "confidence": "high",
@@ -5959,7 +5959,7 @@
  },
  "the-apothecary-hunter-part-2-1-02e1b4": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-02e1b4.webp",
-  "videoSeconds": 7808.0,
+  "videoSeconds": 7808,
   "videoTime": "2:10:08",
   "approx": false,
   "confidence": "high",
@@ -5968,7 +5968,7 @@
  },
  "the-apothecary-hunter-part-2-1-0ade86": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-0ade86.webp",
-  "videoSeconds": 7811.0,
+  "videoSeconds": 7811,
   "videoTime": "2:10:11",
   "approx": true,
   "confidence": "high",
@@ -5985,7 +5985,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7811"
  },
  "the-apothecary-hunter-part-2-1-fa04b8": {
-  "file": "/step-pics/the-apothecary-hunter-part-2-1-fa04b8.jpg",
+  "file": "/step-pics/the-apothecary-hunter-part-2-1-fa04b8.webp",
   "videoSeconds": 7822.5,
   "videoTime": "2:10:22",
   "approx": false,
@@ -5995,7 +5995,7 @@
  },
  "the-apothecary-hunter-part-2-1-b27701": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-b27701.webp",
-  "videoSeconds": 7830.0,
+  "videoSeconds": 7830,
   "videoTime": "2:10:30",
   "approx": true,
   "confidence": "medium",
@@ -6004,7 +6004,7 @@
  },
  "the-apothecary-hunter-part-2-1-221140": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-221140.webp",
-  "videoSeconds": 7830.0,
+  "videoSeconds": 7830,
   "videoTime": "2:10:30",
   "approx": false,
   "confidence": "high",
@@ -6022,7 +6022,7 @@
  },
  "the-apothecary-hunter-part-2-1-7117af": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-7117af.webp",
-  "videoSeconds": 7843.0,
+  "videoSeconds": 7843,
   "videoTime": "2:10:43",
   "approx": true,
   "confidence": "low",
@@ -6031,7 +6031,7 @@
  },
  "the-apothecary-hunter-part-2-1-460792": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-460792.webp",
-  "videoSeconds": 7861.0,
+  "videoSeconds": 7861,
   "videoTime": "2:11:01",
   "approx": true,
   "confidence": "low",
@@ -6040,7 +6040,7 @@
  },
  "the-apothecary-hunter-part-2-1-90b4f2": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-90b4f2.webp",
-  "videoSeconds": 7877.0,
+  "videoSeconds": 7877,
   "videoTime": "2:11:17",
   "approx": true,
   "confidence": "high",
@@ -6049,7 +6049,7 @@
  },
  "the-apothecary-hunter-part-2-1-844c73": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-844c73.webp",
-  "videoSeconds": 7881.0,
+  "videoSeconds": 7881,
   "videoTime": "2:11:21",
   "approx": true,
   "confidence": "high",
@@ -6094,7 +6094,7 @@
  },
  "the-apothecary-hunter-part-2-1-5cbbaa": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-5cbbaa.webp",
-  "videoSeconds": 7897.0,
+  "videoSeconds": 7897,
   "videoTime": "2:11:37",
   "approx": true,
   "confidence": "high",
@@ -6103,7 +6103,7 @@
  },
  "the-apothecary-hunter-part-2-1-3d2444": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-3d2444.webp",
-  "videoSeconds": 7898.0,
+  "videoSeconds": 7898,
   "videoTime": "2:11:38",
   "approx": true,
   "confidence": "medium",
@@ -6112,7 +6112,7 @@
  },
  "the-apothecary-hunter-part-2-1-3aedbe": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-3aedbe.webp",
-  "videoSeconds": 7898.0,
+  "videoSeconds": 7898,
   "videoTime": "2:11:38",
   "approx": true,
   "confidence": "medium",
@@ -6121,7 +6121,7 @@
  },
  "the-apothecary-hunter-part-2-1-27ebaa": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-27ebaa.webp",
-  "videoSeconds": 7911.0,
+  "videoSeconds": 7911,
   "videoTime": "2:11:51",
   "approx": true,
   "confidence": "medium",
@@ -6130,7 +6130,7 @@
  },
  "the-apothecary-hunter-part-2-1-9bff70": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-9bff70.webp",
-  "videoSeconds": 7918.0,
+  "videoSeconds": 7918,
   "videoTime": "2:11:58",
   "approx": false,
   "confidence": "high",
@@ -6139,7 +6139,7 @@
  },
  "the-apothecary-hunter-part-2-2-80edba": {
   "file": "/step-pics/the-apothecary-hunter-part-2-2-80edba.webp",
-  "videoSeconds": 7924.0,
+  "videoSeconds": 7924,
   "videoTime": "2:12:04",
   "approx": true,
   "confidence": "low",
@@ -6148,7 +6148,7 @@
  },
  "the-apothecary-hunter-part-2-1-263b64": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-263b64.webp",
-  "videoSeconds": 7928.0,
+  "videoSeconds": 7928,
   "videoTime": "2:12:08",
   "approx": true,
   "confidence": "low",
@@ -6157,7 +6157,7 @@
  },
  "the-apothecary-hunter-part-2-1-11ee44": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-11ee44.webp",
-  "videoSeconds": 7928.0,
+  "videoSeconds": 7928,
   "videoTime": "2:12:08",
   "approx": true,
   "confidence": "low",
@@ -6184,7 +6184,7 @@
  },
  "the-apothecary-hunter-part-2-1-2bc1fd": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-2bc1fd.webp",
-  "videoSeconds": 7948.0,
+  "videoSeconds": 7948,
   "videoTime": "2:12:28",
   "approx": true,
   "confidence": "high",
@@ -6193,7 +6193,7 @@
  },
  "the-apothecary-hunter-part-2-1-4d5bc2": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-4d5bc2.webp",
-  "videoSeconds": 7952.0,
+  "videoSeconds": 7952,
   "videoTime": "2:12:32",
   "approx": true,
   "confidence": "high",
@@ -6202,7 +6202,7 @@
  },
  "the-apothecary-hunter-part-2-1-d1671e": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-d1671e.webp",
-  "videoSeconds": 7957.0,
+  "videoSeconds": 7957,
   "videoTime": "2:12:37",
   "approx": true,
   "confidence": "high",
@@ -6211,7 +6211,7 @@
  },
  "the-apothecary-hunter-part-2-1-4181c0": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-4181c0.webp",
-  "videoSeconds": 7962.0,
+  "videoSeconds": 7962,
   "videoTime": "2:12:42",
   "approx": true,
   "confidence": "high",
@@ -6220,7 +6220,7 @@
  },
  "the-apothecary-hunter-part-2-1-aa1466": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-aa1466.webp",
-  "videoSeconds": 7966.0,
+  "videoSeconds": 7966,
   "videoTime": "2:12:46",
   "approx": true,
   "confidence": "high",
@@ -6229,7 +6229,7 @@
  },
  "the-apothecary-hunter-part-2-1-b92759": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-b92759.webp",
-  "videoSeconds": 7966.0,
+  "videoSeconds": 7966,
   "videoTime": "2:12:46",
   "approx": true,
   "confidence": "high",
@@ -6238,7 +6238,7 @@
  },
  "the-apothecary-hunter-part-2-1-81c8a3": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-81c8a3.webp",
-  "videoSeconds": 7966.0,
+  "videoSeconds": 7966,
   "videoTime": "2:12:46",
   "approx": true,
   "confidence": "high",
@@ -6247,7 +6247,7 @@
  },
  "the-apothecary-hunter-part-2-1-6f3bca": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-6f3bca.webp",
-  "videoSeconds": 7966.0,
+  "videoSeconds": 7966,
   "videoTime": "2:12:46",
   "approx": true,
   "confidence": "medium",
@@ -6256,7 +6256,7 @@
  },
  "the-apothecary-hunter-part-2-1-c9ec05": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-c9ec05.webp",
-  "videoSeconds": 7966.0,
+  "videoSeconds": 7966,
   "videoTime": "2:12:46",
   "approx": true,
   "confidence": "high",
@@ -6265,7 +6265,7 @@
  },
  "the-apothecary-hunter-part-2-1-311fec": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-311fec.webp",
-  "videoSeconds": 7966.0,
+  "videoSeconds": 7966,
   "videoTime": "2:12:46",
   "approx": true,
   "confidence": "high",
@@ -6274,7 +6274,7 @@
  },
  "the-apothecary-hunter-part-2-1-123ad2": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-123ad2.webp",
-  "videoSeconds": 7966.0,
+  "videoSeconds": 7966,
   "videoTime": "2:12:46",
   "approx": true,
   "confidence": "high",
@@ -6283,7 +6283,7 @@
  },
  "the-apothecary-hunter-part-2-1-9ef3f5": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-9ef3f5.webp",
-  "videoSeconds": 7968.0,
+  "videoSeconds": 7968,
   "videoTime": "2:12:48",
   "approx": true,
   "confidence": "high",
@@ -6292,7 +6292,7 @@
  },
  "the-apothecary-hunter-part-2-1-acf2f4": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-acf2f4.webp",
-  "videoSeconds": 7969.0,
+  "videoSeconds": 7969,
   "videoTime": "2:12:49",
   "approx": true,
   "confidence": "high",
@@ -6301,7 +6301,7 @@
  },
  "the-apothecary-hunter-part-2-1-f5edf5": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-f5edf5.webp",
-  "videoSeconds": 7969.0,
+  "videoSeconds": 7969,
   "videoTime": "2:12:49",
   "approx": true,
   "confidence": "high",
@@ -6310,7 +6310,7 @@
  },
  "the-apothecary-hunter-part-2-1-03df8f": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-03df8f.webp",
-  "videoSeconds": 7969.0,
+  "videoSeconds": 7969,
   "videoTime": "2:12:49",
   "approx": true,
   "confidence": "medium",
@@ -6319,7 +6319,7 @@
  },
  "the-apothecary-hunter-part-2-1-59c928": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-59c928.webp",
-  "videoSeconds": 7970.0,
+  "videoSeconds": 7970,
   "videoTime": "2:12:50",
   "approx": true,
   "confidence": "medium",
@@ -6328,7 +6328,7 @@
  },
  "the-apothecary-hunter-part-2-1-9edf7c": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-9edf7c.webp",
-  "videoSeconds": 7970.0,
+  "videoSeconds": 7970,
   "videoTime": "2:12:50",
   "approx": true,
   "confidence": "medium",
@@ -6337,7 +6337,7 @@
  },
  "the-apothecary-hunter-part-2-1-bc4fda": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-bc4fda.webp",
-  "videoSeconds": 7970.0,
+  "videoSeconds": 7970,
   "videoTime": "2:12:50",
   "approx": true,
   "confidence": "medium",
@@ -6346,7 +6346,7 @@
  },
  "the-apothecary-hunter-part-2-1-a6f159": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-a6f159.webp",
-  "videoSeconds": 7974.0,
+  "videoSeconds": 7974,
   "videoTime": "2:12:54",
   "approx": true,
   "confidence": "medium",
@@ -6355,7 +6355,7 @@
  },
  "the-apothecary-hunter-part-2-1-c0743e": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-c0743e.webp",
-  "videoSeconds": 7976.0,
+  "videoSeconds": 7976,
   "videoTime": "2:12:56",
   "approx": true,
   "confidence": "medium",
@@ -6364,7 +6364,7 @@
  },
  "the-apothecary-hunter-part-2-1-9affd7": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-9affd7.webp",
-  "videoSeconds": 7976.0,
+  "videoSeconds": 7976,
   "videoTime": "2:12:56",
   "approx": true,
   "confidence": "medium",
@@ -6372,7 +6372,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7973"
  },
  "the-apothecary-hunter-part-2-1-d0802b": {
-  "file": "/step-pics/the-apothecary-hunter-part-2-1-d0802b.jpg",
+  "file": "/step-pics/the-apothecary-hunter-part-2-1-d0802b.webp",
   "videoSeconds": 7976,
   "videoTime": "2:12:56",
   "approx": false,
@@ -6382,7 +6382,7 @@
  },
  "the-apothecary-hunter-part-2-1-c2511b": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-c2511b.webp",
-  "videoSeconds": 7985.0,
+  "videoSeconds": 7985,
   "videoTime": "2:13:05",
   "approx": true,
   "confidence": "medium",
@@ -6399,7 +6399,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=7987"
  },
  "the-apothecary-hunter-part-2-1-f06d87": {
-  "file": "/step-pics/the-apothecary-hunter-part-2-1-f06d87.jpg",
+  "file": "/step-pics/the-apothecary-hunter-part-2-1-f06d87.webp",
   "videoSeconds": 8004.5,
   "videoTime": "2:13:24",
   "approx": false,
@@ -6418,7 +6418,7 @@
  },
  "the-apothecary-hunter-part-2-1-454a0f": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-454a0f.webp",
-  "videoSeconds": 8027.0,
+  "videoSeconds": 8027,
   "videoTime": "2:13:47",
   "approx": true,
   "confidence": "low",
@@ -6427,7 +6427,7 @@
  },
  "the-apothecary-hunter-part-2-1-4611cc": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-4611cc.webp",
-  "videoSeconds": 8027.0,
+  "videoSeconds": 8027,
   "videoTime": "2:13:47",
   "approx": true,
   "confidence": "high",
@@ -6436,7 +6436,7 @@
  },
  "the-apothecary-hunter-part-2-1-6a3d82": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-6a3d82.webp",
-  "videoSeconds": 8028.0,
+  "videoSeconds": 8028,
   "videoTime": "2:13:48",
   "approx": true,
   "confidence": "medium",
@@ -6481,7 +6481,7 @@
  },
  "the-apothecary-hunter-part-2-1-e80a78": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-e80a78.webp",
-  "videoSeconds": 8033.0,
+  "videoSeconds": 8033,
   "videoTime": "2:13:53",
   "approx": true,
   "confidence": "medium",
@@ -6490,7 +6490,7 @@
  },
  "the-apothecary-hunter-part-2-1-bd98fc": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-bd98fc.webp",
-  "videoSeconds": 8047.0,
+  "videoSeconds": 8047,
   "videoTime": "2:14:07",
   "approx": true,
   "confidence": "low",
@@ -6499,7 +6499,7 @@
  },
  "the-apothecary-hunter-part-2-1-18f004": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-18f004.webp",
-  "videoSeconds": 8047.0,
+  "videoSeconds": 8047,
   "videoTime": "2:14:07",
   "approx": true,
   "confidence": "low",
@@ -6508,7 +6508,7 @@
  },
  "the-apothecary-hunter-part-2-1-639afc": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-639afc.webp",
-  "videoSeconds": 8047.0,
+  "videoSeconds": 8047,
   "videoTime": "2:14:07",
   "approx": true,
   "confidence": "medium",
@@ -6517,7 +6517,7 @@
  },
  "the-apothecary-hunter-part-2-1-ee515b": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-ee515b.webp",
-  "videoSeconds": 8048.0,
+  "videoSeconds": 8048,
   "videoTime": "2:14:08",
   "approx": true,
   "confidence": "high",
@@ -6526,7 +6526,7 @@
  },
  "the-apothecary-hunter-part-2-1-d732a1": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-d732a1.webp",
-  "videoSeconds": 8048.0,
+  "videoSeconds": 8048,
   "videoTime": "2:14:08",
   "approx": true,
   "confidence": "high",
@@ -6535,7 +6535,7 @@
  },
  "the-apothecary-hunter-part-2-1-8eff13": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-8eff13.webp",
-  "videoSeconds": 8047.0,
+  "videoSeconds": 8047,
   "videoTime": "2:14:07",
   "approx": true,
   "confidence": "low",
@@ -6544,7 +6544,7 @@
  },
  "the-apothecary-hunter-part-2-1-c0cd80": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-c0cd80.webp",
-  "videoSeconds": 8047.0,
+  "videoSeconds": 8047,
   "videoTime": "2:14:07",
   "approx": true,
   "confidence": "low",
@@ -6553,7 +6553,7 @@
  },
  "the-apothecary-hunter-part-2-1-265d99": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-265d99.webp",
-  "videoSeconds": 8047.0,
+  "videoSeconds": 8047,
   "videoTime": "2:14:07",
   "approx": true,
   "confidence": "low",
@@ -6589,7 +6589,7 @@
  },
  "the-apothecary-hunter-part-2-1-792fba": {
   "file": "/step-pics/the-apothecary-hunter-part-2-1-792fba.webp",
-  "videoSeconds": 8052.0,
+  "videoSeconds": 8052,
   "videoTime": "2:14:12",
   "approx": true,
   "confidence": "high",
@@ -6607,7 +6607,7 @@
  },
  "galdera-1-0c1141": {
   "file": "/step-pics/galdera-1-0c1141.webp",
-  "videoSeconds": 8063.0,
+  "videoSeconds": 8063,
   "videoTime": "2:14:23",
   "approx": true,
   "confidence": "low",
@@ -6616,7 +6616,7 @@
  },
  "galdera-1-6e6d7a": {
   "file": "/step-pics/galdera-1-6e6d7a.webp",
-  "videoSeconds": 8066.0,
+  "videoSeconds": 8066,
   "videoTime": "2:14:26",
   "approx": true,
   "confidence": "low",
@@ -6688,7 +6688,7 @@
  },
  "galdera-1-14e5b0": {
   "file": "/step-pics/galdera-1-14e5b0.webp",
-  "videoSeconds": 8085.0,
+  "videoSeconds": 8085,
   "videoTime": "2:14:45",
   "approx": true,
   "confidence": "medium",
@@ -6696,7 +6696,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8082"
  },
  "galdera-1-95ea15": {
-  "file": "/step-pics/galdera-1-95ea15.jpg",
+  "file": "/step-pics/galdera-1-95ea15.webp",
   "videoSeconds": 8112,
   "videoTime": "2:15:12",
   "approx": false,
@@ -6706,7 +6706,7 @@
  },
  "galdera-1-8a2047": {
   "file": "/step-pics/galdera-1-8a2047.webp",
-  "videoSeconds": 8118.0,
+  "videoSeconds": 8118,
   "videoTime": "2:15:18",
   "approx": true,
   "confidence": "medium",
@@ -6715,7 +6715,7 @@
  },
  "galdera-1-da2c91": {
   "file": "/step-pics/galdera-1-da2c91.webp",
-  "videoSeconds": 8118.0,
+  "videoSeconds": 8118,
   "videoTime": "2:15:18",
   "approx": true,
   "confidence": "medium",
@@ -6724,7 +6724,7 @@
  },
  "galdera-1-6684e4": {
   "file": "/step-pics/galdera-1-6684e4.webp",
-  "videoSeconds": 8118.0,
+  "videoSeconds": 8118,
   "videoTime": "2:15:18",
   "approx": true,
   "confidence": "medium",
@@ -6733,7 +6733,7 @@
  },
  "galdera-1-7488e9": {
   "file": "/step-pics/galdera-1-7488e9.webp",
-  "videoSeconds": 8118.0,
+  "videoSeconds": 8118,
   "videoTime": "2:15:18",
   "approx": false,
   "confidence": "high",
@@ -6742,7 +6742,7 @@
  },
  "galdera-1-0ab8c9": {
   "file": "/step-pics/galdera-1-0ab8c9.webp",
-  "videoSeconds": 8118.0,
+  "videoSeconds": 8118,
   "videoTime": "2:15:18",
   "approx": false,
   "confidence": "high",
@@ -6751,7 +6751,7 @@
  },
  "galdera-1-d1cac8": {
   "file": "/step-pics/galdera-1-d1cac8.webp",
-  "videoSeconds": 8136.0,
+  "videoSeconds": 8136,
   "videoTime": "2:15:36",
   "approx": false,
   "confidence": "high",
@@ -6760,7 +6760,7 @@
  },
  "galdera-1-d38ea1": {
   "file": "/step-pics/galdera-1-d38ea1.webp",
-  "videoSeconds": 8145.0,
+  "videoSeconds": 8145,
   "videoTime": "2:15:45",
   "approx": true,
   "confidence": "low",
@@ -6769,7 +6769,7 @@
  },
  "galdera-1-b65c41": {
   "file": "/step-pics/galdera-1-b65c41.webp",
-  "videoSeconds": 8153.0,
+  "videoSeconds": 8153,
   "videoTime": "2:15:53",
   "approx": true,
   "confidence": "medium",
@@ -6787,7 +6787,7 @@
  },
  "galdera-1-30e750": {
   "file": "/step-pics/galdera-1-30e750.webp",
-  "videoSeconds": 8172.0,
+  "videoSeconds": 8172,
   "videoTime": "2:16:12",
   "approx": true,
   "confidence": "low",
@@ -6796,7 +6796,7 @@
  },
  "galdera-1-b04892": {
   "file": "/step-pics/galdera-1-b04892.webp",
-  "videoSeconds": 8181.0,
+  "videoSeconds": 8181,
   "videoTime": "2:16:21",
   "approx": false,
   "confidence": "high",
@@ -6805,7 +6805,7 @@
  },
  "galdera-1-b73092": {
   "file": "/step-pics/galdera-1-b73092.webp",
-  "videoSeconds": 8185.0,
+  "videoSeconds": 8185,
   "videoTime": "2:16:25",
   "approx": true,
   "confidence": "medium",
@@ -6850,7 +6850,7 @@
  },
  "galdera-3-91a7f5": {
   "file": "/step-pics/galdera-3-91a7f5.webp",
-  "videoSeconds": 8193.0,
+  "videoSeconds": 8193,
   "videoTime": "2:16:33",
   "approx": true,
   "confidence": "medium",
@@ -6858,7 +6858,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8190"
  },
  "galdera-1-107476": {
-  "file": "/step-pics/galdera-1-107476.jpg",
+  "file": "/step-pics/galdera-1-107476.webp",
   "videoSeconds": 8286,
   "videoTime": "2:18:06",
   "approx": false,
@@ -6877,7 +6877,7 @@
  },
  "galdera-1-48b742": {
   "file": "/step-pics/galdera-1-48b742.webp",
-  "videoSeconds": 8310.0,
+  "videoSeconds": 8310,
   "videoTime": "2:18:30",
   "approx": true,
   "confidence": "low",
@@ -6886,7 +6886,7 @@
  },
  "galdera-1-e2e548": {
   "file": "/step-pics/galdera-1-e2e548.webp",
-  "videoSeconds": 8310.0,
+  "videoSeconds": 8310,
   "videoTime": "2:18:30",
   "approx": true,
   "confidence": "medium",
@@ -6895,7 +6895,7 @@
  },
  "galdera-1-27f40f": {
   "file": "/step-pics/galdera-1-27f40f.webp",
-  "videoSeconds": 8310.0,
+  "videoSeconds": 8310,
   "videoTime": "2:18:30",
   "approx": true,
   "confidence": "low",
@@ -6922,7 +6922,7 @@
  },
  "galdera-1-568595": {
   "file": "/step-pics/galdera-1-568595.webp",
-  "videoSeconds": 8321.0,
+  "videoSeconds": 8321,
   "videoTime": "2:18:41",
   "approx": true,
   "confidence": "medium",
@@ -6931,7 +6931,7 @@
  },
  "galdera-3-688285": {
   "file": "/step-pics/galdera-3-688285.webp",
-  "videoSeconds": 8322.0,
+  "videoSeconds": 8322,
   "videoTime": "2:18:42",
   "approx": true,
   "confidence": "medium",
@@ -6940,7 +6940,7 @@
  },
  "galdera-1-eb43c3": {
   "file": "/step-pics/galdera-1-eb43c3.webp",
-  "videoSeconds": 8322.0,
+  "videoSeconds": 8322,
   "videoTime": "2:18:42",
   "approx": true,
   "confidence": "low",
@@ -6949,7 +6949,7 @@
  },
  "galdera-1-61fbfe": {
   "file": "/step-pics/galdera-1-61fbfe.webp",
-  "videoSeconds": 8322.0,
+  "videoSeconds": 8322,
   "videoTime": "2:18:42",
   "approx": true,
   "confidence": "low",
@@ -6958,7 +6958,7 @@
  },
  "galdera-1-73f0dd": {
   "file": "/step-pics/galdera-1-73f0dd.webp",
-  "videoSeconds": 8322.0,
+  "videoSeconds": 8322,
   "videoTime": "2:18:42",
   "approx": true,
   "confidence": "low",
@@ -6967,7 +6967,7 @@
  },
  "galdera-1-dc7e4b": {
   "file": "/step-pics/galdera-1-dc7e4b.webp",
-  "videoSeconds": 8322.0,
+  "videoSeconds": 8322,
   "videoTime": "2:18:42",
   "approx": true,
   "confidence": "low",
@@ -6976,7 +6976,7 @@
  },
  "galdera-1-05fde0": {
   "file": "/step-pics/galdera-1-05fde0.webp",
-  "videoSeconds": 8322.0,
+  "videoSeconds": 8322,
   "videoTime": "2:18:42",
   "approx": true,
   "confidence": "low",
@@ -6985,7 +6985,7 @@
  },
  "galdera-1-8de399": {
   "file": "/step-pics/galdera-1-8de399.webp",
-  "videoSeconds": 8322.0,
+  "videoSeconds": 8322,
   "videoTime": "2:18:42",
   "approx": true,
   "confidence": "medium",
@@ -6994,7 +6994,7 @@
  },
  "galdera-1-305c9a": {
   "file": "/step-pics/galdera-1-305c9a.webp",
-  "videoSeconds": 8322.0,
+  "videoSeconds": 8322,
   "videoTime": "2:18:42",
   "approx": true,
   "confidence": "low",
@@ -7003,7 +7003,7 @@
  },
  "galdera-1-09853b": {
   "file": "/step-pics/galdera-1-09853b.webp",
-  "videoSeconds": 8323.0,
+  "videoSeconds": 8323,
   "videoTime": "2:18:43",
   "approx": true,
   "confidence": "low",
@@ -7012,7 +7012,7 @@
  },
  "galdera-1-da936c": {
   "file": "/step-pics/galdera-1-da936c.webp",
-  "videoSeconds": 8326.0,
+  "videoSeconds": 8326,
   "videoTime": "2:18:46",
   "approx": true,
   "confidence": "low",
@@ -7021,7 +7021,7 @@
  },
  "galdera-1-61b1b2": {
   "file": "/step-pics/galdera-1-61b1b2.webp",
-  "videoSeconds": 8328.0,
+  "videoSeconds": 8328,
   "videoTime": "2:18:48",
   "approx": true,
   "confidence": "low",
@@ -7030,7 +7030,7 @@
  },
  "galdera-1-1b8814": {
   "file": "/step-pics/galdera-1-1b8814.webp",
-  "videoSeconds": 8328.0,
+  "videoSeconds": 8328,
   "videoTime": "2:18:48",
   "approx": true,
   "confidence": "low",
@@ -7039,7 +7039,7 @@
  },
  "galdera-2-61fbfe": {
   "file": "/step-pics/galdera-2-61fbfe.webp",
-  "videoSeconds": 8328.0,
+  "videoSeconds": 8328,
   "videoTime": "2:18:48",
   "approx": true,
   "confidence": "low",
@@ -7048,7 +7048,7 @@
  },
  "galdera-4-688285": {
   "file": "/step-pics/galdera-4-688285.webp",
-  "videoSeconds": 8328.0,
+  "videoSeconds": 8328,
   "videoTime": "2:18:48",
   "approx": true,
   "confidence": "medium",
@@ -7057,7 +7057,7 @@
  },
  "galdera-2-568595": {
   "file": "/step-pics/galdera-2-568595.webp",
-  "videoSeconds": 8328.0,
+  "videoSeconds": 8328,
   "videoTime": "2:18:48",
   "approx": true,
   "confidence": "medium",
@@ -7066,7 +7066,7 @@
  },
  "galdera-5-688285": {
   "file": "/step-pics/galdera-5-688285.webp",
-  "videoSeconds": 8328.0,
+  "videoSeconds": 8328,
   "videoTime": "2:18:48",
   "approx": true,
   "confidence": "medium",
@@ -7075,7 +7075,7 @@
  },
  "galdera-1-131109": {
   "file": "/step-pics/galdera-1-131109.webp",
-  "videoSeconds": 8328.0,
+  "videoSeconds": 8328,
   "videoTime": "2:18:48",
   "approx": true,
   "confidence": "medium",
@@ -7084,7 +7084,7 @@
  },
  "galdera-6-688285": {
   "file": "/step-pics/galdera-6-688285.webp",
-  "videoSeconds": 8328.0,
+  "videoSeconds": 8328,
   "videoTime": "2:18:48",
   "approx": true,
   "confidence": "medium",
@@ -7093,7 +7093,7 @@
  },
  "galdera-1-4c8bd2": {
   "file": "/step-pics/galdera-1-4c8bd2.webp",
-  "videoSeconds": 8347.0,
+  "videoSeconds": 8347,
   "videoTime": "2:19:07",
   "approx": true,
   "confidence": "medium",
@@ -7102,7 +7102,7 @@
  },
  "galdera-1-ebc9f2": {
   "file": "/step-pics/galdera-1-ebc9f2.webp",
-  "videoSeconds": 8349.0,
+  "videoSeconds": 8349,
   "videoTime": "2:19:09",
   "approx": true,
   "confidence": "medium",
@@ -7111,7 +7111,7 @@
  },
  "galdera-1-daa83e": {
   "file": "/step-pics/galdera-1-daa83e.webp",
-  "videoSeconds": 8353.0,
+  "videoSeconds": 8353,
   "videoTime": "2:19:13",
   "approx": true,
   "confidence": "low",
@@ -7138,7 +7138,7 @@
  },
  "galdera-1-585560": {
   "file": "/step-pics/galdera-1-585560.webp",
-  "videoSeconds": 8360.0,
+  "videoSeconds": 8360,
   "videoTime": "2:19:20",
   "approx": true,
   "confidence": "medium",
@@ -7147,7 +7147,7 @@
  },
  "galdera-1-4f65aa": {
   "file": "/step-pics/galdera-1-4f65aa.webp",
-  "videoSeconds": 8361.0,
+  "videoSeconds": 8361,
   "videoTime": "2:19:21",
   "approx": true,
   "confidence": "low",
@@ -7165,7 +7165,7 @@
  },
  "galdera-1-f52934": {
   "file": "/step-pics/galdera-1-f52934.webp",
-  "videoSeconds": 8367.0,
+  "videoSeconds": 8367,
   "videoTime": "2:19:27",
   "approx": true,
   "confidence": "medium",
@@ -7174,7 +7174,7 @@
  },
  "galdera-1-67d55d": {
   "file": "/step-pics/galdera-1-67d55d.webp",
-  "videoSeconds": 8370.0,
+  "videoSeconds": 8370,
   "videoTime": "2:19:30",
   "approx": true,
   "confidence": "medium",
@@ -7192,7 +7192,7 @@
  },
  "galdera-1-835e28": {
   "file": "/step-pics/galdera-1-835e28.webp",
-  "videoSeconds": 8373.0,
+  "videoSeconds": 8373,
   "videoTime": "2:19:33",
   "approx": true,
   "confidence": "medium",
@@ -7201,7 +7201,7 @@
  },
  "galdera-1-c56616": {
   "file": "/step-pics/galdera-1-c56616.webp",
-  "videoSeconds": 8375.0,
+  "videoSeconds": 8375,
   "videoTime": "2:19:35",
   "approx": true,
   "confidence": "high",
@@ -7210,7 +7210,7 @@
  },
  "galdera-1-4ddcd4": {
   "file": "/step-pics/galdera-1-4ddcd4.webp",
-  "videoSeconds": 8379.0,
+  "videoSeconds": 8379,
   "videoTime": "2:19:39",
   "approx": true,
   "confidence": "high",
@@ -7219,7 +7219,7 @@
  },
  "galdera-1-40889f": {
   "file": "/step-pics/galdera-1-40889f.webp",
-  "videoSeconds": 8382.0,
+  "videoSeconds": 8382,
   "videoTime": "2:19:42",
   "approx": true,
   "confidence": "high",
@@ -7228,7 +7228,7 @@
  },
  "galdera-1-8eff13": {
   "file": "/step-pics/galdera-1-8eff13.webp",
-  "videoSeconds": 8383.0,
+  "videoSeconds": 8383,
   "videoTime": "2:19:43",
   "approx": true,
   "confidence": "high",
@@ -7237,7 +7237,7 @@
  },
  "galdera-1-ef5033": {
   "file": "/step-pics/galdera-1-ef5033.webp",
-  "videoSeconds": 8385.0,
+  "videoSeconds": 8385,
   "videoTime": "2:19:45",
   "approx": true,
   "confidence": "high",
@@ -7246,7 +7246,7 @@
  },
  "galdera-1-46963e": {
   "file": "/step-pics/galdera-1-46963e.webp",
-  "videoSeconds": 8382.0,
+  "videoSeconds": 8382,
   "videoTime": "2:19:42",
   "approx": true,
   "confidence": "low",
@@ -7255,7 +7255,7 @@
  },
  "galdera-1-e95192": {
   "file": "/step-pics/galdera-1-e95192.webp",
-  "videoSeconds": 8383.0,
+  "videoSeconds": 8383,
   "videoTime": "2:19:43",
   "approx": true,
   "confidence": "low",
@@ -7264,7 +7264,7 @@
  },
  "galdera-1-430511": {
   "file": "/step-pics/galdera-1-430511.webp",
-  "videoSeconds": 8385.0,
+  "videoSeconds": 8385,
   "videoTime": "2:19:45",
   "approx": true,
   "confidence": "low",
@@ -7273,7 +7273,7 @@
  },
  "galdera-1-7f10a0": {
   "file": "/step-pics/galdera-1-7f10a0.webp",
-  "videoSeconds": 8385.0,
+  "videoSeconds": 8385,
   "videoTime": "2:19:45",
   "approx": true,
   "confidence": "high",
@@ -7291,7 +7291,7 @@
  },
  "galdera-1-2e449d": {
   "file": "/step-pics/galdera-1-2e449d.webp",
-  "videoSeconds": 8392.0,
+  "videoSeconds": 8392,
   "videoTime": "2:19:52",
   "approx": true,
   "confidence": "high",
@@ -7309,7 +7309,7 @@
  },
  "galdera-1-169668": {
   "file": "/step-pics/galdera-1-169668.webp",
-  "videoSeconds": 8402.0,
+  "videoSeconds": 8402,
   "videoTime": "2:20:02",
   "approx": true,
   "confidence": "low",
@@ -7317,7 +7317,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8399"
  },
  "galdera-1-b5cb4a": {
-  "file": "/step-pics/galdera-1-b5cb4a.jpg",
+  "file": "/step-pics/galdera-1-b5cb4a.webp",
   "videoSeconds": 8407.5,
   "videoTime": "2:20:07",
   "approx": false,
@@ -7327,7 +7327,7 @@
  },
  "galdera-1-7fcb33": {
   "file": "/step-pics/galdera-1-7fcb33.webp",
-  "videoSeconds": 8429.0,
+  "videoSeconds": 8429,
   "videoTime": "2:20:29",
   "approx": false,
   "confidence": "high",
@@ -7345,7 +7345,7 @@
  },
  "galdera-1-dcc20e": {
   "file": "/step-pics/galdera-1-dcc20e.webp",
-  "videoSeconds": 8459.0,
+  "videoSeconds": 8459,
   "videoTime": "2:20:59",
   "approx": false,
   "confidence": "high",
@@ -7363,7 +7363,7 @@
  },
  "agnea-ch-5-1-dd0bd6": {
   "file": "/step-pics/agnea-ch-5-1-dd0bd6.webp",
-  "videoSeconds": 8509.0,
+  "videoSeconds": 8509,
   "videoTime": "2:21:49",
   "approx": true,
   "confidence": "medium",
@@ -7372,7 +7372,7 @@
  },
  "agnea-ch-5-1-e6280f": {
   "file": "/step-pics/agnea-ch-5-1-e6280f.webp",
-  "videoSeconds": 8520.0,
+  "videoSeconds": 8520,
   "videoTime": "2:22:00",
   "approx": false,
   "confidence": "high",
@@ -7380,7 +7380,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8517"
  },
  "agnea-ch-5-1-e653d6": {
-  "file": "/step-pics/agnea-ch-5-1-e653d6.jpg",
+  "file": "/step-pics/agnea-ch-5-1-e653d6.webp",
   "videoSeconds": 8555,
   "videoTime": "2:22:35",
   "approx": false,
@@ -7390,7 +7390,7 @@
  },
  "agnea-ch-5-1-de3f54": {
   "file": "/step-pics/agnea-ch-5-1-de3f54.webp",
-  "videoSeconds": 8560.0,
+  "videoSeconds": 8560,
   "videoTime": "2:22:40",
   "approx": true,
   "confidence": "medium",
@@ -7399,7 +7399,7 @@
  },
  "agnea-ch-5-1-fec412": {
   "file": "/step-pics/agnea-ch-5-1-fec412.webp",
-  "videoSeconds": 8564.0,
+  "videoSeconds": 8564,
   "videoTime": "2:22:44",
   "approx": true,
   "confidence": "medium",
@@ -7434,8 +7434,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8582"
  },
  "agnea-ch-5-1-fa04b8": {
-  "file": "/step-pics/agnea-ch-5-1-fa04b8.jpg",
-  "videoSeconds": 8605.0,
+  "file": "/step-pics/agnea-ch-5-1-fa04b8.webp",
+  "videoSeconds": 8605,
   "videoTime": "2:23:25",
   "approx": false,
   "confidence": "medium",
@@ -7444,7 +7444,7 @@
  },
  "agnea-ch-5-900-fe34db": {
   "file": "/step-pics/agnea-ch-5-900-fe34db.webp",
-  "videoSeconds": 8605.0,
+  "videoSeconds": 8605,
   "videoTime": "2:23:25",
   "approx": false,
   "confidence": "high",
@@ -7452,7 +7452,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8602"
  },
  "throne-ch-3-mother-s-route-1-676baa": {
-  "file": "/step-pics/throne-ch-3-mother-s-route-1-676baa.jpg",
+  "file": "/step-pics/throne-ch-3-mother-s-route-1-676baa.webp",
   "videoSeconds": 8691,
   "videoTime": "2:24:51",
   "approx": false,
@@ -7462,7 +7462,7 @@
  },
  "throne-ch-3-mother-s-route-1-683b59": {
   "file": "/step-pics/throne-ch-3-mother-s-route-1-683b59.webp",
-  "videoSeconds": 8695.0,
+  "videoSeconds": 8695,
   "videoTime": "2:24:55",
   "approx": false,
   "confidence": "high",
@@ -7507,7 +7507,7 @@
  },
  "throne-ch-4-1-7f75f6": {
   "file": "/step-pics/throne-ch-4-1-7f75f6.webp",
-  "videoSeconds": 8728.0,
+  "videoSeconds": 8728,
   "videoTime": "2:25:28",
   "approx": true,
   "confidence": "medium",
@@ -7516,7 +7516,7 @@
  },
  "throne-ch-4-900-b455bf": {
   "file": "/step-pics/throne-ch-4-900-b455bf.webp",
-  "videoSeconds": 8734.0,
+  "videoSeconds": 8734,
   "videoTime": "2:25:34",
   "approx": false,
   "confidence": "high",
@@ -7524,8 +7524,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8731"
  },
  "throne-ch-4-1-2087a9": {
-  "file": "/step-pics/throne-ch-4-1-2087a9.jpg",
-  "videoSeconds": 8818.0,
+  "file": "/step-pics/throne-ch-4-1-2087a9.webp",
+  "videoSeconds": 8818,
   "videoTime": "2:26:58",
   "approx": false,
   "confidence": "medium",
@@ -7534,7 +7534,7 @@
  },
  "throne-ch-4-1-bcd14f": {
   "file": "/step-pics/throne-ch-4-1-bcd14f.webp",
-  "videoSeconds": 8826.0,
+  "videoSeconds": 8826,
   "videoTime": "2:27:06",
   "approx": true,
   "confidence": "medium",
@@ -7543,7 +7543,7 @@
  },
  "throne-ch-4-1-bf844d": {
   "file": "/step-pics/throne-ch-4-1-bf844d.webp",
-  "videoSeconds": 8827.0,
+  "videoSeconds": 8827,
   "videoTime": "2:27:07",
   "approx": true,
   "confidence": "low",
@@ -7560,7 +7560,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8836"
  },
  "throne-ch-4-1-89d69d": {
-  "file": "/step-pics/throne-ch-4-1-89d69d.jpg",
+  "file": "/step-pics/throne-ch-4-1-89d69d.webp",
   "videoSeconds": 8891,
   "videoTime": "2:28:11",
   "approx": false,
@@ -7570,7 +7570,7 @@
  },
  "throne-ch-4-1-8de399": {
   "file": "/step-pics/throne-ch-4-1-8de399.webp",
-  "videoSeconds": 8898.0,
+  "videoSeconds": 8898,
   "videoTime": "2:28:18",
   "approx": false,
   "confidence": "high",
@@ -7579,7 +7579,7 @@
  },
  "throne-ch-4-1-dd4ac4": {
   "file": "/step-pics/throne-ch-4-1-dd4ac4.webp",
-  "videoSeconds": 8901.0,
+  "videoSeconds": 8901,
   "videoTime": "2:28:21",
   "approx": false,
   "confidence": "high",
@@ -7606,7 +7606,7 @@
  },
  "throne-ch-4-1-fec412": {
   "file": "/step-pics/throne-ch-4-1-fec412.webp",
-  "videoSeconds": 8909.0,
+  "videoSeconds": 8909,
   "videoTime": "2:28:29",
   "approx": true,
   "confidence": "medium",
@@ -7615,7 +7615,7 @@
  },
  "throne-ch-4-1-1fefbc": {
   "file": "/step-pics/throne-ch-4-1-1fefbc.webp",
-  "videoSeconds": 8940.0,
+  "videoSeconds": 8940,
   "videoTime": "2:29:00",
   "approx": true,
   "confidence": "low",
@@ -7641,8 +7641,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=8952"
  },
  "the-dancer-warrior-part-2-1-d651b9": {
-  "file": "/step-pics/the-dancer-warrior-part-2-1-d651b9.jpg",
-  "videoSeconds": 8962.0,
+  "file": "/step-pics/the-dancer-warrior-part-2-1-d651b9.webp",
+  "videoSeconds": 8962,
   "videoTime": "2:29:22",
   "approx": false,
   "confidence": "medium",
@@ -7651,7 +7651,7 @@
  },
  "the-dancer-warrior-part-2-1-072aa8": {
   "file": "/step-pics/the-dancer-warrior-part-2-1-072aa8.webp",
-  "videoSeconds": 8970.0,
+  "videoSeconds": 8970,
   "videoTime": "2:29:30",
   "approx": false,
   "confidence": "high",
@@ -7696,7 +7696,7 @@
  },
  "the-dancer-warrior-part-2-1-3811e3": {
   "file": "/step-pics/the-dancer-warrior-part-2-1-3811e3.webp",
-  "videoSeconds": 9007.0,
+  "videoSeconds": 9007,
   "videoTime": "2:30:07",
   "approx": false,
   "confidence": "high",
@@ -7704,8 +7704,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=9004"
  },
  "the-dancer-warrior-part-2-1-5cb913": {
-  "file": "/step-pics/the-dancer-warrior-part-2-1-5cb913.jpg",
-  "videoSeconds": 9039.0,
+  "file": "/step-pics/the-dancer-warrior-part-2-1-5cb913.webp",
+  "videoSeconds": 9039,
   "videoTime": "2:30:39",
   "approx": false,
   "confidence": "medium",
@@ -7714,7 +7714,7 @@
  },
  "the-dancer-warrior-part-2-1-a7f33b": {
   "file": "/step-pics/the-dancer-warrior-part-2-1-a7f33b.webp",
-  "videoSeconds": 9080.0,
+  "videoSeconds": 9080,
   "videoTime": "2:31:20",
   "approx": true,
   "confidence": "medium",
@@ -7723,7 +7723,7 @@
  },
  "the-dancer-warrior-part-2-1-29976a": {
   "file": "/step-pics/the-dancer-warrior-part-2-1-29976a.webp",
-  "videoSeconds": 9080.0,
+  "videoSeconds": 9080,
   "videoTime": "2:31:20",
   "approx": true,
   "confidence": "low",
@@ -7732,7 +7732,7 @@
  },
  "the-dancer-warrior-part-2-1-ac3826": {
   "file": "/step-pics/the-dancer-warrior-part-2-1-ac3826.webp",
-  "videoSeconds": 9106.0,
+  "videoSeconds": 9106,
   "videoTime": "2:31:46",
   "approx": false,
   "confidence": "high",
@@ -7750,7 +7750,7 @@
  },
  "the-dancer-warrior-part-2-1-b6b638": {
   "file": "/step-pics/the-dancer-warrior-part-2-1-b6b638.webp",
-  "videoSeconds": 9115.0,
+  "videoSeconds": 9115,
   "videoTime": "2:31:55",
   "approx": false,
   "confidence": "high",
@@ -7759,7 +7759,7 @@
  },
  "the-dancer-warrior-part-2-1-046aca": {
   "file": "/step-pics/the-dancer-warrior-part-2-1-046aca.webp",
-  "videoSeconds": 9115.0,
+  "videoSeconds": 9115,
   "videoTime": "2:31:55",
   "approx": false,
   "confidence": "high",
@@ -7768,7 +7768,7 @@
  },
  "the-dancer-warrior-part-2-1-0d0600": {
   "file": "/step-pics/the-dancer-warrior-part-2-1-0d0600.webp",
-  "videoSeconds": 9121.0,
+  "videoSeconds": 9121,
   "videoTime": "2:32:01",
   "approx": false,
   "confidence": "high",
@@ -7777,7 +7777,7 @@
  },
  "the-dancer-warrior-part-2-1-a12603": {
   "file": "/step-pics/the-dancer-warrior-part-2-1-a12603.webp",
-  "videoSeconds": 9126.0,
+  "videoSeconds": 9126,
   "videoTime": "2:32:06",
   "approx": true,
   "confidence": "medium",
@@ -7804,7 +7804,7 @@
  },
  "the-dancer-warrior-part-2-1-509d99": {
   "file": "/step-pics/the-dancer-warrior-part-2-1-509d99.webp",
-  "videoSeconds": 9131.0,
+  "videoSeconds": 9131,
   "videoTime": "2:32:11",
   "approx": true,
   "confidence": "low",
@@ -7822,7 +7822,7 @@
  },
  "osvald-ch-5-1-ff6a39": {
   "file": "/step-pics/osvald-ch-5-1-ff6a39.webp",
-  "videoSeconds": 9146.0,
+  "videoSeconds": 9146,
   "videoTime": "2:32:26",
   "approx": true,
   "confidence": "medium",
@@ -7831,7 +7831,7 @@
  },
  "osvald-ch-5-1-b4bf52": {
   "file": "/step-pics/osvald-ch-5-1-b4bf52.webp",
-  "videoSeconds": 9155.0,
+  "videoSeconds": 9155,
   "videoTime": "2:32:35",
   "approx": true,
   "confidence": "high",
@@ -7840,7 +7840,7 @@
  },
  "osvald-ch-5-1-cdfe00": {
   "file": "/step-pics/osvald-ch-5-1-cdfe00.webp",
-  "videoSeconds": 9160.0,
+  "videoSeconds": 9160,
   "videoTime": "2:32:40",
   "approx": true,
   "confidence": "high",
@@ -7849,7 +7849,7 @@
  },
  "osvald-ch-5-1-d7ab4e": {
   "file": "/step-pics/osvald-ch-5-1-d7ab4e.webp",
-  "videoSeconds": 9160.0,
+  "videoSeconds": 9160,
   "videoTime": "2:32:40",
   "approx": true,
   "confidence": "high",
@@ -7858,7 +7858,7 @@
  },
  "osvald-ch-5-1-56c15d": {
   "file": "/step-pics/osvald-ch-5-1-56c15d.webp",
-  "videoSeconds": 9160.0,
+  "videoSeconds": 9160,
   "videoTime": "2:32:40",
   "approx": true,
   "confidence": "high",
@@ -7867,7 +7867,7 @@
  },
  "osvald-ch-5-1-7f9fa9": {
   "file": "/step-pics/osvald-ch-5-1-7f9fa9.webp",
-  "videoSeconds": 9165.0,
+  "videoSeconds": 9165,
   "videoTime": "2:32:45",
   "approx": true,
   "confidence": "high",
@@ -7885,7 +7885,7 @@
  },
  "osvald-ch-5-1-aaa441": {
   "file": "/step-pics/osvald-ch-5-1-aaa441.webp",
-  "videoSeconds": 9172.0,
+  "videoSeconds": 9172,
   "videoTime": "2:32:52",
   "approx": true,
   "confidence": "high",
@@ -7903,7 +7903,7 @@
  },
  "osvald-ch-5-1-a1bd9f": {
   "file": "/step-pics/osvald-ch-5-1-a1bd9f.webp",
-  "videoSeconds": 9177.0,
+  "videoSeconds": 9177,
   "videoTime": "2:32:57",
   "approx": true,
   "confidence": "high",
@@ -7912,7 +7912,7 @@
  },
  "osvald-ch-5-1-ee45c3": {
   "file": "/step-pics/osvald-ch-5-1-ee45c3.webp",
-  "videoSeconds": 9177.0,
+  "videoSeconds": 9177,
   "videoTime": "2:32:57",
   "approx": true,
   "confidence": "high",
@@ -7930,7 +7930,7 @@
  },
  "osvald-ch-5-1-f405b2": {
   "file": "/step-pics/osvald-ch-5-1-f405b2.webp",
-  "videoSeconds": 9192.0,
+  "videoSeconds": 9192,
   "videoTime": "2:33:12",
   "approx": false,
   "confidence": "high",
@@ -7939,7 +7939,7 @@
  },
  "osvald-ch-5-1-fbbe36": {
   "file": "/step-pics/osvald-ch-5-1-fbbe36.webp",
-  "videoSeconds": 9214.0,
+  "videoSeconds": 9214,
   "videoTime": "2:33:34",
   "approx": false,
   "confidence": "high",
@@ -7948,7 +7948,7 @@
  },
  "osvald-ch-5-1-47ae28": {
   "file": "/step-pics/osvald-ch-5-1-47ae28.webp",
-  "videoSeconds": 9232.0,
+  "videoSeconds": 9232,
   "videoTime": "2:33:52",
   "approx": false,
   "confidence": "high",
@@ -7957,7 +7957,7 @@
  },
  "osvald-ch-5-1-c46741": {
   "file": "/step-pics/osvald-ch-5-1-c46741.webp",
-  "videoSeconds": 9248.0,
+  "videoSeconds": 9248,
   "videoTime": "2:34:08",
   "approx": false,
   "confidence": "high",
@@ -7966,7 +7966,7 @@
  },
  "osvald-ch-5-1-85c903": {
   "file": "/step-pics/osvald-ch-5-1-85c903.webp",
-  "videoSeconds": 9266.0,
+  "videoSeconds": 9266,
   "videoTime": "2:34:26",
   "approx": false,
   "confidence": "high",
@@ -7975,7 +7975,7 @@
  },
  "osvald-ch-5-1-2111bb": {
   "file": "/step-pics/osvald-ch-5-1-2111bb.webp",
-  "videoSeconds": 9332.0,
+  "videoSeconds": 9332,
   "videoTime": "2:35:32",
   "approx": false,
   "confidence": "high",
@@ -8002,7 +8002,7 @@
  },
  "osvald-ch-5-1-dd4ac4": {
   "file": "/step-pics/osvald-ch-5-1-dd4ac4.webp",
-  "videoSeconds": 9363.0,
+  "videoSeconds": 9363,
   "videoTime": "2:36:03",
   "approx": false,
   "confidence": "high",
@@ -8029,7 +8029,7 @@
  },
  "osvald-ch-5-1-f4fcfe": {
   "file": "/step-pics/osvald-ch-5-1-f4fcfe.webp",
-  "videoSeconds": 9403.0,
+  "videoSeconds": 9403,
   "videoTime": "2:36:43",
   "approx": true,
   "confidence": "low",
@@ -8038,7 +8038,7 @@
  },
  "the-scholar-merchant-part-1-1-416444": {
   "file": "/step-pics/the-scholar-merchant-part-1-1-416444.webp",
-  "videoSeconds": 9405.0,
+  "videoSeconds": 9405,
   "videoTime": "2:36:45",
   "approx": true,
   "confidence": "medium",
@@ -8047,7 +8047,7 @@
  },
  "the-scholar-merchant-part-1-1-b23b4a": {
   "file": "/step-pics/the-scholar-merchant-part-1-1-b23b4a.webp",
-  "videoSeconds": 9415.0,
+  "videoSeconds": 9415,
   "videoTime": "2:36:55",
   "approx": true,
   "confidence": "low",
@@ -8056,7 +8056,7 @@
  },
  "the-scholar-merchant-part-1-1-8274b4": {
   "file": "/step-pics/the-scholar-merchant-part-1-1-8274b4.webp",
-  "videoSeconds": 9421.0,
+  "videoSeconds": 9421,
   "videoTime": "2:37:01",
   "approx": true,
   "confidence": "medium",
@@ -8092,7 +8092,7 @@
  },
  "the-scholar-merchant-part-2-1-ec4191": {
   "file": "/step-pics/the-scholar-merchant-part-2-1-ec4191.webp",
-  "videoSeconds": 9474.0,
+  "videoSeconds": 9474,
   "videoTime": "2:37:54",
   "approx": true,
   "confidence": "high",
@@ -8101,7 +8101,7 @@
  },
  "the-scholar-merchant-part-2-1-01f594": {
   "file": "/step-pics/the-scholar-merchant-part-2-1-01f594.webp",
-  "videoSeconds": 9492.0,
+  "videoSeconds": 9492,
   "videoTime": "2:38:12",
   "approx": true,
   "confidence": "medium",
@@ -8110,7 +8110,7 @@
  },
  "the-scholar-merchant-part-2-1-3e2c0a": {
   "file": "/step-pics/the-scholar-merchant-part-2-1-3e2c0a.webp",
-  "videoSeconds": 9510.0,
+  "videoSeconds": 9510,
   "videoTime": "2:38:30",
   "approx": true,
   "confidence": "medium",
@@ -8119,7 +8119,7 @@
  },
  "the-scholar-merchant-part-2-1-e7680a": {
   "file": "/step-pics/the-scholar-merchant-part-2-1-e7680a.webp",
-  "videoSeconds": 9515.0,
+  "videoSeconds": 9515,
   "videoTime": "2:38:35",
   "approx": true,
   "confidence": "medium",
@@ -8127,7 +8127,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=9512"
  },
  "the-scholar-merchant-part-2-1-ed7567": {
-  "file": "/step-pics/the-scholar-merchant-part-2-1-ed7567.jpg",
+  "file": "/step-pics/the-scholar-merchant-part-2-1-ed7567.webp",
   "videoSeconds": 9529,
   "videoTime": "2:38:49",
   "approx": false,
@@ -8136,7 +8136,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=9526"
  },
  "the-scholar-merchant-part-2-1-6b5522": {
-  "file": "/step-pics/the-scholar-merchant-part-2-1-6b5522.jpg",
+  "file": "/step-pics/the-scholar-merchant-part-2-1-6b5522.webp",
   "videoSeconds": 9548.5,
   "videoTime": "2:39:08",
   "approx": false,
@@ -8191,7 +8191,7 @@
  },
  "temenos-ch-2-1-35521e": {
   "file": "/step-pics/temenos-ch-2-1-35521e.webp",
-  "videoSeconds": 9681.0,
+  "videoSeconds": 9681,
   "videoTime": "2:41:21",
   "approx": true,
   "confidence": "low",
@@ -8236,7 +8236,7 @@
  },
  "temenos-ch-2-900-9a2cb2": {
   "file": "/step-pics/temenos-ch-2-900-9a2cb2.webp",
-  "videoSeconds": 9719.0,
+  "videoSeconds": 9719,
   "videoTime": "2:41:59",
   "approx": false,
   "confidence": "high",
@@ -8281,7 +8281,7 @@
  },
  "temenos-ch-3-stormhail-route-1-a7f33b": {
   "file": "/step-pics/temenos-ch-3-stormhail-route-1-a7f33b.webp",
-  "videoSeconds": 9965.0,
+  "videoSeconds": 9965,
   "videoTime": "2:46:05",
   "approx": true,
   "confidence": "medium",
@@ -8290,7 +8290,7 @@
  },
  "temenos-ch-3-stormhail-route-1-ddcaac": {
   "file": "/step-pics/temenos-ch-3-stormhail-route-1-ddcaac.webp",
-  "videoSeconds": 9993.0,
+  "videoSeconds": 9993,
   "videoTime": "2:46:33",
   "approx": false,
   "confidence": "high",
@@ -8298,7 +8298,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=9990"
  },
  "temenos-ch-3-stormhail-route-1-fd890f": {
-  "file": "/step-pics/temenos-ch-3-stormhail-route-1-fd890f.jpg",
+  "file": "/step-pics/temenos-ch-3-stormhail-route-1-fd890f.webp",
   "videoSeconds": 10025.5,
   "videoTime": "2:47:05",
   "approx": false,
@@ -8308,7 +8308,7 @@
  },
  "temenos-ch-4-1-6923e0": {
   "file": "/step-pics/temenos-ch-4-1-6923e0.webp",
-  "videoSeconds": 10057.0,
+  "videoSeconds": 10057,
   "videoTime": "2:47:37",
   "approx": false,
   "confidence": "high",
@@ -8316,7 +8316,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10054"
  },
  "temenos-ch-4-1-f0a251": {
-  "file": "/step-pics/temenos-ch-4-1-f0a251.jpg",
+  "file": "/step-pics/temenos-ch-4-1-f0a251.webp",
   "videoSeconds": 10155,
   "videoTime": "2:49:15",
   "approx": false,
@@ -8326,7 +8326,7 @@
  },
  "temenos-ch-4-1-de3f54": {
   "file": "/step-pics/temenos-ch-4-1-de3f54.webp",
-  "videoSeconds": 10161.0,
+  "videoSeconds": 10161,
   "videoTime": "2:49:21",
   "approx": true,
   "confidence": "medium",
@@ -8353,7 +8353,7 @@
  },
  "temenos-ch-4-1-80edba": {
   "file": "/step-pics/temenos-ch-4-1-80edba.webp",
-  "videoSeconds": 10183.0,
+  "videoSeconds": 10183,
   "videoTime": "2:49:43",
   "approx": true,
   "confidence": "low",
@@ -8362,7 +8362,7 @@
  },
  "temenos-ch-4-1-f49023": {
   "file": "/step-pics/temenos-ch-4-1-f49023.webp",
-  "videoSeconds": 10190.0,
+  "videoSeconds": 10190,
   "videoTime": "2:49:50",
   "approx": true,
   "confidence": "medium",
@@ -8389,7 +8389,7 @@
  },
  "the-cleric-thief-part-1-1-98d5bb": {
   "file": "/step-pics/the-cleric-thief-part-1-1-98d5bb.webp",
-  "videoSeconds": 10206.0,
+  "videoSeconds": 10206,
   "videoTime": "2:50:06",
   "approx": false,
   "confidence": "high",
@@ -8398,7 +8398,7 @@
  },
  "the-cleric-thief-part-1-900-0d2217": {
   "file": "/step-pics/the-cleric-thief-part-1-900-0d2217.webp",
-  "videoSeconds": 10221.0,
+  "videoSeconds": 10221,
   "videoTime": "2:50:21",
   "approx": false,
   "confidence": "high",
@@ -8407,7 +8407,7 @@
  },
  "the-cleric-thief-part-1-1-aecbb3": {
   "file": "/step-pics/the-cleric-thief-part-1-1-aecbb3.webp",
-  "videoSeconds": 10248.0,
+  "videoSeconds": 10248,
   "videoTime": "2:50:48",
   "approx": false,
   "confidence": "high",
@@ -8416,7 +8416,7 @@
  },
  "the-cleric-thief-part-1-1-8e7f5b": {
   "file": "/step-pics/the-cleric-thief-part-1-1-8e7f5b.webp",
-  "videoSeconds": 10253.0,
+  "videoSeconds": 10253,
   "videoTime": "2:50:53",
   "approx": true,
   "confidence": "low",
@@ -8424,7 +8424,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10250"
  },
  "the-cleric-thief-part-1-1-9c7ff7": {
-  "file": "/step-pics/the-cleric-thief-part-1-1-9c7ff7.jpg",
+  "file": "/step-pics/the-cleric-thief-part-1-1-9c7ff7.webp",
   "videoSeconds": 10300.5,
   "videoTime": "2:51:40",
   "approx": false,
@@ -8434,7 +8434,7 @@
  },
  "the-cleric-thief-part-1-900-58bc30": {
   "file": "/step-pics/the-cleric-thief-part-1-900-58bc30.webp",
-  "videoSeconds": 10311.0,
+  "videoSeconds": 10311,
   "videoTime": "2:51:51",
   "approx": false,
   "confidence": "high",
@@ -8443,7 +8443,7 @@
  },
  "the-cleric-thief-part-2-1-b8bf43": {
   "file": "/step-pics/the-cleric-thief-part-2-1-b8bf43.webp",
-  "videoSeconds": 10341.0,
+  "videoSeconds": 10341,
   "videoTime": "2:52:21",
   "approx": true,
   "confidence": "low",
@@ -8451,7 +8451,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10338"
  },
  "the-cleric-thief-part-2-1-421d51": {
-  "file": "/step-pics/the-cleric-thief-part-2-1-421d51.jpg",
+  "file": "/step-pics/the-cleric-thief-part-2-1-421d51.webp",
   "videoSeconds": 10367.5,
   "videoTime": "2:52:47",
   "approx": false,
@@ -8478,7 +8478,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10409"
  },
  "the-cleric-thief-part-2-1-72039b": {
-  "file": "/step-pics/the-cleric-thief-part-2-1-72039b.jpg",
+  "file": "/step-pics/the-cleric-thief-part-2-1-72039b.webp",
   "videoSeconds": 10421,
   "videoTime": "2:53:41",
   "approx": false,
@@ -8488,7 +8488,7 @@
  },
  "the-cleric-thief-part-2-1-31f640": {
   "file": "/step-pics/the-cleric-thief-part-2-1-31f640.webp",
-  "videoSeconds": 10427.0,
+  "videoSeconds": 10427,
   "videoTime": "2:53:47",
   "approx": true,
   "confidence": "medium",
@@ -8506,7 +8506,7 @@
  },
  "the-cleric-thief-part-2-1-b7b530": {
   "file": "/step-pics/the-cleric-thief-part-2-1-b7b530.webp",
-  "videoSeconds": 10433.0,
+  "videoSeconds": 10433,
   "videoTime": "2:53:53",
   "approx": false,
   "confidence": "high",
@@ -8532,8 +8532,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10460"
  },
  "the-cleric-thief-part-2-1-1db9dd": {
-  "file": "/step-pics/the-cleric-thief-part-2-1-1db9dd.jpg",
-  "videoSeconds": 10473.0,
+  "file": "/step-pics/the-cleric-thief-part-2-1-1db9dd.webp",
+  "videoSeconds": 10473,
   "videoTime": "2:54:33",
   "approx": false,
   "confidence": "medium",
@@ -8542,7 +8542,7 @@
  },
  "journey-for-the-dawn-1-5e716d": {
   "file": "/step-pics/journey-for-the-dawn-1-5e716d.webp",
-  "videoSeconds": 10514.0,
+  "videoSeconds": 10514,
   "videoTime": "2:55:14",
   "approx": false,
   "confidence": "high",
@@ -8578,7 +8578,7 @@
  },
  "journey-for-the-dawn-1-1edf37": {
   "file": "/step-pics/journey-for-the-dawn-1-1edf37.webp",
-  "videoSeconds": 10542.0,
+  "videoSeconds": 10542,
   "videoTime": "2:55:42",
   "approx": true,
   "confidence": "high",
@@ -8587,7 +8587,7 @@
  },
  "journey-for-the-dawn-1-86feec": {
   "file": "/step-pics/journey-for-the-dawn-1-86feec.webp",
-  "videoSeconds": 10547.0,
+  "videoSeconds": 10547,
   "videoTime": "2:55:47",
   "approx": true,
   "confidence": "high",
@@ -8605,7 +8605,7 @@
  },
  "journey-for-the-dawn-1-075a5d": {
   "file": "/step-pics/journey-for-the-dawn-1-075a5d.webp",
-  "videoSeconds": 10554.0,
+  "videoSeconds": 10554,
   "videoTime": "2:55:54",
   "approx": true,
   "confidence": "high",
@@ -8614,7 +8614,7 @@
  },
  "journey-for-the-dawn-1-cad034": {
   "file": "/step-pics/journey-for-the-dawn-1-cad034.webp",
-  "videoSeconds": 10558.0,
+  "videoSeconds": 10558,
   "videoTime": "2:55:58",
   "approx": true,
   "confidence": "high",
@@ -8632,7 +8632,7 @@
  },
  "journey-for-the-dawn-1-75d3f3": {
   "file": "/step-pics/journey-for-the-dawn-1-75d3f3.webp",
-  "videoSeconds": 10564.0,
+  "videoSeconds": 10564,
   "videoTime": "2:56:04",
   "approx": true,
   "confidence": "high",
@@ -8641,7 +8641,7 @@
  },
  "journey-for-the-dawn-1-196a4d": {
   "file": "/step-pics/journey-for-the-dawn-1-196a4d.webp",
-  "videoSeconds": 10566.0,
+  "videoSeconds": 10566,
   "videoTime": "2:56:06",
   "approx": true,
   "confidence": "high",
@@ -8650,7 +8650,7 @@
  },
  "journey-for-the-dawn-1-a400fc": {
   "file": "/step-pics/journey-for-the-dawn-1-a400fc.webp",
-  "videoSeconds": 10569.0,
+  "videoSeconds": 10569,
   "videoTime": "2:56:09",
   "approx": true,
   "confidence": "high",
@@ -8659,7 +8659,7 @@
  },
  "journey-for-the-dawn-1-6b49ed": {
   "file": "/step-pics/journey-for-the-dawn-1-6b49ed.webp",
-  "videoSeconds": 10572.0,
+  "videoSeconds": 10572,
   "videoTime": "2:56:12",
   "approx": true,
   "confidence": "high",
@@ -8677,7 +8677,7 @@
  },
  "journey-for-the-dawn-1-95d1a4": {
   "file": "/step-pics/journey-for-the-dawn-1-95d1a4.webp",
-  "videoSeconds": 10577.0,
+  "videoSeconds": 10577,
   "videoTime": "2:56:17",
   "approx": true,
   "confidence": "high",
@@ -8686,7 +8686,7 @@
  },
  "journey-for-the-dawn-1-525748": {
   "file": "/step-pics/journey-for-the-dawn-1-525748.webp",
-  "videoSeconds": 10579.0,
+  "videoSeconds": 10579,
   "videoTime": "2:56:19",
   "approx": true,
   "confidence": "medium",
@@ -8695,7 +8695,7 @@
  },
  "journey-for-the-dawn-1-2b2c26": {
   "file": "/step-pics/journey-for-the-dawn-1-2b2c26.webp",
-  "videoSeconds": 10581.0,
+  "videoSeconds": 10581,
   "videoTime": "2:56:21",
   "approx": true,
   "confidence": "high",
@@ -8713,7 +8713,7 @@
  },
  "journey-for-the-dawn-1-cc5209": {
   "file": "/step-pics/journey-for-the-dawn-1-cc5209.webp",
-  "videoSeconds": 10586.0,
+  "videoSeconds": 10586,
   "videoTime": "2:56:26",
   "approx": true,
   "confidence": "high",
@@ -8722,7 +8722,7 @@
  },
  "journey-for-the-dawn-1-abd20a": {
   "file": "/step-pics/journey-for-the-dawn-1-abd20a.webp",
-  "videoSeconds": 10587.0,
+  "videoSeconds": 10587,
   "videoTime": "2:56:27",
   "approx": true,
   "confidence": "high",
@@ -8731,7 +8731,7 @@
  },
  "journey-for-the-dawn-1-b8a3c0": {
   "file": "/step-pics/journey-for-the-dawn-1-b8a3c0.webp",
-  "videoSeconds": 10587.0,
+  "videoSeconds": 10587,
   "videoTime": "2:56:27",
   "approx": false,
   "confidence": "high",
@@ -8749,7 +8749,7 @@
  },
  "journey-for-the-dawn-1-de3f54": {
   "file": "/step-pics/journey-for-the-dawn-1-de3f54.webp",
-  "videoSeconds": 10608.0,
+  "videoSeconds": 10608,
   "videoTime": "2:56:48",
   "approx": true,
   "confidence": "medium",
@@ -8784,8 +8784,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10608"
  },
  "journey-for-the-dawn-1-2389b1": {
-  "file": "/step-pics/journey-for-the-dawn-1-2389b1.jpg",
-  "videoSeconds": 10641.0,
+  "file": "/step-pics/journey-for-the-dawn-1-2389b1.webp",
+  "videoSeconds": 10641,
   "videoTime": "2:57:21",
   "approx": false,
   "confidence": "medium",
@@ -8794,7 +8794,7 @@
  },
  "journey-for-the-dawn-1-92e0ad": {
   "file": "/step-pics/journey-for-the-dawn-1-92e0ad.webp",
-  "videoSeconds": 10648.0,
+  "videoSeconds": 10648,
   "videoTime": "2:57:28",
   "approx": true,
   "confidence": "low",
@@ -8811,7 +8811,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10657"
  },
  "journey-for-the-dawn-1-5311e3": {
-  "file": "/step-pics/journey-for-the-dawn-1-5311e3.jpg",
+  "file": "/step-pics/journey-for-the-dawn-1-5311e3.webp",
   "videoSeconds": 10700.5,
   "videoTime": "2:58:20",
   "approx": false,
@@ -8830,7 +8830,7 @@
  },
  "journey-for-the-dawn-1-b8cbd2": {
   "file": "/step-pics/journey-for-the-dawn-1-b8cbd2.webp",
-  "videoSeconds": 10737.0,
+  "videoSeconds": 10737,
   "videoTime": "2:58:57",
   "approx": true,
   "confidence": "low",
@@ -8839,7 +8839,7 @@
  },
  "journey-for-the-dawn-1-d6019e": {
   "file": "/step-pics/journey-for-the-dawn-1-d6019e.webp",
-  "videoSeconds": 10737.0,
+  "videoSeconds": 10737,
   "videoTime": "2:58:57",
   "approx": true,
   "confidence": "medium",
@@ -8848,7 +8848,7 @@
  },
  "journey-for-the-dawn-1-2e635b": {
   "file": "/step-pics/journey-for-the-dawn-1-2e635b.webp",
-  "videoSeconds": 10737.0,
+  "videoSeconds": 10737,
   "videoTime": "2:58:57",
   "approx": true,
   "confidence": "low",
@@ -8857,7 +8857,7 @@
  },
  "journey-for-the-dawn-1-f98892": {
   "file": "/step-pics/journey-for-the-dawn-1-f98892.webp",
-  "videoSeconds": 10747.0,
+  "videoSeconds": 10747,
   "videoTime": "2:59:07",
   "approx": true,
   "confidence": "medium",
@@ -8866,7 +8866,7 @@
  },
  "journey-for-the-dawn-1-b9134a": {
   "file": "/step-pics/journey-for-the-dawn-1-b9134a.webp",
-  "videoSeconds": 10749.0,
+  "videoSeconds": 10749,
   "videoTime": "2:59:09",
   "approx": false,
   "confidence": "high",
@@ -8875,7 +8875,7 @@
  },
  "journey-for-the-dawn-1-df1b81": {
   "file": "/step-pics/journey-for-the-dawn-1-df1b81.webp",
-  "videoSeconds": 10758.0,
+  "videoSeconds": 10758,
   "videoTime": "2:59:18",
   "approx": true,
   "confidence": "low",
@@ -8884,7 +8884,7 @@
  },
  "journey-for-the-dawn-1-96997c": {
   "file": "/step-pics/journey-for-the-dawn-1-96997c.webp",
-  "videoSeconds": 10758.0,
+  "videoSeconds": 10758,
   "videoTime": "2:59:18",
   "approx": true,
   "confidence": "low",
@@ -8893,7 +8893,7 @@
  },
  "journey-for-the-dawn-1-1bb732": {
   "file": "/step-pics/journey-for-the-dawn-1-1bb732.webp",
-  "videoSeconds": 10762.0,
+  "videoSeconds": 10762,
   "videoTime": "2:59:22",
   "approx": true,
   "confidence": "low",
@@ -8947,7 +8947,7 @@
  },
  "journey-for-the-dawn-1-38fd59": {
   "file": "/step-pics/journey-for-the-dawn-1-38fd59.webp",
-  "videoSeconds": 10773.0,
+  "videoSeconds": 10773,
   "videoTime": "2:59:33",
   "approx": true,
   "confidence": "high",
@@ -8965,7 +8965,7 @@
  },
  "journey-for-the-dawn-1-b7f54c": {
   "file": "/step-pics/journey-for-the-dawn-1-b7f54c.webp",
-  "videoSeconds": 10777.0,
+  "videoSeconds": 10777,
   "videoTime": "2:59:37",
   "approx": true,
   "confidence": "medium",
@@ -8974,7 +8974,7 @@
  },
  "journey-for-the-dawn-1-c2e428": {
   "file": "/step-pics/journey-for-the-dawn-1-c2e428.webp",
-  "videoSeconds": 10779.0,
+  "videoSeconds": 10779,
   "videoTime": "2:59:39",
   "approx": true,
   "confidence": "low",
@@ -8983,7 +8983,7 @@
  },
  "journey-for-the-dawn-1-143117": {
   "file": "/step-pics/journey-for-the-dawn-1-143117.webp",
-  "videoSeconds": 10781.0,
+  "videoSeconds": 10781,
   "videoTime": "2:59:41",
   "approx": true,
   "confidence": "low",
@@ -8992,7 +8992,7 @@
  },
  "journey-for-the-dawn-1-5e6297": {
   "file": "/step-pics/journey-for-the-dawn-1-5e6297.webp",
-  "videoSeconds": 10787.0,
+  "videoSeconds": 10787,
   "videoTime": "2:59:47",
   "approx": true,
   "confidence": "medium",
@@ -9001,7 +9001,7 @@
  },
  "journey-for-the-dawn-1-35045d": {
   "file": "/step-pics/journey-for-the-dawn-1-35045d.webp",
-  "videoSeconds": 10789.0,
+  "videoSeconds": 10789,
   "videoTime": "2:59:49",
   "approx": true,
   "confidence": "medium",
@@ -9010,7 +9010,7 @@
  },
  "journey-for-the-dawn-1-86fd6b": {
   "file": "/step-pics/journey-for-the-dawn-1-86fd6b.webp",
-  "videoSeconds": 10789.0,
+  "videoSeconds": 10789,
   "videoTime": "2:59:49",
   "approx": true,
   "confidence": "high",
@@ -9019,7 +9019,7 @@
  },
  "journey-for-the-dawn-1-2ef507": {
   "file": "/step-pics/journey-for-the-dawn-1-2ef507.webp",
-  "videoSeconds": 10791.0,
+  "videoSeconds": 10791,
   "videoTime": "2:59:51",
   "approx": true,
   "confidence": "high",
@@ -9037,7 +9037,7 @@
  },
  "journey-for-the-dawn-1-ff5d8e": {
   "file": "/step-pics/journey-for-the-dawn-1-ff5d8e.webp",
-  "videoSeconds": 10798.0,
+  "videoSeconds": 10798,
   "videoTime": "2:59:58",
   "approx": true,
   "confidence": "low",
@@ -9046,7 +9046,7 @@
  },
  "journey-for-the-dawn-1-897ebc": {
   "file": "/step-pics/journey-for-the-dawn-1-897ebc.webp",
-  "videoSeconds": 10798.0,
+  "videoSeconds": 10798,
   "videoTime": "2:59:58",
   "approx": true,
   "confidence": "low",
@@ -9082,7 +9082,7 @@
  },
  "journey-for-the-dawn-1-fee21e": {
   "file": "/step-pics/journey-for-the-dawn-1-fee21e.webp",
-  "videoSeconds": 10811.0,
+  "videoSeconds": 10811,
   "videoTime": "3:00:11",
   "approx": true,
   "confidence": "medium",
@@ -9091,7 +9091,7 @@
  },
  "journey-for-the-dawn-1-733529": {
   "file": "/step-pics/journey-for-the-dawn-1-733529.webp",
-  "videoSeconds": 10811.0,
+  "videoSeconds": 10811,
   "videoTime": "3:00:11",
   "approx": true,
   "confidence": "medium",
@@ -9109,7 +9109,7 @@
  },
  "journey-for-the-dawn-1-f066fb": {
   "file": "/step-pics/journey-for-the-dawn-1-f066fb.webp",
-  "videoSeconds": 10816.0,
+  "videoSeconds": 10816,
   "videoTime": "3:00:16",
   "approx": true,
   "confidence": "high",
@@ -9136,7 +9136,7 @@
  },
  "journey-for-the-dawn-1-4181c0": {
   "file": "/step-pics/journey-for-the-dawn-1-4181c0.webp",
-  "videoSeconds": 10821.0,
+  "videoSeconds": 10821,
   "videoTime": "3:00:21",
   "approx": true,
   "confidence": "high",
@@ -9153,8 +9153,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10821"
  },
  "journey-for-the-dawn-1-5cb913": {
-  "file": "/step-pics/journey-for-the-dawn-1-5cb913.jpg",
-  "videoSeconds": 10853.0,
+  "file": "/step-pics/journey-for-the-dawn-1-5cb913.webp",
+  "videoSeconds": 10853,
   "videoTime": "3:00:53",
   "approx": false,
   "confidence": "medium",
@@ -9163,7 +9163,7 @@
  },
  "journey-for-the-dawn-1-119821": {
   "file": "/step-pics/journey-for-the-dawn-1-119821.webp",
-  "videoSeconds": 10895.0,
+  "videoSeconds": 10895,
   "videoTime": "3:01:35",
   "approx": true,
   "confidence": "medium",
@@ -9171,7 +9171,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10892"
  },
  "journey-for-the-dawn-1-c1274d": {
-  "file": "/step-pics/journey-for-the-dawn-1-c1274d.jpg",
+  "file": "/step-pics/journey-for-the-dawn-1-c1274d.webp",
   "videoSeconds": 10924.5,
   "videoTime": "3:02:04",
   "approx": false,
@@ -9189,8 +9189,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=10950"
  },
  "journey-for-the-dawn-1-607742": {
-  "file": "/step-pics/journey-for-the-dawn-1-607742.jpg",
-  "videoSeconds": 10972.0,
+  "file": "/step-pics/journey-for-the-dawn-1-607742.webp",
+  "videoSeconds": 10972,
   "videoTime": "3:02:52",
   "approx": false,
   "confidence": "medium",
@@ -9199,7 +9199,7 @@
  },
  "journey-for-the-dawn-1-54bca4": {
   "file": "/step-pics/journey-for-the-dawn-1-54bca4.webp",
-  "videoSeconds": 10984.0,
+  "videoSeconds": 10984,
   "videoTime": "3:03:04",
   "approx": true,
   "confidence": "medium",
@@ -9208,7 +9208,7 @@
  },
  "journey-for-the-dawn-1-503369": {
   "file": "/step-pics/journey-for-the-dawn-1-503369.webp",
-  "videoSeconds": 10993.0,
+  "videoSeconds": 10993,
   "videoTime": "3:03:13",
   "approx": true,
   "confidence": "medium",
@@ -9226,7 +9226,7 @@
  },
  "journey-for-the-dawn-1-58ad20": {
   "file": "/step-pics/journey-for-the-dawn-1-58ad20.webp",
-  "videoSeconds": 11008.0,
+  "videoSeconds": 11008,
   "videoTime": "3:03:28",
   "approx": true,
   "confidence": "high",
@@ -9235,7 +9235,7 @@
  },
  "journey-for-the-dawn-1-d72ed2": {
   "file": "/step-pics/journey-for-the-dawn-1-d72ed2.webp",
-  "videoSeconds": 11013.0,
+  "videoSeconds": 11013,
   "videoTime": "3:03:33",
   "approx": true,
   "confidence": "high",
@@ -9244,7 +9244,7 @@
  },
  "journey-for-the-dawn-1-956398": {
   "file": "/step-pics/journey-for-the-dawn-1-956398.webp",
-  "videoSeconds": 11017.0,
+  "videoSeconds": 11017,
   "videoTime": "3:03:37",
   "approx": true,
   "confidence": "medium",
@@ -9252,7 +9252,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11014"
  },
  "vide-the-wicked-1-ada0f5": {
-  "file": "/step-pics/vide-the-wicked-1-ada0f5.jpg",
+  "file": "/step-pics/vide-the-wicked-1-ada0f5.webp",
   "videoSeconds": 11036,
   "videoTime": "3:03:56",
   "approx": false,
@@ -9325,7 +9325,7 @@
  },
  "vide-the-wicked-1-da6e32": {
   "file": "/step-pics/vide-the-wicked-1-da6e32.webp",
-  "videoSeconds": 11085.0,
+  "videoSeconds": 11085,
   "videoTime": "3:04:45",
   "approx": true,
   "confidence": "low",
@@ -9334,7 +9334,7 @@
  },
  "vide-the-wicked-1-cad42d": {
   "file": "/step-pics/vide-the-wicked-1-cad42d.webp",
-  "videoSeconds": 11086.0,
+  "videoSeconds": 11086,
   "videoTime": "3:04:46",
   "approx": true,
   "confidence": "low",
@@ -9352,7 +9352,7 @@
  },
  "vide-the-wicked-1-832da9": {
   "file": "/step-pics/vide-the-wicked-1-832da9.webp",
-  "videoSeconds": 11089.0,
+  "videoSeconds": 11089,
   "videoTime": "3:04:49",
   "approx": true,
   "confidence": "low",
@@ -9361,7 +9361,7 @@
  },
  "vide-the-wicked-1-2fb028": {
   "file": "/step-pics/vide-the-wicked-1-2fb028.webp",
-  "videoSeconds": 11103.0,
+  "videoSeconds": 11103,
   "videoTime": "3:05:03",
   "approx": true,
   "confidence": "low",
@@ -9370,7 +9370,7 @@
  },
  "vide-the-wicked-1-99270e": {
   "file": "/step-pics/vide-the-wicked-1-99270e.webp",
-  "videoSeconds": 11111.0,
+  "videoSeconds": 11111,
   "videoTime": "3:05:11",
   "approx": true,
   "confidence": "medium",
@@ -9388,7 +9388,7 @@
  },
  "vide-the-wicked-1-a3d854": {
   "file": "/step-pics/vide-the-wicked-1-a3d854.webp",
-  "videoSeconds": 11115.0,
+  "videoSeconds": 11115,
   "videoTime": "3:05:15",
   "approx": true,
   "confidence": "medium",
@@ -9397,7 +9397,7 @@
  },
  "vide-the-wicked-1-0e0d6e": {
   "file": "/step-pics/vide-the-wicked-1-0e0d6e.webp",
-  "videoSeconds": 11125.0,
+  "videoSeconds": 11125,
   "videoTime": "3:05:25",
   "approx": false,
   "confidence": "high",
@@ -9405,8 +9405,8 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11122"
  },
  "vide-the-wicked-1-6fad35": {
-  "file": "/step-pics/vide-the-wicked-1-6fad35.jpg",
-  "videoSeconds": 11131.0,
+  "file": "/step-pics/vide-the-wicked-1-6fad35.webp",
+  "videoSeconds": 11131,
   "videoTime": "3:05:31",
   "approx": false,
   "confidence": "medium",
@@ -9415,7 +9415,7 @@
  },
  "vide-the-wicked-1-9b96ed": {
   "file": "/step-pics/vide-the-wicked-1-9b96ed.webp",
-  "videoSeconds": 11140.0,
+  "videoSeconds": 11140,
   "videoTime": "3:05:40",
   "approx": true,
   "confidence": "medium",
@@ -9424,7 +9424,7 @@
  },
  "vide-the-wicked-1-7e8702": {
   "file": "/step-pics/vide-the-wicked-1-7e8702.webp",
-  "videoSeconds": 11143.0,
+  "videoSeconds": 11143,
   "videoTime": "3:05:43",
   "approx": false,
   "confidence": "high",
@@ -9432,7 +9432,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11140"
  },
  "majestic-mysterious-travellers-1-476306": {
-  "file": "/step-pics/majestic-mysterious-travellers-1-476306.jpg",
+  "file": "/step-pics/majestic-mysterious-travellers-1-476306.webp",
   "videoSeconds": 11153,
   "videoTime": "3:05:53",
   "approx": false,
@@ -9442,7 +9442,7 @@
  },
  "majestic-mysterious-travellers-1-7b2502": {
   "file": "/step-pics/majestic-mysterious-travellers-1-7b2502.webp",
-  "videoSeconds": 11157.0,
+  "videoSeconds": 11157,
   "videoTime": "3:05:57",
   "approx": true,
   "confidence": "medium",
@@ -9451,7 +9451,7 @@
  },
  "majestic-mysterious-travellers-1-43ec8c": {
   "file": "/step-pics/majestic-mysterious-travellers-1-43ec8c.webp",
-  "videoSeconds": 11161.0,
+  "videoSeconds": 11161,
   "videoTime": "3:06:01",
   "approx": false,
   "confidence": "high",
@@ -9469,7 +9469,7 @@
  },
  "majestic-mysterious-travellers-1-a7a979": {
   "file": "/step-pics/majestic-mysterious-travellers-1-a7a979.webp",
-  "videoSeconds": 11171.0,
+  "videoSeconds": 11171,
   "videoTime": "3:06:11",
   "approx": false,
   "confidence": "high",
@@ -9478,7 +9478,7 @@
  },
  "majestic-mysterious-travellers-1-c98810": {
   "file": "/step-pics/majestic-mysterious-travellers-1-c98810.webp",
-  "videoSeconds": 11182.0,
+  "videoSeconds": 11182,
   "videoTime": "3:06:22",
   "approx": false,
   "confidence": "high",
@@ -9496,7 +9496,7 @@
  },
  "majestic-mysterious-travellers-2-7b2502": {
   "file": "/step-pics/majestic-mysterious-travellers-2-7b2502.webp",
-  "videoSeconds": 11190.0,
+  "videoSeconds": 11190,
   "videoTime": "3:06:30",
   "approx": true,
   "confidence": "medium",
@@ -9541,7 +9541,7 @@
  },
  "majestic-mysterious-travellers-1-91a7f5": {
   "file": "/step-pics/majestic-mysterious-travellers-1-91a7f5.webp",
-  "videoSeconds": 11214.0,
+  "videoSeconds": 11214,
   "videoTime": "3:06:54",
   "approx": true,
   "confidence": "medium",
@@ -9550,7 +9550,7 @@
  },
  "majestic-mysterious-travellers-1-ca6da8": {
   "file": "/step-pics/majestic-mysterious-travellers-1-ca6da8.webp",
-  "videoSeconds": 11219.0,
+  "videoSeconds": 11219,
   "videoTime": "3:06:59",
   "approx": true,
   "confidence": "medium",
@@ -9568,7 +9568,7 @@
  },
  "majestic-mysterious-travellers-1-26e34d": {
   "file": "/step-pics/majestic-mysterious-travellers-1-26e34d.webp",
-  "videoSeconds": 11228.0,
+  "videoSeconds": 11228,
   "videoTime": "3:07:08",
   "approx": false,
   "confidence": "high",
@@ -9577,7 +9577,7 @@
  },
  "majestic-mysterious-travellers-1-8208a7": {
   "file": "/step-pics/majestic-mysterious-travellers-1-8208a7.webp",
-  "videoSeconds": 11236.0,
+  "videoSeconds": 11236,
   "videoTime": "3:07:16",
   "approx": false,
   "confidence": "high",
@@ -9586,7 +9586,7 @@
  },
  "majestic-mysterious-travellers-1-867b47": {
   "file": "/step-pics/majestic-mysterious-travellers-1-867b47.webp",
-  "videoSeconds": 11241.0,
+  "videoSeconds": 11241,
   "videoTime": "3:07:21",
   "approx": false,
   "confidence": "high",
@@ -9595,7 +9595,7 @@
  },
  "majestic-mysterious-travellers-1-832da9": {
   "file": "/step-pics/majestic-mysterious-travellers-1-832da9.webp",
-  "videoSeconds": 11245.0,
+  "videoSeconds": 11245,
   "videoTime": "3:07:25",
   "approx": true,
   "confidence": "low",
@@ -9603,7 +9603,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11242"
  },
  "masterly-mysterious-travellers-1-476306": {
-  "file": "/step-pics/masterly-mysterious-travellers-1-476306.jpg",
+  "file": "/step-pics/masterly-mysterious-travellers-1-476306.webp",
   "videoSeconds": 11255,
   "videoTime": "3:07:35",
   "approx": false,
@@ -9613,7 +9613,7 @@
  },
  "masterly-mysterious-travellers-1-7b2502": {
   "file": "/step-pics/masterly-mysterious-travellers-1-7b2502.webp",
-  "videoSeconds": 11261.0,
+  "videoSeconds": 11261,
   "videoTime": "3:07:41",
   "approx": true,
   "confidence": "low",
@@ -9649,7 +9649,7 @@
  },
  "masterly-mysterious-travellers-1-c98810": {
   "file": "/step-pics/masterly-mysterious-travellers-1-c98810.webp",
-  "videoSeconds": 11279.0,
+  "videoSeconds": 11279,
   "videoTime": "3:07:59",
   "approx": false,
   "confidence": "high",
@@ -9658,7 +9658,7 @@
  },
  "masterly-mysterious-travellers-1-2b3658": {
   "file": "/step-pics/masterly-mysterious-travellers-1-2b3658.webp",
-  "videoSeconds": 11287.0,
+  "videoSeconds": 11287,
   "videoTime": "3:08:07",
   "approx": true,
   "confidence": "low",
@@ -9676,7 +9676,7 @@
  },
  "masterly-mysterious-travellers-1-d38ea1": {
   "file": "/step-pics/masterly-mysterious-travellers-1-d38ea1.webp",
-  "videoSeconds": 11297.0,
+  "videoSeconds": 11297,
   "videoTime": "3:08:17",
   "approx": true,
   "confidence": "low",
@@ -9694,7 +9694,7 @@
  },
  "masterly-mysterious-travellers-1-5ed35a": {
   "file": "/step-pics/masterly-mysterious-travellers-1-5ed35a.webp",
-  "videoSeconds": 11306.0,
+  "videoSeconds": 11306,
   "videoTime": "3:08:26",
   "approx": false,
   "confidence": "high",
@@ -9712,7 +9712,7 @@
  },
  "masterly-mysterious-travellers-1-ca6da8": {
   "file": "/step-pics/masterly-mysterious-travellers-1-ca6da8.webp",
-  "videoSeconds": 11326.0,
+  "videoSeconds": 11326,
   "videoTime": "3:08:46",
   "approx": true,
   "confidence": "medium",
@@ -9748,7 +9748,7 @@
  },
  "masterly-mysterious-travellers-1-f4ea80": {
   "file": "/step-pics/masterly-mysterious-travellers-1-f4ea80.webp",
-  "videoSeconds": 11353.0,
+  "videoSeconds": 11353,
   "videoTime": "3:09:13",
   "approx": true,
   "confidence": "medium",
@@ -9757,7 +9757,7 @@
  },
  "masterly-mysterious-travellers-1-91a7f5": {
   "file": "/step-pics/masterly-mysterious-travellers-1-91a7f5.webp",
-  "videoSeconds": 11353.0,
+  "videoSeconds": 11353,
   "videoTime": "3:09:13",
   "approx": true,
   "confidence": "low",
@@ -9766,7 +9766,7 @@
  },
  "masterly-mysterious-travellers-1-6e5201": {
   "file": "/step-pics/masterly-mysterious-travellers-1-6e5201.webp",
-  "videoSeconds": 11358.0,
+  "videoSeconds": 11358,
   "videoTime": "3:09:18",
   "approx": true,
   "confidence": "medium",
@@ -9802,7 +9802,7 @@
  },
  "masterly-mysterious-travellers-1-35e324": {
   "file": "/step-pics/masterly-mysterious-travellers-1-35e324.webp",
-  "videoSeconds": 11367.0,
+  "videoSeconds": 11367,
   "videoTime": "3:09:27",
   "approx": true,
   "confidence": "medium",
@@ -9811,7 +9811,7 @@
  },
  "masterly-mysterious-travellers-1-f8b801": {
   "file": "/step-pics/masterly-mysterious-travellers-1-f8b801.webp",
-  "videoSeconds": 11367.0,
+  "videoSeconds": 11367,
   "videoTime": "3:09:27",
   "approx": true,
   "confidence": "high",
@@ -9829,7 +9829,7 @@
  },
  "masterly-mysterious-travellers-1-0f471c": {
   "file": "/step-pics/masterly-mysterious-travellers-1-0f471c.webp",
-  "videoSeconds": 11374.0,
+  "videoSeconds": 11374,
   "videoTime": "3:09:34",
   "approx": true,
   "confidence": "medium",
@@ -9837,7 +9837,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11371"
  },
  "true-vide-phase-1-1-0625d2": {
-  "file": "/step-pics/true-vide-phase-1-1-0625d2.jpg",
+  "file": "/step-pics/true-vide-phase-1-1-0625d2.webp",
   "videoSeconds": 11384,
   "videoTime": "3:09:44",
   "approx": false,
@@ -9847,7 +9847,7 @@
  },
  "true-vide-phase-1-1-6e9c2c": {
   "file": "/step-pics/true-vide-phase-1-1-6e9c2c.webp",
-  "videoSeconds": 11397.0,
+  "videoSeconds": 11397,
   "videoTime": "3:09:57",
   "approx": true,
   "confidence": "medium",
@@ -9883,7 +9883,7 @@
  },
  "true-vide-phase-1-1-23056b": {
   "file": "/step-pics/true-vide-phase-1-1-23056b.webp",
-  "videoSeconds": 11412.0,
+  "videoSeconds": 11412,
   "videoTime": "3:10:12",
   "approx": false,
   "confidence": "high",
@@ -9892,7 +9892,7 @@
  },
  "true-vide-phase-1-1-b629fe": {
   "file": "/step-pics/true-vide-phase-1-1-b629fe.webp",
-  "videoSeconds": 11417.0,
+  "videoSeconds": 11417,
   "videoTime": "3:10:17",
   "approx": false,
   "confidence": "high",
@@ -9901,7 +9901,7 @@
  },
  "true-vide-phase-1-1-023611": {
   "file": "/step-pics/true-vide-phase-1-1-023611.webp",
-  "videoSeconds": 11428.0,
+  "videoSeconds": 11428,
   "videoTime": "3:10:28",
   "approx": false,
   "confidence": "high",
@@ -9910,7 +9910,7 @@
  },
  "true-vide-phase-1-1-b23c6d": {
   "file": "/step-pics/true-vide-phase-1-1-b23c6d.webp",
-  "videoSeconds": 11432.0,
+  "videoSeconds": 11432,
   "videoTime": "3:10:32",
   "approx": false,
   "confidence": "high",
@@ -9919,7 +9919,7 @@
  },
  "true-vide-phase-1-1-76c4b1": {
   "file": "/step-pics/true-vide-phase-1-1-76c4b1.webp",
-  "videoSeconds": 11436.0,
+  "videoSeconds": 11436,
   "videoTime": "3:10:36",
   "approx": true,
   "confidence": "medium",
@@ -9928,7 +9928,7 @@
  },
  "true-vide-phase-1-1-1804a1": {
   "file": "/step-pics/true-vide-phase-1-1-1804a1.webp",
-  "videoSeconds": 11436.0,
+  "videoSeconds": 11436,
   "videoTime": "3:10:36",
   "approx": false,
   "confidence": "high",
@@ -9937,7 +9937,7 @@
  },
  "true-vide-phase-1-2-1804a1": {
   "file": "/step-pics/true-vide-phase-1-2-1804a1.webp",
-  "videoSeconds": 11441.0,
+  "videoSeconds": 11441,
   "videoTime": "3:10:41",
   "approx": false,
   "confidence": "high",
@@ -9973,7 +9973,7 @@
  },
  "true-vide-phase-1-1-72d5e0": {
   "file": "/step-pics/true-vide-phase-1-1-72d5e0.webp",
-  "videoSeconds": 11472.0,
+  "videoSeconds": 11472,
   "videoTime": "3:11:12",
   "approx": true,
   "confidence": "medium",
@@ -9982,7 +9982,7 @@
  },
  "true-vide-phase-1-1-fec412": {
   "file": "/step-pics/true-vide-phase-1-1-fec412.webp",
-  "videoSeconds": 11478.0,
+  "videoSeconds": 11478,
   "videoTime": "3:11:18",
   "approx": true,
   "confidence": "medium",
@@ -10000,7 +10000,7 @@
  },
  "true-vide-phase-1-1-e7b9ed": {
   "file": "/step-pics/true-vide-phase-1-1-e7b9ed.webp",
-  "videoSeconds": 11483.0,
+  "videoSeconds": 11483,
   "videoTime": "3:11:23",
   "approx": false,
   "confidence": "high",
@@ -10018,7 +10018,7 @@
  },
  "true-vide-phase-1-1-d04d7b": {
   "file": "/step-pics/true-vide-phase-1-1-d04d7b.webp",
-  "videoSeconds": 11494.0,
+  "videoSeconds": 11494,
   "videoTime": "3:11:34",
   "approx": false,
   "confidence": "high",
@@ -10035,7 +10035,7 @@
   "youtube_link": "https://youtu.be/d6YOJxTfIeQ?t=11493"
  },
  "true-vide-phase-2-1-9517f0": {
-  "file": "/step-pics/true-vide-phase-2-1-9517f0.jpg",
+  "file": "/step-pics/true-vide-phase-2-1-9517f0.webp",
   "videoSeconds": 11509,
   "videoTime": "3:11:49",
   "approx": false,
@@ -10045,7 +10045,7 @@
  },
  "true-vide-phase-2-1-7b87af": {
   "file": "/step-pics/true-vide-phase-2-1-7b87af.webp",
-  "videoSeconds": 11521.0,
+  "videoSeconds": 11521,
   "videoTime": "3:12:01",
   "approx": false,
   "confidence": "high",
@@ -10063,7 +10063,7 @@
  },
  "true-vide-phase-2-1-832da9": {
   "file": "/step-pics/true-vide-phase-2-1-832da9.webp",
-  "videoSeconds": 11542.0,
+  "videoSeconds": 11542,
   "videoTime": "3:12:22",
   "approx": true,
   "confidence": "low",
@@ -10072,7 +10072,7 @@
  },
  "true-vide-phase-2-1-6684e4": {
   "file": "/step-pics/true-vide-phase-2-1-6684e4.webp",
-  "videoSeconds": 11546.0,
+  "videoSeconds": 11546,
   "videoTime": "3:12:26",
   "approx": false,
   "confidence": "high",
@@ -10081,7 +10081,7 @@
  },
  "true-vide-phase-2-1-03113e": {
   "file": "/step-pics/true-vide-phase-2-1-03113e.webp",
-  "videoSeconds": 11548.0,
+  "videoSeconds": 11548,
   "videoTime": "3:12:28",
   "approx": false,
   "confidence": "high",
@@ -10099,7 +10099,7 @@
  },
  "true-vide-phase-2-1-99c436": {
   "file": "/step-pics/true-vide-phase-2-1-99c436.webp",
-  "videoSeconds": 11563.0,
+  "videoSeconds": 11563,
   "videoTime": "3:12:43",
   "approx": false,
   "confidence": "high",
@@ -10117,7 +10117,7 @@
  },
  "true-vide-phase-2-1-4d8025": {
   "file": "/step-pics/true-vide-phase-2-1-4d8025.webp",
-  "videoSeconds": 11589.0,
+  "videoSeconds": 11589,
   "videoTime": "3:13:09",
   "approx": true,
   "confidence": "medium",
@@ -10126,7 +10126,7 @@
  },
  "true-vide-phase-2-1-d38ea1": {
   "file": "/step-pics/true-vide-phase-2-1-d38ea1.webp",
-  "videoSeconds": 11590.0,
+  "videoSeconds": 11590,
   "videoTime": "3:13:10",
   "approx": true,
   "confidence": "low",
@@ -10135,7 +10135,7 @@
  },
  "true-vide-phase-2-1-02f182": {
   "file": "/step-pics/true-vide-phase-2-1-02f182.webp",
-  "videoSeconds": 11592.0,
+  "videoSeconds": 11592,
   "videoTime": "3:13:12",
   "approx": true,
   "confidence": "low",
@@ -10144,7 +10144,7 @@
  },
  "true-vide-phase-2-1-78bd83": {
   "file": "/step-pics/true-vide-phase-2-1-78bd83.webp",
-  "videoSeconds": 11592.0,
+  "videoSeconds": 11592,
   "videoTime": "3:13:12",
   "approx": false,
   "confidence": "high",
@@ -10153,7 +10153,7 @@
  },
  "true-vide-phase-2-2-4d8025": {
   "file": "/step-pics/true-vide-phase-2-2-4d8025.webp",
-  "videoSeconds": 11598.0,
+  "videoSeconds": 11598,
   "videoTime": "3:13:18",
   "approx": false,
   "confidence": "high",
@@ -10225,7 +10225,7 @@
  },
  "true-vide-phase-2-1-2ee536": {
   "file": "/step-pics/true-vide-phase-2-1-2ee536.webp",
-  "videoSeconds": 11634.0,
+  "videoSeconds": 11634,
   "videoTime": "3:13:54",
   "approx": true,
   "confidence": "medium",
@@ -10243,7 +10243,7 @@
  },
  "true-vide-phase-2-1-fcc8ea": {
   "file": "/step-pics/true-vide-phase-2-1-fcc8ea.webp",
-  "videoSeconds": 11643.0,
+  "videoSeconds": 11643,
   "videoTime": "3:14:03",
   "approx": true,
   "confidence": "high",
@@ -10252,7 +10252,7 @@
  },
  "true-vide-phase-2-1-317a58": {
   "file": "/step-pics/true-vide-phase-2-1-317a58.webp",
-  "videoSeconds": 11645.0,
+  "videoSeconds": 11645,
   "videoTime": "3:14:05",
   "approx": true,
   "confidence": "high",
@@ -10261,7 +10261,7 @@
  },
  "true-vide-phase-2-1-0f222b": {
   "file": "/step-pics/true-vide-phase-2-1-0f222b.webp",
-  "videoSeconds": 11643.0,
+  "videoSeconds": 11643,
   "videoTime": "3:14:03",
   "approx": true,
   "confidence": "high",
@@ -10270,7 +10270,7 @@
  },
  "true-vide-phase-2-1-679f40": {
   "file": "/step-pics/true-vide-phase-2-1-679f40.webp",
-  "videoSeconds": 11649.0,
+  "videoSeconds": 11649,
   "videoTime": "3:14:09",
   "approx": true,
   "confidence": "high",
@@ -10288,7 +10288,7 @@
  },
  "true-vide-phase-2-1-898644": {
   "file": "/step-pics/true-vide-phase-2-1-898644.webp",
-  "videoSeconds": 11657.0,
+  "videoSeconds": 11657,
   "videoTime": "3:14:17",
   "approx": true,
   "confidence": "medium",
@@ -10297,7 +10297,7 @@
  },
  "true-vide-phase-2-1-9982e6": {
   "file": "/step-pics/true-vide-phase-2-1-9982e6.webp",
-  "videoSeconds": 11657.0,
+  "videoSeconds": 11657,
   "videoTime": "3:14:17",
   "approx": true,
   "confidence": "high",
@@ -10306,7 +10306,7 @@
  },
  "true-vide-phase-2-1-5adedf": {
   "file": "/step-pics/true-vide-phase-2-1-5adedf.webp",
-  "videoSeconds": 11660.0,
+  "videoSeconds": 11660,
   "videoTime": "3:14:20",
   "approx": true,
   "confidence": "high",
@@ -10342,7 +10342,7 @@
  },
  "true-vide-phase-2-1-186462": {
   "file": "/step-pics/true-vide-phase-2-1-186462.webp",
-  "videoSeconds": 11672.0,
+  "videoSeconds": 11672,
   "videoTime": "3:14:32",
   "approx": true,
   "confidence": "high",
@@ -10387,7 +10387,7 @@
  },
  "true-vide-the-wicked-1-24a668": {
   "file": "/step-pics/true-vide-the-wicked-1-24a668.webp",
-  "videoSeconds": 11922.0,
+  "videoSeconds": 11922,
   "videoTime": "3:18:42",
   "approx": true,
   "confidence": "low",
@@ -10396,7 +10396,7 @@
  },
  "true-vide-the-wicked-1-56cda0": {
   "file": "/step-pics/true-vide-the-wicked-1-56cda0.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "low",
@@ -10405,7 +10405,7 @@
  },
  "true-vide-the-wicked-1-cb44c6": {
   "file": "/step-pics/true-vide-the-wicked-1-cb44c6.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10414,7 +10414,7 @@
  },
  "true-vide-the-wicked-1-d38ea1": {
   "file": "/step-pics/true-vide-the-wicked-1-d38ea1.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10423,7 +10423,7 @@
  },
  "true-vide-the-wicked-1-0f45b4": {
   "file": "/step-pics/true-vide-the-wicked-1-0f45b4.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10432,7 +10432,7 @@
  },
  "true-vide-the-wicked-1-d3862a": {
   "file": "/step-pics/true-vide-the-wicked-1-d3862a.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10441,7 +10441,7 @@
  },
  "true-vide-the-wicked-1-172305": {
   "file": "/step-pics/true-vide-the-wicked-1-172305.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10450,7 +10450,7 @@
  },
  "true-vide-the-wicked-1-fa16db": {
   "file": "/step-pics/true-vide-the-wicked-1-fa16db.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10459,7 +10459,7 @@
  },
  "true-vide-the-wicked-1-223665": {
   "file": "/step-pics/true-vide-the-wicked-1-223665.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10468,7 +10468,7 @@
  },
  "true-vide-the-wicked-1-752b3a": {
   "file": "/step-pics/true-vide-the-wicked-1-752b3a.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10477,7 +10477,7 @@
  },
  "true-vide-the-wicked-2-223665": {
   "file": "/step-pics/true-vide-the-wicked-2-223665.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10486,7 +10486,7 @@
  },
  "true-vide-the-wicked-1-980195": {
   "file": "/step-pics/true-vide-the-wicked-1-980195.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10495,7 +10495,7 @@
  },
  "true-vide-the-wicked-1-812f43": {
   "file": "/step-pics/true-vide-the-wicked-1-812f43.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10504,7 +10504,7 @@
  },
  "true-vide-the-wicked-1-0f01e1": {
   "file": "/step-pics/true-vide-the-wicked-1-0f01e1.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10513,7 +10513,7 @@
  },
  "true-vide-the-wicked-1-292956": {
   "file": "/step-pics/true-vide-the-wicked-1-292956.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10522,7 +10522,7 @@
  },
  "true-vide-the-wicked-1-4397da": {
   "file": "/step-pics/true-vide-the-wicked-1-4397da.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10531,7 +10531,7 @@
  },
  "true-vide-the-wicked-1-167fa0": {
   "file": "/step-pics/true-vide-the-wicked-1-167fa0.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10540,7 +10540,7 @@
  },
  "true-vide-the-wicked-1-f380c5": {
   "file": "/step-pics/true-vide-the-wicked-1-f380c5.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "high",
@@ -10549,7 +10549,7 @@
  },
  "true-vide-the-wicked-1-457d5f": {
   "file": "/step-pics/true-vide-the-wicked-1-457d5f.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10558,7 +10558,7 @@
  },
  "true-vide-the-wicked-1-91a7f5": {
   "file": "/step-pics/true-vide-the-wicked-1-91a7f5.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10567,7 +10567,7 @@
  },
  "true-vide-the-wicked-1-fec412": {
   "file": "/step-pics/true-vide-the-wicked-1-fec412.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10576,7 +10576,7 @@
  },
  "true-vide-the-wicked-1-e25de3": {
   "file": "/step-pics/true-vide-the-wicked-1-e25de3.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10585,7 +10585,7 @@
  },
  "true-vide-the-wicked-1-471d0d": {
   "file": "/step-pics/true-vide-the-wicked-1-471d0d.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": false,
   "confidence": "high",
@@ -10594,7 +10594,7 @@
  },
  "true-vide-the-wicked-1-6e9c2c": {
   "file": "/step-pics/true-vide-the-wicked-1-6e9c2c.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10603,7 +10603,7 @@
  },
  "true-vide-the-wicked-1-d57479": {
   "file": "/step-pics/true-vide-the-wicked-1-d57479.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10612,7 +10612,7 @@
  },
  "true-vide-the-wicked-1-866332": {
   "file": "/step-pics/true-vide-the-wicked-1-866332.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10621,7 +10621,7 @@
  },
  "true-vide-the-wicked-1-9e5b45": {
   "file": "/step-pics/true-vide-the-wicked-1-9e5b45.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10630,7 +10630,7 @@
  },
  "true-vide-the-wicked-2-91a7f5": {
   "file": "/step-pics/true-vide-the-wicked-2-91a7f5.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10639,7 +10639,7 @@
  },
  "true-vide-the-wicked-1-f9fa70": {
   "file": "/step-pics/true-vide-the-wicked-1-f9fa70.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "high",
@@ -10648,7 +10648,7 @@
  },
  "true-vide-the-wicked-1-46ea35": {
   "file": "/step-pics/true-vide-the-wicked-1-46ea35.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10657,7 +10657,7 @@
  },
  "true-vide-the-wicked-1-3f43de": {
   "file": "/step-pics/true-vide-the-wicked-1-3f43de.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10666,7 +10666,7 @@
  },
  "true-vide-the-wicked-1-8208a7": {
   "file": "/step-pics/true-vide-the-wicked-1-8208a7.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10675,7 +10675,7 @@
  },
  "true-vide-the-wicked-1-125b37": {
   "file": "/step-pics/true-vide-the-wicked-1-125b37.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10684,7 +10684,7 @@
  },
  "true-vide-the-wicked-1-302cf3": {
   "file": "/step-pics/true-vide-the-wicked-1-302cf3.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "high",
@@ -10693,7 +10693,7 @@
  },
  "true-vide-the-wicked-1-da936c": {
   "file": "/step-pics/true-vide-the-wicked-1-da936c.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10702,7 +10702,7 @@
  },
  "true-vide-the-wicked-1-b4c385": {
   "file": "/step-pics/true-vide-the-wicked-1-b4c385.webp",
-  "videoSeconds": 11939.0,
+  "videoSeconds": 11939,
   "videoTime": "3:18:59",
   "approx": true,
   "confidence": "medium",
@@ -10711,7 +10711,7 @@
  },
  "true-vide-the-wicked-2-9e5b45": {
   "file": "/step-pics/true-vide-the-wicked-2-9e5b45.webp",
-  "videoSeconds": 11940.0,
+  "videoSeconds": 11940,
   "videoTime": "3:19:00",
   "approx": true,
   "confidence": "medium",
@@ -10720,7 +10720,7 @@
  },
  "true-vide-the-wicked-3-91a7f5": {
   "file": "/step-pics/true-vide-the-wicked-3-91a7f5.webp",
-  "videoSeconds": 11940.0,
+  "videoSeconds": 11940,
   "videoTime": "3:19:00",
   "approx": true,
   "confidence": "medium",
@@ -10765,7 +10765,7 @@
  },
  "true-vide-the-wicked-2-24a668": {
   "file": "/step-pics/true-vide-the-wicked-2-24a668.webp",
-  "videoSeconds": 11951.0,
+  "videoSeconds": 11951,
   "videoTime": "3:19:11",
   "approx": true,
   "confidence": "high",
@@ -10774,7 +10774,7 @@
  },
  "true-vide-the-wicked-1-a66f3c": {
   "file": "/step-pics/true-vide-the-wicked-1-a66f3c.webp",
-  "videoSeconds": 11959.0,
+  "videoSeconds": 11959,
   "videoTime": "3:19:19",
   "approx": true,
   "confidence": "medium",
@@ -10783,7 +10783,7 @@
  },
  "true-vide-the-wicked-1-8e6463": {
   "file": "/step-pics/true-vide-the-wicked-1-8e6463.webp",
-  "videoSeconds": 11963.0,
+  "videoSeconds": 11963,
   "videoTime": "3:19:23",
   "approx": false,
   "confidence": "high",
@@ -10792,7 +10792,7 @@
  },
  "true-vide-the-wicked-2-a56fbd": {
   "file": "/step-pics/true-vide-the-wicked-2-a56fbd.webp",
-  "videoSeconds": 11968.0,
+  "videoSeconds": 11968,
   "videoTime": "3:19:28",
   "approx": true,
   "confidence": "high",
@@ -10801,7 +10801,7 @@
  },
  "true-vide-the-wicked-1-b04892": {
   "file": "/step-pics/true-vide-the-wicked-1-b04892.webp",
-  "videoSeconds": 11968.0,
+  "videoSeconds": 11968,
   "videoTime": "3:19:28",
   "approx": true,
   "confidence": "medium",
@@ -10819,7 +10819,7 @@
  },
  "true-vide-the-wicked-1-19e374": {
   "file": "/step-pics/true-vide-the-wicked-1-19e374.webp",
-  "videoSeconds": 11978.0,
+  "videoSeconds": 11978,
   "videoTime": "3:19:38",
   "approx": true,
   "confidence": "medium",
@@ -10846,7 +10846,7 @@
  },
  "true-vide-the-wicked-1-867b47": {
   "file": "/step-pics/true-vide-the-wicked-1-867b47.webp",
-  "videoSeconds": 12008.0,
+  "videoSeconds": 12008,
   "videoTime": "3:20:08",
   "approx": true,
   "confidence": "low",
@@ -10855,7 +10855,7 @@
  },
  "true-vide-the-wicked-1-8c3105": {
   "file": "/step-pics/true-vide-the-wicked-1-8c3105.webp",
-  "videoSeconds": 12008.0,
+  "videoSeconds": 12008,
   "videoTime": "3:20:08",
   "approx": true,
   "confidence": "high",
@@ -10864,7 +10864,7 @@
  },
  "true-vide-the-wicked-1-832da9": {
   "file": "/step-pics/true-vide-the-wicked-1-832da9.webp",
-  "videoSeconds": 12012.0,
+  "videoSeconds": 12012,
   "videoTime": "3:20:12",
   "approx": true,
   "confidence": "medium",
@@ -10873,7 +10873,7 @@
  },
  "true-vide-the-wicked-1-36aee5": {
   "file": "/step-pics/true-vide-the-wicked-1-36aee5.webp",
-  "videoSeconds": 12012.0,
+  "videoSeconds": 12012,
   "videoTime": "3:20:12",
   "approx": true,
   "confidence": "high",

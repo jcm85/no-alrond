@@ -43,6 +43,8 @@ const FORCED_LOW = new Set([
   "majestic-mysterious-travellers-1-2b3658",
   "castti-ch-2-winterbloom-route-900-754275",
   "masterly-mysterious-travellers-1-2b3658",
+  "throne-ch-1-1-96220c",
+  "partitio-ch-2-1-481bc4",
 ]);
 
 const stepById = new Map(steps.map((step) => [step.id, step]));
@@ -113,8 +115,6 @@ function picturePath(url: string) {
 }
 
 const prefetched = new Map<string, HTMLImageElement>();
-/** Jpeg requests are shared with the visible <img>. Dropping or clearing the prefetch aborts that request, and the element does not retry. Hold the loader until it finishes. */
-const retainedJpegs = new Set<HTMLImageElement>();
 let preloadWait: { img: HTMLImageElement; onDone: () => void } | null = null;
 
 function clearPreloadWait() {
@@ -124,27 +124,15 @@ function clearPreloadWait() {
   preloadWait = null;
 }
 
-function isJpeg(url: string) {
-  return /\.jpe?g($|\?)/i.test(picturePath(url));
-}
-
 function dropPrefetch(url: string) {
   const img = prefetched.get(url);
   if (!img) return;
   img.onload = null;
   img.onerror = null;
   prefetched.delete(url);
-  if (!isJpeg(url)) {
-    img.src = "";
-    return;
-  }
-  if (img.complete) return;
-  retainedJpegs.add(img);
-  const release = () => {
-    retainedJpegs.delete(img);
-  };
-  img.addEventListener("load", release, { once: true });
-  img.addEventListener("error", release, { once: true });
+  // Clearing src aborts the request. Never do that for a URL the current step is showing.
+  if (livePicturePaths().has(picturePath(url))) return;
+  img.src = "";
 }
 
 function livePicturePaths() {
@@ -181,9 +169,7 @@ export function syncPicturePrefetch(currentId: string | undefined, nextIds: Arra
     const picture = pictureFor(id);
     if (!picture) continue;
     const url = pictureRequestSrc(picture.image);
-    // A low-priority prefetch is coalesced with the visible <img> and stays low
-    // priority, so a JPEG looks blank during fast taps. Let the eager image start it.
-    if (!url || url === currentUrl || url === currentFull || url === currentSmall || isJpeg(url)) continue;
+    if (!url || url === currentUrl || url === currentFull || url === currentSmall) continue;
     next.add(url);
   }
   const protectedUrls = [...livePicturePaths()];

@@ -168,7 +168,7 @@ test("a desktop curated jpg still loads when the steps before it are tapped quic
         /* cancelled */
       }
     });
-    const jpg = "/step-pics/partitio-ch-2-1-9fbb5f.jpg";
+    const jpg = "/step-pics/partitio-ch-2-1-9fbb5f.webp";
     await page.addInitScript(() => {
       localStorage.setItem(
         "no-alrond-run-v2",
@@ -209,7 +209,7 @@ test("a desktop curated jpg still loads when the steps before it are tapped quic
     }, null, { timeout: 8000 });
     const currentSrc = await shown.jsonValue();
     assert.equal(aborted.includes(jpg), false, `jpg aborted; aborted ${aborted.join(" ")}`);
-    assert.match(currentSrc, /partitio-ch-2-1-9fbb5f\.jpe?g/, currentSrc);
+    assert.match(currentSrc, /partitio-ch-2-1-9fbb5f\.webp/, currentSrc);
     await page.close();
   } finally {
     await browser.close();
