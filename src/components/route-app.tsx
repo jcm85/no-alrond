@@ -664,11 +664,8 @@ function Now({
     return () => window.clearTimeout(timer);
   }, [toast]);
   useEffect(() => {
-    if (!current) {
-      syncPicturePrefetch([]);
-      return;
-    }
-    syncPicturePrefetch([current.id, steps[current.n]?.id, steps[current.n + 1]?.id]);
+    if (!current) return syncPicturePrefetch(undefined, []);
+    return syncPicturePrefetch(current.id, [steps[current.n]?.id, steps[current.n + 1]?.id]);
   }, [current]);
   if (!current) {
     return (
@@ -785,12 +782,14 @@ function Now({
                   type="button"
                   onClick={onUndo}
                   disabled={!undoLive}
-                  className="min-h-14 w-24 rounded-card border border-gold px-3 py-3 text-lg text-gold disabled:opacity-50"
+                  className="min-h-14 w-full rounded-card border border-line px-3 py-3 text-lg text-fg disabled:opacity-50"
                 >
                   Undo
                 </button>
               </div>
-            ) : null}
+            ) : (
+              <div className="undo-slot" aria-hidden="true" />
+            )}
             <button type="button" onClick={onSkip} className="step-skip min-h-14 w-24 shrink-0 rounded-card border border-line px-3 py-3 text-lg text-fg">
               Skip
             </button>
@@ -1110,12 +1109,12 @@ function About({
         On the Now tab, Space or Enter marks the current step done, including when the step details are focused. A
         button, link, or text field keeps its own key. S skips. Z or Backspace undoes.
       </p>
-      <a className="mt-3 inline-block text-base text-gold underline underline-offset-4" href={route.meta.video} target="_blank" rel="noreferrer">
+      <a className="mt-3 inline-flex min-h-11 items-center text-base text-gold underline underline-offset-4" href={route.meta.video} target="_blank" rel="noreferrer">
         Watch the run
       </a>
       <p className="mt-3 text-base text-muted">
         Pictures are snapshots from{" "}
-        <a className="text-gold underline underline-offset-4" href="https://youtu.be/d6YOJxTfIeQ" target="_blank" rel="noreferrer">
+        <a className="inline-flex min-h-11 items-center text-gold underline underline-offset-4" href="https://youtu.be/d6YOJxTfIeQ" target="_blank" rel="noreferrer">
           Chewy's All Superbosses run
         </a>
         .

@@ -1,11 +1,11 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import { dirname, join } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 import { stepPicExtra } from "../data/step-pic-extra.ts";
 import { stepPics } from "../data/step-pics.ts";
-import { frameHeading, pictureFor, watchFromLabel, weakPictureStep } from "./step-pictures.ts";
+import { frameHeading, pictureFor, pictureSmallSrc, prefetchCancelUrls, watchFromLabel, weakPictureStep } from "./step-pictures.ts";
 import { steps } from "./run-store.ts";
 
 function linkSeconds(youtubeLink: string) {
@@ -92,6 +92,11 @@ test("every route step has a screenshot and weak frames stay tagged", () => {
     "partitio-ch-4-1-52f067",
     "journey-for-the-dawn-1-24db21",
     "masterly-mysterious-travellers-1-8d0b0d",
+    "throne-ch-1-900-31bcfe",
+    "throne-ch-1-1-8426d9",
+    "hikari-ch-2-1-625d41",
+    "agnea-ch-4-1-533e07",
+    "majestic-mysterious-travellers-1-2b3658",
   ];
   for (const id of forcedLow) {
     const picture = pictureFor(id);
@@ -117,6 +122,10 @@ test("every route step has a screenshot and weak frames stay tagged", () => {
         assert.equal(entry.approx, true, step.id);
       }
     }
+    const small = pictureSmallSrc(picture.image);
+    const smallFile = join(dirname(fileURLToPath(import.meta.url)), "../../public", small);
+    assert.equal(existsSync(smallFile), true, small);
+    assert.equal(statSync(smallFile).size > 500, true, small);
     if (picture.image.endsWith(".webp")) {
       const file = join(dirname(fileURLToPath(import.meta.url)), "../../public", picture.image);
       assert.equal(readFileSync(file).byteLength > 1000, true, picture.image);
@@ -139,6 +148,21 @@ test("every route step has a screenshot and weak frames stay tagged", () => {
     assert.equal(stepPicExtra[id], undefined, id);
     assert.equal(steps.some((step) => step.id === id), false, id);
   }
+});
+
+test("prefetch never cancels the current picture, and phones use the 640 variant", () => {
+  assert.equal(pictureSmallSrc("/step-pics/throne-ch-1-900-31bcfe.webp"), "/step-pics/w640/throne-ch-1-900-31bcfe.webp");
+  assert.equal(pictureSmallSrc("/step-pics/hikari-ch-2-1-625d41.jpg"), "/step-pics/w640/hikari-ch-2-1-625d41.webp");
+  assert.equal(stepPics["hikari-ch-2-1-625d41"].confidence, "medium");
+  const current = "/step-pics/w640/current.webp";
+  const next = "/step-pics/w640/next.webp";
+  const cancel = prefetchCancelUrls([current, next, "/step-pics/w640/left.webp"], [next], [current]);
+  assert.deepEqual(cancel, ["/step-pics/w640/left.webp"]);
+  const source = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "step-pictures.ts"), "utf8");
+  assert.match(source, /setAttribute\("fetchpriority", "low"\)/);
+  const card = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../components/step-picture.tsx"), "utf8");
+  assert.match(card, /media="\(max-width: 899px\)"/);
+  assert.match(card, /src=\{frame\.image\}/);
 });
 
 test("the guard outpost door is a travel frame", () => {
