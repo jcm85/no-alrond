@@ -1,13 +1,39 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import {
   beforeFleeing,
   isFirstPlanStep,
+  matchedTurnIndex,
   planEnemyLabel,
   planFor,
   planIsUnverified,
   turnLine,
   type FightPlan as FightPlanData,
 } from "@/lib/fight-plans";
+
+const PLAN_OPEN_KEY = "no-alrond-plan-open";
+
+function readPlanOpen(planId: string) {
+  if (typeof sessionStorage === "undefined") return false;
+  try {
+    const raw = sessionStorage.getItem(PLAN_OPEN_KEY);
+    if (!raw) return false;
+    const map = JSON.parse(raw) as Record<string, unknown>;
+    return map[planId] === true;
+  } catch {
+    return false;
+  }
+}
+
+function writePlanOpen(planId: string, open: boolean) {
+  try {
+    const raw = sessionStorage.getItem(PLAN_OPEN_KEY);
+    const map = raw ? (JSON.parse(raw) as Record<string, unknown>) : {};
+    map[planId] = open;
+    sessionStorage.setItem(PLAN_OPEN_KEY, JSON.stringify(map));
+  } catch {
+    /* private mode or a full store */
+  }
+}
 
 function Unverified() {
   return <span className="fight-tag">unverified</span>;
@@ -83,26 +109,67 @@ function FullPlan({ plan }: { plan: FightPlanData }) {
 export function FightPlan({ stepId, variant = "now" }: { stepId: string; variant?: "now" | "route" }) {
   const plan = planFor(stepId);
   const lead = isFirstPlanStep(stepId);
+  const planId = plan?.id ?? "";
+  const [openFor, setOpenFor] = useState("");
   const [open, setOpen] = useState(false);
-  useEffect(() => {
-    setOpen(false);
-  }, [stepId]);
+  if (planId !== openFor) {
+    setOpenFor(planId);
+    setOpen(planId ? readPlanOpen(planId) : false);
+  }
   if (!plan) return null;
   const unverified = planIsUnverified(plan);
+  function toggle() {
+    setOpen((value) => {
+      const next = !value;
+      if (planId) writePlanOpen(planId, next);
+      return next;
+    });
+  }
+
+  const turnIndex = variant === "now" && !lead ? matchedTurnIndex(stepId) : null;
+  const turns = plan.T ?? [];
+  const currentTurn = turnIndex == null ? undefined : turns[turnIndex];
+  if (variant === "now" && !lead && turnIndex != null && currentTurn) {
+    const nextTurn = turns[turnIndex + 1];
+    const hasMore = Boolean(plan.e?.length) || Boolean(plan.why) || turns.length > (nextTurn ? 2 : 1);
+    return (
+      <section className={"fight-plan is-matched" + (open ? " is-open" : "")} aria-label="Fight plan">
+        {unverified ? (
+          <p className="fight-plan-head">
+            <span>Fight plan</span>
+            <Unverified />
+          </p>
+        ) : null}
+        <p className="fight-plan-turn">{turnLine(currentTurn)}</p>
+        {nextTurn ? <p className="fight-plan-turn">{turnLine(nextTurn)}</p> : null}
+        {hasMore ? (
+          <>
+            <button type="button" className="fight-plan-more" aria-expanded={open} onClick={toggle}>
+              {open ? "Hide full plan" : "Show full plan"}
+            </button>
+            <div className="fight-plan-rest">
+              <Turns turns={turns.filter((_, index) => index !== turnIndex && index !== turnIndex + 1)} />
+              <Enemies plan={plan} />
+              {plan.why ? (
+                <details className="fight-plan-why">
+                  <summary>Why</summary>
+                  <p>{plan.why}</p>
+                </details>
+              ) : null}
+            </div>
+          </>
+        ) : null}
+      </section>
+    );
+  }
 
   if (variant === "route" || !lead) {
-    const hint = variant === "route" ? "Show fight plan" : "Fight plan: see first step";
     return (
       <section className={"fight-plan" + (open ? " is-open" : "")} aria-label="Fight plan">
-        <button
-          type="button"
-          className="fight-plan-jump"
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-        >
+        <button type="button" className="fight-plan-jump" aria-expanded={open} onClick={toggle}>
           <span className="text-fg">{planEnemyLabel(plan)}</span>
           {unverified ? <Unverified /> : null}
-          <span className="text-gold">{open ? "Hide fight plan" : hint}</span>
+          <span className="text-gold">{open ? "Hide fight plan" : "Show fight plan"}</span>
         </button>
         {open ? <FullPlan plan={plan} /> : null}
       </section>
@@ -117,7 +184,6 @@ export function FightPlan({ stepId, variant = "now" }: { stepId: string; variant
     );
   }
 
-  const turns = plan.T ?? [];
   const hasMore = (plan.e?.length ?? 0) > 1 || turns.length > 1 || Boolean(plan.why);
   return (
     <section className={"fight-plan is-lead" + (open ? " is-open" : "")} aria-label="Fight plan">
@@ -142,7 +208,7 @@ export function FightPlan({ stepId, variant = "now" }: { stepId: string; variant
             type="button"
             className="fight-plan-more"
             aria-expanded={open}
-            onClick={() => setOpen((value) => !value)}
+            onClick={toggle}
           >
             {open ? "Hide full plan" : "Show full plan"}
           </button>
