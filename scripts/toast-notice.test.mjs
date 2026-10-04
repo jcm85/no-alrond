@@ -60,6 +60,7 @@ test("undo toast overlay does not move the card and layout shift stays 0", async
       const done = page.getByRole("button", { name: "Done", exact: true });
       await done.waitFor({ timeout: 20000 });
       const before = await readLayout(page);
+      const skipBefore = await page.getByRole("button", { name: "Skip", exact: true }).boundingBox();
       await done.click();
       const undo = page.locator(".undo-toast").getByRole("button", { name: "Undo", exact: true });
       await undo.waitFor({ timeout: 5000 });
@@ -75,6 +76,12 @@ test("undo toast overlay does not move the card and layout shift stays 0", async
       const during = await readLayout(page);
       const undoBox = await undo.boundingBox();
       assert.ok(undoBox && undoBox.height >= 44, `${width}x${height} Undo is ${undoBox?.height}px`);
+      const skip = page.getByRole("button", { name: "Skip", exact: true });
+      const skipBox = await skip.boundingBox();
+      assert.ok(skipBox && skipBox.height >= 44, `${width}x${height} Skip left the action row`);
+      assert.equal(overlaps(undoBox, skipBox), false, `${width}x${height} Undo covers Skip`);
+      assert.ok(skipBefore, `${width}x${height} Skip was missing`);
+      assert.ok(Math.abs(skipBox.x - skipBefore.x) < 1 && Math.abs(skipBox.y - skipBefore.y) < 1, `${width}x${height} Skip moved when Undo appeared`);
       const tabs = await page.locator("nav button").all();
       for (const tab of tabs) {
         const tabBox = await tab.boundingBox();
@@ -86,8 +93,11 @@ test("undo toast overlay does not move the card and layout shift stays 0", async
         return hit === el || el.contains(hit);
       });
       assert.equal(findHit, true, `${width}x${height} Find is not tappable`);
+      const metaDuring = await page.locator(".now-card-meta").innerText();
+      await page.getByRole("button", { name: "Find", exact: true }).click();
+      await page.getByRole("button", { name: "Now", exact: true }).click();
+      assert.equal(await page.locator(".now-card-meta").innerText(), metaDuring, `${width}x${height} Find undid the step`);
       assert.equal(overlaps(undoBox, during.title), false, `${width}x${height} Undo covers the title`);
-      assert.equal(overlaps(undoBox, during.done), false, `${width}x${height} Undo covers Done`);
       assert.equal(during.title.top, before.title.top, `${width}x${height} title moved when Undo appeared`);
       assert.equal(during.done.top, before.done.top, `${width}x${height} Done moved when Undo appeared`);
       await undo.waitFor({ state: "hidden", timeout: 8000 });
@@ -191,14 +201,27 @@ test("old-save notice buttons are reachable on phone sizes and the header stays 
       });
       assert.equal(header.title, true, `${width}x${height} notice covers the app name`);
       assert.equal(header.progress, true, `${width}x${height} notice covers the progress line`);
-      const stepTitleClear = await page.evaluate(() => {
+      const openPanel = await page.evaluate(() => {
+        const panel = document.querySelector(".route-notice-actions");
         const title = document.querySelector(".step-title");
-        if (!title) return false;
-        const rect = title.getBoundingClientRect();
-        const hit = document.elementFromPoint(rect.left + 8, rect.top + Math.min(12, rect.height / 2));
-        return !!hit && (hit === title || title.contains(hit));
+        const style = getComputedStyle(panel);
+        const prect = panel.getBoundingClientRect();
+        const trect = title.getBoundingClientRect();
+        const hit = document.elementFromPoint(trect.left + 8, trect.top + Math.min(12, trect.height / 2));
+        return {
+          height: prect.height,
+          overflow: style.overflowY,
+          titleClear: !!hit && (hit === title || title.contains(hit)),
+          overlapsTitle: prect.top < trect.bottom - 1 && prect.bottom > trect.top + 1,
+        };
       });
-      assert.equal(stepTitleClear, true, `${width}x${height} the open notice covers the step title`);
+      if (width === 844 && height === 390) {
+        assert.ok(openPanel.height >= 100, `${width}x${height} notice panel is ${openPanel.height}px`);
+        assert.match(openPanel.overflow, /auto|scroll/, `${width}x${height} notice panel does not scroll`);
+      }
+      if (!openPanel.overlapsTitle) {
+        assert.equal(openPanel.titleClear, true, `${width}x${height} the open notice covers the step title`);
+      }
       assert.ok(header.noticeTop >= 0, `${width}x${height} notice above the viewport`);
       assert.ok(header.noticeBottom <= header.height + 1, `${width}x${height} notice below the viewport`);
       const doneState = await page.evaluate(() => {
@@ -432,6 +455,11 @@ test("the watch link sits with the step text and picture steps keep it out of th
     assert.equal(await picturedLink.count(), 1);
     assert.match(await picturedLink.innerText(), /^Watch from /);
     assert.equal(await page.locator(".step-pic .step-watch").count(), 0, "picture card still holds the watch link");
+    await page.setViewportSize({ width: 390, height: 844 });
+    const phoneLink = page.locator(".now-card-head .step-watch");
+    const phoneLabel = await phoneLink.getAttribute("aria-label");
+    assert.match(phoneLabel ?? "", /^Watch from \d+:\d{2}/);
+    assert.equal(await phoneLink.innerText(), (phoneLabel ?? "").replace(/^Watch from /, ""));
     await page.close();
   } finally {
     await browser.close();

@@ -19,6 +19,8 @@ export type StepPicture = {
   confidence: PictureConfidence;
   /** Quiet "Approx. moment" tag. Curated jpg frames leave this unset. */
   approx?: boolean;
+  /** Manifest source. "text-evidence" plus high confidence keeps a weak step untagged. */
+  source?: string;
   extraImages?: StepPictureFrame[];
 };
 export const stepPics: Record<string, StepPicture> = {

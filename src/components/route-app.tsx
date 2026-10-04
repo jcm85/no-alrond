@@ -7,7 +7,7 @@ import { route, type Block } from "@/data/route";
 import { RUN_KEY } from "@/lib/migrate-progress";
 import { StepPictureCard } from "@/components/step-picture";
 import { focusableIn, holdBackground, nextTabIndex } from "@/lib/picture-focus";
-import { pictureFor, preloadPicture, usePictureHidden, watchFromLabel } from "@/lib/step-pictures";
+import { pictureFor, syncPicturePrefetch, usePictureHidden, watchFromLabel } from "@/lib/step-pictures";
 import {
   chapterOrder,
   playhead,
@@ -151,7 +151,7 @@ export function RouteApp() {
     const title = document.querySelector(".step-title");
     if (!notice || !title) return;
     const room = title.getBoundingClientRect().top - notice.getBoundingClientRect().bottom - 20;
-    setNoticeMax(Math.max(0, Math.min(room, 220)));
+    setNoticeMax(Math.min(220, Math.max(120, room)));
   }, [noticeOpen, tab, hydrated]);
 
   const act = route.acts.find((item) => item.id === actId) ?? route.acts[0];
@@ -653,10 +653,22 @@ function Now({
     pendingShowFocus.current = false;
     showPictureRef.current?.focus();
   }, [pictureHidden]);
+  const [undoLive, setUndoLive] = useState(false);
   useEffect(() => {
-    if (!current) return;
-    preloadPicture(steps[current.n]?.id);
-    preloadPicture(steps[current.n + 1]?.id);
+    if (!toast) {
+      setUndoLive(false);
+      return;
+    }
+    setUndoLive(false);
+    const timer = window.setTimeout(() => setUndoLive(true), 300);
+    return () => window.clearTimeout(timer);
+  }, [toast]);
+  useEffect(() => {
+    if (!current) {
+      syncPicturePrefetch([]);
+      return;
+    }
+    syncPicturePrefetch([current.id, steps[current.n]?.id, steps[current.n + 1]?.id]);
   }, [current]);
   if (!current) {
     return (
@@ -709,10 +721,9 @@ function Now({
         <div className="now-card mt-3 flex min-h-0 flex-1 flex-col overflow-hidden rounded-card border border-line bg-surface p-4">
           <div className="now-card-head">
             <div className="now-card-meta flex flex-wrap items-center gap-x-3 gap-y-1">
-              <p className="min-w-0 truncate text-sm tracking-widest text-gold uppercase">
-                Step {current.n}
-                {current.ctx ? ` · ${current.ctx}` : ` · ${KIND_LABEL[current.blockKind] ?? "Step"}`}
-                {current.optional ? " · Optional" : ""}
+              <p className="step-kicker min-w-0 text-sm tracking-widest text-gold uppercase">
+                <span className="step-kicker-full">{stepKickerFull(current)}</span>
+                <span className="step-kicker-short">{stepKickerShort(current)}</span>
               </p>
               <StepWatch step={current} />
               <button type="button" onClick={onShowGuide} className="how-combat ml-auto shrink-0 text-base text-gold">
@@ -763,22 +774,26 @@ function Now({
             </a>
           ) : null}
           </div>
-          <div className="now-actions mt-3 flex shrink-0 gap-3">
-            <button type="button" onClick={onDone} className="min-h-14 flex-1 rounded-card bg-gold px-4 py-3 text-lg font-semibold text-ink">
+          <div className="now-actions relative mt-3 flex shrink-0 flex-nowrap gap-3">
+            <button type="button" onClick={onDone} className="min-h-14 min-w-0 flex-1 rounded-card bg-gold px-4 py-3 text-lg font-semibold text-ink">
               Done
             </button>
             {toast ? (
               <div className="undo-toast" role="status">
                 <span className="sr-only">{toast}</span>
-                <button type="button" onClick={onUndo} className="min-h-14 min-w-24 rounded-card border border-gold px-4 py-3 text-lg text-gold">
+                <button
+                  type="button"
+                  onClick={onUndo}
+                  disabled={!undoLive}
+                  className="min-h-14 w-24 rounded-card border border-gold px-3 py-3 text-lg text-gold disabled:opacity-50"
+                >
                   Undo
                 </button>
               </div>
-            ) : (
-              <button type="button" onClick={onSkip} className="min-h-14 min-w-24 rounded-card border border-line px-4 py-3 text-lg text-fg">
-                Skip
-              </button>
-            )}
+            ) : null}
+            <button type="button" onClick={onSkip} className="step-skip min-h-14 w-24 shrink-0 rounded-card border border-line px-3 py-3 text-lg text-fg">
+              Skip
+            </button>
           </div>
         </div>
         <div className="now-tools mt-3 flex items-center justify-between">
@@ -929,13 +944,36 @@ function watchHref(step: FlatStep) {
   return pictureFor(step.id)?.youtube_link;
 }
 
+function travelerName(chapter: string) {
+  const named = chapter.match(/^(?:Recruit )?(Temenos|Partitio|Hikari|Throne|Osvald|Castti|Agnea|Ochette|Galdera)\b/);
+  if (named) return named[1];
+  if (chapter.startsWith("The ")) return chapter.slice(4).split(/[&,]/)[0].trim();
+  if (chapter.startsWith("Foreign ")) return "Assassins";
+  if (chapter.startsWith("Journey")) return "Dawn";
+  if (chapter.startsWith("Vide")) return "Vide";
+  if (chapter.startsWith("Majestic")) return "Majestic";
+  if (chapter.startsWith("Masterly")) return "Masterly";
+  if (chapter.startsWith("True Vide")) return "Vide";
+  return chapter.split(/[\s,:]/)[0] || chapter;
+}
+
+function stepKickerFull(step: FlatStep) {
+  const place = step.ctx ? step.ctx : (KIND_LABEL[step.blockKind] ?? "Step");
+  return `Step ${step.n} · ${place}${step.optional ? " · Optional" : ""}`;
+}
+
+function stepKickerShort(step: FlatStep) {
+  return `${step.n} · ${travelerName(step.chapter)}${step.optional ? " · Opt" : ""}`;
+}
+
 function StepWatch({ step }: { step: FlatStep }) {
   const href = watchHref(step);
   if (!href) return null;
+  const label = watchFromLabel(href);
   return (
-    <a className="step-watch" href={href} target="_blank" rel="noreferrer">
-      <span className="step-watch-full">{watchFromLabel(href)}</span>
-      <span className="step-watch-short">{watchFromLabel(href).replace(/^Watch from /, "")}</span>
+    <a className="step-watch" href={href} target="_blank" rel="noreferrer" aria-label={label}>
+      <span className="step-watch-full" aria-hidden="true">{label}</span>
+      <span className="step-watch-short" aria-hidden="true">{label.replace(/^Watch from /, "")}</span>
     </a>
   );
 }

@@ -5,7 +5,7 @@ import test from "node:test";
 import { fileURLToPath } from "node:url";
 import { stepPicExtra } from "../data/step-pic-extra.ts";
 import { stepPics } from "../data/step-pics.ts";
-import { frameHeading, pictureFor, watchFromLabel } from "./step-pictures.ts";
+import { frameHeading, pictureFor, watchFromLabel, weakPictureStep } from "./step-pictures.ts";
 import { steps } from "./run-store.ts";
 
 function linkSeconds(youtubeLink: string) {
@@ -82,10 +82,25 @@ test("watch label time equals the link t, and t is the frame minus 3 seconds", (
   }
 });
 
-test("every route step has a screenshot and only approx frames are tagged", () => {
+test("every route step has a screenshot and weak frames stay tagged", () => {
   let jpg = 0;
   let webp = 0;
-  let approx = 0;
+  const manifest = JSON.parse(
+    readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../../scripts/step-pics/manifest-all.json"), "utf8"),
+  ) as Record<string, { approx?: boolean; confidence?: string; source?: string }>;
+  const forcedLow = [
+    "partitio-ch-4-1-52f067",
+    "journey-for-the-dawn-1-24db21",
+    "masterly-mysterious-travellers-1-8d0b0d",
+  ];
+  for (const id of forcedLow) {
+    const picture = pictureFor(id);
+    assert.ok(picture, id);
+    assert.equal(picture.approx, true, id);
+    assert.equal(picture.confidence, "low", id);
+    assert.equal(manifest[id].approx, true, id);
+    assert.equal(manifest[id].confidence, "low", id);
+  }
   for (const step of steps) {
     const picture = pictureFor(step.id);
     assert.ok(picture, step.id);
@@ -93,9 +108,14 @@ test("every route step has a screenshot and only approx frames are tagged", () =
     if (picture.image.endsWith(".jpg")) jpg += 1;
     else if (picture.image.endsWith(".webp")) webp += 1;
     else assert.fail(picture.image);
-    if (picture.approx) {
-      approx += 1;
-      assert.equal(picture.image.endsWith(".webp"), true, step.id);
+    const entry = manifest[step.id];
+    assert.ok(entry, step.id);
+    if (weakPictureStep(step)) {
+      const exempt = picture.confidence === "high" && picture.source === "text-evidence";
+      if (!exempt) {
+        assert.equal(picture.approx, true, step.id);
+        assert.equal(entry.approx, true, step.id);
+      }
     }
     if (picture.image.endsWith(".webp")) {
       const file = join(dirname(fileURLToPath(import.meta.url)), "../../public", picture.image);
@@ -106,7 +126,6 @@ test("every route step has a screenshot and only approx frames are tagged", () =
   assert.equal(jpg, 133);
   assert.equal(webp, 1072);
   assert.equal(jpg + webp, 1205);
-  assert.equal(approx, 640);
   assert.equal(Object.keys(stepPicExtra).length, 1072);
   const heldBack = [
     "osvald-ch-4-1-f8b87e",
