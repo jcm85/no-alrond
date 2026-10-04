@@ -99,6 +99,8 @@ test("every route step has a screenshot and weak frames stay tagged", () => {
     "majestic-mysterious-travellers-1-2b3658",
     "castti-ch-2-winterbloom-route-900-754275",
     "masterly-mysterious-travellers-1-2b3658",
+    "throne-ch-1-1-96220c",
+    "partitio-ch-2-1-481bc4",
   ];
   for (const id of forcedLow) {
     const picture = pictureFor(id);
@@ -135,8 +137,8 @@ test("every route step has a screenshot and weak frames stay tagged", () => {
     }
   }
   assert.equal(steps.length, 1205);
-  assert.equal(jpg, 133);
-  assert.equal(webp, 1072);
+  assert.equal(jpg, 0);
+  assert.equal(webp, 1205);
   assert.equal(jpg + webp, 1205);
   assert.equal(Object.keys(stepPicExtra).length, 1072);
   const heldBack = [
@@ -155,25 +157,26 @@ test("every route step has a screenshot and weak frames stay tagged", () => {
 
 test("prefetch never cancels the current picture, and phones use the 640 variant", () => {
   assert.equal(pictureSmallSrc("/step-pics/throne-ch-1-900-31bcfe.webp"), "/step-pics/w640/throne-ch-1-900-31bcfe.webp");
-  assert.equal(pictureSmallSrc("/step-pics/hikari-ch-2-1-625d41.jpg"), "/step-pics/w640/hikari-ch-2-1-625d41.webp");
-  assert.equal(stepPics["hikari-ch-2-1-625d41"].confidence, "medium");
+  assert.equal(pictureSmallSrc("/step-pics/hikari-ch-2-1-625d41.webp"), "/step-pics/w640/hikari-ch-2-1-625d41.webp");
+  assert.equal(stepPics["hikari-ch-2-1-625d41"].image.endsWith(".webp"), true);
+  assert.equal(pictureFor("throne-ch-1-1-96220c")?.confidence, "low");
+  assert.equal(pictureFor("partitio-ch-2-1-481bc4")?.approx, true);
   const current = "/step-pics/w640/current.webp";
   const next = "/step-pics/w640/next.webp";
   const cancel = prefetchCancelUrls([current, next, "/step-pics/w640/left.webp"], [next], [current]);
   assert.deepEqual(cancel, ["/step-pics/w640/left.webp"]);
-  const jpg = "/step-pics/partitio-ch-2-1-3acf7f.jpg";
-  const jpgSmall = pictureSmallSrc(jpg);
-  const jpgCancel = prefetchCancelUrls([jpg, jpgSmall, "/step-pics/old.webp"], ["/step-pics/next.webp"], [jpg, jpgSmall]);
-  assert.deepEqual(jpgCancel, ["/step-pics/old.webp"]);
+  const curated = "/step-pics/partitio-ch-2-1-3acf7f.webp";
+  const curatedSmall = pictureSmallSrc(curated);
+  const curatedCancel = prefetchCancelUrls([curated, curatedSmall, "/step-pics/old.webp"], ["/step-pics/next.webp"], [curated, curatedSmall]);
+  assert.deepEqual(curatedCancel, ["/step-pics/old.webp"]);
   const source = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "step-pictures.ts"), "utf8");
   assert.match(source, /setAttribute\("fetchpriority", "low"\)/);
   assert.match(source, /currentFull/);
-  assert.match(source, /retainedJpegs/);
-  assert.match(source, /isJpeg\(url\)/);
+  assert.equal(source.includes("isJpeg"), false);
+  assert.equal(source.includes("retainedJpegs"), false);
   const card = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../components/step-picture.tsx"), "utf8");
   assert.match(source, /max-width: 1100px/);
   assert.match(source, /orientation: landscape/);
-  assert.match(source, /isJpeg\(url\)/);
   assert.match(card, /pictureRequestSrc\(frame\.image\)/);
   assert.match(card, /src=\{thumbSrc\}/);
 });

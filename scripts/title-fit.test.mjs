@@ -4,10 +4,14 @@ import { chromium } from "playwright";
 
 const PAGE = "http://127.0.0.1:8080/";
 const SIZES = [
-  [375, 667],
-  [360, 740],
+  [1080, 1920],
+  [1920, 1080],
   [390, 844],
+  [360, 740],
+  [375, 667],
   [1024, 768],
+  [768, 1024],
+  [844, 390],
 ];
 
 test("the instruction is never clipped at phone and tablet sizes", async () => {
@@ -30,7 +34,7 @@ test("the instruction is never clipped at phone and tablet sizes", async () => {
           const n = Number(/step\s+(\d+)/i.exec(kicker)?.[1] ?? 0);
           const done = [...document.querySelectorAll(".now-actions button")].find((button) => button.textContent.trim() === "Done");
           if (!title || !done || !n) break;
-          if (title.scrollHeight > title.clientHeight + 1 && found.length < 8) {
+          if (title.scrollHeight > title.clientHeight && found.length < 8) {
             found.push({ n, hidden: title.scrollHeight - title.clientHeight });
           }
           const before = n;

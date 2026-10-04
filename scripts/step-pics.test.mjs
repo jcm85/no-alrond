@@ -25,7 +25,7 @@ test("every step picture exists, matches a route step, and is not bundled", () =
   const entries = Object.entries(pics);
   assert.equal(entries.length, 133);
   assert.equal(text.includes("import "), false);
-  const files = new Set(readdirSync(picDir).filter((name) => name.endsWith(".jpg")));
+  const files = new Set(readdirSync(picDir).filter((name) => name.endsWith(".webp")));
   const used = new Set();
   let extras = 0;
   for (const [stepId, picture] of entries) {
@@ -33,7 +33,7 @@ test("every step picture exists, matches a route step, and is not bundled", () =
     assert.equal(ids.has(stepId), true, stepId);
     assert.ok(picture.kind === "travel" || picture.kind === "battle", picture.kind);
     assert.ok(picture.confidence === "high" || picture.confidence === "medium");
-    assert.match(picture.image, /^\/step-pics\/[^/]+\.jpg$/);
+    assert.match(picture.image, /^\/step-pics\/[^/]+\.webp$/);
     assert.match(picture.youtube_link, /^https:\/\/youtu\.be\/d6YOJxTfIeQ\?t=\d+$/);
     const name = picture.image.slice("/step-pics/".length);
     assert.equal(files.has(name), true, name);
@@ -48,7 +48,7 @@ test("every step picture exists, matches a route step, and is not bundled", () =
     }
     for (const frame of extra) {
       assert.equal(frame.kind, "travel");
-      assert.match(frame.image, /^\/step-pics\/[^/]+\.jpg$/);
+      assert.match(frame.image, /^\/step-pics\/[^/]+\.webp$/);
       const extraName = frame.image.slice("/step-pics/".length);
       assert.equal(files.has(extraName), true, extraName);
       assert.equal(used.has(extraName), false, extraName);
@@ -57,8 +57,8 @@ test("every step picture exists, matches a route step, and is not bundled", () =
     }
   }
   assert.equal(extras, 1);
-  assert.deepEqual([...files].filter((name) => !used.has(name)), []);
-  assert.equal(files.size, 134);
+  assert.equal(used.size, 134);
+  for (const name of used) assert.equal(files.has(name), true, name);
 });
 
 test("webp screenshots cover the remaining steps and stay out of the bundle", () => {
@@ -70,8 +70,8 @@ test("webp screenshots cover the remaining steps and stay out of the bundle", ()
   assert.equal(ids.length, 1072);
   const webp = readdirSync(picDir).filter((name) => name.endsWith(".webp"));
   const jpg = readdirSync(picDir).filter((name) => name.endsWith(".jpg"));
-  assert.equal(jpg.length, 134);
-  assert.equal(webp.length, 1078);
+  assert.equal(jpg.length, 0);
+  assert.equal(webp.length, 1212);
   const webpSet = new Set(webp);
   for (const id of ids) {
     assert.equal(webpSet.has(`${id}.webp`), true, id);
@@ -89,5 +89,5 @@ test("webp screenshots cover the remaining steps and stay out of the bundle", ()
     assert.equal(ids.includes(id), false, id);
     assert.equal(webpSet.has(`${id}.webp`), true, id);
   }
-  assert.equal(jpg.length + webp.length, 1212);
+  assert.equal(webp.length, 1212);
 });

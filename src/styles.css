@@ -51,6 +51,11 @@
   line-height: 1.15;
   font-weight: 600;
   text-wrap: balance;
+  /* Two pixels of padding, pulled back by the margin, so a fractional line
+     box does not report scrollHeight above clientHeight. The margin keeps
+     the following row in the same place. */
+  padding-bottom: 2px;
+  margin-bottom: -2px;
 }
 
 .weak-row {
@@ -489,9 +494,18 @@ header {
   }
 
   .step-title {
-    font-size: 1.375rem;
-    line-height: 1.15;
+    font-size: 1.2rem;
+    line-height: 1.2;
     text-wrap: wrap;
+  }
+
+  .now-card-head .step-title {
+    margin-top: 0.15rem;
+  }
+
+  .now-card-meta {
+    min-height: 0;
+    gap: 0.25rem 0.5rem;
   }
 
   .now-actions {
@@ -1033,8 +1047,26 @@ header {
   }
 }
 
-/* Tall phones: one meta row, so a long title does not have to steal the details window. */
+/* Tall phones: the frame fits in the card, so focusing it cannot scroll the picture. */
 @media (max-width: 699px) and (min-height: 761px) {
+  .now-layout > .step-pic {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .now-layout:has(.step-pic) .step-pic > .flex {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.45rem;
+    z-index: 2;
+    border-radius: 999px;
+    background: rgb(7 11 16 / 0.78);
+  }
+
+  .now-layout:has(.step-pic) .step-pic-body {
+    margin-top: 0;
+  }
+
   .now-layout > .step-pic-holder {
     box-sizing: border-box;
     height: 219px;
@@ -1215,19 +1247,19 @@ header {
 
 }
 
-/* Short landscape: keep a readable text window while the picture stays beside the card. */
+/* Short landscape phones: the title stays fully visible beside a smaller picture. */
 @media (max-height: 520px) and (orientation: landscape) {
   .now-layout:has(.step-pic) .step-title {
-    max-height: 2.5rem;
-    overflow: auto;
+    max-height: none;
+    overflow: visible;
   }
 
   .now-layout:has(.step-pic) .now-card-body {
-    min-height: 7.5rem;
+    min-height: 0;
   }
 
   .now-layout:has(.step-pic) .step-pic-zoom {
-    max-height: 6.5rem;
+    max-height: 5.5rem;
   }
 }
 
