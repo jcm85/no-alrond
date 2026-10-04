@@ -25,6 +25,7 @@ type ConfirmState =
   | { kind: "through"; id: string; count: number }
   | { kind: "carried"; id: string; count: number }
   | { kind: "reset" }
+  | { kind: "restore" }
   | null;
 
 const KIND_LABEL: Record<string, string> = {
@@ -50,6 +51,7 @@ export function RouteApp() {
   const markThrough = useRun((s) => s.markThrough);
   const undo = useRun((s) => s.undo);
   const reset = useRun((s) => s.reset);
+  const restoreBackup = useRun((s) => s.restoreBackup);
   const dismissNotice = useRun((s) => s.dismissNotice);
   const setResumeAfter = useRun((s) => s.setResumeAfter);
   const markBeforeChapter = useRun((s) => s.markBeforeChapter);
@@ -67,6 +69,8 @@ export function RouteApp() {
   const [toast, setToast] = useState<string | null>(null);
   const [guideOpen, setGuideOpen] = useState(false);
   const [noticeOpen, setNoticeOpen] = useState(false);
+  const noticeRef = useRef<HTMLDivElement>(null);
+  const [noticeMax, setNoticeMax] = useState<number | null>(null);
   const aboutOpener = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
@@ -140,6 +144,15 @@ export function RouteApp() {
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   });
+
+  useLayoutEffect(() => {
+    if (!noticeOpen) return;
+    const notice = noticeRef.current;
+    const title = document.querySelector(".step-title");
+    if (!notice || !title) return;
+    const room = title.getBoundingClientRect().top - notice.getBoundingClientRect().bottom - 20;
+    setNoticeMax(Math.max(0, Math.min(room, 220)));
+  }, [noticeOpen, tab, hydrated]);
 
   const act = route.acts.find((item) => item.id === actId) ?? route.acts[0];
 
@@ -222,7 +235,7 @@ export function RouteApp() {
 
       <main className="app-shell relative flex min-h-0 flex-1 flex-col overflow-hidden pt-3">
         {hydrated && notice ? (
-          <div role="status" className={"route-notice" + (noticeOpen ? " is-open" : "")}>
+          <div ref={noticeRef} role="status" className={"route-notice" + (noticeOpen ? " is-open" : "")}>
             <div className="route-notice-banner">
               <p className="text-base text-fg">
                 {notice.added
@@ -241,7 +254,7 @@ export function RouteApp() {
               </button>
             </div>
             {noticeOpen ? (
-            <div className="route-notice-actions">
+            <div className="route-notice-actions" style={noticeMax != null ? { maxHeight: noticeMax } : undefined}>
               {notice.added && lastDone ? (
                 <button
                   type="button"
@@ -314,6 +327,10 @@ export function RouteApp() {
               setAbout(false);
               setConfirm({ kind: "reset" });
             }}
+            onRestore={() => {
+              setAbout(false);
+              setConfirm({ kind: "restore" });
+            }}
           />
         ) : null}
 
@@ -333,6 +350,7 @@ export function RouteApp() {
             onShowGuide={showGuide}
             holes={left}
             onReview={() => setResumeAfter(null)}
+            toast={toast}
           />
         ) : null}
 
@@ -519,6 +537,22 @@ export function RouteApp() {
         ) : null}
       </main>
 
+      {toast && tab !== "now" ? (
+        <div className="undo-elsewhere" role="status">
+          <p className="min-w-0 flex-1 truncate text-base">{toast}</p>
+          <button
+            type="button"
+            className="inline-flex min-h-11 shrink-0 items-center rounded-card border border-line px-3 text-base text-gold"
+            onClick={() => {
+              undo();
+              setToast(null);
+            }}
+          >
+            Undo
+          </button>
+        </div>
+      ) : null}
+
       <nav className="safe-bottom shrink-0 border-t border-line bg-bg">
         <div className="app-shell grid grid-cols-3 !px-0">
           <TabButton active={tab === "now"} onClick={() => setTab("now")} label="Now" icon={<Check className="size-5" />} />
@@ -527,22 +561,14 @@ export function RouteApp() {
         </div>
       </nav>
 
-      {toast ? (
-        <UndoToast
-          text={toast}
-          onUndo={() => {
-            undo();
-            setToast(null);
-          }}
-        />
-      ) : null}
-
       {confirm ? (
         <Confirm
           title={
             confirm.kind === "reset"
               ? "Start over?"
-              : confirm.kind === "chapter"
+              : confirm.kind === "restore"
+                ? "Restore the backup?"
+                : confirm.kind === "chapter"
                 ? "Start at this chapter?"
                 : confirm.kind === "carried"
                   ? `Mark the ${confirm.count} steps before it as done?`
@@ -551,15 +577,26 @@ export function RouteApp() {
           body={
             confirm.kind === "reset"
               ? "Your progress is backed up on this device. You can restore it from About."
-              : `Marks ${confirm.count} steps done.`
+              : confirm.kind === "restore"
+                ? "This replaces the progress on screen with the backup saved on this device."
+                : `Marks ${confirm.count} steps done.`
           }
-          confirm={confirm.kind === "reset" ? "Start over" : confirm.kind === "chapter" ? "Start here" : "Mark them"}
+          confirm={
+            confirm.kind === "reset" ? "Start over" : confirm.kind === "restore" ? "Restore" : confirm.kind === "chapter" ? "Start here" : "Mark them"
+          }
           onCancel={() => setConfirm(null)}
           onConfirm={() => {
             if (confirm.kind === "reset") {
               reset();
               dismissNotice();
               setToast("Started over. The previous progress is backed up.");
+              setConfirm(null);
+              setTab("now");
+              return;
+            }
+            if (confirm.kind === "restore") {
+              const result = restoreBackup();
+              setToast(result.ok ? "Backed-up progress restored." : result.error);
               setConfirm(null);
               setTab("now");
               return;
@@ -577,47 +614,6 @@ export function RouteApp() {
   );
 }
 
-function UndoToast({ text, onUndo }: { text: string; onUndo: () => void }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [box, setBox] = useState<{ top: number; left: number; width: number; height: number } | null>(null);
-  useLayoutEffect(() => {
-    function place() {
-      const nav = document.querySelector("nav");
-      if (!nav) return;
-      const navBox = nav.getBoundingClientRect();
-      const shell = document.querySelector("header .app-shell");
-      const shellBox = shell?.getBoundingClientRect();
-      setBox({
-        top: Math.round(navBox.top),
-        left: Math.round(shellBox?.left ?? navBox.left),
-        width: Math.round(shellBox?.width ?? navBox.width),
-        height: Math.round(navBox.height),
-      });
-    }
-    place();
-    const frame = requestAnimationFrame(place);
-    window.addEventListener("resize", place);
-    return () => {
-      cancelAnimationFrame(frame);
-      window.removeEventListener("resize", place);
-    };
-  }, [text]);
-  return (
-    <div
-      ref={ref}
-      className="undo-toast"
-      style={box ? { top: box.top, left: box.left, width: box.width, height: box.height } : { top: -1000, left: 0, width: 320, height: 56 }}
-    >
-      <div role="status" className="undo-toast-bar">
-        <p className="min-w-0 flex-1 truncate text-base">{text}</p>
-        <button type="button" className="shrink-0 rounded-card border border-line px-3 text-base text-gold" onClick={onUndo}>
-          Undo
-        </button>
-      </div>
-    </div>
-  );
-}
-
 function Now({
   current,
   doneCount,
@@ -630,6 +626,7 @@ function Now({
   onShowGuide,
   holes,
   onReview,
+  toast,
 }: {
   current: FlatStep | null;
   doneCount: number;
@@ -642,6 +639,7 @@ function Now({
   onShowGuide: () => void;
   holes: number;
   onReview: () => void;
+  toast: string | null;
 }) {
   const picture = pictureFor(current?.id);
   const [pictureHidden, setPictureHidden] = usePictureHidden();
@@ -658,6 +656,7 @@ function Now({
   useEffect(() => {
     if (!current) return;
     preloadPicture(steps[current.n]?.id);
+    preloadPicture(steps[current.n + 1]?.id);
   }, [current]);
   if (!current) {
     return (
@@ -681,6 +680,7 @@ function Now({
       {picture && !pictureHidden ? (
         <StepPictureCard
           picture={picture}
+          alt={current.text}
           eager
           hideRef={hidePictureRef}
           takeHideFocus={takeHideFocus}
@@ -767,9 +767,18 @@ function Now({
             <button type="button" onClick={onDone} className="min-h-14 flex-1 rounded-card bg-gold px-4 py-3 text-lg font-semibold text-ink">
               Done
             </button>
-            <button type="button" onClick={onSkip} className="min-h-14 min-w-24 rounded-card border border-line px-4 py-3 text-lg text-fg">
-              Skip
-            </button>
+            {toast ? (
+              <div className="undo-toast" role="status">
+                <span className="sr-only">{toast}</span>
+                <button type="button" onClick={onUndo} className="min-h-14 min-w-24 rounded-card border border-gold px-4 py-3 text-lg text-gold">
+                  Undo
+                </button>
+              </div>
+            ) : (
+              <button type="button" onClick={onSkip} className="min-h-14 min-w-24 rounded-card border border-line px-4 py-3 text-lg text-fg">
+                Skip
+              </button>
+            )}
           </div>
         </div>
         <div className="now-tools mt-3 flex items-center justify-between">
@@ -905,7 +914,7 @@ function BlockCard({
             </div>
             {openPic === step.id && pictureFor(step.id) ? (
               <div className="px-3 pb-3">
-                <StepPictureCard picture={pictureFor(step.id)!} compact />
+                <StepPictureCard picture={pictureFor(step.id)!} alt={step.text} compact />
               </div>
             ) : null}
           </li>
@@ -925,7 +934,8 @@ function StepWatch({ step }: { step: FlatStep }) {
   if (!href) return null;
   return (
     <a className="step-watch" href={href} target="_blank" rel="noreferrer">
-      {watchFromLabel(href)}
+      <span className="step-watch-full">{watchFromLabel(href)}</span>
+      <span className="step-watch-short">{watchFromLabel(href).replace(/^Watch from /, "")}</span>
     </a>
   );
 }
@@ -994,11 +1004,13 @@ function About({
   guideOpen,
   onClose,
   onReset,
+  onRestore,
   opener,
 }: {
   guideOpen: boolean;
   onClose: () => void;
   onReset: () => void;
+  onRestore: () => void;
   opener: HTMLElement | null;
 }) {
   const exportProgress = useRun((s) => s.exportProgress);
@@ -1122,6 +1134,12 @@ function About({
           type="button"
           className="min-h-11 rounded-card border border-line px-3 text-base"
           onClick={() => {
+            const saved = useRun.getState().done;
+            const hasProgress = Object.keys(saved).some((id) => saved[id]);
+            if (hasProgress) {
+              onRestore();
+              return;
+            }
             const result = restoreBackup();
             setMessage(result.ok ? "Backed-up progress restored." : result.error);
           }}

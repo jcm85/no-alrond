@@ -3,8 +3,10 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
+import { stepPicExtra } from "../data/step-pic-extra.ts";
 import { stepPics } from "../data/step-pics.ts";
-import { frameHeading, watchFromLabel } from "./step-pictures.ts";
+import { frameHeading, pictureFor, watchFromLabel } from "./step-pictures.ts";
+import { steps } from "./run-store.ts";
 
 function linkSeconds(youtubeLink: string) {
   const match = /[?&]t=(\d+)/.exec(youtubeLink);
@@ -77,6 +79,46 @@ test("watch label time equals the link t, and t is the frame minus 3 seconds", (
     assert.equal(linkSeconds(picture.youtube_link), seconds, stepId);
     assert.equal(picture.confidence, confidence, stepId);
     assert.equal(picture.caption.includes("Corrected from"), false, stepId);
+  }
+});
+
+test("every route step has a screenshot and only approx frames are tagged", () => {
+  let jpg = 0;
+  let webp = 0;
+  let approx = 0;
+  for (const step of steps) {
+    const picture = pictureFor(step.id);
+    assert.ok(picture, step.id);
+    assert.equal(picture.image.includes(step.id), true, step.id);
+    if (picture.image.endsWith(".jpg")) jpg += 1;
+    else if (picture.image.endsWith(".webp")) webp += 1;
+    else assert.fail(picture.image);
+    if (picture.approx) {
+      approx += 1;
+      assert.equal(picture.image.endsWith(".webp"), true, step.id);
+    }
+    if (picture.image.endsWith(".webp")) {
+      const file = join(dirname(fileURLToPath(import.meta.url)), "../../public", picture.image);
+      assert.equal(readFileSync(file).byteLength > 1000, true, picture.image);
+    }
+  }
+  assert.equal(steps.length, 1205);
+  assert.equal(jpg, 133);
+  assert.equal(webp, 1072);
+  assert.equal(jpg + webp, 1205);
+  assert.equal(approx, 640);
+  assert.equal(Object.keys(stepPicExtra).length, 1072);
+  const heldBack = [
+    "osvald-ch-4-1-f8b87e",
+    "osvald-ch-4-1-244d34",
+    "hikari-ch-4-1-c1711a",
+    "hikari-ch-5-1-0aa391",
+    "the-dancer-warrior-part-2-1-29976a",
+    "journey-for-the-dawn-1-c2e428",
+  ];
+  for (const id of heldBack) {
+    assert.equal(stepPicExtra[id], undefined, id);
+    assert.equal(steps.some((step) => step.id === id), false, id);
   }
 });
 

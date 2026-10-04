@@ -154,12 +154,6 @@ header {
 .route-notice-banner p {
   flex: 1 1 auto;
   min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-.route-notice.is-open .route-notice-banner p {
   white-space: normal;
 }
 
@@ -198,7 +192,12 @@ header {
 
 .now-card-meta .step-watch {
   margin-top: 0;
-  min-height: 2rem;
+  min-height: 2.75rem;
+  padding-inline: 0.15rem;
+}
+
+.step-watch-short {
+  display: none;
 }
 
 .about-panel {
@@ -269,6 +268,30 @@ header {
   object-fit: contain;
 }
 
+.step-pic-approx {
+  position: absolute;
+  left: 0.45rem;
+  bottom: 0.45rem;
+  z-index: 1;
+  border: 1px solid rgb(212 175 90 / 0.55);
+  border-radius: 999px;
+  background: rgb(7 11 16 / 0.78);
+  padding: 0.12rem 0.45rem;
+  color: var(--color-gold);
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+  pointer-events: none;
+}
+
+.step-pic-approx-inline {
+  position: static;
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 0.35rem;
+  pointer-events: auto;
+}
+
 .step-pic-compact .step-pic-zoom {
   max-height: 16rem;
 }
@@ -323,40 +346,21 @@ header {
   object-fit: contain;
 }
 
-/* Out of flow, parked on the nav row so the card, title, and Done stay clear. */
+/* Undo replaces Skip in the action row, so it never sits on a nav tab. */
 .undo-toast {
-  position: fixed;
-  z-index: 25;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.undo-toast-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 0.75rem;
-  width: 100%;
-  max-height: 100%;
-  border: 1px solid var(--color-gold);
-  border-radius: 0.75rem;
-  background: var(--color-raise);
-  padding: 0.2rem 0.55rem 0.2rem 0.85rem;
-  pointer-events: none;
+  display: contents;
 }
 
 .undo-toast button {
   min-height: 2.75rem;
-  pointer-events: auto;
 }
 
-@media (max-height: 520px) and (orientation: landscape) {
-  .undo-toast button {
-    min-height: 2rem;
-  }
+.undo-elsewhere {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0 0.75rem 0.35rem;
+  min-height: 2.75rem;
 }
 
 @media (max-height: 520px) and (orientation: landscape) {
@@ -550,6 +554,33 @@ header {
     padding: 0.4rem 0.65rem;
   }
 
+  .now-layout:has(.step-pic) > .step-pic {
+    position: relative;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .now-layout:has(.step-pic) .step-pic > .flex {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.45rem;
+    z-index: 2;
+    border-radius: 999px;
+    background: rgb(7 11 16 / 0.78);
+  }
+
+  .now-layout:has(.step-pic) .step-pic h3,
+  .now-layout:has(.step-pic) .step-pic-caption,
+  .now-layout:has(.step-pic) .step-pic-note,
+  .now-layout:has(.step-pic) .step-pic-body {
+    margin-top: 0;
+  }
+
+  .now-layout:has(.step-pic) .step-pic h3,
+  .now-layout:has(.step-pic) .step-pic-caption,
+  .now-layout:has(.step-pic) .step-pic-note {
+    display: none;
+  }
+
   .now-layout:has(.step-pic) .step-pic-zoom {
     width: min(100%, calc(3.5rem * 16 / 9));
     height: 3.5rem;
@@ -644,7 +675,7 @@ header {
   }
 
   .now-layout .now-actions button {
-    min-height: 2.5rem;
+    min-height: 2.75rem;
     padding-block: 0.2rem;
   }
 
@@ -667,17 +698,113 @@ header {
   }
 
   .now-layout > .step-pic-short {
-    display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.5rem;
-    max-height: 2rem;
-    overflow: hidden;
+    display: none;
+  }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+  .now-layout:has(.step-pic) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(7.5rem, 30vw);
+    grid-template-rows: minmax(0, 1fr);
+    align-items: stretch;
+    gap: 0.4rem;
   }
 
-  .now-layout > .step-pic {
+  .now-layout:has(.step-pic) > .now-main {
+    grid-column: 1;
+    grid-row: 1;
+    min-height: 0;
+  }
+
+  .now-layout:has(.step-pic) > .step-pic {
+    display: flex;
+    flex-direction: column;
+    grid-column: 2;
+    grid-row: 1;
+    width: auto;
+    min-width: 0;
+    min-height: 0;
+    max-height: 100%;
+    align-self: stretch;
+    overflow: hidden;
+    padding: 0.35rem;
+  }
+
+  .now-layout:has(.step-pic) .step-pic-body {
+    width: auto;
+    min-width: 0;
+    align-self: stretch;
+  }
+
+  .now-layout:has(.step-pic) .step-pic-caption,
+  .now-layout:has(.step-pic) .step-pic-note,
+  .now-layout:has(.step-pic) .step-pic h3 {
     display: none;
+  }
+
+  .now-layout:has(.step-pic) .step-pic-zoom {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 4.5rem;
+    align-self: stretch;
+    aspect-ratio: 16 / 9;
+    max-height: 9rem;
+  }
+
+  header .size-12 {
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  header .app-brand {
+    gap: 0.4rem;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  header h1 {
+    font-size: 1rem;
+  }
+
+  .app-progress {
+    padding-bottom: 0;
+  }
+
+  .app-progress .mb-2 {
+    margin-bottom: 0;
+    font-size: 0.8125rem;
+    line-height: 1.15;
+  }
+
+  .app-progress .h-3 {
+    height: 0.3rem;
+  }
+
+  .step-watch-full {
+    display: none;
+  }
+
+  .step-watch-short {
+    display: inline;
+  }
+
+  .now-card-meta {
+    flex-wrap: nowrap;
+  }
+
+  .now-layout .step-title {
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+
+  main.app-shell {
+    padding-top: 0;
+  }
+
+  .safe-bottom {
+    padding-bottom: 0;
   }
 }
 
@@ -702,17 +829,35 @@ header {
   }
 }
 
-/* Narrow phones: a 100px frame is too small to read, so offer the chip instead. */
+/* Narrow phones keep a real frame, short enough that Done stays above the nav. */
 @media (max-width: 380px) {
   .now-layout > .step-pic-short {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.35rem 0.75rem;
+    display: none;
   }
 
   .now-layout > .step-pic {
+    display: block;
+    max-height: 22dvh;
+    overflow: hidden;
+  }
+
+  .now-layout:has(.step-pic) .step-pic-caption,
+  .now-layout:has(.step-pic) .step-pic-note {
     display: none;
+  }
+}
+
+@media (max-width: 699px) {
+  .step-watch-full {
+    display: none;
+  }
+
+  .step-watch-short {
+    display: inline;
+  }
+
+  .now-card-meta {
+    flex-wrap: nowrap;
   }
 }
 

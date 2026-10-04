@@ -1,5 +1,12 @@
 import { useEffect, useState } from "react";
-import { stepPics, type PictureKind } from "@/data/step-pics";
+import { stepPicExtra } from "@/data/step-pic-extra";
+import { stepPics, type PictureConfidence, type PictureKind, type StepPicture } from "@/data/step-pics";
+
+const CONFIDENCE: Record<"h" | "m" | "l", PictureConfidence> = {
+  h: "high",
+  m: "medium",
+  l: "low",
+};
 
 export const PICTURE_HIDDEN_KEY = "no-alrond-picture-hidden";
 
@@ -23,9 +30,23 @@ export function usePictureHidden() {
   return [hidden, setPictureHidden] as const;
 }
 
-export function pictureFor(stepId: string | undefined) {
+export function pictureFor(stepId: string | undefined): StepPicture | undefined {
   if (!stepId) return undefined;
-  return stepPics[stepId];
+  const curated = stepPics[stepId];
+  if (curated) return curated;
+  const extra = stepPicExtra[stepId];
+  if (!extra) return undefined;
+  const [seconds, videoTime, confidence, approx] = extra;
+  return {
+    stepId,
+    image: `/step-pics/${stepId}.webp`,
+    caption: "",
+    kind: "travel",
+    videoTime,
+    youtube_link: `https://youtu.be/d6YOJxTfIeQ?t=${seconds}`,
+    confidence: CONFIDENCE[confidence],
+    approx: approx === 1,
+  };
 }
 
 export function preloadPicture(stepId: string | undefined) {

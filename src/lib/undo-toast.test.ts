@@ -6,16 +6,14 @@ import { fileURLToPath } from "node:url";
 
 const css = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../styles.css"), "utf8");
 
-test("the undo toast overlays the page and stays out of the document flow", () => {
+test("the undo control stays in the action row and clears the nav", () => {
   const rule = /\.undo-toast\s*\{([^}]+)\}/.exec(css)?.[1];
   assert.ok(rule, "undo toast rule");
-  assert.match(rule, /position:\s*fixed/);
-  assert.match(rule, /pointer-events:\s*none/);
+  assert.match(rule, /display:\s*contents/);
+  assert.doesNotMatch(css, /\.undo-toast\s*\{[^}]*position:\s*fixed/);
   assert.doesNotMatch(css, /\.undo-toast\s*\{[^}]*position:\s*absolute/);
-  assert.doesNotMatch(css, /\.undo-toast\s*\{[^}]*bottom:/);
   const button = /\.undo-toast button\s*\{([^}]+)\}/.exec(css)?.[1];
   assert.ok(button);
-  assert.match(button, /pointer-events:\s*auto/);
   assert.match(button, /min-height:\s*2\.75rem/);
 });
 
