@@ -146,6 +146,62 @@
   color: var(--color-gold);
 }
 
+.fight-plan-jump,
+.fight-plan-more {
+  min-height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+}
+
+.fight-plan-jump {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.6rem;
+  width: 100%;
+}
+
+.fight-plan-more {
+  align-self: flex-start;
+  color: var(--color-gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.fight-plan-rest {
+  display: none;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.fight-plan-extra {
+  display: none;
+}
+
+.fight-plan.is-open .fight-plan-rest {
+  display: flex;
+}
+
+.fight-plan.is-open .fight-plan-extra {
+  display: flex;
+}
+
+/* Desktop portrait and wide landscape keep the whole plan on a fight's first step. */
+@media (min-width: 900px) and (orientation: portrait), (min-width: 1280px) and (orientation: landscape) {
+  .fight-plan.is-lead .fight-plan-rest,
+  .fight-plan.is-lead .fight-plan-extra {
+    display: flex;
+  }
+
+  .fight-plan.is-lead .fight-plan-more {
+    display: none;
+  }
+}
+
 .now-layout {
   display: flex;
   flex-direction: column;
