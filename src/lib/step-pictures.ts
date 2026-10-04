@@ -181,7 +181,9 @@ export function syncPicturePrefetch(currentId: string | undefined, nextIds: Arra
     const picture = pictureFor(id);
     if (!picture) continue;
     const url = pictureRequestSrc(picture.image);
-    if (!url || url === currentUrl || url === currentFull || url === currentSmall) continue;
+    // A low-priority prefetch is coalesced with the visible <img> and stays low
+    // priority, so a JPEG looks blank during fast taps. Let the eager image start it.
+    if (!url || url === currentUrl || url === currentFull || url === currentSmall || isJpeg(url)) continue;
     next.add(url);
   }
   const protectedUrls = [...livePicturePaths()];

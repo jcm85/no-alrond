@@ -171,9 +171,11 @@ test("prefetch never cancels the current picture, and phones use the 640 variant
   assert.match(source, /retainedJpegs/);
   assert.match(source, /isJpeg\(url\)/);
   const card = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../components/step-picture.tsx"), "utf8");
-  assert.match(card, /max-width: 1100px/);
-  assert.match(card, /orientation: landscape/);
-  assert.match(card, /src=\{useSmall \? pictureSmallSrc\(frame\.image\) : frame\.image\}/);
+  assert.match(source, /max-width: 1100px/);
+  assert.match(source, /orientation: landscape/);
+  assert.match(source, /isJpeg\(url\)/);
+  assert.match(card, /pictureRequestSrc\(frame\.image\)/);
+  assert.match(card, /src=\{thumbSrc\}/);
 });
 
 test("the guard outpost door is a travel frame", () => {
