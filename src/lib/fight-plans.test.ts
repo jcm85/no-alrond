@@ -8,6 +8,7 @@ import {
   beforeFleeing,
   fightPlanCounts,
   isFirstPlanStep,
+  matchedActionIndex,
   matchedTurnIndex,
   planFor,
   planIsUnverified,
@@ -96,7 +97,12 @@ test("turn lines, flee prep, and unverified badges use the file as given", () =>
   assert.equal(card.includes("see first step"), false);
   assert.match(card, /Show full plan/);
   assert.match(card, /Show fight plan/);
-  assert.match(card, /sessionStorage/);
+  assert.match(card, /localStorage/);
+  assert.equal(card.includes("sessionStorage"), false);
+  assert.match(card, /fight-plan-you/);
+  assert.match(card, /if \(variant === "route"\)/);
+  assert.match(card, /if \(!lead\) return null/);
+  assert.match(card, /plan\.flee === 1 && !lead\) return null/);
   const rate = planTurnMatchRate();
   assert.equal(rate.later > 300, true);
   assert.equal(rate.matched / rate.later >= 0.95, true);
@@ -105,6 +111,18 @@ test("turn lines, flee prep, and unverified badges use the file as given", () =>
   assert.equal(matchedTurnIndex("throne-ch-1-1-79e189"), 1);
   assert.equal(matchedTurnIndex("true-vide-the-wicked-1-5c18c2"), 0);
   assert.equal(matchedTurnIndex("throne-ch-1-900-ca73a5"), null);
+  const party = planFor("vide-the-wicked-1-ada0f5");
+  const partyIndex = matchedTurnIndex("vide-the-wicked-1-ada0f5");
+  assert.equal(partyIndex != null, true);
+  assert.equal(party?.T?.[partyIndex ?? -1]?.h, "Party 2");
+  assert.equal(party?.T?.[partyIndex ?? -1]?.t, 1);
+  const extra = planFor("galdera-1-476306");
+  const extraIndex = matchedTurnIndex("galdera-1-476306");
+  assert.equal(extra?.T?.[extraIndex ?? -1]?.h, "Aelfric's extra action");
+  const elixir = planFor("true-vide-the-wicked-1-5c18c2");
+  const elixirTurn = elixir?.T?.[0];
+  assert.ok(elixirTurn);
+  assert.equal(matchedActionIndex("true-vide-the-wicked-1-5c18c2", elixirTurn) != null, true);
   assert.match(card, /unverified/);
   assert.match(now, /How combat works/);
 });

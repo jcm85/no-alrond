@@ -138,6 +138,15 @@
   overflow-wrap: anywhere;
 }
 
+.fight-plan-you {
+  color: var(--color-fg);
+  font-weight: 700;
+}
+
+.fight-plan-turn-short {
+  display: none;
+}
+
 .fight-plan summary {
   display: flex;
   min-height: 2.75rem;
@@ -234,6 +243,31 @@
 
   .fight-plan.is-open:not(.is-matched) > .fight-plan-why {
     order: 4;
+  }
+}
+
+/* Short landscape: the matched plan is one line plus Show full plan. */
+@media (max-height: 520px) and (orientation: landscape) {
+  .fight-plan.is-matched .fight-plan-turn-full,
+  .fight-plan.is-matched .fight-plan-next,
+  .fight-plan.is-matched .fight-plan-head {
+    display: none;
+  }
+
+  .fight-plan.is-matched .fight-plan-turn-short {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .fight-plan.is-matched {
+    gap: 0.15rem;
+    margin-top: 0.25rem;
+  }
+
+  .fight-plan.is-matched .fight-plan-more {
+    min-height: 2.25rem;
   }
 }
 

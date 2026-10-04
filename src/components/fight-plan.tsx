@@ -2,20 +2,22 @@ import { useState } from "react";
 import {
   beforeFleeing,
   isFirstPlanStep,
+  matchedActionIndex,
   matchedTurnIndex,
   planEnemyLabel,
   planFor,
   planIsUnverified,
   turnLine,
   type FightPlan as FightPlanData,
+  type FightPlanTurn,
 } from "@/lib/fight-plans";
 
 const PLAN_OPEN_KEY = "no-alrond-plan-open";
 
 function readPlanOpen(planId: string) {
-  if (typeof sessionStorage === "undefined") return false;
+  if (typeof localStorage === "undefined") return false;
   try {
-    const raw = sessionStorage.getItem(PLAN_OPEN_KEY);
+    const raw = localStorage.getItem(PLAN_OPEN_KEY);
     if (!raw) return false;
     const map = JSON.parse(raw) as Record<string, unknown>;
     return map[planId] === true;
@@ -26,10 +28,10 @@ function readPlanOpen(planId: string) {
 
 function writePlanOpen(planId: string, open: boolean) {
   try {
-    const raw = sessionStorage.getItem(PLAN_OPEN_KEY);
+    const raw = localStorage.getItem(PLAN_OPEN_KEY);
     const map = raw ? (JSON.parse(raw) as Record<string, unknown>) : {};
     map[planId] = open;
-    sessionStorage.setItem(PLAN_OPEN_KEY, JSON.stringify(map));
+    localStorage.setItem(PLAN_OPEN_KEY, JSON.stringify(map));
   } catch {
     /* private mode or a full store */
   }
@@ -72,6 +74,30 @@ function Turns({ turns, keyFrom = 0 }: { turns: FightPlanData["T"]; keyFrom?: nu
       ))}
     </>
   );
+}
+
+function HighlightedTurn({ turn, actionIndex }: { turn: FightPlanTurn; actionIndex: number | null }) {
+  const label = turn.h ? `T${turn.t} · ${turn.h}` : `T${turn.t}`;
+  return (
+    <p className="fight-plan-turn fight-plan-turn-full">
+      {label} —{" "}
+      {turn.a.map(([who, action], index) => (
+        <span key={`${who}-${index}`}>
+          {index > 0 ? " · " : null}
+          <span className={index === actionIndex ? "fight-plan-you" : undefined}>
+            {who}: {action}
+          </span>
+        </span>
+      ))}
+    </p>
+  );
+}
+
+function shortTurn(turn: FightPlanTurn, actionIndex: number | null) {
+  const label = turn.h ? `T${turn.t} · ${turn.h}` : `T${turn.t}`;
+  const picked = actionIndex != null ? turn.a[actionIndex] : turn.a[0];
+  if (!picked) return `${label}`;
+  return `${label} — ${picked[0]}: ${picked[1]}`;
 }
 
 function FullPlan({ plan }: { plan: FightPlanData }) {
@@ -126,11 +152,28 @@ export function FightPlan({ stepId, variant = "now" }: { stepId: string; variant
     });
   }
 
-  const turnIndex = variant === "now" && !lead ? matchedTurnIndex(stepId) : null;
+  if (variant === "route") {
+    if (!lead) return null;
+    return (
+      <section className={"fight-plan" + (open ? " is-open" : "")} aria-label="Fight plan">
+        <button type="button" className="fight-plan-jump" aria-expanded={open} onClick={toggle}>
+          <span className="text-fg">{planEnemyLabel(plan)}</span>
+          {unverified ? <Unverified /> : null}
+          <span className="text-gold">{open ? "Hide fight plan" : "Show fight plan"}</span>
+        </button>
+        {open ? <FullPlan plan={plan} /> : null}
+      </section>
+    );
+  }
+
+  if (plan.flee === 1 && !lead) return null;
+
+  const turnIndex = !lead ? matchedTurnIndex(stepId) : null;
   const turns = plan.T ?? [];
   const currentTurn = turnIndex == null ? undefined : turns[turnIndex];
-  if (variant === "now" && !lead && turnIndex != null && currentTurn) {
+  if (!lead && turnIndex != null && currentTurn) {
     const nextTurn = turns[turnIndex + 1];
+    const actionIndex = matchedActionIndex(stepId, currentTurn);
     const hasMore = Boolean(plan.e?.length) || Boolean(plan.why) || turns.length > (nextTurn ? 2 : 1);
     return (
       <section className={"fight-plan is-matched" + (open ? " is-open" : "")} aria-label="Fight plan">
@@ -140,8 +183,11 @@ export function FightPlan({ stepId, variant = "now" }: { stepId: string; variant
             <Unverified />
           </p>
         ) : null}
-        <p className="fight-plan-turn">{turnLine(currentTurn)}</p>
-        {nextTurn ? <p className="fight-plan-turn">{turnLine(nextTurn)}</p> : null}
+        <HighlightedTurn turn={currentTurn} actionIndex={actionIndex} />
+        <p className={"fight-plan-turn fight-plan-turn-short" + (actionIndex != null ? " fight-plan-you" : "")}>
+          {shortTurn(currentTurn, actionIndex)}
+        </p>
+        {nextTurn ? <p className="fight-plan-turn fight-plan-next">{turnLine(nextTurn)}</p> : null}
         {hasMore ? (
           <>
             <button type="button" className="fight-plan-more" aria-expanded={open} onClick={toggle}>
@@ -163,7 +209,7 @@ export function FightPlan({ stepId, variant = "now" }: { stepId: string; variant
     );
   }
 
-  if (variant === "route" || !lead) {
+  if (!lead) {
     return (
       <section className={"fight-plan" + (open ? " is-open" : "")} aria-label="Fight plan">
         <button type="button" className="fight-plan-jump" aria-expanded={open} onClick={toggle}>
