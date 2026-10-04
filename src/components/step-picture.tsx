@@ -324,6 +324,7 @@ export function StepPictureCard({
             move(dx < 0 ? 1 : -1);
           }}
         >
+          <div className="step-pic-frame">
           <button
             type="button"
             className="step-pic-zoom"
@@ -337,7 +338,6 @@ export function StepPictureCard({
             }}
           >
             <img
-              key={frame.image}
               src={frame.image}
               alt={alt}
               width={1280}
@@ -347,8 +347,14 @@ export function StepPictureCard({
               fetchPriority={eager ? "high" : "low"}
               className="step-pic-img"
             />
-            {picture.approx ? <span className="step-pic-approx">Approx. moment</span> : null}
           </button>
+          {picture.approx ? (
+            <span className="step-pic-approx">
+              <span className="step-pic-approx-long">Approx. moment</span>
+              <span className="step-pic-approx-short">Approx.</span>
+            </span>
+          ) : null}
+          </div>
           {!picture.approx && frame.confidence === "medium" ? (
             <p className="step-pic-note mt-2 text-sm leading-snug text-muted">
               <span

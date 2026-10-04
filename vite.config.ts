@@ -21,6 +21,31 @@ function hasGlobbedMigrations(root: string): boolean {
   }
 }
 
+const STEP_PIC_CACHE = "public, max-age=604800, stale-while-revalidate=2592000";
+
+/** Filenames are step ids, not content hashes, so cache for a week and revalidate. */
+function stepPicCachePlugin(): Plugin {
+  const attach: Plugin["configureServer"] = (server) => {
+    server?.middlewares.use((req, res, next) => {
+      const pathOnly = (req.url ?? "").split("?", 1)[0] ?? "";
+      if (pathOnly.startsWith("/step-pics/")) {
+        const setHeader = res.setHeader.bind(res);
+        res.setHeader = (name, value) => {
+          if (String(name).toLowerCase() === "cache-control") return setHeader("Cache-Control", STEP_PIC_CACHE);
+          return setHeader(name, value as string);
+        };
+        setHeader("Cache-Control", STEP_PIC_CACHE);
+      }
+      next();
+    });
+  };
+  return {
+    name: "step-pic-cache",
+    configureServer: attach,
+    configurePreviewServer: attach,
+  };
+}
+
 /**
  * Finish PGLite bootstrap during dev-server setup (before traffic). Vite awaits
  * async `configureServer` hooks. Production: `src/lib/db` kicks `ensureDbReady`
@@ -158,6 +183,7 @@ export default defineConfig(({ command, isPreview }) => ({
   },
   resolve: { tsconfigPaths: true },
   plugins: [
+    stepPicCachePlugin(),
     pgliteBootstrapPlugin(),
     // Before tanstackStart so /auth/popup never falls through to the SPA.
     authPopupPlugin(),
@@ -175,6 +201,13 @@ export default defineConfig(({ command, isPreview }) => ({
             // manifest + head-tag middleware). Nitro v3 defaults serverDir to
             // false, so removing this silently unwires /?install=1 on deploys.
             serverDir: "./server",
+            routeRules: {
+              "/step-pics/**": {
+                headers: {
+                  "cache-control": "public, max-age=604800, stale-while-revalidate=2592000",
+                },
+              },
+            },
           }),
         ]
       : []),

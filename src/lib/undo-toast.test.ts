@@ -4,7 +4,9 @@ import { dirname, join } from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
 
-const css = readFileSync(join(dirname(fileURLToPath(import.meta.url)), "../styles.css"), "utf8");
+const root = dirname(fileURLToPath(import.meta.url));
+const css = readFileSync(join(root, "../styles.css"), "utf8");
+const app = readFileSync(join(root, "../components/route-app.tsx"), "utf8");
 
 test("the undo control stays in the action row and clears the nav", () => {
   const rule = /\.undo-toast\s*\{([^}]+)\}/.exec(css)?.[1];
@@ -15,6 +17,9 @@ test("the undo control stays in the action row and clears the nav", () => {
   const button = /\.undo-toast button\s*\{([^}]+)\}/.exec(css)?.[1];
   assert.ok(button);
   assert.match(button, /min-height:\s*2\.75rem/);
+  assert.match(button, /position:\s*absolute/);
+  assert.match(app, /setTimeout\(\(\) => setUndoLive\(true\), 300\)/);
+  assert.match(app, /className="step-skip/);
 });
 
 test("the old-save notice is an in-flow card with reachable actions", () => {
