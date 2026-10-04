@@ -35,6 +35,7 @@ run(["--test", ...mjs]);
 const ts = [
   "src/lib/migrate-progress.test.ts",
   "src/lib/step-pictures.test.ts",
+  "src/lib/fight-plans.test.ts",
   "src/lib/picture-focus.test.ts",
   "src/lib/undo-toast.test.ts",
   "src/lib/route-overlay.test.ts",
